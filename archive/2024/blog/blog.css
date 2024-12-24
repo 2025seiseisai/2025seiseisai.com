@@ -1,0 +1,171 @@
+@charset "UTF-8";
+.blog_top_title{
+    margin-top: 20px;
+    margin-left: 20px;
+    width:140px;
+    vertical-align: top;
+}
+.blog_top{
+    margin-left: 20px;
+    line-height: 0px;
+    margin-bottom: 20px;
+}
+.blog_radious{
+    border: 1px solid #FF0084;
+    border-radius: 18px;
+    width: 200px;
+    height: 36px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+
+}
+.blog_button{
+    line-height:32px;
+    color: #FF0084;
+    text-align: center;
+    background-color: white;
+    border-radius: 100px;
+    border-color: white;
+    display: block;
+    width: 100px;
+    box-sizing: border-box;
+    margin:0 2px;
+    text-decoration: none;
+}
+
+.blog_list{
+    margin: 0 10%;
+}
+.blog_preview {/*全体の位置と枠*/
+    margin:0 auto;
+    margin-top: 40px;
+    vertical-align: middle;
+    border: 1px solid black;
+    border-radius: 10px; 
+    background-color: #fff;
+    box-shadow: 0 4px 8px black(0, 0, 0, 0.1);
+}
+.blog_preview_img {/*画像詳細*/
+    width:100%;   
+    border-radius: 10px 10px 0px 0px;
+    aspect-ratio:16/9;
+}
+.blog_button_pink{
+    color: white;
+    background-color: #FF0084;
+}
+.blog_preview_link{
+    text-decoration: none;
+    color: black;
+}
+.blog_preview_sentence{/*文章全体を左右に余白30px,左揃え*/
+    padding: 0 30px;
+    text-align: left;
+}
+.blog_preview_top{/*dateとclubを横一列*/
+    display: flex;
+    align-items: center;
+    margin-bottom:-20px;
+}
+.blog_preview_date {/*日付*/
+    color: #ff1493;
+    margin-top: 12px;
+}
+.blog_preview_club {
+    background-color:#FF0084;
+    color: white;
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-left: 16px;
+    vertical-align: middle;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.blog_preview_author {/*著者,右揃え*/
+    text-align: right;
+}
+.blog_preview_title{/*タイトル*/
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    overflow:hidden;
+    color:black;
+    -webkit-line-clamp: 3;
+}
+.pagination{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    margin:40px 0;
+}
+.pagination a{
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid transparent;  
+    margin: 0 8px; 
+}
+.pagination a.prev{
+    color:#FF0084 !important;
+    margin:0;
+}
+.pagination a.next{
+    color:#FF0084 !important;
+    margin:0;
+}
+
+.pagination a.active{
+    border-bottom: 2px solid #FF0084;
+}
+.blogfooter{
+    margin-top: 500px;
+}
+@media screen and (min-width:1024px){
+    .blog_top_title{
+        width:300px;
+        margin-top: 40px;
+        margin-left: 10%;
+    }
+    .blog_top{
+        margin-left: 10%;
+    }
+    .blog_radious{
+        border: 2px solid #FF0084;
+        border-radius: 40px;
+        width: 400px;
+        height: 80px;
+        margin: 100px auto 50px auto;
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+    
+    }
+    .blog_button{
+        line-height:72px;
+        color: #FF0084;
+        text-align: center;
+        background-color: white;
+        border-radius: 100px;
+        border-color: white;
+        display: block;
+        width: 212px;
+        box-sizing: border-box;
+        margin:0 5px;
+    }
+    .blog_button_pink{
+        color: white;
+        background-color: #FF0084;
+    }
+    .blog_list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:4%; 
+        box-sizing: border-box;
+        
+
+    }
+    .blog_preview_title{/*タイトル*/
+        -webkit-line-clamp: 2;
+    }
+}
