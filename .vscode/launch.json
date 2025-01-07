@@ -5,7 +5,7 @@
             "name": "Next.js: debug",
             "type": "node-terminal",
             "request": "launch",
-            "command": "npm install; npm run dev",
+            "command": "npm run dev",
             //"command": "npm install; npm run build; npm run start",
             "serverReadyAction": {
                 "pattern": "started server on .+, url: (https?://.+)",

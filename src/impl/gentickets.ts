@@ -49,7 +49,7 @@ export async function GenerateTicketsPDFImpl() {
             y = (((cnt % 16) / 4) | 0) * 148.82;
         const id = info.id;
         const number = `${info.number}`.padStart(5, "0");
-        const day = info.day;
+        /* const day = info.day; */
         const svg = new QRCode({
             content: id,
             padding: 0,
@@ -57,7 +57,7 @@ export async function GenerateTicketsPDFImpl() {
             height: 100,
             ecl: "H",
         }).svg();
-        // @ts-ignore
+        // @ts-expect-error
         doc.addSVG(svg, x + 20, y + 37.21);
         doc.fontSize(15).text("来場者ID", x + 123, y + 30);
         doc.fontSize(30).text(number, x + 112, y + 53);

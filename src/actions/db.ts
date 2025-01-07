@@ -16,7 +16,7 @@ export async function GetNewsData() {
 }
 
 export async function SetNewsData(data: string[]) {
-    let splitted: any[] = [];
+    const splitted: { title: string; id: string; date: string; tag: string; content: string }[] = [];
     for (let i = 0; i < data.length; i += 5) splitted.push({ title: data[i], id: data[i + 1], date: data[i + 2], tag: data[i + 3], content: data[i + 4] });
     await collections.news.deleteMany();
     if (splitted.length != 0) await collections.news.insertMany(splitted);
@@ -27,13 +27,13 @@ export async function InitTicketsData() {
     await collections.tickets.deleteMany();
     console.log("Generating...");
     const getRandomID = () => {
-        let S = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        let N = 15;
+        const S = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const N = 15;
         return Array.from(crypto.getRandomValues(new Uint8Array(N)))
             .map((n) => S[n % S.length])
             .join("");
     };
-    let result: any[] = [];
+    const result: { id: string; number: number; day: number }[] = [];
     for (let i = 0; i < VisitorIDsDay1; ++i) result.push({ id: getRandomID(), number: i, day: 1 });
     for (let i = 0; i < VisitorIDsDay2; ++i) result.push({ id: getRandomID(), number: i + 10000, day: 2 });
     console.log("saving...");

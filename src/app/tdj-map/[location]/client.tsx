@@ -89,9 +89,9 @@ function BuildScene(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
     };
 }
 
-export function Map({ location }: { location: string }) {
+export function Map({}: { location: string }) {
     useEffect(() => {
-        let canvas = document.getElementById("canvas");
+        const canvas = document.getElementById("canvas");
         const scene = new THREE.Scene();
         const sizes = {
             width: innerWidth,

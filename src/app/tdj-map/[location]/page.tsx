@@ -1,7 +1,7 @@
 import "./page.css";
 import { Map } from "./client";
 
-export default async function Page(props: any) {
+export default async function Page() {
     return (
         <>
             <Map location={""} />
