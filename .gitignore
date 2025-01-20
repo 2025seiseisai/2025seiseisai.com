@@ -40,3 +40,5 @@ yarn-error.log*
 next-env.d.ts
 
 /tickets_pdf
+
+/public/tdj-map/image.png
