@@ -1,3 +1,14 @@
+const color = {
+    red: 0xff6347,
+    blue: 0x6495ed,
+    yellow: 0xf0e68c,
+    green: 0x32cd32,
+    ylgreen: 0x98fb98,
+    gray: 0x999999,
+    ltblue: 0xc71585,
+    magenta: 0x87cefa,
+};
+
 /** 長方形 y: y座標(高さ) x1,x2: 端のx座標 z1,z2: 端のz座標 color: 表面の色(省略した場合は白) */
 export const Rects: {
     y: number;
@@ -14,7 +25,7 @@ export const Rects: {
         z1: 100,
         x2: 75,
         z2: -65,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 0,
@@ -22,7 +33,7 @@ export const Rects: {
         z1: -20,
         x2: 150,
         z2: 50,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 0,
@@ -30,7 +41,7 @@ export const Rects: {
         z1: -90,
         x2: 150,
         z2: -20,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 0,
@@ -38,7 +49,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -110,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 0,
@@ -46,7 +57,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -250,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 0,
@@ -54,7 +65,7 @@ export const Rects: {
         z1: -320,
         x2: 75,
         z2: -250,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 0,
@@ -83,7 +94,7 @@ export const Rects: {
         z1: 125,
         x2: 175,
         z2: 280,
-        color: 0x999999,
+        color: color.gray,
     },
     {
         y: 0,
@@ -91,7 +102,7 @@ export const Rects: {
         z1: 280,
         x2: 175,
         z2: 340,
-        color: 0x999999,
+        color: color.gray,
     },
     // 中学棟2階
     {
@@ -100,7 +111,7 @@ export const Rects: {
         z1: -20,
         x2: 150,
         z2: 50,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 150,
@@ -108,7 +119,7 @@ export const Rects: {
         z1: -90,
         x2: 150,
         z2: -20,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 150,
@@ -116,7 +127,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -110,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 150,
@@ -124,7 +135,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -250,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 150,
@@ -132,7 +143,7 @@ export const Rects: {
         z1: -320,
         x2: 75,
         z2: -250,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 150,
@@ -140,7 +151,7 @@ export const Rects: {
         z1: 250,
         x2: 50,
         z2: 340,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 150,
@@ -176,7 +187,7 @@ export const Rects: {
         z1: 180,
         x2: 50,
         z2: 250,
-        color: 0x999999,
+        color: color.gray,
     },
     {
         y: 150,
@@ -184,7 +195,7 @@ export const Rects: {
         z1: 125,
         x2: 175,
         z2: 280,
-        color: 0x999999,
+        color: color.gray,
     },
     {
         y: 150,
@@ -192,7 +203,7 @@ export const Rects: {
         z1: 280,
         x2: 175,
         z2: 340,
-        color: 0x999999,
+        color: color.gray,
     },
     {
         y: 150,
@@ -200,7 +211,7 @@ export const Rects: {
         z1: 280,
         x2: 100,
         z2: 340,
-        color: 0xf0e68c,
+        color: color.yellow,
     },
     //中学棟3階
     {
@@ -209,7 +220,7 @@ export const Rects: {
         z1: -20,
         x2: 150,
         z2: 50,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 300,
@@ -217,7 +228,7 @@ export const Rects: {
         z1: -90,
         x2: 150,
         z2: -20,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 300,
@@ -225,7 +236,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -110,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 300,
@@ -233,7 +244,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -250,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 300,
@@ -241,7 +252,7 @@ export const Rects: {
         z1: -320,
         x2: 75,
         z2: -250,
-        color: 0xff6347,
+        color: color.red,
     },
     {
         y: 300,
@@ -277,7 +288,7 @@ export const Rects: {
         z1: 225,
         x2: 175,
         z2: 340,
-        color: 0x999999,
+        color: color.gray,
     },
     {
         y: 300,
@@ -285,7 +296,7 @@ export const Rects: {
         z1: 175,
         x2: 175,
         z2: 225,
-        color: 0x999999,
+        color: color.gray,
     },
     {
         y: 300,
@@ -293,7 +304,7 @@ export const Rects: {
         z1: 125,
         x2: 175,
         z2: 175,
-        color: 0xf0e68c,
+        color: color.yellow,
     },
     // 転心殿
     {
@@ -324,7 +335,7 @@ export const Rects: {
         z1: -375,
         x2: -250,
         z2: -450,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 0,
@@ -340,7 +351,7 @@ export const Rects: {
         z1: -50,
         x2: -300,
         z2: 50,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 150,
@@ -348,7 +359,7 @@ export const Rects: {
         z1: -50,
         x2: -175,
         z2: -120,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 150,
@@ -356,7 +367,7 @@ export const Rects: {
         z1: -120,
         x2: -175,
         z2: -190,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 150,
@@ -364,7 +375,7 @@ export const Rects: {
         z1: -210,
         x2: -175,
         z2: -280,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 150,
@@ -372,7 +383,7 @@ export const Rects: {
         z1: -280,
         x2: -175,
         z2: -350,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 150,
@@ -380,7 +391,7 @@ export const Rects: {
         z1: -375,
         x2: -175,
         z2: -450,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 150,
@@ -423,7 +434,7 @@ export const Rects: {
         z1: -30,
         x2: -150,
         z2: 75,
-        color: 0x999999,
+        color: color.gray,
     },
     // 高校棟3階
     {
@@ -432,7 +443,7 @@ export const Rects: {
         z1: 100,
         x2: -150,
         z2: 175,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 300,
@@ -440,7 +451,7 @@ export const Rects: {
         z1: -50,
         x2: -175,
         z2: -120,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 300,
@@ -448,7 +459,7 @@ export const Rects: {
         z1: -120,
         x2: -175,
         z2: -190,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 300,
@@ -456,7 +467,7 @@ export const Rects: {
         z1: -210,
         x2: -175,
         z2: -280,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 300,
@@ -464,7 +475,7 @@ export const Rects: {
         z1: -280,
         x2: -175,
         z2: -350,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 300,
@@ -472,7 +483,7 @@ export const Rects: {
         z1: -375,
         x2: -175,
         z2: -450,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 300,
@@ -480,7 +491,7 @@ export const Rects: {
         z1: -25,
         x2: -150,
         z2: 50,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 300,
@@ -488,7 +499,7 @@ export const Rects: {
         z1: -25,
         x2: -300,
         z2: 50,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 300,
@@ -531,7 +542,7 @@ export const Rects: {
         z1: 100,
         x2: -250,
         z2: 175,
-        color: 0x999999,
+        color: color.gray,
     },
     // 高校棟4階
     {
@@ -540,7 +551,7 @@ export const Rects: {
         z1: -50,
         x2: -175,
         z2: -120,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 450,
@@ -548,7 +559,7 @@ export const Rects: {
         z1: -120,
         x2: -175,
         z2: -190,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 450,
@@ -556,7 +567,7 @@ export const Rects: {
         z1: -210,
         x2: -175,
         z2: -280,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 450,
@@ -564,7 +575,7 @@ export const Rects: {
         z1: -280,
         x2: -175,
         z2: -350,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 450,
@@ -572,7 +583,7 @@ export const Rects: {
         z1: -375,
         x2: -175,
         z2: -450,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 450,
@@ -580,7 +591,7 @@ export const Rects: {
         z1: -25,
         x2: -150,
         z2: 75,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 450,
@@ -588,7 +599,7 @@ export const Rects: {
         z1: -25,
         x2: -300,
         z2: 50,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 450,
@@ -596,7 +607,7 @@ export const Rects: {
         z1: 100,
         x2: -250,
         z2: 175,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 450,
@@ -604,7 +615,7 @@ export const Rects: {
         z1: 100,
         x2: -150,
         z2: 175,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 450,
@@ -641,7 +652,7 @@ export const Rects: {
         z1: 300,
         x2: -175,
         z2: 350,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 200,
@@ -649,7 +660,7 @@ export const Rects: {
         z1: 350,
         x2: -175,
         z2: 400,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 200,
@@ -657,7 +668,7 @@ export const Rects: {
         z1: 400,
         x2: -175,
         z2: 475,
-        color: 0x32cd32,
+        color: color.green,
     },
     {
         y: 150,
@@ -700,7 +711,7 @@ export const Rects: {
         z1: 300,
         x2: -275,
         z2: 330,
-        color: 0x999999,
+        color: color.gray,
     },
     {
         y: 200,
@@ -708,7 +719,7 @@ export const Rects: {
         z1: 350,
         x2: -275,
         z2: 420,
-        color: 0x999999,
+        color: color.gray,
     },
     {
         y: 200,
@@ -716,7 +727,7 @@ export const Rects: {
         z1: 420,
         x2: -275,
         z2: 475,
-        color: 0x999999,
+        color: color.gray,
     },
     {
         y: 200,
@@ -724,7 +735,7 @@ export const Rects: {
         z1: 250,
         x2: -250,
         z2: 275,
-        color: 0xf0e68c,
+        color: color.yellow,
     },
     // 図書館棟2階
     {
@@ -733,7 +744,7 @@ export const Rects: {
         z1: 300,
         x2: -175,
         z2: 475,
-        color: 0x6495ed,
+        color: color.blue,
     },
     {
         y: 350,
@@ -741,7 +752,7 @@ export const Rects: {
         z1: 250,
         x2: -250,
         z2: 275,
-        color: 0xf0e68c,
+        color: color.yellow,
     },
     {
         y: 350,
@@ -749,7 +760,7 @@ export const Rects: {
         z1: 275,
         x2: -275,
         z2: 300,
-        color: 0xf0e68c,
+        color: color.yellow,
     },
     {
         y: 350,
@@ -793,7 +804,7 @@ export const Rects: {
         z1: -325,
         x2: 175,
         z2: -450,
-        color: 0xc71585,
+        color: color.ltblue,
     },
     {
         y: -100,
@@ -801,7 +812,7 @@ export const Rects: {
         z1: -525,
         x2: -200,
         z2: -900,
-        color: 0x87cefa,
+        color: color.magenta,
     },
     // 中庭
     {
@@ -810,15 +821,15 @@ export const Rects: {
         z1: -75,
         x2: 20,
         z2: 50,
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         y: 200,
         x1: -130,
         z1: -35,
-        x2: -145,
+        x2: -160,
         z2: -75,
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         y: 100,
@@ -826,7 +837,7 @@ export const Rects: {
         z1: -110,
         x2: -10,
         z2: -190,
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         y: 100,
@@ -834,7 +845,7 @@ export const Rects: {
         z1: -225,
         x2: -115,
         z2: -190,
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         y: 150,
@@ -842,7 +853,7 @@ export const Rects: {
         z1: -190,
         x2: -175,
         z2: -210,
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         y: 90,
@@ -850,7 +861,23 @@ export const Rects: {
         z1: -150,
         x2: 25,
         z2: -225,
-        color: 0x98fb98,
+        color: color.ylgreen,
+    },
+    {
+        y: 50,
+        x1: -50,
+        z1: -250,
+        x2: -110,
+        z2: -350,
+        color: color.ylgreen,
+    },
+    {
+        y: 50,
+        x1: -110,
+        z1: -300,
+        x2: -120,
+        z2: -350,
+        color: color.ylgreen,
     },
     {
         y: 0,
@@ -877,7 +904,7 @@ export const Polygons: {
             [100, 300, 140],
             [60, 300, 100],
         ],
-        color: 0xff6347,
+        color: color.red,
     },
     {
         points: [
@@ -894,7 +921,7 @@ export const Polygons: {
             [5, 100, -110],
             [5, 200, -75],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         points: [
@@ -903,7 +930,7 @@ export const Polygons: {
             [-130, 150, -190],
             [-115, 100, -190],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         points: [
@@ -911,7 +938,7 @@ export const Polygons: {
             [-10, 100, -190],
             [-95, 100, -190],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         points: [
@@ -920,7 +947,7 @@ export const Polygons: {
             [-145, 200, -75],
             [-130, 200, -75],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         points: [
@@ -929,7 +956,7 @@ export const Polygons: {
             [-145, 150, 75],
             [-130, 150, 75],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         points: [
@@ -938,7 +965,7 @@ export const Polygons: {
             [5, 200, 50],
             [5, 150, 75],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         points: [
@@ -947,7 +974,7 @@ export const Polygons: {
             [20, 100, -170],
             [20, 100, -150],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         points: [
@@ -956,7 +983,7 @@ export const Polygons: {
             [-20, 90, -250],
             [-20, 100, -225],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         points: [
@@ -965,7 +992,7 @@ export const Polygons: {
             [-50, 50, -350],
             [-50, 50, -300],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
     },
     {
         points: [
@@ -974,7 +1001,42 @@ export const Polygons: {
             [0, 50, -360],
             [0, 50, -330],
         ],
-        color: 0x98fb98,
+        color: color.ylgreen,
+    },
+    {
+        points: [
+            [-20, 100, -225],
+            [-20, 50, -300],
+            [-35, 50, -300],
+            [-35, 100, -225],
+        ],
+        color: color.ylgreen,
+    },
+    {
+        points: [
+            [-35, 50 + 50 * (2 / 3), -250],
+            [-35, 50, -300],
+            [-50, 50, -300],
+            [-50, 50 + 50 * (2 / 3), -250],
+        ],
+        color: color.ylgreen,
+    },
+    {
+        points: [
+            [-20, 50, -300],
+            [-20, 50, -318],
+            [-50, 50, -300],
+        ],
+        color: color.ylgreen,
+    },
+    {
+        points: [
+            [-72, 100, -225],
+            [-72, 50, -250],
+            [-88, 50, -250],
+            [-88, 100, -225],
+        ],
+        color: color.ylgreen,
     },
     {
         points: [
