@@ -1,0 +1,31 @@
+{
+    "name": "2025seiseisai.com",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "npm install && opener http://localhost:3000 && next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "mongodb": "^6.15.0",
+        "next": "15.2.3",
+        "next-auth": "^5.0.0-beta.25",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "sharp": "^0.33.5",
+        "three": "^0.174.0"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3",
+        "@types/node": "^20",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "@types/three": "^0.174.0",
+        "eslint": "^9",
+        "eslint-config-next": "15.2.3",
+        "opener": "^1.5.2",
+        "typescript": "^5"
+    }
+}
