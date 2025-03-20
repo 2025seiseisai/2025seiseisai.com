@@ -7,11 +7,7 @@
             "request": "launch",
             "command": "npm run dev",
             //"command": "npm install; npm run build; npm run start",
-            "serverReadyAction": {
-                "pattern": "started server on .+, url: (https?://.+)",
-                "uriFormat": "%s",
-                "action": "debugWithChrome"
-            }
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
