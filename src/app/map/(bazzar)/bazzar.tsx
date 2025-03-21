@@ -1,10 +1,10 @@
 import styles from "./page.module.scss";
 
-export default function Page() {
+export function Bazzar() {
     return (
         <>
             {/* ここに書く */}
-            <p className={styles.example}>トップページ</p>
+            <p className={styles.example}>バザー</p>
         </>
     );
 }

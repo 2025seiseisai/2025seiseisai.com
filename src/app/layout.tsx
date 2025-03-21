@@ -1,5 +1,6 @@
-import "../impl/globals.css";
 import { Noto_Sans_JP } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
+import "../impl/globals.css";
 
 const noto_sans_jp = Noto_Sans_JP({
     weight: "400",
@@ -13,7 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ja" className={noto_sans_jp.className}>
-            <body>{children}</body>
+            <body>
+                <NextTopLoader />
+                {children}
+            </body>
         </html>
     );
 }

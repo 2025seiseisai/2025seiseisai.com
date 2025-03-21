@@ -1,10 +1,10 @@
+import { Map3D } from "../map";
 import "./page.css";
-import { Map } from "../map";
 
 export default async function Page() {
     return (
         <>
-            <Map location={""} />
+            <Map3D location={""} />
         </>
     );
 }

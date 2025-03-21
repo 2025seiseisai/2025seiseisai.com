@@ -4,7 +4,7 @@ export default function Page() {
     return (
         <>
             {/* ここに書く */}
-            <p className={styles.example}>トップページ</p>
+            <p className={styles.example}>スペシャル</p>
         </>
     );
 }

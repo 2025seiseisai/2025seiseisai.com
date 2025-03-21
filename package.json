@@ -12,6 +12,7 @@
         "mongodb": "^6.15.0",
         "next": "15.2.3",
         "next-auth": "^5.0.0-beta.25",
+        "nextjs-toploader": "^3.7.15",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "sharp": "^0.33.5",
@@ -27,6 +28,7 @@
         "eslint": "^9",
         "eslint-config-next": "15.2.3",
         "opener": "^1.5.2",
-        "typescript": "^5"
+        "typescript": "^5",
+        "typescript-plugin-css-modules": "^5.1.0"
     }
 }

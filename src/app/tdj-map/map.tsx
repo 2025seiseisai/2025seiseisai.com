@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { Rects, Polygons } from "./mapdata";
+import { Polygons, Rects } from "./mapdata";
 
 function BuildScene(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
     const light1 = new THREE.DirectionalLight(0xffffff, 3.5);
@@ -92,7 +92,7 @@ function BuildScene(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
     };
 }
 
-export function Map({}: { location: string }) {
+export function Map3D({}: { location: string }) {
     useEffect(() => {
         const canvas = document.getElementById("canvas");
         if (canvas === null) {
