@@ -11,5 +11,8 @@
         "source.organizeImports": "always"
     },
     "typescript.tsdk": "node_modules/typescript/lib",
-    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.env.windows": {
+        "PSExecutionPolicyPreference": "RemoteSigned"
+    }
 }
