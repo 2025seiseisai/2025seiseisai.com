@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
+import Head from "next/head";
 import NextTopLoader from "nextjs-toploader";
 import "../impl/globals.css";
 
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ja" className={noto_sans_jp.className}>
+            <Head>
+                <meta name="apple-mobile-web-app-title" content="菁々祭" />
+            </Head>
             <body>
                 <NextTopLoader
                     height={3}
