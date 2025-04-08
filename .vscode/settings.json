@@ -14,5 +14,9 @@
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "terminal.integrated.env.windows": {
         "PSExecutionPolicyPreference": "RemoteSigned"
+    },
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.scss": "tailwindcss"
     }
 }
