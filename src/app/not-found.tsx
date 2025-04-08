@@ -1,3 +1,5 @@
-export default function NotFound() {
-    return <>404 Not Found.</>;
+import { NotFound } from "./(notfound)/notfound";
+
+export default function Page() {
+    return <NotFound />;
 }
