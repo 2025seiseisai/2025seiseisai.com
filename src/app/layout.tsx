@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Head from "next/head";
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+    const gaID = process.env.NEXT_PUBLIC_GA_ID;
     return (
         <html lang="ja" className={noto_sans_jp.className}>
             <Head>
@@ -35,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     template={`<div class="bar" role="bar"></div>`}
                 />
                 <main>{children}</main>
+                {gaID && <GoogleAnalytics gaId={gaID} />}
             </body>
         </html>
     );
