@@ -1,10 +1,10 @@
-/* 「目次」 */
-.table_of_contents {
-    color: red;
-}
 /* 目次全体 */
 .table_of_contents + ul {
     background-color: gray;
+}
+/* 「目次」 */
+.table_of_contents + ul > h6 {
+    color: red;
 }
 /* 目次の要素 */
 .table_of_contents + ul li {

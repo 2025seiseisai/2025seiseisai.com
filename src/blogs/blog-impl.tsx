@@ -3,6 +3,7 @@ import * as fs from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import Link from "next/link";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
 import { blogImages } from "./blog-info";
@@ -71,15 +72,20 @@ export async function getBlog(round: string, index: string, image_class: string,
             parseFrontmatter: true,
             mdxOptions: {
                 remarkPlugins: [remarkGfm, [remarkToc, { maxDepth: 1, heading: "目次" }]],
-                rehypePlugins: [],
+                rehypePlugins: [rehypeSlug],
             },
         },
         components: {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h1: ({ children }: { children: any }) => {
+            h1: ({ id, children }: { id: string; children: any }) => {
                 if (typeof children === "string") {
-                    if (children === "目次") return <h6 className={table_class}>{children}</h6>;
-                    else return <h1>{children}</h1>;
+                    if (children === "目次")
+                        return (
+                            <div className={table_class} style={{ display: "none" }}>
+                                {children}
+                            </div>
+                        );
+                    else return <h1 id={id}>{children}</h1>;
                 } else return children;
             },
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -107,6 +113,16 @@ export async function getBlog(round: string, index: string, image_class: string,
                 ) : (
                     <Link href={href}> {children}</Link>
                 ),
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ul: ({ children }: { children: any }) => {
+                return (
+                    <ul>
+                        <style>{`ul>h6:not(.${table_class}+ul>h6){display:none;}`}</style>
+                        <h6>目次</h6>
+                        {children}
+                    </ul>
+                );
+            },
         },
     });
     return {
