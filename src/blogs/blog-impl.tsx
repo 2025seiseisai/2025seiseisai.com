@@ -110,8 +110,12 @@ export async function getBlog(round: string, index: string, image_class: string,
                 href.startsWith("https://www.youtube.com/") ||
                 href.startsWith("https://youtu.be/") ? (
                     <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
-                ) : (
+                ) : href[0] === "#" || href.includes("/") ? (
                     <Link href={href}> {children}</Link>
+                ) : (
+                    <Link href={`/blog-resources/${round}/${index}/${href}`} download>
+                        {children}
+                    </Link>
                 ),
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ul: ({ children }: { children: any }) => {

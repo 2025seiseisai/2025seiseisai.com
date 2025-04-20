@@ -1,5 +1,6 @@
 import glob
 import os
+import shutil
 
 os.chdir(os.path.dirname(__file__))
 with open("blog-info.ts", "w") as f:
@@ -21,3 +22,11 @@ with open("blog-info.ts", "w") as f:
         for idx in os.listdir("./" + rd):
             f.write(f'    "{rd}/{idx}",\n')
     f.write("];\n")
+if os.path.exists("../../public/blog-resources"):
+    shutil.rmtree("../../public/blog-resources")
+for path in glob.glob("./**/*", recursive=True):
+    if not os.path.isfile(path) or path.endswith(".png") or path.endswith(".md") or path.endswith(".ts") or path.endswith(".tsx") or path.endswith(".py"):
+        continue
+    dst = os.path.join("../../public/blog-resources", path)
+    os.makedirs(os.path.dirname(dst), exist_ok=True)
+    shutil.copy(path, dst)

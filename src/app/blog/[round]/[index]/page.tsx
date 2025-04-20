@@ -1,4 +1,5 @@
-import { enumetateParams, getBlog } from "@/blogs/blog-impl";
+import { enumetateParams, getBlog, getThumbnail } from "@/blogs/blog-impl";
+import Image from "next/image";
 import styles from "./page.module.scss";
 
 export function generateStaticParams() {
@@ -20,6 +21,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <h1>{title}</h1>
             <h2>{date}</h2>
             <h3>{author}</h3>
+            <Image src={getThumbnail(round, index)} alt="thumbnail" />
             <article className={styles.blog_content}>{content}</article>
         </>
     );
