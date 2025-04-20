@@ -3,7 +3,7 @@ title: お化け屋敷の正体を直撃インタビュー！
 date: 2023.06.05
 author: PR パート員 M.K.
 topic: お化け屋敷セクション
-link: <https://www.notion.so/1d7ee95013fc8008a04affb7ab5d908c?pvs=4>
+link: https://www.notion.so/1d7ee95013fc8008a04affb7ab5d908c?pvs=4
 ---
 
 菁々祭の中でも特に内容が秘匿されたブース、お化け屋敷。今回の取材では、校舎の片隅で暗幕に包まれた実情、さらにはそのまとめ役について、前回と今回のトップであるお化け屋敷セクション長に話を伺いました。
