@@ -2,7 +2,7 @@
 title: 全国強豪のクイズ研究部、今年5年ぶりの〇〇〇〇を開催？！
 date: 2024.08.22
 author: PRパート員 M.K.
-topic: クイズ研究会
+topic: クイズ研究部
 link: https://www.notion.so/5-1d646ca54d6880cfbbc1e00e7575064f
 ---
 
