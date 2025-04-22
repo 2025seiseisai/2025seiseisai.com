@@ -1,9 +1,10 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
+import HolyLoader from "holy-loader";
 import { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Head from "next/head";
-import NextTopLoader from "nextjs-toploader";
-import "../impl/globals.css";
+import "../impl/global.css";
+import { Header } from "./(header)/header";
 
 const noto_sans_jp = Noto_Sans_JP({
     weight: "400",
@@ -31,11 +32,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <meta name="apple-mobile-web-app-title" content="菁々祭" />
             </Head>
             <body>
-                <NextTopLoader
-                    height={3}
-                    color="#de0d22; box-shadow: 0 0 10px #0b0e0f"
-                    template={`<div class="bar" role="bar"></div>`}
-                />
+                <HolyLoader height="2px" color="#de0d22" boxShadow="0 0 10px #0b0e0f" />
+                <Header />
                 <main>{children}</main>
                 {gaID && <GoogleAnalytics gaId={gaID} />}
             </body>
