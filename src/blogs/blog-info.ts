@@ -8,14 +8,33 @@ import Image4 from "./59/05/image 2.png";
 import Image5 from "./59/05/image 3.png";
 import Image6 from "./59/05/image.png";
 import Image7 from "./59/05/thumbnail.png";
-import Image8 from "./60/04/image 1.png";
-import Image9 from "./60/04/image.png";
-import Image10 from "./60/04/thumbnail.png";
-import Image11 from "./60/09/image 1.png";
-import Image12 from "./60/09/image.png";
-import Image13 from "./60/09/thumbnail.png";
-import Image14 from "./60/10/image.png";
-import Image15 from "./60/10/thumbnail.png";
+import Image8 from "./59/06/image.png";
+import Image9 from "./59/06/thumbnail.png";
+import Image10 from "./59/07/image 1.png";
+import Image11 from "./59/07/image.png";
+import Image12 from "./59/07/thumbnail.png";
+import Image13 from "./59/08/image 1.png";
+import Image14 from "./59/08/image 2.png";
+import Image15 from "./59/08/image.png";
+import Image16 from "./59/08/thumbnail.png";
+import Image17 from "./59/09/image 1.png";
+import Image18 from "./59/09/image 2.png";
+import Image19 from "./59/09/image 3.png";
+import Image20 from "./59/09/image 4.png";
+import Image21 from "./59/09/image 5.png";
+import Image22 from "./59/09/image 6.png";
+import Image23 from "./59/09/image 7.png";
+import Image24 from "./59/09/image 8.png";
+import Image25 from "./59/09/image.png";
+import Image26 from "./59/09/thumbnail.png";
+import Image27 from "./60/04/image 1.png";
+import Image28 from "./60/04/image.png";
+import Image29 from "./60/04/thumbnail.png";
+import Image30 from "./60/09/image 1.png";
+import Image31 from "./60/09/image.png";
+import Image32 from "./60/09/thumbnail.png";
+import Image33 from "./60/10/image.png";
+import Image34 from "./60/10/thumbnail.png";
 export const blogImages: { [key: string]: StaticImageData } = {
     "59/04/image 1.png": Image0,
     "59/04/image.png": Image1,
@@ -25,18 +44,41 @@ export const blogImages: { [key: string]: StaticImageData } = {
     "59/05/image 3.png": Image5,
     "59/05/image.png": Image6,
     "59/05/thumbnail.png": Image7,
-    "60/04/image 1.png": Image8,
-    "60/04/image.png": Image9,
-    "60/04/thumbnail.png": Image10,
-    "60/09/image 1.png": Image11,
-    "60/09/image.png": Image12,
-    "60/09/thumbnail.png": Image13,
-    "60/10/image.png": Image14,
-    "60/10/thumbnail.png": Image15,
+    "59/06/image.png": Image8,
+    "59/06/thumbnail.png": Image9,
+    "59/07/image 1.png": Image10,
+    "59/07/image.png": Image11,
+    "59/07/thumbnail.png": Image12,
+    "59/08/image 1.png": Image13,
+    "59/08/image 2.png": Image14,
+    "59/08/image.png": Image15,
+    "59/08/thumbnail.png": Image16,
+    "59/09/image 1.png": Image17,
+    "59/09/image 2.png": Image18,
+    "59/09/image 3.png": Image19,
+    "59/09/image 4.png": Image20,
+    "59/09/image 5.png": Image21,
+    "59/09/image 6.png": Image22,
+    "59/09/image 7.png": Image23,
+    "59/09/image 8.png": Image24,
+    "59/09/image.png": Image25,
+    "59/09/thumbnail.png": Image26,
+    "60/04/image 1.png": Image27,
+    "60/04/image.png": Image28,
+    "60/04/thumbnail.png": Image29,
+    "60/09/image 1.png": Image30,
+    "60/09/image.png": Image31,
+    "60/09/thumbnail.png": Image32,
+    "60/10/image.png": Image33,
+    "60/10/thumbnail.png": Image34,
 };
 export const blogPaths: string[] = [
     "59/04",
     "59/05",
+    "59/06",
+    "59/07",
+    "59/08",
+    "59/09",
     "60/04",
     "60/09",
     "60/10",
