@@ -9,10 +9,9 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@lottiefiles/react-lottie-player": "^3.6.0",
+        "@lottiefiles/dotlottie-react": "^0.13.4",
         "@next/third-parties": "^15.3.0",
         "holy-loader": "^2.3.13",
-        "lottie-web": "^5.12.2",
         "mongodb": "^6.15.0",
         "next": "^15.2.4",
         "next-auth": "^5.0.0-beta.25",
