@@ -10,16 +10,16 @@ export function Header() {
     return (
         <header className="flex h-20 items-center bg-white">
             <Theme className="mr-auto h-35/134 pl-7" />
-            <Link href="/2025" className="mr-5 ml-5">
+            <Link href="/" className="mr-5 ml-5">
                 Top
             </Link>
-            <Link href="/2025/theme-logo" className="mr-5 ml-5">
+            <Link href="/theme-logo" className="mr-5 ml-5">
                 Theme & Logo
             </Link>
-            <Link href="/2025/news" className="mr-5 ml-5">
+            <Link href="/news" className="mr-5 ml-5">
                 News
             </Link>
-            <Link href="/2025/access" className="mr-5 ml-5">
+            <Link href="/access" className="mr-5 ml-5">
                 Access
             </Link>
             <button
@@ -32,7 +32,7 @@ export function Header() {
             >
                 <div className="aspect-2/1">
                     <DotLottieReact
-                        src="/2025/animations/hamburger.lottie"
+                        src="/animations/hamburger.lottie"
                         dotLottieRefCallback={(ref) => setHamburger(ref)}
                     />
                 </div>
