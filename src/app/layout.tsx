@@ -3,7 +3,8 @@ import HolyLoader from "holy-loader";
 import { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Head from "next/head";
-import "../impl/globals.css";
+import "../impl/global.css";
+import { Header } from "./(header)/header";
 
 const noto_sans_jp = Noto_Sans_JP({
     weight: "400",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Head>
             <body>
                 <HolyLoader height="2px" color="#de0d22" boxShadow="0 0 10px #0b0e0f" />
+                <Header />
                 <main>{children}</main>
                 {gaID && <GoogleAnalytics gaId={gaID} />}
             </body>
