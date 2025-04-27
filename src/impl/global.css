@@ -3,6 +3,7 @@
 html,
 body {
     max-width: 100svw;
+    scroll-behavior: smooth;
 }
 
 body {

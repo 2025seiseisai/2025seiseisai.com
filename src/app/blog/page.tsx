@@ -13,7 +13,7 @@ export default async function Page() {
             {(await getAllBlogs()).map((blog) => (
                 <div key={`${blog.round}/${blog.index}`}>
                     {/* サムネイルはgetThumnailをImageのsrcに渡すことで表示できる */}
-                    <Image src={getThumbnail(blog.round, blog.index)} alt="thumbnail" sizes="50svw" />
+                    <Image src={getThumbnail(blog.round, blog.index)} alt="thumbnail" />
                     <h2>{blog.title}</h2>
                     <p>{blog.date}</p>
                     <p>{blog.author}</p>

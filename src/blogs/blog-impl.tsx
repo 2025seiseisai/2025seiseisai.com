@@ -1,14 +1,29 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
+import crypto from "crypto";
 import * as fs from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
 import { blogImages } from "./blog-info";
 
-export async function getAllBlogs() {
+/**
+ * @example
+ * {(await getAllBlogs()).map((blog) => (
+ *     <div key={`${blog.round}/${blog.index}`}>
+ *         <h2>{blog.title}</h2>
+ *         <p>{blog.date}</p>
+ *         <p>{blog.author}</p>
+ *         <p>{blog.topic}</p>
+ *         <Link href={`/blog/${blog.round}/${blog.index}`}>Read more</Link>
+ *     </div>
+ * ))}
+ */
+export async function getAllBlogs(): Promise<
+    { round: string; index: string; title: string; date: string; author: string; topic: string }[]
+> {
     return Promise.all(
         fs
             .readdirSync("src/blogs", { withFileTypes: true })
@@ -47,11 +62,21 @@ export async function getAllBlogs() {
     );
 }
 
-export function getThumbnail(round: string, index: string) {
+/**
+ * @example
+ * <Image src={getThumbnail("60", "04")} alt="thumbnail" />
+ */
+export function getThumbnail(round: string, index: string): StaticImageData {
     return blogImages[`${round}/${index}/thumbnail.png`];
 }
 
-export function enumetateParams() {
+/**
+ * @example
+ * export function generateStaticParams() {
+ *     return enumetateParams();
+ * }
+ */
+export function enumetateParams(): { round: string; index: string }[] {
     return fs
         .readdirSync("src/blogs", { withFileTypes: true })
         .filter((dirent) => dirent.isDirectory())
@@ -63,7 +88,27 @@ export function enumetateParams() {
         .flat();
 }
 
-export async function getBlog(round: string, index: string, image_class: string, table_class: string) {
+/**
+ * @example
+ * const { title, date, author, topic, content } = getBlog("60", "04", styles.image_with_caption, styles.table_of_contents);
+ *
+ * <h1>{title}</h1>
+ * <h2>{date}</h2>
+ * <h3>{author}</h3>
+ * <article className={styles.blog_content}>{content}</article>
+ */
+export async function getBlog(
+    round: string,
+    index: string,
+    image_class: string,
+    table_class: string,
+): Promise<{
+    title: string;
+    date: string;
+    author: string;
+    topic: string;
+    content: React.ReactElement;
+}> {
     const filePath = `src/blogs/${round}/${index}/index.md`;
     const md = fs.readFileSync(filePath, "utf-8");
     const mdx = await compileMDX<{ title: string; date: string; author: string; topic: string; link: string }>({
@@ -85,8 +130,27 @@ export async function getBlog(round: string, index: string, image_class: string,
                                 {children}
                             </div>
                         );
-                    else return <h1 id={id}>{children}</h1>;
+                    else
+                        return (
+                            <h1
+                                id={crypto
+                                    .createHash("sha256")
+                                    .update(encodeURIComponent(id))
+                                    .digest("base64url")
+                                    .substring(0, 16)}
+                            >
+                                {children}
+                            </h1>
+                        );
                 } else return children;
+            },
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            h2: ({ children }: { children: any }) => {
+                return <h2>{children}</h2>;
+            },
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            h3: ({ children }: { children: any }) => {
+                return <h3>{children}</h3>;
             },
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             p: ({ children }: { children: any }) => {
@@ -111,7 +175,14 @@ export async function getBlog(round: string, index: string, image_class: string,
                 href.startsWith("https://youtu.be/") ? (
                     <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
                 ) : href[0] === "#" || href.includes("/") ? (
-                    <Link href={href}> {children}</Link>
+                    <a
+                        href={
+                            "#" +
+                            crypto.createHash("sha256").update(href.substring(1)).digest("base64url").substring(0, 16)
+                        }
+                    >
+                        {children}
+                    </a>
                 ) : (
                     <Link href={`/blog-resources/${round}/${index}/${href}`} download>
                         {children}
