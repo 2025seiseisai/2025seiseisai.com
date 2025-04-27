@@ -3,12 +3,18 @@
 html,
 body {
     max-width: 100svw;
-    scroll-behavior: smooth;
 }
 
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+}
+main {
+    flex: 1;
 }
 *::selection {
     color: #fff;
