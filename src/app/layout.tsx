@@ -141,8 +141,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="ja" className={noto_sans_jp.className}>
             <body>
-                <HolyLoader height="2px" color="#de0d22" boxShadow="0 0 10px #0b0e0f" />
                 <Header />
+                <HolyLoader height="2px" color="#de0d22" boxShadow="0 0 10px #0b0e0f" />
                 <main>{children}</main>
                 <Footer />
                 {gaID && <GoogleAnalytics gaId={gaID} />}

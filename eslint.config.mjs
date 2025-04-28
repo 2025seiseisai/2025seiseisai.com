@@ -29,6 +29,11 @@ const eslintConfig = [
             ...eslintPluginReadableTailwind.configs.error.rules,
             "readable-tailwind/multiline": "off",
         },
+        settings: {
+            "readable-tailwind": {
+                entryPoint: "src/impl/global.css",
+            },
+        },
     },
 ];
 
