@@ -7,7 +7,7 @@ export default function Hamburger({ open, setOpen }: { open: boolean; setOpen: (
     const hamburgerRef = useRef<LottieRefCurrentProps | null>(null);
     return (
         <button
-            className="mr-7 flex aspect-1/1 h-80/134 cursor-pointer items-center justify-center"
+            className="mr-[40px] flex aspect-1/1 h-80/134 cursor-pointer items-center justify-center"
             onClick={() => {
                 hamburgerRef.current?.setDirection(open ? -1 : 1);
                 hamburgerRef.current?.play();
