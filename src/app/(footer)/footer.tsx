@@ -10,11 +10,25 @@ export function Footer() {
     const disabledLink = "mt-[20px] w-full pl-[23px] text-[16px] text-[#b0b0b0]";
     return (
         <footer className="mt-auto">
-            <div className="h-[137px] bg-[#f7f7f7]">
-                <ThemeLogo className="ml-[calc(19000svw/1440)] h-[85px] pt-[33px]" />
-                <p className="mt-[12px] ml-[calc(19000svw/1440)] text-[13px] font-light">
-                    © 2025 61st seiseisai “FUNBYO”, Created by PR part
-                </p>
+            <div className="flex h-[137px] bg-[#f7f7f7] font-light">
+                <span className="mr-[2px]">
+                    <ThemeLogo className="ml-[calc(19000svw/1440)] h-[85px] pt-[33px]" />
+                    <p className="mt-[12px] ml-[calc(19000svw/1440)] w-[321px] text-[13px]">
+                        © 2025 61st seiseisai “FUNBYO”, Created by PR part
+                    </p>
+                </span>
+                <span className="text-[13px]">
+                    <Link href="/contact">
+                        <p className="mt-[72px] transition-all duration-300 hover:pl-[2px] hover:text-[#de0d22]">
+                            {">>お問い合わせ"}
+                        </p>
+                    </Link>
+                    <Link href="/privacy-policy">
+                        <p className="mt-[7px] transition-all duration-300 hover:pl-[2px] hover:text-[#de0d22]">
+                            {">>プライバシーポリシー"}
+                        </p>
+                    </Link>
+                </span>
             </div>
             <div className="flex h-[300px] font-light">
                 <span className="ml-[calc(19000svw/1440)] w-[calc(27500svw/1440)] lg:w-[calc(22500svw/1440)]">

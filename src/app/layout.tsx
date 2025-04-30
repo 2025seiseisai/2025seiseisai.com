@@ -7,7 +7,7 @@ import { Footer } from "./(footer)/footer";
 import { Header } from "./(header)/header";
 
 const noto_sans_jp = Noto_Sans_JP({
-    weight: ["300", "400"],
+    display: "swap",
     subsets: ["latin"],
 });
 
