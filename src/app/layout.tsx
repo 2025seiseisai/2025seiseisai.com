@@ -11,7 +11,7 @@ const noto_sans_jp = Noto_Sans_JP({
     subsets: ["latin"],
 });
 
-const metaDataTitle = "第61回菁々祭「分秒」- 東大寺学園文化祭2025";
+const metaDataTitle = "第61回菁々祭「分秒」 - 東大寺学園文化祭2025";
 const metaDataDescription =
     "第61回東大寺学園文化祭「分秒」は、2025年9月6日(土)・7日(日)に開催予定！ぜひお越しください！";
 export const metadata: Metadata = {

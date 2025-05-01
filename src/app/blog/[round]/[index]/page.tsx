@@ -6,6 +6,17 @@ export function generateStaticParams() {
     return enumetateParams();
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ round: string; index: string }> }) {
+    const { round, index } = await params;
+    const { title } = await getBlog(round, index, styles.image_with_caption, styles.table_of_contents);
+    return {
+        title: `${title} | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025`,
+        openGraph: {
+            title: `${title} | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025`,
+        },
+    };
+}
+
 export default async function Page({ params }: { params: Promise<{ round: string; index: string }> }) {
     const { round, index } = await params;
     const { title, date, author, content } = await getBlog(
