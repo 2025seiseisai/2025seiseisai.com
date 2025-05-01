@@ -1,3 +1,33 @@
+.animation_float_x {
+    width: 100%;
+    height: 100%;
+    animation: floating-x 4.1s ease-in-out infinite alternate-reverse;
+}
+.animation_float_y {
+    width: 100%;
+    height: 100%;
+    animation: floating-y 3.7s ease-in-out infinite alternate-reverse;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes floating-x {
+    0% {
+        transform: translateX(-0.5svw);
+    }
+    100% {
+        transform: translateX(0.5svw);
+    }
+}
+@keyframes floating-y {
+    0% {
+        transform: translateY(-0.5svw);
+    }
+    100% {
+        transform: translateY(0.5svw);
+    }
+}
+
 .example {
     /* スマホ用のCSS */
     font-size: 10svw;

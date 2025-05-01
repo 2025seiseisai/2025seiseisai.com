@@ -51,9 +51,7 @@ export function Footer() {
                 </span>
                 <span className="ml-[calc(8600svw/1440)] w-[calc(27500svw/1440)] lg:w-[calc(22500svw/1440)]">
                     <h1 className="mt-[27px] w-full border-b-2 text-[32px]">Contents</h1>
-                    <Link href="/blog">
-                        <p className={footerLink}>Blog</p>
-                    </Link>
+                    <p className={disabledLink}>Blog</p>
                     <p className={disabledLink}>Gallery</p>
                     <p className={disabledLink}>Special</p>
                     <p className={disabledLink}>Archives</p>
