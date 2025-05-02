@@ -1,0 +1,25 @@
+.timer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+    gap: 20px; // 数字ブロック間の余白
+}
+
+.unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.number {
+    font-weight: 700;
+    font-size: 48px;
+    color: white;
+}
+
+.label {
+    margin-top: -10px;
+    font-size: 20px;
+    color: white;
+}

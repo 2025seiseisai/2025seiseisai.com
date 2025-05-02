@@ -41,3 +41,79 @@
         color: #de0d22;
     }
 }
+
+.COUNTDOWN {
+    font-weight: 500;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top_countdown {
+    margin-top: 30px;
+    position: relative;
+}
+.top_countdown_main_container {
+    width: 75%;
+    height: 180px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top_countdown_main {
+    width: 558px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.date_info_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date_info {
+    height: 160px;
+    weight: 194px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date {
+    font-weight: 500;
+    font-size: 128px;
+}
+.day {
+    font-weight: 700;
+    font-size: 32px;
+    transform: rotate(90deg);
+}
+.between_date {
+    font-size: 100px;
+}
+.date_info_sub_container {
+    margin: 0 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date_info_sub {
+    margin-top: -20px;
+    font-size: 28px;
+    font-weight: 500;
+}
+.red_container {
+    background-color: red;
+    height: 180px;
+    width: 560px;
+}
+.countdown_title {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+}
