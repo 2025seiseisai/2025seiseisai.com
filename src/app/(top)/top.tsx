@@ -2,8 +2,16 @@
 import ThemeLogo from "@/assets/theme-logo.svg";
 import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
-
+//リンク
+import Link from "next/link";
+//タイマー
 import CountdownTimer from "./CountdownTimer";
+//イメージ
+import FunbyoLogo from "./images/Funbyo-Logo.svg";
+import TdjLogo from "./images/TDJ-Logo.svg";
+import MoreAllow from "./images/arrow-right-circle.svg";
+import Headphone from "./images/headphones.svg";
+import Logout from "./images/log-out.svg";
 
 const Wave = dynamic(() => import("./wave"), { ssr: false });
 
@@ -22,7 +30,6 @@ export function Top() {
                     </div>
                 </div>
             </div>
-            <p className={styles.example}>トップページ</p>
             <p className={styles.COUNTDOWN}>COUNTDOWN</p>
             <div className={styles.top_countdown}>
                 <div className={styles.top_countdown_main_container}>
@@ -50,6 +57,77 @@ export function Top() {
                         </p>
                     </div>
                 </div>
+            </div>
+            <div className={styles.tytle_1}>
+                <div className={styles.tytle_mark}></div>
+                <p>SEISEISAI</p>
+            </div>
+            <TdjLogo className={styles.logo} />
+            <p className={styles.main_text}>菁々祭とは東大寺学園で行われる文化祭のこと。</p>
+            <p className={styles.main_text}>第61回菁々祭 「分秒」 は2025年9月に開催予定。</p>
+            <p className={styles.main_text}>過去60年の伝統と令和の新しい風が鳴り響く菁々祭、ぜひご覧あれ!</p>
+            <div className={styles.tytle_1}>
+                <div className={styles.tytle_mark}></div>
+                <p>分秒</p>
+            </div>
+            <FunbyoLogo className={styles.logo} />
+            <p className={styles.main_text}>「分秒」には文化祭にかけてきた一分一秒も惜しまぬ情熱が込められています。</p>
+            <p className={styles.main_text}>
+                また、一分一秒が61秒であると言う意味から第61回にふさわしいテーマとなっています。
+            </p>
+            <div className={styles.tytle_1}>
+                <div className={styles.tytle_mark}></div>
+                <p>LOGO-PV</p>
+            </div>
+            <p className={styles.main_text}>LogoPVが公開されています!(まだです)</p>
+            <div className={styles.news_all_container}>
+                <div className={styles.tytle_container}>
+                    <p className={styles.tytle_2}>
+                        <span className="text-red-500">N</span>ews
+                    </p>
+                </div>
+                <div className={styles.news_text_container}>
+                    <div className={styles.news_text}>
+                        <p className={styles.news_date}>2025.06.08</p>
+                        <p className={styles.news_tytle}>第61回菁々祭開幕！</p>
+                    </div>
+                    <div className={styles.news_text}>
+                        <p className={styles.news_date}>2025.06.08</p>
+                        <p className={styles.news_tytle}>第61回菁々祭開幕！</p>
+                    </div>
+                    <div className={styles.news_text}>
+                        <p className={styles.news_date}>2025.06.08</p>
+                        <p className={styles.news_tytle}>第61回菁々祭開幕！</p>
+                    </div>
+                </div>
+                <div className={styles.moreallow}>
+                    <MoreAllow />
+                    <p className={styles.more}>More</p>
+                </div>
+            </div>
+            <p className={styles.tytle_3}>Access</p>
+            <p className={styles.tytle_3_jn}>アクセス</p>
+            <div className={styles.access_container}>
+                <div className={styles.map_wrap}>
+                    <div className={styles.map}>
+                        <iframe src="https://x.gd/kGepl" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div className={styles.adress}>
+                    <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
+                    <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
+                    <Link href="https://tdj.ac.jp/" className="w-30 border-b-1">
+                        https://tdj.ac.jp/
+                    </Link>
+                </div>
+            </div>
+            <p className={styles.tytle_3}>Contact</p>
+            <p className={styles.tytle_3_jn}>お問い合わせ</p>
+            <p className={styles.main_text}>菁々祭に関するご質問はお問い合わせページからお願いいたします。</p>
+            <div className={styles.question}>
+                <Headphone />
+                <p className={styles.question_text}>お問い合わせ</p>
+                <Logout />
             </div>
         </>
     );
