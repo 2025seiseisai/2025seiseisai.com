@@ -24,22 +24,23 @@ export default function Page() {
                 <div className={styles.square}>
                     <div className={styles.top}>
                         <Hukidashi />
-                        <p>各種SNSでのお問い合わせ</p>
+                        <p className={styles.top_text}>各種SNSでのお問い合わせ</p>
                     </div>
                     <p className={styles.middle_text}>各種SNSでも受け付けております。</p>
                     <div className={styles.bottom}>
                         <div className={styles.sns_button}>
                             <Twitter />
-                            <p>X</p>
+                            <p className={styles.bottom_text}>X</p>
                             <Redirect />
                         </div>
                         <div className={styles.sns_button}>
                             <Instagram />
-                            <p>Instagram</p>
+                            <p className={styles.bottom_text}>Instagram</p>
                             <Redirect />
                         </div>
                     </div>
                 </div>
+                {/* フォームは灰色四角形で仮置きしています */}
                 <div className={styles.form}></div>
             </div>
         </>
