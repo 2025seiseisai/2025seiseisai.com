@@ -2,26 +2,39 @@
     color: #e7242a;
 }
 
+.back {
+    position: absolute;
+    top: 62px;
+    left: calc((100% - 887px) / 2);
+    z-index: 1;
+}
+
 .content {
-    text-align: center;
     height: 520px;
-    background-url: url("./back.svg");
+    text-align: center;
 }
 
 .title {
     font-size: 128px;
     font-weight: 640;
     height: 151px;
-    margin-top: 74px;
+    position: relative;
+    top: 74px;
+    z-index: 2;
 }
 
 .subtitle {
     font-size: 20px;
     font-weight: 640;
+    position: relative;
+    top: 74px;
+    z-index: 2;
 }
 
 .text_box {
-    margin-top: 45px;
+    position: relative;
+    top: 119px;
+    z-index: 2;
 }
 
 .text {
@@ -30,6 +43,8 @@
 }
 
 .button {
-    margin: 0 auto;
-    margin-top: 45px;
+    position: relative;
+    top: 164px;
+    z-index: 2;
+    left: calc((100% - 250px) / 2);
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Back from "./back.svg";
 import styles from "./page.module.scss";
 import ReturnTop from "./ReturnTop.svg";
 
@@ -6,6 +7,7 @@ export function NotFound() {
     return (
         <>
             <div className={styles.content}>
+                <Back className={styles.back} />
                 <p className={styles.title}>
                     <span className={styles.red}>4</span>04
                 </p>
