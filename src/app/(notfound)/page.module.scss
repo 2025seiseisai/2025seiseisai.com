@@ -1,3 +1,32 @@
 .red {
     color: #e7242a;
 }
+
+body {
+    background-image: url("src/app/(notfound)/back.svg");
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    font-size: 128px;
+    font-weight: 640;
+    height: 151px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 640;
+}
+
+.text_box {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
