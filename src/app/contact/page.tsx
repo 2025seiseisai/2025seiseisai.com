@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Instagram from "./img/instagram.svg";
 import Redirect from "./img/log-out.svg";
 import Hukidashi from "./img/message-circle.svg";
@@ -28,16 +29,21 @@ export default function Page() {
                     </div>
                     <p className={styles.middle_text}>各種SNSでも受け付けております。</p>
                     <div className={styles.bottom}>
-                        <div className={styles.sns_button}>
-                            <Twitter />
-                            <p className={styles.bottom_text}>X</p>
-                            <Redirect />
-                        </div>
-                        <div className={styles.sns_button}>
-                            <Instagram />
-                            <p className={styles.bottom_text}>Instagram</p>
-                            <Redirect />
-                        </div>
+                        {" "}
+                        <Link href="https://x.com/seiseisai_tdj" rel="noopener noreferrer" target="_blank">
+                            <div className={styles.sns_button}>
+                                <Twitter />
+                                <p className={styles.bottom_text}>X</p>
+                                <Redirect />
+                            </div>{" "}
+                        </Link>{" "}
+                        <Link href="https://www.instagram.com/seiseisai_tdj/" rel="noopener noreferrer" target="_blank">
+                            <div className={styles.sns_button}>
+                                <Instagram />
+                                <p className={styles.bottom_text}>Instagram</p>
+                                <Redirect />
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 {/* フォームは灰色四角形で仮置きしています */}
