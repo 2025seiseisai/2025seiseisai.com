@@ -52,7 +52,7 @@ export function Top() {
                     </div>
                     <div className={styles.red_container}>
                         <p className={styles.countdown_title}>菁々祭まで</p>
-                        <p className={styles.timer}>
+                        <p>
                             <CountdownTimer />
                         </p>
                     </div>
@@ -108,10 +108,8 @@ export function Top() {
             <p className={styles.tytle_3}>Access</p>
             <p className={styles.tytle_3_jn}>アクセス</p>
             <div className={styles.access_container}>
-                <div className={styles.map_wrap}>
-                    <div className={styles.map}>
-                        <iframe src="https://x.gd/kGepl" loading="lazy"></iframe>
-                    </div>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6559.363254209741!2d135.78601437633282!3d34.7132092729152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60013c8734fc9973%3A0x55c23a5ae3354ec9!2z5p2x5aSn5a-65a2m5ZyS5Lit5a2m5qCh44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1746189416051!5m2!1sja!2sjp"></iframe>
                 </div>
                 <div className={styles.adress}>
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>

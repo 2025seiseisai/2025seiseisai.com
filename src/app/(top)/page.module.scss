@@ -56,16 +56,15 @@
     position: relative;
 }
 .top_countdown_main_container {
-    width: 75%;
-    height: 180px;
     position: relative;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .top_countdown_main {
-    width: 558px;
+    width: 560px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.05);
 }
@@ -89,6 +88,7 @@
 .day {
     font-weight: 700;
     font-size: 32px;
+    margin-left: -16px;
     transform: rotate(90deg);
 }
 .between_date {
@@ -111,6 +111,13 @@
     height: 180px;
     width: 560px;
 }
+/*折り返し時　余白*/
+@media screen and (max-width: 1134px) {
+    .red_container {
+        margin-top: 16px;
+    }
+}
+
 .countdown_title {
     text-align: center;
     margin-top: 30px;
@@ -136,12 +143,13 @@
 }
 .logo {
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 .main_text {
     font-weight: 500;
     font-size: 20px;
     margin-top: 20px;
-    margin: 12.5% 0;
+    margin: 0 12.5%;
     text-align: center;
 }
 /*news始まり */
@@ -221,20 +229,21 @@
     font-size: 20px;
     font-weight: 500;
     margin-top: -15px;
+    margin-bottom: 20px;
 }
 .access_container {
     margin-top: 14px;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
 }
-.map {
-    width: 30%;
-}
+
 .adress {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 40px;
+    padding-left: 10%;
 }
 .schoolname {
     font-size: 20px;
