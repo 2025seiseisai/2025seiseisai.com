@@ -8,7 +8,7 @@ const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
 export function Header() {
     const [open, setOpen] = useState(false);
     return (
-        <header className="sticky top-0 flex h-[64px] items-center bg-white text-[12px] shadow-[0_0_3px_#0b0e0f77]">
+        <header className="sticky top-0 z-8000 flex h-[64px] items-center bg-white text-[12px] shadow-[0_0_3px_#0b0e0f77]">
             <Link href="/" className="mr-auto ml-[40px] block aspect-[411.258/148.991] h-38/134">
                 <Theme className="h-full brightness-0 filter transition-all hover:brightness-100" />
             </Link>
