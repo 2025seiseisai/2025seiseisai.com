@@ -1,13 +1,71 @@
-.example {
-    /* スマホ用のCSS */
-    font-size: 10svw;
-    color: #0b0e0f;
+.red {
+    color: #e7242a;
 }
 
-@media screen and (min-width: 768px) {
-    .example {
-        /* PC用のCSS */
-        font-size: 76.8px;
-        color: #de0d22;
-    }
+.back {
+    position: absolute;
+    top: 62px;
+    left: calc((100% - 887px) / 2);
+    z-index: 1;
+}
+
+.content {
+    height: 521px;
+    text-align: center;
+}
+
+.title {
+    font-size: 64px;
+    font-weight: 700;
+    height: 151px;
+    position: relative;
+    top: 43px;
+    z-index: 2;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    top: 0px;
+    z-index: 2;
+}
+
+.text1 {
+    width: 800px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    position: relative;
+    top: 31px;
+    left: calc((100% - 800px) / 2);
+    z-index: 2;
+}
+
+.text2 {
+    width: 800px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    position: relative;
+    top: 68px;
+    left: calc((100% - 800px) / 2);
+    z-index: 2;
+}
+
+.text3 {
+    width: 800px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    position: relative;
+    top: 95px;
+    left: calc((100% - 800px) / 2);
+    z-index: 2;
+}
+
+.url {
+    color: #de0d22;
+    text-decoration: underline;
+    text-decoration-color: #de0d22;
 }
