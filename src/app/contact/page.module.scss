@@ -1,13 +1,9 @@
-.example {
-    /* スマホ用のCSS */
-    font-size: 10svw;
-    color: #0b0e0f;
+.red {
+    color: #de0d22;
 }
 
-@media screen and (min-width: 768px) {
-    .example {
-        /* PC用のCSS */
-        font-size: 76.8px;
-        color: #de0d22;
-    }
+.content {
+    height: 1466px;
+    text-align: left;
+    margin-left: calc((100% - 1120px) / 2);
 }
