@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import styles from "./CountdownTimer.module.scss";
 
 // ======== テスト用 ========
-const TEST_NOW = new Date(2025, 8, 10, 10, 30); // ←テスト用
-const now = TEST_NOW;
+//const TEST_NOW = new Date(2025, 8, 10, 10, 30); // ←テスト用　ここからコピペ用→一日目開催中(2025, 8 ,6 , 9, 0)、二日目まで(2025, 8, 6, 17, 0)、二日目開催中(2025, 8, 7, 9, 30)、終了後(2025, 8, 7, 15, 30)
+//const now = TEST_NOW;
 // =========================
 
 export default function CountdownTimer() {
@@ -18,7 +18,7 @@ export default function CountdownTimer() {
 
     useEffect(() => {
         const updateTimer = () => {
-            //const now = new Date(); // テストの時はここをコメントアウト
+            const now = new Date(); // テストの時はここをコメントアウト
             const start = new Date(2025, 8, 6, 9, 0); // 9/6 9:00
             const intermissionStart = new Date(2025, 8, 6, 15, 0); // 9/6 15:00
             const intermissionEnd = new Date(2025, 8, 7, 9, 0); // 9/7 9:00
@@ -40,7 +40,7 @@ export default function CountdownTimer() {
         };
 
         const updateCountdown = (targetTime: Date) => {
-            //const now = new Date(); // テストの時はここをコメントアウト
+            const now = new Date(); // テストの時はここをコメントアウト
             const restMillisecond = targetTime.getTime() - now.getTime();
             const day = Math.floor(restMillisecond / 1000 / 60 / 60 / 24);
             const hour = Math.floor(restMillisecond / 1000 / 60 / 60) % 24;
@@ -98,7 +98,7 @@ export function CountdownTitle() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            //const now = new Date(); //テストの時はここをコメントアウト
+            const now = new Date(); //テストの時はここをコメントアウト
 
             const day1Start = new Date(2025, 8, 6, 9, 0); // 9/6 9:00
             const day1End = new Date(2025, 8, 6, 15, 0); // 9/6 15:00
