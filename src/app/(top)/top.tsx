@@ -51,9 +51,7 @@ export function Top() {
                         </div>
                     </div>
                     <div className={styles.red_container}>
-                        <div className={styles.countdown_title}>
-                            <CountdownTitle />
-                        </div>
+                        <CountdownTitle />
                         <CountdownTimer />
                     </div>
                 </div>
