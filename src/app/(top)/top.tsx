@@ -97,17 +97,18 @@ export function Top() {
                         <p className={styles.news_tytle}>第61回菁々祭開幕！</p>
                     </div>
                 </div>
-                <Link href="/news">
-                    <div className={styles.moreallow}>
-                        <MoreAllow />
+
+                <div className={styles.more_container}>
+                    <Link href="/news" className={styles.more_parents}>
+                        <MoreAllow className={styles.more} />
                         <p className={styles.more}>More</p>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </div>
             <p className={styles.tytle_3}>Access</p>
             <p className={styles.tytle_3_jn}>アクセス</p>
             <div className={styles.access_container}>
-                <div>
+                <div className={styles.map}>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6559.363254209741!2d135.78601437633282!3d34.7132092729152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60013c8734fc9973%3A0x55c23a5ae3354ec9!2z5p2x5aSn5a-65a2m5ZyS5Lit5a2m5qCh44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1746189416051!5m2!1sja!2sjp"></iframe>
                 </div>
                 <div className={styles.adress}>

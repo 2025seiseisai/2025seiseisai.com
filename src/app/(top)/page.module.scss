@@ -80,16 +80,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 55px;
+    padding: 0 10%;
 }
 
 .date_info {
-    height: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .date {
+    height: 160px;
+    display: flex;
+    align-items: center;
     font-weight: 500;
     font-size: 128px;
     letter-spacing: -0.1em;
@@ -97,7 +99,10 @@
 .day {
     font-weight: 700;
     font-size: 32px;
-    transform: rotate(90deg);
+    height: 104px;
+    writing-mode: vertical-rl;
+    margin-top: 20px;
+    text-align: left;
 }
 .between_date {
     font-size: 100px;
@@ -122,10 +127,9 @@
 
 /* countdownTimer.module.scssに数字のstyle書き込み */
 .tytle_1 {
-    height: 38px;
     font-weight: 500;
     font-size: 32px;
-    margin-top: 50px;
+    margin-top: 56px;
     margin-left: 12.5%;
 }
 .tytle_mark {
@@ -198,17 +202,21 @@
     margin-left: 8%;
     color: white;
 }
-.moreallow {
+.more_container {
+    margin: 0 auto;
     margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: fit-content;
     transition: filter 0.3s ease;
 }
-.moreallow:hover {
+.more_container:hover {
     filter: invert(0.2);
 }
+.more_parents {
+    display: flex;
+    align-items: center;
+}
 .more {
+    display: inline-block;
     font-size: 20px;
     font-weight: 500;
     margin-left: 6px;
@@ -231,18 +239,26 @@
     margin-bottom: 20px;
 }
 .access_container {
-    margin-top: 14px;
-    width: 80%;
     margin: 0 auto;
+    margin-top: 14px;
+    width: 75%;
     display: flex;
-    justify-content: center;
 }
-
+.map {
+    margin-right: 5%;
+    flex-basis: 50%;
+    width: 100%;
+}
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
 .adress {
+    flex-basis: 50%;
+    margin-left: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 10%;
 }
 .schoolname {
     font-size: 20px;
