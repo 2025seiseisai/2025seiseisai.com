@@ -203,6 +203,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: filter 0.3s ease;
+}
+.moreallow:hover {
+    filter: invert(0.2);
 }
 .more {
     font-size: 20px;
@@ -260,7 +264,11 @@
     align-items: center;
     width: 400px;
     height: 54px;
-    border: 2px solid black;
+    border: 2px solid #0b0e0f;
+    transition: background-color 0.3s ease;
+}
+.question:hover {
+    background-color: #c2c2c3;
 }
 .question_text {
     font-size: 16px;
