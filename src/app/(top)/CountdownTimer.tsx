@@ -1,6 +1,11 @@
 // タイマー用tsx
 import { useEffect, useState } from "react";
 import styles from "./CountdownTimer.module.scss";
+
+// ======== テスト用 ========
+//const TEST_NOW = new Date(2025, 8, 6, 10, 0); // ここを書き換える
+//const now = TEST_NOW;
+// =========================
 export default function CountdownTimer() {
     const [timeLeft, setTimeLeft] = useState({
         day: 0,
@@ -11,8 +16,9 @@ export default function CountdownTimer() {
 
     useEffect(() => {
         const updateTimer = () => {
-            const now = new Date();
-            const goal = new Date(2025, 8, 6); // 2025年9月6日 (月は0-index)
+            const now = new Date(); //テストの時はここをコメントアウト
+
+            const goal = new Date(2025, 8, 6, 9, 0); // 2025.9.6
 
             const restMillisecond = goal.getTime() - now.getTime();
             const day = Math.floor(restMillisecond / 1000 / 60 / 60 / 24);
@@ -53,4 +59,37 @@ export default function CountdownTimer() {
             </div>
         </div>
     );
+}
+export function CountdownTitle() {
+    const [title, setTitle] = useState("");
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const now = new Date(); //テストの時はここをコメントアウト
+
+            const day1Start = new Date(2025, 8, 6, 9, 0); // 9/6 9:00
+            const day1End = new Date(2025, 8, 6, 17, 0); // 9/6 17:00
+            const day2Start = new Date(2025, 8, 7, 9, 0); // 9/7 9:00
+            const day2End = new Date(2025, 8, 7, 17, 0); // 9/7 17:00
+
+            let newTitle = "";
+
+            if (now < day1Start) {
+                newTitle = "菁々祭まで…";
+            } else if (now >= day1Start && now < day1End) {
+                newTitle = "菁々祭1日目開催中！";
+            } else if (now >= day1End && now < day2Start) {
+                newTitle = "菁々祭2日目まで…";
+            } else if (now >= day2Start && now < day2End) {
+                newTitle = "菁々祭2日目開催中！";
+            } else {
+                newTitle = "終了しました。ご来場ありがとうございました。";
+            }
+
+            setTitle(newTitle);
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
+    return <p className="text-center text-lg text-white">{title}</p>;
 }

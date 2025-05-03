@@ -5,7 +5,7 @@ import styles from "./page.module.scss";
 //リンク
 import Link from "next/link";
 //タイマー
-import CountdownTimer from "./CountdownTimer";
+import CountdownTimer, { CountdownTitle } from "./CountdownTimer";
 //イメージ
 import FunbyoLogo from "./images/Funbyo-Logo.svg";
 import TdjLogo from "./images/TDJ-Logo.svg";
@@ -51,10 +51,10 @@ export function Top() {
                         </div>
                     </div>
                     <div className={styles.red_container}>
-                        <p className={styles.countdown_title}>菁々祭まで</p>
-                        <p>
-                            <CountdownTimer />
-                        </p>
+                        <div className={styles.countdown_title}>
+                            <CountdownTitle />
+                        </div>
+                        <CountdownTimer />
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@ export function Top() {
             <div className={styles.news_all_container}>
                 <div className={styles.tytle_container}>
                     <p className={styles.tytle_2}>
-                        <span className="text-red-500">N</span>ews
+                        <span style={{ color: "#de0d22" }}>N</span>ews
                     </p>
                 </div>
                 <div className={styles.news_text_container}>
@@ -100,10 +100,12 @@ export function Top() {
                         <p className={styles.news_tytle}>第61回菁々祭開幕！</p>
                     </div>
                 </div>
-                <div className={styles.moreallow}>
-                    <MoreAllow />
-                    <p className={styles.more}>More</p>
-                </div>
+                <Link href="/news">
+                    <div className={styles.moreallow}>
+                        <MoreAllow />
+                        <p className={styles.more}>More</p>
+                    </div>
+                </Link>
             </div>
             <p className={styles.tytle_3}>Access</p>
             <p className={styles.tytle_3_jn}>アクセス</p>
@@ -114,7 +116,7 @@ export function Top() {
                 <div className={styles.adress}>
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
                     <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
-                    <Link href="https://tdj.ac.jp/" className="w-30 border-b-1">
+                    <Link href="https://tdj.ac.jp/" className="w-30 border-b-1" style={{ color: "#de0d22" }}>
                         https://tdj.ac.jp/
                     </Link>
                 </div>
@@ -122,11 +124,13 @@ export function Top() {
             <p className={styles.tytle_3}>Contact</p>
             <p className={styles.tytle_3_jn}>お問い合わせ</p>
             <p className={styles.main_text}>菁々祭に関するご質問はお問い合わせページからお願いいたします。</p>
-            <div className={styles.question}>
-                <Headphone />
-                <p className={styles.question_text}>お問い合わせ</p>
-                <Logout />
-            </div>
+            <Link href={"/contact"}>
+                <div className={styles.question}>
+                    <Headphone />
+                    <p className={styles.question_text}>お問い合わせ</p>
+                    <Logout />
+                </div>
+            </Link>
         </>
     );
 }
