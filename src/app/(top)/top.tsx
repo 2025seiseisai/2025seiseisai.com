@@ -5,7 +5,7 @@ import styles from "./page.module.scss";
 //リンク
 import Link from "next/link";
 //タイマー
-import CountdownTimer, { CountdownTitle } from "./CountdownTimer";
+import Countdown from "./CountdownTimer";
 //イメージ
 import FunbyoLogo from "./images/Funbyo-Logo.svg";
 import TdjLogo from "./images/TDJ-Logo.svg";
@@ -51,8 +51,7 @@ export function Top() {
                         </div>
                     </div>
                     <div className={styles.red_container}>
-                        <CountdownTitle />
-                        <CountdownTimer />
+                        <Countdown />
                     </div>
                 </div>
             </div>
