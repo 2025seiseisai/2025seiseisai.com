@@ -11,6 +11,9 @@
 }
 
 .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     height: 520px;
     text-align: center;
 }
@@ -19,23 +22,19 @@
     font-size: 128px;
     font-weight: 640;
     height: 151px;
-    position: relative;
-    top: 74px;
     z-index: 2;
+    margin-top: -130px;
 }
 
 .subtitle {
     font-size: 20px;
     font-weight: 640;
-    position: relative;
-    top: 74px;
     z-index: 2;
 }
 
 .text_box {
-    position: relative;
-    top: 119px;
     z-index: 2;
+    margin-top: 42px;
 }
 
 .text {
@@ -45,7 +44,7 @@
 
 .button {
     position: relative;
-    top: 164px;
     z-index: 2;
-    left: calc((100% - 250px) / 2);
+    margin-top: 42px;
+    margin-left: calc((100% - 250px) / 2);
 }
