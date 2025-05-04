@@ -82,7 +82,7 @@ export function Footer() {
                         target="_blank"
                         className="h-[40px] w-[40px] not-md:h-[32px] not-md:w-[32px]"
                     >
-                        <YouTubeIcon className="not-md:transform-[scale(0.8)]" />
+                        <YouTubeIcon className="not-md:h-[32px] not-md:w-[32px]" />
                     </Link>
                     <Link
                         href="https://www.instagram.com/seiseisai_tdj/"
@@ -90,7 +90,7 @@ export function Footer() {
                         target="_blank"
                         className="h-[40px] w-[40px] not-md:h-[32px] not-md:w-[32px]"
                     >
-                        <InstagramIcon className="not-md:transform-[scale(0.8)]" />
+                        <InstagramIcon className="not-md:h-[32px] not-md:w-[32px]" />
                     </Link>
                 </span>
             </div>
