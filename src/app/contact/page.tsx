@@ -52,8 +52,15 @@ export default function Page() {
                         </Link>
                     </div>
                 </div>
-                {/* フォームは灰色四角形で仮置きしています */}
-                <div className={styles.form}></div>
+            </div>
+            <div className={styles.form}>
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScyOVUb2E6NZDz0VpntnAs3ASfm47ztiksuerzL9LhAbVbVjA/viewform?embedded=true"
+                    width="100%"
+                    height="700px"
+                >
+                    読み込んでいます…
+                </iframe>
             </div>
         </>
     );
