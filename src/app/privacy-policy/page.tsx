@@ -12,10 +12,10 @@ export default function Page() {
             <div className={styles.content}>
                 <Back className={styles.back} />
                 <p className={styles.title}>
-                    <span className={styles.red}>P</span>rivacy Poricy
+                    <span className={styles.red}>P</span>rivacy Policy
                 </p>
                 <p className={styles.subtitle}>プライバシーポリシー</p>
-                <div className={styles.text_box}>
+                <div>
                     <p className={styles.text1}>&gt;&gt;&emsp;アクセス解析ツールについて</p>
                     <p className={styles.text2}>
                         当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。このデータは匿名で収集されており、個人を特定するものではありません。
