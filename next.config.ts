@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     turbopack: {
         rules: {
             "*.svg": {
-                loaders: [{ loader: "@svgr/webpack", options: { dimensions: false } }],
+                loaders: ["@svgr/webpack"],
                 as: "*.js",
             },
         },
@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
         // Add rule for SVG files
         config.module.rules.push({
             test: /\.svg$/,
-            use: [{ loader: "@svgr/webpack", options: { dimensions: false } }],
+            use: [{ loader: "@svgr/webpack" }],
         });
         return config;
     },
