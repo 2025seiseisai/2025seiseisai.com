@@ -21,3 +21,8 @@ main {
     color: #fff;
     background-color: #de0d2280;
 }
+
+#holy-progress {
+    position: sticky;
+    z-index: 100000000;
+}
