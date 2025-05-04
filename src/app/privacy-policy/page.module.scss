@@ -3,10 +3,10 @@
 }
 
 .back {
-    max-width: 60%;
+    max-width: 80%;
     position: absolute;
     top: 62px;
-    margin-left: max(calc((100% - 887px) / 2), 20%);
+    left: max(calc((100% - 887px) / 2), 10%);
     z-index: 1;
 }
 
