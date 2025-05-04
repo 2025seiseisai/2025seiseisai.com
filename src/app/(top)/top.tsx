@@ -121,13 +121,11 @@ export function Top() {
             </div>
             <p className={styles.tytle_3}>Contact</p>
             <p className={styles.tytle_3_jn}>お問い合わせ</p>
-            <p className={styles.main_text}>菁々祭に関するご質問はお問い合わせページからお願いいたします。</p>
-            <Link href={"/contact"}>
-                <div className={styles.question}>
-                    <Headphone />
-                    <p className={styles.question_text}>お問い合わせ</p>
-                    <Logout />
-                </div>
+            <p className={styles.contact_text}>菁々祭に関するご質問はお問い合わせページからお願いいたします。</p>
+            <Link href={"/contact"} className={styles.question}>
+                <Headphone />
+                <p className={styles.question_text}>お問い合わせ</p>
+                <Logout />
             </Link>
         </>
     );
