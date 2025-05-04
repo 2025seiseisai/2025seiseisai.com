@@ -3,10 +3,10 @@
 }
 
 .back {
-    max-width: 80%;
+    height: 100%;
+    aspect-ratio: auto;
     position: absolute;
-    top: 62px;
-    left: max(calc((100% - 887px) / 2), 10%);
+    left: calc((100% - 887px) / 2);
     z-index: 1;
 }
 
@@ -16,6 +16,9 @@
     flex-direction: column;
     height: 520px;
     text-align: center;
+
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
 .title {

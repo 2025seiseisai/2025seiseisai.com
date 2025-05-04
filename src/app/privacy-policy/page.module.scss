@@ -4,8 +4,9 @@
 
 .back {
     height: 100%;
+    aspect-ratio: auto;
     position: absolute;
-    left: max(calc((100% - 887px) / 2), 10%);
+    left: calc((100% - 887px) / 2);
     z-index: 1;
 }
 
