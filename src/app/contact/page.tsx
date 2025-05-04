@@ -1,9 +1,15 @@
+import { Nunito_Sans } from "next/font/google";
 import Link from "next/link";
 import Instagram from "./img/instagram.svg";
 import Redirect from "./img/log-out.svg";
 import Hukidashi from "./img/message-circle.svg";
 import Twitter from "./img/twitter_26px.svg";
 import styles from "./page.module.scss";
+
+const nunitoSans = Nunito_Sans({
+    subsets: ["latin"],
+    weight: ["500"],
+});
 
 export const metadata = {
     title: "Contact | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
@@ -28,19 +34,19 @@ export default function Page() {
                         <p className={styles.top_text}>各種SNSでのお問い合わせ</p>
                     </div>
                     <p className={styles.middle_text}>各種SNSでも受け付けております。</p>
-                    <div className={styles.bottom}>
+                    <div className={`${styles.bottom}`}>
                         {" "}
                         <Link href="https://x.com/seiseisai_tdj" rel="noopener noreferrer" target="_blank">
                             <div className={styles.sns_button}>
                                 <Twitter />
-                                <p className={styles.bottom_text}>X</p>
+                                <p className={[styles.bottom_text, nunitoSans.className].join(" ")}>X</p>
                                 <Redirect />
                             </div>{" "}
                         </Link>{" "}
                         <Link href="https://www.instagram.com/seiseisai_tdj/" rel="noopener noreferrer" target="_blank">
                             <div className={styles.sns_button}>
                                 <Instagram />
-                                <p className={styles.bottom_text}>Instagram</p>
+                                <p className={[styles.bottom_text, nunitoSans.className].join(" ")}>Instagram</p>
                                 <Redirect />
                             </div>
                         </Link>
