@@ -12,7 +12,7 @@ export default function Page() {
             <div className={styles.content}>
                 <Back className={styles.back} />
                 <p className={styles.title}>
-                    <span className={styles.red}>P</span>rivacy Poricy
+                    <span className={styles.red}>P</span>rivacy Policy
                 </p>
                 <p className={styles.subtitle}>プライバシーポリシー</p>
                 <div>
