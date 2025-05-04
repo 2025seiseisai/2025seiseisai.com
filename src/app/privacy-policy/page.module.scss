@@ -3,14 +3,16 @@
 }
 
 .back {
-    max-width: 80%;
+    height: 100%;
     position: absolute;
-    top: 62px;
     left: max(calc((100% - 887px) / 2), 10%);
     z-index: 1;
 }
 
 .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     height: 521px;
     text-align: center;
     margin: 0 auto;
@@ -21,18 +23,16 @@
     font-size: 64px;
     font-weight: 700;
     height: 151px;
-    position: relative;
     max-width: 500px;
     margin: 0 auto;
-    top: 43px;
+    margin-top: -120px;
     z-index: 2;
 }
 
 .subtitle {
     font-size: 20px;
     font-weight: 500;
-    position: relative;
-    top: -20px;
+    margin-top: -65px;
     z-index: 2;
 }
 
@@ -41,9 +41,8 @@
     font-size: 20px;
     font-weight: 500;
     text-align: left;
-    position: relative;
     margin-left: max(calc((100% - 800px) / 2), 15%);
-    top: 31px;
+    margin-top: 36px;
     z-index: 2;
 }
 
@@ -53,9 +52,8 @@
     font-size: 16px;
     font-weight: 500;
     text-align: left;
-    position: relative;
     margin-left: max(calc((100% - 800px) / 2), 15%);
-    top: 68px;
+    margin-top: 31px;
     z-index: 2;
 }
 
@@ -65,9 +63,8 @@
     font-size: 16px;
     font-weight: 500;
     text-align: left;
-    position: relative;
-    top: 95px;
     margin-left: max(calc((100% - 800px) / 2), 15%);
+    margin-top: 22px;
     z-index: 2;
 }
 
