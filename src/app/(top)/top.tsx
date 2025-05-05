@@ -7,6 +7,8 @@ import Link from "next/link";
 //タイマー
 import Countdown from "./CountdownTimer";
 //イメージ
+import { eventBus } from "@/impl/eventBus";
+import { useEffect, useRef } from "react";
 import FunbyoLogo from "./images/Funbyo-Logo.svg";
 import TdjLogo from "./images/TDJ-Logo.svg";
 import MoreAllow from "./images/arrow-right-circle.svg";
@@ -16,10 +18,30 @@ import Logout from "./images/log-out.svg";
 const Wave = dynamic(() => import("./wave"), { ssr: false });
 
 export function Top() {
+    const targetRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const target = targetRef.current;
+        if (!target) {
+            eventBus.emit("overlap", false);
+            return;
+        }
+        const observer = new IntersectionObserver(([entry]) => eventBus.emit("overlap", entry.isIntersecting), {
+            root: null,
+            threshold: 0,
+        });
+        eventBus.emit("overlap", false);
+        observer.observe(target);
+        return () => {
+            observer.unobserve(target);
+        };
+    }, []);
     return (
         <>
             <div className="relative z-10000 mt-[-64px] aspect-[1920/1080] max-h-[100svh] w-full overflow-hidden shadow-[0_0_3px_#0b0e0f]">
-                <div className="absolute flex h-full w-full items-center justify-center bg-white">
+                <div
+                    ref={targetRef}
+                    className="top_animation absolute flex h-full w-full items-center justify-center bg-white"
+                >
                     <Wave />
                 </div>
                 <div className="absolute h-full w-full">
@@ -114,7 +136,7 @@ export function Top() {
                 <div className={styles.adress}>
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
                     <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
-                    <Link href="https://tdj.ac.jp/" className="w-30 border-b-1" style={{ color: "#de0d22" }}>
+                    <Link href="https://tdj.ac.jp/" className="w-auto underline" style={{ color: "#de0d22" }}>
                         https://tdj.ac.jp/
                     </Link>
                 </div>

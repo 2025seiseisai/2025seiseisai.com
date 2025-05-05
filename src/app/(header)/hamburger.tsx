@@ -1,16 +1,18 @@
 "use client";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import HamburgerAnimation from "./hamburger.json";
 
 export default function Hamburger({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => void }) {
     const hamburgerRef = useRef<LottieRefCurrentProps | null>(null);
+    useEffect(() => {
+        hamburgerRef.current?.setDirection(open ? 1 : -1);
+        hamburgerRef.current?.play();
+    }, [open]);
     return (
         <button
-            className="mr-[40px] flex aspect-1/1 h-[30px] cursor-pointer items-center justify-center md:h-[40px]"
+            className={`z-100000002 mr-[40px] flex aspect-1/1 h-[30px] cursor-pointer items-center justify-center transition-all duration-600 md:h-[40px] ${open ? "mt-[60px] mr-[60px] ml-[-20px] scale-[150%]" : ""}`}
             onClick={() => {
-                hamburgerRef.current?.setDirection(open ? -1 : 1);
-                hamburgerRef.current?.play();
                 setOpen(!open);
             }}
         >

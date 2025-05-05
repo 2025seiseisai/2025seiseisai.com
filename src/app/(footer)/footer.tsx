@@ -10,7 +10,7 @@ export function Footer() {
     const disabledLink =
         "mt-[7px] inline-block md:mt-[13px] md:mt-[20px] w-full pl-0 md:pl-[23px] text-[13px] md:text-[16px] text-[#b0b0b0]";
     return (
-        <footer className="mt-auto">
+        <footer className="mt-auto bg-white">
             <div className="flex w-full flex-wrap bg-[#f7f7f7] font-light not-md:pb-[12px] md:h-[137px]">
                 <span className="mr-[2px]">
                     <ThemeLogo className="ml-[25px] h-[44px] pt-[13px] md:ml-[calc(19000svw/1440)] md:h-[85px] md:pt-[33px]" />
