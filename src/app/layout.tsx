@@ -1,8 +1,8 @@
+import "@/impl/global.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import HolyLoader from "holy-loader";
 import { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-import "../impl/global.css";
 import { Footer } from "./(footer)/footer";
 import { Header } from "./(header)/header";
 

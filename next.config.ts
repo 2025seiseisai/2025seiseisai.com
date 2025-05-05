@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     /* config options here */
+    sassOptions: {
+        additionalData: `@use "@/impl/_global.scss" as *;`,
+    },
     turbopack: {
         rules: {
             "*.svg": {
