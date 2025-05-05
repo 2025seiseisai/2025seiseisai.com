@@ -41,3 +41,264 @@
         color: #de0d22;
     }
 }
+
+.COUNTDOWN {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*ここからカウントダウン */
+.top_countdown {
+    margin-top: 30px;
+    position: relative;
+}
+.top_countdown_main_container {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 1200px) {
+    .top_countdown_main_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.top_countdown_main {
+    height: 180px;
+    width: 560px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.date_info_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.date_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 128px;
+    letter-spacing: -0.1em;
+}
+.day {
+    font-weight: 700;
+    font-size: 32px;
+    height: 104px;
+    writing-mode: vertical-rl;
+    margin-top: 20px;
+    text-align: left;
+}
+.between_date {
+    font-size: 100px;
+}
+.date_info_sub_container {
+    margin: 0 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date_info_sub {
+    margin-top: -20px;
+    font-size: 28px;
+    font-weight: 500;
+}
+.red_container {
+    background-color: rgba(222, 13, 34, 1);
+    height: 180px;
+    width: 560px;
+}
+
+/* countdownTimer.module.scssに数字のstyle書き込み */
+.tytle_1 {
+    font-weight: 500;
+    font-size: 32px;
+    margin-top: 56px;
+    margin-left: 12.5%;
+}
+.tytle_mark {
+    width: 50px;
+    height: 5px;
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+    transform: rotate(-2deg);
+    background-color: rgba(222, 13, 34, 1);
+    margin-bottom: -5px;
+}
+.logo {
+    margin: 0 auto;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+.main_text {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 20px;
+    margin: 0 12.5%;
+    text-align: center;
+}
+/*news始まり */
+.news_all_container {
+    width: 75%;
+    height: 430px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding-top: 47px;
+    background-color: rgba(11, 14, 15, 0.8);
+    border-radius: 40px;
+}
+.tytle_container {
+    width: 145px;
+    margin-left: 40px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50px;
+}
+.tytle_2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+.news_text_container {
+    width: 80%;
+    margin: 0 auto;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-top: 40px;
+}
+/*↑親要素の外側に線*/
+.news_text_container > * + * {
+    border-top: 1px solid white;
+}
+/*↑子要素の内側に線*/
+.news_text {
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.news_date {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+.news_tytle {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 8%;
+    color: white;
+}
+.more_container {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: fit-content;
+    transition: filter 0.3s ease;
+}
+.more_container:hover {
+    filter: invert(0.2);
+}
+.more_parents {
+    display: flex;
+    align-items: center;
+}
+.more {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 6px;
+    color: white;
+}
+/*access始まり*/
+.tytle_3 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin: 0 auto;
+    margin-top: 36px;
+    color: rgba(222, 13, 34, 1);
+}
+.tytle_3_jn {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+.access_container {
+    margin: 0 auto;
+    margin-top: 14px;
+    width: 75%;
+    display: flex;
+}
+.map {
+    margin-right: 5%;
+    flex-basis: 50%;
+    width: 100%;
+    margin-left: calc(max(0px, 34svw - 500px));
+    max-width: 500px;
+    aspect-ratio: 1200/630;
+}
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+.adress {
+    flex-basis: 50%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.schoolname {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 19px;
+}
+.schooladress {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 19px;
+}
+/*お問い合わせ*/
+.contact_text {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 20px;
+    margin: 0 9%;
+    text-align: center;
+}
+.question {
+    margin: 0 auto;
+    margin-top: 27px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 54px;
+    border: 2px solid #0b0e0f;
+    transition: background-color 0.3s ease;
+}
+.question:hover {
+    background-color: #e2e2e3;
+}
+.question_text {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 20px;
+}
