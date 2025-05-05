@@ -26,12 +26,19 @@ export default function Page() {
                         この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関しての詳細は
                         <Link
                             href="https://marketingplatform.google.com/about/analytics/terms/jp/"
+                            rel="noopener noreferrer"
+                            target="_blank"
                             className={styles.url}
                         >
                             Googleアナリティクスサービス利用規約ページ
                         </Link>
                         や
-                        <Link href="https://policies.google.com/?hl=ja" className={styles.url}>
+                        <Link
+                            href="https://policies.google.com/?hl=ja"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            className={styles.url}
+                        >
                             Googleポリシーと規約ページ
                         </Link>
                         をご覧ください。
