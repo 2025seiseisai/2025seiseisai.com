@@ -11,7 +11,7 @@ export default function Hamburger({ open, setOpen }: { open: boolean; setOpen: (
     }, [open]);
     return (
         <button
-            className={`z-100000002 mr-[40px] flex aspect-1/1 h-[30px] cursor-pointer items-center justify-center transition-all duration-500 md:h-[40px] ${open ? "mt-[60px] mr-[60px] scale-[150%]" : ""}`}
+            className={`z-100000002 mr-[40px] flex aspect-1/1 h-[30px] cursor-pointer items-center justify-center transition-all duration-600 md:h-[40px] ${open ? "mt-[60px] mr-[60px] ml-[-20px] scale-[150%]" : ""}`}
             onClick={() => {
                 setOpen(!open);
             }}
