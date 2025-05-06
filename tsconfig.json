@@ -18,7 +18,14 @@
                 "name": "next"
             },
             {
-                "name": "typescript-plugin-css-modules"
+                "name": "typescript-plugin-css-modules",
+                "options": {
+                    "rendererOptions": {
+                        "sass": {
+                            "includePaths": ["impl/**/*.scss"]
+                        }
+                    }
+                }
             }
         ],
         "paths": {

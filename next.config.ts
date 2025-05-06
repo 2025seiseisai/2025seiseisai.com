@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
     /* config options here */
     sassOptions: {
-        additionalData: `@use "@/impl/_global.scss" as *;`,
+        additionalData: `@use "@/impl/_global" as *;`,
     },
     turbopack: {
         rules: {
