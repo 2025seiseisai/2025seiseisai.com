@@ -14,6 +14,18 @@
     height: 100%;
     aspect-ratio: auto;
     margin-left: calc((100% - 887px) / 2);
+    @include media(sm) {
+        display: none;
+    }
+}
+
+.sp_back_image {
+    height: 100%;
+    aspect-ratio: auto;
+    margin-left: calc((100% - 315px) / 2);
+    @include media(lg) {
+        display: none;
+    }
 }
 
 .content {
