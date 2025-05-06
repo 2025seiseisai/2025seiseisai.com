@@ -7,7 +7,7 @@ import Link from "next/link";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
-import { blogImages } from "./blog-info";
+import { blogImages, blogMetadata, blogPaths } from "./blog-info";
 
 /**
  * @example
@@ -21,45 +21,18 @@ import { blogImages } from "./blog-info";
  *     </div>
  * ))}
  */
-export async function getAllBlogs(): Promise<
-    { round: string; index: string; title: string; date: string; author: string; topic: string }[]
-> {
-    return Promise.all(
-        fs
-            .readdirSync("src/blogs", { withFileTypes: true })
-            .filter((dirent) => dirent.isDirectory())
-            .map((round) =>
-                fs.readdirSync(`src/blogs/${round.name}`).map(async (index) => {
-                    const filePath = `src/blogs/${round.name}/${index}/index.md`;
-                    const md = fs.readFileSync(filePath, "utf-8");
-                    const mdx = await compileMDX<{
-                        title: string;
-                        date: string;
-                        author: string;
-                        topic: string;
-                        link: string;
-                    }>({
-                        source: md,
-                        options: {
-                            parseFrontmatter: true,
-                            mdxOptions: {
-                                remarkPlugins: [remarkGfm],
-                                rehypePlugins: [],
-                            },
-                        },
-                    });
-                    return {
-                        round: round.name,
-                        index: index,
-                        title: mdx.frontmatter.title,
-                        date: mdx.frontmatter.date,
-                        author: mdx.frontmatter.author,
-                        topic: mdx.frontmatter.topic,
-                    };
-                }),
-            )
-            .flat(),
-    );
+export function getAllBlogs(): {
+    round: string;
+    index: string;
+    title: string;
+    date: string;
+    author: string;
+    topic: string;
+}[] {
+    return Object.entries(blogMetadata).map(([key, value]) => {
+        const [round, index] = key.split("/");
+        return { round, index, ...value };
+    });
 }
 
 /**
@@ -67,7 +40,7 @@ export async function getAllBlogs(): Promise<
  * <Image src={getThumbnail("60", "04")} alt="thumbnail" />
  */
 export function getThumbnail(round: string, index: string): StaticImageData {
-    return blogImages[`${round}/${index}/thumbnail.png`];
+    return blogMetadata[`${round}/${index}`].thumbnail;
 }
 
 /**
@@ -77,15 +50,10 @@ export function getThumbnail(round: string, index: string): StaticImageData {
  * }
  */
 export function enumetateParams(): { round: string; index: string }[] {
-    return fs
-        .readdirSync("src/blogs", { withFileTypes: true })
-        .filter((dirent) => dirent.isDirectory())
-        .map((round) => {
-            return fs.readdirSync(`src/blogs/${round.name}`).map((index) => {
-                return { round: round.name, index: index };
-            });
-        })
-        .flat();
+    return blogPaths.map((path) => {
+        const [round, index] = path.split("/");
+        return { round, index };
+    });
 }
 
 /**
