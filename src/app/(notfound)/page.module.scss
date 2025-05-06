@@ -10,21 +10,36 @@
     z-index: 1;
     overflow: hidden;
 }
+@include media(sm) {
+    .back {
+        width: calc(100% + 30px);
+        height: 100%;
+        position: absolute;
+        left: -30px;
+        z-index: 1;
+        overflow: hidden;
+    }
+}
+
 .back_image {
     height: 100%;
     aspect-ratio: auto;
     margin-left: calc((100% - 887px) / 2);
-    @include media(sm) {
+}
+@include media(sm) {
+    .back_image {
         display: none;
     }
 }
 
 .sp_back_image {
-    height: 100%;
-    aspect-ratio: auto;
-    margin-left: calc((100% - 315px) / 2);
-    @include media(lg) {
-        display: none;
+    display: none;
+}
+@include media(sm) {
+    .sp_back_image {
+        height: 100%;
+        aspect-ratio: auto;
+        margin-left: calc((100% - 315px) / 2);
     }
 }
 

@@ -10,7 +10,7 @@ export function NotFound() {
             <div className={styles.content}>
                 <div className={styles.back}>
                     <Back className={styles.back_image} />
-                    <SP_Back className={styles.back_image} />
+                    <SP_Back className={styles.sp_back_image} />
                 </div>
                 <p className={styles.title}>
                     <span className={styles.red}>4</span>04
