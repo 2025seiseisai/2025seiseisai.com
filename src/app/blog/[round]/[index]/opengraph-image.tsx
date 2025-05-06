@@ -17,6 +17,7 @@ export const contentType = "image/png";
 export default async function OpenGraphImage({ params }: { params: Promise<{ round: string; index: string }> }) {
     const { round, index } = await params;
     const data = await readFile(`${process.cwd()}/src/blogs/${round}/${index}/thumbnail.png`);
+    const buf = Uint8Array.from(data).buffer;
     return new ImageResponse(
         (
             <div
@@ -31,8 +32,9 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ rou
                 }}
             >
                 {
+                    // @ts-expect-error This is an expected error..
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={`data:image/png;base64,${data.toString("base64")}`} alt={alt} />
+                    <img src={buf} alt={alt} />
                 }
             </div>
         ),
