@@ -27,17 +27,30 @@ with open("blog-info.ts", "w", encoding="utf-8") as f:
             blogs.append((rd, idx))
             f.write(f'    "{rd}/{idx}",\n')
     f.write("];\n")
-    f.write("export const blogMetadata: {\n    [key: string]: { title: string; date: string; author: string; topic: string; thumbnail: StaticImageData };\n} = {\n")
+    f.write('''export const blogMetadata: {
+    [key: string]: {
+        title: string;
+        date: string;
+        author: string;
+        topic: string;
+        thumbnail: StaticImageData;
+        description: string;
+    };
+} = {
+''')
     for rd, idx in blogs:
         metadata = {}
         with open(f"./{rd}/{idx}/index.md", 'r', encoding='utf-8') as f2:
             metadata = frontmatter.load(f2)
+        content = metadata.content.split("\n\n# 目次\n\n")
         f.write(f'    "{rd}/{idx}":' +  ' {\n')
-        f.write(f'        title: "{metadata["title"]}",\n')
-        f.write(f'        date: "{metadata["date"]}",\n')
-        f.write(f'        author: "{metadata["author"]}",\n')
-        f.write(f'        topic: "{metadata["topic"]}",\n')
+        f.write(f'        title: `{metadata["title"]}`,\n')
+        f.write(f'        date: `{metadata["date"]}`,\n')
+        f.write(f'        author: `{metadata["author"]}`,\n')
+        f.write(f'        topic: `{metadata["topic"]}`,\n')
         f.write(f'        thumbnail: blogImages["{rd}/{idx}/thumbnail.png"],\n')
+        f.write(f'        description: `{content[0].replace('\n', '\\n')}`,\n')
+        # f.write(f'        content: `{content[1].replace('\n', '\\n')}`,\n')
         f.write("    },\n")
     f.write("};\n")
 if os.path.exists("../../public/blog-resources"):
