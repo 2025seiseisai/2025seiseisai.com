@@ -45,18 +45,26 @@
 .COUNTDOWN {
     font-weight: 500;
     font-size: 20px;
-    margin-top: 37px;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include media(sm) {
+        margin-top: 30px;
+    }
+    @include media(lg) {
+        margin-top: 37px;
+    }
 }
 /*ここからカウントダウン */
 .top_countdown {
-    margin-top: 30px;
-    position: relative;
+    @include media(sm) {
+        margin-top: 12px;
+    }
+    @include media(lg) {
+        margin-top: 30px;
+    }
 }
 .top_countdown_main_container {
-    position: relative;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -70,10 +78,16 @@
     }
 }
 .top_countdown_main {
-    height: 180px;
-    width: 560px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.05);
+    @include media(sm) {
+        width: 325px;
+        height: 104px;
+    }
+    @include media(lg) {
+        width: 560px;
+        height: 180px;
+    }
 }
 
 .date_info_container {
@@ -89,96 +103,181 @@
     align-items: center;
 }
 .date {
-    height: 160px;
     display: flex;
     align-items: center;
     font-weight: 500;
-    font-size: 128px;
     letter-spacing: -0.1em;
+    @include media(sm) {
+        height: 92px;
+        font-size: 74px;
+    }
+    @include media(lg) {
+        height: 160px;
+        font-size: 128px;
+    }
 }
 .day {
     font-weight: 700;
-    font-size: 32px;
-    height: 104px;
     writing-mode: vertical-rl;
     margin-top: 20px;
     text-align: left;
+    @include media(sm) {
+        height: 60px;
+        font-size: 18px;
+    }
+    @include media(lg) {
+        height: 104px;
+        font-size: 32px;
+    }
 }
 .between_date {
-    font-size: 100px;
+    @include media(sm) {
+        font-size: 58px;
+    }
+    @include media(lg) {
+        font-size: 100px;
+    }
 }
 .date_info_sub_container {
-    margin: 0 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include media(sm) {
+        margin: 0 40px;
+    }
+    @include media(lg) {
+        margin: 0 70px;
+    }
 }
-
 .date_info_sub {
-    margin-top: -20px;
-    font-size: 28px;
     font-weight: 500;
+    @include media(sm) {
+        font-size: 16px;
+        margin-top: -12px;
+    }
+    @include media(lg) {
+        font-size: 28px;
+        margin-top: -20px;
+    }
 }
 .red_container {
     background-color: rgba(222, 13, 34, 1);
-    height: 180px;
-    width: 560px;
+    @include media(sm) {
+        height: 104px;
+        width: 325px;
+    }
+    @include media(lg) {
+        height: 180px;
+        width: 560px;
+    }
 }
-
 /* countdownTimer.module.scssに数字のstyle書き込み */
 .tytle_1 {
     font-weight: 500;
-    font-size: 32px;
-    margin-top: 56px;
     margin-left: 12.5%;
+    @include media(sm) {
+        font-size: 24px;
+        margin-top: 47px;
+    }
+    @include media(lg) {
+        font-size: 32px;
+        margin-top: 56px;
+    }
 }
 .tytle_mark {
-    width: 50px;
-    height: 5px;
-    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
-    transform: rotate(-2deg);
+    transform: rotate(-3deg);
     background-color: rgba(222, 13, 34, 1);
     margin-bottom: -5px;
+    @include media(sm) {
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        width: 30px;
+        height: 4px;
+        margin-top: 50px;
+    }
+    @include media(lg) {
+        clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+        width: 50px;
+        height: 5px;
+    }
 }
 .logo {
     margin: 0 auto;
-    margin-top: 12px;
-    margin-bottom: 20px;
+
+    @include media(sm) {
+        margin-top: 8px;
+        margin-bottom: -8px;
+        width: 215px;
+    }
+    @include media(lg) {
+        margin-top: 12px;
+        margin-bottom: 20px;
+    }
 }
 .main_text {
     font-weight: 500;
-    font-size: 20px;
     margin-top: 20px;
     margin: 0 12.5%;
     text-align: center;
+    @include media(sm) {
+        font-size: 14px;
+    }
+    @include media(lg) {
+        font-size: 20px;
+    }
 }
 /*news始まり */
 .news_all_container {
     width: 75%;
-    height: 430px;
     margin: 0 auto;
-    margin-top: 80px;
-    padding-top: 47px;
     background-color: rgba(11, 14, 15, 0.8);
-    border-radius: 40px;
+
+    @include media(sm) {
+        padding-top: 25px;
+        margin-top: 45px;
+        height: 315px;
+        border-radius: 20px;
+    }
+    @include media(lg) {
+        padding-top: 47px;
+        margin-top: 80px;
+        height: 430px;
+        border-radius: 40px;
+    }
 }
 .tytle_container {
-    width: 145px;
-    margin-left: 40px;
     text-align: center;
     background-color: white;
-    border-radius: 50px;
+    @include media(sm) {
+        width: 106px;
+        margin-left: 20px;
+        border-radius: 36px;
+    }
+    @include media(lg) {
+        width: 145px;
+        margin-left: 40px;
+        border-radius: 50px;
+    }
 }
 .tytle_2 {
-    font-size: 32px;
     font-weight: 700;
+    @include media(sm) {
+        font-size: 24px;
+    }
+    @include media(lg) {
+        font-size: 32px;
+    }
 }
 .news_text_container {
     width: 80%;
     margin: 0 auto;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    margin-top: 40px;
+    @include media(sm) {
+        margin-top: 25px;
+    }
+    @include media(lg) {
+        margin-top: 40px;
+    }
 }
 /*↑親要素の外側に線*/
 .news_text_container > * + * {
@@ -186,28 +285,47 @@
 }
 /*↑子要素の内側に線*/
 .news_text {
-    height: 60px;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    @include media(sm) {
+        height: 50px;
+    }
+    @include media(lg) {
+        height: 60px;
+    }
 }
 .news_date {
     color: white;
-    font-size: 16px;
     font-weight: 500;
+    @include media(sm) {
+        font-size: 12px;
+    }
+    @include media(lg) {
+        font-size: 16px;
+    }
 }
 .news_tytle {
-    font-size: 16px;
     font-weight: 500;
     margin-left: 8%;
     color: white;
+    @include media(sm) {
+        font-size: 14px;
+    }
+    @include media(lg) {
+        font-size: 16px;
+    }
 }
 .more_container {
     margin: 0 auto;
-    margin-top: 30px;
     width: fit-content;
     transition: filter 0.3s ease;
+    @include media(sm) {
+        margin-top: 25px;
+    }
+    @include media(lg) {
+        margin-top: 30px;
+    }
 }
 .more_container:hover {
     filter: invert(0.2);
@@ -218,84 +336,184 @@
 }
 .more {
     display: inline-block;
-    font-size: 20px;
     font-weight: 500;
-    margin-left: 6px;
     color: white;
+    @include media(sm) {
+        font-size: 12px;
+        margin-left: 12px;
+        width: 22px;
+    }
+    @include media(lg) {
+        font-size: 20px;
+        margin-left: 16px;
+    }
 }
 /*access始まり*/
 .tytle_3 {
     text-align: center;
-    font-size: 40px;
     font-weight: 500;
     margin: 0 auto;
-    margin-top: 36px;
     color: rgba(222, 13, 34, 1);
+    @include media(sm) {
+        font-size: 32px;
+        margin-top: 30px;
+    }
+    @include media(lg) {
+        font-size: 40px;
+        margin-top: 36px;
+    }
 }
 .tytle_3_jn {
     text-align: center;
-    font-size: 20px;
     font-weight: 500;
-    margin-top: -15px;
     margin-bottom: 20px;
+    @include media(sm) {
+        font-size: 14px;
+        margin-top: -10px;
+    }
+    @include media(lg) {
+        font-size: 20px;
+        margin-top: -15px;
+    }
 }
 .access_container {
-    margin: 0 auto;
-    margin-top: 14px;
-    width: 75%;
-    display: flex;
+    @include media(sm) {
+        display: flex;
+        flex-direction: column;
+    }
+    @include media(lg) {
+        margin: 0 auto;
+        margin-top: 14px;
+        width: 75%;
+        display: flex;
+    }
 }
 .map {
-    margin-right: 5%;
-    flex-basis: 50%;
-    width: 100%;
-    margin-left: calc(max(0px, 34svw - 500px));
-    max-width: 500px;
-    aspect-ratio: 1200/630;
+    @include media(sm) {
+        order: 2;
+        margin: 0 auto;
+        margin-top: 20px;
+        aspect-ratio: 1200/630;
+    }
+    @include media(lg) {
+        margin-right: 5%;
+        flex-basis: 50%;
+        width: 100%;
+        margin-left: calc(max(0px, 34svw - 500px));
+        max-width: 500px;
+        aspect-ratio: 1200/630;
+    }
 }
 .map iframe {
     width: 100%;
     height: 100%;
 }
 .adress {
-    flex-basis: 50%;
-    margin-left: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include media(sm) {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    @include media(lg) {
+        flex-basis: 50%;
+        margin-left: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 .schoolname {
-    font-size: 19px;
     font-weight: 500;
-    margin-bottom: 19px;
+    @include media(sm) {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+    @include media(lg) {
+        font-size: 19px;
+        margin-bottom: 19px;
+    }
+}
+@include media(sm) {
+}
+@include media(lg) {
 }
 .schooladress {
-    font-size: 16px;
     font-weight: 500;
-    margin-bottom: 19px;
+    @include media(sm) {
+        font-size: 12px;
+    }
+    @include media(lg) {
+        font-size: 16px;
+        margin-bottom: 19px;
+    }
+}
+.schoollink {
+    color: rgba(222, 13, 34, 1);
+    font-weight: 500;
+    width: auto;
+    text-decoration-line: underline;
+    @include media(sm) {
+        font-size: 12px;
+    }
+    @include media(lg) {
+        font-size: 16px;
+    }
 }
 /*お問い合わせ*/
 .contact_text {
     font-weight: 500;
-    font-size: 20px;
-    margin-top: 20px;
     margin: 0 9%;
     text-align: center;
+    @include media(sm) {
+        margin-top: 12px;
+        font-size: 14px;
+    }
+    @include media(lg) {
+        margin-top: 20px;
+        font-size: 20px;
+    }
 }
 .question {
     margin: 0 auto;
-    margin-top: 27px;
-    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 54px;
-    border: 2px solid #0b0e0f;
     transition: background-color 0.3s ease;
+    @include media(sm) {
+        margin-top: 16px;
+        margin-bottom: 40px;
+        width: 250px;
+        height: 40px;
+        border: 1px solid #0b0e0f;
+    }
+    @include media(lg) {
+        margin-top: 27px;
+        margin-bottom: 50px;
+        width: 400px;
+        height: 54px;
+        border: 2px solid #0b0e0f;
+    }
 }
 .question:hover {
     background-color: #e2e2e3;
+}
+.headphone {
+    @include media(sm) {
+        width: 24px;
+    }
+    @include media(lg) {
+        width: 32px;
+    }
+}
+.logout {
+    @include media(sm) {
+        width: 24px;
+    }
+    @include media(lg) {
+        width: 32px;
+    }
 }
 .question_text {
     font-size: 16px;

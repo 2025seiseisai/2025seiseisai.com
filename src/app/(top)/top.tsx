@@ -136,7 +136,7 @@ export function Top() {
                 <div className={styles.adress}>
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
                     <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
-                    <Link href="https://tdj.ac.jp/" className="w-auto underline" style={{ color: "#de0d22" }}>
+                    <Link href="https://tdj.ac.jp/" className={styles.schoollink}>
                         https://tdj.ac.jp/
                     </Link>
                 </div>
@@ -145,9 +145,9 @@ export function Top() {
             <p className={styles.tytle_3_jn}>お問い合わせ</p>
             <p className={styles.contact_text}>菁々祭に関するご質問はお問い合わせページからお願いいたします。</p>
             <Link href={"/contact"} className={styles.question}>
-                <Headphone />
+                <Headphone className={styles.headphone} />
                 <p className={styles.question_text}>お問い合わせ</p>
-                <Logout />
+                <Logout className={styles.logout} />
             </Link>
         </>
     );

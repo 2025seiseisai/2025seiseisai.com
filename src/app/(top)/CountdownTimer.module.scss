@@ -13,35 +13,64 @@
 }
 
 .number {
-    font-weight: 700;
-    font-size: 48px;
     color: white;
+    @include media(sm) {
+        font-weight: 700;
+        font-size: 28px;
+    }
+    @include media(lg) {
+        font-weight: 700;
+        font-size: 48px;
+    }
 }
 
 .label {
     margin-top: -5px;
-    font-size: 20px;
     font-weight: 500;
     color: white;
+    @include media(sm) {
+        font-size: 11px;
+    }
+    @include media(lg) {
+        font-size: 20px;
+    }
 }
 .title_before {
     text-align: center;
-    margin-top: 30px;
     font-weight: 700;
-    font-size: 20px;
     color: white;
+    @include media(sm) {
+        margin-top: 20px;
+        font-size: 11px;
+    }
+    @include media(lg) {
+        margin-top: 30px;
+        font-size: 20px;
+    }
 }
 .title_active {
     text-align: center;
-    margin-top: 60px;
     font-weight: 700;
-    font-size: 40px;
     color: white;
+    @include media(sm) {
+        margin-top: 40px;
+        font-size: 24px;
+    }
+    @include media(lg) {
+        margin-top: 60px;
+        font-size: 40px;
+    }
 }
 .title_ended {
     text-align: center;
-    margin-top: 45px;
     font-weight: 700;
-    font-size: 30px;
     color: white;
+    @include media(sm) {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    @include media(lg) {
+        margin-top: 45px;
+        font-size: 30px;
+    }
 }
