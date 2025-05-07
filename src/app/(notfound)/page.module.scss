@@ -15,7 +15,7 @@
         width: calc(100% + 30px);
         height: 100%;
         position: absolute;
-        left: -30px;
+        left: -4%;
         z-index: 1;
         overflow: hidden;
     }
@@ -32,9 +32,6 @@
     }
 }
 
-.sp_back_image {
-    display: none;
-}
 @include media(sm) {
     .sp_back_image {
         height: 100%;
@@ -53,6 +50,18 @@
     padding: 0 30px;
     position: relative;
 }
+@include media(sm) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        height: 422px;
+        text-align: center;
+
+        margin: 0 auto;
+        padding: 0 10%;
+        position: relative;
+    }
+}
 
 .title {
     font-size: 128px;
@@ -61,21 +70,51 @@
     z-index: 2;
     margin-top: 55px;
 }
+@include media(sm) {
+    .title {
+        font-size: 96px;
+        font-weight: 640;
+        height: 151px;
+        z-index: 2;
+        margin-top: 30px;
+    }
+}
 
 .subtitle {
     font-size: 20px;
     font-weight: 640;
     z-index: 2;
 }
+@include media(sm) {
+    .subtitle {
+        font-size: 16px;
+        font-weight: 640;
+        z-index: 2;
+        margin-top: -30px;
+    }
+}
 
 .text_box {
     z-index: 2;
     margin-top: 42px;
 }
+@include media(sm) {
+    .text_box {
+        z-index: 2;
+        margin-top: 30px;
+        text-align: left;
+    }
+}
 
 .text {
     font-size: 16px;
     font-weight: 500;
+}
+@include media(sm) {
+    .text {
+        font-size: 14px;
+        font-weight: 500;
+    }
 }
 
 .button {
@@ -83,4 +122,14 @@
     z-index: 2;
     margin-top: 42px;
     margin-left: calc((100% - 250px) / 2);
+}
+@include media(sm) {
+    .button {
+        width: 187.5px;
+        aspect-ratio: auto;
+        position: relative;
+        z-index: 2;
+        margin-top: 39px;
+        margin-left: calc((100% - 187.5px) / 2);
+    }
 }
