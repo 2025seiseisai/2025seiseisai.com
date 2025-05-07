@@ -14,11 +14,25 @@
     font-weight: 700;
     margin-top: 30px;
 }
+@include media(sm) {
+    .title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-top: 30px;
+    }
+}
 
 .text1 {
     font-size: 20px;
     font-weight: 500;
     margin-top: 30px;
+}
+@include media(sm) {
+    .text1 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 25px;
+    }
 }
 
 .text2 {
@@ -26,12 +40,25 @@
     font-weight: 500;
     margin-top: 20px;
 }
+@include media(sm) {
+    .text2 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+}
 
 .square {
     border: 2px solid #de0d22;
     width: 1120px;
     max-width: 100%;
     margin: 50 auto;
+}
+@include media(sm) {
+    .square {
+        border: 1.5px solid #de0d22;
+        margin: 50 auto;
+    }
 }
 
 .top {
@@ -42,17 +69,40 @@
     margin: 0 20px 0 20px;
     border-bottom: 2px solid #de0d22;
 }
+@include media(sm) {
+    .top {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 40px;
+        margin: 0 10px 0 10px;
+        border-bottom: 1.5px solid #de0d22;
+    }
+}
 
 .top_text {
     margin-left: 8px;
     font-weight: 500;
     font-size: 20px;
 }
+@include media(sm) {
+    .top_text {
+        margin-left: 8px;
+        font-weight: 500;
+        font-size: 16px;
+    }
+}
 
 .middle_text {
     font-weight: 500;
     font-size: 16px;
     margin: 4px 0 4px 20px;
+}
+@include media(sm) {
+    .middle_text {
+        font-size: 14px;
+        margin: 4px 0 0 10px;
+    }
 }
 
 .bottom {
@@ -70,6 +120,19 @@
     align-items: center;
     width: 70%;
 }
+@include media(sm) {
+    .sns_button {
+        margin-left: 40px;
+        margin-right: 20px;
+    }
+}
+
+@include media(sm) {
+    .btn_img {
+        width: 18px;
+        height: 18px;
+    }
+}
 
 .bottom_text {
     font-size: 28px;
@@ -77,8 +140,20 @@
     margin-left: 16px;
     margin-right: 9px;
 }
+@include media(sm) {
+    .bottom_text {
+        font-size: 15px;
+        margin-right: 8.15px;
+        margin-left: 8.15px;
+    }
+}
 
 .form {
     margin: 0 auto 50px auto;
     width: 80%;
+}
+@include media(sm) {
+    .form {
+        width: 90%;
+    }
 }
