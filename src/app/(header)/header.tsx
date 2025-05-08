@@ -4,7 +4,31 @@ import { eventBus } from "@/impl/eventBus";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
 const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
+
+function HeaderLink({
+    href,
+    title1,
+    title2,
+    setOpen,
+}: {
+    href: string;
+    title1: string;
+    title2: string;
+    setOpen: (open: boolean) => void;
+}) {
+    return (
+        <Link
+            href={href}
+            className="flex items-center text-[24px] text-[#0b0e0f] transition-all duration-300 hover:text-[#de0d22]"
+            onClick={() => setOpen(false)}
+        >
+            <span className="text-[#de0d22]">{title1}</span>
+            <span className="text-[#0b0e0f]">{title2}</span>
+        </Link>
+    );
+}
 
 export function Header() {
     const [open, setOpen] = useState(false);
@@ -73,11 +97,16 @@ export function Header() {
                 className={`absolute top-0 z-100000001 h-[100svh] w-full overflow-hidden ${open ? "" : "pointer-events-none"}`}
             >
                 <div
-                    className={`absolute h-full w-[300svw] bg-[#0b0e0fa0] [clip-path:polygon(0_0,42%_0,38%_100%,0_100%)] ${!open ? "translate-x-0 opacity-0 ease-in" : "translate-x-[-100svw] ease-out"} transition-[transform opacity] duration-500`}
-                    onClick={() => setOpenImpl(false)}
-                ></div>
+                    className={`absolute h-full w-full bg-[#ffffff90] backdrop-sepia [backdrop-filter:blur(40px)] ${!open ? "ease-in [clip-path:polygon(150%_0,100%_0,100%_100%,150%_100%)]" : "ease-out [clip-path:polygon(25%_0,100%_0,100%_100%,20%_100%)]"} transition-[clip-path] duration-500`}
+                >
+                    <div className="h-full w-full pt-[80px] pl-[35%]">
+                        <HeaderLink href="/" title1="Top" title2="トップページ" setOpen={setOpenImpl} />
+                        <HeaderLink href="/news" title1="News" title2="ニュース" setOpen={setOpenImpl} />
+                    </div>
+                </div>
                 <div
-                    className={`h-full w-[300svw] bg-[#ffffff90] backdrop-sepia [backdrop-filter:blur(40px)] [clip-path:polygon(42%_0,100%_0,100%_100%,38%_100%)] ${!open ? "translate-x-0 ease-in" : "translate-x-[-100svw] ease-out"} transition-transform duration-500`}
+                    className={`absolute h-full w-full bg-[#0b0e0fa0] ${!open ? "opacity-0 ease-in [clip-path:polygon(0_0,150%_0,150%_100%,0_100%)]" : "ease-out [clip-path:polygon(0_0,25%_0,20%_100%,0_100%)]"} transition-[clip-path opacity] duration-500`}
+                    onClick={() => setOpenImpl(false)}
                 ></div>
             </div>
         </header>

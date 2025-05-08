@@ -7,7 +7,7 @@ import Link from "next/link";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
-import { blogImages, blogMetadata, blogPaths } from "./blog-info";
+import { blogData, blogImages, blogPaths } from "./blog-info";
 
 /**
  * @example
@@ -29,7 +29,7 @@ export function getAllBlogs(): {
     author: string;
     topic: string;
 }[] {
-    return Object.entries(blogMetadata).map(([key, value]) => {
+    return Object.entries(blogData).map(([key, value]) => {
         const [round, index] = key.split("/");
         return { round, index, ...value };
     });
@@ -40,7 +40,7 @@ export function getAllBlogs(): {
  * <Image src={getThumbnail("60", "04")} alt="thumbnail" />
  */
 export function getThumbnail(round: string, index: string): StaticImageData {
-    return blogMetadata[`${round}/${index}`].thumbnail;
+    return blogData[`${round}/${index}`].thumbnail;
 }
 
 /**
@@ -142,7 +142,7 @@ export async function getBlog(
                 href.startsWith("https://www.youtube.com/") ||
                 href.startsWith("https://youtu.be/") ? (
                     <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
-                ) : href[0] === "#" || href.includes("/") ? (
+                ) : href[0] === "#" ? (
                     <a
                         href={
                             "#" +
@@ -151,6 +151,8 @@ export async function getBlog(
                     >
                         {children}
                     </a>
+                ) : href.startsWith("https://") || href.startsWith("http://") || href[0] == "/" ? (
+                    <Link href={href}>{children}</Link>
                 ) : (
                     <Link href={`/blog-resources/${round}/${index}/${href}`} download>
                         {children}
