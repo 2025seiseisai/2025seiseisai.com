@@ -39,7 +39,7 @@ export function Top() {
     }, []);
     return (
         <>
-            <div className="relative z-10000 mt-[-64px] aspect-[1920/1080] max-h-[100svh] w-full overflow-hidden shadow-[0_0_3px_#0b0e0f]">
+            <div className="relative z-10000 mt-[-64px] aspect-[1920/1080] max-h-[100svh] w-full overflow-hidden">
                 <div
                     ref={targetRef}
                     className="top_animation absolute flex h-full w-full items-center justify-center bg-white"
@@ -146,7 +146,12 @@ export function Top() {
                 <div className={styles.adress}>
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
                     <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
-                    <Link href="https://tdj.ac.jp/" className={styles.schoollink}>
+                    <Link
+                        href="https://tdj.ac.jp/"
+                        className={styles.schoollink}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                    >
                         https://tdj.ac.jp/
                     </Link>
                 </div>
