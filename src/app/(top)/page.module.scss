@@ -77,6 +77,11 @@
         justify-content: center;
     }
 }
+@media screen and (max-width: 370px) {
+    .top_countdown_main_container {
+        transform: scale(0.9);
+    }
+}
 .top_countdown_main {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.05);
@@ -204,7 +209,6 @@
     margin: 0 auto;
     @include media(sm) {
         margin-top: 8px;
-        margin-bottom: -8px;
         width: 215px;
     }
     @include media(lg) {
@@ -215,24 +219,27 @@
 .main_text {
     font-weight: 500;
     margin-top: 20px;
-    @include media(sm) {
+    text-align: center;
+    @media screen and (max-width: 600px) {
         text-align: left;
+    }
+    @include media(sm) {
         font-size: 14px;
         margin: 0 20px;
     }
     @include media(lg) {
-        text-align: center;
         font-size: 20px;
         margin: 0 12.5%;
     }
 }
 .main_text_pv {
-    text-align: center;
     font-weight: 500;
     @include media(sm) {
+        text-align: center;
         font-size: 14px;
     }
     @include media(lg) {
+        text-align: left;
         font-size: 20px;
         margin-right: 12.5%;
         margin-left: 3%;
@@ -249,13 +256,14 @@
     position: relative; // 両方共通
     iframe {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 100%;
-        height: 100%;
+        aspect-ratio: 1920/1080;
     }
     @include media(sm) {
-        margin: 0 20px;
+        margin: 8px 20px 0 20px;
         padding-top: 56.25%;
     }
     @include media(lg) {
@@ -363,7 +371,8 @@
     width: fit-content;
     transition: filter 0.3s ease;
     @include media(sm) {
-        margin-top: 25px;
+        margin-top: 20px;
+        margin-bottom: 5px;
     }
     @include media(lg) {
         margin-top: 30px;
@@ -378,15 +387,14 @@
 }
 .more_allow {
     @include media(sm) {
-        margin-left: 12px;
-        width: 22px;
+        width: 28px;
     }
 }
 .more {
     font-weight: 500;
     color: white;
     @include media(sm) {
-        font-size: 12px;
+        font-size: 16px;
         margin-left: 12px;
     }
     @include media(lg) {

@@ -107,7 +107,11 @@ export function Top() {
                 <div className={styles.youtube_link}>
                     <iframe src="https://www.youtube.com/embed/4h_s7_eRCo0"></iframe>
                 </div>
-                <p className={styles.main_text_pv}>LogoPVが公開されています!</p>
+                <p className={styles.main_text_pv}>
+                    ロゴ発表PVを公開中です！
+                    <br />
+                    ぜひご覧ください！
+                </p>
             </div>
             <div className={styles.news_all_container}>
                 <div className={styles.tytle_container}>
