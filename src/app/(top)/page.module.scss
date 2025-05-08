@@ -174,14 +174,16 @@
 /* countdownTimer.module.scssに数字のstyle書き込み */
 .tytle_1 {
     font-weight: 500;
-    margin-left: 12.5%;
+
     @include media(sm) {
         font-size: 24px;
         margin-top: 47px;
+        margin-left: 20px;
     }
     @include media(lg) {
         font-size: 32px;
         margin-top: 56px;
+        margin-left: 12.5%;
     }
 }
 .mark_lg {
@@ -200,7 +202,6 @@
 }
 .logo {
     margin: 0 auto;
-
     @include media(sm) {
         margin-top: 8px;
         margin-bottom: -8px;
@@ -214,15 +215,15 @@
 .main_text {
     font-weight: 500;
     margin-top: 20px;
-    margin: 0 12.5%;
-
     @include media(sm) {
         text-align: left;
         font-size: 14px;
+        margin: 0 20px;
     }
     @include media(lg) {
         text-align: center;
         font-size: 20px;
+        margin: 0 12.5%;
     }
 }
 .main_text_pv {
@@ -254,8 +255,7 @@
         height: 100%;
     }
     @include media(sm) {
-        width: 75%;
-        margin: 0 auto;
+        margin: 0 20px;
         padding-top: 56.25%;
     }
     @include media(lg) {
@@ -267,17 +267,19 @@
 
 /*news始まり */
 .news_all_container {
-    width: 75%;
     margin: 0 auto;
     background-color: rgba(11, 14, 15, 0.8);
 
     @include media(sm) {
         padding-top: 25px;
         margin-top: 45px;
+        margin-left: 20px;
+        margin-right: 20px;
         height: 315px;
         border-radius: 20px;
     }
     @include media(lg) {
+        width: 75%;
         padding-top: 47px;
         margin-top: 80px;
         height: 430px;
@@ -500,15 +502,17 @@
 /*お問い合わせ*/
 .contact_text {
     font-weight: 500;
-    margin: 0 9%;
+
     text-align: center;
     @include media(sm) {
         margin-top: 12px;
         font-size: 14px;
+        margin: 0 20px;
     }
     @include media(lg) {
         margin-top: 20px;
         font-size: 20px;
+        margin: 0 12.5%;
     }
 }
 .question {
