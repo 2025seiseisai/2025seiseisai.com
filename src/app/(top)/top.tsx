@@ -11,6 +11,8 @@ import { eventBus } from "@/impl/eventBus";
 import { useEffect, useRef } from "react";
 import FunbyoLogo from "./images/Funbyo-Logo.svg";
 import TdjLogo from "./images/TDJ-Logo.svg";
+import Vector_lg from "./images/Vector (1).svg";
+import Vector_sm from "./images/Vector.svg";
 import MoreAllow from "./images/arrow-right-circle.svg";
 import Headphone from "./images/headphones.svg";
 import Logout from "./images/log-out.svg";
@@ -37,7 +39,7 @@ export function Top() {
     }, []);
     return (
         <>
-            <div className="relative z-10000 mt-[-64px] aspect-[1920/1080] max-h-[100svh] w-full overflow-hidden shadow-[0_0_3px_#0b0e0f]">
+            <div className="relative z-10000 mt-[-64px] aspect-[1920/1080] max-h-[100svh] w-full overflow-hidden">
                 <div
                     ref={targetRef}
                     className="top_animation absolute flex h-full w-full items-center justify-center bg-white"
@@ -78,7 +80,8 @@ export function Top() {
                 </div>
             </div>
             <div className={styles.tytle_1}>
-                <div className={styles.tytle_mark}></div>
+                <Vector_lg className={styles.mark_lg} />
+                <Vector_sm className={styles.mark_sm} />
                 <p>SEISEISAI</p>
             </div>
             <TdjLogo className={styles.logo} />
@@ -86,7 +89,8 @@ export function Top() {
             <p className={styles.main_text}>第61回菁々祭 「分秒」 は2025年9月に開催予定。</p>
             <p className={styles.main_text}>過去60年の伝統と令和の新しい風が鳴り響く菁々祭、ぜひご覧あれ!</p>
             <div className={styles.tytle_1}>
-                <div className={styles.tytle_mark}></div>
+                <Vector_lg className={styles.mark_lg} />
+                <Vector_sm className={styles.mark_sm} />
                 <p>分秒</p>
             </div>
             <FunbyoLogo className={styles.logo} />
@@ -95,10 +99,20 @@ export function Top() {
                 また、一分一秒が61秒であると言う意味から第61回にふさわしいテーマとなっています。
             </p>
             <div className={styles.tytle_1}>
-                <div className={styles.tytle_mark}></div>
+                <Vector_lg className={styles.mark_lg} />
+                <Vector_sm className={styles.mark_sm} />
                 <p>LOGO-PV</p>
             </div>
-            <p className={styles.main_text}>LogoPVが公開されています!(まだです)</p>
+            <div className={styles.pv_container}>
+                <div className={styles.youtube_link}>
+                    <iframe src="https://www.youtube.com/embed/4h_s7_eRCo0"></iframe>
+                </div>
+                <p className={styles.main_text_pv}>
+                    ロゴ発表PVを公開中です！
+                    <br />
+                    ぜひご覧ください！
+                </p>
+            </div>
             <div className={styles.news_all_container}>
                 <div className={styles.tytle_container}>
                     <p className={styles.tytle_2}>
@@ -122,8 +136,10 @@ export function Top() {
 
                 <div className={styles.more_container}>
                     <Link href="/news" className={styles.more_parents}>
-                        <MoreAllow className={styles.more} />
-                        <p className={styles.more}>More</p>
+                        <MoreAllow className={styles.more_allow} />
+                        <div className={styles.more}>
+                            <p>More</p>
+                        </div>
                     </Link>
                 </div>
             </div>
@@ -136,7 +152,12 @@ export function Top() {
                 <div className={styles.adress}>
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
                     <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
-                    <Link href="https://tdj.ac.jp/" className="w-auto underline" style={{ color: "#de0d22" }}>
+                    <Link
+                        href="https://tdj.ac.jp/"
+                        className={styles.schoollink}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                    >
                         https://tdj.ac.jp/
                     </Link>
                 </div>
@@ -145,9 +166,9 @@ export function Top() {
             <p className={styles.tytle_3_jn}>お問い合わせ</p>
             <p className={styles.contact_text}>菁々祭に関するご質問はお問い合わせページからお願いいたします。</p>
             <Link href={"/contact"} className={styles.question}>
-                <Headphone />
+                <Headphone className={styles.headphone} />
                 <p className={styles.question_text}>お問い合わせ</p>
-                <Logout />
+                <Logout className={styles.logout} />
             </Link>
         </>
     );
