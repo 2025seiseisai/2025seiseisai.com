@@ -11,6 +11,8 @@ import { eventBus } from "@/impl/eventBus";
 import { useEffect, useRef } from "react";
 import FunbyoLogo from "./images/Funbyo-Logo.svg";
 import TdjLogo from "./images/TDJ-Logo.svg";
+import Vector_lg from "./images/Vector (1).svg";
+import Vector_sm from "./images/Vector.svg";
 import MoreAllow from "./images/arrow-right-circle.svg";
 import Headphone from "./images/headphones.svg";
 import Logout from "./images/log-out.svg";
@@ -78,7 +80,8 @@ export function Top() {
                 </div>
             </div>
             <div className={styles.tytle_1}>
-                <div className={styles.tytle_mark}></div>
+                <Vector_lg className={styles.mark_lg} />
+                <Vector_sm className={styles.mark_sm} />
                 <p>SEISEISAI</p>
             </div>
             <TdjLogo className={styles.logo} />
@@ -86,7 +89,8 @@ export function Top() {
             <p className={styles.main_text}>第61回菁々祭 「分秒」 は2025年9月に開催予定。</p>
             <p className={styles.main_text}>過去60年の伝統と令和の新しい風が鳴り響く菁々祭、ぜひご覧あれ!</p>
             <div className={styles.tytle_1}>
-                <div className={styles.tytle_mark}></div>
+                <Vector_lg className={styles.mark_lg} />
+                <Vector_sm className={styles.mark_sm} />
                 <p>分秒</p>
             </div>
             <FunbyoLogo className={styles.logo} />
@@ -95,10 +99,16 @@ export function Top() {
                 また、一分一秒が61秒であると言う意味から第61回にふさわしいテーマとなっています。
             </p>
             <div className={styles.tytle_1}>
-                <div className={styles.tytle_mark}></div>
+                <Vector_lg className={styles.mark_lg} />
+                <Vector_sm className={styles.mark_sm} />
                 <p>LOGO-PV</p>
             </div>
-            <p className={styles.main_text}>LogoPVが公開されています!(まだです)</p>
+            <div className={styles.pv_container}>
+                <div className={styles.youtube_link}>
+                    <iframe src="https://www.youtube.com/embed/4h_s7_eRCo0"></iframe>
+                </div>
+                <p className={styles.main_text_pv}>LogoPVが公開されています!</p>
+            </div>
             <div className={styles.news_all_container}>
                 <div className={styles.tytle_container}>
                     <p className={styles.tytle_2}>
