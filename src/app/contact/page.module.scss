@@ -7,6 +7,9 @@
     margin: 0 auto 50px auto;
     width: 1120px;
     max-width: 80%;
+    @include media(sm) {
+        max-width: calc(100% - 40px);
+    }
 }
 
 .title {
@@ -106,24 +109,22 @@
 }
 
 .bottom {
-    width: calc(100% - 40px);
+    width: 100%;
     display: flex;
     justify-content: center;
+    gap: 10px;
     margin-bottom: 5px;
 }
 
 .sns_button {
-    margin-right: 60px;
-    margin-left: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 30svw;
 }
 @include media(sm) {
     .sns_button {
-        margin-left: 40px;
-        margin-right: 20px;
+        width: max(120px, 25svw);
     }
 }
 
@@ -154,6 +155,6 @@
 }
 @include media(sm) {
     .form {
-        width: 90%;
+        width: 100%;
     }
 }
