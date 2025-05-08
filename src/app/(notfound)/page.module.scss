@@ -4,27 +4,66 @@
 
 .back {
     width: calc(100% + 30px);
+    display: flex;
+    justify-content: center;
     height: 100%;
     position: absolute;
     left: -30px;
-    z-index: 1;
     overflow: hidden;
 }
+@include media(sm) {
+    .back {
+        width: 100%;
+        left: 0%;
+    }
+}
+
 .back_image {
+    position: absolute;
+    width: 10000%;
     height: 100%;
-    aspect-ratio: auto;
-    margin-left: calc((100% - 887px) / 2);
+}
+@include media(sm) {
+    .back_image {
+        display: none;
+    }
+}
+
+.sp_back_image {
+    display: none;
+}
+@include media(sm) {
+    .sp_back_image {
+        position: absolute;
+        width: 10000%;
+        height: 100%;
+        display: inline-block;
+    }
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    height: 520px;
+    min-height: 520px;
     text-align: center;
-
+    justify-content: center;
     margin: 0 auto;
     padding: 0 30px;
     position: relative;
+    width: 100%;
+    flex: 1;
+}
+@include media(sm) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        height: 422px;
+        text-align: center;
+
+        margin: 0 auto;
+        padding: 0 10%;
+        position: relative;
+    }
 }
 
 .title {
@@ -32,28 +71,91 @@
     font-weight: 640;
     height: 151px;
     z-index: 2;
-    margin-top: 55px;
+    margin-top: 52px;
+}
+@include media(sm) {
+    .title {
+        font-size: 96px;
+        font-weight: 640;
+        height: 151px;
+        z-index: 2;
+        margin-top: 10px;
+    }
 }
 
 .subtitle {
     font-size: 20px;
     font-weight: 640;
     z-index: 2;
+    margin-top: 3px;
+}
+@include media(sm) {
+    .subtitle {
+        font-size: 16px;
+        font-weight: 640;
+        z-index: 2;
+        margin-top: -35px;
+    }
 }
 
 .text_box {
     z-index: 2;
     margin-top: 42px;
 }
+@include media(sm) {
+    .text_box {
+        z-index: 2;
+        margin-top: 30px;
+        text-align: left;
+    }
+}
 
 .text {
     font-size: 16px;
     font-weight: 500;
 }
+@include media(sm) {
+    .text {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
 
+.button_box {
+    display: flex;
+    justify-content: center;
+    margin: 42px auto 0 auto;
+    display: inline-block;
+}
+@include media(sm) {
+    .button_box {
+        margin-top: 39px;
+    }
+}
 .button {
-    position: relative;
     z-index: 2;
-    margin-top: 42px;
-    margin-left: calc((100% - 250px) / 2);
+    transition: opacity 0.2s ease-in-out;
+}
+@include media(sm) {
+    .button {
+        width: 187.5px;
+    }
+}
+.button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    z-index: 1;
+}
+@include media(lg) {
+    .container {
+        height: 520px;
+    }
+}
+
+@include media(sm) {
+    .break {
+        display: none;
+    }
 }
