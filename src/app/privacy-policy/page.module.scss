@@ -14,12 +14,8 @@
 }
 @include media(sm) {
     .back {
-        width: calc(100% + 30px);
-        height: 100%;
-        position: absolute;
-        left: -12%;
-        z-index: 1;
-        overflow: hidden;
+        width: 100%;
+        left: 0%;
     }
 }
 
@@ -39,10 +35,10 @@
 }
 @include media(sm) {
     .sp_back_image {
-        display: inline;
+        position: absolute;
+        display: inline-block;
+        width: 10000%;
         height: 100%;
-        aspect-ratio: auto;
-        margin-left: calc((100% - 315px) / 2);
     }
 }
 
@@ -53,6 +49,8 @@
     margin: 0 auto;
     padding: 0 30px;
     position: relative;
+    width: 100%;
+    flex: 1;
 }
 @include media(sm) {
     .content {

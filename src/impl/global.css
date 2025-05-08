@@ -17,6 +17,8 @@ body {
 main {
     flex: 1;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 *::selection {
     color: #fff;
