@@ -132,8 +132,10 @@ export function Top() {
 
                 <div className={styles.more_container}>
                     <Link href="/news" className={styles.more_parents}>
-                        <MoreAllow className={styles.more} />
-                        <p className={styles.more}>More</p>
+                        <MoreAllow className={styles.more_allow} />
+                        <div className={styles.more}>
+                            <p>More</p>
+                        </div>
                     </Link>
                 </div>
             </div>

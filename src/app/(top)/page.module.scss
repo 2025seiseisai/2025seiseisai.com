@@ -376,14 +376,18 @@
     display: flex;
     align-items: center;
 }
+.more_allow {
+    @include media(sm) {
+        margin-left: 12px;
+        width: 22px;
+    }
+}
 .more {
-    display: inline-block;
     font-weight: 500;
     color: white;
     @include media(sm) {
         font-size: 12px;
         margin-left: 12px;
-        width: 22px;
     }
     @include media(lg) {
         font-size: 20px;
