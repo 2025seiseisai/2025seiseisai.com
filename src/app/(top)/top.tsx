@@ -1,4 +1,6 @@
+import Logo from "@/assets/logo.svg";
 import ThemeLogo from "@/assets/theme-logo.svg";
+import LoadingWrapper from "./loading-wrapper";
 import styles from "./page.module.scss";
 import WaveWrapper from "./wave-wrapper";
 //リンク
@@ -17,6 +19,15 @@ import Logout from "./images/log-out.svg";
 export function Top() {
     return (
         <>
+            <div className="top_loading fixed z-20000 mt-[-45px] flex h-full w-full items-center justify-center overflow-hidden bg-[#de0d22] transition-[opacity] duration-500 md:mt-[-64px]">
+                <LoadingWrapper />
+                <div
+                    className="absolute h-[41.28%] w-full
+                brightness-0 filter"
+                >
+                    <Logo className="transform-[scale(0.4)_translateX(10%)_translateY(-10%)]" />
+                </div>
+            </div>
             <div className="relative z-10000 mt-[-64px] aspect-[1920/1080] max-h-[100svh] w-full overflow-hidden">
                 <WaveWrapper />
                 <div className="absolute h-full w-full">
