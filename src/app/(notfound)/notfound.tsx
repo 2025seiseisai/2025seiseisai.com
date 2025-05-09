@@ -29,7 +29,7 @@ export function NotFound() {
                             または上部のメニューよりおさがしいただきますようお願いいたします。
                         </p>
                     </div>
-                    <Link href="/" className={styles.button_box}>
+                    <Link href="/2025" className={styles.button_box}>
                         <ReturnTop className={styles.button} />
                     </Link>
                 </div>

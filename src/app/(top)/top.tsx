@@ -1,14 +1,11 @@
-"use client";
 import ThemeLogo from "@/assets/theme-logo.svg";
-import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
+import WaveWrapper from "./wave-wrapper";
 //リンク
 import Link from "next/link";
 //タイマー
 import Countdown from "./CountdownTimer";
 //イメージ
-import { eventBus } from "@/impl/eventBus";
-import { useEffect, useRef } from "react";
 import FunbyoLogo from "./images/Funbyo-Logo.svg";
 import TdjLogo from "./images/TDJ-Logo.svg";
 import Vector_lg from "./images/Vector (1).svg";
@@ -17,35 +14,11 @@ import MoreAllow from "./images/arrow-right-circle.svg";
 import Headphone from "./images/headphones.svg";
 import Logout from "./images/log-out.svg";
 
-const Wave = dynamic(() => import("./wave"), { ssr: false });
-
 export function Top() {
-    const targetRef = useRef<HTMLDivElement>(null);
-    useEffect(() => {
-        const target = targetRef.current;
-        if (!target) {
-            eventBus.emit("overlap", false);
-            return;
-        }
-        const observer = new IntersectionObserver(([entry]) => eventBus.emit("overlap", entry.isIntersecting), {
-            root: null,
-            threshold: 0,
-        });
-        eventBus.emit("overlap", false);
-        observer.observe(target);
-        return () => {
-            observer.unobserve(target);
-        };
-    }, []);
     return (
         <>
             <div className="relative z-10000 mt-[-64px] aspect-[1920/1080] max-h-[100svh] w-full overflow-hidden">
-                <div
-                    ref={targetRef}
-                    className="top_animation absolute flex h-full w-full items-center justify-center bg-white"
-                >
-                    <Wave />
-                </div>
+                <WaveWrapper />
                 <div className="absolute h-full w-full">
                     <div className={styles.animation_float_x}>
                         <div className={styles.animation_float_y}>
@@ -135,7 +108,7 @@ export function Top() {
                 </div>
 
                 <div className={styles.more_container}>
-                    <Link href="/news" className={styles.more_parents}>
+                    <Link href="/2025/news" className={styles.more_parents}>
                         <MoreAllow className={styles.more_allow} />
                         <div className={styles.more}>
                             <p>More</p>
@@ -165,7 +138,7 @@ export function Top() {
             <p className={styles.tytle_3}>Contact</p>
             <p className={styles.tytle_3_jn}>お問い合わせ</p>
             <p className={styles.contact_text}>菁々祭に関するご質問はお問い合わせページからお願いいたします。</p>
-            <Link href={"/contact"} className={styles.question}>
+            <Link href={"/2025/contact"} className={styles.question}>
                 <Headphone className={styles.headphone} />
                 <p className={styles.question_text}>お問い合わせ</p>
                 <Logout className={styles.logout} />
