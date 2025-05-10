@@ -1,3 +1,22 @@
+.wave_container {
+    height: 100%;
+    @media (aspect-ratio < 2/3) {
+        height: 50%;
+    }
+}
+.wave_container_padding {
+    height: calc(100svh - 40px);
+    @media (aspect-ratio < 2/3) {
+        height: calc(50svh - 20px);
+    }
+    @include media(lg) {
+        height: calc(100svh - 64px);
+        @media (aspect-ratio < 2/3) {
+            height: calc(50svh - 64px);
+        }
+    }
+}
+
 .animation_float_x {
     width: 100%;
     height: 100%;
@@ -25,20 +44,6 @@
     }
     100% {
         transform: translateY(0.5svw);
-    }
-}
-
-.example {
-    /* スマホ用のCSS */
-    font-size: 10svw;
-    color: #0b0e0f;
-}
-
-@media screen and (min-width: 768px) {
-    .example {
-        /* PC用のCSS */
-        font-size: 76.8px;
-        color: #de0d22;
     }
 }
 

@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 import { overlapEvent } from "../(header)/overlap-event";
+import "./wave.css";
 const Wave = dynamic(() => import("./wave"), { ssr: false });
 
 export default function WaveWrapper() {
@@ -14,7 +15,7 @@ export default function WaveWrapper() {
         }
         const observer = new IntersectionObserver(([entry]) => overlapEvent.emit(entry.isIntersecting), {
             root: null,
-            threshold: 0,
+            threshold: 0.05,
         });
         overlapEvent.emit(false);
         observer.observe(target);
@@ -23,7 +24,10 @@ export default function WaveWrapper() {
         };
     }, []);
     return (
-        <div ref={targetRef} className="top_animation absolute flex h-full w-full items-center justify-center bg-white">
+        <div
+            ref={targetRef}
+            className="top_animation absolute flex aspect-1920/1080 min-h-full min-w-full items-center justify-center bg-white"
+        >
             <Wave />
         </div>
     );

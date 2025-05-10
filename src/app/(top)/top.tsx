@@ -40,7 +40,10 @@ export function Top() {
                     />
                 </div>
             </div>
-            <div className="relative z-10000 mt-[-64px] aspect-[1920/1080] max-h-[100svh] w-full overflow-hidden">
+            <div className={styles.wave_container_padding}></div>
+            <div
+                className={`${styles.wave_container} absolute z-10000 mt-[-40px] flex h-[50svh] w-full items-center justify-center overflow-hidden md:mt-[-64px] md:h-[100svh]`}
+            >
                 <WaveWrapper />
                 <div className="absolute h-full w-full">
                     <div className={styles.animation_float_x}>
