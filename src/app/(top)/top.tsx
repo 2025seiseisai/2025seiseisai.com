@@ -16,16 +16,28 @@ import MoreAllow from "./images/arrow-right-circle.svg";
 import Headphone from "./images/headphones.svg";
 import Logout from "./images/log-out.svg";
 
+export const revalidate = 60;
+
 export function Top() {
     return (
         <>
-            <div className="top_loading fixed z-20000 mt-[-45px] flex h-full w-full items-center justify-center overflow-hidden bg-[#de0d22] transition-[opacity] duration-500 md:mt-[-64px]">
+            <div
+                className="top_loading z-20000 flex items-center justify-center overflow-hidden bg-[#de0d22] transition-[clip-path] duration-300 ease-linear"
+                style={{
+                    clipPath: "polygon(-100svh 100svh, 100svw 100svh, 100svw -100svw)",
+                    position: "fixed",
+                    inset: 0,
+                }}
+            >
                 <LoadingWrapper />
                 <div
-                    className="absolute h-[41.28%] w-full
-                brightness-0 filter"
+                    className="absolute flex h-[33%]
+                w-full items-center justify-center brightness-0 filter"
                 >
-                    <Logo className="transform-[scale(0.4)_translateX(10%)_translateY(-10%)]" />
+                    <Logo
+                        className="top_loading_logo max-h-full max-w-full transform-[scale(0.42)_translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
+                        style={{ opacity: 0 }}
+                    />
                 </div>
             </div>
             <div className="relative z-10000 mt-[-64px] aspect-[1920/1080] max-h-[100svh] w-full overflow-hidden">

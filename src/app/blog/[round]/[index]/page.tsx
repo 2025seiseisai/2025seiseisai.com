@@ -3,6 +3,8 @@ import { blogData } from "@/blogs/blog-info";
 import Image from "next/image";
 import styles from "./page.module.scss";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
     return enumetateParams();
 }
