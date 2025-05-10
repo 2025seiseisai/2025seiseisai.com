@@ -26,7 +26,7 @@ export default function WaveWrapper() {
     return (
         <div
             ref={targetRef}
-            className="top_animation absolute flex aspect-1920/1080 min-h-full min-w-full items-center justify-center bg-white"
+            className="top_animation absolute flex aspect-1920/1080 min-h-full min-w-full items-center justify-center"
         >
             <Wave />
         </div>

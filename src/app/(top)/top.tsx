@@ -1,5 +1,7 @@
 import Logo from "@/assets/logo.svg";
 import ThemeLogo from "@/assets/theme-logo.svg";
+import Theme from "@/assets/theme.svg";
+import { IBM_Plex_Sans_JP } from "next/font/google";
 import LoadingWrapper from "./loading-wrapper";
 import styles from "./page.module.scss";
 import WaveWrapper from "./wave-wrapper";
@@ -15,6 +17,11 @@ import Vector_sm from "./images/Vector.svg";
 import MoreAllow from "./images/arrow-right-circle.svg";
 import Headphone from "./images/headphones.svg";
 import Logout from "./images/log-out.svg";
+
+const ibmPlexSansJP = IBM_Plex_Sans_JP({
+    subsets: ["latin"],
+    weight: "600",
+});
 
 export const revalidate = 60;
 
@@ -44,12 +51,24 @@ export function Top() {
             <div
                 className={`${styles.wave_container} absolute z-10000 mt-[-40px] flex h-[50svh] w-full items-center justify-center overflow-hidden md:mt-[-64px] md:h-[100svh]`}
             >
+                <div className="absolute h-full w-full">
+                    <Logo className={styles.animation_logo2} />
+                </div>
                 <WaveWrapper />
                 <div className="absolute h-full w-full">
                     <div className={styles.animation_float_x}>
                         <div className={styles.animation_float_y}>
-                            <ThemeLogo className="h-[18%] w-[50%]" />
+                            <ThemeLogo className={styles.animation_logo1} />
+                            <Theme className={styles.animation_logo3} />
                         </div>
+                    </div>
+                </div>
+                <div className={`${ibmPlexSansJP.className} absolute h-full w-full`}>
+                    <div className="absolute h-full w-full pt-[50px] pl-[60px] text-[min(4svw,6svh)]">
+                        <h1>第61回</h1>
+                        <h1>東大寺学園</h1>
+                        <h1>｢菁々祭｣</h1>
+                        <h1 className="mr-auto text-[min(5svw,7svh)]">{`"分秒"`}</h1>
                     </div>
                 </div>
             </div>
