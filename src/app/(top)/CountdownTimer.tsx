@@ -1,4 +1,5 @@
 // タイマー用tsx
+"use client";
 import { useEffect, useState } from "react";
 import styles from "./CountdownTimer.module.scss";
 
