@@ -1,9 +1,10 @@
 "use client";
 import Theme from "@/assets/theme.svg";
-import { eventBus } from "@/impl/eventBus";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { overlapEvent } from "./overlap-event";
 
 const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
 
@@ -58,10 +59,12 @@ export function Header() {
         }
     };
 
+    const pathname = usePathname();
+
     useEffect(() => {
         setIsOverlapping(false);
-        eventBus.on("overlap", (flag: boolean) => setIsOverlapping(flag));
-    }, []);
+        overlapEvent.setFunc(setIsOverlapping);
+    }, [pathname]);
 
     return (
         <header className="sticky top-0 z-12000 h-[45px] w-full md:h-[64px]">

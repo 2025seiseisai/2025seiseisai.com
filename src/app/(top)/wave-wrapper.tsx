@@ -1,7 +1,7 @@
 "use client";
-import { eventBus } from "@/impl/eventBus";
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
+import { overlapEvent } from "../(header)/overlap-event";
 const Wave = dynamic(() => import("./wave"), { ssr: false });
 
 export default function WaveWrapper() {
@@ -9,14 +9,14 @@ export default function WaveWrapper() {
     useEffect(() => {
         const target = targetRef.current;
         if (!target) {
-            eventBus.emit("overlap", false);
+            overlapEvent.emit(false);
             return;
         }
-        const observer = new IntersectionObserver(([entry]) => eventBus.emit("overlap", entry.isIntersecting), {
+        const observer = new IntersectionObserver(([entry]) => overlapEvent.emit(entry.isIntersecting), {
             root: null,
             threshold: 0,
         });
-        eventBus.emit("overlap", false);
+        overlapEvent.emit(false);
         observer.observe(target);
         return () => {
             observer.unobserve(target);
