@@ -1,5 +1,6 @@
 import Logo from "@/assets/logo.svg";
 import ThemeLogo from "@/assets/theme-logo.svg";
+import NewsManager from "@/impl/news";
 import { IBM_Plex_Sans_JP } from "next/font/google";
 import LoadingWrapper from "./loading-wrapper";
 import styles from "./page.module.scss";
@@ -22,9 +23,10 @@ const ibmPlexSansJP = IBM_Plex_Sans_JP({
     weight: "600",
 });
 
-export const revalidate = 60;
+export const revalidate = 60 * 3;
 
-export function Top() {
+export async function Top() {
+    const news = await NewsManager.getNewsSortedByDate(3);
     return (
         <>
             <div
@@ -105,7 +107,7 @@ export function Top() {
                     </div>
                 </div>
             </div>
-            <div className={styles.tytle_1}>
+            <div className={styles.title_1}>
                 <Vector_lg className={styles.mark_lg} />
                 <Vector_sm className={styles.mark_sm} />
                 <p>SEISEISAI</p>
@@ -114,7 +116,7 @@ export function Top() {
             <p className={styles.main_text}>菁々祭とは東大寺学園で行われる文化祭のこと。</p>
             <p className={styles.main_text}>第61回菁々祭 「分秒」 は2025年9月に開催予定。</p>
             <p className={styles.main_text}>過去60年の伝統と令和の新しい風が鳴り響く菁々祭、ぜひご覧あれ!</p>
-            <div className={styles.tytle_1}>
+            <div className={styles.title_1}>
                 <Vector_lg className={styles.mark_lg} />
                 <Vector_sm className={styles.mark_sm} />
                 <p>分秒</p>
@@ -124,7 +126,7 @@ export function Top() {
             <p className={styles.main_text}>
                 また、一分一秒が61秒であると言う意味から第61回にふさわしいテーマとなっています。
             </p>
-            <div className={styles.tytle_1}>
+            <div className={styles.title_1}>
                 <Vector_lg className={styles.mark_lg} />
                 <Vector_sm className={styles.mark_sm} />
                 <p>LOGO-PV</p>
@@ -140,24 +142,29 @@ export function Top() {
                 </p>
             </div>
             <div className={styles.news_all_container}>
-                <div className={styles.tytle_container}>
-                    <p className={styles.tytle_2}>
+                <div className={styles.title_container}>
+                    <p className={styles.title_2}>
                         <span style={{ color: "#de0d22" }}>N</span>ews
                     </p>
                 </div>
                 <div className={styles.news_text_container}>
-                    <div className={styles.news_text}>
-                        <p className={styles.news_date}>2025.06.08</p>
-                        <p className={styles.news_tytle}>第61回菁々祭開幕！</p>
-                    </div>
-                    <div className={styles.news_text}>
-                        <p className={styles.news_date}>2025.06.08</p>
-                        <p className={styles.news_tytle}>第61回菁々祭開幕！</p>
-                    </div>
-                    <div className={styles.news_text}>
-                        <p className={styles.news_date}>2025.06.08</p>
-                        <p className={styles.news_tytle}>第61回菁々祭開幕！</p>
-                    </div>
+                    {news.map((item) => {
+                        const year = item.date.getFullYear();
+                        const month = String(item.date.getMonth() + 1).padStart(2, "0");
+                        const day = String(item.date.getDate()).padStart(2, "0");
+                        return (
+                            <Link
+                                href={`/2025/news/${NewsManager.getLink(item._id)}`}
+                                key={item._id.toString()}
+                                className={styles.news_text}
+                            >
+                                <p className={styles.news_date}>
+                                    {year}.{month}.{day}
+                                </p>
+                                <p className={styles.news_title}>{item.title}</p>
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 <div className={styles.more_container}>
@@ -169,8 +176,8 @@ export function Top() {
                     </Link>
                 </div>
             </div>
-            <p className={styles.tytle_3}>Access</p>
-            <p className={styles.tytle_3_jn}>アクセス</p>
+            <p className={styles.title_3}>Access</p>
+            <p className={styles.title_3_jn}>アクセス</p>
             <div className={styles.access_container}>
                 <div className={styles.map}>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6559.363254209741!2d135.78601437633282!3d34.7132092729152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60013c8734fc9973%3A0x55c23a5ae3354ec9!2z5p2x5aSn5a-65a2m5ZyS5Lit5a2m5qCh44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1746189416051!5m2!1sja!2sjp"></iframe>
@@ -188,8 +195,8 @@ export function Top() {
                     </Link>
                 </div>
             </div>
-            <p className={styles.tytle_3}>Contact</p>
-            <p className={styles.tytle_3_jn}>お問い合わせ</p>
+            <p className={styles.title_3}>Contact</p>
+            <p className={styles.title_3_jn}>お問い合わせ</p>
             <p className={styles.contact_text}>菁々祭に関するご質問はお問い合わせページからお願いいたします。</p>
             <Link href={"/2025/contact"} className={styles.question}>
                 <Headphone className={styles.headphone} />
