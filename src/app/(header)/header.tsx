@@ -71,7 +71,7 @@ export function Header() {
             <div
                 className={`transition-margin flex h-full items-center bg-white shadow-[-3px_0_3px_#0b0e0f77] duration-400 ${isOverlapping && !open ? "mt-[-75px]" : ""}`}
             >
-                <Link href="/2025" className="z-100000002 mr-auto ml-[40px] block aspect-[411.258/148.991] h-[18px]">
+                <Link href="/2025" className="mr-auto ml-[40px] block aspect-[411.258/148.991] h-[18px]">
                     <Theme className="h-full brightness-0 filter transition-all hover:brightness-100" />
                 </Link>
                 <div className="mr-[30px] ml-auto flex gap-[30px] text-[12px] not-md:hidden">

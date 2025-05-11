@@ -1,6 +1,5 @@
 import Logo from "@/assets/logo.svg";
 import ThemeLogo from "@/assets/theme-logo.svg";
-import Theme from "@/assets/theme.svg";
 import { IBM_Plex_Sans_JP } from "next/font/google";
 import LoadingWrapper from "./loading-wrapper";
 import styles from "./page.module.scss";
@@ -29,8 +28,9 @@ export function Top() {
     return (
         <>
             <div
-                className="top_loading z-20000 flex items-center justify-center overflow-hidden bg-[#de0d22] transition-[clip-path] duration-300 ease-linear"
+                className="top_loading z-20000 flex items-center justify-center overflow-hidden bg-[#ffffff]"
                 style={{
+                    transition: "none",
                     clipPath: "polygon(-100svh 100svh, 100svw 100svh, 100svw -100svw)",
                     position: "fixed",
                     inset: 0,
@@ -49,7 +49,7 @@ export function Top() {
             </div>
             <div className={styles.wave_container_padding}></div>
             <div
-                className={`${styles.wave_container} absolute z-10000 mt-[-40px] flex h-[50svh] w-full items-center justify-center overflow-hidden md:mt-[-64px] md:h-[100svh]`}
+                className={`${styles.wave_container} absolute z-10000 mt-[-45px] flex h-[50svh] w-full items-center justify-center overflow-hidden md:mt-[-64px] md:h-[100svh]`}
             >
                 <div className="absolute h-full w-full">
                     <Logo className={styles.animation_logo2} />
@@ -59,16 +59,24 @@ export function Top() {
                     <div className={styles.animation_float_x}>
                         <div className={styles.animation_float_y}>
                             <ThemeLogo className={styles.animation_logo1} />
-                            <Theme className={styles.animation_logo3} />
                         </div>
                     </div>
                 </div>
-                <div className={`${ibmPlexSansJP.className} absolute h-full w-full`}>
-                    <div className="absolute h-full w-full pt-[50px] pl-[60px] text-[min(4svw,6svh)]">
+                <div className={`${ibmPlexSansJP.className} absolute h-full w-full select-none`}>
+                    <div className={styles.animation_text_container1}>
                         <h1>第61回</h1>
                         <h1>東大寺学園</h1>
                         <h1>｢菁々祭｣</h1>
-                        <h1 className="mr-auto text-[min(5svw,7svh)]">{`"分秒"`}</h1>
+                        <h1 className={styles.animation_text_1_3}>{`"分秒"`}</h1>
+                    </div>
+                    <div className={styles.animation_text_container2}>
+                        <h2>
+                            <span className={styles.animation_text_2_1}>9/6</span>
+                            <span className={styles.animation_text_2_2}>土</span>
+                            <span className={styles.animation_text_2_3}>―</span>
+                            <span className={styles.animation_text_2_4}>9/7</span>
+                            <span className={styles.animation_text_2_5}>日</span>
+                        </h2>
                     </div>
                 </div>
             </div>
