@@ -18,6 +18,8 @@ export default function Loading() {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const style = (document.getElementsByClassName("top_loading")[0] as any)?.style;
             if (!style) return;
+            style.transition = "clip-path 0.3s linear, background-color 0.3s ease-in-out";
+            style.backgroundColor = "#f4f4f4";
             setTimeout(() => {
                 style.clipPath = "polygon(100svw 100svh, 100svw 100svh, 100svw 100svh)";
                 style.pointerEvents = "none";
@@ -40,11 +42,19 @@ export default function Loading() {
                 if (!isStarted) {
                     setIsStarted(true);
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    const style1 = (document.getElementsByClassName("top_loading_logo")[0] as any)?.style;
-                    if (style1) style1.opacity = "100";
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    const style2 = (document.getElementsByClassName("top_loading_animation")[0] as any)?.style;
-                    if (style2) style2.opacity = "100";
+                    const style3 = (document.getElementsByClassName("top_loading")[0] as any)?.style;
+                    if (style3) {
+                        style3.transition = "clip-path 0.3s linear, background-color 0.12s ease";
+                        style3.backgroundColor = "#de0d22";
+                    }
+                    setTimeout(() => {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        const style1 = (document.getElementsByClassName("top_loading_logo")[0] as any)?.style;
+                        if (style1) style1.opacity = "100";
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        const style2 = (document.getElementsByClassName("top_loading_animation")[0] as any)?.style;
+                        if (style2) style2.opacity = "100";
+                    }, 80);
                 }
                 if (!animationRef.current || isFinished) return;
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any

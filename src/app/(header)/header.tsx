@@ -1,12 +1,12 @@
 "use client";
 import Theme from "@/assets/theme.svg";
-import dynamic from "next/dynamic";
+//import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { overlapEvent } from "./overlap-event";
 
-const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
+//const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
 
 function HeaderLink({
     href,
@@ -71,10 +71,10 @@ export function Header() {
             <div
                 className={`transition-margin flex h-full items-center bg-white shadow-[-3px_0_3px_#0b0e0f77] duration-400 ${isOverlapping && !open ? "mt-[-75px]" : ""}`}
             >
-                <Link href="/2025" className="z-100000002 mr-auto ml-[40px] block aspect-[411.258/148.991] h-[18px]">
+                <Link href="/2025" className="mr-auto ml-[40px] block aspect-[411.258/148.991] h-[18px]">
                     <Theme className="h-full brightness-0 filter transition-all hover:brightness-100" />
                 </Link>
-                <div className="mr-[30px] ml-auto flex gap-[30px] text-[12px] not-md:hidden">
+                <div className="mr-[60px] ml-auto flex gap-[30px] text-[12px] not-md:hidden">
                     <Link
                         href="/2025"
                         className="transition-all duration-300 text-shadow-[0_0_25px_#de0d2200] hover:text-shadow-[0_0_22px_#de0d22]"
@@ -94,7 +94,7 @@ export function Header() {
                         Contact
                     </Link>
                 </div>
-                <Hamburger open={open} setOpen={setOpenImpl} />
+                {/*<Hamburger open={open} setOpen={setOpenImpl} />*/}
             </div>
             <div
                 className={`absolute top-0 z-100000001 h-[100svh] w-full overflow-hidden ${open ? "" : "pointer-events-none"}`}

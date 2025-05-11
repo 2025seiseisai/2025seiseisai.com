@@ -1,28 +1,29 @@
 .wave_container {
     height: 100%;
-    @media (aspect-ratio < 2/3) {
+    @media (aspect-ratio < 3/4) {
         height: 50%;
     }
 }
 .wave_container_padding {
-    height: calc(100svh - 40px);
-    @media (aspect-ratio < 2/3) {
-        height: calc(50svh - 20px);
+    height: calc(100svh - 45px);
+    @media (aspect-ratio < 3/4) {
+        height: calc(50svh - 45px);
     }
     @include media(lg) {
         height: calc(100svh - 64px);
-        @media (aspect-ratio < 2/3) {
+        @media (aspect-ratio < 3/4) {
             height: calc(50svh - 64px);
         }
     }
 }
 
 .animation_logo1 {
-    width: 70%;
-    height: 18%;
-    filter: drop-shadow(2px 2px 8px #0b0e0f20);
-    @media (aspect-ratio < 2/3) {
-        display: none;
+    max-width: 70%;
+    max-height: 18%;
+    @media (aspect-ratio < 3/4) {
+        max-width: 70%;
+        max-height: 100%;
+        transform: translateY(10%);
     }
 }
 .animation_logo2 {
@@ -34,19 +35,6 @@
     margin: auto;
     filter: brightness(0);
     opacity: 0.05;
-    @media (aspect-ratio >= 2/3) {
-        //display: none;
-    }
-}
-.animation_logo3 {
-    width: 45%;
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    filter: drop-shadow(2px 2px 6px #0b0e0f20);
-    @media (aspect-ratio >= 2/3) {
-        display: none;
-    }
 }
 
 .animation_float_x {
@@ -76,6 +64,66 @@
     }
     100% {
         transform: translateY(0.5svw);
+    }
+}
+
+@media (aspect-ratio < 3/4) {
+    .animation_text_container1 {
+        position: absolute;
+        inset: 0;
+        padding-left: 3svw;
+        padding-top: 2svh;
+        --default-font-size: min(7.2svw, 2.75svh);
+        font-size: var(--default-font-size);
+    }
+    .animation_text_1_3 {
+        font-size: calc(var(--default-font-size) * 1.25);
+    }
+    .animation_text_container2 {
+        display: none;
+    }
+}
+@media (aspect-ratio >= 3/4) {
+    .animation_text_container1 {
+        position: absolute;
+        inset: 0;
+        padding-left: 4svw;
+        padding-top: 6svh;
+        --default-font-size: calc(min(2.8svw, 2.6svh) * 2.2);
+        font-size: var(--default-font-size);
+    }
+    .animation_text_1_3 {
+        font-size: calc(var(--default-font-size) * 1.2);
+    }
+    .animation_text_container2 {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        padding-right: 5svw;
+        padding-bottom: 6svh;
+        text-shadow: 0 0 24px #ffffff90;
+        --default-font-size: calc(min(2.8svw, 2.6svh) * 2.75);
+        font-size: var(--default-font-size);
+    }
+    .animation_text_2_1 {
+        margin-right: calc(var(--default-font-size) * 0.2);
+    }
+    .animation_text_2_2 {
+        margin-right: calc(var(--default-font-size) * 0.4);
+        font-size: calc(var(--default-font-size) * 0.75);
+        line-height: 2;
+    }
+    .animation_text_2_3 {
+        margin-right: calc(var(--default-font-size) * 0.4);
+    }
+    .animation_text_2_4 {
+        margin-right: calc(var(--default-font-size) * 0.2);
+    }
+    .animation_text_2_5 {
+        font-size: calc(var(--default-font-size) * 0.75);
+        line-height: 2;
     }
 }
 
@@ -214,7 +262,7 @@
     }
 }
 /* countdownTimer.module.scssに数字のstyle書き込み */
-.tytle_1 {
+.title_1 {
     font-weight: 500;
 
     @include media(sm) {
@@ -331,7 +379,7 @@
         border-radius: 40px;
     }
 }
-.tytle_container {
+.title_container {
     text-align: center;
     background-color: white;
     @include media(sm) {
@@ -345,7 +393,7 @@
         border-radius: 50px;
     }
 }
-.tytle_2 {
+.title_2 {
     font-weight: 700;
     @include media(sm) {
         font-size: 24px;
@@ -366,14 +414,12 @@
         margin-top: 40px;
     }
 }
-/*↑親要素の外側に線*/
-.news_text_container > * + * {
-    border-top: 1px solid white;
-}
 /*↑子要素の内側に線*/
 .news_text {
+    width: 100%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     display: flex;
-    justify-content: center;
     align-items: center;
     @include media(sm) {
         height: 50px;
@@ -386,20 +432,29 @@
     color: white;
     font-weight: 500;
     @include media(sm) {
+        margin-left: 5%;
         font-size: 12px;
     }
     @include media(lg) {
+        margin-left: 6%;
         font-size: 16px;
     }
 }
-.news_tytle {
+.news_title {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
     font-weight: 500;
-    margin-left: 8%;
     color: white;
     @include media(sm) {
+        margin-left: 10%;
         font-size: 14px;
     }
     @include media(lg) {
+        margin-left: 12%;
         font-size: 16px;
     }
 }
@@ -440,7 +495,7 @@
     }
 }
 /*access始まり*/
-.tytle_3 {
+.title_3 {
     text-align: center;
     font-weight: 500;
     margin: 0 auto;
@@ -454,7 +509,7 @@
         margin-top: 36px;
     }
 }
-.tytle_3_jn {
+.title_3_jn {
     text-align: center;
     font-weight: 500;
     margin-bottom: 20px;
