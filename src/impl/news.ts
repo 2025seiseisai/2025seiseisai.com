@@ -15,22 +15,57 @@ export interface NewsDocument extends Document, NewsInterface {}
 const newsCollection = databaseInstance.getCollection<NewsDocument>("news");
 
 export default class NewsManager {
-    public static async getAllNews(): Promise<NewsDocument[]> {
-        const news = newsCollection.find({ workspace: workspaceId }).toArray();
-        return news;
+    private static cachedNews: NewsDocument[] | null = null;
+    private static lastFetchTime: number = 0;
+    private static readonly CACHE_TTL = 90 * 1000; // 90 seconds in milliseconds
+
+    private static isCacheValid(): boolean {
+        return this.cachedNews !== null && Date.now() - this.lastFetchTime < this.CACHE_TTL;
     }
 
-    public static async getNewsSortedByDate(n?: number): Promise<NewsDocument[]> {
-        const cursor = newsCollection.find({ workspace: workspaceId }).sort({ date: -1 });
-        if (n) {
-            return cursor.limit(n).toArray();
+    public static async getAllNews(): Promise<NewsInterface[]> {
+        if (this.isCacheValid()) {
+            return this.cachedNews!.map((doc): NewsInterface => {
+                return {
+                    _id: doc._id,
+                    workspace: doc.workspace,
+                    title: doc.title,
+                    date: doc.date,
+                    importance: doc.importance,
+                    content: doc.content,
+                };
+            });
         }
-        return cursor.toArray();
+
+        const news = await newsCollection.find({ workspace: workspaceId }).toArray();
+        this.cachedNews = news;
+        this.lastFetchTime = Date.now();
+        return news.map((doc): NewsInterface => {
+            return {
+                _id: doc._id,
+                workspace: doc.workspace,
+                title: doc.title,
+                date: doc.date,
+                importance: doc.importance,
+                content: doc.content,
+            };
+        });
     }
 
-    public static async getNewsById(id: ObjectId): Promise<NewsDocument | null> {
-        const news = newsCollection.findOne({ _id: id });
-        return news;
+    public static async getNewsSortedByDate(n?: number): Promise<NewsInterface[]> {
+        await this.getAllNews(); // Ensure cache is up to date
+
+        // Sort the cached news by date
+        const sortedNews = [...this.cachedNews!].sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+        );
+
+        return n ? sortedNews.slice(0, n) : sortedNews;
+    }
+
+    public static async getNewsById(id: ObjectId): Promise<NewsInterface | null> {
+        await this.getAllNews(); // Ensure cache is up to date
+        return this.cachedNews!.find((news) => news._id.equals(id)) || null;
     }
 
     public static getLink(id: ObjectId): string {
@@ -38,9 +73,11 @@ export default class NewsManager {
     }
 
     public static async getId(link: string): Promise<ObjectId | null> {
-        for await (const id of newsCollection.find({ workspace: workspaceId }, { projection: { _id: 1 } })) {
-            if (this.getLink(id._id) === link) {
-                return id._id;
+        await this.getAllNews(); // Ensure cache is up to date
+
+        for (const news of this.cachedNews!) {
+            if (this.getLink(news._id) === link) {
+                return news._id;
             }
         }
         return null;

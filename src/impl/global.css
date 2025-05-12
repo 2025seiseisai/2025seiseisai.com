@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100svh;
+    font-weight: 500;
 }
 main {
     flex: 1;
