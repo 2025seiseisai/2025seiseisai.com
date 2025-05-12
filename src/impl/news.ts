@@ -20,7 +20,6 @@ export default class NewsManager {
     private static readonly CACHE_TTL = 90 * 1000; // 90 seconds in milliseconds
 
     private static isCacheValid(): boolean {
-        console.log(Date.now() - this.lastFetchTime);
         return this.cachedNews !== null && Date.now() - this.lastFetchTime < this.CACHE_TTL;
     }
 
