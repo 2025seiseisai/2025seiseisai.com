@@ -445,8 +445,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
     font-weight: 500;
     color: white;
     @include media(sm) {
