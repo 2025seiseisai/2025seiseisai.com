@@ -74,7 +74,7 @@ export function Header() {
                 <Link href="/2025" className="mr-auto ml-[40px] block aspect-[411.258/148.991] h-[18px]">
                     <Theme className="h-full brightness-0 filter transition-all hover:brightness-100" />
                 </Link>
-                <div className="mr-[60px] ml-auto flex gap-[30px] text-[12px] font-normal not-md:hidden">
+                <div className="mr-[60px] ml-auto flex gap-[30px] text-[12px] font-normal not-md:mr-[35px] not-md:gap-[20px] not-md:text-[10px]">
                     <Link
                         href="/2025"
                         className="transition-all duration-300 text-shadow-[0_0_25px_#de0d2200] hover:text-shadow-[0_0_22px_#de0d22]"
