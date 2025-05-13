@@ -55,12 +55,12 @@
     border: 2px solid #de0d22;
     width: 1120px;
     max-width: 100%;
-    margin: 50 auto;
+    margin: 36px auto;
 }
 @include media(sm) {
     .square {
         border: 1.5px solid #de0d22;
-        margin: 50 auto;
+        margin: 36px auto;
     }
 }
 
