@@ -1,3 +1,42 @@
+.wave_container {
+    height: 100%;
+    @media (aspect-ratio < 3/4) {
+        height: 50%;
+    }
+}
+.wave_container_padding {
+    height: calc(100svh - 45px);
+    @media (aspect-ratio < 3/4) {
+        height: calc(50svh - 45px);
+    }
+    @include media(lg) {
+        height: calc(100svh - 64px);
+        @media (aspect-ratio < 3/4) {
+            height: calc(50svh - 64px);
+        }
+    }
+}
+
+.animation_logo1 {
+    max-width: 70%;
+    max-height: 18%;
+    @media (aspect-ratio < 3/4) {
+        max-width: 70%;
+        max-height: 100%;
+        transform: translateY(10%);
+    }
+}
+.animation_logo2 {
+    width: 100%;
+    height: 50%;
+    transform: scale(1.8) translateX(8%) translateY(2%);
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    filter: brightness(0);
+    opacity: 0.05;
+}
+
 .animation_float_x {
     width: 100%;
     height: 100%;
@@ -28,17 +67,63 @@
     }
 }
 
-.example {
-    /* スマホ用のCSS */
-    font-size: 10svw;
-    color: #0b0e0f;
+@media (aspect-ratio < 3/4) {
+    .animation_text_container1 {
+        position: absolute;
+        inset: 0;
+        padding-left: 3svw;
+        padding-top: 2svh;
+        --default-font-size: min(7.2svw, 2.75svh);
+        font-size: var(--default-font-size);
+    }
+    .animation_text_1_3 {
+        font-size: calc(var(--default-font-size) * 1.25);
+    }
+    .animation_text_container2 {
+        display: none;
+    }
 }
-
-@media screen and (min-width: 768px) {
-    .example {
-        /* PC用のCSS */
-        font-size: 76.8px;
-        color: #de0d22;
+@media (aspect-ratio >= 3/4) {
+    .animation_text_container1 {
+        position: absolute;
+        inset: 0;
+        padding-left: 4svw;
+        padding-top: 6svh;
+        --default-font-size: calc(min(2.8svw, 2.6svh) * 2.2);
+        font-size: var(--default-font-size);
+    }
+    .animation_text_1_3 {
+        font-size: calc(var(--default-font-size) * 1.2);
+    }
+    .animation_text_container2 {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        padding-right: 5svw;
+        padding-bottom: 6svh;
+        text-shadow: 0 0 24px #ffffff90;
+        --default-font-size: calc(min(2.8svw, 2.6svh) * 2.75);
+        font-size: var(--default-font-size);
+    }
+    .animation_text_2_1 {
+        margin-right: calc(var(--default-font-size) * 0.2);
+    }
+    .animation_text_2_2 {
+        margin-right: calc(var(--default-font-size) * 0.4);
+        font-size: calc(var(--default-font-size) * 0.75);
+        line-height: 2;
+    }
+    .animation_text_2_3 {
+        margin-right: calc(var(--default-font-size) * 0.4);
+    }
+    .animation_text_2_4 {
+        margin-right: calc(var(--default-font-size) * 0.2);
+    }
+    .animation_text_2_5 {
+        font-size: calc(var(--default-font-size) * 0.75);
+        line-height: 2;
     }
 }
 
@@ -177,7 +262,7 @@
     }
 }
 /* countdownTimer.module.scssに数字のstyle書き込み */
-.tytle_1 {
+.title_1 {
     font-weight: 500;
 
     @include media(sm) {
@@ -254,22 +339,14 @@
 }
 .youtube_link {
     position: relative; // 両方共通
-    iframe {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        aspect-ratio: 1920/1080;
-    }
     @include media(sm) {
-        margin: 8px 20px 0 20px;
-        padding-top: 56.25%;
+        margin: 8px 20px 8px 20px;
     }
     @include media(lg) {
         width: calc((100% - 12.5%) / 2);
         margin-left: 12.5%;
-        padding-top: 30%;
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
 }
 
@@ -283,18 +360,16 @@
         margin-top: 45px;
         margin-left: 20px;
         margin-right: 20px;
-        height: 315px;
         border-radius: 20px;
     }
     @include media(lg) {
         width: 75%;
         padding-top: 47px;
         margin-top: 80px;
-        height: 430px;
         border-radius: 40px;
     }
 }
-.tytle_container {
+.title_container {
     text-align: center;
     background-color: white;
     @include media(sm) {
@@ -308,7 +383,7 @@
         border-radius: 50px;
     }
 }
-.tytle_2 {
+.title_2 {
     font-weight: 700;
     @include media(sm) {
         font-size: 24px;
@@ -329,15 +404,14 @@
         margin-top: 40px;
     }
 }
-/*↑親要素の外側に線*/
-.news_text_container > * + * {
-    border-top: 1px solid white;
-}
 /*↑子要素の内側に線*/
 .news_text {
+    width: 100%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     display: flex;
-    justify-content: center;
     align-items: center;
+    transition: background-color 0.3s ease;
     @include media(sm) {
         height: 50px;
     }
@@ -345,24 +419,35 @@
         height: 60px;
     }
 }
+.news_text:hover {
+    background-color: #ffffff10;
+}
 .news_date {
     color: white;
     font-weight: 500;
     @include media(sm) {
+        margin-left: 5%;
         font-size: 12px;
     }
     @include media(lg) {
+        margin-left: 6%;
         font-size: 16px;
     }
 }
-.news_tytle {
+.news_title {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 5%;
     font-weight: 500;
-    margin-left: 8%;
     color: white;
     @include media(sm) {
+        margin-left: 10%;
         font-size: 14px;
     }
     @include media(lg) {
+        margin-left: 12%;
         font-size: 16px;
     }
 }
@@ -372,10 +457,11 @@
     transition: filter 0.3s ease;
     @include media(sm) {
         margin-top: 20px;
-        margin-bottom: 5px;
+        margin-bottom: 16px;
     }
     @include media(lg) {
         margin-top: 30px;
+        margin-bottom: 32px;
     }
 }
 .more_container:hover {
@@ -403,7 +489,7 @@
     }
 }
 /*access始まり*/
-.tytle_3 {
+.title_3 {
     text-align: center;
     font-weight: 500;
     margin: 0 auto;
@@ -417,7 +503,7 @@
         margin-top: 36px;
     }
 }
-.tytle_3_jn {
+.title_3_jn {
     text-align: center;
     font-weight: 500;
     margin-bottom: 20px;

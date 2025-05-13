@@ -4,7 +4,19 @@ import styles from "./page.module.scss";
 import ReturnTop from "./ReturnTop.svg";
 import SP_Back from "./sp_back.svg";
 
-export function NotFound() {
+export function NotFound({
+    code,
+    title,
+    message1,
+    message2,
+    message3,
+}: {
+    code: string;
+    title: string;
+    message1: string;
+    message2: string;
+    message3: string;
+}) {
     return (
         <>
             <div className={styles.content}>
@@ -14,22 +26,22 @@ export function NotFound() {
                 </div>
                 <div className={styles.container}>
                     <p className={styles.title}>
-                        <span className={styles.red}>4</span>04
+                        <span className={styles.red}>{code[0]}</span>
+                        {code.substring(1)}
                     </p>
                     <p className={styles.subtitle}>
-                        <span className={styles.red}>P</span>age Not Found
+                        <span className={styles.red}>{title[0]}</span>
+                        {title.substring(1)}
                     </p>
                     <div className={styles.text_box}>
+                        <p className={styles.text}>{message1}</p>
                         <p className={styles.text}>
-                            アクセスしようとしたページは削除、変更されたか、現在利用できない可能性があります。
-                        </p>
-                        <p className={styles.text}>
-                            お手数をおかけしますが、ホームページのトップ、
+                            {message2}
                             <br className={styles.break} />
-                            または上部のメニューよりおさがしいただきますようお願いいたします。
+                            {message3}
                         </p>
                     </div>
-                    <Link href="/" className={styles.button_box}>
+                    <Link href="/2025" className={styles.button_box}>
                         <ReturnTop className={styles.button} />
                     </Link>
                 </div>

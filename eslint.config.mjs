@@ -28,6 +28,7 @@ const eslintConfig = [
             ...eslintPluginReadableTailwind.configs.warning.rules,
             ...eslintPluginReadableTailwind.configs.error.rules,
             "readable-tailwind/multiline": "off",
+            "readable-tailwind/no-unnecessary-whitespace": "off",
         },
         settings: {
             "readable-tailwind": {

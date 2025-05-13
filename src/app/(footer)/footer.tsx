@@ -19,12 +19,12 @@ export function Footer() {
                     </p>
                 </span>
                 <span className="text-[9px] max-[360px]:mt-[4px] max-[360px]:ml-[25px] max-[360px]:flex max-[360px]:w-[95svw] md:text-[13px]">
-                    <Link href="/contact">
+                    <Link href="/2025/contact">
                         <p className="transition-[color padding] mt-[32px] duration-300 max-[360px]:mt-0 max-[360px]:mr-[12px] md:mt-[72px] md:hover:pl-[2px] md:hover:text-[#de0d22]">
                             {">>お問い合わせ"}
                         </p>
                     </Link>
-                    <Link href="/privacy-policy">
+                    <Link href="/2025/privacy-policy">
                         <p className="transition-[color padding] mt-[4px] duration-300 max-[360px]:mt-0 md:mt-[7px] md:hover:pl-[2px] md:hover:text-[#de0d22]">
                             {">>プライバシーポリシー"}
                         </p>
@@ -36,7 +36,7 @@ export function Footer() {
                     <h1 className="mt-[27px] w-full border-b-[1px] text-[16px] not-md:mb-[6px] md:border-b-2 md:text-[32px]">
                         Overview
                     </h1>
-                    <Link href="/">
+                    <Link href="/2025">
                         <p className={footerLink}>Top</p>
                     </Link>
                     <p
@@ -44,7 +44,7 @@ export function Footer() {
                     >
                         Theme & Logo
                     </p>
-                    <Link href="/news">
+                    <Link href="/2025/news">
                         <p className={footerLink}>News</p>
                     </Link>
                     <p className={disabledLink}>Access</p>

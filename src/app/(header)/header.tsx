@@ -1,11 +1,12 @@
 "use client";
 import Theme from "@/assets/theme.svg";
-import { eventBus } from "@/impl/eventBus";
-import dynamic from "next/dynamic";
+//import dynamic from "next/dynamic";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { overlapEvent } from "./overlap-event";
 
-const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
+//const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
 
 function HeaderLink({
     href,
@@ -58,40 +59,42 @@ export function Header() {
         }
     };
 
+    const pathname = usePathname();
+
     useEffect(() => {
         setIsOverlapping(false);
-        eventBus.on("overlap", (flag: boolean) => setIsOverlapping(flag));
-    }, []);
+        overlapEvent.setFunc(setIsOverlapping);
+    }, [pathname]);
 
     return (
         <header className="sticky top-0 z-12000 h-[45px] w-full md:h-[64px]">
             <div
                 className={`transition-margin flex h-full items-center bg-white shadow-[-3px_0_3px_#0b0e0f77] duration-400 ${isOverlapping && !open ? "mt-[-75px]" : ""}`}
             >
-                <Link href="/" className="z-100000002 mr-auto ml-[40px] block aspect-[411.258/148.991] h-[18px]">
+                <Link href="/2025" className="mr-auto ml-[40px] block aspect-[411.258/148.991] h-[18px]">
                     <Theme className="h-full brightness-0 filter transition-all hover:brightness-100" />
                 </Link>
-                <div className="mr-[30px] ml-auto flex gap-[30px] text-[12px] not-md:hidden">
+                <div className="mr-[60px] ml-auto flex gap-[30px] text-[12px] font-normal not-md:hidden">
                     <Link
-                        href="/"
+                        href="/2025"
                         className="transition-all duration-300 text-shadow-[0_0_25px_#de0d2200] hover:text-shadow-[0_0_22px_#de0d22]"
                     >
                         Top
                     </Link>
                     <Link
-                        href="/news"
+                        href="/2025/news"
                         className="transition-all duration-300 text-shadow-[0_0_25px_#de0d2200] hover:text-shadow-[0_0_22px_#de0d22]"
                     >
                         News
                     </Link>
                     <Link
-                        href="/contact"
+                        href="/2025/contact"
                         className="transition-all duration-300 text-shadow-[0_0_25px_#de0d2200] hover:text-shadow-[0_0_22px_#de0d22]"
                     >
                         Contact
                     </Link>
                 </div>
-                <Hamburger open={open} setOpen={setOpenImpl} />
+                {/*<Hamburger open={open} setOpen={setOpenImpl} />*/}
             </div>
             <div
                 className={`absolute top-0 z-100000001 h-[100svh] w-full overflow-hidden ${open ? "" : "pointer-events-none"}`}
@@ -100,8 +103,8 @@ export function Header() {
                     className={`absolute h-full w-full bg-[#ffffff90] backdrop-sepia [backdrop-filter:blur(40px)] ${!open ? "ease-in [clip-path:polygon(150%_0,100%_0,100%_100%,150%_100%)]" : "ease-out [clip-path:polygon(25%_0,100%_0,100%_100%,20%_100%)]"} transition-[clip-path] duration-500`}
                 >
                     <div className="h-full w-full pt-[80px] pl-[35%]">
-                        <HeaderLink href="/" title1="Top" title2="トップページ" setOpen={setOpenImpl} />
-                        <HeaderLink href="/news" title1="News" title2="ニュース" setOpen={setOpenImpl} />
+                        <HeaderLink href="/2025" title1="Top" title2="トップページ" setOpen={setOpenImpl} />
+                        <HeaderLink href="/2025/news" title1="News" title2="ニュース" setOpen={setOpenImpl} />
                     </div>
                 </div>
                 <div
