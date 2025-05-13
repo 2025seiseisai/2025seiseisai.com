@@ -24,8 +24,6 @@ const ibmPlexSansJP = IBM_Plex_Sans_JP({
     weight: "600",
 });
 
-export const revalidate = 60 * 3;
-
 export async function Top() {
     const news = await NewsManager.getNewsSortedByDate(3);
     return (
