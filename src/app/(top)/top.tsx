@@ -12,12 +12,12 @@ import Link from "next/link";
 import Countdown from "./CountdownTimer";
 //イメージ
 import FunbyoLogo from "./images/Funbyo-Logo.svg";
-import TdjLogo from "./images/TDJ-Logo.svg";
 import Vector_lg from "./images/Vector (1).svg";
 import Vector_sm from "./images/Vector.svg";
 import MoreAllow from "./images/arrow-right-circle.svg";
 import Headphone from "./images/headphones.svg";
 import Logout from "./images/log-out.svg";
+import Slide from "./slide";
 
 const ibmPlexSansJP = IBM_Plex_Sans_JP({
     subsets: ["latin"],
@@ -113,7 +113,7 @@ export async function Top() {
                 <Vector_sm className={styles.mark_sm} />
                 <p>SEISEISAI</p>
             </div>
-            <TdjLogo className={styles.logo} />
+            <Slide />
             <p className={styles.main_text}>菁々祭とは東大寺学園で行われる文化祭のこと。</p>
             <p className={styles.main_text}>第61回菁々祭 「分秒」 は2025年9月に開催予定。</p>
             <p className={styles.main_text}>過去60年の伝統と令和の新しい風が鳴り響く菁々祭、ぜひご覧あれ!</p>
