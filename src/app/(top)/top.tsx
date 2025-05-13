@@ -1,7 +1,6 @@
 import Logo from "@/assets/logo.svg";
 import ThemeLogo from "@/assets/theme-logo.svg";
 import NewsManager from "@/impl/news";
-import { YouTubeEmbed } from "@next/third-parties/google";
 import { IBM_Plex_Sans_JP } from "next/font/google";
 import LoadingWrapper from "./loading-wrapper";
 import styles from "./page.module.scss";
@@ -127,6 +126,7 @@ export async function Top() {
             <p className={styles.main_text}>
                 また、一分一秒が61秒であると言う意味から第61回にふさわしいテーマとなっています。
             </p>
+            {/*
             <div className={styles.title_1}>
                 <Vector_lg className={styles.mark_lg} />
                 <Vector_sm className={styles.mark_sm} />
@@ -141,7 +141,7 @@ export async function Top() {
                     <br />
                     ぜひご覧ください！
                 </p>
-            </div>
+            </div>*/}
             <div className={styles.news_all_container}>
                 <div className={styles.title_container}>
                     <p className={styles.title_2}>
