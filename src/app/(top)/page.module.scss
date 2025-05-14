@@ -294,7 +294,8 @@
     margin: 0 auto;
     @include media(sm) {
         margin-top: 8px;
-        width: 215px;
+        margin-bottom: 8px;
+        width: min(calc(100svw - 40px), 300px);
     }
     @include media(lg) {
         margin-top: 12px;
