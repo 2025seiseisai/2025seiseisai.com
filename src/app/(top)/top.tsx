@@ -187,12 +187,12 @@ export async function Top() {
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
                     <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
                     <Link
-                        href="https://tdj.ac.jp/"
+                        href="https://www.tdj.ac.jp/"
                         className={styles.schoollink}
                         target="_blank"
                         rel="noopener noreferrer nofollow"
                     >
-                        https://tdj.ac.jp/
+                        https://www.tdj.ac.jp/
                     </Link>
                 </div>
             </div>
