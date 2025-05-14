@@ -68,7 +68,7 @@ export const metadata: Metadata = {
         type: "website",
     },
     twitter: {
-        // card: "",
+        card: "summary_large_image",
         // site: "@seiseisai_tdj",
         // siteId: "@seiseisai_tdj",
         // creator: "@seiseisai_tdj",
