@@ -13,7 +13,7 @@ export function Footer() {
         <footer className="mt-auto bg-white">
             <div className="flex w-full flex-wrap bg-[#f7f7f7] font-light not-md:pb-[12px] md:h-[137px]">
                 <span className="mr-[2px]">
-                    <ThemeLogo className="ml-[25px] h-[44px] pt-[13px] md:ml-[calc(19000svw/1440)] md:h-[85px] md:pt-[33px]" />
+                    <ThemeLogo className="ml-[25px] h-[44px] w-auto pt-[13px] md:ml-[calc(19000svw/1440)] md:h-[85px] md:pt-[33px]" />
                     <p className="mt-[5px] ml-[25px] w-[220px] text-[9px] md:mt-[12px] md:ml-[calc(19000svw/1440)] md:w-[321px] md:text-[13px]">
                         © 2025 61st seiseisai “FUNBYO”, Created by PR part
                     </p>
