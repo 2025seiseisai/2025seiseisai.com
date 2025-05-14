@@ -120,17 +120,10 @@ export async function Top() {
                 <p>分秒</p>
             </div>
             <FunbyoLogo className={styles.logo} />
-<<<<<<< HEAD
-            <p className={styles.main_text}>「分秒」には文化祭にかけてきた一分一秒も惜しまぬ情熱が込められています。</p>
-            <p className={styles.main_text}>
-                また、一分一秒が61秒であると言う意味から第61回にふさわしいテーマとなっています。
-            </p>
-            {/*
-=======
             <p className={styles.main_text}>{`第61回菁々祭のテーマは"分秒"です。`}</p>
             <p className={styles.main_text}>「1分1秒が“61”秒である」という遊び心を交えつつ、</p>
             <p className={styles.main_text}>生徒が一分一秒さえも惜しんで掛けてきた熱い想いが込められています。</p>
->>>>>>> 3910a63f7b1f4b7307839332dc0396224c6e67cd
+            {/*
             <div className={styles.title_1}>
                 <Vector_lg className={styles.mark_lg} />
                 <Vector_sm className={styles.mark_sm} />
