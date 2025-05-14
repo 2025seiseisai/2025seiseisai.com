@@ -28,10 +28,10 @@ export async function Top() {
     return (
         <>
             <div
-                className="top_loading z-20000 flex items-center justify-center overflow-hidden bg-[#ffffff]"
+                className="top_loading z-20000 flex h-[100dvh] w-full items-center justify-center overflow-hidden bg-[#ffffff]"
                 style={{
                     transition: "none",
-                    clipPath: "polygon(-100svh 100svh, 100svw 100svh, 100svw -100svw)",
+                    clipPath: "polygon(-100dvh 100dvh, 100svw 100dvh, 100svw -100svw)",
                     position: "fixed",
                     inset: 0,
                 }}
