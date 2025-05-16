@@ -7,7 +7,7 @@ import Link from "next/link";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
-import { blogData, blogImages, blogPaths } from "./blog-info";
+import { blogData } from "./blog-info";
 
 /**
  * @example
@@ -31,7 +31,14 @@ export function getAllBlogs(): {
 }[] {
     return Object.entries(blogData).map(([key, value]) => {
         const [round, index] = key.split("/");
-        return { round, index, ...value };
+        return {
+            round,
+            index,
+            title: value.title,
+            date: value.date,
+            author: value.author,
+            topic: value.topic,
+        };
     });
 }
 
@@ -50,7 +57,7 @@ export function getThumbnail(round: string, index: string): StaticImageData {
  * }
  */
 export function enumetateParams(): { round: string; index: string }[] {
-    return blogPaths.map((path) => {
+    return Object.keys(blogData).map((path) => {
         const [round, index] = path.split("/");
         return { round, index };
     });
@@ -126,7 +133,7 @@ export async function getBlog(
                 else return children;
             },
             img: ({ src, alt }: { src: string; alt: string }) => {
-                const image = blogImages[`${round}/${index}/${src.replaceAll("%20", " ")}`];
+                const image = blogData[`${round}/${index}`].images[src];
                 if (image === undefined) return <></>;
                 return (
                     <Image

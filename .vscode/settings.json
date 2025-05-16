@@ -15,5 +15,11 @@
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "terminal.integrated.env.windows": {
         "PSExecutionPolicyPreference": "RemoteSigned"
-    }
+    },
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "typescript": "\"./node_modules/.bin/tsx\""
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.cwd": "${workspaceFolder}"
 }

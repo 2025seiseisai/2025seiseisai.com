@@ -3,6 +3,7 @@
         "ms-ceintl.vscode-language-pack-ja",
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.code-runner"
     ]
 }
