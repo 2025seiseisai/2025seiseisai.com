@@ -3,6 +3,10 @@ import graymatter from "gray-matter";
 import * as path from "path";
 (async () => {
     const cwd = process.cwd();
+    if (fs.existsSync(path.join(cwd, "public", "blog-resources"))) {
+        fs.rmSync(path.join(cwd, "public", "blog-resources"), { recursive: true, force: true });
+    }
+    fs.mkdirSync(path.join(cwd, "public", "blog-resources"), { recursive: true });
     let imageCnt = 0;
     let imageImport = "";
     let blogData = `export const blogData: {
@@ -32,26 +36,29 @@ import * as path from "path";
             const images = [];
             for (const file of await fs.promises.readdir(path.join(folderPath, index))) {
                 if (
-                    !(
-                        file.endsWith(".png") ||
-                        file.endsWith(".jpg") ||
-                        file.endsWith(".jpeg") ||
-                        file.endsWith(".webp") ||
-                        file.endsWith(".avif") ||
-                        file.endsWith(".avifs")
-                    )
-                )
-                    continue;
-                imageImport += `import Image${imageCnt} from "./${round}/${index}/${file}";\n`;
-                if (file.split(".")[0] === "thumbnail") {
-                    if (thumbnail !== undefined) {
-                        console.log(`WARNING: ${path.join(folderPath, index)} has multiple thumbnail images`);
+                    file.endsWith(".png") ||
+                    file.endsWith(".jpg") ||
+                    file.endsWith(".jpeg") ||
+                    file.endsWith(".webp") ||
+                    file.endsWith(".avif") ||
+                    file.endsWith(".avifs")
+                ) {
+                    imageImport += `import Image${imageCnt} from "./${round}/${index}/${file}";\n`;
+                    if (file.split(".")[0] === "thumbnail") {
+                        if (thumbnail !== undefined) {
+                            console.log(`WARNING: ${path.join(folderPath, index)} has multiple thumbnail images`);
+                        }
+                        thumbnail = [file, imageCnt];
+                    } else {
+                        images.push([file, imageCnt]);
                     }
-                    thumbnail = [file, imageCnt];
-                } else {
-                    images.push([file, imageCnt]);
+                    imageCnt += 1;
+                } else if (file !== "index.md") {
+                    fs.copyFileSync(
+                        path.join(folderPath, index, file),
+                        path.join(cwd, "public", "blog-resources", round, index, file),
+                    );
                 }
-                imageCnt += 1;
             }
             if (thumbnail === undefined) {
                 console.log(`WARNING: ${path.join(folderPath, index)} does not have a thumbnail image`);
@@ -61,7 +68,6 @@ import * as path from "path";
             content = content.replaceAll("\r\n", "\n").replaceAll("\r", "\n").replaceAll("%20", " ");
             if (!content.includes("\n# 目次\n")) {
                 console.log(`WARNING: ${path.join(folderPath, index)} does not have a table of contents`);
-                continue;
             }
             const [description, main_text] = content.split("\n# 目次\n");
             blogData += `    "${round}/${index}": {
