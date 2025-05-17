@@ -56,7 +56,7 @@ import * as path from "path";
                 } else if (file !== "index.md") {
                     fs.copyFileSync(
                         path.join(folderPath, index, file),
-                        path.join(cwd, "public", "blog-resources", round, index, file),
+                        path.join(cwd, "public", "blog-resources", round, index, encodeURIComponent(file)),
                     );
                 }
             }
@@ -65,7 +65,7 @@ import * as path from "path";
             }
             const filestr = await fs.promises.readFile(path.join(folderPath, index, "index.md"), "utf-8");
             let { data, content } = graymatter(filestr);
-            content = content.replaceAll("\r\n", "\n").replaceAll("\r", "\n").replaceAll("%20", " ");
+            content = content.replaceAll("\r\n", "\n").replaceAll("\r", "\n");
             if (!content.includes("\n# 目次\n")) {
                 console.log(`WARNING: ${path.join(folderPath, index)} does not have a table of contents`);
             }
@@ -76,7 +76,7 @@ import * as path from "path";
         author: \`${data.author}\`,
         topic: \`${data.topic}\`,
         thumbnail: ${thumbnail !== undefined ? `Image${thumbnail[1]}` : "undefined"},
-        images: {${images.map((image) => `\n            "${image[0]}": Image${image[1]},`).join("")}\n        },
+        images: {${images.map((image) => `\n            "${encodeURIComponent(image[0])}": Image${image[1]},`).join("")}\n        },
         description: \`${description}\`,
         content: \`${main_text}\`,
     },
@@ -91,5 +91,5 @@ import * as path from "path";
         `import type { StaticImageData } from "next/image";\n` +
         imageImport +
         blogData;
-    fs.writeFileSync(path.join(cwd, "src/blogs", "blog-info.ts"), result, "utf-8");
+    fs.writeFileSync(path.join(cwd, "src/blogs", "blog-data.ts"), result, "utf-8");
 })();

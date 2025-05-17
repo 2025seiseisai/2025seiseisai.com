@@ -26,12 +26,12 @@
         "next-mdx-remote": "^5.0.0",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
-        "rehype-slug": "^6.0.0",
+        "remark-breaks": "^4.0.0",
         "remark-gfm": "^4.0.1",
-        "remark-toc": "^9.0.0",
         "sharp": "^0.34.1",
         "tailwindcss": "^4.1.5",
         "three": "^0.176.0",
+        "unist-util-visit": "^5.0.0",
         "zod": "^3.24.3"
     },
     "devDependencies": {

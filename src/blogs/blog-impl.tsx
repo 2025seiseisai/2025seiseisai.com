@@ -1,13 +1,13 @@
+/* eslint @typescript-eslint/no-explicit-any: 0 */
 import { YouTubeEmbed } from "@next/third-parties/google";
 import crypto from "crypto";
-import * as fs from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import rehypeSlug from "rehype-slug";
+import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
-import remarkToc from "remark-toc";
-import { blogData } from "./blog-info";
+import { visit } from "unist-util-visit";
+import { blogData } from "./blog-data";
 
 /**
  * @example
@@ -28,6 +28,7 @@ export function getAllBlogs(): {
     date: string;
     author: string;
     topic: string;
+    thumbnail: StaticImageData;
 }[] {
     return Object.entries(blogData).map(([key, value]) => {
         const [round, index] = key.split("/");
@@ -38,16 +39,9 @@ export function getAllBlogs(): {
             date: value.date,
             author: value.author,
             topic: value.topic,
+            thumbnail: value.thumbnail,
         };
     });
-}
-
-/**
- * @example
- * <Image src={getThumbnail("60", "04")} alt="thumbnail" />
- */
-export function getThumbnail(round: string, index: string): StaticImageData {
-    return blogData[`${round}/${index}`].thumbnail;
 }
 
 /**
@@ -63,6 +57,22 @@ export function enumetateParams(): { round: string; index: string }[] {
     });
 }
 
+function remarkExtractH1Headings(headings: string[]) {
+    return () => {
+        return (tree: any) => {
+            visit(tree, "heading", (node: any) => {
+                if (node.depth === 1) {
+                    const text = node.children
+                        .filter((child: any) => child.type === "text")
+                        .map((child: any) => child.value)
+                        .join("");
+                    headings.push(text);
+                }
+            });
+        };
+    };
+}
+
 /**
  * @example
  * const { title, date, author, topic, content } = getBlog("60", "04", styles.image_with_caption, styles.table_of_contents);
@@ -75,113 +85,107 @@ export function enumetateParams(): { round: string; index: string }[] {
 export async function getBlog(
     round: string,
     index: string,
-    image_class: string,
-    table_class: string,
 ): Promise<{
     title: string;
     date: string;
     author: string;
     topic: string;
+    thumbnail: StaticImageData;
+    toc: { name: string; id: string }[];
+    description: React.ReactElement;
     content: React.ReactElement;
 }> {
-    const filePath = `src/blogs/${round}/${index}/index.md`;
-    const md = fs.readFileSync(filePath, "utf-8");
-    const mdx = await compileMDX<{ title: string; date: string; author: string; topic: string; link: string }>({
-        source: md,
+    const blog = blogData[`${round}/${index}`];
+    const { title, date, author, topic, thumbnail, images, description, content } = blog;
+    const components = {
+        p: ({ children }: { children: any }) => {
+            if (typeof children === "string") return <p>{children}</p>;
+            if (!Array.isArray(children)) return <>{children}</>;
+            return <p>{children}</p>;
+        },
+        img: ({ src, alt }: { src: string; alt: string }) => {
+            const image = images[src];
+            if (image === undefined) return <></>;
+            if (alt === "image.png")
+                return (
+                    <>
+                        <Image src={image} alt="image" />
+                        <p></p>
+                    </>
+                );
+            return <Image src={image} alt={alt === "image.png" ? "" : alt || ""} />;
+        },
+        a: ({ href, children }: { href: string; children: any }) =>
+            children === href &&
+            (href.startsWith("https://youtube.com/") || href.startsWith("https://www.youtube.com/")) ? (
+                <YouTubeEmbed videoid={href.split("=").at(-1) || ""} />
+            ) : children === href && href.startsWith("https://youtu.be/") ? (
+                <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
+            ) : href[0] === "#" ? (
+                <a
+                    href={
+                        "#" + crypto.createHash("sha256").update(href.substring(1)).digest("base64url").substring(0, 16)
+                    }
+                >
+                    {children}
+                </a>
+            ) : href[0] == "/" ||
+              href.startsWith("http://seiseisai.com") ||
+              href.startsWith("https://seiseisai.com") ? (
+                <Link href={href}>{children}</Link>
+            ) : href.startsWith("https://") || href.startsWith("http://") ? (
+                <Link href={href} target="_blank" rel="noopener noreferrer nofollow">
+                    {children}
+                </Link>
+            ) : (
+                <Link href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`} download>
+                    {children}
+                </Link>
+            ),
+    };
+    const descriptionMdx = await compileMDX({
+        source: description,
         options: {
-            parseFrontmatter: true,
+            parseFrontmatter: false,
             mdxOptions: {
-                remarkPlugins: [remarkGfm, [remarkToc, { maxDepth: 1, heading: "目次" }]],
-                rehypePlugins: [rehypeSlug],
+                remarkPlugins: [remarkGfm, remarkBreaks],
+            },
+        },
+        components,
+    });
+    const headings: string[] = [];
+    const contentMdx = await compileMDX({
+        source: content,
+        options: {
+            parseFrontmatter: false,
+            mdxOptions: {
+                remarkPlugins: [remarkGfm, remarkBreaks, remarkExtractH1Headings(headings)],
             },
         },
         components: {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h1: ({ id, children }: { id: string; children: any }) => {
+            ...components,
+            h1: ({ children }: { children: any }) => {
                 if (typeof children === "string") {
-                    if (children === "目次")
-                        return (
-                            <div className={table_class} style={{ display: "none" }}>
-                                {children}
-                            </div>
-                        );
-                    else
-                        return (
-                            <h1
-                                id={crypto
-                                    .createHash("sha256")
-                                    .update(encodeURIComponent(id))
-                                    .digest("base64url")
-                                    .substring(0, 16)}
-                            >
-                                {children}
-                            </h1>
-                        );
-                } else return children;
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h2: ({ children }: { children: any }) => {
-                return <h2>{children}</h2>;
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h3: ({ children }: { children: any }) => {
-                return <h3>{children}</h3>;
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            p: ({ children }: { children: any }) => {
-                if (typeof children === "string") return <p>{children}</p>;
-                else return children;
-            },
-            img: ({ src, alt }: { src: string; alt: string }) => {
-                const image = blogData[`${round}/${index}`].images[src];
-                if (image === undefined) return <></>;
-                return (
-                    <Image
-                        className={alt === "image.png" ? "" : image_class}
-                        src={image}
-                        alt={alt === "image.png" ? "" : alt || ""}
-                    />
-                );
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            a: ({ href, children }: { href: string; children: any }) =>
-                href.startsWith("https://youtube.com/") ||
-                href.startsWith("https://www.youtube.com/") ||
-                href.startsWith("https://youtu.be/") ? (
-                    <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
-                ) : href[0] === "#" ? (
-                    <a
-                        href={
-                            "#" +
-                            crypto.createHash("sha256").update(href.substring(1)).digest("base64url").substring(0, 16)
-                        }
-                    >
-                        {children}
-                    </a>
-                ) : href.startsWith("https://") || href.startsWith("http://") || href[0] == "/" ? (
-                    <Link href={href}>{children}</Link>
-                ) : (
-                    <Link href={`/blog-resources/${round}/${index}/${href}`} download>
-                        {children}
-                    </Link>
-                ),
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            ul: ({ children }: { children: any }) => {
-                return (
-                    <ul>
-                        <style>{`ul>h6:not(.${table_class}+ul>h6){display:none;}`}</style>
-                        <h6>目次</h6>
-                        {children}
-                    </ul>
-                );
+                    return (
+                        <h1 id={crypto.createHash("sha256").update(children).digest("base64url").substring(0, 16)}>
+                            {children}
+                        </h1>
+                    );
+                } else return <h1>{children}</h1>;
             },
         },
     });
     return {
-        title: mdx.frontmatter.title,
-        date: mdx.frontmatter.date,
-        author: mdx.frontmatter.author,
-        topic: mdx.frontmatter.topic,
-        content: mdx.content,
+        title,
+        date,
+        author,
+        topic,
+        thumbnail,
+        toc: headings.map((name) => ({
+            name,
+            id: crypto.createHash("sha256").update(name).digest("base64url").substring(0, 16),
+        })),
+        description: descriptionMdx.content,
+        content: contentMdx.content,
     };
 }
