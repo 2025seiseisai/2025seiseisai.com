@@ -1,5 +1,5 @@
 import { blogData } from "@/blogs/blog-data";
-import { enumetateParams, getBlog } from "@/blogs/blog-impl";
+import { enumetateParams, getBlog } from "@/impl/blog";
 import Image from "next/image";
 import styles from "./page.module.scss";
 

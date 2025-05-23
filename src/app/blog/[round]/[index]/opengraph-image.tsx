@@ -1,4 +1,4 @@
-import { enumetateParams } from "@/blogs/blog-impl";
+import { enumetateParams } from "@/impl/blog";
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 

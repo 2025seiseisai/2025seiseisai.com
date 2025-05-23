@@ -1,13 +1,13 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
+import { blogData } from "@/blogs/blog-data";
 import { YouTubeEmbed } from "@next/third-parties/google";
-import crypto from "crypto";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import React from "react";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
-import { blogData } from "./blog-data";
 
 /**
  * @example
@@ -57,7 +57,18 @@ export function enumetateParams(): { round: string; index: string }[] {
     });
 }
 
-function remarkExtractH1Headings(headings: string[]) {
+function toAnchorId(text: string) {
+    return text
+        .trim()
+        .normalize("NFKC")
+        .toLowerCase()
+        .replace(/[\u3000\s_\.]+/g, "-")
+        .replace(/[^\p{L}\p{N}-]+/gu, "")
+        .replace(/-{2,}/g, "-")
+        .replace(/^-+|-+$/g, "");
+}
+
+function remarkExtractH1Headings(headings: { name: string; id: string }[]) {
     return () => {
         return (tree: any) => {
             visit(tree, "heading", (node: any) => {
@@ -66,11 +77,71 @@ function remarkExtractH1Headings(headings: string[]) {
                         .filter((child: any) => child.type === "text")
                         .map((child: any) => child.value)
                         .join("");
-                    headings.push(text);
+                    headings.push({
+                        name: text,
+                        id: toAnchorId(text),
+                    });
                 }
             });
         };
     };
+}
+
+const inlineTags = new Set([
+    "a",
+    "abbr",
+    "b",
+    "bdi",
+    "bdo",
+    "br",
+    "cite",
+    "code",
+    "data",
+    "dfn",
+    "em",
+    "i",
+    "img",
+    "kbd",
+    "label",
+    "mark",
+    "q",
+    "ruby",
+    "s",
+    "samp",
+    "small",
+    "span",
+    "strong",
+    "sub",
+    "sup",
+    "time",
+    "u",
+    "var",
+    "wbr",
+]);
+
+function canBeWrappedInPDeep(node: React.ReactNode): boolean {
+    if (node === null || node === undefined || typeof node === "boolean") {
+        return true;
+    }
+    if (typeof node === "string" || typeof node === "number") {
+        return true;
+    }
+    if (Array.isArray(node)) {
+        return node.every((child) => canBeWrappedInPDeep(child));
+    }
+    if (React.isValidElement(node)) {
+        const type = node.type;
+        if (typeof type === "string") {
+            if (!inlineTags.has(type)) return false;
+            return canBeWrappedInPDeep((node.props as any).children);
+        }
+        if (typeof type === "function") {
+            if (!inlineTags.has(type.name)) return false;
+            return canBeWrappedInPDeep((node.props as any).children);
+        }
+        return false;
+    }
+    return false;
 }
 
 /**
@@ -99,9 +170,9 @@ export async function getBlog(
     const { title, date, author, topic, thumbnail, images, description, content } = blog;
     const components = {
         p: ({ children }: { children: any }) => {
-            if (typeof children === "string") return <p>{children}</p>;
-            if (!Array.isArray(children)) return <>{children}</>;
-            return <p>{children}</p>;
+            if (canBeWrappedInPDeep(children) && children.type !== "img" && children.type?.name !== "img")
+                return <p>{children}</p>;
+            else return <>{children}</>;
         },
         img: ({ src, alt }: { src: string; alt: string }) => {
             const image = images[src];
@@ -122,13 +193,11 @@ export async function getBlog(
             ) : children === href && href.startsWith("https://youtu.be/") ? (
                 <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
             ) : href[0] === "#" ? (
-                <a
-                    href={
-                        "#" + crypto.createHash("sha256").update(href.substring(1)).digest("base64url").substring(0, 16)
-                    }
-                >
+                <a href={href}>{children}</a>
+            ) : href.endsWith("<download>") ? (
+                <Link href={href.substring(0, href.length - 10).trimEnd()} download>
                     {children}
-                </a>
+                </Link>
             ) : href[0] == "/" ||
               href.startsWith("http://seiseisai.com") ||
               href.startsWith("https://seiseisai.com") ? (
@@ -153,25 +222,23 @@ export async function getBlog(
         },
         components,
     });
-    const headings: string[] = [];
+    const headings: { name: string; id: string }[] = [];
     const contentMdx = await compileMDX({
         source: content,
         options: {
             parseFrontmatter: false,
             mdxOptions: {
                 remarkPlugins: [remarkGfm, remarkBreaks, remarkExtractH1Headings(headings)],
+                rehypePlugins: [],
             },
         },
         components: {
             ...components,
             h1: ({ children }: { children: any }) => {
                 if (typeof children === "string") {
-                    return (
-                        <h1 id={crypto.createHash("sha256").update(children).digest("base64url").substring(0, 16)}>
-                            {children}
-                        </h1>
-                    );
-                } else return <h1>{children}</h1>;
+                    return <h1 id={toAnchorId(children)}>{children}</h1>;
+                }
+                return <h1>{children}</h1>;
             },
         },
     });
@@ -181,10 +248,7 @@ export async function getBlog(
         author,
         topic,
         thumbnail,
-        toc: headings.map((name) => ({
-            name,
-            id: crypto.createHash("sha256").update(name).digest("base64url").substring(0, 16),
-        })),
+        toc: headings,
         description: descriptionMdx.content,
         content: contentMdx.content,
     };
