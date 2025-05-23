@@ -29,6 +29,7 @@ export function getAllBlogs(): {
     author: string;
     topic: string;
     thumbnail: StaticImageData;
+    thumbnailPath: string;
 }[] {
     return Object.entries(blogData).map(([key, value]) => {
         const [round, index] = key.split("/");
@@ -40,8 +41,25 @@ export function getAllBlogs(): {
             author: value.author,
             topic: value.topic,
             thumbnail: value.thumbnail,
+            thumbnailPath: value.thumbnailPath,
         };
     });
+}
+
+/**
+ * @example
+ * const { title, date, author, topic, thumbnail, thumbnailPath } = getBlogMetadata("60", "04");
+ */
+export function getBlogMetadata(round: string, index: string) {
+    const blog = blogData[`${round}/${index}`];
+    return {
+        title: blog.title,
+        date: blog.date,
+        author: blog.author,
+        topic: blog.topic,
+        thumbnail: blog.thumbnail,
+        thumbnailPath: blog.thumbnailPath,
+    };
 }
 
 /**
@@ -174,17 +192,21 @@ export async function getBlog(
                 return <p>{children}</p>;
             else return <>{children}</>;
         },
-        img: ({ src, alt }: { src: string; alt: string }) => {
+        img: ({ src, alt }: { src: string; alt: string | undefined }) => {
             const image = images[src];
             if (image === undefined) return <></>;
-            if (alt === "image.png")
+            if (alt === "image.png" || alt === "" || alt === undefined)
                 return (
-                    <>
+                    <figure>
                         <Image src={image} alt="image" />
-                        <p></p>
-                    </>
+                    </figure>
                 );
-            return <Image src={image} alt={alt === "image.png" ? "" : alt || ""} />;
+            return (
+                <figure>
+                    <Image src={image} alt={alt} />
+                    <figcaption>{alt}</figcaption>
+                </figure>
+            );
         },
         a: ({ href, children }: { href: string; children: any }) =>
             children === href &&

@@ -16,6 +16,7 @@ import * as path from "path";
         author: string;
         topic: string;
         thumbnail: StaticImageData;
+        thumbnailPath: string;
         images: {
             [key: string]: StaticImageData;
         };
@@ -23,6 +24,7 @@ import * as path from "path";
         content: string;
     };
 } = {\n`;
+    const removeAlt = /^(!\[([^\]]+)\]\(([^)]+)\))\s*\r?\n([^\r\n]+)\s*$/gm;
     for (const round of await fs.promises.readdir(path.join(cwd, "src/blogs"))) {
         if (!fs.statSync(path.join(cwd, "src/blogs", round)).isDirectory() || !Number.isInteger(Number(round)))
             continue;
@@ -48,7 +50,7 @@ import * as path from "path";
                         if (thumbnail !== undefined) {
                             console.log(`WARNING: ${path.join(folderPath, index)} has multiple thumbnail images`);
                         }
-                        thumbnail = [file, imageCnt];
+                        thumbnail = [file, imageCnt, file];
                     } else {
                         images.push([file, imageCnt]);
                     }
@@ -66,8 +68,15 @@ import * as path from "path";
             const filestr = await fs.promises.readFile(path.join(folderPath, index, "index.md"), "utf-8");
             let { data, content } = graymatter(filestr);
             content = content.replaceAll("\r\n", "\n").replaceAll("\r", "\n");
+            content = content.replaceAll(removeAlt, (match, md, alt1, url, alt2) => {
+                if (alt2.replace(/\s+/g, "") === alt1) {
+                    return md + "\n";
+                }
+                return match;
+            });
             if (!content.includes("\n# 目次\n")) {
                 console.log(`WARNING: ${path.join(folderPath, index)} does not have a table of contents`);
+                content = "\n# 目次\n" + content;
             }
             const [description, main_text] = content.split("\n# 目次\n");
             blogData += `    "${round}/${index}": {
@@ -76,6 +85,7 @@ import * as path from "path";
         author: \`${data.author}\`,
         topic: \`${data.topic}\`,
         thumbnail: ${thumbnail !== undefined ? `Image${thumbnail[1]}` : "undefined"},
+        thumbnailPath: \`${thumbnail !== undefined ? `src/blogs/${round}/${index}/${thumbnail[2]}` : "undefined"}\`,
         images: {${images.map((image) => `\n            "${encodeURIComponent(image[0])}": Image${image[1]},`).join("")}\n        },
         description: \`${description}\`,
         content: \`${main_text}\`,

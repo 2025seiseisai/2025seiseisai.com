@@ -32,13 +32,21 @@
     width: 100%;
 }
 
-/* 画像のキャプションのスタイル */
-.blog_content img + p {
+/* 画像とキャプションを囲ってるやつのスタイル */
+/* キャプションがないこともある */
+.blog_content figure {
+    margin: 10%;
+}
+
+/* キャプションのスタイル */
+.blog_content figcaption {
+    font-size: 0.875rem;
     color: orange;
-    margin-top: 0;
+    text-align: center;
 }
 
 /* 箇条書きリストのスタイル */
+/* 例) 59/15など */
 .blog_content ul {
     list-style: none;
 }
@@ -50,6 +58,7 @@
     content: "・";
 }
 /* 番号付きリストのスタイル */
+/* 今のところ使われてないっぽい */
 .blog_content ol {
     list-style: none;
 }

@@ -1,6 +1,7 @@
-import { enumetateParams } from "@/impl/blog";
+import { enumetateParams, getBlogMetadata } from "@/impl/blog";
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 export function generateStaticParams() {
     return enumetateParams();
@@ -16,7 +17,8 @@ export const contentType = "image/png";
 
 export default async function OpenGraphImage({ params }: { params: Promise<{ round: string; index: string }> }) {
     const { round, index } = await params;
-    const data = await readFile(`${process.cwd()}/src/blogs/${round}/${index}/thumbnail.png`);
+    const blog = getBlogMetadata(round, index);
+    const data = await readFile(path.join(process.cwd(), blog.thumbnailPath));
     const buf = Uint8Array.from(data).buffer;
     return new ImageResponse(
         (
