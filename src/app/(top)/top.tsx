@@ -1,8 +1,8 @@
-import Logo from "@/assets/logo.svg";
-import ThemeLogo from "@/assets/theme-logo.svg";
 import NewsManager from "@/impl/news";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { IBM_Plex_Sans_JP } from "next/font/google";
+import Logo from "../(assets)/logo.svg";
+import ThemeLogo from "../(assets)/theme-logo.svg";
 import LoadingWrapper from "./loading-wrapper";
 import styles from "./page.module.scss";
 import WaveWrapper from "./wave-wrapper";
@@ -131,7 +131,7 @@ export async function Top() {
             </div>
             <div className={styles.pv_container}>
                 <div className={styles.youtube_link}>
-                    <YouTubeEmbed videoid="4h_s7_eRCo0" />
+                    <YouTubeEmbed videoid="h8ffb4VJqjQ" />
                 </div>
                 <p className={styles.main_text_pv}>
                     ロゴ発表PVを公開中です！

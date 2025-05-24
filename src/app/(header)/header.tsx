@@ -1,5 +1,5 @@
 "use client";
-import Theme from "@/assets/theme.svg";
+import Theme from "../(assets)/theme.svg";
 //import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
