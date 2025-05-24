@@ -105,63 +105,6 @@ function remarkExtractH1Headings(headings: { name: string; id: string }[]) {
     };
 }
 
-const inlineTags = new Set([
-    "a",
-    "abbr",
-    "b",
-    "bdi",
-    "bdo",
-    "br",
-    "cite",
-    "code",
-    "data",
-    "dfn",
-    "em",
-    "i",
-    "img",
-    "kbd",
-    "label",
-    "mark",
-    "q",
-    "ruby",
-    "s",
-    "samp",
-    "small",
-    "span",
-    "strong",
-    "sub",
-    "sup",
-    "time",
-    "u",
-    "var",
-    "wbr",
-]);
-
-function canBeWrappedInPDeep(node: React.ReactNode): boolean {
-    if (node === null || node === undefined || typeof node === "boolean") {
-        return true;
-    }
-    if (typeof node === "string" || typeof node === "number") {
-        return true;
-    }
-    if (Array.isArray(node)) {
-        return node.every((child) => canBeWrappedInPDeep(child));
-    }
-    if (React.isValidElement(node)) {
-        const type = node.type;
-        if (typeof type === "string") {
-            if (!inlineTags.has(type)) return false;
-            return canBeWrappedInPDeep((node.props as any).children);
-        }
-        if (typeof type === "function") {
-            if (!inlineTags.has(type.name)) return false;
-            return canBeWrappedInPDeep((node.props as any).children);
-        }
-        return false;
-    }
-    return false;
-}
-
 /**
  * @example
  * const { title, date, author, topic, content } = getBlog("60", "04", styles.image_with_caption, styles.table_of_contents);
@@ -188,9 +131,7 @@ export async function getBlog(
     const { title, date, author, topic, thumbnail, images, description, content } = blog;
     const components = {
         p: ({ children }: { children: any }) => {
-            if (canBeWrappedInPDeep(children) && children.type !== "img" && children.type?.name !== "img")
-                return <p>{children}</p>;
-            else return <>{children}</>;
+            return <span>{children}</span>;
         },
         img: ({ src, alt }: { src: string; alt: string | undefined }) => {
             const image = images[src];
@@ -209,10 +150,10 @@ export async function getBlog(
             );
         },
         a: ({ href, children }: { href: string; children: any }) =>
-            children === href &&
-            (href.startsWith("https://youtube.com/") || href.startsWith("https://www.youtube.com/")) ? (
-                <YouTubeEmbed videoid={href.split("=").at(-1) || ""} />
-            ) : children === href && href.startsWith("https://youtu.be/") ? (
+            (children === href || children === "") &&
+            (href.startsWith("https://youtube.com/watch?v=") || href.startsWith("https://www.youtube.com/watch?v=")) ? (
+                <YouTubeEmbed videoid={href.split("?v=").at(-1) || ""} />
+            ) : (children === href || children === "") && href.startsWith("https://youtu.be/") ? (
                 <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
             ) : href[0] === "#" ? (
                 <a href={href}>{children}</a>

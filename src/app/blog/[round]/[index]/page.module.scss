@@ -5,12 +5,14 @@
 }
 
 /* テキストブロックのスタイル */
-.blog_content p {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+.blog_content span {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* 見出しのスタイル */
+/* Notionでは見出し3までしかつけれないので、h4以降はやらなくて大丈夫です */
 .blog_content h1 {
     color: black;
     font-size: 1.5rem;
@@ -69,4 +71,18 @@
 .blog_content ol li::before {
     content: counter(li);
     counter-increment: li;
+}
+
+/* YouTubeの埋め込み動画の親要素のスタイル */
+.blog_content div:has(lite-youtube) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100% !important;
+}
+/* YouTubeの埋め込み動画のスタイル */
+.blog_content div > lite-youtube {
+    width: 80%;
+    max-width: 80% !important;
 }

@@ -91,6 +91,7 @@ import Image84 from "./60/10/thumbnail.png";
 import Image85 from "./60/11/image 1.png";
 import Image86 from "./60/11/image.png";
 import Image87 from "./60/11/thumbnail.png";
+import Image88 from "./test/01/thumbnail.png";
 export const blogData: {
     [key: string]: {
         title: string;
@@ -1417,4 +1418,29 @@ After Effects の編集画面。非常に複雑。
 いかがだったでしょうか。今年度のお化け屋敷もとても面白そうですね。ぜひ皆さん菁々祭に来てくださった際にはぜひお化け屋敷に行ってみてください。整理券を忘れずに。最後にこの記事に関わってくださった皆さんありがとうございました。
 `,
     },
+    ...(process.env.NODE_ENV === "development"
+        ? {
+              "test/01": {
+                  title: `これはテストですこれはテストですこれはテストですこれはテストですこれはテストですこれはテストですこれはテストですこれはテストです`,
+                  date: `9999.00.00`,
+                  author: `PRパート員 A.A. & A.B. & A.C. & A.D. & A.E. & A.F`,
+                  topic: `製作セクション・技術セクション・運営セクション・販売セクション`,
+                  thumbnail: Image88,
+                  thumbnailPath: `src/blogs/test/01/thumbnail.png`,
+                  images: {},
+                  description: `
+あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+`,
+                  content: `
+あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+
+# 目次の中に[リンク](https://example.com/)
+
+YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
+
+# 目次の中にYoutube[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
+`,
+              },
+          }
+        : {}),
 };

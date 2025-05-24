@@ -26,7 +26,10 @@ import * as path from "path";
 } = {\n`;
     const removeAlt = /^(!\[([^\]]+)\]\(([^)]+)\))\s*\r?\n([^\r\n]+)\s*$/gm;
     for (const round of await fs.promises.readdir(path.join(cwd, "src/blogs"))) {
-        if (!fs.statSync(path.join(cwd, "src/blogs", round)).isDirectory() || !Number.isInteger(Number(round)))
+        if (
+            !fs.statSync(path.join(cwd, "src/blogs", round)).isDirectory() ||
+            (!Number.isInteger(Number(round)) && round !== "test")
+        )
             continue;
         const folderPath = path.join(cwd, "src/blogs", round);
         for (const index of await fs.promises.readdir(folderPath)) {
@@ -79,18 +82,37 @@ import * as path from "path";
                 content = "\n# 目次\n" + content;
             }
             const [description, main_text] = content.split("\n# 目次\n");
-            blogData += `    "${round}/${index}": {
+            if (round === "test") {
+                blogData += `    ...(process.env.NODE_ENV === "development"
+        ? {
+              "${round}/${index}": {
+                  title: \`${data.title}\`,
+                  date: \`${data.date}\`,
+                  author: \`${data.author}\`,
+                  topic: \`${data.topic}\`,
+                  thumbnail: ${thumbnail !== undefined ? `Image${thumbnail[1]}` : "undefined"},
+                  thumbnailPath: \`${thumbnail !== undefined ? `src/blogs/${round}/${index}/${thumbnail[2]}` : "undefined"}\`,
+                  images: ${images.length !== 0 ? `{${images.map((image) => `\n                      "${encodeURIComponent(image[0])}": Image${image[1]},`).join("")}\n                  }` : `{}`},
+                  description: \`${description}\`,
+                  content: \`${main_text}\`,
+              },
+          }
+        : {}),
+`;
+            } else {
+                blogData += `    "${round}/${index}": {
         title: \`${data.title}\`,
         date: \`${data.date}\`,
         author: \`${data.author}\`,
         topic: \`${data.topic}\`,
         thumbnail: ${thumbnail !== undefined ? `Image${thumbnail[1]}` : "undefined"},
         thumbnailPath: \`${thumbnail !== undefined ? `src/blogs/${round}/${index}/${thumbnail[2]}` : "undefined"}\`,
-        images: {${images.map((image) => `\n            "${encodeURIComponent(image[0])}": Image${image[1]},`).join("")}\n        },
+        images: ${images.length !== 0 ? `{${images.map((image) => `\n            "${encodeURIComponent(image[0])}": Image${image[1]},`).join("")}\n        }` : `{}`},
         description: \`${description}\`,
         content: \`${main_text}\`,
     },
 `;
+            }
         }
     }
     blogData += "};\n";
