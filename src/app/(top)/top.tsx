@@ -43,7 +43,7 @@ export async function Top() {
                 w-full items-center justify-center brightness-0 filter"
                 >
                     <Logo
-                        className="top_loading_logo max-h-full max-w-full transform-[scale(0.42)_translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
+                        className="top_loading_logo h-full max-h-full w-full max-w-full transform-[scale(0.42)_translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
                         style={{ opacity: 0 }}
                     />
                 </div>

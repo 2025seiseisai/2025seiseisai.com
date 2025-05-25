@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
+        "deploy": "git pull && npm install && npm run build && pm2 restart 2025seiseisai",
         "dev": "node --env-file=.env.development prepare.mjs && npm install && opener http://localhost:3000 && next dev --turbopack",
         "build": "next build",
         "start": "next start",
