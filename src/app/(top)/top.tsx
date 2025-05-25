@@ -1,8 +1,8 @@
-import Logo from "@/assets/logo.svg";
-import ThemeLogo from "@/assets/theme-logo.svg";
 import NewsManager from "@/impl/news";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { IBM_Plex_Sans_JP } from "next/font/google";
+import Logo from "../(assets)/logo.svg";
+import ThemeLogo from "../(assets)/theme-logo.svg";
 import LoadingWrapper from "./loading-wrapper";
 import styles from "./page.module.scss";
 import WaveWrapper from "./wave-wrapper";
@@ -38,12 +38,9 @@ export async function Top() {
                 }}
             >
                 <LoadingWrapper />
-                <div
-                    className="absolute flex h-[33%]
-                w-full items-center justify-center brightness-0 filter"
-                >
+                <div className="absolute flex h-[14%] w-[42%] items-center justify-center brightness-0 filter">
                     <Logo
-                        className="top_loading_logo h-full max-h-full w-full max-w-full transform-[scale(0.42)_translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
+                        className="top_loading_logo h-auto max-h-full w-auto max-w-full transform-[translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
                         style={{ opacity: 0 }}
                     />
                 </div>
@@ -131,7 +128,7 @@ export async function Top() {
             </div>
             <div className={styles.pv_container}>
                 <div className={styles.youtube_link}>
-                    <YouTubeEmbed videoid="4h_s7_eRCo0" />
+                    <YouTubeEmbed videoid="h8ffb4VJqjQ" />
                 </div>
                 <p className={styles.main_text_pv}>
                     ロゴ発表PVを公開中です！
@@ -186,14 +183,11 @@ export async function Top() {
                 <div className={styles.adress}>
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
                     <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
-                    <Link
-                        href="https://www.tdj.ac.jp/"
-                        className={styles.schoollink}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                    >
-                        https://www.tdj.ac.jp/
-                    </Link>
+                    <div className={styles.schoollink}>
+                        <Link href="https://www.tdj.ac.jp/" target="_blank" rel="noopener noreferrer nofollow">
+                            https://www.tdj.ac.jp/
+                        </Link>
+                    </div>
                 </div>
             </div>
             <p className={styles.title_3}>Contact</p>

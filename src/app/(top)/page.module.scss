@@ -28,8 +28,10 @@
     }
 }
 .animation_logo2 {
+    max-width: 100%;
+    max-height: 50%;
     width: 100%;
-    height: 50%;
+    height: 100%;
     transform: scale(1.8) translateX(8%) translateY(2%);
     position: absolute;
     inset: 0;
@@ -296,7 +298,7 @@
     @include media(sm) {
         margin-top: 8px;
         margin-bottom: 8px;
-        width: min(calc(100svw - 40px), 300px);
+        width: min(80svw, 300px);
     }
     @include media(lg) {
         margin-top: 12px;
@@ -333,6 +335,11 @@
     }
 }
 .pv_container {
+    @include media(sm) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     @include media(lg) {
         display: flex;
         align-items: center;
@@ -342,7 +349,8 @@
 .youtube_link {
     position: relative; // 両方共通
     @include media(sm) {
-        margin: 8px 20px 8px 20px;
+        margin: 8px 0 8px 0;
+        width: min(calc(100svw - 40px), 400px);
     }
     @include media(lg) {
         width: calc((100% - 12.5%) / 2);
