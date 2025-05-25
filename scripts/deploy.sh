@@ -14,6 +14,7 @@ git checkout $BRANCH || { echo "❌ Failed to checkout branch $BRANCH"; exit 1; 
 echo "📦 Installing dependencies..."
 npm install || { echo "❌ npm install failed"; exit 1; }
 npm run clean || { echo "❌ npm clean failed"; exit 1; }
+npm install -D @playwright/test || { echo "❌ npm install -D @playwright/test failed"; exit 1; }
 
 echo "🔨 Building project..."
 npm run build || { echo "❌ Build failed"; exit 1; }
