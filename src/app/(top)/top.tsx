@@ -38,12 +38,9 @@ export async function Top() {
                 }}
             >
                 <LoadingWrapper />
-                <div
-                    className="absolute flex h-[33%]
-                w-full items-center justify-center brightness-0 filter"
-                >
+                <div className="absolute flex h-[14%] w-[42%] items-center justify-center brightness-0 filter">
                     <Logo
-                        className="top_loading_logo h-full max-h-full w-full max-w-full transform-[scale(0.42)_translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
+                        className="top_loading_logo h-auto max-h-full w-auto max-w-full transform-[translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
                         style={{ opacity: 0 }}
                     />
                 </div>
@@ -187,8 +184,8 @@ export async function Top() {
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
                     <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
                     <div className={styles.schoollink}>
-                        <Link href="https://tdj.ac.jp/" target="_blank" rel="noopener noreferrer nofollow">
-                            https://tdj.ac.jp/
+                        <Link href="https://www.tdj.ac.jp/" target="_blank" rel="noopener noreferrer nofollow">
+                            https://www.tdj.ac.jp/
                         </Link>
                     </div>
                 </div>
