@@ -10,6 +10,7 @@ BRANCH=$1
 echo "▶️ Switching to branch: $BRANCH"
 git fetch origin
 git checkout $BRANCH || { echo "❌ Failed to checkout branch $BRANCH"; exit 1; }
+git stash drop || { echo "❌ Failed to drop stash"; exit 1; }
 git pull origin $BRANCH || { echo "❌ Failed to pull latest changes from $BRANCH"; exit 1; }
 
 echo "📦 Installing dependencies..."
