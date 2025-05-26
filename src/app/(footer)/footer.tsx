@@ -96,7 +96,7 @@ export function Footer() {
                         <YouTubeIcon className="not-md:h-[32px] not-md:w-[32px]" />
                     </Link>
                     <Link
-                        href="https://www.instagram.com/seiseisai_tdj/"
+                        href="https://www.instagram.com/seiseisai_tdj"
                         rel="noopener noreferrer"
                         target="_blank"
                         className="h-[40px] w-[40px] not-md:h-[32px] not-md:w-[32px]"
