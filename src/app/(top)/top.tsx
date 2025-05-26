@@ -45,9 +45,8 @@ export async function Top() {
                     />
                 </div>
             </div>
-            <div className={styles.wave_container_padding}></div>
             <div
-                className={`${styles.wave_container} absolute z-10000 mt-[-45px] flex h-[50svh] w-full items-center justify-center overflow-hidden md:mt-[-64px] md:h-[100svh]`}
+                className={`${styles.wave_container} relative z-10000 mt-[-45px] flex w-full items-center justify-center overflow-hidden md:mt-[-64px]`}
             >
                 <div className="absolute h-full w-full">
                     <Logo className={styles.animation_logo2} />
