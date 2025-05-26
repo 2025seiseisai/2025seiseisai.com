@@ -1,12 +1,12 @@
 "use client";
-import Theme from "../(assets)/theme.svg";
-//import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Theme from "../(assets)/theme.svg";
 import { overlapEvent } from "./overlap-event";
 
-//const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
+const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
 
 function HeaderLink({
     href,
@@ -22,11 +22,11 @@ function HeaderLink({
     return (
         <Link
             href={href}
-            className="flex items-center text-[24px] text-[#0b0e0f] transition-all duration-300 hover:text-[#de0d22]"
+            className="flex items-end text-[#0b0e0f] transition-all duration-300 hover:text-[#de0d22]"
             onClick={() => setOpen(false)}
         >
-            <span className="text-[#de0d22]">{title1}</span>
-            <span className="text-[#0b0e0f]">{title2}</span>
+            <span className="text-[28px] font-semibold text-[#de0d22]">{title1}</span>
+            <span className="mb-[2px] ml-[4px] text-[20px] text-[#0b0e0f]">{title2}</span>
         </Link>
     );
 }
@@ -74,7 +74,7 @@ export function Header() {
                 <Link href="/2025" className="mr-auto ml-[40px] block aspect-[411.258/148.991] h-[18px]">
                     <Theme className="h-full w-auto brightness-0 filter transition-all hover:brightness-100" />
                 </Link>
-                <div className="mr-[60px] ml-auto flex gap-[30px] text-[12px] font-normal not-md:mr-[35px] not-md:gap-[20px] not-md:text-[10px]">
+                <div className="mr-[30px] ml-auto flex gap-[30px] text-[12px] font-normal not-md:hidden">
                     <Link
                         href="/2025"
                         className="transition-all duration-300 text-shadow-[0_0_25px_#de0d2200] hover:text-shadow-[0_0_22px_#de0d22]"
@@ -94,21 +94,81 @@ export function Header() {
                         Contact
                     </Link>
                 </div>
-                {/*<Hamburger open={open} setOpen={setOpenImpl} />*/}
+                <Hamburger open={open} setOpen={setOpenImpl} />
             </div>
             <div
                 className={`absolute top-0 z-100000001 h-[100svh] w-full overflow-hidden ${open ? "" : "pointer-events-none"}`}
             >
                 <div
-                    className={`absolute h-full w-full bg-[#ffffff90] backdrop-sepia [backdrop-filter:blur(40px)] ${!open ? "ease-in [clip-path:polygon(150%_0,100%_0,100%_100%,150%_100%)]" : "ease-out [clip-path:polygon(25%_0,100%_0,100%_100%,20%_100%)]"} transition-[clip-path] duration-500`}
+                    className={`absolute h-full w-full bg-[#ffffff90] backdrop-sepia [backdrop-filter:blur(40px)] ${!open ? "ease-in [clip-path:polygon(150%_0,100%_0,100%_100%,150%_100%)]" : "ease-out [clip-path:polygon(30%_0,100%_0,100%_100%,20%_100%)]"} transition-[clip-path] duration-500`}
                 >
                     <div className="h-full w-full pt-[80px] pl-[35%]">
                         <HeaderLink href="/2025" title1="Top" title2="トップページ" setOpen={setOpenImpl} />
-                        <HeaderLink href="/2025/news" title1="News" title2="ニュース" setOpen={setOpenImpl} />
+                        <HeaderLink
+                            href="/2025/news"
+                            title1="News"
+                            title2="菁々祭に関するニュース"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/theme-logo"
+                            title1="Theme & Logo"
+                            title2="テーマとロゴの紹介"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/access"
+                            title1="Access"
+                            title2="東大寺学園までの行き方"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/events"
+                            title1="Events"
+                            title2="イベント紹介・タイムテーブル"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/map"
+                            title1="Map"
+                            title2="展示・バザーの校内地図"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/goods"
+                            title1="Goods"
+                            title2="菁々祭グッズの一覧"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink href="/2025/Tickets" title1="Tickets" title2="Web整理券" setOpen={setOpenImpl} />
+                        <HeaderLink
+                            href="/2025/blog"
+                            title1="Blog"
+                            title2="PRパート員による菁々祭の紹介"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/special"
+                            title1="Special"
+                            title2="壁紙・アイコン等の特別コンテンツ"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/downloads"
+                            title1="Contact"
+                            title2="部誌のダウンロード"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/gellery"
+                            title1="Gallery"
+                            title2="菁々祭デザインギャラリー"
+                            setOpen={setOpenImpl}
+                        />
                     </div>
                 </div>
                 <div
-                    className={`absolute h-full w-full bg-[#0b0e0fa0] ${!open ? "opacity-0 ease-in [clip-path:polygon(0_0,150%_0,150%_100%,0_100%)]" : "ease-out [clip-path:polygon(0_0,25%_0,20%_100%,0_100%)]"} transition-[clip-path opacity] duration-500`}
+                    className={`absolute h-full w-full bg-[#0b0e0fa0] ${!open ? "opacity-0 ease-in [clip-path:polygon(0_0,150%_0,150%_100%,0_100%)]" : "ease-out [clip-path:polygon(0_0,30%_0,20%_100%,0_100%)]"} transition-[clip-path opacity] duration-500`}
                     onClick={() => setOpenImpl(false)}
                 ></div>
             </div>
