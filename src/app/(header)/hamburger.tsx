@@ -1,7 +1,7 @@
 "use client";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { useEffect, useRef } from "react";
-import HamburgerAnimation from "./hamburger.json";
+import HamburgerAnimation from "./hamburger.lottie.json";
 
 export default function Hamburger({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => void }) {
     const hamburgerRef = useRef<LottieRefCurrentProps | null>(null);
