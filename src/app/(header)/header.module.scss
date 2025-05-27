@@ -1,0 +1,235 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 12000;
+    height: 45px;
+    width: 100%;
+    @media (min-width: 768px) {
+        height: 64px;
+    }
+}
+
+.headerContent {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    background-color: white;
+    box-shadow: -3px 0 3px #0b0e0f77;
+    transition-property: margin;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 400ms;
+}
+
+.headerContentOverlapping {
+    margin-top: -75px;
+}
+
+.logoLink {
+    margin-right: auto;
+    margin-left: 40px;
+    display: block;
+    aspect-ratio: 411.258 / 148.991;
+    height: 18px;
+}
+
+.logo {
+    height: 100%;
+    width: auto;
+    filter: brightness(0%);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    &:hover {
+        filter: brightness(100%);
+    }
+}
+
+.navLinks {
+    margin-right: 30px;
+    margin-left: auto;
+    display: flex;
+    gap: 30px;
+    font-size: 12px;
+    font-weight: 400;
+    @media not all and (min-width: 980px) {
+        // not-md:
+        display: none;
+    }
+}
+
+.navLink {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    text-shadow: 0 0 25px #de0d2200;
+    &:hover {
+        text-shadow: 0 0 22px #de0d22;
+    }
+}
+
+.menuOverlay {
+    position: absolute;
+    top: 0;
+    z-index: 100000001;
+    height: 100svh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.menuOverlayHidden {
+    pointer-events: none;
+}
+
+.menuContent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffffc0;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    transition-property: clip-path;
+    transition-duration: 400ms;
+}
+
+.menuContentClosed {
+    clip-path: polygon(150% 0, 100% 0, 100% 100%, 150% 100%);
+    transition-timing-function: ease-in;
+}
+
+.menuContentOpen {
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 20% 100%);
+    transition-timing-function: ease-out;
+}
+
+.menuLinksContainer {
+    display: flex;
+    width: 100%;
+    flex: 60%;
+    gap: 5%;
+    padding-top: 100px;
+    padding-right: 7%;
+    padding-left: 35%;
+    @media (max-width: 980px) {
+        flex: 70%;
+    }
+}
+
+.menuLinkColumn {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.headerLink {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    color: #0b0e0f;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    &:hover {
+        color: #de0d22;
+    }
+    @media (max-width: 980px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.headerLinkTitle1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #de0d22;
+    @media (max-width: 1200px) {
+        font-size: 20px;
+    }
+}
+
+.headerLinkTitle2 {
+    font-size: 12px;
+    color: #0b0e0f;
+    @media (max-width: 1200px) {
+        font-size: 10px;
+    }
+}
+
+.snsContainer {
+    display: flex;
+    width: 100%;
+    flex: 40%;
+    gap: 5%;
+    padding-right: 7%;
+    padding-bottom: 50px;
+    padding-left: 35%;
+    @media (max-width: 980px) {
+        flex: 30%;
+    }
+}
+
+.snsLinks {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.snsTitle {
+    width: 90%;
+    border-bottom-width: 2px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    @media (max-width: 1200px) {
+        font-size: 22px;
+    }
+}
+
+.snsIconLinks {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+}
+
+.snsIcon {
+    height: 28px;
+    width: 28px;
+    @media (max-width: 1200px) {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+.snsPlaceholder {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.menuBackground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #0b0e0fa0;
+    transition-property: clip-path, opacity;
+    transition-duration: 400ms;
+}
+
+.menuBackgroundClosed {
+    opacity: 0;
+    clip-path: polygon(0 0, 150% 0, 150% 100%, 0 100%);
+    transition-timing-function: ease-in;
+}
+
+.menuBackgroundOpen {
+    clip-path: polygon(0 0, 30% 0, 20% 100%, 0 100%);
+    transition-timing-function: ease-out;
+}
