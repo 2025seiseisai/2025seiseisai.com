@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Theme from "../(assets)/theme.svg";
+import styles from "./header.module.scss";
 import InstagramIcon from "./instagram.svg";
 import { overlapEvent } from "./overlap-event";
 import XIcon from "./x.svg";
@@ -23,13 +24,9 @@ function HeaderLink({
     setOpen: (open: boolean) => void;
 }) {
     return (
-        <Link
-            href={href}
-            className="flex w-full items-center justify-between text-[#0b0e0f] transition-all duration-300  hover:text-[#de0d22] max-[980px]:flex-col max-[980px]:items-start"
-            onClick={() => setOpen(false)}
-        >
-            <span className="text-[24px] font-semibold text-[#de0d22] max-[1200px]:text-[20px]">{title1}</span>
-            <span className="text-[12px] text-[#0b0e0f] max-[1200px]:text-[10px]">{title2}</span>
+        <Link href={href} className={styles.headerLink} onClick={() => setOpen(false)}>
+            <span className={styles.headerLinkTitle1}>{title1}</span>
+            <span className={styles.headerLinkTitle2}>{title2}</span>
         </Link>
     );
 }
@@ -70,43 +67,28 @@ export function Header() {
     }, [pathname]);
 
     return (
-        <header className="sticky top-0 z-12000 h-[45px] w-full md:h-[64px]">
-            <div
-                className={`transition-margin flex h-full items-center bg-white shadow-[-3px_0_3px_#0b0e0f77] duration-400 ${isOverlapping && !open ? "mt-[-75px]" : ""}`}
-            >
-                <Link href="/2025" className="mr-auto ml-[40px] block aspect-[411.258/148.991] h-[18px]">
-                    <Theme className="h-full w-auto brightness-0 filter transition-all hover:brightness-100" />
+        <header className={styles.header}>
+            <div className={`${styles.headerContent} ${isOverlapping && !open ? styles.headerContentOverlapping : ""}`}>
+                <Link href="/2025" className={styles.logoLink}>
+                    <Theme className={styles.logo} />
                 </Link>
-                <div className="mr-[30px] ml-auto flex gap-[30px] text-[12px] font-normal not-md:hidden">
-                    <Link
-                        href="/2025"
-                        className="transition-all duration-300 text-shadow-[0_0_25px_#de0d2200] hover:text-shadow-[0_0_22px_#de0d22]"
-                    >
+                <div className={styles.navLinks}>
+                    <Link href="/2025" className={styles.navLink}>
                         Top
                     </Link>
-                    <Link
-                        href="/2025/news"
-                        className="transition-all duration-300 text-shadow-[0_0_25px_#de0d2200] hover:text-shadow-[0_0_22px_#de0d22]"
-                    >
+                    <Link href="/2025/news" className={styles.navLink}>
                         News
                     </Link>
-                    <Link
-                        href="/2025/contact"
-                        className="transition-all duration-300 text-shadow-[0_0_25px_#de0d2200] hover:text-shadow-[0_0_22px_#de0d22]"
-                    >
+                    <Link href="/2025/contact" className={styles.navLink}>
                         Contact
                     </Link>
                 </div>
                 <Hamburger open={open} setOpen={setOpenImpl} />
             </div>
-            <div
-                className={`absolute top-0 z-100000001 h-[100svh] w-full overflow-hidden ${open ? "" : "pointer-events-none"}`}
-            >
-                <div
-                    className={`absolute h-full w-full bg-[#ffffff90] backdrop-sepia [backdrop-filter:blur(40px)] ${!open ? "ease-in [clip-path:polygon(150%_0,100%_0,100%_100%,150%_100%)]" : "ease-out [clip-path:polygon(30%_0,100%_0,100%_100%,20%_100%)]"} flex flex-col transition-[clip-path] duration-500`}
-                >
-                    <div className="flex w-full flex-6/10 gap-[5%] pt-[100px] pr-[7%] pl-[35%] max-[980px]:flex-7/10">
-                        <div className="flex h-full flex-1 flex-col justify-between">
+            <div className={`${styles.menuOverlay} ${open ? "" : styles.menuOverlayHidden}`}>
+                <div className={`${styles.menuContent} ${!open ? styles.menuContentClosed : styles.menuContentOpen}`}>
+                    <div className={styles.menuLinksContainer}>
+                        <div className={styles.menuLinkColumn}>
                             <HeaderLink
                                 href="/2025"
                                 title1="Top"
@@ -144,7 +126,7 @@ export function Header() {
                                 setOpen={setOpenImpl}
                             />
                         </div>
-                        <div className="flex h-full flex-1 flex-col justify-between">
+                        <div className={styles.menuLinkColumn}>
                             <HeaderLink
                                 href="/2025/goods"
                                 title1="Goods"
@@ -183,36 +165,34 @@ export function Header() {
                             />
                         </div>
                     </div>
-                    <div className="flex w-full flex-4/10 gap-[5%] pr-[7%] pb-[50px] pl-[35%] max-[980px]:flex-3/10">
-                        <div className="flex h-full flex-1 flex-col items-center justify-center gap-[16px]">
-                            <h1 className="w-[90%] border-b-2 text-center text-[26px] font-semibold max-[1200px]:text-[22px]">
-                                SNS
-                            </h1>
-                            <div className="flex w-[90%] justify-around">
+                    <div className={styles.snsContainer}>
+                        <div className={styles.snsLinks}>
+                            <h1 className={styles.snsTitle}>SNS</h1>
+                            <div className={styles.snsIconLinks}>
                                 <Link href="https://x.com/seiseisai_tdj" rel="noopener noreferrer" target="_blank">
-                                    <XIcon className="h-[28px] w-[28px] max-[1200px]:h-[24px] max-[1200px]:w-[24px]" />
+                                    <XIcon className={styles.snsIcon} />
                                 </Link>
                                 <Link
                                     href="https://www.youtube.com/@seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >
-                                    <YouTubeIcon className="h-[28px] w-[28px] max-[1200px]:h-[24px] max-[1200px]:w-[24px]" />
+                                    <YouTubeIcon className={styles.snsIcon} />
                                 </Link>
                                 <Link
                                     href="https://www.instagram.com/seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >
-                                    <InstagramIcon className="h-[28px] w-[28px] max-[1200px]:h-[24px] max-[1200px]:w-[24px]" />
+                                    <InstagramIcon className={styles.snsIcon} />
                                 </Link>
                             </div>
                         </div>
-                        <div className="flex h-full flex-1 justify-around"></div>
+                        <div className={styles.snsPlaceholder}></div>
                     </div>
                 </div>
                 <div
-                    className={`absolute h-full w-full bg-[#0b0e0fa0] ${!open ? "opacity-0 ease-in [clip-path:polygon(0_0,150%_0,150%_100%,0_100%)]" : "ease-out [clip-path:polygon(0_0,30%_0,20%_100%,0_100%)]"} transition-[clip-path opacity] duration-500`}
+                    className={`${styles.menuBackground} ${!open ? styles.menuBackgroundClosed : styles.menuBackgroundOpen}`}
                     onClick={() => setOpenImpl(false)}
                 ></div>
             </div>
