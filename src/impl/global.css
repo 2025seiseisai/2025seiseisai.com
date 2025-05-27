@@ -12,7 +12,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     display: flex;
     flex-direction: column;
-    min-height: 100svh;
+    min-height: 100dvh;
     font-weight: 500;
 }
 main {

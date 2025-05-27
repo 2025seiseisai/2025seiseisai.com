@@ -1,19 +1,34 @@
-import ThemeLogo from "@/assets/theme-logo.svg";
 import Link from "next/link";
+import ThemeLogo from "../(assets)/theme-logo.svg";
 import InstagramIcon from "./Instagram-icon.svg";
 import XIcon from "./X-icon.svg";
 import YouTubeIcon from "./YouTube-icon.svg";
 
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+    return (
+        <Link
+            href={href}
+            className="mt-[7px] inline-block w-full pl-0 text-[13px] transition-[color_padding] duration-300 md:mt-[20px] md:pl-[23px] md:text-[16px] md:hover:pl-[25px] md:hover:text-[#de0d22]"
+        >
+            {children}
+        </Link>
+    );
+}
+
+function DisabledFooterLink({ children }: { children: React.ReactNode }) {
+    return (
+        <div className="mt-[7px] inline-block w-full pl-0 text-[13px] text-[#b0b0b0] md:mt-[20px] md:pl-[23px] md:text-[16px]">
+            {children}
+        </div>
+    );
+}
+
 export function Footer() {
-    const footerLink =
-        "mt-[7px] inline-block md:mt-[13px] md:mt-[20px] w-full pl-0 md:pl-[23px] text-[13px] md:text-[16px] transition-[color padding] duration-300 md:hover:pl-[25px] md:hover:text-[#de0d22]";
-    const disabledLink =
-        "mt-[7px] inline-block md:mt-[13px] md:mt-[20px] w-full pl-0 md:pl-[23px] text-[13px] md:text-[16px] text-[#b0b0b0]";
     return (
         <footer className="mt-auto bg-white">
             <div className="flex w-full flex-wrap bg-[#f7f7f7] font-light not-md:pb-[12px] md:h-[137px]">
                 <span className="mr-[2px]">
-                    <ThemeLogo className="ml-[25px] h-[44px] pt-[13px] md:ml-[calc(19000svw/1440)] md:h-[85px] md:pt-[33px]" />
+                    <ThemeLogo className="ml-[25px] h-[44px] w-auto pt-[13px] md:ml-[calc(19000svw/1440)] md:h-[85px] md:pt-[33px]" />
                     <p className="mt-[5px] ml-[25px] w-[220px] text-[9px] md:mt-[12px] md:ml-[calc(19000svw/1440)] md:w-[321px] md:text-[13px]">
                         © 2025 61st seiseisai “FUNBYO”, Created by PR part
                     </p>
@@ -36,36 +51,32 @@ export function Footer() {
                     <h1 className="mt-[27px] w-full border-b-[1px] text-[16px] not-md:mb-[6px] md:border-b-2 md:text-[32px]">
                         Overview
                     </h1>
-                    <Link href="/2025">
-                        <p className={footerLink}>Top</p>
-                    </Link>
-                    <p
-                        className={`${disabledLink} max-[400px]:!flex max-[400px]:!h-[21px] max-[400px]:!items-center max-[400px]:!text-[3.5svw]`}
-                    >
-                        Theme & Logo
-                    </p>
-                    <Link href="/2025/news">
-                        <p className={footerLink}>News</p>
-                    </Link>
-                    <p className={disabledLink}>Access</p>
+                    <FooterLink href="/2025">Top</FooterLink>
+                    <DisabledFooterLink>
+                        <p className="max-[400px]:!flex max-[400px]:!h-[21px] max-[400px]:!items-center max-[400px]:!text-[3.5svw]">
+                            Theme & Logo
+                        </p>
+                    </DisabledFooterLink>
+                    <FooterLink href="/2025/news">News</FooterLink>
+                    <DisabledFooterLink>Access</DisabledFooterLink>
                 </span>
                 <span className="not-md:flex-1 md:ml-[calc(8600svw/1440)] md:w-[calc(27500svw/1440)] lg:w-[calc(22500svw/1440)]">
                     <h1 className="mt-[27px] w-full border-b-[1px] text-[16px] not-md:mb-[6px] md:border-b-2 md:text-[32px]">
                         Guide
                     </h1>
-                    <p className={disabledLink}>Event</p>
-                    <p className={disabledLink}>Exhibition</p>
-                    <p className={disabledLink}>Bazaar</p>
-                    <p className={disabledLink}>Goods</p>
+                    <DisabledFooterLink>Events</DisabledFooterLink>
+                    <DisabledFooterLink>Map</DisabledFooterLink>
+                    <DisabledFooterLink>Goods</DisabledFooterLink>
+                    <DisabledFooterLink>Tickets</DisabledFooterLink>
                 </span>
                 <span className="not-md:mr-[calc(1700svw/375)] not-md:flex-1 md:ml-[calc(8600svw/1440)] md:w-[calc(27500svw/1440)] lg:w-[calc(22500svw/1440)]">
                     <h1 className="mt-[27px] w-full border-b-[1px] text-[16px] not-md:mb-[6px] md:border-b-2 md:text-[32px]">
                         Contents
                     </h1>
-                    <p className={disabledLink}>Blog</p>
-                    <p className={disabledLink}>Gallery</p>
-                    <p className={disabledLink}>Special</p>
-                    <p className={disabledLink}>Archives</p>
+                    <DisabledFooterLink>Blog</DisabledFooterLink>
+                    <DisabledFooterLink>Special</DisabledFooterLink>
+                    <DisabledFooterLink>Downloads</DisabledFooterLink>
+                    <DisabledFooterLink>Gellery</DisabledFooterLink>
                 </span>
                 <span className="flex flex-row not-md:mt-[16px] not-md:mr-[17px] not-md:mb-[16px] not-md:w-full not-md:justify-end not-md:gap-[5px] md:mt-auto md:mr-[calc(7900svw/1440)] md:mb-[30px] md:ml-auto md:flex-col md:gap-[8px] lg:flex-row">
                     <Link

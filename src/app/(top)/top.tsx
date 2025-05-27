@@ -1,8 +1,8 @@
-import Logo from "@/assets/logo.svg";
-import ThemeLogo from "@/assets/theme-logo.svg";
 import NewsManager from "@/impl/news";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { IBM_Plex_Sans_JP } from "next/font/google";
+import Logo from "../(assets)/logo.svg";
+import ThemeLogo from "../(assets)/theme-logo.svg";
 import LoadingWrapper from "./loading-wrapper";
 import styles from "./page.module.scss";
 import WaveWrapper from "./wave-wrapper";
@@ -12,40 +12,35 @@ import Link from "next/link";
 import Countdown from "./CountdownTimer";
 //イメージ
 import FunbyoLogo from "./images/Funbyo-Logo.svg";
-import TdjLogo from "./images/TDJ-Logo.svg";
 import Vector_lg from "./images/Vector (1).svg";
 import Vector_sm from "./images/Vector.svg";
 import MoreAllow from "./images/arrow-right-circle.svg";
 import Headphone from "./images/headphones.svg";
 import Logout from "./images/log-out.svg";
+import Slide from "./slide";
 
 const ibmPlexSansJP = IBM_Plex_Sans_JP({
     subsets: ["latin"],
     weight: "600",
 });
 
-export const revalidate = 60 * 3;
-
 export async function Top() {
     const news = await NewsManager.getNewsSortedByDate(3);
     return (
         <>
             <div
-                className="top_loading z-20000 flex items-center justify-center overflow-hidden bg-[#ffffff]"
+                className="top_loading z-20000 flex h-[100dvh] w-full items-center justify-center overflow-hidden bg-[#ffffff]"
                 style={{
                     transition: "none",
-                    clipPath: "polygon(-100svh 100svh, 100svw 100svh, 100svw -100svw)",
+                    clipPath: "polygon(-100dvh 100dvh, 100svw 100dvh, 100svw -100svw)",
                     position: "fixed",
                     inset: 0,
                 }}
             >
                 <LoadingWrapper />
-                <div
-                    className="absolute flex h-[33%]
-                w-full items-center justify-center brightness-0 filter"
-                >
+                <div className="absolute flex h-[14%] w-[42%] items-center justify-center brightness-0 filter">
                     <Logo
-                        className="top_loading_logo max-h-full max-w-full transform-[scale(0.42)_translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
+                        className="top_loading_logo h-auto max-h-full w-auto max-w-full transform-[translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
                         style={{ opacity: 0 }}
                     />
                 </div>
@@ -113,7 +108,7 @@ export async function Top() {
                 <Vector_sm className={styles.mark_sm} />
                 <p>SEISEISAI</p>
             </div>
-            <TdjLogo className={styles.logo} />
+            <Slide />
             <p className={styles.main_text}>菁々祭とは東大寺学園で行われる文化祭のこと。</p>
             <p className={styles.main_text}>第61回菁々祭 「分秒」 は2025年9月に開催予定。</p>
             <p className={styles.main_text}>過去60年の伝統と令和の新しい風が鳴り響く菁々祭、ぜひご覧あれ!</p>
@@ -123,10 +118,9 @@ export async function Top() {
                 <p>分秒</p>
             </div>
             <FunbyoLogo className={styles.logo} />
-            <p className={styles.main_text}>「分秒」には文化祭にかけてきた一分一秒も惜しまぬ情熱が込められています。</p>
-            <p className={styles.main_text}>
-                また、一分一秒が61秒であると言う意味から第61回にふさわしいテーマとなっています。
-            </p>
+            <p className={styles.main_text}>{`第61回菁々祭のテーマは"分秒"です。`}</p>
+            <p className={styles.main_text}>「1分1秒が“61”秒である」という遊び心を交えつつ、</p>
+            <p className={styles.main_text}>生徒が一分一秒さえも惜しんで掛けてきた熱い想いが込められています。</p>
             <div className={styles.title_1}>
                 <Vector_lg className={styles.mark_lg} />
                 <Vector_sm className={styles.mark_sm} />
@@ -134,7 +128,7 @@ export async function Top() {
             </div>
             <div className={styles.pv_container}>
                 <div className={styles.youtube_link}>
-                    <YouTubeEmbed videoid="4h_s7_eRCo0" />
+                    <YouTubeEmbed videoid="h8ffb4VJqjQ" />
                 </div>
                 <p className={styles.main_text_pv}>
                     ロゴ発表PVを公開中です！
@@ -189,14 +183,11 @@ export async function Top() {
                 <div className={styles.adress}>
                     <p className={styles.schoolname}>東大寺学園中学校・高等学校</p>
                     <p className={styles.schooladress}>〒631-0803 奈良市山陵町1375</p>
-                    <Link
-                        href="https://tdj.ac.jp/"
-                        className={styles.schoollink}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                    >
-                        https://tdj.ac.jp/
-                    </Link>
+                    <div className={styles.schoollink}>
+                        <Link href="https://www.tdj.ac.jp/" target="_blank" rel="noopener noreferrer nofollow">
+                            https://www.tdj.ac.jp/
+                        </Link>
+                    </div>
                 </div>
             </div>
             <p className={styles.title_3}>Contact</p>

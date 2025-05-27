@@ -9,26 +9,30 @@ export default function Loading() {
     const [isFinished, setIsFinished] = useState(false);
     const animationRef = useRef<LottieRefCurrentProps>(null);
     useEffect(() => {
-        if (isLoaded.current != 0) {
-            if (isLoaded.current == 2) animationRef.current?.play();
-            return;
-        }
-        if (sessionStorage.getItem("loaded")) {
-            isLoaded.current = 1;
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const style = (document.getElementsByClassName("top_loading")[0] as any)?.style;
-            if (!style) return;
-            style.transition = "clip-path 0.3s linear, background-color 0.3s ease-in-out";
-            style.backgroundColor = "#f4f4f4";
-            setTimeout(() => {
-                style.clipPath = "polygon(100svw 100svh, 100svw 100svh, 100svw 100svh)";
-                style.pointerEvents = "none";
-            }, 300);
-            return;
-        }
-        isLoaded.current = 2;
-        sessionStorage.setItem("loaded", "true");
-        window.scrollTo(0, 0);
+        const startLoading = () => {
+            if (isLoaded.current != 0) {
+                if (isLoaded.current == 2) animationRef.current?.play();
+                return;
+            }
+            if (sessionStorage.getItem("loaded")) {
+                isLoaded.current = 1;
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                const style = (document.getElementsByClassName("top_loading")[0] as any)?.style;
+                if (!style) return;
+                style.transition = "clip-path 0.3s linear, background-color 0.3s ease-in-out";
+                style.backgroundColor = "#f4f4f4";
+                setTimeout(() => {
+                    style.clipPath = "polygon(100svw 100dvh, 100svw 100dvh, 100svw 100dvh)";
+                    style.pointerEvents = "none";
+                }, 300);
+                return;
+            }
+            isLoaded.current = 2;
+            sessionStorage.setItem("loaded", "true");
+            window.scrollTo(0, 0);
+        };
+        startLoading();
+        if (process.env.NODE_ENV !== "development") startLoading();
     }, [isLoaded]);
     return (
         <Lottie
@@ -66,7 +70,7 @@ export default function Loading() {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     const style = (document.getElementsByClassName("top_loading")[0] as any)?.style;
                     if (!style) return;
-                    style.clipPath = "polygon(100svw 100svh, 100svw 100svh, 100svw 100svh)";
+                    style.clipPath = "polygon(100svw 100dvh, 100svw 100dvh, 100svw 100dvh)";
                     style.pointerEvents = "none";
                 }
             }}

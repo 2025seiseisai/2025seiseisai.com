@@ -35,7 +35,7 @@ export class DatabaseClient {
      * Connects to the MongoDB server and database.
      * Throws an error if the connection fails.
      */
-    public async connect(): Promise<void> {
+    public async connect(retry: number = 3): Promise<void> {
         if (this.db) {
             return;
         }
@@ -46,10 +46,22 @@ export class DatabaseClient {
             console.log(`Successfully connected to MongoDB database: ${this.dbName}`);
         } catch (error) {
             console.error("Error connecting to MongoDB:", error);
+            if (retry > 0) {
+                console.log(`Retrying connection...`);
+                await new Promise((resolve) => setTimeout(resolve, 2000));
+                return this.connect(retry - 1);
+            }
             this.client = null;
             this.db = null;
             throw error;
         }
+    }
+
+    /**
+     * Checks if the MongoDB client is connected.
+     */
+    public connected(): boolean {
+        return this.client !== null && this.db !== null;
     }
 
     /**
@@ -88,8 +100,23 @@ export class DatabaseClient {
     }
 }
 
-export const databaseInstance = DatabaseClient.constructFromEnv("DB_ADMIN", "cultivo");
-await databaseInstance.connect();
+declare global {
+    // eslint-disable-next-line no-var
+    var __databaseInstance: DatabaseClient | undefined;
+}
+
+export const databaseInstance = (() => {
+    if (globalThis.__databaseInstance) {
+        return globalThis.__databaseInstance;
+    }
+    const instance = DatabaseClient.constructFromEnv("DB_ADMIN", "cultivo");
+    globalThis.__databaseInstance = instance;
+    return instance;
+})();
+
+if (!databaseInstance.connected() || !globalThis.__databaseInstance) {
+    await databaseInstance.connect();
+}
 
 interface WorkspaceInterface {
     _id: ObjectId;

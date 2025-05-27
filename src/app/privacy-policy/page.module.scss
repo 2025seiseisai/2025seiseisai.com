@@ -71,7 +71,7 @@
     height: 151px;
     max-width: 500px;
     margin: 0 auto;
-    margin-top: 53px;
+    margin-top: 43px;
     z-index: 2;
 }
 @include media(sm) {
@@ -81,7 +81,7 @@
         height: 53px;
         max-width: 350px;
         margin: 0 auto;
-        margin-top: 35px;
+        margin-top: 30px;
         z-index: 2;
     }
 }
@@ -89,14 +89,14 @@
 .subtitle {
     font-size: 20px;
     font-weight: 500;
-    margin-top: -65px;
+    margin-top: -55px;
     z-index: 2;
 }
 @include media(sm) {
     .subtitle {
         font-size: 14px;
         font-weight: 500;
-        margin-top: -5px;
+        margin-top: 0px;
         z-index: 2;
     }
 }
