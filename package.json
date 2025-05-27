@@ -57,6 +57,7 @@
         "opener": "^1.5.2",
         "postcss-flexbugs-fixes": "^5.0.2",
         "postcss-preset-env": "^10.1.6",
+        "prettier": "^3.5.3",
         "tsx": "^4.19.4",
         "typescript": "^5",
         "typescript-plugin-css-modules": "^5.1.0"
