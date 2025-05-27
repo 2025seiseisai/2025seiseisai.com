@@ -13,6 +13,7 @@
         "format:check": "prettier --check .",
         "clean": "modclean --run",
         "type-check": "tsc --noEmit",
+        "update-blogs": "node ./scripts/generate-blog-data.mjs",
         "browser:chrome": "playwright test browser.test.ts --headed --project=chromium",
         "browser:firefox": "playwright test browser.test.ts --headed --project=firefox",
         "browser:safari": "playwright test browser.test.ts --headed --project=webkit",
