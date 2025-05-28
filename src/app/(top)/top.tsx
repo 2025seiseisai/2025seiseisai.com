@@ -36,6 +36,7 @@ export async function Top() {
                     position: "fixed",
                     inset: 0,
                 }}
+                suppressHydrationWarning
             >
                 <LoadingWrapper />
                 <div className="absolute flex h-[14%] w-[42%] items-center justify-center brightness-0 filter">
