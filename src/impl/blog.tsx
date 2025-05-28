@@ -1,5 +1,5 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
-import { blogData } from "@/blogs/blog-data";
+import { blogData, resourceSize } from "@/blogs/blog-data";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image, { StaticImageData } from "next/image";
@@ -91,10 +91,14 @@ function remarkExtractH1Headings(headings: { name: string; id: string }[]) {
         return (tree: any) => {
             visit(tree, "heading", (node: any) => {
                 if (node.depth === 1) {
-                    const text = node.children
-                        .filter((child: any) => child.type === "text")
-                        .map((child: any) => child.value)
-                        .join("");
+                    function getText(n: any): string {
+                        if (n.type === "text") return n.value;
+                        if (Array.isArray(n.children)) {
+                            return n.children.map(getText).join("");
+                        }
+                        return "";
+                    }
+                    const text = getText(node);
                     headings.push({
                         name: text,
                         id: toAnchorId(text),
@@ -103,6 +107,56 @@ function remarkExtractH1Headings(headings: { name: string; id: string }[]) {
             });
         };
     };
+}
+
+function transformLinks(node: React.ReactNode, round: string, index: string): React.ReactNode {
+    if (typeof node === "string" || typeof node === "number") {
+        return node;
+    }
+    if (Array.isArray(node)) {
+        return node.map((child, i) => <React.Fragment key={i}>{transformLinks(child, round, index)}</React.Fragment>);
+    }
+
+    if (React.isValidElement(node) && node.type === "a" && (node.props as any).href) {
+        const { href, children } = node.props as { href: string; children: React.ReactNode };
+        if (href[0] === "#") {
+            return <a href={href}>{transformLinks(children, round, index)}</a>;
+        }
+        if (
+            (href.startsWith("https://") || href.startsWith("http://")) &&
+            href.split("/").at(-1)?.includes(".") &&
+            !href.endsWith(".html") &&
+            !href.endsWith(".htm") &&
+            !href.endsWith(".php")
+        ) {
+            return (
+                <Link href={href} download>
+                    {transformLinks(children, round, index)}
+                </Link>
+            );
+        }
+        if (
+            (href.startsWith("https://") || href.startsWith("http://")) &&
+            !href.startsWith("https://seiseisai.com") &&
+            !href.startsWith("http://seiseisai.com")
+        ) {
+            return (
+                <Link href={href} target="_blank" rel="noopener noreferrer nofollow">
+                    {transformLinks(children, round, index)}
+                </Link>
+            );
+        }
+        if (href.includes(".") && !href.includes("/")) {
+            return (
+                <Link href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`} download>
+                    {transformLinks(children, round, index)}
+                </Link>
+            );
+        }
+        return <Link href={href}>{transformLinks(children, round, index)}</Link>;
+    }
+
+    return node;
 }
 
 /**
@@ -117,6 +171,7 @@ function remarkExtractH1Headings(headings: { name: string; id: string }[]) {
 export async function getBlog(
     round: string,
     index: string,
+    DownloadButton: (props: { url: string; filename: string; filesize: string }) => React.ReactNode,
 ): Promise<{
     title: string;
     date: string;
@@ -124,14 +179,132 @@ export async function getBlog(
     topic: string;
     thumbnail: StaticImageData;
     toc: { name: string; id: string }[];
-    description: React.ReactElement;
-    content: React.ReactElement;
+    description: React.ReactNode;
+    content: React.ReactNode;
 }> {
     const blog = blogData[`${round}/${index}`];
     const { title, date, author, topic, thumbnail, images, description, content } = blog;
     const components = {
+        h1: ({ children }: { children: any }) => {
+            function getAllText(node: React.ReactNode): string {
+                if (typeof node === "string" || typeof node === "number") {
+                    return String(node);
+                }
+                if (Array.isArray(node)) {
+                    return node.map(getAllText).join("");
+                }
+                if (React.isValidElement(node)) {
+                    const children = (node.props as any).children;
+                    if (children) {
+                        return getAllText(children);
+                    }
+                }
+                return "";
+            }
+            return <h1 id={toAnchorId(getAllText(children))}>{transformLinks(children, round, index)}</h1>;
+        },
+        h2: ({ children }: { children: any }) => {
+            return <h2>{transformLinks(children, round, index)}</h2>;
+        },
+        h3: ({ children }: { children: any }) => {
+            return <h3>{transformLinks(children, round, index)}</h3>;
+        },
+        h4: ({ children }: { children: any }) => {
+            return <h4>{transformLinks(children, round, index)}</h4>;
+        },
+        h5: ({ children }: { children: any }) => {
+            return <h5>{transformLinks(children, round, index)}</h5>;
+        },
+        h6: ({ children }: { children: any }) => {
+            return <h6>{transformLinks(children, round, index)}</h6>;
+        },
         p: ({ children }: { children: any }) => {
-            return <span>{children}</span>;
+            if (Array.isArray(children)) {
+                return <span>{transformLinks(children, round, index)}</span>;
+            }
+            if (React.isValidElement(children)) {
+                const type = (children as React.ReactElement).type;
+                const props = children.props as any;
+                if (type === "a" && props.href) {
+                    const { href, children } = props as { href: string; children: React.ReactNode };
+                    if (
+                        (children === href || children === "") &&
+                        (href.startsWith("https://youtube.com/watch?v=") ||
+                            href.startsWith("https://www.youtube.com/watch?v="))
+                    ) {
+                        return <YouTubeEmbed videoid={href.split("?v=").at(-1) || ""} />;
+                    }
+                    if ((children === href || children === "") && href.startsWith("https://youtu.be/")) {
+                        return <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />;
+                    }
+                    if (href[0] === "#") {
+                        return (
+                            <span>
+                                <a href={href}>{transformLinks(children, round, index)}</a>
+                            </span>
+                        );
+                    }
+                    if (
+                        (href.startsWith("https://") || href.startsWith("http://")) &&
+                        href.split("/").at(-1)?.includes(".") &&
+                        !href.endsWith(".html") &&
+                        !href.endsWith(".htm") &&
+                        !href.endsWith(".php")
+                    ) {
+                        return (
+                            <span>
+                                <Link href={href} download>
+                                    {transformLinks(children, round, index)}
+                                </Link>
+                            </span>
+                        );
+                    }
+                    if (
+                        (href.startsWith("https://") || href.startsWith("http://")) &&
+                        !href.startsWith("https://seiseisai.com") &&
+                        !href.startsWith("http://seiseisai.com")
+                    ) {
+                        return (
+                            <span>
+                                <Link href={href} target="_blank" rel="noopener noreferrer nofollow">
+                                    {transformLinks(children, round, index)}
+                                </Link>
+                            </span>
+                        );
+                    }
+                    if (href.includes(".")) {
+                        if (children === href || children === "") {
+                            const size = resourceSize[`${round}/${index}/${encodeURIComponent(href)}`];
+                            const fileSize =
+                                size < 1024
+                                    ? `${size} B`
+                                    : size < 1024 * 1024
+                                      ? `${(size / 1024).toFixed(2)} KB`
+                                      : `${(size / (1024 * 1024)).toFixed(2)} MB`;
+                            return (
+                                <DownloadButton
+                                    url={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`}
+                                    filename={href}
+                                    filesize={fileSize}
+                                />
+                            );
+                        }
+                        return (
+                            <span>
+                                <Link href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`} download>
+                                    {transformLinks(children, round, index)}
+                                </Link>
+                            </span>
+                        );
+                    }
+                    return (
+                        <span>
+                            <Link href={href}>{transformLinks(children, round, index)}</Link>
+                        </span>
+                    );
+                }
+            }
+            return <span>{transformLinks(children, round, index)}</span>;
         },
         img: ({ src, alt }: { src: string; alt: string | undefined }) => {
             const image = images[src];
@@ -149,31 +322,6 @@ export async function getBlog(
                 </figure>
             );
         },
-        a: ({ href, children }: { href: string; children: any }) =>
-            (children === href || children === "") &&
-            (href.startsWith("https://youtube.com/watch?v=") || href.startsWith("https://www.youtube.com/watch?v=")) ? (
-                <YouTubeEmbed videoid={href.split("?v=").at(-1) || ""} />
-            ) : (children === href || children === "") && href.startsWith("https://youtu.be/") ? (
-                <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
-            ) : href[0] === "#" ? (
-                <a href={href}>{children}</a>
-            ) : href.endsWith("<download>") ? (
-                <Link href={href.substring(0, href.length - 10).trimEnd()} download>
-                    {children}
-                </Link>
-            ) : href[0] == "/" ||
-              href.startsWith("http://seiseisai.com") ||
-              href.startsWith("https://seiseisai.com") ? (
-                <Link href={href}>{children}</Link>
-            ) : href.startsWith("https://") || href.startsWith("http://") ? (
-                <Link href={href} target="_blank" rel="noopener noreferrer nofollow">
-                    {children}
-                </Link>
-            ) : (
-                <Link href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`} download>
-                    {children}
-                </Link>
-            ),
     };
     const descriptionMdx = await compileMDX({
         source: description,
@@ -197,12 +345,6 @@ export async function getBlog(
         },
         components: {
             ...components,
-            h1: ({ children }: { children: any }) => {
-                if (typeof children === "string") {
-                    return <h1 id={toAnchorId(children)}>{children}</h1>;
-                }
-                return <h1>{children}</h1>;
-            },
         },
     });
     return {

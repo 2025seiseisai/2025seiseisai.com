@@ -883,11 +883,11 @@ Adobe Illustratorでのマージンの設定の様子
 
 ![black.eps](image%208.png)
 
--   カラープロファイル難しい...
+- カラープロファイル難しい...
 
 正直、これが1番苦戦しました。もともとRGBで以前作った素材をベースにしていたので、CMYKに変換する必要がありました。その際、AdobeのデフォルトのCMYKプロファイルであるJapan Color 2001 Coatedを使う予定だったのですが、Japan Color 2001 CoatedのTAC値制限は350%。実は印刷会社さんからTAC値を300%以内にするように言われており、そのまま変換すると300%を超えてしまったのです。どうしよう。ネットの記事を漁り、PhotoshopでTAC値の制限を新規に設定したカスタムCMYKプロファイル作って変換させればいけることが分かりました。ありがとうインターネット！！
 
--   ほんとに合ってるのかな...?
+- ほんとに合ってるのかな...?
 
 ただ、ここでもさらに問題が出てきてしまいました。IllustratorではPhotoshopのようにカスタムカラープロファイルを設定できないのです。結局調べまくっても答えは出ず、カスタムプロファイルに変換したデータをJapan Color 2001 Coatedに再変換してから貼り付けることで一応300%の基準は下回ることができました。けど、このやり方で合ってるのかな…? 謎は残るばかりです。
 
@@ -1438,9 +1438,20 @@ After Effects の編集画面。非常に複雑。
 
 YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
 
-# 目次の中にYoutube[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
+[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
+
+# 目次の中にYoutube：[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
+
+ああ<font color="#1e90ff">文字色の指定</font>ああ
+
+[ファイルへのリンク](test.txt)
+
+[test.txt](test.txt)
 `,
               },
           }
         : {}),
+};
+export const resourceSize: { [key: string]: number } = {
+    "test/01/test.txt": 103,
 };
