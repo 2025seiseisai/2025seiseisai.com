@@ -99,6 +99,7 @@ function remarkExtractH1Headings(headings: { name: string; id: string }[]) {
                         return "";
                     }
                     const text = getText(node);
+                    if (text === "") return;
                     headings.push({
                         name: text,
                         id: toAnchorId(text),
@@ -201,7 +202,11 @@ export async function getBlog(
                 }
                 return "";
             }
-            return <h1 id={toAnchorId(getAllText(children))}>{transformLinks(children, round, index)}</h1>;
+            const text = getAllText(children);
+            if (text === "") {
+                return <h1>{transformLinks(children, round, index)}</h1>;
+            }
+            return <h1 id={toAnchorId(text)}>{transformLinks(children, round, index)}</h1>;
         },
         h2: ({ children }: { children: any }) => {
             return <h2>{transformLinks(children, round, index)}</h2>;
