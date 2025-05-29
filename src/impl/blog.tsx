@@ -225,7 +225,7 @@ export async function getBlog(
         },
         p: ({ children }: { children: any }) => {
             if (Array.isArray(children)) {
-                return <span>{transformLinks(children, round, index)}</span>;
+                return <div>{transformLinks(children, round, index)}</div>;
             }
             if (React.isValidElement(children)) {
                 const type = (children as React.ReactElement).type;
@@ -244,9 +244,9 @@ export async function getBlog(
                     }
                     if (href[0] === "#") {
                         return (
-                            <span>
+                            <div>
                                 <a href={href}>{transformLinks(children, round, index)}</a>
-                            </span>
+                            </div>
                         );
                     }
                     if (
@@ -257,11 +257,11 @@ export async function getBlog(
                         !href.endsWith(".php")
                     ) {
                         return (
-                            <span>
+                            <div>
                                 <Link href={href} download>
                                     {transformLinks(children, round, index)}
                                 </Link>
-                            </span>
+                            </div>
                         );
                     }
                     if (
@@ -270,11 +270,11 @@ export async function getBlog(
                         !href.startsWith("http://seiseisai.com")
                     ) {
                         return (
-                            <span>
+                            <div>
                                 <Link href={href} target="_blank" rel="noopener noreferrer nofollow">
                                     {transformLinks(children, round, index)}
                                 </Link>
-                            </span>
+                            </div>
                         );
                     }
                     if (href.includes(".")) {
@@ -295,21 +295,21 @@ export async function getBlog(
                             );
                         }
                         return (
-                            <span>
+                            <div>
                                 <Link href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`} download>
                                     {transformLinks(children, round, index)}
                                 </Link>
-                            </span>
+                            </div>
                         );
                     }
                     return (
-                        <span>
+                        <div>
                             <Link href={href}>{transformLinks(children, round, index)}</Link>
-                        </span>
+                        </div>
                     );
                 }
             }
-            return <span>{transformLinks(children, round, index)}</span>;
+            return <div>{transformLinks(children, round, index)}</div>;
         },
         img: ({ src, alt }: { src: string; alt: string | undefined }) => {
             const image = images[src];
@@ -345,7 +345,6 @@ export async function getBlog(
             parseFrontmatter: false,
             mdxOptions: {
                 remarkPlugins: [remarkGfm, remarkBreaks, remarkExtractH1Headings(headings)],
-                rehypePlugins: [],
             },
         },
         components: {

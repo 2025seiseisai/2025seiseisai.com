@@ -47,7 +47,13 @@ export const metadata: Metadata = {
         // media: {},
         // types: {},
     },
-    // icons: {},
+    icons: {
+        icon: [
+            { url: "/favicons/icon.svg", type: "image/svg+xml", rel: "icon" },
+            { url: "/favicons/favicon.ico", type: "image/x-icon", rel: "alternate icon" },
+        ],
+        apple: { url: "/favicons/apple-icon.png", type: "image/png", sizes: "180x180" },
+    },
     // manifest: "https://seiseisai.com/manifest.json",
     openGraph: {
         // determiner: "",
