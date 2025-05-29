@@ -1442,7 +1442,7 @@ YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/w
 
 # 目次の中にYoutube：[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
 
-ああ<font color="#1e90ff">文字色の指定</font>ああ
+ああ<span style={{ color: "#1e90ff" }}>文字色の指定</span>ああ
 
 [ファイルへのリンク](test.txt)
 
