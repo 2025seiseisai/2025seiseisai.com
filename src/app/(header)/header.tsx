@@ -1,5 +1,5 @@
 "use client";
-import dynamic from "next/dynamic";
+//import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ import { overlapEvent } from "./overlap-event";
 import XIcon from "./x.svg";
 import YouTubeIcon from "./youtube.svg";
 
-const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
+//const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
 
 function HeaderLink({
     href,
@@ -83,7 +83,6 @@ export function Header() {
                         Contact
                     </Link>
                 </div>
-                <Hamburger open={open} setOpen={setOpenImpl} />
             </div>
             <div className={`${styles.menuOverlay} ${open ? "" : styles.menuOverlayHidden}`}>
                 <div className={`${styles.menuContent} ${!open ? styles.menuContentClosed : styles.menuContentOpen}`}>

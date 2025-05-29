@@ -45,7 +45,7 @@
 }
 
 .navLinks {
-    margin-right: 30px;
+    margin-right: 50px;
     margin-left: auto;
     display: flex;
     gap: 30px;
@@ -53,7 +53,9 @@
     font-weight: 400;
     @media not all and (min-width: 980px) {
         // not-md:
-        display: none;
+        margin-right: 35px;
+        gap: 20px;
+        font-size: 10px;
     }
 }
 
