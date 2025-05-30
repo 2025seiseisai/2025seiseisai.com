@@ -29,7 +29,6 @@ export function getAllBlogs(): {
     author: string;
     topic: string;
     thumbnail: StaticImageData;
-    thumbnailPath: string;
 }[] {
     return Object.entries(blogData).map(([key, value]) => {
         const [round, index] = key.split("/");
@@ -41,7 +40,6 @@ export function getAllBlogs(): {
             author: value.author,
             topic: value.topic,
             thumbnail: value.thumbnail,
-            thumbnailPath: value.thumbnailPath,
         };
     });
 }
