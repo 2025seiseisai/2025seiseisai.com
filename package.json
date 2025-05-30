@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "deploy": "sudo chmod +x ./scripts/deploy.sh && sh ./scripts/deploy.sh",
+        "deploy": "sh ./scripts/deploy.sh",
         "dev": "node --env-file=.env.development prepare.mjs && npm install && opener http://localhost:3000 && next dev --turbopack",
         "build": "next build",
         "start": "next start",
