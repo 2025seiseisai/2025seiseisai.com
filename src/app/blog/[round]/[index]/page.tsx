@@ -1,6 +1,7 @@
 import { blogData } from "@/blogs/blog-data";
 import { enumetateParams, getBlog } from "@/impl/blog";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 export const dynamicParams = false;
@@ -22,9 +23,23 @@ export async function generateMetadata({ params }: { params: Promise<{ round: st
     };
 }
 
+// ファイルをダウンロードするためのボタン
+function DownloadButton({ url, filename, filesize }: { url: string; filename: string; filesize: string }) {
+    return (
+        <Link download href={url} className="m-[20px] flex h-[50px] w-auto items-center justify-between bg-gray-200">
+            <p>{filename}</p>
+            <p>{filesize}</p>
+        </Link>
+    );
+}
+
 export default async function Page({ params }: { params: Promise<{ round: string; index: string }> }) {
     const { round, index } = await params;
-    const { title, date, author, topic, thumbnail, toc, description, content } = await getBlog(round, index);
+    const { title, date, author, topic, thumbnail, toc, description, content } = await getBlog(
+        round,
+        index,
+        DownloadButton,
+    );
     return (
         <>
             {/* こんな感じで メタデータ or 記事 を埋め込める */}

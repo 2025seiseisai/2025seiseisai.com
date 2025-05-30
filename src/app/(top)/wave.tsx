@@ -1,7 +1,7 @@
 "use client";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { useEffect, useRef } from "react";
-import WaveAnimation from "./wave.json";
+import WaveAnimation from "./wave.lottie.json";
 
 export default function Wave() {
     const ref = useRef<LottieRefCurrentProps>(null);

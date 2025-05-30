@@ -76,7 +76,7 @@ export function Footer() {
                     <DisabledFooterLink>Blog</DisabledFooterLink>
                     <DisabledFooterLink>Special</DisabledFooterLink>
                     <DisabledFooterLink>Downloads</DisabledFooterLink>
-                    <DisabledFooterLink>Gellery</DisabledFooterLink>
+                    <DisabledFooterLink>Gallery</DisabledFooterLink>
                 </span>
                 <span className="flex flex-row not-md:mt-[16px] not-md:mr-[17px] not-md:mb-[16px] not-md:w-full not-md:justify-end not-md:gap-[5px] md:mt-auto md:mr-[calc(7900svw/1440)] md:mb-[30px] md:ml-auto md:flex-col md:gap-[8px] lg:flex-row">
                     <Link
@@ -96,7 +96,7 @@ export function Footer() {
                         <YouTubeIcon className="not-md:h-[32px] not-md:w-[32px]" />
                     </Link>
                     <Link
-                        href="https://www.instagram.com/seiseisai_tdj/"
+                        href="https://www.instagram.com/seiseisai_tdj"
                         rel="noopener noreferrer"
                         target="_blank"
                         className="h-[40px] w-[40px] not-md:h-[32px] not-md:w-[32px]"

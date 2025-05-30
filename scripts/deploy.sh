@@ -15,7 +15,6 @@ git pull origin $BRANCH || { echo "❌ Failed to pull latest changes from $BRANC
 
 echo "📦 Installing dependencies..."
 npm install || { echo "❌ npm install failed"; exit 1; }
-npm run clean || { echo "❌ npm clean failed"; exit 1; }
 
 echo "🔨 Building project..."
 npm run build || { echo "❌ Build failed"; exit 1; }

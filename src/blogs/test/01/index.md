@@ -15,4 +15,12 @@ topic: 製作セクション・技術セクション・運営セクション・�
 
 YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
 
-# 目次の中にYoutube[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
+[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
+
+# 目次の中にYoutube：[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/watch?v=VOhT8d8AIHY)
+
+ああ<span style={{ color: "#1e90ff" }}>文字色の指定</span>ああ
+
+[ファイルへのリンク](test.txt)
+
+[test.txt](test.txt)

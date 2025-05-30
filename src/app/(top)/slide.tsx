@@ -20,7 +20,7 @@ export default function Slide() {
             <div className={`${styles.animation} flex w-[2200%] sm:w-[1100%] lg:w-[733.334%]`}>
                 {images.concat(images).map((image, index) => (
                     <div key={index} className="flex aspect-16/9 w-full items-center justify-center overflow-hidden">
-                        <Image src={image} alt={`Slide ${index + 1}`} className="object-cover" quality={40} />
+                        <Image src={image} alt={`Slide ${index + 1}`} className="object-cover" quality={30} />
                     </div>
                 ))}
             </div>
