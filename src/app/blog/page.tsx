@@ -8,19 +8,7 @@ export const metadata = {
 export default async function Page() {
     return (
         <>
-            <BlogList
-                blogs={getAllBlogs().map(({ round, index, title, date, author, topic, thumbnail }) => {
-                    return {
-                        round,
-                        index,
-                        title,
-                        date,
-                        author,
-                        topic,
-                        thumbnail,
-                    };
-                })}
-            />
+            <BlogList blogs={getAllBlogs()} />
         </>
     );
 }
