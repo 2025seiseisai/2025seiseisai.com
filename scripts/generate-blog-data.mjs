@@ -61,7 +61,7 @@ import * as path from "path";
                         images.push([file, imageCnt]);
                     }
                     imageCnt += 1;
-                } else if (file !== "index.md") {
+                } else if (file !== "index.md" && file !== "index.mdx") {
                     const dest = path.join(cwd, "public", "blog-resources", round, index, encodeURIComponent(file));
                     fs.mkdirSync(path.dirname(dest), { recursive: true });
                     fs.copyFileSync(path.join(folderPath, index, file), dest);
@@ -71,7 +71,16 @@ import * as path from "path";
             if (thumbnail === undefined) {
                 console.log(`WARNING: ${path.join(folderPath, index)} does not have a thumbnail image`);
             }
-            const filestr = await fs.promises.readFile(path.join(folderPath, index, "index.md"), "utf-8");
+            // Support both index.md and index.mdx
+            let mdFilePath = path.join(folderPath, index, "index.md");
+            if (!fs.existsSync(mdFilePath)) {
+                mdFilePath = path.join(folderPath, index, "index.mdx");
+                if (!fs.existsSync(mdFilePath)) {
+                    console.log(`WARNING: ${path.join(folderPath, index)} does not have index.md or index.mdx`);
+                    continue;
+                }
+            }
+            const filestr = await fs.promises.readFile(mdFilePath, "utf-8");
             let { data, content } = graymatter(filestr);
             content = content.replaceAll("\r\n", "\n").replaceAll("\r", "\n");
             content = content.replaceAll(removeAlt, (match, md, alt1, url, alt2) => {
