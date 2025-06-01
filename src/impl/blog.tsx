@@ -5,6 +5,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Tweet } from "react-tweet";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
@@ -171,6 +172,7 @@ export async function getBlog(
     round: string,
     index: string,
     DownloadButton: (props: { url: string; filename: string; filesize: string }) => React.ReactNode,
+    tweetTheme: "light" | "dark" = "light",
 ): Promise<{
     title: string;
     date: string;
@@ -202,28 +204,60 @@ export async function getBlog(
             }
             const text = getAllText(children);
             if (text === "") {
-                return <h1>{transformLinks(children, round, index)}</h1>;
+                return (
+                    <section className="blog_content_root">
+                        <h1>{transformLinks(children, round, index)}</h1>
+                    </section>
+                );
             }
-            return <h1 id={toAnchorId(text)}>{transformLinks(children, round, index)}</h1>;
+            return (
+                <section className="blog_content_root">
+                    <h1 id={toAnchorId(text)}>{transformLinks(children, round, index)}</h1>
+                </section>
+            );
         },
         h2: ({ children }: { children: any }) => {
-            return <h2>{transformLinks(children, round, index)}</h2>;
+            return (
+                <section className="blog_content_root">
+                    <h2>{transformLinks(children, round, index)}</h2>
+                </section>
+            );
         },
         h3: ({ children }: { children: any }) => {
-            return <h3>{transformLinks(children, round, index)}</h3>;
+            return (
+                <section className="blog_content_root">
+                    <h3>{transformLinks(children, round, index)}</h3>
+                </section>
+            );
         },
         h4: ({ children }: { children: any }) => {
-            return <h4>{transformLinks(children, round, index)}</h4>;
+            return (
+                <section className="blog_content_root">
+                    <h4>{transformLinks(children, round, index)}</h4>
+                </section>
+            );
         },
         h5: ({ children }: { children: any }) => {
-            return <h5>{transformLinks(children, round, index)}</h5>;
+            return (
+                <section className="blog_content_root">
+                    <h5>{transformLinks(children, round, index)}</h5>
+                </section>
+            );
         },
         h6: ({ children }: { children: any }) => {
-            return <h6>{transformLinks(children, round, index)}</h6>;
+            return (
+                <section className="blog_content_root">
+                    <h6>{transformLinks(children, round, index)}</h6>
+                </section>
+            );
         },
         p: ({ children }: { children: any }) => {
             if (Array.isArray(children)) {
-                return <div>{transformLinks(children, round, index)}</div>;
+                return (
+                    <section className="blog_content_root">
+                        <div>{transformLinks(children, round, index)}</div>
+                    </section>
+                );
             }
             if (React.isValidElement(children)) {
                 const type = (children as React.ReactElement).type;
@@ -231,20 +265,43 @@ export async function getBlog(
                 if (type === "a" && props.href) {
                     const { href, children } = props as { href: string; children: React.ReactNode };
                     if (
-                        (children === href || children === "") &&
+                        children === href &&
                         (href.startsWith("https://youtube.com/watch?v=") ||
                             href.startsWith("https://www.youtube.com/watch?v="))
                     ) {
-                        return <YouTubeEmbed videoid={href.split("?v=").at(-1) || ""} />;
+                        return (
+                            <section className="blog_youtube_embed">
+                                <YouTubeEmbed videoid={href.split("?v=").at(-1) || ""} />
+                            </section>
+                        );
                     }
-                    if ((children === href || children === "") && href.startsWith("https://youtu.be/")) {
-                        return <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />;
+                    if (children === href && href.startsWith("https://youtu.be/")) {
+                        return (
+                            <section className="blog_youtube_embed">
+                                <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
+                            </section>
+                        );
+                    }
+                    if (
+                        children === href &&
+                        href.match(/^https?:\/\/(x\.com|twitter\.com)\/[a-zA-Z0-9_]+\/status\/\d+/)
+                    ) {
+                        const tweetId = href.match(/status\/(\d+)/)?.[1];
+                        if (tweetId) {
+                            return (
+                                <section className="blog_tweet_embed" data-theme={tweetTheme} suppressHydrationWarning>
+                                    <Tweet id={tweetId} />
+                                </section>
+                            );
+                        }
                     }
                     if (href[0] === "#") {
                         return (
-                            <div>
-                                <a href={href}>{transformLinks(children, round, index)}</a>
-                            </div>
+                            <section className="blog_content_root">
+                                <div>
+                                    <a href={href}>{transformLinks(children, round, index)}</a>
+                                </div>
+                            </section>
                         );
                     }
                     if (
@@ -255,11 +312,13 @@ export async function getBlog(
                         !href.endsWith(".php")
                     ) {
                         return (
-                            <div>
-                                <Link href={href} download>
-                                    {transformLinks(children, round, index)}
-                                </Link>
-                            </div>
+                            <section className="blog_content_root">
+                                <div>
+                                    <Link href={href} download>
+                                        {transformLinks(children, round, index)}
+                                    </Link>
+                                </div>
+                            </section>
                         );
                     }
                     if (
@@ -268,11 +327,13 @@ export async function getBlog(
                         !href.startsWith("http://seiseisai.com")
                     ) {
                         return (
-                            <div>
-                                <Link href={href} target="_blank" rel="noopener noreferrer nofollow">
-                                    {transformLinks(children, round, index)}
-                                </Link>
-                            </div>
+                            <section className="blog_content_root">
+                                <div>
+                                    <Link href={href} target="_blank" rel="noopener noreferrer nofollow">
+                                        {transformLinks(children, round, index)}
+                                    </Link>
+                                </div>
+                            </section>
                         );
                     }
                     if (href.includes(".")) {
@@ -293,21 +354,32 @@ export async function getBlog(
                             );
                         }
                         return (
-                            <div>
-                                <Link href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`} download>
-                                    {transformLinks(children, round, index)}
-                                </Link>
-                            </div>
+                            <section className="blog_content_root">
+                                <div>
+                                    <Link
+                                        href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`}
+                                        download
+                                    >
+                                        {transformLinks(children, round, index)}
+                                    </Link>
+                                </div>
+                            </section>
                         );
                     }
                     return (
-                        <div>
-                            <Link href={href}>{transformLinks(children, round, index)}</Link>
-                        </div>
+                        <section className="blog_content_root">
+                            <div>
+                                <Link href={href}>{transformLinks(children, round, index)}</Link>
+                            </div>
+                        </section>
                     );
                 }
             }
-            return <div>{transformLinks(children, round, index)}</div>;
+            return (
+                <section className="blog_content_root">
+                    <div>{transformLinks(children, round, index)}</div>
+                </section>
+            );
         },
         img: ({ src, alt }: { src: string; alt: string | undefined }) => {
             const image = images[src];

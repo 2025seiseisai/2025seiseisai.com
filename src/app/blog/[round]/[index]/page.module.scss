@@ -1,88 +1,9 @@
-/* テキストのスタイル */
-.blog_content {
-    color: #333;
-    font-size: 1rem;
-}
-
-/* テキストブロックのスタイル */
-.blog_content div {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-/* 見出しのスタイル */
-/* Notionでは見出し3までしかつけれないので、h4以降はやらなくて大丈夫です */
-.blog_content h1 {
-    color: black;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-.blog_content h2 {
-    color: green;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-.blog_content h3 {
-    color: blue;
-    font-size: 1.125rem;
-    font-weight: 600;
-}
-
-/* 画像のスタイル */
-.blog_content img {
-    width: 100%;
-}
-
-/* 画像とキャプションを囲ってるやつのスタイル */
-/* キャプションがないこともある */
-.blog_content figure {
-    margin: 10%;
-}
-
-/* キャプションのスタイル */
-.blog_content figcaption {
-    font-size: 0.875rem;
-    color: orange;
-    text-align: center;
-}
-
-/* 箇条書きリストのスタイル */
-/* 例) 59/15など */
-.blog_content ul {
-    list-style: none;
-}
-.blog_content ul li {
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-}
-.blog_content ul li::before {
-    content: "・";
-}
-/* 番号付きリストのスタイル */
-/* 今のところ使われてないっぽい */
-.blog_content ol {
-    list-style: none;
-}
-.blog_content ol li {
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-}
-.blog_content ol li::before {
-    content: counter(li);
-    counter-increment: li;
-}
-
-/* YouTubeの埋め込み動画の親要素のスタイル */
-.blog_content div:has(lite-youtube) {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.download_button {
+    margin: 20px;
     display: flex;
-    justify-content: center;
-    width: 100% !important;
-}
-/* YouTubeの埋め込み動画のスタイル */
-.blog_content div > lite-youtube {
-    width: 80%;
-    max-width: 80% !important;
+    height: 50px;
+    width: auto;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
 }

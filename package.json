@@ -33,6 +33,7 @@
         "next-mdx-remote": "^5.0.0",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
+        "react-tweet": "^3.2.2",
         "remark-breaks": "^4.0.0",
         "remark-gfm": "^4.0.1",
         "sharp": "^0.34.1",

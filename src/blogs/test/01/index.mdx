@@ -24,3 +24,5 @@ YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/w
 [ファイルへのリンク](test.txt)
 
 [test.txt](test.txt)
+
+[https://x.com/seiseisai_tdj/status/1928066296014590078](https://x.com/seiseisai_tdj/status/1928066296014590078)
