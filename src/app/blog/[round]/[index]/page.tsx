@@ -46,6 +46,13 @@ export default async function Page({ params }: { params: Promise<{ round: string
         index,
         DownloadButton,
     );
+    // 前のページ・後ろのページへのリンクはここから取得してください
+    const paths = enumetateParams().toSorted();
+    const currentIndex = paths.findIndex((p) => p.round === round && p.index === index);
+    const prevPath = currentIndex > 0 ? paths[currentIndex - 1] : paths[paths.length - 1];
+    const nextPath = currentIndex < paths.length - 1 ? paths[currentIndex + 1] : paths[0];
+    const prevLink = `/2025/blog/${prevPath.round}/${prevPath.index}`;
+    const nextLink = `/2025/blog/${nextPath.round}/${nextPath.index}`;
     return (
         <>
             {/* こんな感じで メタデータ or 記事 を埋め込める */}
@@ -54,6 +61,8 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <h2>{date}</h2>
             <h3>{author}</h3>
             <h4>{topic}</h4>
+            <p>{prevLink}</p>
+            <p>{nextLink}</p>
             <article>
                 <div>{description}</div>
                 <ul>
