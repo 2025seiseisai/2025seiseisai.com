@@ -3,6 +3,11 @@ import { enumetateParams, getBlog } from "@/impl/blog";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+import { ToList, ToTop } from "./components/buttons";
+import Grid from "./components/grid.svg";
+import RecommendedPosts from "./components/recommended-posts";
+
 import "./blog.scss";
 import styles from "./page.module.scss";
 
@@ -55,26 +60,52 @@ export default async function Page({ params }: { params: Promise<{ round: string
     const nextLink = `/2025/blog/${nextPath.round}/${nextPath.index}`;
     return (
         <>
-            {/* こんな感じで メタデータ or 記事 を埋め込める */}
-            <Image src={thumbnail} alt="thumbnail" />
-            <h1>{title}</h1>
-            <h2>{date}</h2>
-            <h3>{author}</h3>
-            <h4>{topic}</h4>
-            <p>{prevLink}</p>
-            <p>{nextLink}</p>
+            <ToList />
+            <ToTop />
+            <Image src={thumbnail} alt="thumbnail" className="h-[30dvh] object-cover object-center" />
+            <h1 className="text-[#de0d22] underline decoration-[#0b0e0f] underline-offset-2">{title}</h1>
+            <section className="mr-[8dvw] text-right text-[#0b0e0f]">
+                <p className="text-[#de0d22]">＃{topic}</p>
+                <time dateTime={date.replaceAll(".", "-")} className="text-[#0b0e0f]">
+                    {date}
+                </time>
+                <p className="text-[#0b0e0f]">{author}</p>
+            </section>
             <article>
-                <div>{description}</div>
-                <ul>
-                    目次
-                    {toc.map((item) => (
-                        <li key={item.id}>
-                            <a href={`#${item.id}`}>{item.name}</a>
-                        </li>
-                    ))}
-                </ul>
-                <div>{content}</div>
+                <section className="sticky right-[8dvw] ml-auto w-[22dvw] text-[#0b0e0f]">
+                    <ul className="rounded-[20px] border-2 border-[#de0d22]">
+                        目次
+                        {toc.map((item) => (
+                            <li key={item.id} className="w-full truncate">
+                                <a href={`#${item.id}`}>{item.name}</a>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="flex-between flex w-full">
+                        <Link href={prevLink} className="block">
+                            <span className="text-[#de0d22]">＜</span> 前の記事へ
+                        </Link>
+                        <Link href={nextLink} className="block">
+                            次の記事へ<span className="text-[#de0d22]"> ＞</span>
+                        </Link>
+                    </div>
+                </section>
+                <div className="mx-[8dvw] w-[56dvw]">
+                    <div>{description}</div>
+                    <hr className="mx-20 my-40 border-2 border-[#de0d22]" />
+                    <div>{content}</div>
+                </div>
             </article>
+            <nav className="mx-[8dvw] w-[56dvw]">
+                <Link href="/2025/blog" id="tolist" className="justify-center items-center flex gap-5 text-xl text-[#0b0e0f]">
+                    <Grid />
+                    記事一覧へ
+                </Link>
+                {/* <p className="first-letter:text-[#de0d22]">＞ こちらの記事もおすすめ</p> */}
+                {/* ---前に作ったのが残ってたので--- */}
+                <RecommendedPosts currentPath={`${round}/${index}`} />
+                {/* --------------------- */}
+            </nav>
         </>
     );
 }

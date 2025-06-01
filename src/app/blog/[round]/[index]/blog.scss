@@ -1,15 +1,21 @@
+:root {
+    $pri-red: #de0d22;
+    $pri-black: #0b0e0f;
+}
+
 .blog_content_root {
     width: 100%;
 
     // テキストのスタイル
-    color: #333;
+    color: #0b0e0f;
+    line-height: 1.9;
     font-size: 1rem;
 
     // テキストブロックのスタイル
     div {
         display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 60px;
+        margin-bottom: 60px;
     }
 
     // 見出しのスタイル
