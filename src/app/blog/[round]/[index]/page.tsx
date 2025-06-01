@@ -1,7 +1,9 @@
 import { blogData } from "@/blogs/blog-data";
 import { enumetateParams, getBlog } from "@/impl/blog";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import "./blog.scss";
 import styles from "./page.module.scss";
 
 export const dynamicParams = false;
@@ -10,7 +12,11 @@ export function generateStaticParams() {
     return enumetateParams();
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ round: string; index: string }> }) {
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ round: string; index: string }>;
+}): Promise<Metadata> {
     const { round, index } = await params;
     const data = blogData[`${round}/${index}`];
     return {
@@ -26,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ round: st
 // ファイルをダウンロードするためのボタン
 function DownloadButton({ url, filename, filesize }: { url: string; filename: string; filesize: string }) {
     return (
-        <Link download href={url} className="m-[20px] flex h-[50px] w-auto items-center justify-between bg-gray-200">
+        <Link download href={url} className={styles.download_button}>
             <p>{filename}</p>
             <p>{filesize}</p>
         </Link>
@@ -49,7 +55,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <h3>{author}</h3>
             <h4>{topic}</h4>
             <article>
-                <div className={styles.blog_content}>{description}</div>
+                <div>{description}</div>
                 <ul>
                     目次
                     {toc.map((item) => (
@@ -58,7 +64,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                         </li>
                     ))}
                 </ul>
-                <div className={styles.blog_content}>{content}</div>
+                <div>{content}</div>
             </article>
         </>
     );

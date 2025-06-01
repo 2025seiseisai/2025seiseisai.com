@@ -1,0 +1,113 @@
+.blog_content_root {
+    width: 100%;
+
+    // テキストのスタイル
+    color: #333;
+    font-size: 1rem;
+
+    // テキストブロックのスタイル
+    div {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    // 見出しのスタイル
+    // Notionでは見出し3までしかつけれないので、h4以降はやらなくて大丈夫です
+    h1 {
+        color: black;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    h2 {
+        color: green;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+    h3 {
+        color: blue;
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+
+    // 画像のスタイル
+    img {
+        width: 100%;
+    }
+
+    // 画像とキャプションを囲ってるやつのスタイル
+    // キャプションがないこともある
+    figure {
+        margin: 10%;
+    }
+
+    // キャプションのスタイル
+    figcaption {
+        font-size: 0.875rem;
+        color: orange;
+        text-align: center;
+    }
+
+    // 箇条書きリストのスタイル
+    // 例) 59/15など
+    ul {
+        list-style: none;
+    }
+    ul li {
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    ul li::before {
+        content: "・";
+    }
+    // 番号付きリストのスタイル
+    // 今のところ使われてないっぽい
+    ol {
+        list-style: none;
+    }
+    ol li {
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    ol li::before {
+        content: counter(li);
+        counter-increment: li;
+    }
+}
+
+.blog_youtube_embed {
+    width: 100%;
+
+    // YouTubeの埋め込み動画の親要素のスタイル
+    & > div {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100% !important;
+    }
+    // YouTubeの埋め込み動画のスタイル
+    & > div > lite-youtube {
+        width: 80%;
+        max-width: 80% !important;
+    }
+}
+
+.blog_tweet_embed {
+    width: 100%;
+
+    // Twitterの埋め込みツイートの親要素のスタイル
+    display: flex;
+    justify-content: center;
+
+    // Twitterの埋め込みツイートのスタイル
+    & > div {
+        margin: 20px;
+
+        // 文字等を選択したときの色
+        *::selection {
+            background-color: #006fd6;
+            color: white;
+        }
+    }
+}
