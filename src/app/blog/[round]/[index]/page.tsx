@@ -74,7 +74,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             </section>
             <article>
                 <section className="sticky top-[70px] right-[8dvw] float-right inline-block w-[22dvw] text-[#0b0e0f]">
-                    <ul className="rounded-[20px] border-2 border-[#de0d22]">
+                    <ul className="rounded-[20px] border-3 border-[#dedede]">
                         目次
                         {toc.map((item) => (
                             <li key={item.id} className="ml-2 w-full truncate">
@@ -97,7 +97,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     <div>{content}</div>
                 </div>
             </article>
-            <nav className="mx-[8dvw] w-[56dvw]">
+            <nav className="mx-auto w-[56dvw]">
                 <Link
                     href="/2025/blog"
                     id="tolist"

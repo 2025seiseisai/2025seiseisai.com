@@ -16,6 +16,11 @@ export default function BlogCard({ path }: { path: string }) {
             className="flex h-fit w-87.5 max-w-[70svw] flex-initial flex-row flex-wrap justify-center overflow-hidden rounded-[0.625rem] border-2 border-[#de0d22] bg-[#f7f7f7] transition duration-500 ease-in-out hover:scale-102 hover:opacity-90"
         >
             <Image src={blog.thumbnail} alt="thumbnail" className="aspect-16/9 w-full" />
+            {!path.startsWith("61/") && (
+                <div className="fixed top-1 right-1 z-10000 size-[2rem] rounded-full border-1 border-solid border-[#de0d22] bg-[#ffffff]/80 text-[10px]/normal text-[#de0d22]">
+                    過去
+                </div>
+            )}
             <p className="mt-3.75 mr-auto ml-[8.33333%] h-6 w-max text-base text-[#de0d22]">{blog.date}</p>
             <p className="mr-[8.33333%] ml-auto h-4.75 w-max max-w-2/3 truncate rounded-[0.3125rem] bg-[#de0d22] px-1.5 text-sm/normal text-[#ffffff] md:mt-4 md:max-w-[calc(83%-6rem)]">
                 ＃{blog.topic}
