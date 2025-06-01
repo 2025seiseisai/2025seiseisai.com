@@ -1,6 +1,7 @@
 import { blogData } from "@/blogs/blog-data";
 import { enumetateParams, getBlog } from "@/impl/blog";
 import type { Metadata } from "next";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -62,8 +63,8 @@ export default async function Page({ params }: { params: Promise<{ round: string
         <>
             <ToList />
             <ToTop />
-            <Image src={thumbnail} alt="thumbnail" className="h-[30dvh] object-cover object-center" />
-            <h1 className="text-[#de0d22] underline decoration-[#0b0e0f] underline-offset-2">{title}</h1>
+            <Image src={thumbnail} alt="thumbnail" className="h-[30dvh] w-[100dvw] object-cover object-center" />
+            <h1 className="mx-auto text-[#de0d22] underline decoration-[#0b0e0f] underline-offset-2">{title}</h1>
             <section className="mr-[8dvw] text-right text-[#0b0e0f]">
                 <p className="text-[#de0d22]">＃{topic}</p>
                 <time dateTime={date.replaceAll(".", "-")} className="text-[#0b0e0f]">
@@ -72,20 +73,20 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 <p className="text-[#0b0e0f]">{author}</p>
             </section>
             <article>
-                <section className="sticky right-[8dvw] ml-auto w-[22dvw] text-[#0b0e0f]">
+                <section className="sticky top-[70px] right-[8dvw] float-right inline-block w-[22dvw] text-[#0b0e0f]">
                     <ul className="rounded-[20px] border-2 border-[#de0d22]">
                         目次
                         {toc.map((item) => (
-                            <li key={item.id} className="w-full truncate">
+                            <li key={item.id} className="ml-2 w-full truncate">
                                 <a href={`#${item.id}`}>{item.name}</a>
                             </li>
                         ))}
                     </ul>
                     <div className="flex-between flex w-full">
-                        <Link href={prevLink} className="block">
+                        <Link href={prevLink} className="w-max">
                             <span className="text-[#de0d22]">＜</span> 前の記事へ
                         </Link>
-                        <Link href={nextLink} className="block">
+                        <Link href={nextLink} className="w-max">
                             次の記事へ<span className="text-[#de0d22]"> ＞</span>
                         </Link>
                     </div>
@@ -97,14 +98,18 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 </div>
             </article>
             <nav className="mx-[8dvw] w-[56dvw]">
-                <Link href="/2025/blog" id="tolist" className="justify-center items-center flex gap-5 text-xl text-[#0b0e0f]">
+                <Link
+                    href="/2025/blog"
+                    id="tolist"
+                    className="flex items-center justify-center gap-5 text-xl text-[#0b0e0f]"
+                >
                     <Grid />
                     記事一覧へ
                 </Link>
                 {/* <p className="first-letter:text-[#de0d22]">＞ こちらの記事もおすすめ</p> */}
-                {/* ---前に作ったのが残ってたので--- */}
+                {/* ---前に遊んだのが残ってたので--- */}
                 <RecommendedPosts currentPath={`${round}/${index}`} />
-                {/* --------------------- */}
+                {/* ------------------------------ */}
             </nav>
         </>
     );
