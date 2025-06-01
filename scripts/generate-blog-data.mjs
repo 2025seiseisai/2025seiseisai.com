@@ -20,12 +20,14 @@ import * as path from "path";
         images: {
             [key: string]: StaticImageData;
         };
+        twitterEmbedded: boolean;
         description: string;
         content: string;
     };
 } = {\n`;
     let resourceSize = "export const resourceSize: { [key: string]: number } = {\n";
     const removeAlt = /^(!\[([^\]]+)\]\(([^)]+)\))\s*\r?\n([^\r\n]+)\s*$/gm;
+    const tweetLinkPattern = /^\[(https?:\/\/(?:x\.com|twitter\.com)\/[a-zA-Z0-9_]+\/status\/\d+)\]\(\1\)$/;
     for (const round of await fs.promises.readdir(path.join(cwd, "src/blogs"))) {
         if (
             !fs.statSync(path.join(cwd, "src/blogs", round)).isDirectory() ||
@@ -59,7 +61,7 @@ import * as path from "path";
                         images.push([file, imageCnt]);
                     }
                     imageCnt += 1;
-                } else if (file !== "index.md") {
+                } else if (file !== "index.md" && file !== "index.mdx") {
                     const dest = path.join(cwd, "public", "blog-resources", round, index, encodeURIComponent(file));
                     fs.mkdirSync(path.dirname(dest), { recursive: true });
                     fs.copyFileSync(path.join(folderPath, index, file), dest);
@@ -69,7 +71,16 @@ import * as path from "path";
             if (thumbnail === undefined) {
                 console.log(`WARNING: ${path.join(folderPath, index)} does not have a thumbnail image`);
             }
-            const filestr = await fs.promises.readFile(path.join(folderPath, index, "index.md"), "utf-8");
+            // Support both index.md and index.mdx
+            let mdFilePath = path.join(folderPath, index, "index.md");
+            if (!fs.existsSync(mdFilePath)) {
+                mdFilePath = path.join(folderPath, index, "index.mdx");
+                if (!fs.existsSync(mdFilePath)) {
+                    console.log(`WARNING: ${path.join(folderPath, index)} does not have index.md or index.mdx`);
+                    continue;
+                }
+            }
+            const filestr = await fs.promises.readFile(mdFilePath, "utf-8");
             let { data, content } = graymatter(filestr);
             content = content.replaceAll("\r\n", "\n").replaceAll("\r", "\n");
             content = content.replaceAll(removeAlt, (match, md, alt1, url, alt2) => {
@@ -82,6 +93,19 @@ import * as path from "path";
                 console.log(`WARNING: ${path.join(folderPath, index)} does not have a table of contents`);
                 content = "\n# 目次\n" + content;
             }
+            const twitterEmbedded = (() => {
+                const lines = content.split("\n");
+                for (let i = 0; i < lines.length; ++i) {
+                    if (
+                        tweetLinkPattern.test(lines[i].trim()) &&
+                        (i == 0 || lines[i - 1].trim() === "") &&
+                        (i == lines.length - 1 || lines[i + 1].trim()) === ""
+                    ) {
+                        return true;
+                    }
+                }
+                return false;
+            })();
             const [description, main_text] = content.split("\n# 目次\n");
             if (round === "test") {
                 blogData += `    ...(process.env.NODE_ENV === "development"
@@ -94,6 +118,7 @@ import * as path from "path";
                   thumbnail: ${thumbnail !== undefined ? `Image${thumbnail[1]}` : "undefined"},
                   thumbnailPath: \`${thumbnail !== undefined ? `src/blogs/${round}/${index}/${thumbnail[2]}` : "undefined"}\`,
                   images: ${images.length !== 0 ? `{${images.map((image) => `\n                      "${encodeURIComponent(image[0])}": Image${image[1]},`).join("")}\n                  }` : `{}`},
+                  twitterEmbedded: ${twitterEmbedded},
                   description: \`${description}\`,
                   content: \`${main_text}\`,
               },
@@ -109,6 +134,7 @@ import * as path from "path";
         thumbnail: ${thumbnail !== undefined ? `Image${thumbnail[1]}` : "undefined"},
         thumbnailPath: \`${thumbnail !== undefined ? `src/blogs/${round}/${index}/${thumbnail[2]}` : "undefined"}\`,
         images: ${images.length !== 0 ? `{${images.map((image) => `\n            "${encodeURIComponent(image[0])}": Image${image[1]},`).join("")}\n        }` : `{}`},
+        twitterEmbedded: ${twitterEmbedded},
         description: \`${description}\`,
         content: \`${main_text}\`,
     },

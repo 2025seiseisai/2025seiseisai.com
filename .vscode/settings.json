@@ -8,6 +8,9 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "files.eol": "\n",
+    "files.associations": {
+        "*.mdx": "markdown"
+    },
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "always",
         "source.organizeImports": "always"
