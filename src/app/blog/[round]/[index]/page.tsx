@@ -93,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 </section>
                 <div className="mx-[8dvw] w-[56dvw]">
                     <div>{description}</div>
-                    <hr className="mx-20 my-40 border-2 border-[#de0d22]" />
+                    <hr className="mx-20 my-40 border-t-2 border-[#de0d22]" />
                     <div>{content}</div>
                 </div>
             </article>

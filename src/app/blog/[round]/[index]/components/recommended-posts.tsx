@@ -19,7 +19,7 @@ export default function RecommendedPosts({ currentPath }: { currentPath: string 
             selectedPaths.add(paths[randomIndex]);
         }
         setRecommendedPaths(Array.from(selectedPaths));
-    }, []); //これでいいか？
+    }, []);
 
     return (
         <div className="my-[112px]">
