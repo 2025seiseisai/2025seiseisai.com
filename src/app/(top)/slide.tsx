@@ -22,7 +22,7 @@ export default function Slide() {
 
     useEffect(() => {
         const shuffledIndices = Array.from({ length: images.length }, (_, i) => i);
-        for (let i = images.length; 1 < i; i--) {
+        for (let i = images.length; i > 1; i--) {
             const k = Math.floor(Math.random() * i);
             [shuffledIndices[k], shuffledIndices[i - 1]] = [shuffledIndices[i - 1], shuffledIndices[k]];
         }
