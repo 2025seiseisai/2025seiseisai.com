@@ -100,45 +100,56 @@
 .menuContentOpen {
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 20% 100%);
     transition-timing-function: ease-out;
+    @include media(sm) {
+        clip-path: polygon(-20% 0, 100% 0, 100% 100%, -40% 100%);
+    }
 }
 
 .menuLinksContainer {
     display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: space-between;
     width: 100%;
-    flex: 60%;
-    gap: 5%;
     padding-top: 100px;
     padding-right: 7%;
     padding-left: 35%;
-    @media (max-width: 980px) {
-        flex: 70%;
+    @media (min-aspect-ratio: 1/1) and (min-width: 950px) {
+        @media (max-height: 500px) {
+            padding-top: 75px;
+        }
+        min-height: max(250px, 65svh);
     }
-}
-
-.menuLinkColumn {
-    display: flex;
-    height: 100%;
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-between;
+    @media not ((min-aspect-ratio: 1/1) and (min-width: 950px)) {
+        @media (max-height: 750px) {
+            padding-top: 75px;
+        }
+        min-height: max(350px, 70svh);
+    }
+    @include media(sm) {
+        padding-top: 70px;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
 }
 
 .headerLink {
-    display: flex;
+    position: relative;
     width: 100%;
+    height: calc(100% / 12);
+    line-height: 1.4;
+    @media (min-aspect-ratio: 1/1) and (min-width: 950px) {
+        width: 46%;
+        height: calc(100% / 6);
+        margin-right: 4%;
+    }
+}
+.headerLinkText {
+    width: 100%;
+    position: absolute;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #0b0e0f;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
-    &:hover {
-        color: #de0d22;
-    }
-    @media (max-width: 980px) {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }
 
 .headerLinkTitle1 {
@@ -148,6 +159,9 @@
     @media (max-width: 1200px) {
         font-size: 20px;
     }
+    @media (min-width: 1440px) and (min-height: 750px) {
+        font-size: 28px;
+    }
 }
 
 .headerLinkTitle2 {
@@ -156,18 +170,50 @@
     @media (max-width: 1200px) {
         font-size: 10px;
     }
+    @media (min-width: 1440px) and (min-height: 750px) {
+        font-size: 14px;
+    }
+}
+
+.headerLink > .headerLinkFront {
+    .headerLinkTitle1 {
+        background-color: #de0d22;
+        color: #ffffff;
+        clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+        transition: clip-path 100ms ease-out;
+    }
+    .headerLinkTitle2 {
+        background-color: #0b0e0f;
+        color: #ffffff;
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        transition: clip-path 100ms ease-out;
+    }
+}
+.headerLink:hover > .headerLinkFront {
+    .headerLinkTitle1 {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .headerLinkTitle2 {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.disabledHeaderLinkText {
+    color: #0b0e0f;
+    opacity: 0.2;
+    user-select: none;
 }
 
 .snsContainer {
     display: flex;
     width: 100%;
-    flex: 40%;
     gap: 5%;
     padding-right: 7%;
     padding-bottom: 50px;
     padding-left: 35%;
-    @media (max-width: 980px) {
-        flex: 30%;
+    height: 100%;
+    @include media(sm) {
+        padding-left: 10%;
     }
 }
 
@@ -232,4 +278,8 @@
 .menuBackgroundOpen {
     clip-path: polygon(0 0, 30% 0, 20% 100%, 0 100%);
     transition-timing-function: ease-out;
+    @include media(sm) {
+        opacity: 0;
+        clip-path: polygon(0 0, -20% 0, -40% 100%, 0 100%);
+    }
 }
