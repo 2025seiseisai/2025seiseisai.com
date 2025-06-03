@@ -22,14 +22,11 @@ export function ToTop() {
     }, []);
 
     const className =
-        "group/top fixed right-[10px] bottom-[10px] size-[min(5svw,60px)] overflow-hidden rounded-full bg-[#de0d22] transition-opacity duration-1000 ease-in-out hover:opacity-80";
+        "group/top fixed right-[120px] bottom-[50px] size-[clamp(30px,5svw,60px)] rounded-full transition-opacity duration-1000 ease-in-out hover:opacity-80";
 
     return (
         <Link href="#top" className={`${className} ${screenY < windowHeight && "pointer-events-none opacity-0"}`}>
-            <div className="group-hover/top: flex size-full flex-col items-center justify-center text-center">
-                <ArrowUp className="size-[%]" />
-                <p className="text-[#ffffff]">Top</p>
-            </div>
+            <ArrowUp className="group-hover/top: size-full" />
         </Link>
     );
 }
@@ -52,11 +49,11 @@ export function ToList() {
     }, []);
 
     const className =
-        "fixed top-[75px] left-[50px] size-[min(5svw,60px)] transition-opacity duration-1000 ease-in-out hover:opacity-80";
+        "fixed top-[50px] left-[75px] size-[clamp(30px,5svw,60px)] transition-opacity duration-1000 ease-in-out hover:opacity-80";
 
     return (
-        <Link href="/2025/blog" className={`${className} ${!show && "pointer-events-none opacity-0"}`}>
-            <ArrowLeft />
+        <Link href="/2025/blog">
+            <ArrowLeft className={`${className} ${!show && "pointer-events-none opacity-0"}`} />
         </Link>
     );
 }

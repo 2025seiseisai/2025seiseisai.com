@@ -63,39 +63,41 @@ export default async function Page({ params }: { params: Promise<{ round: string
         <>
             <ToList />
             <ToTop />
-            <Image src={thumbnail} alt="thumbnail" className="h-[30dvh] w-[100dvw] object-cover object-center" />
-            <h1 className="mx-auto text-[#de0d22] underline decoration-[#0b0e0f] underline-offset-2">{title}</h1>
-            <section className="mr-[8dvw] text-right text-[#0b0e0f]">
+            <Image src={thumbnail} alt="thumbnail" className="h-[30svh] w-[100dvw] object-cover object-center" />
+            <h1 className="mx-auto line-clamp-2 w-max max-w-[90svw] px-[100px] text-[2.5rem] font-medium text-[#de0d22] underline decoration-[#0b0e0f] decoration-2 underline-offset-3">
+                {title}
+            </h1>
+            <section className="float-right mt-[80px] mr-[9.7dvw] w-[22dvh] text-right text-[#0b0e0f]">
                 <p className="text-[#de0d22]">＃{topic}</p>
-                <time dateTime={date.replaceAll(".", "-")} className="text-[#0b0e0f]">
+                <time dateTime={date.replaceAll(".", "-")} className="">
                     {date}
                 </time>
-                <p className="text-[#0b0e0f]">{author}</p>
+                <p className="">{author}</p>
             </section>
             <article>
-                <section className="sticky top-[70px] right-[8dvw] float-right inline-block w-[22dvw] text-[#0b0e0f]">
-                    <ul className="rounded-[20px] border-3 border-[#dedede]">
-                        目次
+                <section className={styles.side}>
+                    <ul className="list-disc rounded-[20px] border-3 border-[#dedede] p-[25px]">
+                        <div className="text-[1.375rem]/normal font-medium">目次</div>
                         {toc.map((item) => (
-                            <li key={item.id} className="ml-2 w-full truncate">
+                            <li key={item.id} className="mx-[5px] w-full truncate text-base/normal">
                                 <a href={`#${item.id}`}>{item.name}</a>
                             </li>
                         ))}
                     </ul>
-                    <div className="flex-between flex w-full">
-                        <Link href={prevLink} className="w-max">
+                    <div className="mt-[45px] flex w-full justify-between">
+                        <Link href={prevLink} className="block w-max text-left text-xl">
                             <span className="text-[#de0d22]">＜</span> 前の記事へ
                         </Link>
-                        <Link href={nextLink} className="w-max">
+                        <Link href={nextLink} className="block w-max text-right text-xl">
                             次の記事へ<span className="text-[#de0d22]"> ＞</span>
                         </Link>
                     </div>
                 </section>
-                <div className="mx-[8dvw] w-[56dvw]">
+                <section className={styles.blog_container}>
                     <div>{description}</div>
-                    <hr className="mx-20 my-40 border-t-2 border-[#de0d22]" />
+                    <hr className="mx-5 mt-10 border-t-2 border-[#de0d22]" />
                     <div>{content}</div>
-                </div>
+                </section>
             </article>
             <nav className="mx-auto w-[56dvw]">
                 <Link

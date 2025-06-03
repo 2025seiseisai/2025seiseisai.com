@@ -1,5 +1,28 @@
+$pri-red: #de0d22;
+$pri-black: #0b0e0f;
+
 *:focus-visible {
     outline: 2px solid #de0d2280;
+}
+
+.side {
+    position: sticky;
+    float: right;
+    margin-top: 80px;
+    top: 70px;
+    right: 8dvw;
+    width: 22dvw;
+    max-height: 100dvh;
+    overflow-y: auto;
+    color: $pri-black;
+    line-height: 1.5;
+}
+
+.blog_container {
+    margin: 0 8dvw;
+    width: 56dvw;
+    color: $pri-black;
+    line-height: 1.9;
 }
 
 .download_button {
