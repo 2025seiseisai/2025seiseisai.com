@@ -224,7 +224,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 8px;
 }
 
 .snsTitle {
@@ -240,17 +240,32 @@
 
 .snsIconLinks {
     display: flex;
-    width: 90%;
+    width: 100%;
+    height: 60%;
     justify-content: space-around;
+    flex-direction: column;
+}
+
+.snsLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .snsIcon {
     height: 28px;
     width: 28px;
+    margin-right: 15%;
     @media (max-width: 1200px) {
         height: 24px;
         width: 24px;
     }
+}
+
+.snsText {
+    font-size: 16px;
+    color: #0b0e0f;
+    width: 100px;
 }
 
 .snsPlaceholder {

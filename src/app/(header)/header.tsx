@@ -186,22 +186,32 @@ export function Header() {
                         <div className={styles.snsLinks}>
                             <h1 className={styles.snsTitle}>SNS</h1>
                             <div className={styles.snsIconLinks}>
-                                <Link href="https://x.com/seiseisai_tdj" rel="noopener noreferrer" target="_blank">
+                                <Link
+                                    href="https://x.com/seiseisai_tdj"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    className={styles.snsLink}
+                                >
                                     <XIcon className={styles.snsIcon} />
+                                    <p className={styles.snsText}>X (Twitter)</p>
                                 </Link>
                                 <Link
                                     href="https://www.youtube.com/@seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
+                                    className={styles.snsLink}
                                 >
                                     <YouTubeIcon className={styles.snsIcon} />
+                                    <p className={styles.snsText}>YouTube</p>
                                 </Link>
                                 <Link
                                     href="https://www.instagram.com/seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
+                                    className={styles.snsLink}
                                 >
                                     <InstagramIcon className={styles.snsIcon} />
+                                    <p className={styles.snsText}>Instagram</p>
                                 </Link>
                             </div>
                         </div>
