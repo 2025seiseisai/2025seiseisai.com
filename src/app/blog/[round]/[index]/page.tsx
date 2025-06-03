@@ -67,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <h1 className="mx-auto line-clamp-2 w-max max-w-[90svw] px-[100px] text-[2.5rem] font-medium text-[#de0d22] underline decoration-[#0b0e0f] decoration-2 underline-offset-3">
                 {title}
             </h1>
-            <section className="float-right mt-[80px] mr-[9.7dvw] w-[22dvh] text-right text-[#0b0e0f]">
+            <section className="float-right mt-[80px] mr-[9.7dvw] ml-auto flex w-[22dvh] flex-col items-end text-right text-[#0b0e0f]">
                 <p className="text-[#de0d22]">＃{topic}</p>
                 <time dateTime={date.replaceAll(".", "-")} className="">
                     {date}
@@ -76,10 +76,10 @@ export default async function Page({ params }: { params: Promise<{ round: string
             </section>
             <article>
                 <section className={styles.side}>
-                    <ul className="list-disc rounded-[20px] border-3 border-[#dedede] p-[25px]">
+                    <ul className="rounded-[20px] border-3 border-[#dedede] p-[25px]">
                         <div className="text-[1.375rem]/normal font-medium">目次</div>
                         {toc.map((item) => (
-                            <li key={item.id} className="mx-[5px] w-full truncate text-base/normal">
+                            <li key={item.id} className="mx-[5px] w-full list-disc truncate text-base/normal">
                                 <a href={`#${item.id}`}>{item.name}</a>
                             </li>
                         ))}

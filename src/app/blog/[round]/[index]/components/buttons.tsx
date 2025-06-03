@@ -22,7 +22,7 @@ export function ToTop() {
     }, []);
 
     const className =
-        "group/top fixed right-[120px] bottom-[50px] size-[clamp(30px,5svw,60px)] rounded-full transition-opacity duration-1000 ease-in-out hover:opacity-80";
+        "group/top fixed right-[120px] bottom-[50px] size-[clamp(30px,5svw,60px)] rounded-full bg-[#de0d22] transition-opacity duration-1000 ease-in-out hover:opacity-80";
 
     return (
         <Link href="#top" className={`${className} ${screenY < windowHeight && "pointer-events-none opacity-0"}`}>
