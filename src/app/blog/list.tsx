@@ -29,60 +29,56 @@ export default function BlogList({
     const now = Date.now();
 
     // ラウンド一覧を一意に抽出（例：["61", "60", "59"]）
-    const roundList = Array.from(new Set(blogs.map((b) => b.round))).sort().reverse();
+    const roundList = Array.from(new Set(blogs.map((b) => b.round)))
+        .sort()
+        .reverse();
 
     // 各h2のrefを格納
     const labelRefs = useRef<Record<string, HTMLHeadingElement | null>>({});
 
-useEffect(() => {
-  const el = labelRefs.current[selectedRound];
-  if (el) {
-    const rect = el.getBoundingClientRect();
-    const parentRect = el.parentElement!.getBoundingClientRect();
-    setIndicatorX(rect.left - parentRect.left + rect.width - 260); // 中央に合わせてマーカー140pxを調整
-  }
-}, [selectedRound]);
+    useEffect(() => {
+        const el = labelRefs.current[selectedRound];
+        if (el) {
+            const rect = el.getBoundingClientRect();
+            const parentRect = el.parentElement!.getBoundingClientRect();
+            setIndicatorX(rect.left - parentRect.left + rect.width - 260); // 中央に合わせてマーカー140pxを調整
+        }
+    }, [selectedRound]);
 
     const filteredBlogs = blogs.filter((b) => b.round === selectedRound);
 
-    
     return (
         <>
             <div>
                 <h1 className={styles.title1}>B</h1>
                 <h1 className={styles.title2}>log</h1>
 
-                
-<div className={styles.f226}>
-  {/* 背景枠（白） */}
-  <div className={styles.rec80} />
+                <div className={styles.f226}>
+                    {/* 背景枠（白） */}
+                    <div className={styles.rec80} />
 
-  {/* スライドマーカー（赤） */}
-  <div
-    className={styles.rec81}
-    style={{
-      transform: `translateX(${indicatorX}px) skewX(-26deg)`,
-    }}
-  />
+                    {/* スライドマーカー（赤） */}
+                    <div
+                        className={styles.rec81}
+                        style={{
+                            transform: `translateX(${indicatorX}px) skewX(-26deg)`,
+                        }}
+                    />
 
-  {/* ラウンド選択ラベル */}
-  {roundList.map((round) => (
-    <h2
-      key={round}
-      ref={(el) => {
-        labelRefs.current[round] = el;
-      }}
-      onClick={() => setSelectedRound(round)}
-      className={
-        selectedRound === round
-          ? styles.selectedRound
-          : styles.unselectedRound
-      }
-    >
-      {round}th
-    </h2>
-  ))}
-</div>
+                    {/* ラウンド選択ラベル */}
+                    {roundList.map((round) => (
+                        <h2
+                            key={round}
+                            ref={(el) => {
+                                labelRefs.current[round] = el;
+                            }}
+                            onClick={() => setSelectedRound(round)}
+                            className={selectedRound === round ? styles.selectedRound : styles.unselectedRound}
+                        >
+                            {round}th
+                        </h2>
+                    ))}
+                </div>
 
                 <div className={styles.blogmap}>
                     {filteredBlogs.map((blog) => {
@@ -90,10 +86,7 @@ useEffect(() => {
                         const isNew = now - postedTime < ONE_WEEK_MS;
 
                         return (
-                            <Link
-                                key={`${blog.round}/${blog.index}`}
-                                href={`/2025/blog/${blog.round}/${blog.index}`}
-                            >
+                            <Link key={`${blog.round}/${blog.index}`} href={`/2025/blog/${blog.round}/${blog.index}`}>
                                 <div className={styles.content}>
                                     {isNew && (
                                         <div className={styles.new}>
