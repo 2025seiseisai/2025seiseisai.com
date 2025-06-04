@@ -22,9 +22,11 @@ export default function RecommendedPosts({ currentPath }: { currentPath: string 
     }, []);
 
     return (
-        <div className="my-[112px]">
-            <p className="first-letter:text-[#de0d22]">＞ こちらの記事もおすすめ</p>
-            <div className="mt-[44px] flex justify-between gap-4">
+        <div className="my-[40px]">
+            <p className="ml-[-10px] text-xl/normal font-medium first-letter:text-[#de0d22]">
+                ＞ こちらの記事もおすすめ
+            </p>
+            <div className="mt-[30px] flex justify-between gap-4">
                 {recommendedPaths.map((path) => (
                     <BlogCard key={path} path={path} />
                 ))}

@@ -8,10 +8,11 @@ $pri-black: #0b0e0f;
 .side {
     position: sticky;
     float: right;
+    clear: right;
     margin-top: 80px;
-    top: 70px;
+    top: 104px;
     right: 8dvw;
-    width: 22dvw;
+    width: 20dvw;
     max-height: 100dvh;
     overflow-y: auto;
     color: $pri-black;
@@ -19,18 +20,8 @@ $pri-black: #0b0e0f;
 }
 
 .blog_container {
-    margin: 0 8dvw;
+    margin-inline: 8dvw;
     width: 56dvw;
     color: $pri-black;
     line-height: 1.9;
-}
-
-.download_button {
-    margin: 20px;
-    display: flex;
-    height: 50px;
-    width: auto;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f0f0f0;
 }

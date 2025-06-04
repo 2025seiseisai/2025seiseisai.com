@@ -22,7 +22,7 @@ export function ToTop() {
     }, []);
 
     const className =
-        "group/top fixed right-[120px] bottom-[50px] size-[clamp(30px,5svw,60px)] rounded-full bg-[#de0d22] transition-opacity duration-1000 ease-in-out hover:opacity-80";
+        "group/top fixed right-[120px] bottom-[50px] z-1 size-[clamp(30px,5svw,60px)] rounded-full bg-[#de0d22] transition-opacity duration-1000 ease-in-out hover:opacity-80";
 
     return (
         <Link href="#top" className={`${className} ${screenY < windowHeight && "pointer-events-none opacity-0"}`}>
@@ -49,7 +49,7 @@ export function ToList() {
     }, []);
 
     const className =
-        "fixed top-[50px] left-[75px] size-[clamp(30px,5svw,60px)] transition-opacity duration-1000 ease-in-out hover:opacity-80";
+        "fixed top-[95px] left-[75px] size-[clamp(30px,5svw,60px)] transition-opacity duration-1000 ease-in-out hover:opacity-80 md:top-[114px]";
 
     return (
         <Link href="/2025/blog">

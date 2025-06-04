@@ -9,6 +9,10 @@ $pri-black: #0b0e0f;
     line-height: 1.9;
     font-size: 1rem;
 
+    [id] {
+        scroll-margin-top: 64px;
+    }
+
     // テキストブロックのスタイル
     div {
         display: block;
@@ -39,19 +43,19 @@ $pri-black: #0b0e0f;
         font-weight: 500;
     }
 
+    // 画像のスタイル
+    img {
+        max-width: 80%;
+        max-height: 350px;
+        margin-inline: auto;
+        aspect-ratio: auto;
+    }
+
     // 画像とキャプションを囲ってるやつのスタイル
     // キャプションがないこともある
     figure {
         width: 100%;
         margin-top: 20px;
-
-        // 画像のスタイル
-        & img {
-            height: 350px;
-            max-width: 80%;
-            margin-inline: auto;
-            aspect-ratio: auto;
-        }
     }
 
     // キャプションのスタイル
@@ -83,7 +87,21 @@ $pri-black: #0b0e0f;
     ol li::before {
         content: counter(li);
         counter-increment: li;
+        font-weight: 500;
     }
+
+    a {
+        color: $pri-red;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+            color: #bd0b1d;
+        }
+    }
+
+    // span[style] {
+    //     font-weight: 500;
+    // }
 }
 
 .blog_youtube_embed {
@@ -106,8 +124,6 @@ $pri-black: #0b0e0f;
 }
 
 .blog_tweet_embed {
-    width: 100%;
-
     // Twitterの埋め込みツイートの親要素のスタイル
     display: flex;
     justify-content: center;
@@ -117,7 +133,7 @@ $pri-black: #0b0e0f;
         margin: 20px;
 
         &:hover {
-            background-color: #0b0e0f10;
+            background-color: #0b0e0f02;
             box-shadow: #de0d2280 0px 0px 3px;
         }
 
