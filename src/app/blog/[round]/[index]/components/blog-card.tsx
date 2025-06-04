@@ -13,7 +13,7 @@ export default function BlogCard({ path }: { path: string }) {
     return (
         <Link
             href={`/2025/blog/${path}`}
-            className="relative flex h-fit w-87.5 max-w-[70svw] flex-initial flex-row flex-wrap justify-center overflow-hidden rounded-[0.625rem] border-2 border-[#de0d22] bg-[#f7f7f7] transition duration-500 ease-in-out hover:scale-102 hover:opacity-80"
+            className="relative flex h-fit w-87.5 max-w-[70svw] flex-initial flex-row flex-wrap justify-center overflow-hidden rounded-[0.625rem] border-2 border-[#de0d22] bg-[#f7f7f7] transition duration-500 ease-in-out hover:scale-102 hover:opacity-90"
         >
             <Image src={blog.thumbnail} alt="thumbnail" className="z-0 aspect-16/9 w-full" />
             {!path.startsWith("61/") && (
