@@ -1,5 +1,3 @@
-// 遷移場所
-
 "use client";
 
 import Link from "next/link";
@@ -26,13 +24,13 @@ export default function Table({ toc }: { toc: { name: string; id: string }[] }) 
     }, [toc]);
 
     return (
-        <div className="rounded-[20px] border-3 border-[#dedede] p-[25px]">
+        <div className="rounded-[20px] border-3 border-[#dedede] p-[25px] text-[#0b0e0f]">
             <div className="text-[1.375rem]/normal font-medium">目次</div>
             <ul>
                 {toc.map((item) => (
                     <li
                         key={item.id}
-                        className={`mx-[5px] w-full truncate text-base transition-colors duration-300 before:content-['・'] ${item.id === activeTitleId && "bg-[#de0d2221]"}`}
+                        className={`mx-[5px] w-full truncate text-base transition-colors duration-300 before:content-['・'] hover:opacity-80 ${item.id === activeTitleId && "bg-[#de0d2221]"}`}
                     >
                         <Link href={`#${item.id}`}>{item.name}</Link>
                     </li>

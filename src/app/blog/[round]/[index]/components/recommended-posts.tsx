@@ -22,7 +22,7 @@ export default function RecommendedPosts({ currentPath }: { currentPath: string 
     }, []);
 
     return (
-        <div className="my-[40px]">
+        <div className="my-[40px] text-[#0e0b0f]">
             <p className="ml-[-10px] text-xl/normal font-medium first-letter:text-[#de0d22]">
                 ＞ こちらの記事もおすすめ
             </p>
