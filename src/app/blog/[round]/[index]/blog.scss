@@ -26,7 +26,7 @@ $pri-black: #0b0e0f;
         a {
             color: $pri-red;
             text-decoration: underline;
-            a:hover {
+            &:hover {
                 color: #bd0b1d;
             }
         }
