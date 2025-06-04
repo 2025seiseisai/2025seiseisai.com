@@ -116,7 +116,7 @@ $pri-black: #0b0e0f;
     // YouTubeの埋め込み動画のスタイル
     & > div > lite-youtube {
         height: 350px;
-        aspect-ratio: auto;
+        width: auto;
         max-width: 80% !important;
     }
 }
