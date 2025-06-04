@@ -7,6 +7,7 @@
     width: 1120px;
     height: 60px;
     left: 10.6vw;
+    margin-top: 30px;
 
     font-family: 'Noto Sans JP';
     font-style: normal;
@@ -24,6 +25,7 @@
     width: 1120px;
     height: 60px;
     left: 12.7vw;
+    margin-top: 30px;
     //left: calc(10.6vw + 27px);
 
     font-family: 'Noto Sans JP';
@@ -37,104 +39,81 @@
     color: #000;
     display: flex;
 }
-.f226{
-position: absolute;
-width: 396px;
-height: 45px;
-left: calc(50vw - 198px);
-top: 128px;
+.f226 {
+  position: relative; // ← fixed から relative に変更
+  width: 396px;
+  height: 45px;
+  left: calc(50vw - 198px);
+  margin-top: 128px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: inherit;
+}
+.selectedRound {
+  margin: auto;
+  font-weight: 500;
+  width: 110px;
+  height: 35px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 32px;
+  line-height: 150%;
+  cursor: pointer;
+  z-index: 2;
+  letter-spacing: -0.02em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.f60th{
-position: absolute;
-width: 120px;
-height: 35px;
-left: calc(50% - 120px/2 + 30px);
-top: 5px;
 
-font-family: 'Noto Sans JP';
-font-style: normal;
-font-weight: 500;
-font-size: 32px;
-line-height: 150%;
-/* または48px */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: -0.02em;
+.unselectedRound {
+  margin: auto;
+  font-weight: 500;
+  color: #DE0D22;
+  width: 110px;
+  height: 35px;
+  text-align: center;
+  font-size: 32px;
+  line-height: 150%;
+  cursor: pointer;
+  letter-spacing: -0.02em;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-color: #DE0D22;
+  &:hover {
+    color: #000;
+  }
 }
-.f59th{
-position: absolute;
-width: 120px;
-height: 35px;
-left: 285px;
-top: 5px;
-
-font-family: 'Noto Sans JP';
-font-style: normal;
-font-weight: 500;
-font-size: 32px;
-line-height: 150%;
-/* または48px */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: -0.02em;
-
-color: #DE0D22;
+.rec80 {
+  transform: skewX(-26deg);
+  box-sizing: border-box;
+  position: absolute;
+  width: 396px;
+  height: 45px;
+  left: 0;
+  top: 0;
+  border: 2px solid #0b0e0f;
+  background: #ffffff;
+  z-index: 0;
 }
-.f61st{
-position: absolute;
-width: 120px;
-height: 35px;
-left: 45px;
-top: 5px;
-
-font-family: 'Noto Sans JP';
-font-style: normal;
-font-weight: 500;
-font-size: 32px;
-line-height: 150%;
-/* または48px */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: -0.02em;
-
-color: #FFFFFF;
-}
-.rec80{
-transform: skewX(-26deg);
-box-sizing: border-box;
-
-position: absolute;
-width: 396px;
-height: 45px;
-left: calc(50% - 396px/2);
-top: 0px;
-
-border: 2px solid #0B0E0F;
-
-background: #FFFFFF;
-}
-.rec81{
-transform: skewX(-26deg);
-position: absolute;
-width: 140px;
-height: 35px;
-left: calc(50% - 140px/2 - 120px);
-top: 5px;
-
-background: #DE0D22;
+.rec81 {
+  transform: skewX(-26deg);
+  position: absolute;
+  width: 140px;
+  height: 35px;
+  top: 5px;
+  background: #de0d22;
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
 .content{
 box-sizing: border-box;
 width: 350px;
 height: 300px;
+position: relative;
 
 /* position: absolute;
 left: 160px;
