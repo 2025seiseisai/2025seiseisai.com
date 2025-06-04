@@ -189,12 +189,25 @@
         transition: clip-path 100ms ease-out;
     }
 }
+
 .headerLink:hover > .headerLinkFront {
     .headerLinkTitle1 {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
     .headerLinkTitle2 {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.headerLink > .headerLinkBack {
+    .headerLinkTitle1 {
+        transition: text-shadow 200ms ease-out;
+    }
+}
+
+.headerLink:hover > .headerLinkBack {
+    .headerLinkTitle1 {
+        text-shadow: 0 -3px 35px #de0d22;
     }
 }
 
@@ -268,7 +281,7 @@
     width: 100px;
 }
 
-.snsPlaceholder {
+.otherLinksContainer {
     display: flex;
     height: 100%;
     flex: 1;

@@ -33,7 +33,7 @@ function HeaderLink({
         </div>
     ) : (
         <Link href={href} className={styles.headerLink} onClick={() => setOpen(false)}>
-            <div className={styles.headerLinkText}>
+            <div className={`${styles.headerLinkText} ${styles.headerLinkBack}`}>
                 <span className={styles.headerLinkTitle1}>{title1}</span>
                 <span className={styles.headerLinkTitle2}>{title2}</span>
             </div>
@@ -215,7 +215,7 @@ export function Header() {
                                 </Link>
                             </div>
                         </div>
-                        <div className={styles.snsPlaceholder}></div>
+                        <div className={styles.otherLinksContainer}></div>
                     </div>
                 </div>
                 <div
