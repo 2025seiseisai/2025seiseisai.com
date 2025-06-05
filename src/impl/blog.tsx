@@ -119,7 +119,7 @@ function transformLinks(node: React.ReactNode, round: string, index: string): Re
 
     if (React.isValidElement(node) && node.type === "a" && (node.props as any).href) {
         const { href, children } = node.props as { href: string; children: React.ReactNode };
-        if (href[0] === "#") {
+        if (href[0] === "#" || href.startsWith("mailto:")) {
             return <a href={href}>{transformLinks(children, round, index)}</a>;
         }
         if (
@@ -295,7 +295,7 @@ export async function getBlog(
                             );
                         }
                     }
-                    if (href[0] === "#") {
+                    if (href[0] === "#" || href.startsWith("mailto:")) {
                         return (
                             <section className="blog_content_root">
                                 <div>

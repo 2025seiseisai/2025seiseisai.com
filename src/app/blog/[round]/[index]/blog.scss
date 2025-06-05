@@ -117,7 +117,7 @@ $pri-black: #0b0e0f;
     // YouTubeの埋め込み動画のスタイル
     & > div > lite-youtube {
         height: 350px;
-        width: auto;
+        width: 80%;
         max-width: 80% !important;
     }
 }
@@ -127,38 +127,6 @@ $pri-black: #0b0e0f;
     width: 100%;
     margin-top: 20px;
     padding: 5px;
-
-    .tweet-header-module {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .tweet-body-module {
-        font-size: 1.15rem;
-    }
-
-    .tweet-media-module {
-        &[class*="__skeleton"] {
-            position: absolute;
-        }
-        &[class*="__image"] {
-            position: relative;
-            top: 0;
-            width: auto;
-            height: 200px;
-            margin-inline: auto;
-        }
-    }
-    .tweet-actions-module {
-    }
-
-    svg {
-        width: 3%;
-        height: 3%;
-    }
 
     // Twitterの埋め込みツイートのスタイル
     & > div {
