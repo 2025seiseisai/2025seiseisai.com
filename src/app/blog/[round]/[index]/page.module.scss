@@ -12,7 +12,7 @@ $pri-black: #0b0e0f;
     margin-top: 80px;
     top: 104px;
     right: 8dvw;
-    width: 20dvw;
+    width: max(255px, 20dvw);
     max-height: 100dvh;
     overflow-y: auto;
     color: $pri-black;
@@ -20,8 +20,9 @@ $pri-black: #0b0e0f;
 }
 
 .blog_container {
-    margin: 80px 8dvw 0 8dvw;
-    width: 56dvw;
+    margin-top: 80px;
+    margin-left: 8dvw;
+    width: min(56dvw, 84dvw - 275px);
     color: $pri-black;
     line-height: 1.9;
 }

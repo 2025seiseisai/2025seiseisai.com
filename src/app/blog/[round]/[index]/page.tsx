@@ -76,7 +76,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 {title}
             </h1>
             <article>
-                <div className="float-right mt-[80px] mr-[9.7dvw] ml-auto w-[20dvw] text-right text-[#0b0e0f]">
+                <div className="float-right mt-[80px] mr-[9.7dvw] ml-auto w-[max(255px,20dvw)] text-right text-[#0b0e0f]">
                     <p className="text-[#de0d22]">＃{topic}</p>
                     <time dateTime={date.replaceAll(".", "-")}>{date}</time>
                     <p>{author}</p>
@@ -84,11 +84,11 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 <div className={styles.side}>
                     <Table toc={toc} />
                     <div className="mt-[45px] flex w-full items-center justify-between">
-                        <Link href={prevLink} className="flex items-center text-left text-xl hover:opacity-80">
+                        <Link href={prevLink} className="flex items-center text-left text-[20px] hover:opacity-80">
                             <div className="text-[#de0d22]">＜&nbsp;</div>
                             <div>前の記事へ</div>
                         </Link>
-                        <Link href={nextLink} className="flex items-center text-right text-xl hover:opacity-80">
+                        <Link href={nextLink} className="flex items-center text-right text-[20px] hover:opacity-80">
                             <div>次の記事へ</div>
                             <div className="text-[#de0d22]">&nbsp;＞</div>
                         </Link>
