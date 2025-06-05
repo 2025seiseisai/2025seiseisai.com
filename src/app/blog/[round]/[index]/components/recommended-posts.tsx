@@ -13,7 +13,9 @@ export default function RecommendedPosts({
 
     const paths = useMemo(() => {
         const currentPathsList = allPaths.filter(
-            (p) => (p.round !== currentPath.round || p.index !== currentPath.index) && currentPath.round === p.round,
+            (p) =>
+                (p.round !== currentPath.round || p.index !== currentPath.index) &&
+                (currentPath.round === "61" ? p.round === "61" : p.round !== "61"),
         );
         return currentPathsList.length >= count ? currentPathsList : allPaths;
     }, [allPaths, currentPath]);
