@@ -8,7 +8,7 @@ import Link from "next/link";
 import DownloadIcon from "./components/download-icon.svg";
 import Grid from "./components/grid.svg";
 
-import { ToList, ToTop } from "./components/buttons";
+import { ToTop } from "./components/buttons";
 import RecommendedPosts from "./components/recommended-posts";
 import Table from "./components/table";
 
@@ -69,7 +69,6 @@ export default async function Page({ params }: { params: Promise<{ round: string
     const nextLink = `/2025/blog/${nextPath.round}/${nextPath.index}`;
     return (
         <>
-            <ToList />
             <ToTop />
             <Image src={thumbnail} alt="thumbnail" className="h-[30svh] w-[100dvw] object-cover object-center" />
             <h1 className="mx-auto mt-[30px] max-w-[90svw] border-b-2 border-[#0b0e0f] px-[100px] text-center text-[2.5rem]/normal font-medium text-[#de0d22]">
