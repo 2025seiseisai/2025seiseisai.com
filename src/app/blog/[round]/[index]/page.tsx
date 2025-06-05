@@ -76,7 +76,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 {title}
             </h1>
             <article>
-                <div className="float-right mt-[80px] mr-[9.7dvw] ml-auto w-[20dvh] text-right text-[#0b0e0f]">
+                <div className="float-right mt-[80px] mr-[9.7dvw] ml-auto w-[20dvw] text-right text-[#0b0e0f]">
                     <p className="text-[#de0d22]">＃{topic}</p>
                     <time dateTime={date.replaceAll(".", "-")}>{date}</time>
                     <p>{author}</p>
