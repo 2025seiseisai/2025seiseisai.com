@@ -6,7 +6,6 @@ export default function Table({ toc }: { toc: { name: string; id: string }[] }) 
     const [activeTitleId, setActiveTitleId] = useState("");
 
     useEffect(() => {
-        let windowHeight = window.innerHeight;
         const handleScroll = () => {
             const idPositions: { id: string; position: number }[] = [];
             toc.forEach((item) => {
@@ -16,22 +15,18 @@ export default function Table({ toc }: { toc: { name: string; id: string }[] }) 
                     position: title ? title.getBoundingClientRect().top : 0,
                 });
             });
-            let activeItem = idPositions.find((item) => item.position < windowHeight / 2 && item.position > 60);
+            let activeItem = idPositions.find((item) => item.position < window.innerHeight / 2 && item.position > 60);
             if (!activeItem) {
-                activeItem = idPositions.findLast((item) => item.position < windowHeight / 2);
+                activeItem = idPositions.findLast((item) => item.position < window.innerHeight / 2);
             }
             setActiveTitleId(activeItem ? activeItem.id : "");
         };
-        const handleResize = () => {
-            windowHeight = window.innerHeight;
-        };
-        handleResize();
         handleScroll();
         window.addEventListener("scroll", handleScroll);
-        window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
-            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("resize", handleScroll);
         };
     }, [toc]);
 
