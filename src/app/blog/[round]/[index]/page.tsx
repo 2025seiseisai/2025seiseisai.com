@@ -44,10 +44,10 @@ function DownloadButton({ url, filename, filesize }: { url: string; filename: st
         <Link
             download
             href={url}
-            className="mx-auto mt-[20px] flex h-15 w-4/5 items-center rounded-[12px] border-3 border-[#dedede] bg-[#fefefe] text-lg/normal text-[#0b0e0f]"
+            className="mx-auto mt-[20px] flex h-15 w-max max-w-4/5 items-center rounded-[12px] border-3 border-[#dedede] bg-[#fefefe] text-lg/normal text-[#0b0e0f]"
         >
             <DownloadIcon className="ml-[30px] h-7.5 w-7.5 shrink-0" />
-            <p className="ml-[20px] shrink grow truncate">{filename}</p>
+            <p className="ml-[20px] grow truncate">{filename}</p>
             <p className="flex-end mx-[30px] w-max shrink-0">{filesize}</p>
         </Link>
     );
