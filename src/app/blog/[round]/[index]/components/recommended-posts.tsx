@@ -1,25 +1,35 @@
 "use client";
-import { blogData } from "@/blogs/blog-data";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import BlogCard from "./blog-card";
 
-export default function RecommendedPosts({ currentPath }: { currentPath: string }) {
-    const [recommendedPaths, setRecommendedPaths] = useState<string[]>([]);
+export default function RecommendedPosts({
+    currentPath,
+    allPaths,
+}: {
+    currentPath: { round: string; index: string };
+    allPaths: { round: string; index: string }[];
+}) {
     const count = 2;
-    const is61st = currentPath.startsWith("61/");
-    const allPaths = Object.keys(blogData).filter((p) => p !== currentPath);
-    const latestPaths = allPaths.filter((p) => p.startsWith("61/"));
-    const paths = is61st && latestPaths.length >= count ? latestPaths : allPaths;
+
+    const paths = useMemo(() => {
+        const currentPathsList = allPaths.filter(
+            (p) => (p.round !== currentPath.round || p.index !== currentPath.index) && currentPath.round === p.round,
+        );
+        return currentPathsList.length >= count ? currentPathsList : allPaths;
+    }, [allPaths, currentPath]);
+
+    const [recommendedPaths, setRecommendedPaths] = useState<string[]>([]);
 
     useEffect(() => {
         const selectedPaths: Set<string> = new Set();
         const selectionCount = Math.min(count, paths.length);
         while (selectedPaths.size < selectionCount) {
             const randomIndex = Math.floor(Math.random() * paths.length);
-            selectedPaths.add(paths[randomIndex]);
+            const selectedPath = paths[randomIndex];
+            selectedPaths.add(`${selectedPath.round}/${selectedPath.index}`);
         }
         setRecommendedPaths(Array.from(selectedPaths));
-    }, []);
+    }, [paths]);
 
     return (
         <div className="my-[40px] text-[#0e0b0f]">

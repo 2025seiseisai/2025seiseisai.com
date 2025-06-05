@@ -13,21 +13,29 @@ export function ToTop() {
         const handleScroll = () => {
             setScreenY(window.scrollY);
         };
-        window.addEventListener("scroll", handleScroll);
+        const handleResize = () => {
+            setWindowHeight(window.innerHeight);
+        };
         handleScroll();
-        setWindowHeight(window.innerHeight);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleResize);
         };
     }, []);
 
     const className =
-        "fixed right-[120px] bottom-[50px] z-1 size-[clamp(30px,5svw,60px)] rounded-full bg-[#de0d22] transition duration-1000 ease-in-out hover:brightness-120";
+        "fixed right-[120px] bottom-[50px] z-1 size-[clamp(30px,5svw,60px)] cursor-pointer rounded-full bg-[#de0d22] transition duration-1000 ease-in-out hover:brightness-120";
 
     return (
-        <Link href="#top" className={`${className} ${screenY < windowHeight && "pointer-events-none opacity-0"}`}>
+        <div
+            className={`${className} ${screenY < windowHeight && "pointer-events-none opacity-0"}`}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
             <ArrowUp className="size-full" />
-        </Link>
+        </div>
     );
 }
 
@@ -35,16 +43,22 @@ export function ToList() {
     const [show, setShow] = useState(true);
 
     useEffect(() => {
+        let windowHeight = window.innerHeight;
         const handleScroll = () => {
             const toList = document.getElementById("tolist");
             const rect = toList?.getBoundingClientRect();
-            setShow(!rect || rect?.top > window.innerHeight);
+            setShow(!rect || rect?.top > windowHeight);
         };
-        window.addEventListener("scroll", handleScroll);
+        const handleResize = () => {
+            windowHeight = window.innerHeight;
+        };
         handleScroll();
-
+        handleResize();
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleResize);
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleResize);
         };
     }, []);
 

@@ -101,20 +101,21 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 </div>
             </article>
             <nav className="mx-auto mt-[60px] mb-[50px] w-[56dvw]">
-                <Link
-                    href="/2025/blog"
+                <div
                     id="tolist"
-                    className="flex items-center justify-center gap-5 text-xl/normal font-medium text-[#0b0e0f] transition-opacity hover:opacity-80"
+                    className="flex items-center justify-center text-xl/normal font-medium text-[#0b0e0f] transition-opacity hover:opacity-80"
                 >
-                    <Grid />
-                    記事一覧へ
-                </Link>
+                    <Link href="/2025/blog" className="flex items-center justify-center gap-5">
+                        <Grid />
+                        記事一覧へ
+                    </Link>
+                </div>
                 {/* <p className="first-letter:text-[#de0d22] ml-[-10ox]">
                         ＞ こちらの記事もおすすめ
                     </p>
                  */}
                 {/* ---前に遊んだのが残ってたので--- */}
-                <RecommendedPosts currentPath={`${round}/${index}`} />
+                <RecommendedPosts currentPath={{ round, index }} allPaths={paths} />
                 {/* --------後で置き換えか--------- */}
             </nav>
         </>
