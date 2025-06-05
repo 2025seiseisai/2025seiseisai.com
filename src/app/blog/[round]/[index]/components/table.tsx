@@ -37,9 +37,9 @@ export default function Table({ toc }: { toc: { name: string; id: string }[] }) 
                 {toc.map((item) => (
                     <a href={`#${item.id}`} key={item.id}>
                         <li
-                            className={`mx-[5px] flex w-full truncate text-base transition-all duration-300 before:content-['・'] hover:opacity-75 ${item.id === activeTitleId && "bg-[#de0d2221]"}`}
+                            className={`mx-[5px] flex w-full text-base transition-all duration-300 before:content-['・'] hover:opacity-75 ${item.id === activeTitleId && "bg-[#de0d2221]"}`}
                         >
-                            {item.name}
+                            <p className="w-full truncate">{item.name}</p>
                         </li>
                     </a>
                 ))}
