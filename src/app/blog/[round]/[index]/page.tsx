@@ -10,9 +10,9 @@ import Grid from "./components/grid.svg";
 
 import { ToList, ToTop } from "./components/buttons";
 import RecommendedPosts from "./components/recommended-posts";
+import Table from "./components/table";
 
 import "./blog.scss";
-import Table from "./components/table";
 import styles from "./page.module.scss";
 
 export const dynamicParams = false;
@@ -72,7 +72,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <ToList />
             <ToTop />
             <Image src={thumbnail} alt="thumbnail" className="h-[30svh] w-[100dvw] object-cover object-center" />
-            <h1 className="mx-auto mt-[30px] max-w-[90svw] border-b-2 border-[#0b0e0f] px-[100px] text-center text-[40px] font-medium text-[#de0d22]">
+            <h1 className="mx-auto mt-[30px] max-w-[90svw] border-b-2 border-[#0b0e0f] px-[100px] text-center text-[2.5rem]/normal font-medium text-[#de0d22]">
                 {title}
             </h1>
             <article>
