@@ -94,7 +94,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     </div>
                     <div className="mt-[20px] flex justify-center">
                         <Link href="/2025/blog">
-                            <div className="w-max rounded-sm bg-[#de0d2221] p-1.5 text-[#0b0e0f] hover:opacity-80">
+                            <div className="w-max rounded-sm bg-[#de0d22] p-1.5 text-[#ffffff] hover:opacity-80">
                                 記事一覧へ
                             </div>
                         </Link>
