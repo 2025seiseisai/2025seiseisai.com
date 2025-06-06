@@ -84,7 +84,7 @@ import * as path from "path";
             let { data, content } = graymatter(filestr);
             content = content.replaceAll("\r\n", "\n").replaceAll("\r", "\n");
             content = content.replaceAll(removeAlt, (match, md, alt1, url, alt2) => {
-                if (alt2.replace(/\s+/g, "") === alt1) {
+                if (alt2.replace(/\s+/g, "") === alt1.replace(/\s+/g, "")) {
                     return md + "\n";
                 }
                 return match;

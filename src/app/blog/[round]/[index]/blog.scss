@@ -1,50 +1,79 @@
+$pri-red: #de0d22;
+$pri-black: #0b0e0f;
+
 .blog_content_root {
     width: 100%;
 
     // テキストのスタイル
-    color: #333;
+    color: $pri-black;
+    line-height: 1.9;
     font-size: 1rem;
+
+    [id] {
+        scroll-margin-top: 84px;
+    }
+
+    a {
+        color: #bd0b1d;
+        text-decoration: none;
+    }
 
     // テキストブロックのスタイル
     div {
         display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 20px;
+        font-weight: 400;
+        a {
+            color: $pri-red;
+            text-decoration: underline;
+            &:hover {
+                color: #bd0b1d;
+            }
+        }
     }
 
     // 見出しのスタイル
     // Notionでは見出し3までしかつけれないので、h4以降はやらなくて大丈夫です
     h1 {
-        color: black;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        padding-left: 10px;
+        border-left: $pri-red 4px solid;
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: 500;
     }
     h2 {
-        color: green;
+        margin-top: 28px;
+        margin-bottom: 22px;
         font-size: 1.25rem;
-        font-weight: 600;
+        font-weight: 500;
     }
     h3 {
-        color: blue;
+        margin-top: 20px;
+        margin-bottom: 20px; //15px?
         font-size: 1.125rem;
-        font-weight: 600;
+        font-weight: 500;
     }
 
     // 画像のスタイル
     img {
-        width: 100%;
+        width: auto;
+        max-width: 80%;
+        max-height: 350px;
+        margin: 0 auto;
     }
 
     // 画像とキャプションを囲ってるやつのスタイル
     // キャプションがないこともある
     figure {
-        margin: 10%;
+        width: 100%;
+        margin-top: 20px;
     }
 
     // キャプションのスタイル
     figcaption {
         font-size: 0.875rem;
-        color: orange;
+        color: #505050;
         text-align: center;
     }
 
@@ -54,8 +83,7 @@
         list-style: none;
     }
     ul li {
-        margin-left: 1rem;
-        margin-bottom: 0.5rem;
+        margin: 8px 0 8px 1rem;
     }
     ul li::before {
         content: "・";
@@ -66,12 +94,12 @@
         list-style: none;
     }
     ol li {
-        margin-left: 1rem;
-        margin-bottom: 0.5rem;
+        margin: 8px 0 8px 1rem;
     }
     ol li::before {
         content: counter(li);
         counter-increment: li;
+        font-weight: 500;
     }
 }
 
@@ -94,15 +122,24 @@
 }
 
 .blog_tweet_embed {
-    width: 100%;
-
     // Twitterの埋め込みツイートの親要素のスタイル
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px;
 
     // Twitterの埋め込みツイートのスタイル
     & > div {
-        margin: 20px;
+        width: 80%;
+        margin: 20px auto;
+        border-radius: 10px;
+        border: 2px solid #de0d2280;
+        transition: box-shadow 0.2s ease-in-out;
+        overflow: hidden;
+
+        &:hover {
+            background-color: #0b0e0f02;
+            box-shadow: #de0d2280 0px 0px 5px;
+        }
 
         // 文字等を選択したときの色
         *::selection {
