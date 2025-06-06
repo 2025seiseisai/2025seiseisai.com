@@ -25,7 +25,7 @@ function DisabledFooterLink({ children }: { children: React.ReactNode }) {
 
 export function Footer() {
     return (
-        <footer className="mt-auto bg-white">
+        <footer id="footer" className="mt-auto bg-white">
             <div className="flex w-full flex-wrap bg-[#f7f7f7] font-light not-md:pb-[12px] md:h-[137px]">
                 <span className="mr-[2px]">
                     <ThemeLogo className="ml-[25px] h-[44px] w-auto pt-[13px] md:ml-[calc(19000svw/1440)] md:h-[85px] md:pt-[33px]" />

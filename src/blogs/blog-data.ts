@@ -1453,9 +1453,9 @@ YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/w
 
 ああ<span style={{ color: "#1e90ff" }}>文字色の指定</span>ああ
 
-[ファイルへのリンク](test.txt)
+[ファイルへのリンク](----test----.txt)
 
-[test.txt](test.txt)
+[----test----.txt](----test----.txt)
 
 [https://x.com/seiseisai_tdj/status/1928066296014590078](https://x.com/seiseisai_tdj/status/1928066296014590078)
 `,
@@ -1464,5 +1464,5 @@ YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/w
         : {}),
 };
 export const resourceSize: { [key: string]: number } = {
-    "test/01/test.txt": 127,
+    "test/01/----test----.txt": 127,
 };

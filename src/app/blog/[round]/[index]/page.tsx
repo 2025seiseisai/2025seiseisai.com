@@ -82,19 +82,20 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 </div>
                 <div className={styles.side}>
                     <Table toc={toc} />
-                    <div className="mt-[45px] flex w-full items-center justify-between">
-                        <Link href={prevLink} className="flex items-center text-left text-[20px] hover:opacity-80">
+                    <div className="mt-[30px] flex w-full items-center justify-between">
+                        <Link href={prevLink} className="flex items-center text-left text-[18px] hover:opacity-80">
                             <div className="text-[#de0d22]">＜&nbsp;</div>
                             <div>前の記事へ</div>
                         </Link>
-                        <Link href={nextLink} className="flex items-center text-right text-[20px] hover:opacity-80">
+                        <Link href={nextLink} className="flex items-center text-right text-[18px] hover:opacity-80">
                             <div>次の記事へ</div>
                             <div className="text-[#de0d22]">&nbsp;＞</div>
                         </Link>
                     </div>
-                    <div className="mt-[20px] flex justify-center">
+                    <div className="mt-[12px] flex justify-center">
                         <Link href="/2025/blog">
-                            <div className="w-max rounded-sm bg-[#de0d22] p-1.5 text-[#ffffff] hover:opacity-80">
+                            <div className="flex w-max items-center gap-[8px] rounded-sm p-1.5 text-[#0b0e0f] hover:opacity-80">
+                                <Grid className="w-[24px]" />
                                 記事一覧へ
                             </div>
                         </Link>
@@ -109,7 +110,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <nav className="mx-auto mt-[60px] mb-[50px] w-[56dvw]">
                 <div
                     id="tolist"
-                    className="flex items-center justify-center text-xl/normal font-medium text-[#0b0e0f] transition-opacity hover:opacity-80"
+                    className="flex items-center justify-center text-xl/normal font-medium text-[#0b0e0f] transition-opacity hover:opacity-80 md:hidden"
                 >
                     <Link href="/2025/blog" className="flex items-center justify-center gap-5">
                         <Grid />
