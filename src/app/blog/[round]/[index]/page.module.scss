@@ -13,7 +13,7 @@ $pri-black: #0b0e0f;
     top: 104px;
     right: 8dvw;
     width: max(255px, 20dvw);
-    max-height: 100dvh - 80px;
+    max-height: calc(100dvh - 80px);
     overflow-y: auto;
     color: $pri-black;
     line-height: 1.5;
@@ -22,7 +22,7 @@ $pri-black: #0b0e0f;
 .blog_container {
     margin-top: 80px;
     margin-left: 8dvw;
-    width: min(56dvw, 84dvw - 275px);
+    width: min(56dvw, calc(84dvw - 275px));
     color: $pri-black;
     line-height: 1.9;
 }

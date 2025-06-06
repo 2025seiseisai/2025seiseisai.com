@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BlogCard from "./blog-card";
 
 export default function RecommendedPosts({
@@ -11,18 +11,21 @@ export default function RecommendedPosts({
 }) {
     const count = 2;
 
-    const paths = useMemo(() => {
-        const currentPathsList = allPaths.filter(
-            (p) =>
-                (p.round !== currentPath.round || p.index !== currentPath.index) &&
-                (currentPath.round === "61" ? p.round === "61" : p.round !== "61"),
-        );
-        return currentPathsList.length >= count ? currentPathsList : allPaths;
-    }, [allPaths, currentPath]);
+    const pathsRef = useRef(
+        (() => {
+            const currentPathsList = allPaths.filter(
+                (p) =>
+                    (p.round !== currentPath.round || p.index !== currentPath.index) &&
+                    (currentPath.round === "61" ? p.round === "61" : p.round !== "61"),
+            );
+            return currentPathsList.length >= count ? currentPathsList : allPaths;
+        })(),
+    );
 
     const [recommendedPaths, setRecommendedPaths] = useState<string[]>([]);
 
     useEffect(() => {
+        const paths = pathsRef.current;
         const selectedPaths: Set<string> = new Set();
         const selectionCount = Math.min(count, paths.length);
         while (selectedPaths.size < selectionCount) {
@@ -31,7 +34,7 @@ export default function RecommendedPosts({
             selectedPaths.add(`${selectedPath.round}/${selectedPath.index}`);
         }
         setRecommendedPaths(Array.from(selectedPaths));
-    }, [paths]);
+    }, [pathsRef]);
 
     return (
         <div className="my-[40px] text-[#0e0b0f]">
