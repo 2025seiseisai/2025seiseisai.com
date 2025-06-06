@@ -1,9 +1,24 @@
-.download_button {
-    margin: 20px;
-    display: flex;
-    height: 50px;
-    width: auto;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f0f0f0;
+$pri-red: #de0d22;
+$pri-black: #0b0e0f;
+
+.side {
+    position: sticky;
+    float: right;
+    clear: right;
+    margin-top: 80px;
+    top: 104px;
+    right: 8dvw;
+    width: max(255px, 20dvw);
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    color: $pri-black;
+    line-height: 1.5;
+}
+
+.blog_container {
+    margin-top: 80px;
+    margin-left: 8dvw;
+    width: min(56dvw, calc(84dvw - 275px));
+    color: $pri-black;
+    line-height: 1.9;
 }
