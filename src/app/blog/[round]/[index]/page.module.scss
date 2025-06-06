@@ -13,7 +13,7 @@ $pri-black: #0b0e0f;
     top: 104px;
     right: 8dvw;
     width: max(255px, 20dvw);
-    max-height: 100dvh;
+    max-height: 100dvh - 80px;
     overflow-y: auto;
     color: $pri-black;
     line-height: 1.5;
