@@ -47,11 +47,17 @@ export default function BlogList({
 
     const filteredBlogs = blogs.filter((b) => b.round === selectedRound);
 
+    // これをコンポーネントの上や外に書いてOK
+    function getOrdinal(n: number): string {
+        return n === 61 ? "61st" : `${n}th`;
+    }
+
     return (
         <>
             <div>
-                <h1 className={styles.title1}>B</h1>
-                <h1 className={styles.title2}>log</h1>
+                <h1 className={styles.title}>
+                    <span className={styles.title1}>B</span>log
+                </h1>
 
                 <div className={styles.f226}>
                     {/* 背景枠（白） */}
@@ -61,11 +67,12 @@ export default function BlogList({
                     <div
                         className={styles.rec81}
                         style={{
-                            transform: `translateX(${indicatorX}px) skewX(-26deg)`,
+                            transform: `translateX(${indicatorX + 8}px) skewX(-26deg)`,
                         }}
                     />
 
                     {/* ラウンド選択ラベル */}
+
                     {roundList.map((round) => (
                         <h2
                             key={round}
@@ -75,7 +82,7 @@ export default function BlogList({
                             onClick={() => setSelectedRound(round)}
                             className={selectedRound === round ? styles.selectedRound : styles.unselectedRound}
                         >
-                            {round}th
+                            {getOrdinal(Number(round))}
                         </h2>
                     ))}
                 </div>

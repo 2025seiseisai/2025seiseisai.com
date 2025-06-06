@@ -91,7 +91,7 @@ import Image84 from "./60/10/thumbnail.png";
 import Image85 from "./60/11/image 1.png";
 import Image86 from "./60/11/image.png";
 import Image87 from "./60/11/thumbnail.png";
-import Image88 from "./test/01/thumbnail.png";
+import Image88 from "./61/01/thumbnail.png";
 export const blogData: {
     [key: string]: {
         title: string;
@@ -1420,13 +1420,13 @@ After Effects の編集画面。非常に複雑。
     },
     ...(process.env.NODE_ENV === "development"
         ? {
-              "test/01": {
+              "61/01": {
                   title: `これはテストですこれはテストですこれはテストですこれはテストですこれはテストですこれはテストですこれはテストですこれはテストです`,
                   date: `9999.00.00`,
                   author: `PRパート員 A.A. & A.B. & A.C. & A.D. & A.E. & A.F`,
                   topic: `製作セクション・技術セクション・運営セクション・販売セクション`,
                   thumbnail: Image88,
-                  thumbnailPath: `src/blogs/test/01/thumbnail.png`,
+                  thumbnailPath: `src/blogs/61/01/thumbnail.png`,
                   images: {},
                   description: `
 あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
