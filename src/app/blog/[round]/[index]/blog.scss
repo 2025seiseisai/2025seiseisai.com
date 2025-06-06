@@ -133,6 +133,8 @@ $pri-black: #0b0e0f;
         margin: 20px auto;
         border-radius: 10px;
         border: 2px solid #de0d2280;
+        transition: box-shadow 0.2s ease-in-out;
+        overflow: hidden;
 
         &:hover {
             background-color: #0b0e0f02;
