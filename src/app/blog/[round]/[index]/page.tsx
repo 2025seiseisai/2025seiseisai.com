@@ -84,12 +84,12 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     <Table toc={toc} />
                     <div className="mt-[30px] flex w-full items-center justify-between">
                         <Link href={prevLink} className="flex items-center text-left text-[18px] hover:opacity-80">
-                            <div className="text-[#de0d22]">＜&nbsp;</div>
+                            <div className="text-[#de0d22] select-none">＜&nbsp;</div>
                             <div>前の記事へ</div>
                         </Link>
                         <Link href={nextLink} className="flex items-center text-right text-[18px] hover:opacity-80">
                             <div>次の記事へ</div>
-                            <div className="text-[#de0d22]">&nbsp;＞</div>
+                            <div className="text-[#de0d22] select-none">&nbsp;＞</div>
                         </Link>
                     </div>
                     <div className="mt-[12px] flex justify-center">
