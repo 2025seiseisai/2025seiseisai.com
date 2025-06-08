@@ -4,12 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Theme from "../(assets)/theme.svg";
+import ArchiveIcon from "./archive.svg";
 import ContactIcon from "./contact.svg";
 import styles from "./header.module.scss";
 import InstagramIcon from "./instagram.svg";
 import { overlapEvent } from "./overlap-event";
 import PrivacyIcon from "./privacy.svg";
-import SchoolIcon from "./school.svg";
 import XIcon from "./x.svg";
 import YouTubeIcon from "./youtube.svg";
 
@@ -250,14 +250,13 @@ export function Header() {
                             </div>
                             <div className={styles.snsLinkItem}>
                                 <Link
-                                    href="https://www.tdj.ac.jp/"
-                                    rel="noopener noreferrer nofollow"
-                                    target="_blank"
+                                    href="/2025/archives"
+                                    onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
-                                    <SchoolIcon className={styles.snsIcon} />
+                                    <ArchiveIcon className={styles.snsIcon} />
                                     <p className={styles.privacyText}>
-                                        東大寺学園
+                                        過去の
                                         <br />
                                         Webサイト
                                     </p>

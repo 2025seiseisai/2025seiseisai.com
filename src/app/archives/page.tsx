@@ -71,6 +71,9 @@ export default function ArchivesPage() {
             <h1 className="mt-[30px] ml-[20px] text-[28px] font-bold text-[#0b0e0f] md:mr-auto md:ml-auto md:w-[80%] md:text-[40px]">
                 <span className="text-[#de0d22]">A</span>rchives
             </h1>
+            <p className="mt-[12px] mr-[20px] ml-[20px] text-[16px] md:mr-auto md:ml-auto md:w-[80%]">
+                ※都合により、一部のページを非表示としています。ご了承ください。
+            </p>
             <div className="mt-[25px] mb-[20px] w-[100%] px-[10px] md:mx-auto md:mt-[30px] md:mb-[10px] md:w-[80%] md:px-0">
                 <ArchiveCard
                     round="第60回"

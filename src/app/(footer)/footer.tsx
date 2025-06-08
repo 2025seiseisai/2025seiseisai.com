@@ -73,7 +73,7 @@ export function Footer() {
                     <h1 className="mt-[27px] w-full border-b-[1px] text-[16px] not-md:mb-[6px] md:border-b-2 md:text-[32px]">
                         Contents
                     </h1>
-                    <DisabledFooterLink>Blog</DisabledFooterLink>
+                    <FooterLink href="/2025/blog">Blog</FooterLink>
                     <DisabledFooterLink>Special</DisabledFooterLink>
                     <DisabledFooterLink>Downloads</DisabledFooterLink>
                     <DisabledFooterLink>Gallery</DisabledFooterLink>
