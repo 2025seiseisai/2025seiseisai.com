@@ -26,7 +26,7 @@
 
 .logoLink {
     margin-right: auto;
-    margin-left: 40px;
+    margin-left: min(40px, 8svw);
     display: block;
     aspect-ratio: 411.258 / 148.991;
     height: 18px;
@@ -90,6 +90,9 @@
     flex-direction: column;
     transition-property: clip-path;
     transition-duration: 400ms;
+    @include media(sm) {
+        transition-duration: 300ms;
+    }
 }
 
 .menuContentClosed {
@@ -162,6 +165,9 @@
     @media (min-width: 1440px) and (min-height: 750px) {
         font-size: 28px;
     }
+    @media (max-width: 450px) and (max-height: 700px) {
+        font-size: 18px;
+    }
 }
 
 .headerLinkTitle2 {
@@ -180,13 +186,17 @@
         background-color: #de0d22;
         color: #ffffff;
         clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
-        transition: clip-path 100ms ease-out;
+        transition-property: clip-path;
+        transition-duration: 120ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     .headerLinkTitle2 {
         background-color: #0b0e0f;
         color: #ffffff;
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-        transition: clip-path 100ms ease-out;
+        transition-property: clip-path;
+        transition-duration: 120ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 }
 
@@ -217,52 +227,86 @@
     user-select: none;
 }
 
-.snsContainer {
+.linksContainer {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    gap: 5%;
-    padding-right: 7%;
-    padding-bottom: 50px;
-    padding-left: 35%;
+    padding: min(15px, 3svh) 7% 50px 35%;
     height: 100%;
     @include media(sm) {
         padding-left: 10%;
+        padding-bottom: min(50px, 7svh);
+    }
+    @include media(lg) {
+        @media (max-height: 500px) {
+            padding-top: 0;
+        }
+    }
+}
+
+.linkButton {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #ffffff10;
+    transition-property: background-color;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+        background-color: #0b0e0f10;
     }
 }
 
 .snsLinks {
+    width: 100%;
     display: flex;
-    height: 100%;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.snsTitle {
-    width: 90%;
-    border-bottom-width: 2px;
-    text-align: center;
-    font-size: 26px;
-    font-weight: 600;
-    @media (max-width: 1200px) {
-        font-size: 22px;
+    justify-content: space-around;
+    gap: 5%;
+    @media (max-width: 900px) {
+        gap: 10px;
+    }
+    @include media(sm) {
+        gap: 5px;
     }
 }
 
-.snsIconLinks {
-    display: flex;
-    width: 100%;
-    height: 60%;
-    justify-content: space-around;
-    flex-direction: column;
+.snsLinkItem {
+    flex: 1;
 }
 
 .snsLink {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include media(lg) {
+        @media (min-height: 700px) {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+        @media (max-height: 500px) {
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+    }
+    @include media(sm) {
+        @media (max-height: 550px) {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+    @media not (min-width: 450px) {
+        flex-direction: column;
+        @media (max-height: 700px) {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        @media (max-height: 500px) {
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+    }
 }
 
 .snsIcon {
@@ -273,19 +317,120 @@
         height: 24px;
         width: 24px;
     }
+    @include media(sm) {
+        height: 20px;
+        width: 20px;
+        margin-right: 10%;
+    }
+    @media not (min-width: 450px) {
+        margin-right: 0;
+        margin-bottom: 3px;
+        @media (max-height: 600px) {
+            height: 16px;
+            width: 16px;
+        }
+        @media (min-height: 800px) {
+            height: 22px;
+            width: 22px;
+            margin-bottom: 6px;
+        }
+    }
 }
 
 .snsText {
     font-size: 16px;
     color: #0b0e0f;
-    width: 100px;
+    width: 85px;
+    display: flex;
+    align-items: center;
+    @include media(sm) {
+        font-size: 12px;
+        width: 70px;
+    }
+    @media not (min-width: 450px) {
+        width: auto;
+        font-size: 11px;
+        @media (max-height: 500px) {
+            font-size: 9px;
+        }
+        @media (min-height: 800px) {
+            font-size: 13px;
+        }
+    }
 }
 
-.otherLinksContainer {
+.contactText {
+    font-size: 14px;
+    color: #0b0e0f;
+    width: 85px;
+    @include media(sm) {
+        font-size: 11px;
+        width: 70px;
+    }
+    @media not (min-width: 450px) {
+        width: auto;
+        font-size: 10px;
+        @media (max-height: 500px) {
+            font-size: 9px;
+        }
+        @media (min-height: 800px) {
+            font-size: 13px;
+        }
+    }
+}
+
+.privacyText {
+    font-size: 13px;
+    color: #0b0e0f;
+    width: 85px;
+    height: 24px;
     display: flex;
-    height: 100%;
-    flex: 1;
-    justify-content: space-around;
+    align-items: center;
+    line-height: 1.4;
+    @include media(sm) {
+        font-size: 11px;
+        width: 70px;
+    }
+    @media not (min-width: 450px) {
+        width: auto;
+        text-align: center;
+        font-size: 10px;
+        @media (max-height: 500px) {
+            font-size: 9px;
+        }
+        @media (min-height: 800px) {
+            font-size: 13px;
+        }
+    }
+}
+
+.twitterText {
+    color: #0b0e0f90;
+    margin-left: 5px;
+    font-size: 12px;
+    @include media(sm) {
+        font-size: 10px;
+    }
+    @media not (min-width: 450px) {
+        @media (max-height: 500px) {
+            font-size: 9px;
+        }
+    }
+}
+
+.copyright {
+    font-size: 11px;
+    width: 100%;
+    color: #0b0e0fa0;
+    text-align: end;
+    @include media(sm) {
+        font-size: 9px;
+    }
+    @media not (min-width: 450px) {
+        @media (max-height: 500px) {
+            font-size: 8px;
+        }
+    }
 }
 
 .menuBackground {
@@ -295,6 +440,9 @@
     background-color: #0b0e0fa0;
     transition-property: clip-path, opacity;
     transition-duration: 400ms;
+    @include media(sm) {
+        transition-duration: 300ms;
+    }
 }
 
 .menuBackgroundClosed {

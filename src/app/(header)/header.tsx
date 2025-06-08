@@ -4,9 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Theme from "../(assets)/theme.svg";
+import ContactIcon from "./contact.svg";
 import styles from "./header.module.scss";
 import InstagramIcon from "./instagram.svg";
 import { overlapEvent } from "./overlap-event";
+import PrivacyIcon from "./privacy.svg";
+import SchoolIcon from "./school.svg";
 import XIcon from "./x.svg";
 import YouTubeIcon from "./youtube.svg";
 
@@ -182,40 +185,86 @@ export function Header() {
                             disabled
                         />
                     </div>
-                    <div className={styles.snsContainer}>
+                    <div className={styles.linksContainer}>
                         <div className={styles.snsLinks}>
-                            <h1 className={styles.snsTitle}>SNS</h1>
-                            <div className={styles.snsIconLinks}>
+                            <div className={styles.snsLinkItem}>
                                 <Link
                                     href="https://x.com/seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    className={styles.snsLink}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <XIcon className={styles.snsIcon} />
-                                    <p className={styles.snsText}>X (Twitter)</p>
+                                    <p className={styles.snsText}>
+                                        X <span className={styles.twitterText}>(Twitter)</span>
+                                    </p>
                                 </Link>
+                            </div>
+                            <div className={styles.snsLinkItem}>
                                 <Link
                                     href="https://www.youtube.com/@seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    className={styles.snsLink}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <YouTubeIcon className={styles.snsIcon} />
                                     <p className={styles.snsText}>YouTube</p>
                                 </Link>
+                            </div>
+                            <div className={styles.snsLinkItem}>
                                 <Link
                                     href="https://www.instagram.com/seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    className={styles.snsLink}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <InstagramIcon className={styles.snsIcon} />
                                     <p className={styles.snsText}>Instagram</p>
                                 </Link>
                             </div>
                         </div>
-                        <div className={styles.otherLinksContainer}></div>
+                        <div className={styles.snsLinks}>
+                            <div className={styles.snsLinkItem}>
+                                <Link
+                                    href="/2025/contact"
+                                    onClick={() => setOpenImpl(false)}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
+                                >
+                                    <ContactIcon className={styles.snsIcon} />
+                                    <p className={styles.contactText}>お問い合わせ</p>
+                                </Link>
+                            </div>
+                            <div className={styles.snsLinkItem}>
+                                <Link
+                                    href="/2025/privacy-policy"
+                                    onClick={() => setOpenImpl(false)}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
+                                >
+                                    <PrivacyIcon className={styles.snsIcon} />
+                                    <p className={styles.privacyText}>
+                                        プライバシー
+                                        <br />
+                                        ポリシー
+                                    </p>
+                                </Link>
+                            </div>
+                            <div className={styles.snsLinkItem}>
+                                <Link
+                                    href="https://www.tdj.ac.jp/"
+                                    rel="noopener noreferrer nofollow"
+                                    target="_blank"
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
+                                >
+                                    <SchoolIcon className={styles.snsIcon} />
+                                    <p className={styles.privacyText}>
+                                        東大寺学園
+                                        <br />
+                                        Webサイト
+                                    </p>
+                                </Link>
+                            </div>
+                        </div>
+                        <p className={styles.copyright}>© 2025 61st seiseisai “FUNBYO”, Created by PR part</p>
                     </div>
                 </div>
                 <div
