@@ -85,7 +85,7 @@
         max-width: 80%;
         max-height: 350px;
         margin: 0 auto;
-        @media screen and (max-width: v.$breakpoint-b) {
+        @media (max-width: v.$breakpoint-b) {
             max-width: 100%;
             max-height: 300px;
         }
