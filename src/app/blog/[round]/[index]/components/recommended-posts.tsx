@@ -38,13 +38,17 @@ export default function RecommendedPosts({
 
     return (
         <div className="my-[40px] text-[#0e0b0f]">
-            <p className="ml-[-10px] text-xl/normal font-medium first-letter:text-[#de0d22]">
+            <p className="ml-[5dvw] text-xl/normal font-medium first-letter:text-pri-red b:ml-[-10px]">
                 ＞ こちらの記事もおすすめ
             </p>
             <div className="mt-[30px] flex justify-between gap-4">
                 {recommendedPaths.map((path) => (
                     <BlogCard key={path} path={path} />
                 ))}
+                {/* <BlogCard path={recommendedPaths[0]} />
+                <div className="max-b:hidden">
+                    <BlogCard path={recommendedPaths[1] ?? recommendedPaths[0]} />
+                </div> */}
             </div>
         </div>
     );

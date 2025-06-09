@@ -1,6 +1,24 @@
-$pri-red: #de0d22;
-$pri-black: #0b0e0f;
+@use "./components/variables.scss" as v;
 
+.metadata_wrapper {
+    float: right;
+    margin-top: 80px;
+    margin-right: 9.7dvw;
+    margin-left: auto;
+    width: max(255px, 20dvw);
+    text-align: right;
+    font-size: 1.25rem;
+    color: v.$pri-black;
+
+    @media (max-width: v.$breakpoint-b) {
+        display: flex;
+        float: none;
+        margin-top: 20px;
+        margin-inline: auto;
+        width: 90dvw;
+        font-size: 0.875rem;
+    }
+}
 .side {
     position: sticky;
     float: right;
@@ -11,14 +29,24 @@ $pri-black: #0b0e0f;
     width: max(255px, 20dvw);
     max-height: calc(100dvh - 80px);
     overflow-y: auto;
-    color: $pri-black;
+    color: v.$pri-black;
     line-height: 1.5;
+
+    @media (max-width: v.$breakpoint-b) {
+        display: none;
+    }
 }
 
 .blog_container {
     margin-top: 80px;
     margin-left: 8dvw;
     width: min(56dvw, calc(84dvw - 275px));
-    color: $pri-black;
+    color: v.$pri-black;
     line-height: 1.9;
+
+    @media (max-width: v.$breakpoint-b) {
+        margin-top: 40px;
+        margin-inline: auto;
+        width: 90dvw;
+    }
 }

@@ -25,7 +25,7 @@ export function ToTop() {
     }, [handleScroll]);
 
     const className =
-        "fixed right-[80px] bottom-[50px] z-1 size-[clamp(30px,7svw,60px)] cursor-pointer rounded-full bg-[#de0d22] transition duration-1000 ease-in-out hover:brightness-120";
+        "fixed right-[80px] bottom-[50px] z-1 size-[clamp(30px,7svw,60px)] cursor-pointer rounded-full bg-pri-red transition duration-1000 ease-in-out hover:brightness-120 max-b:hidden";
 
     return (
         <div

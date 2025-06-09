@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* ↓ なぜかエラーつきますが動きます */
+@theme {
+    --breakpoint-b: 768px;
+    --color-pri-red: #de0d22;
+    --color-pri-black: #0b0e0f;
+}
+
 html,
 body {
     max-width: 100svw;
