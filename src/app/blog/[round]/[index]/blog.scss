@@ -22,7 +22,7 @@
         display: block;
         margin-top: 20px;
         font-weight: 400;
-        @media screen and (max-width: v.$breakpoint-b) {
+        @media (max-width: v.$breakpoint-b) {
             margin-top: 18px;
         }
         a {
