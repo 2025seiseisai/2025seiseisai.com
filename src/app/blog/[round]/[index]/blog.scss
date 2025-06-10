@@ -1,6 +1,6 @@
 $pri-red: #de0d22;
 $pri-black: #0b0e0f;
-$breakpoint-b: 768px;
+$breakpoint-b: var(--breakpoint-b);
 
 .blog_content_root {
     width: 100%;
@@ -25,9 +25,11 @@ $breakpoint-b: 768px;
         display: block;
         margin-top: 20px;
         font-weight: 400;
+
         @media (max-width: $breakpoint-b) {
             margin-top: 18px;
         }
+
         a {
             color: $pri-red;
             text-decoration: underline;
@@ -59,13 +61,6 @@ $breakpoint-b: 768px;
         font-size: 1.125rem;
         font-weight: 500;
     }
-    h1,
-    h2,
-    h3 {
-        & + div {
-            margin-top: 0;
-        }
-    }
 
     @media (max-width: $breakpoint-b) {
         h1 {
@@ -86,6 +81,7 @@ $breakpoint-b: 768px;
         max-width: 80%;
         max-height: 350px;
         margin: 0 auto;
+
         @media (max-width: $breakpoint-b) {
             max-height: 300px;
         }

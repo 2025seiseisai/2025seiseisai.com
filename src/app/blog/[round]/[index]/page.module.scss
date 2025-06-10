@@ -1,0 +1,11 @@
+.blog_container {
+    section {
+        &:has(h1),
+        &:has(h2),
+        &:has(h3) {
+            & + section > div {
+                margin-top: 0;
+            }
+        }
+    }
+}

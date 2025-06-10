@@ -13,6 +13,7 @@ import RecommendedPosts from "./components/recommended-posts";
 import Table from "./components/table";
 
 import "./blog.scss";
+import styles from "./page.module.scss";
 
 export const dynamicParams = false;
 
@@ -102,7 +103,9 @@ export default async function Page({ params }: { params: Promise<{ round: string
                         </Link>
                     </div>
                 </div>
-                <div className="mt-[40px] mr-auto ml-auto w-[90dvw] leading-[1.9] text-pri-black b:mt-[80px] b:ml-[8dvw] b:w-[56dvw] b:max-w-[calc(84dvw-275px)]">
+                <div
+                    className={`${styles.blog_container} mt-[40px] mr-auto ml-auto w-[90dvw] leading-[1.9] text-pri-black b:mt-[80px] b:ml-[8dvw] b:w-[56dvw] b:max-w-[calc(84dvw-275px)]`}
+                >
                     <div>{description}</div>
                     <hr className="mx-5 mt-10 border-t-2 border-pri-red max-b:hidden" />
                     <div className="mt-[35px] w-19/20 b:hidden">
