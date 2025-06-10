@@ -24,12 +24,9 @@ export function ToTop() {
         };
     }, [handleScroll]);
 
-    const className =
-        "fixed right-[80px] bottom-[50px] z-1 size-[clamp(30px,7svw,60px)] cursor-pointer rounded-full bg-pri-red transition duration-1000 ease-in-out hover:brightness-120 max-b:hidden";
-
     return (
         <div
-            className={`${className} ${hidden && "pointer-events-none opacity-0"}`}
+            className={`fixed right-[80px] bottom-[50px] z-1 size-[clamp(30px,7svw,60px)] cursor-pointer rounded-full bg-pri-red transition hover:brightness-120 max-b:hidden ${hidden && "pointer-events-none opacity-0"}`}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
             <ArrowUp className="size-full" />

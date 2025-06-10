@@ -13,7 +13,6 @@ import RecommendedPosts from "./components/recommended-posts";
 import Table from "./components/table";
 
 import "./blog.scss";
-import styles from "./page.module.scss";
 
 export const dynamicParams = false;
 
@@ -75,14 +74,14 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 {title}
             </h1>
             <article>
-                <div className={styles.metadata_wrapper}>
+                <div className="mt-[20px] mr-auto ml-auto flex w-[90dvw] text-right text-sm/normal text-pri-black b:float-right b:mt-[80px] b:mr-[9.7dvw] b:block b:w-[20dvw] b:min-w-[255px] b:text-xl/normal">
                     <p className="text-pri-red max-b:text-start">＃{topic}</p>
-                    <div className="justify-end">
+                    <div className="max-b:ml-auto">
                         <time dateTime={date.replaceAll(".", "-")}>{date}</time>
                         <p>{author}</p>
                     </div>
                 </div>
-                <div className={styles.side}>
+                <div className="sticky top-[104px] right-[8dvw] float-right clear-right mt-[80px] max-h-[calc(100dvh-80px)] w-[20dvw] min-w-[255px] overflow-y-auto leading-[1.5] text-pri-black max-b:hidden">
                     <Table toc={toc} />
                     <div className="mt-[30px] flex w-full items-center justify-between">
                         <Link href={prevLink} className="flex items-center text-left text-[18px] hover:opacity-80">
@@ -103,7 +102,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                         </Link>
                     </div>
                 </div>
-                <div className={styles.blog_container}>
+                <div className="mt-[40px] mr-auto ml-auto w-[90dvw] leading-[1.9] text-pri-black b:mt-[80px] b:ml-[8dvw] b:w-[56dvw] b:max-w-[calc(84dvw-275px)]">
                     <div>{description}</div>
                     <hr className="mx-5 mt-10 border-t-2 border-pri-red max-b:hidden" />
                     <div className="mt-[35px] w-19/20 b:hidden">

@@ -7,13 +7,14 @@ import Link from "next/link";
  * Return a visual link component to the specified blog post.
  * @example <BlogCard path={"61/01"} />
  * @param path - Specify the blog post to display. `("<round>/<index>")`
+ * @param bShow - Determine whether to display the blog card in the max-b: environment.
  */
-export default function BlogCard({ path }: { path: string }) {
+export default function BlogCard({ path, bShow = true }: { path: string; bShow?: boolean }) {
     const blog = blogData[path];
     return (
         <Link
             href={`/2025/blog/${path}`}
-            className="relative flex h-fit w-87.5 max-w-[70svw] flex-initial flex-row flex-wrap justify-center overflow-hidden rounded-[0.625rem] border-2 border-pri-red bg-[#f7f7f7] transition duration-500 ease-in-out hover:scale-102 hover:opacity-90"
+            className={`@container relative flex h-fit w-87.5 max-w-[70svw] flex-initial flex-row flex-wrap justify-center overflow-hidden rounded-[0.625rem] border-2 border-pri-red bg-[#f7f7f7] transition duration-500 ease-in-out hover:scale-102 hover:opacity-90 ${!bShow && "max-b:hidden max-b:justify-center"}`}
         >
             <Image src={blog.thumbnail} alt="thumbnail" className="z-0 aspect-16/9 w-full" />
             {!path.startsWith("61/") && (

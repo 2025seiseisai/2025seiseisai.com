@@ -1,12 +1,15 @@
-@use "./components/variables.scss" as v;
+$pri-red: #de0d22;
+$pri-black: #0b0e0f;
+$breakpoint-b: 768px;
 
 .blog_content_root {
     width: 100%;
 
     // テキストのスタイル
-    color: v.$pri-black;
+    color: $pri-black;
     line-height: 1.9;
     font-size: 1rem;
+    overflow-x: hidden;
 
     [id] {
         scroll-margin-top: 84px;
@@ -22,11 +25,11 @@
         display: block;
         margin-top: 20px;
         font-weight: 400;
-        @media (max-width: v.$breakpoint-b) {
+        @media (max-width: $breakpoint-b) {
             margin-top: 18px;
         }
         a {
-            color: v.$pri-red;
+            color: $pri-red;
             text-decoration: underline;
             &:hover {
                 color: #bd0b1d;
@@ -40,7 +43,7 @@
         margin-top: 40px;
         margin-bottom: 30px;
         padding-left: 10px;
-        border-left: v.$pri-red 4px solid;
+        border-left: $pri-red 4px solid;
         font-size: 1.5rem;
         font-weight: 500;
     }
@@ -56,11 +59,15 @@
         font-size: 1.125rem;
         font-weight: 500;
     }
-    h1, h2, h3 + div {
-        margin-top: 0;
+    h1,
+    h2,
+    h3 {
+        & + div {
+            margin-top: 0;
+        }
     }
 
-    @media (max-width: v.$breakpoint-b) {
+    @media (max-width: $breakpoint-b) {
         h1 {
             margin-bottom: 18px;
         }
@@ -79,8 +86,7 @@
         max-width: 80%;
         max-height: 350px;
         margin: 0 auto;
-        @media (max-width: v.$breakpoint-b) {
-            max-width: 100%;
+        @media (max-width: $breakpoint-b) {
             max-height: 300px;
         }
     }
@@ -147,12 +153,11 @@
     // Twitterの埋め込みツイートの親要素のスタイル
     width: 100%;
     margin-top: 20px;
-    padding: 5px;
 
     // Twitterの埋め込みツイートのスタイル
     & > div {
         width: 80%;
-        margin: 20px auto;
+        margin: 0 auto;
         border-radius: 10px;
         border: 2px solid #de0d2280;
         transition: box-shadow 0.2s ease-in-out;
@@ -166,7 +171,7 @@
         // 文字等を選択したときの色
         *::selection {
             background-color: #006fd6;
-            color: #ffffff;
+            color: #fff;
         }
     }
 }
