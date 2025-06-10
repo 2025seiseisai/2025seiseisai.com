@@ -1,4 +1,5 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
+import BlogCard from "@/app/blog/[round]/[index]/components/blog-card";
 import { blogData, resourceSize } from "@/blogs/blog-data";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { compileMDX } from "next-mdx-remote/rsc";
@@ -294,6 +295,13 @@ export async function getBlog(
                                 </section>
                             );
                         }
+                    }
+                    if (href.startsWith("/blog/")) {
+                        return (
+                            <div className="flex justify-center">
+                                <BlogCard path={href.substring(6)} />
+                            </div>
+                        );
                     }
                     if (href[0] === "#" || href.startsWith("mailto:")) {
                         return (
