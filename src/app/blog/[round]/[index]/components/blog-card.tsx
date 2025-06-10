@@ -7,15 +7,13 @@ import Link from "next/link";
  * Return a visual link component to the specified blog post.
  * @example <BlogCard path={"61/01"} />
  * @param path - Specify the blog post to display. `("<round>/<index>")`
- * @param mdShow - Determine whether to display the blog card in the "max-md:" environment.
- * @mdShow false --> "max-md:hidden"
  */
-export default function BlogCard({ path, mdShow = true }: { path: string; mdShow?: boolean }) {
+export default function BlogCard({ path }: { path: string }) {
     const blog = blogData[path];
     return (
         <Link
             href={`/2025/blog/${path}`}
-            className={`@container relative flex w-87.5 max-w-[70svw] flex-initial flex-row flex-wrap justify-center overflow-hidden rounded-[0.625rem] border-2 border-pri-red bg-[#f7f7f7] transition duration-500 ease-in-out hover:scale-102 hover:opacity-90 ${!mdShow && "max-md:hidden"}`}
+            className="@container relative flex w-87.5 max-w-[70svw] flex-initial flex-row flex-wrap justify-center overflow-hidden rounded-[0.625rem] border-2 border-pri-red bg-[#f7f7f7] transition duration-500 ease-in-out hover:scale-102 hover:opacity-90"
         >
             <Image src={blog.thumbnail} alt="thumbnail" className="aspect-16/9 w-full" />
             {!path.startsWith("61/") && (

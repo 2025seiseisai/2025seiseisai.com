@@ -44,11 +44,12 @@ export default function RecommendedPosts({
                         ＞ こちらの記事もおすすめ
                     </p>
                     <div className="mt-[30px] flex justify-center gap-4 md:justify-between max-b:md:justify-evenly">
-                        {/*{recommendedPaths.map((path) => (
-                    <BlogCard key={path} path={path} />
-                ))}*/}
-                        <BlogCard path={recommendedPaths[0]} />
-                        <BlogCard path={recommendedPaths[1]} mdShow={false} />
+                        <div>
+                            <BlogCard path={recommendedPaths[0]} />
+                        </div>
+                        <div className="max-md:hidden">
+                            <BlogCard path={recommendedPaths[1]} />
+                        </div>
                     </div>
                 </div>
             )}
