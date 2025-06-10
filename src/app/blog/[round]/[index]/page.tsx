@@ -117,10 +117,10 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <nav className="mx-auto my-[40px] w-[90svw] b:mt-[60px] b:mb-[50px] b:w-[56dvw]">
                 <div
                     id="tolist"
-                    className="flex items-center justify-center text-xl/normal font-medium text-pri-black transition-opacity hover:opacity-80 md:hidden"
+                    className="flex items-center justify-center text-xl/normal font-medium text-pri-black transition-opacity hover:opacity-80 b:hidden"
                 >
-                    <Link href="/2025/blog" className="flex items-center justify-center gap-5 b:hidden">
-                        <Grid />
+                    <Link href="/2025/blog" className="flex items-center justify-center gap-3 text-[18px]">
+                        <Grid className="h-[28px] w-[28px]" />
                         記事一覧へ
                     </Link>
                 </div>

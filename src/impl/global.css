@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* ↓ エラーつきますが動きます */
 @theme {
     --breakpoint-b: 1000px;
     --color-pri-red: #de0d22;

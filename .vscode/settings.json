@@ -9,13 +9,16 @@
     "files.trimTrailingWhitespace": true,
     "files.eol": "\n",
     "files.associations": {
-        "*.mdx": "markdown"
+        "*.mdx": "markdown",
+        "*.tailwind.css": "tailwindcss",
+        "*.tailwind.scss": "tailwindcss"
     },
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "always",
         "source.organizeImports": "always"
     },
     "typescript.tsdk": "node_modules/typescript/lib",
+    "css.lint.unknownAtRules": "ignore",
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "terminal.integrated.env.windows": {
         "PSExecutionPolicyPreference": "RemoteSigned"
