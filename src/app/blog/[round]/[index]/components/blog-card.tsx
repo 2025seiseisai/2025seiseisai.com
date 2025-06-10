@@ -8,7 +8,7 @@ import Link from "next/link";
  * @example <BlogCard path={"61/01"} />
  * @param path - Specify the blog post to display. `("<round>/<index>")`
  * @param mdShow - Determine whether to display the blog card in the "max-md:" environment.
- * @bShow false --> "max-b:hidden"
+ * @mdShow false --> "max-md:hidden"
  */
 export default function BlogCard({ path, mdShow = true }: { path: string; mdShow?: boolean }) {
     const blog = blogData[path];
