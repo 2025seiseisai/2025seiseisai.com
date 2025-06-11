@@ -296,7 +296,7 @@ export async function getBlog(
                         const paths = href.split("/");
                         return (
                             <div className="flex justify-center">
-                                <BlogCard round={paths[1]} index={paths[2]} />
+                                <BlogCard round={paths[2]} index={paths[3]} />
                             </div>
                         );
                     }
