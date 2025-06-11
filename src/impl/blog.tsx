@@ -45,11 +45,20 @@ export function getAllBlogs(): {
     });
 }
 
+export type BlogMetadata = {
+    title: string;
+    date: string;
+    author: string;
+    topic: string;
+    thumbnail: StaticImageData;
+    thumbnailPath: string;
+};
+
 /**
  * @example
  * const { title, date, author, topic, thumbnail, thumbnailPath } = getBlogMetadata("60", "04");
  */
-export function getBlogMetadata(round: string, index: string) {
+export function getBlogMetadata(round: string, index: string): BlogMetadata {
     const blog = blogData[`${round}/${index}`];
     return {
         title: blog.title,
@@ -184,7 +193,7 @@ export async function getBlog(
     round: string,
     index: string,
     DownloadButton: (props: { url: string; filename: string; filesize: string }) => React.ReactNode,
-    BlogCard: (props: { path: string }) => React.ReactNode,
+    BlogCard: (props: { round: string; index: string }) => React.ReactNode,
     tweetTheme: "light" | "dark" = "light",
 ): Promise<{
     title: string;
@@ -284,9 +293,10 @@ export async function getBlog(
                         }
                     }
                     if (href.startsWith("/blog/")) {
+                        const paths = href.split("/");
                         return (
                             <div className="flex justify-center">
-                                <BlogCard path={href.split("#")[0].split("?")[0].substring(6)} />
+                                <BlogCard round={paths[1]} index={paths[2]} />
                             </div>
                         );
                     }

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import BlogCard from "./blog-card";
+import BlogCardClient from "./blog-card-client";
 
 export default function RecommendedPosts({
     currentPath,
@@ -22,16 +22,16 @@ export default function RecommendedPosts({
         })(),
     );
 
-    const [recommendedPaths, setRecommendedPaths] = useState<string[]>([]);
+    const [recommendedPaths, setRecommendedPaths] = useState<{ round: string; index: string }[]>([]);
 
     useEffect(() => {
         const paths = pathsRef.current;
-        const selectedPaths: Set<string> = new Set();
+        const selectedPaths: Set<{ round: string; index: string }> = new Set();
         const selectionCount = Math.min(count, paths.length);
         while (selectedPaths.size < selectionCount) {
             const randomIndex = Math.floor(Math.random() * paths.length);
             const selectedPath = paths[randomIndex];
-            selectedPaths.add(`${selectedPath.round}/${selectedPath.index}`);
+            selectedPaths.add(selectedPath);
         }
         setRecommendedPaths(Array.from(selectedPaths));
     }, [pathsRef]);
@@ -45,10 +45,10 @@ export default function RecommendedPosts({
                     </p>
                     <div className="mt-[30px] flex justify-center gap-4 md:justify-between max-b:md:justify-evenly">
                         <div>
-                            <BlogCard path={recommendedPaths[0]} />
+                            <BlogCardClient round={recommendedPaths[0].round} index={recommendedPaths[0].index} />
                         </div>
                         <div className="max-md:hidden">
-                            <BlogCard path={recommendedPaths[1]} />
+                            <BlogCardClient round={recommendedPaths[1].round} index={recommendedPaths[1].index} />
                         </div>
                     </div>
                 </div>

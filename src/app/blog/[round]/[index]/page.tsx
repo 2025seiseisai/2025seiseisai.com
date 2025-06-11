@@ -8,7 +8,7 @@ import Link from "next/link";
 import DownloadIcon from "./components/download-icon.svg";
 import Grid from "./components/grid.svg";
 
-import BlogCard from "./components/blog-card";
+import BlogCard from "../../blog-card";
 import { ToTop } from "./components/buttons";
 import RecommendedPosts from "./components/recommended-posts";
 import Table from "./components/table";
