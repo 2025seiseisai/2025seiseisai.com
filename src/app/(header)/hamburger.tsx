@@ -2,6 +2,7 @@
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { useEffect, useRef } from "react";
 import HamburgerAnimation from "./hamburger.lottie.json";
+import styles from "./hamburger.module.scss";
 
 export default function Hamburger({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => void }) {
     const hamburgerRef = useRef<LottieRefCurrentProps | null>(null);
@@ -11,7 +12,7 @@ export default function Hamburger({ open, setOpen }: { open: boolean; setOpen: (
     }, [open]);
     return (
         <button
-            className={`z-100000002 mr-[40px] flex aspect-1/1 h-[30px] cursor-pointer items-center justify-center transition-all duration-500 outline-none md:h-[40px] ${open ? "mt-[60px] mr-[60px] ml-[-20px] scale-[150%]" : ""}`}
+            className={`z-100000002 flex aspect-1/1 h-[30px] cursor-pointer items-center justify-center transition-all duration-500 outline-none md:h-[40px] ${open ? styles.opening : "mr-[min(40px,8svw)]"}`}
             onClick={() => {
                 setOpen(!open);
             }}
