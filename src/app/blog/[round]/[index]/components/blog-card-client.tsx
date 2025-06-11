@@ -18,5 +18,5 @@ export default function BlogCardClient({ round, index }: { round: string; index:
         })();
     }, [index, round]);
 
-    return <BlogCardImpl blog={blog} round={round} index={index} />;
+    return <BlogCardImpl round={round} index={index} blog={blog} />;
 }
