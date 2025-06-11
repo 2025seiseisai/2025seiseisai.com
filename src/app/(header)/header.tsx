@@ -4,9 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Theme from "../(assets)/theme.svg";
+import ArchiveIcon from "./archive.svg";
+import ContactIcon from "./contact.svg";
 import styles from "./header.module.scss";
 import InstagramIcon from "./instagram.svg";
 import { overlapEvent } from "./overlap-event";
+import PrivacyIcon from "./privacy.svg";
 import XIcon from "./x.svg";
 import YouTubeIcon from "./youtube.svg";
 
@@ -17,16 +20,30 @@ function HeaderLink({
     title1,
     title2,
     setOpen,
+    disabled = false,
 }: {
     href: string;
     title1: string;
     title2: string;
     setOpen: (open: boolean) => void;
+    disabled?: boolean;
 }) {
-    return (
+    return disabled ? (
+        <div className={styles.headerLink}>
+            <div className={styles.headerLinkText}>
+                <span className={`${styles.headerLinkTitle1} ${styles.disabledHeaderLinkText}`}>{title1}</span>
+            </div>
+        </div>
+    ) : (
         <Link href={href} className={styles.headerLink} onClick={() => setOpen(false)}>
-            <span className={styles.headerLinkTitle1}>{title1}</span>
-            <span className={styles.headerLinkTitle2}>{title2}</span>
+            <div className={`${styles.headerLinkText} ${styles.headerLinkBack}`}>
+                <span className={styles.headerLinkTitle1}>{title1}</span>
+                <span className={styles.headerLinkTitle2}>{title2}</span>
+            </div>
+            <div className={`${styles.headerLinkText} ${styles.headerLinkFront}`}>
+                <span className={styles.headerLinkTitle1}>{title1}</span>
+                <span className={styles.headerLinkTitle2}>{title2}</span>
+            </div>
         </Link>
     );
 }
@@ -37,7 +54,7 @@ export function Header() {
 
     const setOpenImpl = (open: boolean) => {
         setOpen(open);
-        if (open) {
+        if (open && document.body.offsetHeight > window.innerHeight) {
             const div = document.createElement("div");
             div.style.width = "100px";
             div.style.height = "100px";
@@ -79,6 +96,9 @@ export function Header() {
                     <Link href="/2025/news" className={styles.navLink}>
                         News
                     </Link>
+                    <Link href="/2025/blog" className={styles.navLink}>
+                        Blog
+                    </Link>
                     <Link href="/2025/contact" className={styles.navLink}>
                         Contact
                     </Link>
@@ -88,107 +108,162 @@ export function Header() {
             <div className={`${styles.menuOverlay} ${open ? "" : styles.menuOverlayHidden}`}>
                 <div className={`${styles.menuContent} ${!open ? styles.menuContentClosed : styles.menuContentOpen}`}>
                     <div className={styles.menuLinksContainer}>
-                        <div className={styles.menuLinkColumn}>
-                            <HeaderLink
-                                href="/2025"
-                                title1="Top"
-                                title2="菁々祭公式Webサイトのトップページ"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/news"
-                                title1="News"
-                                title2="菁々祭に関する最新のお知らせ"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/theme-logo"
-                                title1="Theme & Logo"
-                                title2="今年のテーマとロゴの紹介"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/access"
-                                title1="Access"
-                                title2="東大寺学園へのアクセス方法"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/events"
-                                title1="Events"
-                                title2="イベント内容やタイムテーブル"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/map"
-                                title1="Map"
-                                title2="校内の展示・バザーの地図"
-                                setOpen={setOpenImpl}
-                            />
-                        </div>
-                        <div className={styles.menuLinkColumn}>
-                            <HeaderLink
-                                href="/2025/goods"
-                                title1="Goods"
-                                title2="菁々祭オリジナルグッズ一覧"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/tickets"
-                                title1="Tickets"
-                                title2="Web整理券の取得・申込ページ"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/blog"
-                                title1="Blog"
-                                title2="PRパート員による菁々祭紹介"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/special"
-                                title1="Special"
-                                title2="壁紙やアイコンなど特別コンテンツ"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/downloads"
-                                title1="Downloads"
-                                title2="部誌などのダウンロードページ"
-                                setOpen={setOpenImpl}
-                            />
-                            <HeaderLink
-                                href="/2025/gallery"
-                                title1="Gallery"
-                                title2="菁々祭デザインのギャラリー"
-                                setOpen={setOpenImpl}
-                            />
-                        </div>
+                        <HeaderLink href="/2025" title1="Top" title2="Webサイトトップページ" setOpen={setOpenImpl} />
+                        <HeaderLink
+                            href="/2025/news"
+                            title1="News"
+                            title2="菁々祭に関する最新のお知らせ"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/theme-logo"
+                            title1="Theme & Logo"
+                            title2="テーマとロゴの紹介"
+                            setOpen={setOpenImpl}
+                            disabled
+                        />
+                        <HeaderLink
+                            href="/2025/access"
+                            title1="Access"
+                            title2="東大寺学園へのアクセス方法"
+                            setOpen={setOpenImpl}
+                            disabled
+                        />
+                        <HeaderLink
+                            href="/2025/events"
+                            title1="Events"
+                            title2="イベント内容やタイムテーブル"
+                            setOpen={setOpenImpl}
+                            disabled
+                        />
+                        <HeaderLink
+                            href="/2025/map"
+                            title1="Map"
+                            title2="校内の展示・バザーの地図"
+                            setOpen={setOpenImpl}
+                            disabled
+                        />
+                        <HeaderLink
+                            href="/2025/goods"
+                            title1="Goods"
+                            title2="菁々祭オリジナルグッズ一覧"
+                            setOpen={setOpenImpl}
+                            disabled
+                        />
+                        <HeaderLink
+                            href="/2025/tickets"
+                            title1="Tickets"
+                            title2="Web整理券の取得・申込ページ"
+                            setOpen={setOpenImpl}
+                            disabled
+                        />
+                        <HeaderLink
+                            href="/2025/blog"
+                            title1="Blog"
+                            title2="PRパート員による菁々祭紹介"
+                            setOpen={setOpenImpl}
+                        />
+                        <HeaderLink
+                            href="/2025/special"
+                            title1="Special"
+                            title2="壁紙やアイコンなど特別コンテンツ"
+                            setOpen={setOpenImpl}
+                            disabled
+                        />
+                        <HeaderLink
+                            href="/2025/downloads"
+                            title1="Downloads"
+                            title2="部誌などのダウンロードページ"
+                            setOpen={setOpenImpl}
+                            disabled
+                        />
+                        <HeaderLink
+                            href="/2025/gallery"
+                            title1="Gallery"
+                            title2="菁々祭デザインのギャラリー"
+                            setOpen={setOpenImpl}
+                            disabled
+                        />
                     </div>
-                    <div className={styles.snsContainer}>
+                    <div className={styles.linksContainer}>
                         <div className={styles.snsLinks}>
-                            <h1 className={styles.snsTitle}>SNS</h1>
-                            <div className={styles.snsIconLinks}>
-                                <Link href="https://x.com/seiseisai_tdj" rel="noopener noreferrer" target="_blank">
+                            <div className={styles.snsLinkItem}>
+                                <Link
+                                    href="https://x.com/seiseisai_tdj"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
+                                >
                                     <XIcon className={styles.snsIcon} />
+                                    <p className={styles.snsText}>
+                                        X <span className={styles.twitterText}>(Twitter)</span>
+                                    </p>
                                 </Link>
+                            </div>
+                            <div className={styles.snsLinkItem}>
                                 <Link
                                     href="https://www.youtube.com/@seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <YouTubeIcon className={styles.snsIcon} />
+                                    <p className={styles.snsText}>YouTube</p>
                                 </Link>
+                            </div>
+                            <div className={styles.snsLinkItem}>
                                 <Link
                                     href="https://www.instagram.com/seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <InstagramIcon className={styles.snsIcon} />
+                                    <p className={styles.snsText}>Instagram</p>
                                 </Link>
                             </div>
                         </div>
-                        <div className={styles.snsPlaceholder}></div>
+                        <div className={styles.snsLinks}>
+                            <div className={styles.snsLinkItem}>
+                                <Link
+                                    href="/2025/contact"
+                                    onClick={() => setOpenImpl(false)}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
+                                >
+                                    <ContactIcon className={styles.snsIcon} />
+                                    <p className={styles.contactText}>お問い合わせ</p>
+                                </Link>
+                            </div>
+                            <div className={styles.snsLinkItem}>
+                                <Link
+                                    href="/2025/privacy-policy"
+                                    onClick={() => setOpenImpl(false)}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
+                                >
+                                    <PrivacyIcon className={styles.snsIcon} />
+                                    <p className={styles.privacyText}>
+                                        プライバシー
+                                        <br />
+                                        ポリシー
+                                    </p>
+                                </Link>
+                            </div>
+                            <div className={styles.snsLinkItem}>
+                                <Link
+                                    href="/2025/archives"
+                                    onClick={() => setOpenImpl(false)}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
+                                >
+                                    <ArchiveIcon className={styles.snsIcon} />
+                                    <p className={styles.privacyText}>
+                                        過去の
+                                        <br />
+                                        Webサイト
+                                    </p>
+                                </Link>
+                            </div>
+                        </div>
+                        <p className={styles.copyright}>© 2025 61st seiseisai “FUNBYO”, Created by PR part</p>
                     </div>
                 </div>
                 <div
