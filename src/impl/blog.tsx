@@ -45,11 +45,20 @@ export function getAllBlogs(): {
     });
 }
 
+export type BlogMetadata = {
+    title: string;
+    date: string;
+    author: string;
+    topic: string;
+    thumbnail: StaticImageData;
+    thumbnailPath: string;
+};
+
 /**
  * @example
  * const { title, date, author, topic, thumbnail, thumbnailPath } = getBlogMetadata("60", "04");
  */
-export function getBlogMetadata(round: string, index: string) {
+export function getBlogMetadata(round: string, index: string): BlogMetadata {
     const blog = blogData[`${round}/${index}`];
     return {
         title: blog.title,
@@ -120,7 +129,11 @@ function transformLinks(node: React.ReactNode, round: string, index: string): Re
     if (React.isValidElement(node) && node.type === "a" && (node.props as any).href) {
         const { href, children } = node.props as { href: string; children: React.ReactNode };
         if (href[0] === "#" || href.startsWith("mailto:")) {
-            return <a href={href}>{transformLinks(children, round, index)}</a>;
+            return (
+                <a href={href} className="blog_element">
+                    {transformLinks(children, round, index)}
+                </a>
+            );
         }
         if (
             (href.startsWith("https://") || href.startsWith("http://")) &&
@@ -130,7 +143,7 @@ function transformLinks(node: React.ReactNode, round: string, index: string): Re
             !href.endsWith(".php")
         ) {
             return (
-                <Link href={href} download>
+                <Link href={href} download className="blog_element">
                     {transformLinks(children, round, index)}
                 </Link>
             );
@@ -141,19 +154,27 @@ function transformLinks(node: React.ReactNode, round: string, index: string): Re
             !href.startsWith("http://seiseisai.com")
         ) {
             return (
-                <Link href={href} target="_blank" rel="noopener noreferrer nofollow">
+                <Link href={href} target="_blank" rel="noopener noreferrer nofollow" className="blog_element">
                     {transformLinks(children, round, index)}
                 </Link>
             );
         }
         if (href.includes(".") && !href.includes("/")) {
             return (
-                <Link href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`} download>
+                <Link
+                    href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`}
+                    download
+                    className="blog_element"
+                >
                     {transformLinks(children, round, index)}
                 </Link>
             );
         }
-        return <Link href={href}>{transformLinks(children, round, index)}</Link>;
+        return (
+            <Link href={href} className="blog_element">
+                {transformLinks(children, round, index)}
+            </Link>
+        );
     }
 
     return node;
@@ -172,6 +193,7 @@ export async function getBlog(
     round: string,
     index: string,
     DownloadButton: (props: { url: string; filename: string; filesize: string }) => React.ReactNode,
+    BlogCard: (props: { round: string; index: string }) => React.ReactNode,
     tweetTheme: "light" | "dark" = "light",
 ): Promise<{
     title: string;
@@ -204,64 +226,39 @@ export async function getBlog(
             }
             const text = getAllText(children);
             if (text === "") {
-                return (
-                    <section className="blog_content_root">
-                        <h1>{transformLinks(children, round, index)}</h1>
-                    </section>
-                );
+                return <h1 className="blog_element">{transformLinks(children, round, index)}</h1>;
             }
             return (
-                <section className="blog_content_root">
-                    <h1 id={toAnchorId(text)}>{transformLinks(children, round, index)}</h1>
-                </section>
+                <h1 id={toAnchorId(text)} className="blog_element">
+                    {transformLinks(children, round, index)}
+                </h1>
             );
         },
         h2: ({ children }: { children: any }) => {
-            return (
-                <section className="blog_content_root">
-                    <h2>{transformLinks(children, round, index)}</h2>
-                </section>
-            );
+            return <h2 className="blog_element">{transformLinks(children, round, index)}</h2>;
         },
         h3: ({ children }: { children: any }) => {
-            return (
-                <section className="blog_content_root">
-                    <h3>{transformLinks(children, round, index)}</h3>
-                </section>
-            );
+            return <h3 className="blog_element">{transformLinks(children, round, index)}</h3>;
         },
         h4: ({ children }: { children: any }) => {
-            return (
-                <section className="blog_content_root">
-                    <h4>{transformLinks(children, round, index)}</h4>
-                </section>
-            );
+            return <h4 className="blog_element">{transformLinks(children, round, index)}</h4>;
         },
         h5: ({ children }: { children: any }) => {
-            return (
-                <section className="blog_content_root">
-                    <h5>{transformLinks(children, round, index)}</h5>
-                </section>
-            );
+            return <h5 className="blog_element">{transformLinks(children, round, index)}</h5>;
         },
         h6: ({ children }: { children: any }) => {
-            return (
-                <section className="blog_content_root">
-                    <h6>{transformLinks(children, round, index)}</h6>
-                </section>
-            );
+            return <h6 className="blog_element">{transformLinks(children, round, index)}</h6>;
         },
         p: ({ children }: { children: any }) => {
             if (Array.isArray(children)) {
-                return (
-                    <section className="blog_content_root">
-                        <div>{transformLinks(children, round, index)}</div>
-                    </section>
-                );
+                return <div className="blog_element">{transformLinks(children, round, index)}</div>;
             }
             if (React.isValidElement(children)) {
                 const type = (children as React.ReactElement).type;
                 const props = children.props as any;
+                if ((type as any).name === "img") {
+                    return children;
+                }
                 if (type === "a" && props.href) {
                     const { href, children } = props as { href: string; children: React.ReactNode };
                     if (
@@ -295,13 +292,21 @@ export async function getBlog(
                             );
                         }
                     }
+                    if (href.startsWith("/blog/")) {
+                        const paths = href.split("/");
+                        return (
+                            <div className="flex justify-center">
+                                <BlogCard round={paths[1]} index={paths[2]} />
+                            </div>
+                        );
+                    }
                     if (href[0] === "#" || href.startsWith("mailto:")) {
                         return (
-                            <section className="blog_content_root">
-                                <div>
-                                    <a href={href}>{transformLinks(children, round, index)}</a>
-                                </div>
-                            </section>
+                            <div className="blog_element">
+                                <a href={href} className="blog_element">
+                                    {transformLinks(children, round, index)}
+                                </a>
+                            </div>
                         );
                     }
                     if (
@@ -312,13 +317,11 @@ export async function getBlog(
                         !href.endsWith(".php")
                     ) {
                         return (
-                            <section className="blog_content_root">
-                                <div>
-                                    <Link href={href} download>
-                                        {transformLinks(children, round, index)}
-                                    </Link>
-                                </div>
-                            </section>
+                            <div className="blog_element">
+                                <Link href={href} download className="blog_element">
+                                    {transformLinks(children, round, index)}
+                                </Link>
+                            </div>
                         );
                     }
                     if (
@@ -327,13 +330,16 @@ export async function getBlog(
                         !href.startsWith("http://seiseisai.com")
                     ) {
                         return (
-                            <section className="blog_content_root">
-                                <div>
-                                    <Link href={href} target="_blank" rel="noopener noreferrer nofollow">
-                                        {transformLinks(children, round, index)}
-                                    </Link>
-                                </div>
-                            </section>
+                            <div className="blog_element">
+                                <Link
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer nofollow"
+                                    className="blog_element"
+                                >
+                                    {transformLinks(children, round, index)}
+                                </Link>
+                            </div>
                         );
                     }
                     if (href.includes(".")) {
@@ -354,48 +360,52 @@ export async function getBlog(
                             );
                         }
                         return (
-                            <section className="blog_content_root">
-                                <div>
-                                    <Link
-                                        href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`}
-                                        download
-                                    >
-                                        {transformLinks(children, round, index)}
-                                    </Link>
-                                </div>
-                            </section>
+                            <div className="blog_element">
+                                <Link
+                                    href={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`}
+                                    download
+                                    className="blog_element"
+                                >
+                                    {transformLinks(children, round, index)}
+                                </Link>
+                            </div>
                         );
                     }
                     return (
-                        <section className="blog_content_root">
-                            <div>
-                                <Link href={href}>{transformLinks(children, round, index)}</Link>
-                            </div>
-                        </section>
+                        <div className="blog_element">
+                            <Link href={href} className="blog_element">
+                                {transformLinks(children, round, index)}
+                            </Link>
+                        </div>
                     );
                 }
             }
-            return (
-                <section className="blog_content_root">
-                    <div>{transformLinks(children, round, index)}</div>
-                </section>
-            );
+            return <div className="blog_element">{transformLinks(children, round, index)}</div>;
         },
         img: ({ src, alt }: { src: string; alt: string | undefined }) => {
             const image = images[src];
             if (image === undefined) return <></>;
             if (alt === "image.png" || alt === "" || alt === undefined)
                 return (
-                    <figure>
-                        <Image src={image} alt="image" />
+                    <figure className="blog_element">
+                        <Image src={image} alt="image" className="blog_element" />
                     </figure>
                 );
             return (
-                <figure>
-                    <Image src={image} alt={alt} />
-                    <figcaption>{alt}</figcaption>
+                <figure className="blog_element">
+                    <Image src={image} alt={alt} className="blog_element" />
+                    <figcaption className="blog_element">{alt}</figcaption>
                 </figure>
             );
+        },
+        ul: ({ children }: { children: any }) => {
+            return <ul className="blog_element">{children}</ul>;
+        },
+        li: ({ children }: { children: any }) => {
+            return <li className="blog_element">{children}</li>;
+        },
+        ol: ({ children }: { children: any }) => {
+            return <ol className="blog_element">{children}</ol>;
         },
     };
     const descriptionMdx = await compileMDX({

@@ -24,15 +24,13 @@ export function ToTop() {
         };
     }, [handleScroll]);
 
-    const className =
-        "fixed right-[80px] bottom-[50px] z-1 size-[clamp(30px,7svw,60px)] cursor-pointer rounded-full bg-[#de0d22] transition duration-1000 ease-in-out hover:brightness-120";
-
     return (
         <div
-            className={`${className} ${hidden && "pointer-events-none opacity-0"}`}
+            className={`fixed right-[10px] bottom-[10px] z-1 size-[clamp(30px,7svw,60px)] cursor-pointer rounded-full bg-pri-red transition not-b:hidden hover:brightness-120 b:right-[80px] b:bottom-[50px] ${hidden ? "pointer-events-none opacity-0" : ""}`}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
             <ArrowUp className="size-full" />
         </div>
     );
 }
+//  max-b:hidden ??

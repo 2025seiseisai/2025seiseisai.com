@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+    --breakpoint-b: 1000px;
+    --color-pri-red: #de0d22;
+    --color-pri-black: #0b0e0f;
+}
+
 html,
 body {
     max-width: 100svw;
