@@ -116,7 +116,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     <div>{content}</div>
                 </div>
             </article>
-            <nav className="mx-auto my-[40px] w-[90svw] b:mt-[60px] b:mb-[50px] b:w-[56dvw]">
+            <nav className="mx-auto my-[40px] w-[90svw] b:mt-[60px] b:mb-[50px] b:w-[max(750px,56dvw)]">
                 <div
                     id="tolist"
                     className="flex items-center justify-center text-xl/normal font-medium text-pri-black transition-opacity hover:opacity-80 b:hidden"
