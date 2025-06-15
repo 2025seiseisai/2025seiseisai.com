@@ -13,7 +13,7 @@ export default function BlogCardImpl({
     round: string;
     index: string;
     blog?: BlogMetadata;
-    width: string;
+    width?: string;
 }) {
     return (
         <Link
