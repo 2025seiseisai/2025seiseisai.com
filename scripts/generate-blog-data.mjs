@@ -28,6 +28,7 @@ import * as path from "path";
     let resourceSize = "export const resourceSize: { [key: string]: number } = {\n";
     const removeAlt = /^(!\[([^\]]+)\]\(([^)]+)\))\s*\r?\n([^\r\n]+)\s*$/gm;
     const tweetLinkPattern = /^\[(https?:\/\/(?:x\.com|twitter\.com)\/[a-zA-Z0-9_]+\/status\/\d+)\]\(\1\)$/;
+    const detectStrong = /\*\*(.*?)\*\*/g;
     for (const round of await fs.promises.readdir(path.join(cwd, "src/blogs"))) {
         if (
             !fs.statSync(path.join(cwd, "src/blogs", round)).isDirectory() ||
@@ -85,9 +86,13 @@ import * as path from "path";
             content = content.replaceAll("\r\n", "\n").replaceAll("\r", "\n");
             content = content.replaceAll(removeAlt, (match, md, alt1, url, alt2) => {
                 if (alt2.replace(/\s+/g, "") === alt1.replace(/\s+/g, "")) {
-                    return md + "\n";
+                    return `![$${alt1}](${url})\n`;
+                } else {
+                    return `![${alt1}](${url})\n`;
                 }
-                return match;
+            });
+            content = content.replaceAll(detectStrong, (match, text) => {
+                return ` **${text}** `;
             });
             if (!content.includes("\n# 目次\n")) {
                 console.log(`WARNING: ${path.join(folderPath, index)} does not have a table of contents`);

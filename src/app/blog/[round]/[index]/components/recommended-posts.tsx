@@ -47,7 +47,7 @@ export default function RecommendedPosts({
                         <div>
                             <BlogCardClient round={recommendedPaths[0].round} index={recommendedPaths[0].index} />
                         </div>
-                        <div className="max-md:hidden">
+                        <div className="max-[820px]:hidden">
                             <BlogCardClient round={recommendedPaths[1].round} index={recommendedPaths[1].index} />
                         </div>
                     </div>

@@ -79,9 +79,10 @@ h3.blog_element {
 // 画像のスタイル
 img.blog_element {
     width: auto;
-    max-width: 80%;
+    width: 80%;
     max-height: 350px;
     margin: 0 auto;
+    object-fit: contain;
 
     @media (max-width: $breakpoint-b) {
         max-height: 300px;

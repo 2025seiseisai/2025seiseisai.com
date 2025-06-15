@@ -295,8 +295,8 @@ export async function getBlog(
                     if (href.startsWith("/blog/")) {
                         const paths = href.split("/");
                         return (
-                            <div className="flex justify-center">
-                                <BlogCard round={paths[1]} index={paths[2]} />
+                            <div className="mt-[20px] flex justify-center">
+                                <BlogCard round={paths[2]} index={paths[3]} />
                             </div>
                         );
                     }
@@ -385,7 +385,7 @@ export async function getBlog(
         img: ({ src, alt }: { src: string; alt: string | undefined }) => {
             const image = images[src];
             if (image === undefined) return <></>;
-            if (alt === "image.png" || alt === "" || alt === undefined)
+            if (alt === "" || alt === undefined || alt[0] !== "$")
                 return (
                     <figure className="blog_element">
                         <Image src={image} alt="image" className="blog_element" />
@@ -394,7 +394,7 @@ export async function getBlog(
             return (
                 <figure className="blog_element">
                     <Image src={image} alt={alt} className="blog_element" />
-                    <figcaption className="blog_element">{alt}</figcaption>
+                    <figcaption className="blog_element">{alt.substring(1)}</figcaption>
                 </figure>
             );
         },
@@ -406,6 +406,13 @@ export async function getBlog(
         },
         ol: ({ children }: { children: any }) => {
             return <ol className="blog_element">{children}</ol>;
+        },
+        strong: ({ children }: { children: any }) => {
+            return (
+                <span className="blog_element" style={{ fontWeight: 600 }}>
+                    {children}
+                </span>
+            );
         },
     };
     const descriptionMdx = await compileMDX({
