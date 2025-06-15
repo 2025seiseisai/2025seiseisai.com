@@ -58,18 +58,16 @@ export type BlogMetadata = {
  * @example
  * const { title, date, author, topic, thumbnail, thumbnailPath } = getBlogMetadata("60", "04");
  */
-export function getBlogMetadata(round: string, index: string): BlogMetadata | undefined {
+export function getBlogMetadata(round: string, index: string): BlogMetadata {
     const blog = blogData[`${round}/${index}`];
-    return blog
-        ? {
-              title: blog.title,
-              date: blog.date,
-              author: blog.author,
-              topic: blog.topic,
-              thumbnail: blog.thumbnail,
-              thumbnailPath: blog.thumbnailPath,
-          }
-        : undefined;
+    return {
+        title: blog.title,
+        date: blog.date,
+        author: blog.author,
+        topic: blog.topic,
+        thumbnail: blog.thumbnail,
+        thumbnailPath: blog.thumbnailPath,
+    };
 }
 
 /**
