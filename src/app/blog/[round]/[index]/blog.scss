@@ -1,6 +1,6 @@
 $pri-red: #de0d22;
 $pri-black: #0b0e0f;
-$breakpoint-b: var(--breakpoint-b);
+$breakpoint-b: 1000px;
 
 article {
     // テキストのスタイル
@@ -73,6 +73,13 @@ h3.blog_element {
     }
     h3.blog_element {
         margin-bottom: 12px;
+    }
+}
+
+h2.blog_element,
+h3.blog_element {
+    & + div {
+        margin-top: 0;
     }
 }
 
