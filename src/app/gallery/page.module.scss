@@ -4,7 +4,7 @@
     color: #0b0e0f;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
     .example {
         /* PC用のCSS */
         font-size: 76.8px;

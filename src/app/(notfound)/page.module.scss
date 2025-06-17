@@ -3,18 +3,19 @@
 }
 
 .back {
-    width: calc(100% + 30px);
-    display: flex;
-    justify-content: center;
-    height: 100%;
     position: absolute;
     left: -30px;
+    display: flex;
+    justify-content: center;
+    width: calc(100% + 30px);
+    height: 100%;
     overflow: hidden;
 }
+
 @include media(sm) {
     .back {
-        width: 100%;
         left: 0%;
+        width: 100%;
     }
 }
 
@@ -23,6 +24,7 @@
     width: 10000%;
     height: 100%;
 }
+
 @include media(sm) {
     .back_image {
         display: none;
@@ -32,69 +34,72 @@
 .sp_back_image {
     display: none;
 }
+
 @include media(sm) {
     .sp_back_image {
         position: absolute;
+        display: inline-block;
         width: 10000%;
         height: 100%;
-        display: inline-block;
     }
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    min-height: 520px;
-    text-align: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0 30px;
     position: relative;
-    width: 100%;
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 520px;
+    padding: 0 30px;
+    margin: 0 auto;
+    text-align: center;
 }
+
 @include media(sm) {
     .content {
+        position: relative;
         display: flex;
         flex-direction: column;
         height: 422px;
-        text-align: center;
-
-        margin: 0 auto;
         padding: 0 10%;
-        position: relative;
+        margin: 0 auto;
+        text-align: center;
     }
 }
 
 .title {
+    z-index: 2;
+    height: 151px;
+    margin-top: 52px;
     font-size: 128px;
     font-weight: 640;
-    height: 151px;
-    z-index: 2;
-    margin-top: 52px;
 }
+
 @include media(sm) {
     .title {
+        z-index: 2;
+        height: 151px;
+        margin-top: 10px;
         font-size: 96px;
         font-weight: 640;
-        height: 151px;
-        z-index: 2;
-        margin-top: 10px;
     }
 }
 
 .subtitle {
-    font-size: 20px;
-    font-weight: 640;
     z-index: 2;
     margin-top: 3px;
+    font-size: 20px;
+    font-weight: 640;
 }
+
 @include media(sm) {
     .subtitle {
-        font-size: 16px;
-        font-weight: 640;
         z-index: 2;
         margin-top: -35px;
+        font-size: 16px;
+        font-weight: 640;
     }
 }
 
@@ -102,6 +107,7 @@
     z-index: 2;
     margin-top: 42px;
 }
+
 @include media(sm) {
     .text_box {
         z-index: 2;
@@ -114,6 +120,7 @@
     font-size: 16px;
     font-weight: 500;
 }
+
 @include media(sm) {
     .text {
         font-size: 14px;
@@ -122,25 +129,28 @@
 }
 
 .button_box {
-    display: flex;
-    justify-content: center;
-    margin: 42px auto 0 auto;
     display: inline-block;
+    justify-content: center;
+    margin: 42px auto 0;
 }
+
 @include media(sm) {
     .button_box {
         margin-top: 39px;
     }
 }
+
 .button {
     z-index: 2;
     transition: opacity 0.2s ease-in-out;
 }
+
 @include media(sm) {
     .button {
         width: 187.5px;
     }
 }
+
 .button:hover {
     opacity: 0.8;
 }
@@ -148,6 +158,7 @@
 .container {
     z-index: 1;
 }
+
 @include media(lg) {
     .container {
         height: 520px;

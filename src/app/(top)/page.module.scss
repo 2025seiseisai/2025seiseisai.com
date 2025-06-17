@@ -1,5 +1,6 @@
 .wave_container {
     height: 100dvh;
+
     @media (aspect-ratio < 3/4) {
         height: 50svh;
     }
@@ -9,23 +10,25 @@
     width: auto;
     max-width: 70%;
     max-height: 18%;
+
     @media (aspect-ratio < 3/4) {
         max-width: 70%;
         max-height: 100%;
         transform: translateY(10%);
     }
 }
+
 .animation_logo2 {
-    max-width: 100%;
-    max-height: 50%;
-    width: 100%;
-    height: 100%;
-    transform: scale(1.8) translateX(8%) translateY(2%);
     position: absolute;
     inset: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 50%;
     margin: auto;
-    filter: brightness(0);
     opacity: 0.05;
+    filter: brightness(0);
+    transform: scale(1.8) translateX(8%) translateY(2%);
 }
 
 .animation_float_x {
@@ -33,26 +36,31 @@
     height: 100%;
     animation: floating-x 4.1s ease-in-out infinite alternate-reverse;
 }
+
 .animation_float_y {
-    width: 100%;
-    height: 100%;
-    animation: floating-y 3.7s ease-in-out infinite alternate-reverse;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    animation: floating-y 3.7s ease-in-out infinite alternate-reverse;
 }
+
 @keyframes floating-x {
     0% {
         transform: translateX(-0.5svw);
     }
+
     100% {
         transform: translateX(0.5svw);
     }
 }
+
 @keyframes floating-y {
     0% {
         transform: translateY(-0.5svw);
     }
+
     100% {
         transform: translateY(0.5svw);
     }
@@ -62,30 +70,37 @@
     .animation_text_container1 {
         position: absolute;
         inset: 0;
-        padding-left: 3svw;
         padding-top: 2svh;
-        --default-font-size: min(7.2svw, 2.75svh);
+        padding-left: 3svw;
         font-size: var(--default-font-size);
+
+        --default-font-size: min(7.2svw, 2.75svh);
     }
+
     .animation_text_1_3 {
         font-size: calc(var(--default-font-size) * 1.25);
     }
+
     .animation_text_container2 {
         display: none;
     }
 }
+
 @media (aspect-ratio >= 3/4) {
     .animation_text_container1 {
         position: absolute;
         inset: 0;
-        padding-left: 4svw;
         padding-top: 6svh;
-        --default-font-size: calc(min(2.8svw, 2.6svh) * 2.2);
+        padding-left: 4svw;
         font-size: var(--default-font-size);
+
+        --default-font-size: calc(min(2.8svw, 2.6svh) * 2.2);
     }
+
     .animation_text_1_3 {
         font-size: calc(var(--default-font-size) * 1.2);
     }
+
     .animation_text_container2 {
         position: absolute;
         inset: 0;
@@ -94,24 +109,30 @@
         justify-content: end;
         padding-right: 5svw;
         padding-bottom: 6svh;
-        text-shadow: 0 0 24px #ffffff90;
-        --default-font-size: calc(min(2.8svw, 2.6svh) * 2.75);
         font-size: var(--default-font-size);
+        text-shadow: 0 0 24px #ffffff90;
+
+        --default-font-size: calc(min(2.8svw, 2.6svh) * 2.75);
     }
+
     .animation_text_2_1 {
         margin-right: calc(var(--default-font-size) * 0.2);
     }
+
     .animation_text_2_2 {
         margin-right: calc(var(--default-font-size) * 0.4);
         font-size: calc(var(--default-font-size) * 0.75);
         line-height: 2;
     }
+
     .animation_text_2_3 {
         margin-right: calc(var(--default-font-size) * 0.4);
     }
+
     .animation_text_2_4 {
         margin-right: calc(var(--default-font-size) * 0.2);
     }
+
     .animation_text_2_5 {
         font-size: calc(var(--default-font-size) * 0.75);
         line-height: 2;
@@ -119,52 +140,62 @@
 }
 
 .COUNTDOWN {
-    font-weight: 500;
-    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+
     @include media(sm) {
         margin-top: 30px;
     }
+
     @include media(lg) {
         margin-top: 37px;
     }
 }
-/*ここからカウントダウン */
+
+/* ここからカウントダウン */
 .top_countdown {
     @include media(sm) {
         margin-top: 12px;
     }
+
     @include media(lg) {
         margin-top: 30px;
     }
 }
+
 .top_countdown_main_container {
-    margin: 0 auto;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
-@media screen and (max-width: 1200px) {
+
+@media screen and (width <= 1200px) {
     .top_countdown_main_container {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 }
-@media screen and (max-width: 370px) {
+
+@media screen and (width <= 370px) {
     .top_countdown_main_container {
         transform: scale(0.9);
     }
 }
+
 .top_countdown_main {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgb(0 0 0 / 5%);
+
     @include media(sm) {
         width: 325px;
         height: 104px;
     }
+
     @include media(lg) {
         width: 560px;
         height: 180px;
@@ -173,193 +204,232 @@
 
 .date_info_container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 0 10%;
 }
 
 .date_info {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
+
 .date {
     display: flex;
     align-items: center;
     font-weight: 500;
     letter-spacing: -0.1em;
+
     @include media(sm) {
         height: 92px;
         font-size: 74px;
     }
+
     @include media(lg) {
         height: 160px;
         font-size: 128px;
     }
 }
+
 .day {
-    font-weight: 700;
-    writing-mode: vertical-rl;
     margin-top: 20px;
+    font-weight: 700;
     text-align: left;
+    writing-mode: vertical-rl;
+
     @include media(sm) {
         height: 60px;
         font-size: 18px;
     }
+
     @include media(lg) {
         height: 104px;
         font-size: 32px;
     }
 }
+
 .between_date {
     @include media(sm) {
         font-size: 58px;
     }
+
     @include media(lg) {
         font-size: 100px;
     }
 }
+
 .date_info_sub_container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
     @include media(sm) {
         margin: 0 40px;
     }
+
     @include media(lg) {
         margin: 0 70px;
     }
 }
+
 .date_info_sub {
     font-weight: 500;
+
     @include media(sm) {
-        font-size: 16px;
         margin-top: -12px;
+        font-size: 16px;
     }
+
     @include media(lg) {
-        font-size: 28px;
         margin-top: -20px;
+        font-size: 28px;
     }
 }
+
 .red_container {
-    background-color: rgba(222, 13, 34, 1);
+    background-color: rgb(222 13 34 / 100%);
+
     @include media(sm) {
-        height: 104px;
         width: 325px;
+        height: 104px;
     }
+
     @include media(lg) {
-        height: 180px;
         width: 560px;
+        height: 180px;
     }
 }
+
 /* countdownTimer.module.scssに数字のstyle書き込み */
 .title_1 {
     font-weight: 500;
 
     @include media(sm) {
-        font-size: 24px;
         margin-top: 47px;
         margin-left: 20px;
+        font-size: 24px;
     }
+
     @include media(lg) {
-        font-size: 32px;
         margin-top: 56px;
         margin-left: 12.5%;
+        font-size: 32px;
     }
 }
+
 .mark_lg {
     margin-bottom: -5px;
     rotate: -1deg;
+
     @include media(sm) {
         display: none;
     }
 }
+
 .mark_sm {
     margin-bottom: -5px;
     rotate: -1deg;
+
     @include media(lg) {
         display: none;
     }
 }
+
 .logo {
     margin: 0 auto;
+
     @include media(sm) {
+        width: min(80svw, 300px);
         margin-top: 8px;
         margin-bottom: 8px;
-        width: min(80svw, 300px);
     }
+
     @include media(lg) {
         margin-top: 12px;
         margin-bottom: 20px;
     }
 }
+
 .main_text {
-    font-weight: 500;
     margin-top: 20px;
+    font-weight: 500;
     text-align: center;
-    @media screen and (max-width: 600px) {
+
+    @media screen and (width <= 600px) {
         text-align: left;
     }
+
     @include media(sm) {
-        font-size: 14px;
         margin: 0 20px;
+        font-size: 14px;
     }
+
     @include media(lg) {
-        font-size: 20px;
         margin: 0 12.5%;
+        font-size: 20px;
     }
 }
+
 .main_text_pv {
     font-weight: 500;
+
     @include media(sm) {
-        text-align: center;
         font-size: 14px;
+        text-align: center;
     }
+
     @include media(lg) {
-        text-align: left;
-        font-size: 20px;
         margin-right: 12.5%;
         margin-left: 3%;
+        font-size: 20px;
+        text-align: left;
     }
 }
+
 .pv_container {
     @include media(sm) {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     @include media(lg) {
         display: flex;
         align-items: center;
         justify-content: flex-start;
     }
 }
+
 .youtube_link {
     position: relative; // 両方共通
+
     @include media(sm) {
-        margin: 8px 0 8px 0;
         width: min(calc(100svw - 40px), 400px);
+        margin: 8px 0;
     }
+
     @include media(lg) {
         width: calc((100% - 12.5%) / 2);
-        margin-left: 12.5%;
         margin-top: 12px;
         margin-bottom: 12px;
+        margin-left: 12.5%;
     }
 }
 
-/*news始まり */
+/* news始まり */
 .news_all_container {
     margin: 0 auto;
-    background-color: rgba(11, 14, 15, 0.8);
+    background-color: rgb(11 14 15 / 80%);
 
     @include media(sm) {
         padding-top: 25px;
         margin-top: 45px;
-        margin-left: 20px;
         margin-right: 20px;
+        margin-left: 20px;
         border-radius: 20px;
     }
+
     @include media(lg) {
         width: 75%;
         padding-top: 47px;
@@ -367,292 +437,351 @@
         border-radius: 40px;
     }
 }
+
 .title_container {
     text-align: center;
     background-color: white;
+
     @include media(sm) {
         width: 106px;
         margin-left: 20px;
         border-radius: 36px;
     }
+
     @include media(lg) {
         width: 145px;
         margin-left: 40px;
         border-radius: 50px;
     }
 }
+
 .title_2 {
     font-weight: 700;
+
     @include media(sm) {
         font-size: 24px;
     }
+
     @include media(lg) {
         font-size: 32px;
     }
 }
+
 .news_text_container {
     width: 80%;
     margin: 0 auto;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+
     @include media(sm) {
         margin-top: 25px;
     }
+
     @include media(lg) {
         margin-top: 40px;
     }
 }
-/*↑子要素の内側に線*/
+
+/* ↑子要素の内側に線 */
 .news_text {
+    display: flex;
+    align-items: center;
     width: 100%;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    display: flex;
-    align-items: center;
     transition: background-color 0.3s ease;
+
     @include media(sm) {
         height: 50px;
     }
+
     @include media(lg) {
         height: 60px;
     }
 }
+
 .news_text:hover {
     background-color: #ffffff10;
 }
+
 .news_date {
-    color: white;
     font-weight: 500;
+    color: white;
+
     @include media(sm) {
         margin-left: 5%;
         font-size: 12px;
     }
+
     @include media(lg) {
         margin-left: 6%;
         font-size: 16px;
     }
 }
+
 .news_title {
     width: 100%;
-    white-space: nowrap;
+    margin-right: 5%;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-right: 5%;
     font-weight: 500;
     color: white;
+    white-space: nowrap;
+
     @include media(sm) {
         margin-left: 10%;
         font-size: 14px;
     }
+
     @include media(lg) {
         margin-left: 12%;
         font-size: 16px;
     }
 }
+
 .more_container {
-    margin: 0 auto;
     width: fit-content;
+    margin: 0 auto;
     transition: filter 0.3s ease;
+
     @include media(sm) {
         margin-top: 20px;
         margin-bottom: 16px;
     }
+
     @include media(lg) {
         margin-top: 30px;
         margin-bottom: 32px;
     }
 }
+
 .more_container:hover {
     filter: invert(0.2);
 }
+
 .more_parents {
     display: flex;
     align-items: center;
 }
+
 .more_allow {
     @include media(sm) {
         width: 28px;
     }
 }
+
 .more {
     font-weight: 500;
     color: white;
+
     @include media(sm) {
-        font-size: 16px;
         margin-left: 12px;
+        font-size: 16px;
     }
+
     @include media(lg) {
-        font-size: 20px;
         margin-left: 16px;
-    }
-}
-/*access始まり*/
-.title_3 {
-    text-align: center;
-    font-weight: 500;
-    margin: 0 auto;
-    color: rgba(222, 13, 34, 1);
-    @include media(sm) {
-        font-size: 32px;
-        margin-top: 30px;
-    }
-    @include media(lg) {
-        font-size: 40px;
-        margin-top: 36px;
-    }
-}
-.title_3_jn {
-    text-align: center;
-    font-weight: 500;
-    margin-bottom: 20px;
-    @include media(sm) {
-        font-size: 14px;
-        margin-top: -10px;
-    }
-    @include media(lg) {
         font-size: 20px;
-        margin-top: -15px;
     }
 }
+
+/* access始まり */
+.title_3 {
+    margin: 0 auto;
+    font-weight: 500;
+    color: rgb(222 13 34 / 100%);
+    text-align: center;
+
+    @include media(sm) {
+        margin-top: 30px;
+        font-size: 32px;
+    }
+
+    @include media(lg) {
+        margin-top: 36px;
+        font-size: 40px;
+    }
+}
+
+.title_3_jn {
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+
+    @include media(sm) {
+        margin-top: -10px;
+        font-size: 14px;
+    }
+
+    @include media(lg) {
+        margin-top: -15px;
+        font-size: 20px;
+    }
+}
+
 .access_container {
     @include media(sm) {
         display: flex;
         flex-direction: column;
     }
+
     @include media(lg) {
+        display: flex;
+        width: 75%;
         margin: 0 auto;
         margin-top: 14px;
-        width: 75%;
-        display: flex;
     }
 }
+
 .map {
     @include media(sm) {
         order: 2;
+        aspect-ratio: 1200/630;
         margin: 0 auto;
         margin-top: 20px;
-        aspect-ratio: 1200/630;
     }
+
     @include media(lg) {
-        margin-right: 5%;
         flex-basis: 50%;
         width: 100%;
-        margin-left: calc(max(0px, 34svw - 500px));
         max-width: 500px;
         aspect-ratio: 1200/630;
+        margin-right: 5%;
+        margin-left: calc(max(0px, 34svw - 500px));
     }
 }
+
 .map iframe {
     width: 100%;
     height: 100%;
 }
+
 .adress {
     @include media(sm) {
-        order: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        order: 1;
     }
+
     @include media(lg) {
-        flex-basis: 50%;
-        margin-left: 5%;
         display: flex;
+        flex-basis: 50%;
         flex-direction: column;
         justify-content: center;
+        margin-left: 5%;
     }
 }
+
 .schoolname {
     font-weight: 500;
+
     @include media(sm) {
-        font-size: 14px;
         margin-bottom: 4px;
+        font-size: 14px;
     }
+
     @include media(lg) {
-        font-size: 19px;
         margin-bottom: 19px;
+        font-size: 19px;
     }
 }
+
 .schooladress {
     font-weight: 500;
+
     @include media(sm) {
         font-size: 12px;
     }
+
     @include media(lg) {
-        font-size: 16px;
         margin-bottom: 19px;
+        font-size: 16px;
     }
 }
+
 .schoollink {
-    color: rgba(222, 13, 34, 1);
-    font-weight: 500;
     width: auto;
+    font-weight: 500;
+    color: rgb(222 13 34 / 100%);
     text-decoration-line: underline;
+
     @include media(sm) {
         font-size: 12px;
     }
+
     @include media(lg) {
         font-size: 16px;
     }
 }
-/*お問い合わせ*/
+
+/* お問い合わせ */
 .contact_text {
     font-weight: 500;
-
     text-align: center;
+
     @include media(sm) {
-        margin-top: 12px;
-        font-size: 14px;
         margin: 0 20px;
+        font-size: 14px;
     }
+
     @include media(lg) {
-        margin-top: 20px;
-        font-size: 20px;
         margin: 0 12.5%;
+        font-size: 20px;
     }
 }
+
 .question {
-    margin: 0 auto;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto;
     transition: background-color 0.3s ease;
+
     @include media(sm) {
-        margin-top: 16px;
-        margin-bottom: 40px;
         width: 250px;
         height: 40px;
+        margin-top: 16px;
+        margin-bottom: 40px;
         border: 1.7px solid #0b0e0f;
     }
+
     @include media(lg) {
-        margin-top: 27px;
-        margin-bottom: 50px;
         width: 400px;
         height: 54px;
+        margin-top: 27px;
+        margin-bottom: 50px;
         border: 2px solid #0b0e0f;
     }
 }
+
 .question:hover {
     background-color: #e2e2e3;
 }
+
 .headphone {
     @include media(sm) {
         width: 24px;
     }
+
     @include media(lg) {
         width: 32px;
     }
 }
+
 .logout {
     @include media(sm) {
         width: 24px;
     }
+
     @include media(lg) {
         width: 32px;
     }
 }
+
 .question_text {
+    margin: 0 20px;
     font-size: 16px;
     font-weight: 500;
-    margin: 0 20px;
 }

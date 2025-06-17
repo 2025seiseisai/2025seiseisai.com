@@ -2,10 +2,12 @@
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
 }
+
 .animation {
     animation: scroll 61s linear infinite;
 }

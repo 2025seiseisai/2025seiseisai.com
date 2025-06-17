@@ -3,19 +3,20 @@
 }
 
 .back {
-    width: calc(100% + 30px);
-    display: flex;
-    justify-content: center;
-    height: 100%;
     position: absolute;
     left: -30px;
+    display: flex;
+    justify-content: center;
+    width: calc(100% + 30px);
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
 }
+
 @include media(sm) {
     .back {
-        width: 100%;
         left: 0%;
+        width: 100%;
     }
 }
 
@@ -24,6 +25,7 @@
     width: 10000%;
     height: 100%;
 }
+
 @include media(sm) {
     .back_image {
         display: none;
@@ -33,6 +35,7 @@
 .sp_back_image {
     display: none;
 }
+
 @include media(sm) {
     .sp_back_image {
         position: absolute;
@@ -43,131 +46,136 @@
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 0 auto;
-    padding: 0 30px;
     position: relative;
-    width: 100%;
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+    text-align: center;
 }
+
 @include media(sm) {
     .content {
+        position: relative;
         display: flex;
         flex-direction: column;
         height: 475px;
-        text-align: center;
-
-        margin: 0 auto;
         padding: 0 5%;
-        position: relative;
+        margin: 0 auto;
+        text-align: center;
     }
 }
 
 .title {
-    font-size: 64px;
-    font-weight: 700;
-    height: 151px;
+    z-index: 2;
     max-width: 500px;
+    height: 151px;
     margin: 0 auto;
     margin-top: 43px;
-    z-index: 2;
+    font-size: 64px;
+    font-weight: 700;
 }
+
 @include media(sm) {
     .title {
-        font-size: 36px;
-        font-weight: 700;
-        height: 53px;
+        z-index: 2;
         max-width: 350px;
+        height: 53px;
         margin: 0 auto;
         margin-top: 30px;
-        z-index: 2;
+        font-size: 36px;
+        font-weight: 700;
     }
 }
 
 .subtitle {
+    z-index: 2;
+    margin-top: -55px;
     font-size: 20px;
     font-weight: 500;
-    margin-top: -55px;
-    z-index: 2;
 }
+
 @include media(sm) {
     .subtitle {
+        z-index: 2;
+        margin-top: 0;
         font-size: 14px;
         font-weight: 500;
-        margin-top: 0px;
-        z-index: 2;
     }
 }
 
 .text1 {
     position: relative;
+    z-index: 2;
+    margin-top: 36px;
+    margin-left: max(calc((100% - 800px) / 2), 15%);
     font-size: 20px;
     font-weight: 500;
     text-align: left;
-    margin-left: max(calc((100% - 800px) / 2), 15%);
-    margin-top: 36px;
-    z-index: 2;
 }
+
 @include media(sm) {
     .text1 {
         position: relative;
+        z-index: 2;
+        margin-top: 36px;
+        margin-left: 0;
         font-size: 16px;
         font-weight: 500;
         text-align: left;
-        margin-top: 36px;
-        margin-left: 0;
-        z-index: 2;
     }
 }
 
 .text2 {
     position: relative;
+    z-index: 2;
     width: 800px;
     max-width: 70%;
+    margin-top: 31px;
+    margin-left: max(calc((100% - 800px) / 2), 15%);
     font-size: 16px;
     font-weight: 500;
     text-align: left;
-    margin-left: max(calc((100% - 800px) / 2), 15%);
-    margin-top: 31px;
-    z-index: 2;
 }
+
 @include media(sm) {
     .text2 {
         position: relative;
+        z-index: 2;
         max-width: 100%;
+        margin-top: 28px;
+        margin-left: 0;
         font-size: 14px;
         font-weight: 500;
         text-align: left;
-        margin-top: 28px;
-        margin-left: 0;
-        z-index: 2;
     }
 }
 
 .text3 {
     position: relative;
+    z-index: 2;
     width: 800px;
     max-width: 70%;
+    margin-top: 22px;
+    margin-bottom: 94px;
+    margin-left: max(calc((100% - 800px) / 2), 15%);
     font-size: 16px;
     font-weight: 500;
     text-align: left;
-    margin-left: max(calc((100% - 800px) / 2), 15%);
-    margin-top: 22px;
-    margin-bottom: 94px;
-    z-index: 2;
 }
+
 @include media(sm) {
     .text3 {
         position: relative;
+        z-index: 2;
         max-width: 100%;
+        margin-top: 28px;
+        margin-left: 0;
         font-size: 14px;
         font-weight: 500;
         text-align: left;
-        margin-top: 28px;
-        margin-left: 0;
-        z-index: 2;
     }
 }
 
