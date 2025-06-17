@@ -39,7 +39,7 @@ export default function RecommendedPosts({
     return (
         <>
             {recommendedPaths.length > 1 && (
-                <div className="my-[40px] text-[#0e0b0f]">
+                <div className="my-[40px] text-pri-black">
                     <p className="ml-[5dvw] text-xl/normal font-medium first-letter:text-pri-red b:ml-[-10px]">
                         ＞ こちらの記事もおすすめ
                     </p>
