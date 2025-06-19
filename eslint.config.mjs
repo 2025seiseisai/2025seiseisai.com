@@ -27,11 +27,14 @@ const eslintConfig = [
         rules: {
             ...eslintPluginBetterTailwindcss.configs["recommended-warn"].rules,
             ...eslintPluginBetterTailwindcss.configs["recommended-error"].rules,
+            "better-tailwindcss/no-unregistered-classes": "off",
+            "better-tailwindcss/multiline": "off",
         },
         settings: {
             "better-tailwindcss": {
+                printWidth: 120,
+                indent: 4,
                 entryPoint: "src/impl/global.css",
-                lineBreakStyle: "windows",
             },
         },
     },

@@ -40,7 +40,9 @@ export default function Loading() {
             animationData={LoadingAnimation}
             autoplay={false}
             loop={false}
-            className="top_loading_animation h-[125%] w-full transform-[scale(1.35)] transition-[opacity] duration-200"
+            className={
+                "top_loading_animation h-[125%] w-full transform-[scale(1.35)] transition-[opacity] duration-200"
+            }
             style={{ opacity: 0 }}
             onEnterFrame={(e) => {
                 if (!isStarted) {

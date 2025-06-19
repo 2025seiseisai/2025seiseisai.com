@@ -54,7 +54,15 @@ function BuildScene(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
             geometry.setIndex(indices);
             geometry.setAttribute("position", new THREE.BufferAttribute(new Float32Array(points.flat()), 3));
             geometry.computeVertexNormals();
-            scene.add(new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({ color: color, roughness: 0.5 })));
+            scene.add(
+                new THREE.Mesh(
+                    geometry,
+                    new THREE.MeshStandardMaterial({
+                        color: color,
+                        roughness: 0.5,
+                    }),
+                ),
+            );
         }
         {
             const geometry = new THREE.BufferGeometry();

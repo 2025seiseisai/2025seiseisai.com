@@ -4,9 +4,14 @@ import * as path from "path";
 (async () => {
     const cwd = process.cwd();
     if (fs.existsSync(path.join(cwd, "public", "blog-resources"))) {
-        fs.rmSync(path.join(cwd, "public", "blog-resources"), { recursive: true, force: true });
+        fs.rmSync(path.join(cwd, "public", "blog-resources"), {
+            recursive: true,
+            force: true,
+        });
     }
-    fs.mkdirSync(path.join(cwd, "public", "blog-resources"), { recursive: true });
+    fs.mkdirSync(path.join(cwd, "public", "blog-resources"), {
+        recursive: true,
+    });
     let imageCnt = 0;
     let imageImport = "";
     let blogData = `export const blogData: {

@@ -44,11 +44,13 @@ function DownloadButton({ url, filename, filesize }: { url: string; filename: st
         <Link
             download
             href={url}
-            className="mx-auto mt-[20px] flex h-12.5 w-max max-w-full items-center rounded-[12px] border-3 border-[#dedede] bg-[#fefefe] text-sm/normal text-pri-black transition-[box-shadow] duration-200 hover:[box-shadow:_#0b0e0f20_0px_0px_5px] b:h-15 b:max-w-4/5 b:text-lg/normal"
+            className={`mx-auto mt-[20px] flex h-12.5 w-max max-w-full items-center rounded-[12px] border-3 border-[#dedede] bg-[#fefefe]
+                text-sm/normal text-pri-black transition-[box-shadow] duration-200 hover:[box-shadow:_#0b0e0f20_0px_0px_5px] b:h-15
+                b:max-w-4/5 b:text-lg/normal`}
         >
-            <DownloadIcon className="ml-[20px] size-5 shrink-0 b:ml-[30px] b:size-7.5" />
-            <p className="ml-[10px] grow truncate b:ml-[20px]">{filename}</p>
-            <p className="flex-end mx-[20px] w-max shrink-0 b:mx-[30px]">{filesize}</p>
+            <DownloadIcon className={"ml-[20px] size-5 shrink-0 b:ml-[30px] b:size-7.5"} />
+            <p className={"ml-[10px] grow truncate b:ml-[20px]"}>{filename}</p>
+            <p className={"mx-[20px] w-max shrink-0 b:mx-[30px]"}>{filesize}</p>
         </Link>
     );
 }
@@ -71,54 +73,72 @@ export default async function Page({ params }: { params: Promise<{ round: string
     return (
         <>
             <ToTop />
-            <Image src={thumbnail} alt="thumbnail" className="h-[30svh] w-[100dvw] object-cover object-center" />
-            <h1 className="mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem]/normal font-medium text-pri-red b:mt-[30px] b:px-[100px] b:text-center b:text-[2.5rem]/normal">
+            <Image src={thumbnail} alt="thumbnail" className={"h-[30svh] w-[100dvw] object-cover object-center"} />
+            <h1
+                className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem]/normal font-medium text-pri-red
+                    b:mt-[30px] b:px-[100px] b:text-center b:text-[2.5rem]/normal`}
+            >
                 {title}
             </h1>
             <article>
-                <div className="mt-[20px] mr-auto ml-auto flex w-[90dvw] text-right text-sm/normal text-pri-black b:float-right b:mt-[80px] b:mr-[9.7dvw] b:block b:w-[20dvw] b:min-w-[255px] b:text-xl/normal">
-                    <p className="text-pri-red max-b:text-start">＃{topic}</p>
+                <div
+                    className={`mt-[20px] mr-auto ml-auto flex w-[90dvw] text-right text-sm/normal text-pri-black b:float-right b:mt-[80px]
+                        b:mr-[9.7dvw] b:block b:w-[20dvw] b:min-w-[255px] b:text-xl/normal`}
+                >
+                    <p className={"text-pri-red max-b:text-start"}>＃{topic}</p>
                     <div className="max-b:ml-auto">
                         <time dateTime={date.replaceAll(".", "-")}>{date}</time>
                         <p>{author}</p>
                     </div>
                 </div>
-                <div className="sticky top-[104px] right-[8dvw] float-right clear-right mt-[80px] max-h-[calc(100dvh-80px)] w-[20dvw] min-w-[255px] overflow-y-auto leading-[1.5] text-pri-black max-b:hidden">
+                <div
+                    className={`sticky top-[104px] right-[8dvw] float-right clear-right mt-[80px] max-h-[calc(100dvh-80px)] w-[20dvw] min-w-[255px]
+                        overflow-y-auto leading-[1.5] text-pri-black max-b:hidden`}
+                >
                     <Table toc={toc} />
-                    <div className="mt-[30px] flex w-full items-center justify-between">
-                        <Link href={prevLink} className="flex items-center text-left text-[18px] hover:opacity-80">
+                    <div className={"mt-[30px] flex w-full items-center justify-between"}>
+                        <Link href={prevLink} className={"flex items-center text-left text-[18px] hover:opacity-80"}>
                             <div className="text-pri-red select-none">＜&nbsp;</div>
                             <div>前の記事へ</div>
                         </Link>
-                        <Link href={nextLink} className="flex items-center text-right text-[18px] hover:opacity-80">
+                        <Link href={nextLink} className={"flex items-center text-right text-[18px] hover:opacity-80"}>
                             <div>次の記事へ</div>
                             <div className="text-pri-red select-none">&nbsp;＞</div>
                         </Link>
                     </div>
                     <div className="mt-[12px] flex justify-center">
                         <Link href="/2025/blog">
-                            <div className="flex w-max items-center gap-[8px] rounded-sm p-1.5 text-pri-black hover:opacity-80">
+                            <div
+                                className={
+                                    "flex w-max items-center gap-[8px] rounded-sm p-1.5 text-pri-black hover:opacity-80"
+                                }
+                            >
                                 <Grid className="w-[24px]" />
                                 記事一覧へ
                             </div>
                         </Link>
                     </div>
                 </div>
-                <div className="mt-[40px] mr-auto ml-auto w-[90dvw] leading-[1.9] text-pri-black b:mt-[80px] b:ml-[8dvw] b:w-[56dvw] b:max-w-[calc(84dvw-275px)]">
+                <div
+                    className={`mt-[40px] mr-auto ml-auto w-[90dvw] leading-[1.9] text-pri-black b:mt-[80px] b:ml-[8dvw] b:w-[56dvw]
+                        b:max-w-[calc(84dvw-275px)]`}
+                >
                     <div>{description}</div>
-                    <hr className="mx-5 mt-10 border-t-2 border-pri-red max-b:hidden" />
-                    <div className="mt-[35px] w-19/20 b:hidden">
+                    <hr className={"mx-5 mt-10 border-t-2 border-pri-red max-b:hidden"} />
+                    <div className={"mt-[35px] w-19/20 b:hidden"}>
                         <Table toc={toc} />
                     </div>
                     <div>{content}</div>
                 </div>
             </article>
-            <nav className="mx-auto my-[40px] w-[90svw] b:mt-[60px] b:mb-[50px] b:w-[max(750px,56dvw)]">
+            <nav className={"mx-auto my-[40px] w-[90svw] b:mt-[60px] b:mb-[50px] b:w-[max(750px,56dvw)]"}>
                 <div
                     id="tolist"
-                    className="flex items-center justify-center text-xl/normal font-medium text-pri-black transition-opacity hover:opacity-80 b:hidden"
+                    className={
+                        "flex items-center justify-center text-xl/normal font-medium text-pri-black transition-opacity hover:opacity-80 b:hidden"
+                    }
                 >
-                    <Link href="/2025/blog" className="flex items-center justify-center gap-3 text-[18px]">
+                    <Link href="/2025/blog" className={"flex items-center justify-center gap-3 text-[18px]"}>
                         <Grid className="h-[28px] w-[28px]" />
                         記事一覧へ
                     </Link>

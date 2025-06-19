@@ -19,7 +19,12 @@ export const metadata: Metadata = {
     title: metaDataTitle,
     description: metaDataDescription,
     applicationName: metaDataTitle,
-    authors: [{ name: "東大寺学園文化祭実行委員会 / 東大寺学園PRパート", url: "https://seiseisai.com" }],
+    authors: [
+        {
+            name: "東大寺学園文化祭実行委員会 / 東大寺学園PRパート",
+            url: "https://seiseisai.com",
+        },
+    ],
     // generator: "Next.js",
     keywords: "第61回菁々祭, 菁々祭, 東大寺学園, 東大寺, 文化祭, 61seisei, 2025, 分秒, 9/6, 9/7, 2025",
     // referrer: "",

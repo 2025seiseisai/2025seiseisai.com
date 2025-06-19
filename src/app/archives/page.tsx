@@ -26,16 +26,20 @@ function ArchiveCard({
     color?: string;
 }) {
     return (
-        <div className="mb-[25px] rounded-[20px] bg-[#fcfcfc] pt-[20px] pb-[20px] text-[#0b0e0f] shadow-md md:mb-[40px] md:shadow-lg">
+        <div
+            className={
+                "mb-[25px] rounded-[20px] bg-[#fcfcfc] pt-[20px] pb-[20px] text-[#0b0e0f] shadow-md md:mb-[40px] md:shadow-lg"
+            }
+        >
             <div className="flex flex-col items-center px-[20px]">
                 <h2 className="mb-[4px]">
-                    <span className="text-[20px] md:text-[24px]">{round} - </span>
-                    <span className="text-[26px] font-semibold wrap-anywhere md:text-[32px]" style={{ color }}>
+                    <span className={"text-[20px] md:text-[24px]"}>{round} - </span>
+                    <span className={"text-[26px] font-semibold wrap-anywhere md:text-[32px]"} style={{ color }}>
                         {theme}
                     </span>
                 </h2>
                 {link.startsWith("https://seiseisai.com") ? (
-                    <Link href={link} className="text-[16px] underline md:text-[18px]" style={{ color }}>
+                    <Link href={link} className={"text-[16px] underline md:text-[18px]"} style={{ color }}>
                         {link}
                     </Link>
                 ) : (
@@ -43,7 +47,7 @@ function ArchiveCard({
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer nofollow"
-                        className="text-center text-[16px] wrap-anywhere md:text-[18px]"
+                        className={"text-center text-[16px] wrap-anywhere md:text-[18px]"}
                         style={{ color }}
                     >
                         <span className="mr-[2px] underline">
@@ -68,13 +72,21 @@ function ArchiveCard({
 export default function ArchivesPage() {
     return (
         <>
-            <h1 className="mt-[30px] ml-[20px] text-[28px] font-bold text-[#0b0e0f] md:mr-auto md:ml-auto md:w-[80%] md:text-[40px]">
+            <h1
+                className={
+                    "mt-[30px] ml-[20px] text-[28px] font-bold text-[#0b0e0f] md:mr-auto md:ml-auto md:w-[80%] md:text-[40px]"
+                }
+            >
                 <span className="text-[#de0d22]">A</span>rchives
             </h1>
-            <p className="mt-[12px] mr-[20px] ml-[20px] text-[16px] md:mr-auto md:ml-auto md:w-[80%]">
+            <p className={"mt-[12px] mr-[20px] ml-[20px] text-[16px] md:mr-auto md:ml-auto md:w-[80%]"}>
                 ※都合により、一部のページを非表示としています。ご了承ください。
             </p>
-            <div className="mt-[25px] mb-[20px] w-[100%] px-[10px] md:mx-auto md:mt-[30px] md:mb-[10px] md:w-[80%] md:px-0">
+            <div
+                className={
+                    "mt-[25px] mb-[20px] w-[100%] px-[10px] md:mx-auto md:mt-[30px] md:mb-[10px] md:w-[80%] md:px-0"
+                }
+            >
                 <ArchiveCard
                     round="第60回"
                     theme="IGNITION"

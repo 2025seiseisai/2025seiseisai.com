@@ -29,7 +29,9 @@ export async function Top() {
     return (
         <>
             <div
-                className="top_loading z-20000 flex h-[100dvh] w-full items-center justify-center overflow-hidden bg-[#ffffff]"
+                className={
+                    "top_loading z-20000 flex h-[100dvh] w-full items-center justify-center overflow-hidden bg-[#ffffff]"
+                }
                 style={{
                     transition: "none",
                     clipPath: "polygon(-100dvh 100dvh, 100svw 100dvh, 100svw -100svw)",
@@ -39,15 +41,17 @@ export async function Top() {
                 suppressHydrationWarning
             >
                 <LoadingWrapper />
-                <div className="absolute flex h-[14%] w-[42%] items-center justify-center brightness-0 filter">
+                <div className={"absolute flex h-[14%] w-[42%] items-center justify-center brightness-0 filter"}>
                     <Logo
-                        className="top_loading_logo h-auto max-h-full w-auto max-w-full transform-[translateX(10%)_translateY(-15%)] transition-[opacity] duration-200"
+                        className={`top_loading_logo h-auto max-h-full w-auto max-w-full transform-[translateX(10%)_translateY(-15%)] transition-[opacity]
+                            duration-200`}
                         style={{ opacity: 0 }}
                     />
                 </div>
             </div>
             <div
-                className={`${styles.wave_container} relative z-10000 mt-[-45px] flex w-full items-center justify-center overflow-hidden md:mt-[-64px]`}
+                className={`${styles.wave_container} relative z-10000 mt-[-45px] flex w-full items-center justify-center overflow-hidden
+                    md:mt-[-64px]`}
             >
                 <div className="absolute h-full w-full">
                     <Logo className={styles.animation_logo2} />

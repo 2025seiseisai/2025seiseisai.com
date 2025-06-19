@@ -3,7 +3,9 @@ import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 import { overlapEvent } from "../(header)/overlap-event";
 import "./wave.css";
-const Wave = dynamic(() => import("./wave"), { ssr: false });
+const Wave = dynamic(() => import("./wave"), {
+    ssr: false,
+});
 
 export default function WaveWrapper() {
     const targetRef = useRef<HTMLDivElement>(null);
@@ -26,7 +28,9 @@ export default function WaveWrapper() {
     return (
         <div
             ref={targetRef}
-            className="top_animation absolute flex aspect-1920/1080 min-h-full min-w-full items-center justify-center overflow-hidden"
+            className={
+                "top_animation absolute flex aspect-1920/1080 min-h-full min-w-full items-center justify-center overflow-hidden"
+            }
         >
             <Wave />
         </div>

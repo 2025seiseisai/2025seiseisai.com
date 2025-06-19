@@ -31,13 +31,14 @@ export default function Table({ toc }: { toc: { name: string; id: string }[] }) 
     }, [toc]);
 
     return (
-        <div className="rounded-[20px] border-3 border-[#dedede] p-[20px] text-pri-black">
+        <div className={"rounded-[20px] border-3 border-[#dedede] p-[20px] text-pri-black"}>
             <div className="mb-[5px] text-[19px]/normal font-medium">目次</div>
             <ul>
                 {toc.map((item) => (
                     <a href={`#${item.id}`} key={item.id}>
                         <li
-                            className={`mx-[5px] flex w-full text-[14px]/[1.7] transition-all duration-300 before:content-['・'] hover:opacity-75 b:text-[13px]/[1.7] ${item.id === activeTitleId && "b:bg-[#de0d2221]"}`}
+                            className={`mx-[5px] flex w-full text-[14px]/[1.7] transition-all duration-300 before:content-['・'] hover:opacity-75
+                            b:text-[13px]/[1.7] ${item.id === activeTitleId && "b:bg-[#de0d2221]"}`}
                         >
                             <p className="w-full truncate">{item.name}</p>
                         </li>

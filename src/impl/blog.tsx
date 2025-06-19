@@ -127,7 +127,10 @@ function transformLinks(node: React.ReactNode, round: string, index: string): Re
     }
 
     if (React.isValidElement(node) && node.type === "a" && (node.props as any).href) {
-        const { href, children } = node.props as { href: string; children: React.ReactNode };
+        const { href, children } = node.props as {
+            href: string;
+            children: React.ReactNode;
+        };
         if (href[0] === "#" || href.startsWith("mailto:")) {
             return (
                 <a href={href} className="blog_element">
@@ -154,7 +157,7 @@ function transformLinks(node: React.ReactNode, round: string, index: string): Re
             !href.startsWith("http://seiseisai.com")
         ) {
             return (
-                <Link href={href} target="_blank" rel="noopener noreferrer nofollow" className="blog_element">
+                <Link href={href} target="_blank" rel="noopener noreferrer nofollow" className={"blog_element"}>
                     {transformLinks(children, round, index)}
                 </Link>
             );
@@ -260,7 +263,10 @@ export async function getBlog(
                     return children;
                 }
                 if (type === "a" && props.href) {
-                    const { href, children } = props as { href: string; children: React.ReactNode };
+                    const { href, children } = props as {
+                        href: string;
+                        children: React.ReactNode;
+                    };
                     if (
                         children === href &&
                         (href.startsWith("https://youtube.com/watch?v=") ||
@@ -318,7 +324,7 @@ export async function getBlog(
                     ) {
                         return (
                             <div className="blog_element">
-                                <Link href={href} download className="blog_element">
+                                <Link href={href} download className={"blog_element"}>
                                     {transformLinks(children, round, index)}
                                 </Link>
                             </div>
