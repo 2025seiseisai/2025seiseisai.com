@@ -2087,6 +2087,6 @@ YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/w
         : {}),
 };
 export const resourceSize: { [key: string]: number } = {
-    "59/03/%E7%95%AA%E8%8C%B6%E5%85%9A%E7%AC%AC36%E5%8F%B7%EF%BC%882022%E5%B9%B4%E7%99%BA%E8%A1%8C%EF%BC%89.pdf": 1159680,
+    "59/03/番茶党第36号（2022年発行）.pdf": 1159680,
     "test/01/----test----.txt": 127,
 };

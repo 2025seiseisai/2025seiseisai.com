@@ -343,8 +343,12 @@ export async function getBlog(
                         );
                     }
                     if (href.includes(".")) {
-                        if (children === href || children === "") {
-                            const size = resourceSize[`${round}/${index}/${encodeURIComponent(href)}`];
+                        if (
+                            typeof children === "string" &&
+                            (children.replaceAll(" ", "") === decodeURIComponent(href) || children === "")
+                        ) {
+                            const filename = decodeURIComponent(href);
+                            const size = resourceSize[`${round}/${index}/${filename}`];
                             const fileSize =
                                 size < 1024
                                     ? `${size} B`
@@ -353,8 +357,8 @@ export async function getBlog(
                                       : `${(size / (1024 * 1024)).toFixed(2)} MB`;
                             return (
                                 <DownloadButton
-                                    url={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`}
-                                    filename={href}
+                                    url={`/blog-resources/${round}/${index}/${filename}`}
+                                    filename={filename}
                                     filesize={fileSize}
                                 />
                             );

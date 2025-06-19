@@ -63,10 +63,10 @@ import * as path from "path";
                     }
                     imageCnt += 1;
                 } else if (file !== "index.md" && file !== "index.mdx") {
-                    const dest = path.join(cwd, "public", "blog-resources", round, index, encodeURIComponent(file));
+                    const dest = path.join(cwd, "public", "blog-resources", round, index, file);
                     fs.mkdirSync(path.dirname(dest), { recursive: true });
                     fs.copyFileSync(path.join(folderPath, index, file), dest);
-                    resourceSize += `    "${round}/${index}/${encodeURIComponent(file)}": ${fs.statSync(dest).size},\n`;
+                    resourceSize += `    "${round}/${index}/${file}": ${fs.statSync(dest).size},\n`;
                 }
             }
             if (thumbnail === undefined) {
