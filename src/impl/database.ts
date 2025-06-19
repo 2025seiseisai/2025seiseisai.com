@@ -126,7 +126,9 @@ interface WorkspaceInterface {
 interface WorkspaceDocument extends Document, WorkspaceInterface {}
 export const workspaceId = await (async () => {
     const workspaceCollection = databaseInstance.getCollection<WorkspaceDocument>("workspaces");
-    const workspace = await workspaceCollection.findOne({ name: "第61回東大寺学園菁々祭" });
+    const workspace = await workspaceCollection.findOne({
+        name: "第61回東大寺学園菁々祭",
+    });
     if (!workspace) {
         throw new Error("Workspace not found");
     }

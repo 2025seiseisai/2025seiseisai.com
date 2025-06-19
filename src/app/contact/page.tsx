@@ -39,14 +39,14 @@ export default function Page() {
                         <Link href="https://x.com/seiseisai_tdj" rel="noopener noreferrer" target="_blank">
                             <div className={styles.sns_button}>
                                 <Twitter className={styles.btn_img} />
-                                <p className={[styles.bottom_text, nunitoSans.className].join(" ")}>X</p>
+                                <p className={[styles.bottom_text, nunitoSans.className].join("")}>X</p>
                                 <Redirect className={styles.btn_img} />
                             </div>{" "}
                         </Link>{" "}
                         <Link href="https://www.instagram.com/seiseisai_tdj/" rel="noopener noreferrer" target="_blank">
                             <div className={styles.sns_button}>
                                 <Instagram className={styles.btn_img} />
-                                <p className={[styles.bottom_text, nunitoSans.className].join(" ")}>Instagram</p>
+                                <p className={[styles.bottom_text, nunitoSans.className].join("")}>Instagram</p>
                                 <Redirect className={styles.btn_img} />
                             </div>
                         </Link>

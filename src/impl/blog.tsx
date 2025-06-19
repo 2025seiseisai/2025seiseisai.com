@@ -127,7 +127,10 @@ function transformLinks(node: React.ReactNode, round: string, index: string): Re
     }
 
     if (React.isValidElement(node) && node.type === "a" && (node.props as any).href) {
-        const { href, children } = node.props as { href: string; children: React.ReactNode };
+        const { href, children } = node.props as {
+            href: string;
+            children: React.ReactNode;
+        };
         if (href[0] === "#" || href.startsWith("mailto:")) {
             return (
                 <a href={href} className="blog_element">
@@ -154,7 +157,7 @@ function transformLinks(node: React.ReactNode, round: string, index: string): Re
             !href.startsWith("http://seiseisai.com")
         ) {
             return (
-                <Link href={href} target="_blank" rel="noopener noreferrer nofollow" className="blog_element">
+                <Link href={href} target="_blank" rel="noopener noreferrer nofollow" className={"blog_element"}>
                     {transformLinks(children, round, index)}
                 </Link>
             );
@@ -260,7 +263,10 @@ export async function getBlog(
                     return children;
                 }
                 if (type === "a" && props.href) {
-                    const { href, children } = props as { href: string; children: React.ReactNode };
+                    const { href, children } = props as {
+                        href: string;
+                        children: React.ReactNode;
+                    };
                     if (
                         children === href &&
                         (href.startsWith("https://youtube.com/watch?v=") ||
@@ -295,7 +301,7 @@ export async function getBlog(
                     if (href.startsWith("/blog/")) {
                         const paths = href.split("/");
                         return (
-                            <div className="flex justify-center">
+                            <div className="mt-[20px] flex justify-center">
                                 <BlogCard round={paths[2]} index={paths[3]} />
                             </div>
                         );
@@ -318,7 +324,7 @@ export async function getBlog(
                     ) {
                         return (
                             <div className="blog_element">
-                                <Link href={href} download className="blog_element">
+                                <Link href={href} download className={"blog_element"}>
                                     {transformLinks(children, round, index)}
                                 </Link>
                             </div>
@@ -343,8 +349,12 @@ export async function getBlog(
                         );
                     }
                     if (href.includes(".")) {
-                        if (children === href || children === "") {
-                            const size = resourceSize[`${round}/${index}/${encodeURIComponent(href)}`];
+                        if (
+                            typeof children === "string" &&
+                            (children.replaceAll(" ", "") === decodeURIComponent(href) || children === "")
+                        ) {
+                            const filename = decodeURIComponent(href);
+                            const size = resourceSize[`${round}/${index}/${filename}`];
                             const fileSize =
                                 size < 1024
                                     ? `${size} B`
@@ -353,8 +363,8 @@ export async function getBlog(
                                       : `${(size / (1024 * 1024)).toFixed(2)} MB`;
                             return (
                                 <DownloadButton
-                                    url={`/blog-resources/${round}/${index}/${encodeURIComponent(href)}`}
-                                    filename={href}
+                                    url={`/blog-resources/${round}/${index}/${filename}`}
+                                    filename={filename}
                                     filesize={fileSize}
                                 />
                             );
@@ -385,7 +395,7 @@ export async function getBlog(
         img: ({ src, alt }: { src: string; alt: string | undefined }) => {
             const image = images[src];
             if (image === undefined) return <></>;
-            if (alt === "image.png" || alt === "" || alt === undefined)
+            if (alt === "" || alt === undefined || alt[0] !== "$")
                 return (
                     <figure className="blog_element">
                         <Image src={image} alt="image" className="blog_element" />
@@ -394,7 +404,7 @@ export async function getBlog(
             return (
                 <figure className="blog_element">
                     <Image src={image} alt={alt} className="blog_element" />
-                    <figcaption className="blog_element">{alt}</figcaption>
+                    <figcaption className="blog_element">{alt.substring(1)}</figcaption>
                 </figure>
             );
         },
@@ -406,6 +416,13 @@ export async function getBlog(
         },
         ol: ({ children }: { children: any }) => {
             return <ol className="blog_element">{children}</ol>;
+        },
+        strong: ({ children }: { children: any }) => {
+            return (
+                <span className="blog_element" style={{ fontWeight: 600 }}>
+                    {children}
+                </span>
+            );
         },
     };
     const descriptionMdx = await compileMDX({

@@ -2,22 +2,23 @@
     position: sticky;
     top: 0;
     z-index: 12000;
-    height: 45px;
     width: 100%;
-    @media (min-width: 768px) {
+    height: 45px;
+
+    @media (width >= 768px) {
         height: 64px;
     }
 }
 
 .headerContent {
     display: flex;
-    height: 100%;
     align-items: center;
+    height: 100%;
     background-color: white;
     box-shadow: -3px 0 3px #0b0e0f77;
-    transition-property: margin;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 400ms;
+    transition-property: margin;
 }
 
 .headerContentOverlapping {
@@ -25,43 +26,46 @@
 }
 
 .logoLink {
+    display: block;
+    height: 18px;
+    aspect-ratio: 411.258 / 148.991;
     margin-right: auto;
     margin-left: min(40px, 8svw);
-    display: block;
-    aspect-ratio: 411.258 / 148.991;
-    height: 18px;
 }
 
 .logo {
-    height: 100%;
     width: auto;
+    height: 100%;
     filter: brightness(0%);
-    transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+    transition-property: all;
+
     &:hover {
         filter: brightness(100%);
     }
 }
 
 .navLinks {
-    margin-right: 30px;
-    margin-left: auto;
     display: flex;
     gap: 30px;
+    margin-right: 30px;
+    margin-left: auto;
     font-size: 12px;
     font-weight: 400;
-    @media not all and (min-width: 980px) {
+
+    @media not all and (width >= 980px) {
         // not-md:
         display: none;
     }
 }
 
 .navLink {
-    transition-property: all;
+    text-shadow: 0 0 25px #de0d2200;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
-    text-shadow: 0 0 25px #de0d2200;
+    transition-property: all;
+
     &:hover {
         text-shadow: 0 0 22px #de0d22;
     }
@@ -71,8 +75,8 @@
     position: absolute;
     top: 0;
     z-index: 100000001;
-    height: 100svh;
     width: 100%;
+    height: 100svh;
     overflow: hidden;
 }
 
@@ -82,14 +86,15 @@
 
 .menuContent {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #ffffffc0;
-    backdrop-filter: blur(20px);
     display: flex;
     flex-direction: column;
-    transition-property: clip-path;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffffc0;
+    backdrop-filter: blur(20px);
     transition-duration: 400ms;
+    transition-property: clip-path;
+
     @include media(sm) {
         transition-duration: 300ms;
     }
@@ -103,6 +108,7 @@
 .menuContentOpen {
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 20% 100%);
     transition-timing-function: ease-out;
+
     @include media(sm) {
         clip-path: polygon(-20% 0, 100% 0, 100% 100%, -40% 100%);
     }
@@ -110,25 +116,29 @@
 
 .menuLinksContainer {
     display: flex;
-    flex-direction: column;
     flex-flow: column wrap;
     justify-content: space-between;
     width: 100%;
     padding-top: 100px;
     padding-right: 7%;
     padding-left: 35%;
-    @media (min-aspect-ratio: 1/1) and (min-width: 950px) {
-        @media (max-height: 500px) {
+
+    @media (aspect-ratio >= 1/1) and (width >= 950px) {
+        @media (height <= 500px) {
             padding-top: 75px;
         }
+
         min-height: max(250px, 65svh);
     }
-    @media not ((min-aspect-ratio: 1/1) and (min-width: 950px)) {
-        @media (max-height: 750px) {
+
+    @media not ((aspect-ratio >= 1/1) and (width >= 950px)) {
+        @media (height <= 750px) {
             padding-top: 75px;
         }
+
         min-height: max(350px, 70svh);
     }
+
     @include media(sm) {
         padding-top: 70px;
         padding-right: 10%;
@@ -141,31 +151,36 @@
     width: 100%;
     height: calc(100% / 12);
     line-height: 1.4;
-    @media (min-aspect-ratio: 1/1) and (min-width: 950px) {
+
+    @media (aspect-ratio >= 1/1) and (width >= 950px) {
         width: 46%;
         height: calc(100% / 6);
         margin-right: 4%;
     }
 }
+
 .headerLinkText {
-    width: 100%;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .headerLinkTitle1 {
     font-size: 24px;
     font-weight: 600;
     color: #de0d22;
-    @media (max-width: 1200px) {
+
+    @media (width <= 1200px) {
         font-size: 20px;
     }
-    @media (min-width: 1440px) and (min-height: 750px) {
+
+    @media (width >= 1440px) and (height >= 750px) {
         font-size: 28px;
     }
-    @media (max-width: 450px) and (max-height: 700px) {
+
+    @media (width <= 450px) and (height <= 700px) {
         font-size: 18px;
     }
 }
@@ -173,30 +188,33 @@
 .headerLinkTitle2 {
     font-size: 12px;
     color: #0b0e0f;
-    @media (max-width: 1200px) {
+
+    @media (width <= 1200px) {
         font-size: 10px;
     }
-    @media (min-width: 1440px) and (min-height: 750px) {
+
+    @media (width >= 1440px) and (height >= 750px) {
         font-size: 14px;
     }
 }
 
 .headerLink > .headerLinkFront {
     .headerLinkTitle1 {
+        color: #fff;
         background-color: #de0d22;
-        color: #ffffff;
         clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
-        transition-property: clip-path;
-        transition-duration: 120ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        transition-property: clip-path;
     }
+
     .headerLinkTitle2 {
+        color: #fff;
         background-color: #0b0e0f;
-        color: #ffffff;
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-        transition-property: clip-path;
-        transition-duration: 120ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 180ms;
+        transition-property: clip-path;
     }
 }
 
@@ -204,6 +222,7 @@
     .headerLinkTitle1 {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
+
     .headerLinkTitle2 {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
@@ -223,8 +242,8 @@
 
 .disabledHeaderLinkText {
     color: #0b0e0f;
-    opacity: 0.2;
     user-select: none;
+    opacity: 0.2;
 }
 
 .linksContainer {
@@ -232,14 +251,16 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    padding: min(15px, 3svh) 7% 50px 35%;
     height: 100%;
+    padding: min(15px, 3svh) 7% 50px 35%;
+
     @include media(sm) {
-        padding-left: 10%;
         padding-bottom: min(50px, 7svh);
+        padding-left: 10%;
     }
+
     @include media(lg) {
-        @media (max-height: 500px) {
+        @media (height <= 500px) {
             padding-top: 0;
         }
     }
@@ -247,24 +268,27 @@
 
 .linkButton {
     height: 100%;
-    border-radius: 10px;
     background-color: #ffffff10;
-    transition-property: background-color;
-    transition-duration: 150ms;
+    border-radius: 10px;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    transition-property: background-color;
+
     &:hover {
         background-color: #0b0e0f10;
     }
 }
 
 .snsLinks {
-    width: 100%;
     display: flex;
-    justify-content: space-around;
     gap: 5%;
-    @media (max-width: 900px) {
+    justify-content: space-around;
+    width: 100%;
+
+    @media (width <= 900px) {
         gap: 10px;
     }
+
     @include media(sm) {
         gap: 5px;
     }
@@ -280,29 +304,35 @@
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
+
     @include media(lg) {
-        @media (min-height: 700px) {
+        @media (height >= 700px) {
             padding-top: 16px;
             padding-bottom: 16px;
         }
-        @media (max-height: 500px) {
+
+        @media (height <= 500px) {
             padding-top: 7px;
             padding-bottom: 7px;
         }
     }
+
     @include media(sm) {
-        @media (max-height: 550px) {
+        @media (height <= 550px) {
             padding-top: 5px;
             padding-bottom: 5px;
         }
     }
-    @media not (min-width: 450px) {
+
+    @media not (width >= 450px) {
         flex-direction: column;
-        @media (max-height: 700px) {
+
+        @media (height <= 700px) {
             padding-top: 5px;
             padding-bottom: 5px;
         }
-        @media (max-height: 500px) {
+
+        @media (height <= 500px) {
             padding-top: 2px;
             padding-bottom: 2px;
         }
@@ -310,124 +340,145 @@
 }
 
 .snsIcon {
-    height: 28px;
     width: 28px;
+    height: 28px;
     margin-right: 15%;
-    @media (max-width: 1200px) {
-        height: 24px;
+
+    @media (width <= 1200px) {
         width: 24px;
+        height: 24px;
     }
+
     @include media(sm) {
-        height: 20px;
         width: 20px;
+        height: 20px;
         margin-right: 10%;
     }
-    @media not (min-width: 450px) {
+
+    @media not (width >= 450px) {
         margin-right: 0;
         margin-bottom: 3px;
-        @media (max-height: 600px) {
-            height: 16px;
+
+        @media (height <= 600px) {
             width: 16px;
+            height: 16px;
         }
-        @media (min-height: 800px) {
-            height: 22px;
+
+        @media (height >= 800px) {
             width: 22px;
+            height: 22px;
             margin-bottom: 6px;
         }
     }
 }
 
 .snsText {
-    font-size: 16px;
-    color: #0b0e0f;
-    width: 85px;
     display: flex;
     align-items: center;
+    width: 85px;
+    font-size: 16px;
+    color: #0b0e0f;
+
     @include media(sm) {
-        font-size: 12px;
         width: 70px;
+        font-size: 12px;
     }
-    @media not (min-width: 450px) {
+
+    @media not (width >= 450px) {
         width: auto;
         font-size: 11px;
-        @media (max-height: 500px) {
+
+        @media (height <= 500px) {
             font-size: 9px;
         }
-        @media (min-height: 800px) {
+
+        @media (height >= 800px) {
             font-size: 13px;
         }
     }
 }
 
 .contactText {
+    width: 85px;
     font-size: 14px;
     color: #0b0e0f;
-    width: 85px;
+
     @include media(sm) {
-        font-size: 11px;
         width: 70px;
+        font-size: 11px;
     }
-    @media not (min-width: 450px) {
+
+    @media not (width >= 450px) {
         width: auto;
         font-size: 10px;
-        @media (max-height: 500px) {
+
+        @media (height <= 500px) {
             font-size: 9px;
         }
-        @media (min-height: 800px) {
+
+        @media (height >= 800px) {
             font-size: 13px;
         }
     }
 }
 
 .privacyText {
-    font-size: 13px;
-    color: #0b0e0f;
-    width: 85px;
-    height: 24px;
     display: flex;
     align-items: center;
+    width: 85px;
+    height: 24px;
+    font-size: 13px;
     line-height: 1.4;
+    color: #0b0e0f;
+
     @include media(sm) {
-        font-size: 11px;
         width: 70px;
+        font-size: 11px;
     }
-    @media not (min-width: 450px) {
+
+    @media not (width >= 450px) {
         width: auto;
-        text-align: center;
         font-size: 10px;
-        @media (max-height: 500px) {
+        text-align: center;
+
+        @media (height <= 500px) {
             font-size: 9px;
         }
-        @media (min-height: 800px) {
+
+        @media (height >= 800px) {
             font-size: 13px;
         }
     }
 }
 
 .twitterText {
-    color: #0b0e0f90;
     margin-left: 5px;
     font-size: 12px;
+    color: #0b0e0f90;
+
     @include media(sm) {
         font-size: 10px;
     }
-    @media not (min-width: 450px) {
-        @media (max-height: 500px) {
+
+    @media not (width >= 450px) {
+        @media (height <= 500px) {
             font-size: 9px;
         }
     }
 }
 
 .copyright {
-    font-size: 11px;
     width: 100%;
+    font-size: 11px;
     color: #0b0e0fa0;
     text-align: end;
+
     @include media(sm) {
         font-size: 9px;
     }
-    @media not (min-width: 450px) {
-        @media (max-height: 500px) {
+
+    @media not (width >= 450px) {
+        @media (height <= 500px) {
             font-size: 8px;
         }
     }
@@ -435,11 +486,12 @@
 
 .menuBackground {
     position: absolute;
-    height: 100%;
     width: 100%;
+    height: 100%;
     background-color: #0b0e0fa0;
-    transition-property: clip-path, opacity;
     transition-duration: 400ms;
+    transition-property: clip-path, opacity;
+
     @include media(sm) {
         transition-duration: 300ms;
     }
@@ -454,6 +506,7 @@
 .menuBackgroundOpen {
     clip-path: polygon(0 0, 30% 0, 20% 100%, 0 100%);
     transition-timing-function: ease-out;
+
     @include media(sm) {
         opacity: 0;
         clip-path: polygon(0 0, -20% 0, -40% 100%, 0 100%);

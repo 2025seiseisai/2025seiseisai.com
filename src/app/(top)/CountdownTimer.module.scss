@@ -1,9 +1,9 @@
 .timer_container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 10%;
     gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10%;
 }
 
 .unit {
@@ -14,13 +14,15 @@
 
 .number {
     color: white;
+
     @include media(sm) {
-        font-weight: 700;
         font-size: 28px;
-    }
-    @include media(lg) {
         font-weight: 700;
+    }
+
+    @include media(lg) {
         font-size: 48px;
+        font-weight: 700;
     }
 }
 
@@ -28,47 +30,58 @@
     margin-top: -5px;
     font-weight: 500;
     color: white;
+
     @include media(sm) {
         font-size: 11px;
     }
+
     @include media(lg) {
         font-size: 20px;
     }
 }
+
 .title_before {
-    text-align: center;
     font-weight: 700;
     color: white;
+    text-align: center;
+
     @include media(sm) {
         margin-top: 20px;
         font-size: 11px;
     }
+
     @include media(lg) {
         margin-top: 30px;
         font-size: 20px;
     }
 }
+
 .title_active {
-    text-align: center;
     font-weight: 700;
     color: white;
+    text-align: center;
+
     @include media(sm) {
         margin-top: 40px;
         font-size: 24px;
     }
+
     @include media(lg) {
         margin-top: 60px;
         font-size: 40px;
     }
 }
+
 .title_ended {
-    text-align: center;
     font-weight: 700;
     color: white;
+    text-align: center;
+
     @include media(sm) {
         margin-top: 30px;
         font-size: 18px;
     }
+
     @include media(lg) {
         margin-top: 45px;
         font-size: 30px;

@@ -1,5 +1,5 @@
 import { FlatCompat } from "@eslint/eslintrc";
-import eslintPluginReadableTailwind from "eslint-plugin-readable-tailwind";
+import eslintPluginBetterTailwindcss from "eslint-plugin-better-tailwindcss";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -22,16 +22,18 @@ const eslintConfig = [
             },
         },
         plugins: {
-            "readable-tailwind": eslintPluginReadableTailwind,
+            "better-tailwindcss": eslintPluginBetterTailwindcss,
         },
         rules: {
-            ...eslintPluginReadableTailwind.configs.warning.rules,
-            ...eslintPluginReadableTailwind.configs.error.rules,
-            "readable-tailwind/multiline": "off",
-            "readable-tailwind/no-unnecessary-whitespace": "off",
+            ...eslintPluginBetterTailwindcss.configs["recommended-warn"].rules,
+            ...eslintPluginBetterTailwindcss.configs["recommended-error"].rules,
+            "better-tailwindcss/no-unregistered-classes": "off",
+            "better-tailwindcss/multiline": "off",
         },
         settings: {
-            "readable-tailwind": {
+            "better-tailwindcss": {
+                printWidth: 120,
+                indent: 4,
                 entryPoint: "src/impl/global.css",
             },
         },

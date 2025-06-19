@@ -6,92 +6,119 @@ import type { StaticImageData } from "next/image";
 import Image0 from "./59/01/image 1.png";
 import Image1 from "./59/01/image.png";
 import Image2 from "./59/01/thumbnail.png";
-import Image3 from "./59/04/image 1.png";
-import Image4 from "./59/04/image.png";
-import Image5 from "./59/04/thumbnail.png";
-import Image6 from "./59/05/image 1.png";
-import Image7 from "./59/05/image 2.png";
-import Image8 from "./59/05/image 3.png";
-import Image9 from "./59/05/image.png";
-import Image10 from "./59/05/thumbnail.png";
-import Image11 from "./59/06/image.png";
-import Image12 from "./59/06/thumbnail.png";
-import Image13 from "./59/07/image 1.png";
-import Image14 from "./59/07/image.png";
-import Image15 from "./59/07/thumbnail.png";
-import Image16 from "./59/08/image 1.png";
-import Image17 from "./59/08/image 2.png";
-import Image18 from "./59/08/image.png";
-import Image19 from "./59/08/thumbnail.png";
-import Image20 from "./59/09/image 1.png";
-import Image21 from "./59/09/image 2.png";
-import Image22 from "./59/09/image 3.png";
-import Image23 from "./59/09/image 4.png";
-import Image24 from "./59/09/image 5.png";
-import Image25 from "./59/09/image 6.png";
-import Image26 from "./59/09/image 7.png";
-import Image27 from "./59/09/image 8.png";
-import Image28 from "./59/09/image.png";
-import Image29 from "./59/09/thumbnail.png";
-import Image30 from "./59/14/image 1.png";
-import Image31 from "./59/14/image 2.png";
-import Image32 from "./59/14/image.png";
-import Image33 from "./59/14/thumbnail.png";
-import Image34 from "./59/15/image 1.png";
-import Image35 from "./59/15/image 10.png";
-import Image36 from "./59/15/image 11.png";
-import Image37 from "./59/15/image 12.png";
-import Image38 from "./59/15/image 13.png";
-import Image39 from "./59/15/image 14.png";
-import Image40 from "./59/15/image 15.png";
-import Image41 from "./59/15/image 16.png";
-import Image42 from "./59/15/image 17.png";
-import Image43 from "./59/15/image 18.png";
-import Image44 from "./59/15/image 19.png";
-import Image45 from "./59/15/image 2.png";
-import Image46 from "./59/15/image 20.png";
-import Image47 from "./59/15/image 21.png";
-import Image48 from "./59/15/image 22.png";
-import Image49 from "./59/15/image 23.png";
-import Image50 from "./59/15/image 24.png";
-import Image51 from "./59/15/image 25.png";
-import Image52 from "./59/15/image 26.png";
-import Image53 from "./59/15/image 27.png";
-import Image54 from "./59/15/image 28.png";
-import Image55 from "./59/15/image 29.png";
-import Image56 from "./59/15/image 3.png";
-import Image57 from "./59/15/image 30.png";
-import Image58 from "./59/15/image 31.png";
-import Image59 from "./59/15/image 32.png";
-import Image60 from "./59/15/image 33.png";
-import Image61 from "./59/15/image 34.png";
-import Image62 from "./59/15/image 4.png";
-import Image63 from "./59/15/image 5.png";
-import Image64 from "./59/15/image 6.png";
-import Image65 from "./59/15/image 7.png";
-import Image66 from "./59/15/image 8.png";
-import Image67 from "./59/15/image 9.png";
-import Image68 from "./59/15/image.png";
-import Image69 from "./59/15/thumbnail.png";
-import Image70 from "./60/03/image 1.png";
-import Image71 from "./60/03/image 2.png";
-import Image72 from "./60/03/image 3.png";
-import Image73 from "./60/03/image.png";
-import Image74 from "./60/03/thumbnail.png";
-import Image75 from "./60/04/image 1.png";
-import Image76 from "./60/04/image.png";
-import Image77 from "./60/04/thumbnail.png";
-import Image78 from "./60/05/image.png";
-import Image79 from "./60/05/thumbnail.png";
-import Image80 from "./60/09/image 1.png";
-import Image81 from "./60/09/image.png";
-import Image82 from "./60/09/thumbnail.png";
-import Image83 from "./60/10/image.png";
-import Image84 from "./60/10/thumbnail.png";
-import Image85 from "./60/11/image 1.png";
-import Image86 from "./60/11/image.png";
-import Image87 from "./60/11/thumbnail.png";
-import Image88 from "./test/01/thumbnail.png";
+import Image3 from "./59/02/thumbnail.png";
+import Image4 from "./59/03/image.png";
+import Image5 from "./59/03/thumbnail.png";
+import Image6 from "./59/04/image 1.png";
+import Image7 from "./59/04/image.png";
+import Image8 from "./59/04/thumbnail.png";
+import Image9 from "./59/05/image 1.png";
+import Image10 from "./59/05/image 2.png";
+import Image11 from "./59/05/image 3.png";
+import Image12 from "./59/05/image.png";
+import Image13 from "./59/05/thumbnail.png";
+import Image14 from "./59/06/image.png";
+import Image15 from "./59/06/thumbnail.png";
+import Image16 from "./59/07/image 1.png";
+import Image17 from "./59/07/image.png";
+import Image18 from "./59/07/thumbnail.png";
+import Image19 from "./59/08/image 1.png";
+import Image20 from "./59/08/image 2.png";
+import Image21 from "./59/08/image.png";
+import Image22 from "./59/08/thumbnail.png";
+import Image23 from "./59/09/image 1.png";
+import Image24 from "./59/09/image 2.png";
+import Image25 from "./59/09/image 3.png";
+import Image26 from "./59/09/image 4.png";
+import Image27 from "./59/09/image 5.png";
+import Image28 from "./59/09/image 6.png";
+import Image29 from "./59/09/image 7.png";
+import Image30 from "./59/09/image 8.png";
+import Image31 from "./59/09/image.png";
+import Image32 from "./59/09/thumbnail.png";
+import Image33 from "./59/14/image 1.png";
+import Image34 from "./59/14/image 2.png";
+import Image35 from "./59/14/image.png";
+import Image36 from "./59/14/thumbnail.png";
+import Image37 from "./59/15/image 1.png";
+import Image38 from "./59/15/image 10.png";
+import Image39 from "./59/15/image 11.png";
+import Image40 from "./59/15/image 12.png";
+import Image41 from "./59/15/image 13.png";
+import Image42 from "./59/15/image 14.png";
+import Image43 from "./59/15/image 15.png";
+import Image44 from "./59/15/image 16.png";
+import Image45 from "./59/15/image 17.png";
+import Image46 from "./59/15/image 18.png";
+import Image47 from "./59/15/image 19.png";
+import Image48 from "./59/15/image 2.png";
+import Image49 from "./59/15/image 20.png";
+import Image50 from "./59/15/image 21.png";
+import Image51 from "./59/15/image 22.png";
+import Image52 from "./59/15/image 23.png";
+import Image53 from "./59/15/image 24.png";
+import Image54 from "./59/15/image 25.png";
+import Image55 from "./59/15/image 26.png";
+import Image56 from "./59/15/image 27.png";
+import Image57 from "./59/15/image 28.png";
+import Image58 from "./59/15/image 29.png";
+import Image59 from "./59/15/image 3.png";
+import Image60 from "./59/15/image 30.png";
+import Image61 from "./59/15/image 31.png";
+import Image62 from "./59/15/image 32.png";
+import Image63 from "./59/15/image 33.png";
+import Image64 from "./59/15/image 34.png";
+import Image65 from "./59/15/image 4.png";
+import Image66 from "./59/15/image 5.png";
+import Image67 from "./59/15/image 6.png";
+import Image68 from "./59/15/image 7.png";
+import Image69 from "./59/15/image 8.png";
+import Image70 from "./59/15/image 9.png";
+import Image71 from "./59/15/image.png";
+import Image72 from "./59/15/thumbnail.png";
+import Image73 from "./60/03/image 1.png";
+import Image74 from "./60/03/image 2.png";
+import Image75 from "./60/03/image 3.png";
+import Image76 from "./60/03/image.png";
+import Image77 from "./60/03/thumbnail.png";
+import Image78 from "./60/04/image 1.png";
+import Image79 from "./60/04/image.png";
+import Image80 from "./60/04/thumbnail.png";
+import Image81 from "./60/05/image.png";
+import Image82 from "./60/05/thumbnail.png";
+import Image83 from "./60/09/image 1.png";
+import Image84 from "./60/09/image.png";
+import Image85 from "./60/09/thumbnail.png";
+import Image86 from "./60/10/image.png";
+import Image87 from "./60/10/thumbnail.png";
+import Image88 from "./60/11/image 1.png";
+import Image89 from "./60/11/image.png";
+import Image90 from "./60/11/thumbnail.png";
+import Image91 from "./61/01/1000003281.jpg";
+import Image92 from "./61/01/ann.jpg";
+import Image93 from "./61/01/kami.jpg";
+import Image94 from "./61/01/kaohame2.jpg";
+import Image95 from "./61/01/kareasa.jpg";
+import Image96 from "./61/01/ryouannzii.jpg";
+import Image97 from "./61/01/thumbnail.jpg";
+import Image98 from "./61/02/8a8468b7-dca7-41d1-9a1e-af0f3a52acc0.png";
+import Image99 from "./61/02/thumbnail.png";
+import Image100 from "./61/02/プラダン切断画像.png";
+import Image101 from "./61/02/大型展示画像.png";
+import Image102 from "./61/03/PXL_20250522_062121454_exported_364_17485933327125.jpg";
+import Image103 from "./61/03/thumbnail.jpg";
+import Image104 from "./61/04/1000016152.jpg";
+import Image105 from "./61/04/1000016155.jpg";
+import Image106 from "./61/04/1000016162.jpg";
+import Image107 from "./61/04/1000016165.jpg";
+import Image108 from "./61/04/1000016166.jpg";
+import Image109 from "./61/04/1000016168.jpg";
+import Image110 from "./61/04/thumbnail.jpg";
+import Image111 from "./61/05/1745711961845.jpg";
+import Image112 from "./61/05/PXL_20250418_064701171.jpg";
+import Image113 from "./61/05/PXL_20250424_070245168.jpg";
+import Image114 from "./61/05/thumbnail.jpg";
+import Image115 from "./test/01/thumbnail.png";
 export const blogData: {
     [key: string]: {
         title: string;
@@ -134,7 +161,7 @@ export const blogData: {
 
 とりあえず Discord で会議して、10 以上あった案の中から俺の案に決まったんですよね。でもその案で本当にいいのかどうか自分の中で疑心暗鬼になって、それで二週間くらい悩んで。それで自分でもう一個作り直して、みたいなのをしていました。」
 
-![第58回菁々祭「四季彩」の初期ロゴ案](image.png)
+![$第58回菁々祭「四季彩」の初期ロゴ案](image.png)
 
 ## 「自分の案に自信を持てなくなったってことですね？」
 
@@ -154,7 +181,7 @@ export const blogData: {
 
 「ええ、ここ数年ずっと平面的なロゴ、いわゆるフラットデザインが主だったんですよ。だから、それを踏まえて今回のロゴはあえて変えていきたいなと思って。それで 3DCG みたいな、新しい表現として立体的なデザインをできるように意識しましたね。」
 
-![第59回菁々祭「RESONANCE」ロゴの構想](image%201.png)
+![$第59回菁々祭「RESONANCE」ロゴの構想](image%201.png)
 
 ## 「今までにない表現ですね。でも随分攻めた表現にした分やっぱり緊張しますか？」
 
@@ -171,16 +198,272 @@ export const blogData: {
 いかがだったでしょうか？今回は製作セクション長にお話を伺いました！ロゴデザインってとっても難しいんですね…。是非みなさんにもロゴに数々の思いが込められていることを知っていただければ嬉しいです！
 `,
     },
+    "59/02": {
+        title: `【迷ってる人必見】菁々祭どこ巡る？体験型展示のすゝめ`,
+        date: `2023.06.05`,
+        author: `PRパート員 S.K. & H.K.`,
+        topic: `紹介`,
+        thumbnail: Image3,
+        thumbnailPath: `src/blogs/59/02/thumbnail.png`,
+        images: {},
+        twitterEmbedded: false,
+        description: `
+菁々祭には､見るだけでなく普段の活動を体験できる｢体験型展示｣があるのをご存じでしょうか｡この記事では､体験型展示を行っている団体へインタビューを行い､展示内容や去年の様子などを教えてもらいました｡また､部員の皆さんの入部動機や､部活の魅力などについても教えてもらいました｡
+`,
+        content: `
+# 鉄道研究部
+
+筆者も去年体験に行きました｡本格的な鉄道模型を見ることのできる貴重な機会だと思います｡オタク感が満載の部誌も必読です！
+展示教室は 1E の予定です｡
+[鉄研公式 Twitter(@tdj_tekken)](https://x.com/tdj_tekken)
+
+## Q.入部動機と､部活の魅力を教えてください｡
+
+昔から鉄道好きだったので､鉄研に入りました｡ 友人関係がすごく良好で､普段は友達と雑談しています｡ 時々みんなと鉄道旅行に行けるのが魅力です｡
+
+## Q.展示内容と､こだわりを教えてください｡
+
+Ｎゲージの鉄道模型の運転体験をしています｡ 少しでも鉄道に興味を持ってもらえるとうれしいです｡
+
+## 去年の様子
+
+[https://x.com/tdj_tekken/status/1568390493838659584/photo/1](https://x.com/tdj_tekken/status/1568390493838659584/photo/1)
+
+## Q.去年の混み具合を教えてください｡
+
+とても混むので､模型の運転体験をしたい人には整理券を配布しています｡ すぐに配りきってしまうので､早めに来てもらった方がいいと思います｡
+
+## Q.去年から変える予定のことがあれば､教えてください｡
+
+新たに巨大な車庫モジュールを展示する予定です｡
+
+## Q.参加者の皆さんに､ひとことお願いします｡
+
+顔だけでも出してみてください｡きっと楽しいと思います！
+
+# クイズ研究部
+
+筆者も体験に行って､早押しに挑戦しました｡自分が押して”ピコーン”と鳴ったときの爽快感がたまらないです｡
+展示教室は 5E の予定です｡
+[クイ研公式 Twitter(@TDJquiz)](https://x.com/TDJquiz)
+
+## Q.入部動機と､部活の魅力を教えてください｡
+
+東大寺のクイ研の話を前から聞いていて､文化祭で体験をしたとき楽しかったので入部しました｡ クイズの対策を通して､自分の知識がだんだんと増えていくのが魅力の 1 つです｡
+
+## Q.展示内容と､こだわりを教えてください｡
+
+ペーパークイズと､早押しクイズの体験を行っています｡ ペーパーは､部員が数問ずつ作った､自作の問題を載せています｡ 早押しは､初心者や小学生でも押しやすいような難易度のものを行っています｡
+
+## 去年の様子
+
+[https://x.com/TDJquiz/status/1568804184933408769?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1568804184933408769%7Ctwgr%5Ee0e23616f3126bf63f37df57f07cdb4f7e56c064%7Ctwcon%5Es1_c10&ref_url=http%3A%2F%2F127.0.0.1%3A5502%2F2024%2Fblog%2Farticle%2F59%2F02%2F02.html](https://x.com/TDJquiz/status/1568804184933408769?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1568804184933408769%7Ctwgr%5Ee0e23616f3126bf63f37df57f07cdb4f7e56c064%7Ctwcon%5Es1_c10&ref_url=http%3A%2F%2F127.0.0.1%3A5502%2F2024%2Fblog%2Farticle%2F59%2F02%2F02.html)
+
+## Q.去年の混み具合を教えてください｡
+
+時間帯によります｡激混みのこともあれば､空席があることもあります｡ 混んでいるときは､早押し体験は時間制で交代してもらっています｡
+
+## Q.去年から変える予定のことがあれば､教えてください｡
+
+去年実施した四択クイズ大会は実施しない予定です｡
+
+## Q.参加者の皆さんに､ひとことお願いします｡
+
+少しでもクイズに興味があるならぜひ来て欲しいし､興味がなくても一度来てみれば面白さが分かって絶対楽しめると思うので､みなさん覗いてみてください！
+
+# VOCALOID&作曲同好会
+
+去年設立された同好会です｡時代を感じますね｡
+展示教室は 2D の予定です｡
+[TVOC 公式 Twitter(@TDJ_TVOC)](https://x.com/TDJ_TVOC)
+[TVOC 公式 HP](https://tvoc.cloud-line.com/)
+
+## Q.入部動機と､部活の魅力を教えてください｡
+
+ボカロ･作曲好きが集まって､去年設立しました｡ 自由な創作活動が出来るのが魅力です｡
+Q.展示内容と､こだわりを教えてください｡
+自作曲の発表と､本格的なボカロクイズの実施など､各種展示を行います｡ 去年好評だった､参加者の皆さんに黒板にメッセージを残してもらう企画を､今年も行います｡ また､DTM 体験も行います｡PC を使って実際のボカロ曲の製作環境が体験できます｡ 初心者でも出来るように機材を準備していますので､ぜひお越し下さい！
+
+## 去年の様子
+
+[https://x.com/TDJ_TVOC/status/1568870548553502722?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1568870548553502722%7Ctwgr%5Ee0e23616f3126bf63f37df57f07cdb4f7e56c064%7Ctwcon%5Es1_c10&ref_url=http%3A%2F%2F127.0.0.1%3A5502%2F2024%2Fblog%2Farticle%2F59%2F02%2F02.html](https://x.com/TDJ_TVOC/status/1568870548553502722?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1568870548553502722%7Ctwgr%5Ee0e23616f3126bf63f37df57f07cdb4f7e56c064%7Ctwcon%5Es1_c10&ref_url=http%3A%2F%2F127.0.0.1%3A5502%2F2024%2Fblog%2Farticle%2F59%2F02%2F02.html)
+
+## Q.去年の混み具合を教えてください｡
+
+時間帯によります｡来てもらったら､基本的にすぐ体験していただけると思います｡
+
+## Q.去年から変える予定のことがあれば､教えてください｡
+
+去年と比べて､かなり大型の展示となります｡新しい企画や展示もたくさんする予定です｡
+
+## Q.参加者の皆さんに､ひとことお願いします。
+
+少しでも気になったらぜひお立ち寄りください｡ ボカロ好き集まれ！
+
+# ポケモン同好会
+
+筆者は､体験展示で､ポケモンカードをというものに初めて触れました｡
+展示教室は 4D の予定です｡
+
+## Q.入部動機と､部活の魅力を教えてください｡
+
+ポケモンが好きだったからです｡
+
+## Q.展示内容と､こだわりを教えてください｡
+
+ポケカで遊べるようにしています｡デッキの貸し出しも行っています｡ また､自作｢ポケモン検定｣を配布しています｡上級と超級があります｡超級はマジで難しいです｡ ポケモンのフィギュアも展示しています｡
+
+## Q.去年の混み具合を教えてください｡
+
+受験予定の小学生や､その兄弟などに人気です｡ 台は少なくとも 1 つは空いていることが多いです｡
+
+## Q.去年から変える予定のことがあれば､教えてください｡
+
+新たにポケモンの像を作り設置する予定です｡ また､ポケカの台を増やすので､より多くの人に楽しんでいただけると思います｡
+
+## Q.参加者の皆さんに､ひとことお願いします｡
+
+デッキの貸し出しや､検定もやっています｡ ポケモンに興味のある人はぜひ来てください！
+
+# MGA(テーブルゲーム)同好会
+
+去年筆者が友達と体験に行ったときは､夢中になって 1 時間ほど遊んでいました｡
+展示教室は 4B の予定です｡
+[MGA 公式 Twitter (@tdj_mgadoukou)](https://x.com/tdj_mgadoukou)
+
+## Q.入部動機と､部活の魅力を教えてください｡
+
+小 5 の時に行った文化祭で展示を見て､興味を持って入部しました｡ テーブルゲームは､お金がかかり､かつ人数がいないと遊べないものが多いですが､同好会なので会費でゲームを購入でき､また人数を容易に集めることが出来るところが魅力だと思います｡
+
+## Q.展示内容と､こだわりを教えてください｡
+
+自作ボードゲームを展示し､遊んでもらっています｡楽しんでもらえると思います｡ TRPG のリプレイ誌に加えて､部活とは関係ない会員の趣味についての部誌の配布も行っています｡
+
+## Q.去年の混み具合を教えてください｡
+
+ほとんど満席で､空いてもすぐに埋まります｡
+
+## Q.去年から変える予定のことがあれば､教えてください｡
+
+新作のボドゲや､昨年のボドゲのリニューアル版なども展示する予定です｡
+
+## Q.参加者の皆さんに､ひとことお願いします｡
+
+見るだけでなく､遊べる楽しみがあると思います｡ テーブルゲーム好き必見！
+
+# オセロ同好会
+
+筆者も､体験に行き､遊びました｡友達にボロ負けしました｡
+展示教室は 3E の予定です｡
+
+## Q.入部動機と､部活の魅力を教えてください｡
+
+ボードゲームの中でも､特にオセロが好きだったので入りました｡ 単にオセロをするだけでなく､特殊ルールを作って遊んだりしています｡ 部誌にも色々書いてあるので､読んでみてください｡
+
+## Q.展示内容と､こだわりを教えてください｡
+
+オセロを置いて､遊んでもらえるようにしています｡ 加えて､オセロ中盤における戦略や､｢詰めオセロ｣についての手書き記事を展示する予定です｡
+
+## Q.去年の混み具合を教えてください｡
+
+案外人がいます｡手軽に遊べるので､暇つぶしに来ていた人が多かったです｡
+
+## Q.去年から変える予定のことがあれば､教えてください｡
+
+特にないです｡
+
+## Q.参加者の皆さんに､ひとことお願いします｡
+
+気軽に見に来て下さい！
+
+# 囲碁将棋部
+
+筆者は将棋がちっとも分からないので､体験はしませんでしたが､展示は楽しむことができました｡
+展示教室は 2E の予定です｡
+
+## Q.入部動機と､部活の魅力を教えてください｡
+
+小学校の時から将棋をしていたので､入部しました｡ オンラインでの練習に加えて､部員同士で対戦しています｡ 初心者から全国大会優勝レベルまで､誰でも楽しむことが出来ます｡
+
+## Q.展示内容と､こだわりを教えてください｡
+
+将棋盤をおいて､遊んでもらえるようにします｡ 気軽に遊びに来てください｡
+
+## Q.去年の混み具合を教えてください｡
+
+結構人がいます｡来てもらったら遊べる状態になっていると思います｡
+
+## Q.去年から変える予定のことがあれば､教えてください｡
+
+特にないです｡
+
+## Q.参加者の皆さんに､ひとことお願いします｡
+
+将棋の好きな人なら､誰でも楽しめると思います｡ ぜひ来てください！
+
+# 最後に
+
+今回､インタビューが出来た 7 団体のみ紹介しましたが､菁々祭には他にもチェス研究会･電子工作部･情報同好会などたくさんの魅力的な体験型展示があります｡
+東大寺生による渾身の展示が勢揃いです｡ぜひたくさんの展示を巡ってみてください！
+`,
+    },
+    "59/03": {
+        title: `部誌編集者に聞く！「番茶党」のウラ苦労【新聞部】`,
+        date: `2023.06.05`,
+        author: `PRパート副パート長`,
+        topic: `新聞部`,
+        thumbnail: Image5,
+        thumbnailPath: `src/blogs/59/03/thumbnail.png`,
+        images: {
+            "image.png": Image4,
+        },
+        twitterEmbedded: false,
+        description: `
+菁々祭をより良いものにするために、各文化部が発行している部誌は欠かせません。その内容は部活によって様々ですが、どれも興味深いものばかりです。また、それらの執筆、編集、印刷、製本は全て生徒が行うため、一つの部誌が菁々祭で配布されるまでには膨大な手間ひまがかけられています。
+`,
+        content: `
+# Q.番茶党って、どんな部誌なんですか？
+
+他のクラブは、クラブの活動内容に関する部誌を発行しますが、新聞部は菁菁新聞文化祭号がその役割を担っています。そのため、番茶党では新聞とは全く関係なく、新聞部員が自分の書きたいことを自由に書きます。つまり、一般的な部誌が専門雑誌だとすれば、番茶党は総合雑誌です。内容が浅いという意味ではありません。各部員が本当に書きたくて書いた記事の集まりであるため、密度が圧倒的に高いのです。そこには野球も音楽も、哲学もあります。番茶党は、東大寺学園生の青春そのものなのです。
+また、番茶党について語るうえで、恒例企画の「こんなん食いましたけど〜困難悔いましたけど〜」（通称「こんくい」）は避けて通れません。新聞部員が自分たちの自作料理を食べて料理を味・芸術性の 2 つの観点から採点するグルメな企画ですが、そこに登場するのは奇妙な料理ばかりです。いくつかルールがありますが、なかでも「わざとまずいものを作らない」というルールは守られたことがなく、名前を聞くだけで食欲を失ってしまうような恐ろしい料理が続出します。コロナ禍で開催を自粛した年もありましたが、今年は実施する予定です。どんな珍料理が最高得点に輝くか、ご自身の目でお確かめください。
+
+# Q.番茶党は大変人気だと聞きましたが。
+
+嬉しいことにとても人気で、毎年のように 1 日目が終了する時点でほとんど残部がなくなり、2 日目の朝に増刷して製本する事態になっています。
+
+# Q.新聞部はかなり歴史が長い部活ですが、番茶党も長いんですか？
+
+東大寺学園で最も古くからある新聞部ですが、番茶党は比較的新しく、今年で 37 年目です。ちょうど東大寺の境内から現在の校舎に移転した年に創刊された計算になります。もちろん、他のクラブの部誌よりは歴史が長いほうだと思いますが、普段から旧校舎時代や菁々中学時代の新聞に親しんでいる新聞部員にとっては「今様」なのです。
+
+# Q.去年の番茶党について教えてください。
+
+去年は部員数が少なく、部誌として成立しないのではないかと危ぶまれましたが、全部員が記事を執筆し、さらに 2 名から寄稿があったため、思いのほか充実した番茶党になりました。例年よりもクオリティの高い記事が多かったように感じます。しかし、「こんくい」が実施できなかったのは残念でなりません。
+また、編集者としては、締め切りまでに 1 人しか原稿を提出してくれなかったため、編集の予定が大幅に遅れて文化祭直前まで完成せず、菁菁新聞文化祭号の制作の仕事も重なり、寝不足に苦しみました。結局、番茶党は間に合いましたが、新聞は 1 日目には完成せず、2 日目しか配布できませんでした。
+
+![$一昨年の「こんくい」(手前)。昨年の号(奥)では実施できなかった。](image.png)
+
+# Q.今年の番茶党はどのようなものにしたいですか。
+
+去年の反省を活かし、今年は早めに記事を書いてもらうつもりですが、最後まで何が起こるか分からないのが番茶党。編集者に求められるのは、機転と発想です。突然の寄稿にも部員の無理難題にも全力で対応し、必ずや最高の番茶党に仕上げましょう。先の見えない現代社会です。実際に番茶党を手に取って、その波瀾を全身で感じてください。
+
+# ありがとうございました。
+
+いかがだったでしょうか。部誌ひとつとっても、部員それぞれの魅力が詰まっているように感じます。部誌を発行しているのは新聞部だけではありません。今年の夏はぜひ、色々な部誌を手にとって、それぞれの部員が繰り広げる世界に浸ってみてください。
+まずは去年の番茶党をチェック！
+
+[番茶党第 36 号（2022 年発行）.pdf](%E7%95%AA%E8%8C%B6%E5%85%9A%E7%AC%AC36%E5%8F%B7%EF%BC%882022%E5%B9%B4%E7%99%BA%E8%A1%8C%EF%BC%89.pdf)
+`,
+    },
     "59/04": {
         title: `お化け屋敷の正体を直撃インタビュー！`,
         date: `2023.06.05`,
         author: `PR パート員 M.K.`,
         topic: `お化け屋敷セクション`,
-        thumbnail: Image5,
+        thumbnail: Image8,
         thumbnailPath: `src/blogs/59/04/thumbnail.png`,
         images: {
-            "image%201.png": Image3,
-            "image.png": Image4,
+            "image%201.png": Image6,
+            "image.png": Image7,
         },
         twitterEmbedded: false,
         description: `
@@ -201,7 +484,7 @@ export const blogData: {
 
 セクション長の私と副セクション長の「丸顔」「終焉のポップコーン」(ニックネームです)を中心に優秀な人材が揃っています。新規加入のメンバーも多く、新しい意見を参考にしながら作業を進めていける事が今年の特色だと考えています。
 
-![変な踊りを見せる今年度のセクション長1](image.png)
+![$変な踊りを見せる今年度のセクション長1](image.png)
 
 ## さらに前回のセクション長にもお聞きしました。
 
@@ -225,7 +508,7 @@ export const blogData: {
 
 彼は中学三年生から加入してくれてて、お化け屋敷運営の上で大事なこともわかっていますし、去年もセクション員の皆をよくまとめてくれていました。礼儀もしっかりしているので心配は全くありません。
 
-![変な踊りを見せる今年度のセクション長2](image%201.png)
+![$変な踊りを見せる今年度のセクション長2](image%201.png)
 
 # Q.第 59 回には何を期待しますか
 
@@ -243,13 +526,13 @@ export const blogData: {
         date: `2023.06.05`,
         author: `PRパート長`,
         topic: `技術・製作セクション`,
-        thumbnail: Image10,
+        thumbnail: Image13,
         thumbnailPath: `src/blogs/59/05/thumbnail.png`,
         images: {
-            "image%201.png": Image6,
-            "image%202.png": Image7,
-            "image%203.png": Image8,
-            "image.png": Image9,
+            "image%201.png": Image9,
+            "image%202.png": Image10,
+            "image%203.png": Image11,
+            "image.png": Image12,
         },
         twitterEmbedded: false,
         description: `
@@ -284,7 +567,7 @@ export const blogData: {
 
 製セク長「結構細かいボタンみたいなのが多くて、例えば 『1 ページ戻る』であったり、バツ印であったり。その中でも統一感みたいなのが必要かな？ っていう中で検討しながら進めました。マークとしての調和も必要だし、ウェブサイトと合わせるみたいな作業もやっぱ必要で。そういうところも苦戦しました。
 
-![デザインでコーダーと揉めたハンバーガーのアイコン](image.png)
+![$デザインでコーダーと揉めたハンバーガーのアイコン](image.png)
 
 続いて Web サイトのコーディングについて。
 
@@ -314,7 +597,7 @@ export const blogData: {
 
 技セク長「公式の Web サイトをつくる前に、パート員募集の特設サイトをデザインからコーディングまで一人でやったんですよ。それまで Web サイト制作は挫折経験もあって、難しいと思っていたんですけど、もう一回やってみたら結構楽しくて、そっからハマってコーディングにのめりこんでいきました。」
 
-![パート員募集用特設サイト『パートの選び方』](image%201.png)
+![$パート員募集用特設サイト『パートの選び方』](image%201.png)
 
 # Q.今回の Web サイトではアニメーションが採用されているかと思うんですが、技術的な面で何か変化はありましたか？
 
@@ -342,7 +625,7 @@ export const blogData: {
 
 技セク長「あと、トップページの 1 画面目って結構重要だと思うんですよ。そこでなにを伝えたいかっていうのを話した結果、テキストの横スクロールのアニメーションを作りたいという話になって。Adobe AfterEffects で試作品とかを作ってやりましたね。」
 
-![トップページのアニメーションは一度動画として試作された](image%202.png)
+![$トップページのアニメーションは一度動画として試作された](image%202.png)
 
 「ここから専門的な話になるんで。まあ読み飛ばしてもらっていいんですけど、実は CSS の標準の機能だけでコーディングしたんです。CSS の animation を使用すると、 transform の translateX()だけでは横スクロールができないんですよ。右までは行くんですけど、そこから切り返しができなくて、+α でオブジェクト自体の絶対位置(position: absolute)で left を指定して left とアニメーションの transform の translateX 、この 2 つの値をアニメーション的に変化させることによって実現しています。ここは結構難しかった。かなり悩んだ。」
 
@@ -366,7 +649,7 @@ export const blogData: {
 
 製セク長「初見殺しやろマジで絶対無理。」
 
-![製作セクション長(奥)と技術セクション長(手前)](image%203.png)
+![$製作セクション長(奥)と技術セクション長(手前)](image%203.png)
 
 # あとがき
 
@@ -380,10 +663,10 @@ export const blogData: {
         date: `2023.06.26`,
         author: `PRパート員K.K.`,
         topic: `折り紙研究部`,
-        thumbnail: Image12,
+        thumbnail: Image15,
         thumbnailPath: `src/blogs/59/06/thumbnail.png`,
         images: {
-            "image.png": Image11,
+            "image.png": Image14,
         },
         twitterEmbedded: false,
         description: `
@@ -398,7 +681,7 @@ export const blogData: {
 
 そりゃあもう、サイズですね(笑)。元になる紙がかなり大きいため、恐竜などの生物をダイナミックに表現するのに向いています。生物系は大きかったほうが映えますしね。 後はやはり紙が大きいと、それだけ作品となった時に自重がものすごく重くなるので、糸や針金、木材といった支えが必要になってきます。基本は体幹部を木材で、形を固定したい部位を針金で補強します。末端を糸で吊るすこともあります。とにかくスケールのでかい大掛かりな作業です。
 
-![別角度から。糸や針金が張り巡らされている。](image.png)
+![$別角度から。糸や針金が張り巡らされている。](image.png)
 
 # Q.製作過程で大変なこと、気をつけていることやこだわりなど教えてください。
 
@@ -432,11 +715,11 @@ export const blogData: {
         date: `2023.06.26`,
         author: `PRパート副パート長`,
         topic: `紹介`,
-        thumbnail: Image15,
+        thumbnail: Image18,
         thumbnailPath: `src/blogs/59/07/thumbnail.png`,
         images: {
-            "image%201.png": Image13,
-            "image.png": Image14,
+            "image%201.png": Image16,
+            "image.png": Image17,
         },
         twitterEmbedded: false,
         description: `
@@ -451,7 +734,7 @@ export const blogData: {
 
 まずはじめに衝撃を受けたのが、校内のあちらこちらの装飾です。大きな壁画や窓の切り絵、渡り廊下のモザイクアート、そして「旧東京音楽学校奏楽堂」のオブジェ。一つ一つの装飾が作り手のクリエイティビティを反映していて精魂こめて作られているように感じました。極めつけはあの巨大な「フォルテッシ門」。来訪者を出迎える門は菁々祭の象徴といってもいいでしょう。文化祭が終わると取り壊されてしまう門の儚さが、二日間限りの輝きを一層際立たせているのが個人的に好きです。
 
-![画像は第５７回菁々祭「あおによし」の朱雀門。よくできていますよね。](image.png)
+![$画像は第５７回菁々祭「あおによし」の朱雀門。よくできていますよね。](image.png)
 
 # 衝撃２: 多種多様な部・同好会の展示
 
@@ -463,7 +746,7 @@ export const blogData: {
 
 菁々祭を語るうえで絶対に欠かせないのが、生徒たちが情熱をささげる数多くのイベントです。例えば、カラオケコンテスト、マッチョコンテストにイケメンコンテスト。ラップバトルや漫才の面白さを競う T-1 グランプリもあります。もう聞いているだけで面白そうでワクワクしますよね。近年は多くのイベントがグラウンドで行われるのですが、「fortissimo」の時は中庭でイベントが開催されていて、多くの観客が集まった中庭はすごい熱気で包まれていました。当時ぼくが見たのは全４団体によるダンスです。TDJ48 や卍ザイル、寺マスにラブライブ！サンスクリット！！それぞれ聞きなじみのある曲に合わせてかっこいい/かわいい踊りを披露しました。観客と OB 軍団の手拍子とコールによって生まれる会場の一体感は見ものです。もう一つ見たのが Mr.美少女コンテスト。ミスコンは菁々祭の華ですからね。女装してる男子高校生なんて最高じゃないですか！！！小学校五年生だったぼくにはちょっと刺激が強すぎたかもしれないですが、この少しはちゃめちゃな感じが菁々祭のイベントの良さだなあと思います。
 
-![当時のパンフレットのイベント一覧。どれもなかなかおもしろそうですよね。](image%201.png)
+![$当時のパンフレットのイベント一覧。どれもなかなかおもしろそうですよね。](image%201.png)
 
 様々な展示やイベントをまわって満足した頃には空があかね色になっていて、ぼくは帰りのバスに乗り込みました。バスの中でぼくはかすかに自分の中に憧れの感情が芽生えるのを感じていました。「いつかぼくもこの祭りを盛り上げてみたいな」と。
 
@@ -477,12 +760,12 @@ export const blogData: {
         date: `2023.06.26`,
         author: `PRパート員I.R.`,
         topic: `紹介`,
-        thumbnail: Image19,
+        thumbnail: Image22,
         thumbnailPath: `src/blogs/59/08/thumbnail.png`,
         images: {
-            "image%201.png": Image16,
-            "image%202.png": Image17,
-            "image.png": Image18,
+            "image%201.png": Image19,
+            "image%202.png": Image20,
+            "image.png": Image21,
         },
         twitterEmbedded: false,
         description: `
@@ -569,7 +852,7 @@ PRパート員 M.K.](/blog/59/04)
 
 文化祭の中でもかなり有名な、ダンスパフォーマンスを行うセクションです。TDJ48、E卍ILE(寺ザイル)など、それぞれ違ったパフォーマンスを見ることができますよ！アクロバティックな演出に期待しましょう！
 
-![去年の様子](image.png)
+![$去年の様子](image.png)
 
 # 装飾パート
 
@@ -583,13 +866,13 @@ PRパート員 M.K.](/blog/59/04)
 
 今年こそはと意気込んでいるセクションです。校門を入ったところにある入場門は、彼らの何ヶ月間もの尽力の賜物です。
 
-![去年の作品（去年は開催日に間に合わなかったそうだ）](image%201.png)
+![$去年の作品（去年は開催日に間に合わなかったそうだ）](image%201.png)
 
 ## ・ロゴモニュメントセクション
 
 校舎前に文化祭ロゴのモニュメントを制作するセクションです。
 
-![こんな感じのモニュメントが作られます！](image%202.png)
+![$こんな感じのモニュメントが作られます！](image%202.png)
 
 (モニュメント製作についての詳しい記事はこちら↓)
 
@@ -607,18 +890,18 @@ PRパート副パート長](/blog/59/09)
         date: `2023.06.26`,
         author: `PRパート副パート長`,
         topic: `ロゴモニュメントセクション`,
-        thumbnail: Image29,
+        thumbnail: Image32,
         thumbnailPath: `src/blogs/59/09/thumbnail.png`,
         images: {
-            "image%201.png": Image20,
-            "image%202.png": Image21,
-            "image%203.png": Image22,
-            "image%204.png": Image23,
-            "image%205.png": Image24,
-            "image%206.png": Image25,
-            "image%207.png": Image26,
-            "image%208.png": Image27,
-            "image.png": Image28,
+            "image%201.png": Image23,
+            "image%202.png": Image24,
+            "image%203.png": Image25,
+            "image%204.png": Image26,
+            "image%205.png": Image27,
+            "image%206.png": Image28,
+            "image%207.png": Image29,
+            "image%208.png": Image30,
+            "image.png": Image31,
         },
         twitterEmbedded: false,
         description: `
@@ -641,33 +924,33 @@ PRパート副パート長](/blog/59/09)
 
 ## ３.文字
 
-![スプレーで黒く塗ったベニヤ板に、ジグソーで文字をくり抜いた板を重ねました。くり抜いた方の板はこの後白く塗られます。](image.png)
+![$スプレーで黒く塗ったベニヤ板に、ジグソーで文字をくり抜いた板を重ねました。くり抜いた方の板はこの後白く塗られます。](image.png)
 
 ## ４.ロゴマーク
 
-![先輩方が、切り出したベニヤの置き場所と重ね方を話し合っています。](image%201.png)
+![$先輩方が、切り出したベニヤの置き場所と重ね方を話し合っています。](image%201.png)
 
-![確定したようです。](image%202.png)
+![$確定したようです。](image%202.png)
 
-![色が塗られました。この時点で、菁々祭開始まであと2日でした。](image%203.png)
+![$色が塗られました。この時点で、菁々祭開始まであと2日でした。](image%203.png)
 
 ## ５.完成
 
-![組み立てが完了し、無事完成しました。](image%204.png)
+![$組み立てが完了し、無事完成しました。](image%204.png)
 
-![菁々祭前日。菁々祭が始まるのが楽しみと言わんばかりの佇まいです。](image%205.png)
+![$菁々祭前日。菁々祭が始まるのが楽しみと言わんばかりの佇まいです。](image%205.png)
 
 ## ６.裏面
 
 モニュメントの裏面に何を描くかという問題がありました。いくつもの案を出し合い、話し合った末、バンクシーの絵画を模したスプレーアートをしようということになり、その方向で進んでいたのですが、なにしろ時間がありませんでした。仕方なく従来の案は諦め、代わりに菁々祭のWebサイトのQRコードをペンキで描くという結論に帰着しました。
 
-![ロゴモニュメントの裏面。作業は当日の朝7時半から始められ、開場時間までかかりました。](image%206.png)
+![$ロゴモニュメントの裏面。作業は当日の朝7時半から始められ、開場時間までかかりました。](image%206.png)
 
 # 当日
 
-![来場者の方々に感謝です。](image%207.png)
+![$来場者の方々に感謝です。](image%207.png)
 
-![菁々祭2日目の夕方。祭は刹那に過ぎてゆきます。](image%208.png)
+![$菁々祭2日目の夕方。祭は刹那に過ぎてゆきます。](image%208.png)
 
 # おわりに
 
@@ -679,12 +962,12 @@ PRパート副パート長](/blog/59/09)
         date: `2023.08.25`,
         author: `PRパート員 K.N`,
         topic: `音楽部・室内楽部`,
-        thumbnail: Image33,
+        thumbnail: Image36,
         thumbnailPath: `src/blogs/59/14/thumbnail.png`,
         images: {
-            "image%201.png": Image30,
-            "image%202.png": Image31,
-            "image.png": Image32,
+            "image%201.png": Image33,
+            "image%202.png": Image34,
+            "image.png": Image35,
         },
         twitterEmbedded: false,
         description: `
@@ -701,7 +984,7 @@ O さん：音楽部からは、エレキギターとボーカルが 1 人、エ
 
 K さん：トランペット、ホルン、トロンボーン、クラリネットがそれぞれ 1 人、室内楽部では弦楽器を弾いている部長がキーボードで参加します。
 
-![合同練習の写真](image.png)
+![$合同練習の写真](image.png)
 
 # Q.演奏する曲はどのように決めましたか？
 
@@ -719,11 +1002,11 @@ O さん：今の話とも被るのですが、管楽器の音が埋もれちゃ
 
 O さん：僕はコントラバスに魅力を感じます。オーケストラのいわゆる低音を奏でる楽器です。コントラバスはエレキベースでは鳴らすことのできない弦楽器特有の滑らかな低音を出すことができます。それがオーケストラの上品さを支えているのかなと思ったりもします。
 
-![コントラバスを持つ人の写真](image%201.png)
+![$コントラバスを持つ人の写真](image%201.png)
 
 K さん：O さんはコントラバスと言いましたが、僕は逆にエレキベースがしたいです。エレキベースはコントラバスよりも軽いですし様々な奏法があるのがいいですよね。うねるようなベースラインを演奏してみたいです。
 
-![エレキベースを持つ人の写真](image%202.png)
+![$エレキベースを持つ人の写真](image%202.png)
 
 ## Q.最後に、演奏を見に来てくれるみなさんに向けて、意気込みをお願いします。
 
@@ -739,44 +1022,44 @@ O さん：このような部活と部活のコラボは自分にとって新た
         date: `2023.10.08`,
         author: `文化祭実行委員長`,
         topic: `製作セクション`,
-        thumbnail: Image69,
+        thumbnail: Image72,
         thumbnailPath: `src/blogs/59/15/thumbnail.png`,
         images: {
-            "image%201.png": Image34,
-            "image%2010.png": Image35,
-            "image%2011.png": Image36,
-            "image%2012.png": Image37,
-            "image%2013.png": Image38,
-            "image%2014.png": Image39,
-            "image%2015.png": Image40,
-            "image%2016.png": Image41,
-            "image%2017.png": Image42,
-            "image%2018.png": Image43,
-            "image%2019.png": Image44,
-            "image%202.png": Image45,
-            "image%2020.png": Image46,
-            "image%2021.png": Image47,
-            "image%2022.png": Image48,
-            "image%2023.png": Image49,
-            "image%2024.png": Image50,
-            "image%2025.png": Image51,
-            "image%2026.png": Image52,
-            "image%2027.png": Image53,
-            "image%2028.png": Image54,
-            "image%2029.png": Image55,
-            "image%203.png": Image56,
-            "image%2030.png": Image57,
-            "image%2031.png": Image58,
-            "image%2032.png": Image59,
-            "image%2033.png": Image60,
-            "image%2034.png": Image61,
-            "image%204.png": Image62,
-            "image%205.png": Image63,
-            "image%206.png": Image64,
-            "image%207.png": Image65,
-            "image%208.png": Image66,
-            "image%209.png": Image67,
-            "image.png": Image68,
+            "image%201.png": Image37,
+            "image%2010.png": Image38,
+            "image%2011.png": Image39,
+            "image%2012.png": Image40,
+            "image%2013.png": Image41,
+            "image%2014.png": Image42,
+            "image%2015.png": Image43,
+            "image%2016.png": Image44,
+            "image%2017.png": Image45,
+            "image%2018.png": Image46,
+            "image%2019.png": Image47,
+            "image%202.png": Image48,
+            "image%2020.png": Image49,
+            "image%2021.png": Image50,
+            "image%2022.png": Image51,
+            "image%2023.png": Image52,
+            "image%2024.png": Image53,
+            "image%2025.png": Image54,
+            "image%2026.png": Image55,
+            "image%2027.png": Image56,
+            "image%2028.png": Image57,
+            "image%2029.png": Image58,
+            "image%203.png": Image59,
+            "image%2030.png": Image60,
+            "image%2031.png": Image61,
+            "image%2032.png": Image62,
+            "image%2033.png": Image63,
+            "image%2034.png": Image64,
+            "image%204.png": Image65,
+            "image%205.png": Image66,
+            "image%206.png": Image67,
+            "image%207.png": Image68,
+            "image%208.png": Image69,
+            "image%209.png": Image70,
+            "image.png": Image71,
         },
         twitterEmbedded: false,
         description: `
@@ -787,7 +1070,7 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 第58回と第59回の菁々祭パンフレットの編集長を務めさせていただきました。経験の乏しい高校生なりに努力したパンフレット制作の過程の一部をお見せしたいなと思います。この記事を読んだ後に、新しい視点からパンフレットを見ていただければ幸いです。
 
-![パンフレットの全ページ](image.png)
+![$パンフレットの全ページ](image.png)
 
 また、この記事をご覧になっている方の中にDTP制作に詳しい方がいらっしゃいましたら、今後このような制作を手がける上でのアドバイスなどをいただけるととても助かります。こちらのメールアドレス(amukat0914@outlook.jp)に送っていただければ来年度の担当者に申し送り事項として伝えさせていただきます。そのほか、パンフレットに関する質問などもこちらのメールアドレスに送付いただければ可能な限りでお答えいたします。
 
@@ -819,13 +1102,13 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 印刷会社から簡易色校正が届きました。その日のうちにデザイン的に気になる部分は修正を入れて対応。校正大会準備も。
 
-![色校正の紙の束の写真](image%201.png)
+![$色校正の紙の束の写真](image%201.png)
 
 ## 8月21日～23日
 
 校正大会！！！ミスがいっぱい見つかり修正に追われていました。
 
-![校正大会の写真](image%202.png)
+![$校正大会の写真](image%202.png)
 
 ## 8月24日
 
@@ -839,13 +1122,13 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 印刷会社からデータチェック用の仮刷り原稿を受け取り。表紙の画像の解像度に不安が生じたため、急遽データ差し替え。当日中に最終納品。(実はこの日、印刷工場を見学させていただきました。めっちゃデカいオフセット印刷機！裁断機！すごかった！)
 
-![印刷工場の写真](image%203.png)
+![$印刷工場の写真](image%203.png)
 
 ## 9月5日
 
 到着！！！！！！！
 
-![到着したパンフレットの写真](image%204.png)
+![$到着したパンフレットの写真](image%204.png)
 
 # 印刷仕様
 
@@ -857,11 +1140,11 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 ## 文字とフォント
 
-![小塚ゴシック Pro の書体見本。](image%205.png)
+![$小塚ゴシック Pro の書体見本。](image%205.png)
 
 和文フォントは小塚ゴシックProを採用しました。Adobe社の開発した和文OpenTypeフォントで、Illustratorではデフォルトの書体として登録されています。評価の割れる書体ですが、僕はとても好きです。
 
-![ITC FranklinGothic LT Proの書体見本。](image%206.png)
+![$ITC FranklinGothic LT Proの書体見本。](image%206.png)
 
 欧文フォントは ITC FranklinGothic LT Pro を採用しています。小塚と同じく時代を感じる書体ではありますが、あえてモダンなテイストの画面に落とし込むことで異彩を放つデザインになったのではないかと思っています。
 
@@ -875,7 +1158,7 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 ## マージン
 
-![Adobe Illustratorでのマージンの設定の様子](image%207.png)
+![$Adobe Illustratorでのマージンの設定の様子](image%207.png)
 
 画面に情報を詰め込むため、マージンは少し狭く設定しました。ノド:12mm、天・地:10mm、小口:10mmに設定しました。地の余白はもう少し広くとっても良かったのかもしれません。
 
@@ -885,7 +1168,7 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 ### 1.black.eps
 
-![black.eps](image%208.png)
+![$black.eps](image%208.png)
 
 - カラープロファイル難しい...
 
@@ -897,13 +1180,13 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 ### 2.white.eps
 
-![white.eps](image%209.png)
+![$white.eps](image%209.png)
 
 1で紹介したblack.epsをベースに白を基調とした背景素材も使っています。全体的に黒を基調に冊子を組みつつもところどころを白い背景に抑えることで単調さを軽減するのが目的です。この素材はTAC値が300%を超えることは絶対にないので安心して作業できました。
 
 ### 3.psychedelic.eps
 
-![phychedelic.eps](image%2010.png)
+![$phychedelic.eps](image%2010.png)
 
 こちらも1で紹介した素材をベースにグラデーションマップをかけています。40ページの冊子ですから、そのうちの何ページかはインパクトのある画面にしたいと考えていたので、カラフルで主張の強い背景素材も作ってみました。他の2つとは対照的な背景素材になったと思います。
 
@@ -911,23 +1194,23 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 ## 表紙
 
-![パンフレットの写真](image%2011.png)
+![$パンフレットの写真](image%2011.png)
 
 みなさんは気づきましたか？実は今年の表紙は表面の一部にクリアトナーがのっている豪華仕様です。おそらく菁々祭パンフレット史上初めての特殊印刷です。光に当てたときに、クリアトナーがのっている部分とのっていない部分とで質感の差が出てとても映えます。
 
-![Blenderで編集している様子](image%2012.png)
+![$Blenderで編集している様子](image%2012.png)
 
 背景に使っている画像は、実は[ロゴ発表映像](https://youtu.be/7v9g0vJNalM?si=U4HHRz3efbSZGx-h)の没カットです。blenderを使って、今年のロゴの3Dデータをベースに流体演算をかけています。レンダリング時の解像度は驚異の5760×3240px。A5の冊子の表紙としては明らかにオーバーサイズですが、他の用途にも使えるかもと思って大きめに書き出しました。使わなかったんですけどね。
 
 ## P.2 ごあいさつ
 
-![「ごあいさつ」ページ](image%2013.png)
+![$「ごあいさつ」ページ](image%2013.png)
 
 「ごあいさつ」の英語表記に悩みました。ここでの「ごあいさつ」は単なる挨拶ではなくそのメッセージに置かれていることから「Greeting Messages」や「Messages」などの案も出ましたが最終的には「Greetings」としました。正しいかどうかの確証は正直ありません。今年度のごあいさつページの写真は校長先生と実行委員長に分けて配置しました。菁々祭のパンフレットの中で今までにないレイアウトになったと思います。(一応例年通りのツーショットも撮影していたのですが、私の表情が固かったのもあってこちらのレイアウトを採用しました。)　実行委員長とパンフレット編集長を兼任している都合上、必然的に自分の写真を自分で紙面に配置することになるので、少し変な気分になりました。せっかくだったら加工マシマシに盛りまくっても良かったかなと思っています。
 
-![「ごあいさつ」ページの写真](image%2014.png)
+![$「ごあいさつ」ページの写真](image%2014.png)
 
-![本郷校長のサイン](image%2015.png)
+![$本郷校長のサイン](image%2015.png)
 
 今年はごあいさつの名前のところをそれぞれの手書きにしてみました。校長先生はペンで、実行委員長は鉛筆で書き、それぞれの「らしさ」を演出しています。 実はごあいさつのページデザインよりも実行委員長あいさつの方が苦戦していました…
 
@@ -941,71 +1224,71 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 ## P.4 - P.5 校内全図
 
-![校内全図ページ](image%2016.png)
+![$校内全図ページ](image%2016.png)
 
 基本的には第55回のベースを踏襲する形で制作しています。ベースはできあがっているので組むのは簡単なのですが、めちゃくちゃミスが起きやすいところだとも思っていたので慎重に作りました。この記事の執筆時にはすでに印刷会社に入稿済みなので、ミスがないかハラハラしています。とてもこわいです。 また、こちらの校内全図はさまざまなところで使うので、利便性のためにレイヤーの整理を細かく行なっています。
 
 ## P.6 - P.17 校内展示
 
-![校内展示ページ（中学棟1F）](image%2017.png)
+![$校内展示ページ（中学棟1F）](image%2017.png)
 
-![校内展示ページ（中学棟2F）](image%2018.png)
+![$校内展示ページ（中学棟2F）](image%2018.png)
 
-![校内展示ページ（中学棟3F）](image%2019.png)
+![$校内展示ページ（中学棟3F）](image%2019.png)
 
-![校内展示ページ（高校棟1・2F）](image%2020.png)
+![$校内展示ページ（高校棟1・2F）](image%2020.png)
 
-![校内展示ページ（高校棟3F）](image%2021.png)
+![$校内展示ページ（高校棟3F）](image%2021.png)
 
-![校内展示ページ（高校棟4F）](image%2022.png)
+![$校内展示ページ（高校棟4F）](image%2022.png)
 
 こちらも第55回のベースを使って組んでいます。「◯年△組」の表記に少しこだわっています。数字と英字の情報が先に見えるようにサイズをひとまわり大きくして、ベースラインも調整しました。今年は6年F組にも展示が入るということで、紹介文を１ページに10団体も詰めることに。
 
 ## P.18 - P.25 タイムテーブル
 
-![タイムテーブル1日目ページ1](image%2023.png)
+![$タイムテーブル1日目ページ1](image%2023.png)
 
-![タイムテーブル1日目ページ2](image%2024.png)
+![$タイムテーブル1日目ページ2](image%2024.png)
 
-![タイムテーブル2日目ページ1](image%2025.png)
+![$タイムテーブル2日目ページ1](image%2025.png)
 
-![タイムテーブル2日目ページ2](image%2026.png)
+![$タイムテーブル2日目ページ2](image%2026.png)
 
 今年のタイムテーブルは、雨天時含め14列×2日分の28列を8ページに収めました。普段と比べて情報量が多めになったと思います。今年は例年に比べイベント数が非常に多く、後述するイベント紹介のページに全ての紹介文が入りきりませんでした。そのため、タイムテーブル上に紹介文を記載できるイベントについてはこちらのみに記載することで対応しています。できるだけタイムテーブルに紹介文を記載するイベントを増やすため、校舎内のイベントは15:00までに終了することを利用し、それぞれの日程の3・4ページの時間軸を下にずらし、上にスペースをとって紹介文を記載する方法をとりました。イベント開催場所の色はそれぞれのサインシステムに対応しています。 また、イベントの期間を表す長方形はレイヤー設定を使い、背景のテクスチャを活かした表現にしています。
 
 ## P.26-P.29 イベント紹介
 
-![イベント紹介ページ1](image%2027.png)
+![$イベント紹介ページ1](image%2027.png)
 
-![イベント紹介ページ2](image%2028.png)
+![$イベント紹介ページ2](image%2028.png)
 
 バチバチの高彩度背景素材で画面に絶対的なインパクトを出しています。紙面の都合上、ここではタイムテーブルに紹介文を掲載できなかったイベントの紹介文のみを掲載しています。そのため「イベント一覧」ではなく「イベント紹介」としました。
 
 ## P.30-P.31 バザー
 
-![バザーページ](image%2029.png)
+![$バザーページ](image%2029.png)
 
 今年度は4年ぶりの食品解禁ということで、ワクワクしながら作っていました。P.31にどうやって情報を詰め込むかが肝でしたね。もう一店舗あったら危なかった...。 金券で使われている通貨単位である「シビ」はオリジナルのため、フォントが存在しません。そのため文字組みの際は文中にスペースを開けておき、そのあと上からシビのマークを重ねることで実現しています。
 
 ## P.32-P.33 グッズ
 
-![グッズページ](image%2030.png)
+![$グッズページ](image%2030.png)
 
 今年は８品目と豪華なラインナップを実現しました。パンフレットの話からは逸れますが、今年は初めて本格的な事前販売を行うことができ満足しています。やっぱり自分がデザインしたものが使われるっていいですよね。
 
-![Blenderによるグッズ製作の様子](image%2031.png)
+![$Blenderによるグッズ製作の様子](image%2031.png)
 
 パンフレットに掲載するために「モックアップ」が必要になります。いわゆるイメージ画像ですね。。できるだけ本物に近く作りあげるのが結構しんどかったです。実はボールペン以外のモックアップは全て3DCGや写真合成を使って作っています。
 
 ## P.34-P.35 装飾
 
-![装飾紹介ページ](image%2032.png)
+![$装飾紹介ページ](image%2032.png)
 
 毎年簡素になりがちな装飾のページですが、今年はほとんどの設計が3DCGを使って行われていたので、完成イメージを載せることができました。特に、ロゴモニュメントと中庭ステージの設計は自分がやっていたのでとても楽でしたね。Blender最高！！
 
 ## P.36 スタンプラリー
 
-![スタンプラリーページ](image%2033.png)
+![$スタンプラリーページ](image%2033.png)
 
 いよいよ最終ページの紹介です。なるべく多くの人に校内を満遍なく巡回してもらえるようスタンプラリーを設置しています。しかし、近年になって新しい展示団体が急増しており、そろそろ1ページに収まりきらないんじゃないかとハラハラしていましたが、なんとか今年はセーフ。さて来年はどうなることやら。密かな注目ポイントです。
 
@@ -1013,7 +1296,7 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 中学3年の夏から菁々祭準備に関わるようになって、もう3年になります。高校2年は準備に関わることのできる最後の年でした。放課後にみんなで集まって会議したり、深夜まで作業しながら通話したり。こっちの方がいいとか、いやもっといい案があるとか、そんなことをずっと話し合ったりもして。締切に追われながら作業したのも、もう過去のことになってしまったんだなと感じます。最後のデータ入稿を終えたとき、解放感と虚無感で胸がいっぱいで複雑な気持ちでした。もう1年やりたい、というのが正直な感想です。また同じメンバーでやってみたい。そんな風に思わせてくれるぐらい、楽しくてやりがいに満ちていました。これからの菁々祭のパンフレットを作っていく後輩にエールを込めて。
 
-![菁々祭からの帰り道の筆者の写真](image%2034.png)
+![$菁々祭からの帰り道の筆者の写真](image%2034.png)
 
 最後になりますが、この場をお借りして菁々祭パンフレット制作に関わってくださった全ての方に御礼申し上げます。本当にありがとうございました。
 `,
@@ -1023,13 +1306,13 @@ O さん：このような部活と部活のコラボは自分にとって新た
         date: `2024.09.05`,
         author: `PRパート員 S.K.`,
         topic: `製作セクション`,
-        thumbnail: Image74,
+        thumbnail: Image77,
         thumbnailPath: `src/blogs/60/03/thumbnail.png`,
         images: {
-            "image%201.png": Image70,
-            "image%202.png": Image71,
-            "image%203.png": Image72,
-            "image.png": Image73,
+            "image%201.png": Image73,
+            "image%202.png": Image74,
+            "image%203.png": Image75,
+            "image.png": Image76,
         },
         twitterEmbedded: false,
         description: `
@@ -1058,7 +1341,7 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 ## 天竺薬膳 インド料理 みらん 高の原店
 
-![価格帯は900円～2000円で学校徒歩3分にあるのもおすすめポイントです!](image.png)
+![$価格帯は900円～2000円で学校徒歩3分にあるのもおすすめポイントです!](image.png)
 
 # 作者イチオシの同好会展示3選!
 
@@ -1068,7 +1351,7 @@ O さん：このような部活と部活のコラボは自分にとって新た
 
 MGA同好会という名称では、どのような活動をしているのかが分からないという方が大半でしょうが、部員自作のボードゲームや部誌の配布、今年は推理とロールプレイで謎を解くマーダーミステリーというゲームの「マーダーミステリー体験　菁々殺」を体験することができます。 この同好会の一番の魅力は「体験できるものが多く、全然飽きない」という点に集約されます！ ふだんからボードゲームをしてどうすれば面白いものを作れるのかと考えている人たちの集大成を是非遊んでみてください！
 
-![去年の文化祭での部員の自作ボードゲームの様子](image%201.png)
+![$去年の文化祭での部員の自作ボードゲームの様子](image%201.png)
 
 ## その2 情報研究部
 
@@ -1076,15 +1359,11 @@ MGA同好会という名称では、どのような活動をしているのか�
 
 ![image.png](image%202.png)
 
-情報研究部をおススメする理由は「混雑度と面白さがいい意味で釣り合っていない」という点にあります！ゲームのクオリティはどれもハイレベル、プログラミングもかなり発展的なことができるので、是非行って見てください
-
 ## その3 クイズ研究部
 
 同好会展示の華はクイズ研究部と言わんばかりの盛況具合で、早押しボタンでできるクイズ体験が大人気です。
 
 ![image.png](image%203.png)
-
-# 作者的最強ルート！
 
 ここでは先程紹介したウラワザと、おススメの同好会展示を組み合わせた最強ルートを滞在時間別に2つ紹介していきたいと思います！（タイムテーブルは去年の物で考案しているので、多少変わる可能性がありますのでご了承ください。）
 
@@ -1138,11 +1417,11 @@ MGA同好会という名称では、どのような活動をしているのか�
         date: `2024.09.05`,
         author: `PRパート員 S.Y.`,
         topic: `製作セクション`,
-        thumbnail: Image77,
+        thumbnail: Image80,
         thumbnailPath: `src/blogs/60/04/thumbnail.png`,
         images: {
-            "image%201.png": Image75,
-            "image.png": Image76,
+            "image%201.png": Image78,
+            "image.png": Image79,
         },
         twitterEmbedded: false,
         description: `
@@ -1169,7 +1448,7 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
 
 (彼のYouTube再生リストには2000を超えるフリーBGM動画が保存されているとかいないとか。引き出しの量が恐ろしいです…)
 
-![Blenderの編集画面](image.png)
+![$Blenderの編集画面](image.png)
 
 # Q.逆に難しかったところはありますか？
 
@@ -1183,7 +1462,7 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
 
 計画性を持って頑張って早めに完成させるのがやっぱり一番理想的だなと思いました。動画編集に携わった人間として納期ギリギリになってしまう気持ちは身にしみてわかるのですが...
 
-![After Effects の編集画面。非常に複雑。](image%201.png)
+![$After Effects の編集画面。非常に複雑。](image%201.png)
 
 # おわりに
 
@@ -1197,10 +1476,10 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2024.08.22`,
         author: `パート員 S.Y.`,
         topic: `PRパート`,
-        thumbnail: Image79,
+        thumbnail: Image82,
         thumbnailPath: `src/blogs/60/05/thumbnail.png`,
         images: {
-            "image.png": Image78,
+            "image.png": Image81,
         },
         twitterEmbedded: false,
         description: `
@@ -1227,8 +1506,6 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
 
 ![image.png](image.png)
 
-勢いがあって、とても迫力がありますね！
-
 以上、インタビューでした！
 `,
     },
@@ -1237,11 +1514,11 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2024.08.22`,
         author: `PRパート員 M.K.`,
         topic: `クイズ研究部`,
-        thumbnail: Image82,
+        thumbnail: Image85,
         thumbnailPath: `src/blogs/60/09/thumbnail.png`,
         images: {
-            "image%201.png": Image80,
-            "image.png": Image81,
+            "image%201.png": Image83,
+            "image.png": Image84,
         },
         twitterEmbedded: false,
         description: `
@@ -1256,7 +1533,7 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
 
 「特徴といえばやはり熱心に活動する人が多いと思います。クイズ強い人なんかは部活はもちろん電車や家でクイズの問題集を読み込んだり Anki っていう暗記専用アプリを使って座学に励んでます。」
 
-![普段の活動で使用してる早押し機。73期の方がテレビ番組「東大王」で優勝した際に景品として頂いた大切なもの。](image.png)
+![$普段の活動で使用してる早押し機。73期の方がテレビ番組「東大王」で優勝した際に景品として頂いた大切なもの。](image.png)
 
 # 文化祭の教室展示について
 
@@ -1276,7 +1553,7 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
 
 「今年、関西のクイズ強豪校を文化祭に招待して東大寺学園クイズ研究とガチガチクイズバトルを行います！前回がコロナ前の 2019 年に行われたので、実に 5 年ぶりの開催となります。今のところの参加予定校は、東大寺・灘・西大和・大阪星光の四校です。実は同じメンバーで今年の 5 月、灘校文化祭で同様の招待試合があったのですが、その時は惜しくも西大和に優勝を譲ってしまいました。今回は東大寺勢が活躍してくれるといいですね！詳しくは東大寺学園クイズ研究部の Twitter・X（＠TDJquiz)で告知するので、ぜひフォローしてください!」
 
-![今年5月、灘で行われた招待試合の様子。めっちゃ盛り上がってたので東大寺でもみんなが楽しめる企画にしたいと副部長は語る。](image%201.png)
+![$今年5月、灘で行われた招待試合の様子。めっちゃ盛り上がってたので東大寺でもみんなが楽しめる企画にしたいと副部長は語る。](image%201.png)
 
 # 来場者に向けて一言
 
@@ -1294,10 +1571,10 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2024.08.22`,
         author: `PRパート員 A.Y. & Y.U. & R.N.`,
         topic: `会計パート`,
-        thumbnail: Image84,
+        thumbnail: Image87,
         thumbnailPath: `src/blogs/60/10/thumbnail.png`,
         images: {
-            "image.png": Image83,
+            "image.png": Image86,
         },
         twitterEmbedded: false,
         description: `
@@ -1342,7 +1619,7 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
 
 とのことです。恐らく贔屓はないでしょう！
 
-![大量の予算申請書に頭を悩ませる会計パート長](image.png)
+![$大量の予算申請書に頭を悩ませる会計パート長](image.png)
 
 # まとめ
 
@@ -1356,11 +1633,11 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2024.09.05`,
         author: `PRパート員 S.K.`,
         topic: `製作セクション`,
-        thumbnail: Image87,
+        thumbnail: Image90,
         thumbnailPath: `src/blogs/60/11/thumbnail.png`,
         images: {
-            "image%201.png": Image85,
-            "image.png": Image86,
+            "image%201.png": Image88,
+            "image.png": Image89,
         },
         twitterEmbedded: false,
         description: `
@@ -1391,7 +1668,7 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
 
 「あんまり注目されることは少ないですけど、毎年整理券はすぐ売り切れるし、とても人気だと思います。だからこそ、高いクオリティのものを作らないといけないし、そこは気を引き締めてやらなきゃいけないな、と思います。」
 
-![木材を一から組み立てていく](image.png)
+![$木材を一から組み立てていく](image.png)
 
 # Q.具体的に夏休みの作業の概要を教えてください
 
@@ -1411,7 +1688,7 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
 
 まあでも、毎年だけど、お客さんが来てくれて、すごく怖がったりしているのを見ると、楽しいというか、嬉しいですね。」
 
-![お化け屋敷建設中](image%201.png)
+![$お化け屋敷建設中](image%201.png)
 
 # Q.今年のお化け屋敷の去年と違うところ、見どころを教えてください
 
@@ -1426,6 +1703,352 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
 いかがだったでしょうか。今年度のお化け屋敷もとても面白そうですね。ぜひ皆さん菁々祭に来てくださった際にはぜひお化け屋敷に行ってみてください。整理券を忘れずに。最後にこの記事に関わってくださった皆さんありがとうございました。
 `,
     },
+    "61/01": {
+        title: `最古の部活、歴史部菁史会の文化祭展示にせまる`,
+        date: `2025.05.29`,
+        author: `PRパート員 O.H.`,
+        topic: `歴史部菁史会`,
+        thumbnail: Image97,
+        thumbnailPath: `src/blogs/61/01/thumbnail.jpg`,
+        images: {
+            "1000003281.jpg": Image91,
+            "ann.jpg": Image92,
+            "kami.jpg": Image93,
+            "kaohame2.jpg": Image94,
+            "kareasa.jpg": Image95,
+            "ryouannzii.jpg": Image96,
+        },
+        twitterEmbedded: false,
+        description: `
+現存する部活の中で最も歴史があり、最も歴史に近いこの部活。そんな歴史部の今年の文化祭展示準備がどのように進められているのかを探ってきました。
+`,
+        content: `
+# 去年の文化祭展示を振り返って
+
+去年、ありがたいことに、多くの方々に歴史部の展示へと足を運んでいただきました。
+
+そんな大盛況を呼んだ展示を見ていきましょう。
+
+![kareasa.jpg](kareasa.jpg)
+
+![ryouannzii.jpg](ryouannzii.jpg)
+
+![kaohame2.jpg](kaohame2.jpg)
+
+![kami.jpg](kami.jpg)
+
+とても賑やかで楽しい展示ができたんじゃないかと思っています！
+
+![1000003281.jpg](1000003281.jpg)
+
+## 今年の文化祭展示について
+
+![ann.jpg](ann.jpg)
+
+○○○○の○○です！今大注目のアレと名前が似ているところに建っているアレですよアレ！
+
+答え合わせは文化祭で！ぜひ部員の愛が詰まった歴史部を覗いてみてください！
+`,
+    },
+    "61/02": {
+        title: `全国でも数少ないロケット研究部、その真相に迫る!!`,
+        date: `2025.05.30`,
+        author: `PRパート員 I.L.`,
+        topic: `部活動紹介`,
+        thumbnail: Image99,
+        thumbnailPath: `src/blogs/61/02/thumbnail.png`,
+        images: {
+            "8a8468b7-dca7-41d1-9a1e-af0f3a52acc0.png": Image98,
+            "%E3%83%97%E3%83%A9%E3%83%80%E3%83%B3%E5%88%87%E6%96%AD%E7%94%BB%E5%83%8F.png": Image100,
+            "%E5%A4%A7%E5%9E%8B%E5%B1%95%E7%A4%BA%E7%94%BB%E5%83%8F.png": Image101,
+        },
+        twitterEmbedded: false,
+        description: `
+全国でも数少ないロケット研究部その謎めいた実態を部長に取材してみました！　
+`,
+        content: `
+# そもそもロケット研究部とは？
+
+### 普段の活動や雰囲気について教えて下さい!!
+
+「普段は月一くらいの頻度で発射実験を行っており、できるだけ高く飛ばせるように日々研究と実験を繰り返しています。部員間も仲がよく、縦の繋がりがとても強いように感じます（僕自身後輩からあまり敬語を使ってもらっていません( ；∀；)」
+
+# 文化祭への準備
+
+### 毎年文化祭に向けてどんな準備をしているんですか？
+
+「宇宙に関する大型展示を行っています。2年前はJAXAのHⅡロケット、昨年は宇宙探査機はやぶさ2（下写真）を展示しました。我々ロケット研究部の教室展示のメインとなっています。例年は夏休みの始まりとともに作業を始めていますが、今年はもう少し余裕を持たせたいですね（笑）　今年の展示について？それはまだお答えすることはできませんが、今年も部員一同の総力を結集して素晴らしいものを作りたいと思います。」
+
+![$↑大型展示物に使うプラスチックダンボールを加工する様子](%E3%83%97%E3%83%A9%E3%83%80%E3%83%B3%E5%88%87%E6%96%AD%E7%94%BB%E5%83%8F.png)
+
+![$↑昨年の大型展示　宇宙探査機はやぶさ2の2分の1スケール](%E5%A4%A7%E5%9E%8B%E5%B1%95%E7%A4%BA%E7%94%BB%E5%83%8F.png)
+
+### やっぱりロケット研究部といえば部誌ですよね！
+
+「毎年部員それぞれが興味のあるロケット（宇宙）に関する分野を寄稿してくれています。中には10ページを超える文量の記事まであるので相当な熱量です。すべての記事の編集を終え、9月に入ると製本作業を行います。毎年数百部を刷っているのでかなりの作業です。多くの部員を動員して夜まで作業をします。みんなの気が狂ったように作業をする雰囲気が僕は文化祭の準備のなかで一番好きですね」
+
+![$↑部誌の製本作業の様子](8a8468b7-dca7-41d1-9a1e-af0f3a52acc0.png)
+
+# 今年の文化祭展示
+
+### 今年、ロケ研で新たな取り組みをすると聞いたのですが…
+
+「今年は今までの発射実験や大型展示も行いながら、ロケットの制作体験を本格的に実施しようと思います。僕たちが実際作っているロケットと同じものを作ってもらう体験です。昨年も小規模ながら制作体験を行いましたが、今年はより体験が思い出に残るような工夫をしますので、ぜひ遊びに来てください！」
+
+# 来場者の方々に一言
+
+### 最後に、来場者に向けて一言お願いします！
+
+「今年は例年以上に気合の入った展示をお見せできるよう頑張ります！迫力満点の発射実験や部員たちのこだわりが詰まった大型展示、そして皆さんに楽しんでいただけるような制作体験をお届けしますので、ぜひお越しください!!」
+`,
+    },
+    "61/03": {
+        title: `人気アイドルグループ、TDJ48にインタビュー！`,
+        date: `2025.05.30`,
+        author: `PRパート員 M.H.`,
+        topic: `TDJ48`,
+        thumbnail: Image103,
+        thumbnailPath: `src/blogs/61/03/thumbnail.jpg`,
+        images: {
+            "PXL_20250522_062121454_exported_364_17485933327125.jpg": Image102,
+        },
+        twitterEmbedded: false,
+        description: `
+TDJ48は、例年菁々祭のステージで多くの観客を集めている東大寺学園のアイドルグループで、主に48グループと坂道シリーズの楽曲を踊っています。このインタビューでは、TDJ48歴3年目のグループ長と、2年目のメンバーにTDJ48について語ってもらいました。
+
+![$左端は48のメンバー、中央はグループ長、右端はインタビューに答えてくれたメンバー](PXL_20250522_062121454_exported_364_17485933327125.jpg)
+`,
+        content: `
+# Q.TDJ48は何年からあるんですか？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：今15代目なので、2010年の菁々祭からあります。
+
+# Q.どういうきっかけで作られたんですか？
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：いやちょっと存じ上げない…
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：はじめはAKB48が好きな人が集まって、AKB48の真似をしようということで始まりました。
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：へぇー
+
+### 最近はAKB48以外にも色々踊ってますね。
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：はい。最近は逆にAKB48のほうがが少なくなっています。踊る曲数が増えたことが一因ですね。以前はそんなに踊っていなかったんですけど、最近はおそらく10曲踊るようになりました。今では乃木坂、日向坂、欅坂をメインに踊っています。
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：そもそもAKB48が衰退したこともありますね。
+
+### なぜ曲数が増えたのですか？
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：やはりみんな踊りたい曲がいっぱいあるからじゃないですかね。
+
+# Q.メンバーは何人いるんですか？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：今42人ですね。結構大所帯です。
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：去年から数人増えてます。
+
+# Q.メンバーごとにどんな役職や役割がありますか
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：役職はリーダーかそれ以外だけですね。
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：ほぼそれだけですね。あとは、TDJ48はダンス団体の中で一番ダンスの動きが複雑で、ただ単に振り入れするだけでなくポジションやフォーメーションも大事になってくるので、それらをよく知っている2年目のメンバーが1年目に教える役割をしています。
+
+### リーダーはどんな仕事があるんですか？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：誰がメンバーか管理することと、練習する教室の鍵を借りて教室を開けることと、照明台本をつくることです。
+
+### 照明台本って何ですか？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：体育館でのライブの時に、照明がどのように動くかを書いたものです。僕が実際のライブの動画を参考にしながら書いています。
+
+# Q.練習はどれぐらいの頻度で、何時間やってるんですか？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：練習は週に４回ありますが、自由参加です。１回大体２時間ぐらいです。僕は週２で行ってます。
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：僕も毎回練習の序盤だけ様子見をしに行きますが、本格的に練習するのは基本的に週２です。２年目以上の人は、１年目に教えるために日ごとに入れ替わりながら行っています。
+
+### 練習はどんな雰囲気ですか？
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：とてものびのびと練習しています。あまり真剣な雰囲気ではないです。しかしそのせいで直前にギリギリで詰め込んだりすることになってしまうことはあります。
+
+# Q.衣装はどうやってできるんですか？？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：菁々祭の運営組織の中にPRパートという組織があるのですが、デザインはそこの人がしています。僕たちがそれを文化祭直前に業者に発注して、僕たちのもとに届くという感じです。
+
+# Q.ダンス以外に仕事はありますか？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：ダンス以外の仕事は、さっきの照明台本と、ステージの作成を手伝うことです。
+
+# Q.TDJ48の魅力は何ですか？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：自分が思うのはダンスの難易度の低さですかね。
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：ほかのグループとは違って人数が多いので、個人が上手に踊れなくても、全体の形がきれいだったら隠せるので難易度は低いです。ただ、形をきれいにするにはある程度練習が必要です。
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：あと、E卍ILEや寺マスは知識が必要で、それらが好きな人ぐらいしか入れないけど、TDJ48はとりあえず騒ぎたい人が入れるぐらいに難易度が低いです。
+
+# Q.今までの活動の中で１番楽しかったことは何ですか？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：やっぱり、１番楽しいのは本番に最前列で踊っているときですね。そのときは「輝いてるな」って思います。
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：確かに。人数が多いから、後ろに何人もいる状況で自分が１番前というのはいいですね。
+
+# Q.逆に、１番大変だったことは何ですか？
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：１番大変だったのは、本番直前の全体練習の時ですね。僕が前から指示を出しながら全員が立ち位置交換などでスムーズに動けているのかどうかをチェックしたり、動きを修正したりしたのですが、いろんなところを見なければいけないので大変でした。
+
+### メンバーの側で大変だったことは何ですか。
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：僕はコツコツ練習してきたので、あまり大変ではありませんでした。ただ、立ち位置が変わるときに、周りが正しく移動するかどうかを心配しながら踊るのは少し大変でした。
+
+# 最後に、ファンにメッセージをお願いします
+
+<span style={{ color: "#337EA9" }}>グループ長</span>：絶対盛り上げるので、絶対に来て欲しいです！
+
+<span style={{ color: "#D9730D" }}>メンバー</span>：ファンの皆さん、菁々祭のライブでは盛り上げてください。お願いします。
+
+# 終わりに
+
+いかがだったでしょうか？TDJ48の裏側を垣間見ることができたかと思います。
+
+ぜひライブに行って、’’彼女’’達の１年間の成果を見て盛り上がってください！！
+`,
+    },
+    "61/04": {
+        title: `文化祭で「和太鼓演奏」！？和太鼓同好会とは？`,
+        date: `2025.06.02`,
+        author: `PRパート員 O.H.`,
+        topic: `和太鼓同好会`,
+        thumbnail: Image110,
+        thumbnailPath: `src/blogs/61/04/thumbnail.jpg`,
+        images: {
+            "1000016152.jpg": Image104,
+            "1000016155.jpg": Image105,
+            "1000016162.jpg": Image106,
+            "1000016165.jpg": Image107,
+            "1000016166.jpg": Image108,
+            "1000016168.jpg": Image109,
+        },
+        twitterEmbedded: false,
+        description: `
+あなたが菁々祭にお越しになった当日、門をくぐって最初に見る景色とは一体なんでしょうか？バザー？ロゴモニュメント？はたまたパンフレット？ **そうです、「和太鼓演奏」ですね。** そんな和太鼓演奏について、和太鼓同好会に話を伺いました！
+`,
+        content: `
+# 和太鼓演奏ってそもそもなんですか？
+
+## 菁々祭の華です。
+
+大げさではありません。
+
+和太鼓演奏は、東大寺学園のいわゆるロビーのような場所にあたる **転心殿** の目の前で毎年開催されます(ちなみにインフォメーションセンターもこの転心殿前にあります)。校門を通ってから各教室に向かうには必ずここを通る必要があり、 **毎年たくさんの人が和太鼓演奏に集まる** 、というわけです！
+
+![$ここが「転心殿」。東大寺の大仏にゆかりがある神聖な場所](1000016165.jpg)
+
+# 和太鼓同好会ってふだん何してるの？
+
+さて、そんな華の和太鼓演奏を行っている和太鼓同好会ですが、どんな部活でどんな練習をしているのでしょうか？もしかしたら運動部も顔負けの筋トレを毎日行っているのかも……
+
+好奇心を胸に秘めたまま練習場所の圓融館ホールのドアを開けてみました、すると……
+
+![$思わず「練習しろよ……」と言いたくなるような光景](1000016162.jpg)
+
+## 全員、スマホを見て座ってますね。
+
+どうやらイメージとは裏腹に、すごくゆるい部活のようです。と思ったのも束の間、ちょうど休憩の時間だったようで、部員の一人が不意に太鼓を叩き出すと他の部員も練習を始めました……
+
+![$練習風景、かっこいい……](1000016152.jpg)
+
+最初は一人で勝手に叩いていたのが、他の部員によってパートが補完され、徐々に完成に近づいていくのを見ると、 **思わず鳥肌が立つような迫力に飲み込まれてしまいました……** やはり実際に聴くと太鼓の音色が胸に響きますね。
+
+# 「数年ぶりの新曲です！」
+
+演奏を聞いて胸を躍らせたところで、副部長さんに **インタビュー** をすることにしました(以下、副部長さんを **N** とします)。
+
+![$左がNさん、右は会計のKさん](1000016166.jpg)
+
+「はじめまして！すごい演奏でびっくりしました……」
+
+ **N** 「ありがとうございます〜」
+
+「ここの部員数は何人ですか？また週に何回練習されているんですか？」
+
+ **N** 「19人で、月曜日と木曜日の週２回練習しています。」
+
+「いま演奏した曲はなんという曲ですか？」
+
+ **N** 「『 **颯** (はやて)』という曲です！  **ぼくが作曲して**  高校２年生だけで練習した  **数年ぶりの新曲です！**  」
+
+![$『颯』演奏風景](1000016168.jpg)
+
+「すごい……今年の見どころはなにかありますか？」
+
+ **N** 「今年は、文化祭テーマ『 **分秒** 』にちなんだ **特別な演出** を用意し、またぼくらの引退年ということでいつも以上に張り切って演奏したいと思っています！」
+
+# 新曲は「スマホで作曲」
+
+「新曲についてもっと深く教えていただいても……？」
+
+ **N** 「もちろんです！いま作っている曲は『颯』を含めすべてiPhoneのGarageBandという無料のアプリで **１から作曲しています。** これまでの曲は既存の曲を模倣して使い回してきたのですが、今年 **初めて完全なオリジナル曲を演奏します！** 」
+
+![$新曲「颯」の譜面。とても刻まれています](1000016155.jpg)
+
+「なるほど！ちなみに大会などには出る予定はありますか？」
+
+ **N** 「 **あります！** とはいえ、全国的に見ればまだまだ未熟なので後輩たちにはがんばってほしいです。」
+
+「ありがとうございます！最後に、菁々祭に来場する皆さんに発信したいことはありますか？」
+
+ **N** 「『 **塵すら踊らせ、打ち鳴らせ。** 』(第57回菁々祭より)」
+
+Nさん、ありがとうございました！
+
+# おわりに
+
+最後までお読みいただきありがとうございます！
+
+この記事を読んで少しでも和太鼓演奏や菁々祭に興味を持っていただければ幸いです、菁々祭にお越しになった際にはぜひ和太鼓演奏をご観覧ください！
+`,
+    },
+    "61/05": {
+        title: `多岐にわたって活動する、電子工作部の展示とは！？`,
+        date: `2025.06.05`,
+        author: `PRパート員 M.K.`,
+        topic: `電子工作部`,
+        thumbnail: Image114,
+        thumbnailPath: `src/blogs/61/05/thumbnail.jpg`,
+        images: {
+            "1745711961845.jpg": Image111,
+            "PXL_20250418_064701171.jpg": Image112,
+            "PXL_20250424_070245168.jpg": Image113,
+        },
+        twitterEmbedded: false,
+        description: `
+例年たくさんのお客さんでにぎわう電子工作部ですが、普段はどういった活動をしているのでしょうか？今年予定されている展示の紹介と一緒にしていこうと思います。
+`,
+        content: `
+# 我が部で一番の実績を誇る、ロボコン部門
+
+　東大寺学園電子工作部は、四つの部門に分かれています。まずはそのうちの一つであり、最も輝かしい大会実績を誇るロボコン部門から紹介していきます。
+
+　ロボコン部門はみなさんがNHKで見たりするようないわゆる「電子工作」をする班です。自分たちで木材を切り、機体を組み立て、操縦します。全国大会でベスト16という輝かしい成績をのこし、電子工作部の発展に大きく貢献してきました。当日は、様々な機体を展示する予定です。機体がどのように動くかは、スタッフに聞くと熱心に解説してくれるはずなので、ぜひ聞いてみてください。
+
+![1745711961845.jpg](1745711961845.jpg)
+
+　電子工作班は文化祭に向けて活動する制作団体です。新入生へのはんだ付け体験を毎年行っており、当日はタッチセンサーを使ったもぐらたたきや、美しい図形を描く発光ダイオード群など魅力的な展示を多数作ってお待ちしているとのことです！
+
+# ロボットでサッカー?!ロボカップ班
+
+　「ロボカップは、ラジコンのような人の操作によって動くロボットではなく、自分で考えて動く自律移動型ロボットによる競技会。」（Wikipediaより）とあるように、ロボットたちのサッカー大会に出場しています。部室内の彼らのスペースには3Dプリンターがあり、新入生はよくそれを見て盛り上がります。ほかの部門よりも高度なプログラミングを用いて、勝ち上がるべく頑張っています新規部員絶賛募集中。当日はコートや機体の展示をする予定です。
+
+![PXL_20250418_064701171.jpg](PXL_20250418_064701171.jpg)
+
+　レゴ班は、LEGO社が提供するモーターを使って毎年大会に出場しています。レゴの部品のみを用いて様々なミッションをクリアすることは、かなり変わっていて、おもしろく思うでしょう。文化祭のころには大会が終わり、きっといい結果をつかんでいる（はず）なので、機体がどんな動きをするのか聞いてあげてください！教室ではディスプレイの発光を応用したオセロや大会に出場した機体の展示を予定しています、ぜひお越しください！
+
+　また、当日はモーターであるev3を用いたプログラミング講習会を開催予定です。整理券が必要になるので、参加を希望する場合は配布所に行くことを忘れないようにお気を付けください。
+
+![PXL_20250424_070245168.jpg](PXL_20250424_070245168.jpg)
+`,
+    },
     ...(process.env.NODE_ENV === "development"
         ? {
               "test/01": {
@@ -1433,7 +2056,7 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
                   date: `9999.00.00`,
                   author: `PRパート員 A.A. & A.B. & A.C. & A.D. & A.E. & A.F`,
                   topic: `製作セクション・技術セクション・運営セクション・販売セクション`,
-                  thumbnail: Image88,
+                  thumbnail: Image115,
                   thumbnailPath: `src/blogs/test/01/thumbnail.png`,
                   images: {},
                   twitterEmbedded: true,
@@ -1464,5 +2087,6 @@ YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/w
         : {}),
 };
 export const resourceSize: { [key: string]: number } = {
+    "59/03/番茶党第36号（2022年発行）.pdf": 1159680,
     "test/01/----test----.txt": 127,
 };

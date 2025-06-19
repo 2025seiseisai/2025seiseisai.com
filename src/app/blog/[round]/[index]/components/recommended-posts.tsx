@@ -40,14 +40,14 @@ export default function RecommendedPosts({
         <>
             {recommendedPaths.length > 1 && (
                 <div className="my-[40px] text-pri-black">
-                    <p className="ml-[5dvw] text-xl/normal font-medium first-letter:text-pri-red b:ml-[-10px]">
+                    <p className={"ml-[5dvw] text-xl/normal font-medium first-letter:text-pri-red b:ml-[-10px]"}>
                         ＞ こちらの記事もおすすめ
                     </p>
-                    <div className="mt-[30px] flex justify-center gap-4 md:justify-between max-b:md:justify-evenly">
+                    <div className={"mt-[30px] flex justify-center gap-4 md:justify-between max-b:md:justify-evenly"}>
                         <div>
                             <BlogCardClient round={recommendedPaths[0].round} index={recommendedPaths[0].index} />
                         </div>
-                        <div className="max-md:hidden">
+                        <div className="max-[820px]:hidden">
                             <BlogCardClient round={recommendedPaths[1].round} index={recommendedPaths[1].index} />
                         </div>
                     </div>

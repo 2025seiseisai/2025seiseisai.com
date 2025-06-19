@@ -1,8 +1,6 @@
 "use client";
 import type { StaticImageData } from "next/image";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./list.module.scss";
+import BlogCard from "./blog-card";
 
 export default function BlogList({
     blogs,
@@ -19,25 +17,32 @@ export default function BlogList({
 }) {
     return (
         <>
-            {/* ここに書く */}
-            <p className={styles.example}>ブログ一覧</p>
-            {/* 実装の一例 */}
-            {/* getAllBlogs()でブログの情報を全て取得できる */}
-            {blogs.map((blog) => {
-                // blog.roundで第何回の菁々祭のブログか判別できる
-                return (
-                    <div key={`${blog.round}/${blog.index}`}>
-                        {/* サムネイルはgetThumnailをImageのsrcに渡すことで表示できる */}
-                        <Image src={blog.thumbnail} alt="thumbnail" />
-                        <h1>{blog.title}</h1>
-                        <p>{blog.date}</p>
-                        <p>{blog.author}</p>
-                        <p>{blog.topic}</p>
-                        {/* リンクはLinkを使う */}
-                        <Link href={`/2025/blog/${blog.round}/${blog.index}`}>Read more</Link>
-                    </div>
-                );
-            })}
+            <div className={"mr-auto ml-auto flex max-w-[90svw] flex-wrap justify-around gap-8"}>
+                {blogs.map((blog) => {
+                    return (
+                        <div
+                            key={`${blog.round}/${blog.index}`}
+                            className={
+                                "mb-0 h-68 w-70 max-w-[calc(100svw_-_40px_-_10dvw)] not-md:h-85 not-md:w-87.5 md:mb-4"
+                            }
+                        >
+                            <div className={"md:[transform-origin:top_left] md:transform-[scale(0.8)]"}>
+                                <BlogCard round={blog.round} index={blog.index} />
+                            </div>
+                        </div>
+                    );
+                })}
+                {Array.from({ length: 6 - (blogs.length % 6) }).map((_, i) => {
+                    return (
+                        <span
+                            key={`empty-${i}`}
+                            className={
+                                "w-70 max-w-[calc((100svw_-_40px_-_10dvw)_*_0.8)] not-md:hidden not-md:w-87.5 not-md:max-w-[calc(100svw_-_40px_-_10dvw)]"
+                            }
+                        ></span>
+                    );
+                })}
+            </div>
         </>
     );
 }
