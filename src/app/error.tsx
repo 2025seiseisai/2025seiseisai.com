@@ -1,32 +1,14 @@
 "use client";
+import { NotFound } from "./(notfound)/notfound";
 
-type ErrorProps = {
-    error: Error;
-    reset?: () => void;
-};
-
-export default function ErrorPage({ error, reset }: ErrorProps) {
+export default function ErrorPage() {
     return (
-        <div style={{ padding: "2rem", textAlign: "center", maxWidth: "600px", margin: "auto" }}>
-            <h1>エラーが発生しました</h1>
-            <p>申し訳ありませんが、現在ページを表示することができません。 後ほど再度お試しください。</p>
-            <details style={{ whiteSpace: "pre-wrap", textAlign: "left" }}>{error && error.toString()}</details>
-            {reset && (
-                <button
-                    style={{
-                        marginTop: "1rem",
-                        padding: "0.5rem 1rem",
-                        border: "none",
-                        background: "#0070f3",
-                        color: "#fff",
-                        borderRadius: "4px",
-                        cursor: "pointer",
-                    }}
-                    onClick={() => reset()}
-                >
-                    再試行
-                </button>
-            )}
-        </div>
+        <NotFound
+            code="500"
+            title="Internal Server Error"
+            message1="申し訳ありませんが、ページの表示中にエラーが発生しました。"
+            message2="お手数をおかけしますが、ページを再読み込みするか、"
+            message3="しばらくしてから再度お試しいただきますようお願いいたします。"
+        />
     );
 }

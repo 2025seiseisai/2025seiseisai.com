@@ -1,15 +1,38 @@
 @import "tailwindcss";
 
+@theme {
+    --breakpoint-b: 1000px;
+    --color-pri-red: #de0d22;
+    --color-pri-black: #0b0e0f;
+}
+
 html,
 body {
     max-width: 100svw;
+    scroll-behavior: smooth;
+    line-height: 1.5;
 }
 
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    font-weight: 500;
+}
+main {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 *::selection {
     color: #fff;
     background-color: #de0d2280;
+}
+
+#holy-progress {
+    position: sticky;
+    z-index: 100000000;
 }

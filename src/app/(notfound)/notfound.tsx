@@ -1,10 +1,51 @@
+import Link from "next/link";
+import Back from "./back.svg";
 import styles from "./page.module.scss";
+import ReturnTop from "./ReturnTop.svg";
+import SP_Back from "./sp_back.svg";
 
-export function NotFound() {
+export function NotFound({
+    code,
+    title,
+    message1,
+    message2,
+    message3,
+}: {
+    code: string;
+    title: string;
+    message1: string;
+    message2: string;
+    message3: string;
+}) {
     return (
         <>
-            {/* ここに書く */}
-            <p className={styles.example}>404 Not Found.</p>
+            <div className={styles.content}>
+                <div className={styles.back}>
+                    <Back className={styles.back_image} />
+                    <SP_Back className={styles.sp_back_image} />
+                </div>
+                <div className={styles.container}>
+                    <p className={styles.title}>
+                        <span className={styles.red}>{code[0]}</span>
+                        {code.substring(1)}
+                    </p>
+                    <p className={styles.subtitle}>
+                        <span className={styles.red}>{title[0]}</span>
+                        {title.substring(1)}
+                    </p>
+                    <div className={styles.text_box}>
+                        <p className={styles.text}>{message1}</p>
+                        <p className={styles.text}>
+                            {message2}
+                            <br className={styles.break} />
+                            {message3}
+                        </p>
+                    </div>
+                    <Link href="/2025" className={styles.button_box}>
+                        <ReturnTop className={styles.button} />
+                    </Link>
+                </div>
+            </div>
         </>
     );
 }

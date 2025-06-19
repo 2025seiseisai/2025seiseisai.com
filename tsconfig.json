@@ -18,13 +18,16 @@
                 "name": "next"
             },
             {
-                "name": "typescript-plugin-css-modules"
+                "name": "typescript-plugin-css-modules",
+                "options": {
+                    "additionalData": "@use \"@/impl/_global.scss\" as *;"
+                }
             }
         ],
         "paths": {
             "@/*": ["./src/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/types/svg.d.ts"],
+    "include": ["src/types/svg.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
     "exclude": ["node_modules"]
 }
