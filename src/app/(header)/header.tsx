@@ -31,16 +31,16 @@ function HeaderLink({
     return disabled ? (
         <div className={styles.headerLink}>
             <div className={styles.headerLinkText}>
-                <span className={`${styles.headerLinkTitle1}${styles.disabledHeaderLinkText}`}>{title1}</span>
+                <span className={`${styles.headerLinkTitle1} ${styles.disabledHeaderLinkText}`}>{title1}</span>
             </div>
         </div>
     ) : (
         <Link href={href} className={styles.headerLink} onClick={() => setOpen(false)}>
-            <div className={`${styles.headerLinkText}${styles.headerLinkBack}`}>
+            <div className={`${styles.headerLinkText} ${styles.headerLinkBack}`}>
                 <span className={styles.headerLinkTitle1}>{title1}</span>
                 <span className={styles.headerLinkTitle2}>{title2}</span>
             </div>
-            <div className={`${styles.headerLinkText}${styles.headerLinkFront}`}>
+            <div className={`${styles.headerLinkText} ${styles.headerLinkFront}`}>
                 <span className={styles.headerLinkTitle1}>{title1}</span>
                 <span className={styles.headerLinkTitle2}>{title2}</span>
             </div>
@@ -85,7 +85,7 @@ export function Header() {
 
     return (
         <header className={styles.header}>
-            <div className={`${styles.headerContent}${isOverlapping && !open ? styles.headerContentOverlapping : ""}`}>
+            <div className={`${styles.headerContent} ${isOverlapping && !open ? styles.headerContentOverlapping : ""}`}>
                 <Link href="/2025" className={styles.logoLink}>
                     <Theme className={styles.logo} />
                 </Link>
@@ -105,8 +105,8 @@ export function Header() {
                 </div>
                 <Hamburger open={open} setOpen={setOpenImpl} />
             </div>
-            <div className={`${styles.menuOverlay}${open ? "" : styles.menuOverlayHidden}`}>
-                <div className={`${styles.menuContent}${!open ? styles.menuContentClosed : styles.menuContentOpen}`}>
+            <div className={`${styles.menuOverlay} ${open ? "" : styles.menuOverlayHidden}`}>
+                <div className={`${styles.menuContent} ${!open ? styles.menuContentClosed : styles.menuContentOpen}`}>
                     <div className={styles.menuLinksContainer}>
                         <HeaderLink href="/2025" title1="Top" title2="Webサイトトップページ" setOpen={setOpenImpl} />
                         <HeaderLink
@@ -192,7 +192,7 @@ export function Header() {
                                     href="https://x.com/seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    className={`${styles.snsLink}${styles.linkButton}`}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <XIcon className={styles.snsIcon} />
                                     <p className={styles.snsText}>
@@ -205,7 +205,7 @@ export function Header() {
                                     href="https://www.youtube.com/@seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    className={`${styles.snsLink}${styles.linkButton}`}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <YouTubeIcon className={styles.snsIcon} />
                                     <p className={styles.snsText}>YouTube</p>
@@ -216,7 +216,7 @@ export function Header() {
                                     href="https://www.instagram.com/seiseisai_tdj"
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    className={`${styles.snsLink}${styles.linkButton}`}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <InstagramIcon className={styles.snsIcon} />
                                     <p className={styles.snsText}>Instagram</p>
@@ -228,7 +228,7 @@ export function Header() {
                                 <Link
                                     href="/2025/contact"
                                     onClick={() => setOpenImpl(false)}
-                                    className={`${styles.snsLink}${styles.linkButton}`}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <ContactIcon className={styles.snsIcon} />
                                     <p className={styles.contactText}>お問い合わせ</p>
@@ -238,7 +238,7 @@ export function Header() {
                                 <Link
                                     href="/2025/privacy-policy"
                                     onClick={() => setOpenImpl(false)}
-                                    className={`${styles.snsLink}${styles.linkButton}`}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <PrivacyIcon className={styles.snsIcon} />
                                     <p className={styles.privacyText}>
@@ -252,7 +252,7 @@ export function Header() {
                                 <Link
                                     href="/2025/archives"
                                     onClick={() => setOpenImpl(false)}
-                                    className={`${styles.snsLink}${styles.linkButton}`}
+                                    className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
                                     <ArchiveIcon className={styles.snsIcon} />
                                     <p className={styles.privacyText}>
@@ -267,7 +267,7 @@ export function Header() {
                     </div>
                 </div>
                 <div
-                    className={`${styles.menuBackground}${!open ? styles.menuBackgroundClosed : styles.menuBackgroundOpen}`}
+                    className={`${styles.menuBackground} ${!open ? styles.menuBackgroundClosed : styles.menuBackgroundOpen}`}
                     onClick={() => setOpenImpl(false)}
                 ></div>
             </div>
