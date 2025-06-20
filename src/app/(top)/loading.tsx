@@ -41,6 +41,7 @@ export default function Loading() {
             autoplay={false}
             loop={false}
             className={
+                // eslint-disable-next-line
                 "top_loading_animation h-[125%] w-full transform-[scale(1.35)] transition-[opacity] duration-200"
             }
             style={{ opacity: 0 }}
