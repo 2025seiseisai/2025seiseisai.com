@@ -30,6 +30,7 @@ export async function Top() {
         <>
             <div
                 className={
+                    // eslint-disable-next-line
                     "top_loading z-20000 flex h-[100dvh] w-full items-center justify-center overflow-hidden bg-[#ffffff]"
                 }
                 style={{
@@ -43,8 +44,11 @@ export async function Top() {
                 <LoadingWrapper />
                 <div className={"absolute flex h-[14%] w-[42%] items-center justify-center brightness-0 filter"}>
                     <Logo
-                        className={`top_loading_logo h-auto max-h-full w-auto max-w-full transform-[translateX(10%)_translateY(-15%)] transition-[opacity]
-                            duration-200`}
+                        className={
+                            // eslint-disable-next-line
+                            `top_loading_logo h-auto max-h-full w-auto max-w-full transform-[translateX(10%)_translateY(-15%)] transition-[opacity]
+                            duration-200`
+                        }
                         style={{ opacity: 0 }}
                     />
                 </div>

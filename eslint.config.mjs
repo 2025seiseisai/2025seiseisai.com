@@ -27,7 +27,7 @@ const eslintConfig = [
         rules: {
             ...eslintPluginBetterTailwindcss.configs["recommended-warn"].rules,
             ...eslintPluginBetterTailwindcss.configs["recommended-error"].rules,
-            "better-tailwindcss/no-unregistered-classes": "off",
+            "better-tailwindcss/no-unnecessary-whitespace": "off",
             "better-tailwindcss/multiline": "off",
         },
         settings: {

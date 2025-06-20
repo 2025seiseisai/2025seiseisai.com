@@ -38,6 +38,7 @@
     },
     "stylelint.configFile": "./.stylelintrc",
     "stylelint.validate": ["css", "less", "scss"],
+    "tailwindCSS.lint.cssConflict": "ignore",
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "terminal.integrated.env.windows": {
         "PSExecutionPolicyPreference": "RemoteSigned"

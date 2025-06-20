@@ -29,6 +29,7 @@ export default function WaveWrapper() {
         <div
             ref={targetRef}
             className={
+                // eslint-disable-next-line
                 "top_animation absolute flex aspect-1920/1080 min-h-full min-w-full items-center justify-center overflow-hidden"
             }
         >

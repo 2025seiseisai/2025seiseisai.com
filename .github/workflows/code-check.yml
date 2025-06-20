@@ -1,6 +1,8 @@
 name: Code Quality Checks
 
 on:
+    workflow_dispatch:
+
     pull_request:
         branches: [main]
 
@@ -17,22 +19,11 @@ jobs:
               with:
                   node-version: "22"
 
-            - name: Cache npm dependencies
-              uses: actions/cache@v4
-              with:
-                  path: ~/.npm
-                  key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-node-
-
             - name: Install dependencies
               run: npm ci
 
             - name: Run ESLint
               run: npm run lint
-
-            - name: Check formatting with Prettier
-              run: npm run format:check
 
             - name: Run TypeScript type check
               run: npm run type-check

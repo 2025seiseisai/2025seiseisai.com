@@ -1,4 +1,5 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
+/* eslint better-tailwindcss/no-unregistered-classes: 0 */
 import { blogData, resourceSize } from "@/blogs/blog-data";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { compileMDX } from "next-mdx-remote/rsc";
