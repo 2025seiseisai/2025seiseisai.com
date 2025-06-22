@@ -75,7 +75,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <ToTop />
             <Image src={thumbnail} alt="thumbnail" className={"h-[30svh] w-dvw object-cover object-center"} />
             <h1
-                className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem]/normal font-medium text-pri-red
+                className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem] font-medium text-pri-red
                     b:mt-[30px] b:px-[100px] b:text-center b:text-[2.5rem]/normal`}
             >
                 {title}
@@ -141,12 +141,11 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 </div>
             </article>
             <nav className={"mx-auto my-[40px] w-[90dvw] b:mt-[60px] b:mb-[50px] b:w-[max(750px,56dvw)]"}>
-                <div
-                    className={
-                        "flex items-center justify-center text-xl/normal font-medium text-pri-black transition-opacity hover:opacity-80 b:hidden"
-                    }
-                >
-                    <Link href="/2025/blog" className={"flex items-center justify-center gap-3 text-[18px]"}>
+                <div className={"flex items-center justify-center transition-opacity hover:opacity-80 b:hidden"}>
+                    <Link
+                        href="/2025/blog"
+                        className={"flex items-center justify-center gap-3 text-[18px] font-medium text-pri-black"}
+                    >
                         <Grid className="size-[28px]" />
                         記事一覧へ
                     </Link>
