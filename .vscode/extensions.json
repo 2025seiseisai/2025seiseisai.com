@@ -5,6 +5,7 @@
         "dbaeumer.vscode-eslint",
         "stylelint.vscode-stylelint",
         "bradlc.vscode-tailwindcss",
-        "formulahendry.code-runner"
+        "formulahendry.code-runner",
+        "ritwickdey.liveserver"
     ]
 }
