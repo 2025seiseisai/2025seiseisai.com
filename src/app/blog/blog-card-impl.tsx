@@ -20,8 +20,8 @@ export default function BlogCardImpl({
             href={`/2025/blog/${round}/${index}`}
             prefetch={false}
             className={`${width} @container relative flex h-[350px] flex-initial flex-col items-center justify-between overflow-hidden
-                rounded-[0.625rem] border-2 border-pri-red bg-[#f7f7f7] transition duration-500 ease-in-out hover:scale-102
-                hover:opacity-90`}
+                rounded-[0.625rem] border-2 border-pri-red bg-[#f7f7f7] leading-normal font-normal transition duration-500 ease-in-out
+                hover:scale-102 hover:opacity-90`}
         >
             {!blog && (
                 <div className={"absolute flex h-full w-full items-center justify-center"}>
@@ -56,19 +56,19 @@ export default function BlogCardImpl({
                             <p className="w-max text-[16px] text-pri-red">{blog.date}</p>
                             <p
                                 className={
-                                    "max-w-[100%] truncate rounded-[5px] bg-pri-red px-[6px] text-[14px]/normal text-[#ffffff] @[18.75rem]:max-w-[62%]"
+                                    "max-w-[100%] truncate rounded-[5px] bg-pri-red px-[6px] text-[14px] text-[#ffffff] @[18.75rem]:max-w-[62%]"
                                 }
                             >
                                 ＃{blog.topic}
                             </p>
                         </div>
                         <p
-                            className={`line-clamp-3 h-[81px] w-full text-[18px]/normal text-pri-black @[18.75rem]:line-clamp-2 @[18.75rem]:h-[66px]
-                            @[18.75rem]:text-[22px]/normal`}
+                            className={`line-clamp-3 h-[81px] w-full text-[18px] font-medium text-pri-black @[18.75rem]:line-clamp-2 @[18.75rem]:h-[66px]
+                            @[18.75rem]:text-[22px]`}
                         >
                             {blog.title}
                         </p>
-                        <p className={"w-full truncate text-end text-[15px]/normal text-pri-black"}>{blog.author}</p>
+                        <p className={"w-full truncate text-end text-[15px] text-pri-black"}>{blog.author}</p>
                     </section>
                 </>
             )}
