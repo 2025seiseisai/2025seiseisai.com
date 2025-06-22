@@ -44,7 +44,7 @@ function DownloadButton({ url, filename, filesize }: { url: string; filename: st
         <Link
             download
             href={url}
-            className={`mx-auto mt-[20px] flex h-12.5 w-max max-w-full items-center rounded-[12px] border-3 border-[#dedede] bg-[#fefefe]
+            className={`mx-auto mt-[20px] flex h-12.5 w-max max-w-19/20 items-center rounded-[12px] border-3 border-[#dedede] bg-[#fefefe]
                 text-sm/normal text-pri-black transition-[box-shadow] duration-200 hover:[box-shadow:_#0b0e0f20_0px_0px_5px] b:h-15
                 b:max-w-4/5 b:text-lg/normal`}
         >
@@ -73,7 +73,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
     return (
         <>
             <ToTop />
-            <Image src={thumbnail} alt="thumbnail" className={"h-[30svh] w-[100dvw] object-cover object-center"} />
+            <Image src={thumbnail} alt="thumbnail" className={"h-[30svh] w-dvw object-cover object-center"} />
             <h1
                 className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem]/normal font-medium text-pri-red
                     b:mt-[30px] b:px-[100px] b:text-center b:text-[2.5rem]/normal`}
@@ -92,10 +92,12 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     </div>
                 </div>
                 <div
-                    className={`sticky top-[104px] float-right clear-right mt-[80px] mr-[8dvw] max-h-[calc(100dvh-80px)] w-[20dvw] min-w-[255px]
+                    className={`sticky top-[64px] float-right clear-right mt-[80px] mr-[7dvw] max-h-[calc(100dvh-64px)] w-[20dvw] min-w-[255px]
                         overflow-y-auto leading-[1.5] text-pri-black max-b:hidden`}
                 >
-                    <Table toc={toc} />
+                    <div className={"mt-[40px] mr-[1dvw]"}>
+                        <Table toc={toc} />
+                    </div>
                     <div className={"mt-[30px] flex w-full items-center justify-between"}>
                         <Link href={prevLink} className={"flex items-center text-left text-[18px] hover:opacity-80"}>
                             <div className="text-pri-red select-none">＜&nbsp;</div>
@@ -125,21 +127,20 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 >
                     <div>{description}</div>
                     <hr className={"mx-5 mt-10 border-t-2 border-pri-red max-b:hidden"} />
-                    <div className={"mt-[35px] w-19/20 b:hidden"}>
+                    <div className={"mx-auto mt-[35px] w-19/20 b:hidden"}>
                         <Table toc={toc} />
                     </div>
                     <div>{content}</div>
                 </div>
             </article>
-            <nav className={"mx-auto my-[40px] w-[90svw] b:mt-[60px] b:mb-[50px] b:w-[max(750px,56dvw)]"}>
+            <nav className={"mx-auto my-[40px] w-[90dvw] b:mt-[60px] b:mb-[50px] b:w-[max(750px,56dvw)]"}>
                 <div
-                    id="tolist"
                     className={
                         "flex items-center justify-center text-xl/normal font-medium text-pri-black transition-opacity hover:opacity-80 b:hidden"
                     }
                 >
                     <Link href="/2025/blog" className={"flex items-center justify-center gap-3 text-[18px]"}>
-                        <Grid className="h-[28px] w-[28px]" />
+                        <Grid className="size-[28px]" />
                         記事一覧へ
                     </Link>
                 </div>
