@@ -128,8 +128,9 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     </div>
                 </div>
                 <div
-                    className={`mt-[40px] mr-auto ml-auto w-[90dvw] leading-[1.9] text-pri-black b:mt-[80px] b:ml-[8dvw] b:w-[56dvw]
-                        b:max-w-[calc(84dvw-275px)]`}
+                    className={
+                        "mt-[40px] mr-auto ml-auto w-[90dvw] b:mt-[80px] b:ml-[8dvw] b:w-[56dvw] b:max-w-[calc(84dvw-275px)]"
+                    }
                 >
                     <div>{description}</div>
                     <hr className={"mx-5 mt-10 border-t-2 border-pri-red max-b:hidden"} />
