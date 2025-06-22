@@ -11,7 +11,11 @@
     "files.associations": {
         "*.mdx": "markdown",
         "*.tailwind.css": "tailwindcss",
-        "*.tailwind.scss": "tailwindcss"
+        "*.tailwind.scss": "tailwindcss",
+        ".prettierrc": "jsonc",
+        ".stylelintrc": "jsonc",
+        ".gitignore": "ignore",
+        ".prettierignore": "ignore"
     },
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "always",
