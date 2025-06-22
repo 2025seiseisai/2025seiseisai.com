@@ -97,28 +97,34 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 >
                     <div className={"mt-[40px] mr-[1dvw]"}>
                         <Table toc={toc} />
-                    </div>
-                    <div className={"mt-[30px] flex w-full items-center justify-between"}>
-                        <Link href={prevLink} className={"flex items-center text-left text-[18px] hover:opacity-80"}>
-                            <div className="text-pri-red select-none">＜&nbsp;</div>
-                            <div>前の記事へ</div>
-                        </Link>
-                        <Link href={nextLink} className={"flex items-center text-right text-[18px] hover:opacity-80"}>
-                            <div>次の記事へ</div>
-                            <div className="text-pri-red select-none">&nbsp;＞</div>
-                        </Link>
-                    </div>
-                    <div className="mt-[12px] flex justify-center">
-                        <Link href="/2025/blog">
-                            <div
-                                className={
-                                    "flex w-max items-center gap-[8px] rounded-sm p-1.5 text-pri-black hover:opacity-80"
-                                }
+                        <div className={"mt-[30px] flex w-full items-center justify-between"}>
+                            <Link
+                                href={prevLink}
+                                className={"flex items-center text-left text-[18px] hover:opacity-80"}
                             >
-                                <Grid className="w-[24px]" />
-                                記事一覧へ
-                            </div>
-                        </Link>
+                                <div className="text-pri-red select-none">＜&nbsp;</div>
+                                <div>前の記事へ</div>
+                            </Link>
+                            <Link
+                                href={nextLink}
+                                className={"flex items-center text-right text-[18px] hover:opacity-80"}
+                            >
+                                <div>次の記事へ</div>
+                                <div className="text-pri-red select-none">&nbsp;＞</div>
+                            </Link>
+                        </div>
+                        <div className="mt-[12px] flex justify-center">
+                            <Link href="/2025/blog">
+                                <div
+                                    className={
+                                        "m-1.5 flex w-max items-center gap-[8px] text-pri-black hover:opacity-80"
+                                    }
+                                >
+                                    <Grid className="w-[24px]" />
+                                    記事一覧へ
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <div
