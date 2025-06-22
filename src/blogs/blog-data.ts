@@ -36,89 +36,108 @@ import Image29 from "./59/09/image 7.png";
 import Image30 from "./59/09/image 8.png";
 import Image31 from "./59/09/image.png";
 import Image32 from "./59/09/thumbnail.png";
-import Image33 from "./59/14/image 1.png";
-import Image34 from "./59/14/image 2.png";
-import Image35 from "./59/14/image.png";
-import Image36 from "./59/14/thumbnail.png";
-import Image37 from "./59/15/image 1.png";
-import Image38 from "./59/15/image 10.png";
-import Image39 from "./59/15/image 11.png";
-import Image40 from "./59/15/image 12.png";
-import Image41 from "./59/15/image 13.png";
-import Image42 from "./59/15/image 14.png";
-import Image43 from "./59/15/image 15.png";
-import Image44 from "./59/15/image 16.png";
-import Image45 from "./59/15/image 17.png";
-import Image46 from "./59/15/image 18.png";
-import Image47 from "./59/15/image 19.png";
-import Image48 from "./59/15/image 2.png";
-import Image49 from "./59/15/image 20.png";
-import Image50 from "./59/15/image 21.png";
-import Image51 from "./59/15/image 22.png";
-import Image52 from "./59/15/image 23.png";
-import Image53 from "./59/15/image 24.png";
-import Image54 from "./59/15/image 25.png";
-import Image55 from "./59/15/image 26.png";
-import Image56 from "./59/15/image 27.png";
-import Image57 from "./59/15/image 28.png";
-import Image58 from "./59/15/image 29.png";
-import Image59 from "./59/15/image 3.png";
-import Image60 from "./59/15/image 30.png";
-import Image61 from "./59/15/image 31.png";
-import Image62 from "./59/15/image 32.png";
-import Image63 from "./59/15/image 33.png";
-import Image64 from "./59/15/image 34.png";
-import Image65 from "./59/15/image 4.png";
-import Image66 from "./59/15/image 5.png";
-import Image67 from "./59/15/image 6.png";
-import Image68 from "./59/15/image 7.png";
-import Image69 from "./59/15/image 8.png";
-import Image70 from "./59/15/image 9.png";
-import Image71 from "./59/15/image.png";
-import Image72 from "./59/15/thumbnail.png";
-import Image73 from "./60/03/image 1.png";
-import Image74 from "./60/03/image 2.png";
-import Image75 from "./60/03/image 3.png";
-import Image76 from "./60/03/image.png";
-import Image77 from "./60/03/thumbnail.png";
-import Image78 from "./60/04/image 1.png";
-import Image79 from "./60/04/image.png";
-import Image80 from "./60/04/thumbnail.png";
-import Image81 from "./60/05/image.png";
-import Image82 from "./60/05/thumbnail.png";
-import Image83 from "./60/09/image 1.png";
-import Image84 from "./60/09/image.png";
-import Image85 from "./60/09/thumbnail.png";
-import Image86 from "./60/10/image.png";
-import Image87 from "./60/10/thumbnail.png";
-import Image88 from "./60/11/image 1.png";
-import Image89 from "./60/11/image.png";
-import Image90 from "./60/11/thumbnail.png";
-import Image91 from "./61/01/1000003281.jpg";
-import Image92 from "./61/01/ann.jpg";
-import Image93 from "./61/01/kami.jpg";
-import Image94 from "./61/01/kaohame2.jpg";
-import Image95 from "./61/01/kareasa.jpg";
-import Image96 from "./61/01/ryouannzii.jpg";
-import Image97 from "./61/01/thumbnail.jpg";
-import Image98 from "./61/02/8a8468b7-dca7-41d1-9a1e-af0f3a52acc0.png";
-import Image99 from "./61/02/thumbnail.png";
-import Image100 from "./61/02/プラダン切断画像.png";
-import Image101 from "./61/02/大型展示画像.png";
-import Image102 from "./61/03/PXL_20250522_062121454_exported_364_17485933327125.jpg";
-import Image103 from "./61/03/thumbnail.jpg";
-import Image104 from "./61/04/1000016152.jpg";
-import Image105 from "./61/04/1000016155.jpg";
-import Image106 from "./61/04/1000016162.jpg";
-import Image107 from "./61/04/1000016165.jpg";
-import Image108 from "./61/04/1000016166.jpg";
-import Image109 from "./61/04/1000016168.jpg";
-import Image110 from "./61/04/thumbnail.jpg";
-import Image111 from "./61/05/1745711961845.jpg";
-import Image112 from "./61/05/PXL_20250418_064701171.jpg";
-import Image113 from "./61/05/PXL_20250424_070245168.jpg";
-import Image114 from "./61/05/thumbnail.jpg";
-import Image115 from "./test/01/thumbnail.png";
+import Image33 from "./59/12/image 1.png";
+import Image34 from "./59/12/image 10.png";
+import Image35 from "./59/12/image 2.png";
+import Image36 from "./59/12/image 3.png";
+import Image37 from "./59/12/image 4.png";
+import Image38 from "./59/12/image 5.png";
+import Image39 from "./59/12/image 6.png";
+import Image40 from "./59/12/image 7.png";
+import Image41 from "./59/12/image 8.png";
+import Image42 from "./59/12/image 9.png";
+import Image43 from "./59/12/image.png";
+import Image44 from "./59/12/thumbnail.png";
+import Image45 from "./59/13/image 1.png";
+import Image46 from "./59/13/image 2.png";
+import Image47 from "./59/13/image 3.png";
+import Image48 from "./59/13/image 4.png";
+import Image49 from "./59/13/image 5.png";
+import Image50 from "./59/13/image.png";
+import Image51 from "./59/13/thumbnail.png";
+import Image52 from "./59/14/image 1.png";
+import Image53 from "./59/14/image 2.png";
+import Image54 from "./59/14/image.png";
+import Image55 from "./59/14/thumbnail.png";
+import Image56 from "./59/15/image 1.png";
+import Image57 from "./59/15/image 10.png";
+import Image58 from "./59/15/image 11.png";
+import Image59 from "./59/15/image 12.png";
+import Image60 from "./59/15/image 13.png";
+import Image61 from "./59/15/image 14.png";
+import Image62 from "./59/15/image 15.png";
+import Image63 from "./59/15/image 16.png";
+import Image64 from "./59/15/image 17.png";
+import Image65 from "./59/15/image 18.png";
+import Image66 from "./59/15/image 19.png";
+import Image67 from "./59/15/image 2.png";
+import Image68 from "./59/15/image 20.png";
+import Image69 from "./59/15/image 21.png";
+import Image70 from "./59/15/image 22.png";
+import Image71 from "./59/15/image 23.png";
+import Image72 from "./59/15/image 24.png";
+import Image73 from "./59/15/image 25.png";
+import Image74 from "./59/15/image 26.png";
+import Image75 from "./59/15/image 27.png";
+import Image76 from "./59/15/image 28.png";
+import Image77 from "./59/15/image 29.png";
+import Image78 from "./59/15/image 3.png";
+import Image79 from "./59/15/image 30.png";
+import Image80 from "./59/15/image 31.png";
+import Image81 from "./59/15/image 32.png";
+import Image82 from "./59/15/image 33.png";
+import Image83 from "./59/15/image 34.png";
+import Image84 from "./59/15/image 4.png";
+import Image85 from "./59/15/image 5.png";
+import Image86 from "./59/15/image 6.png";
+import Image87 from "./59/15/image 7.png";
+import Image88 from "./59/15/image 8.png";
+import Image89 from "./59/15/image 9.png";
+import Image90 from "./59/15/image.png";
+import Image91 from "./59/15/thumbnail.png";
+import Image92 from "./60/03/image 1.png";
+import Image93 from "./60/03/image 2.png";
+import Image94 from "./60/03/image 3.png";
+import Image95 from "./60/03/image.png";
+import Image96 from "./60/03/thumbnail.png";
+import Image97 from "./60/04/image 1.png";
+import Image98 from "./60/04/image.png";
+import Image99 from "./60/04/thumbnail.png";
+import Image100 from "./60/05/image.png";
+import Image101 from "./60/05/thumbnail.png";
+import Image102 from "./60/09/image 1.png";
+import Image103 from "./60/09/image.png";
+import Image104 from "./60/09/thumbnail.png";
+import Image105 from "./60/10/image.png";
+import Image106 from "./60/10/thumbnail.png";
+import Image107 from "./60/11/image 1.png";
+import Image108 from "./60/11/image.png";
+import Image109 from "./60/11/thumbnail.png";
+import Image110 from "./61/01/1000003281.jpg";
+import Image111 from "./61/01/ann.jpg";
+import Image112 from "./61/01/kami.jpg";
+import Image113 from "./61/01/kaohame2.jpg";
+import Image114 from "./61/01/kareasa.jpg";
+import Image115 from "./61/01/ryouannzii.jpg";
+import Image116 from "./61/01/thumbnail.jpg";
+import Image117 from "./61/02/8a8468b7-dca7-41d1-9a1e-af0f3a52acc0.png";
+import Image118 from "./61/02/thumbnail.png";
+import Image119 from "./61/02/プラダン切断画像.png";
+import Image120 from "./61/02/大型展示画像.png";
+import Image121 from "./61/03/PXL_20250522_062121454_exported_364_17485933327125.jpg";
+import Image122 from "./61/03/thumbnail.jpg";
+import Image123 from "./61/04/1000016152.jpg";
+import Image124 from "./61/04/1000016155.jpg";
+import Image125 from "./61/04/1000016162.jpg";
+import Image126 from "./61/04/1000016165.jpg";
+import Image127 from "./61/04/1000016166.jpg";
+import Image128 from "./61/04/1000016168.jpg";
+import Image129 from "./61/04/thumbnail.jpg";
+import Image130 from "./61/05/1745711961845.jpg";
+import Image131 from "./61/05/PXL_20250418_064701171.jpg";
+import Image132 from "./61/05/PXL_20250424_070245168.jpg";
+import Image133 from "./61/05/thumbnail.jpg";
+import Image134 from "./test/01/thumbnail.png";
 export const blogData: {
     [key: string]: {
         title: string;
@@ -957,17 +976,198 @@ PRパート副パート長](/blog/59/09)
 菁々祭当日、多くの人に写真を撮られながらただそこに立っていたロゴモニュメント。製作にかかわった人全員の心に残っていることでしょう。第59回菁々祭「RESONANCE」への期待が高まります。
 `,
     },
+    "59/12": {
+        title: `グッズが出来るまで【体験談】`,
+        date: `2023.08.25`,
+        author: `PRパート員H.K.`,
+        topic: `製作セクション`,
+        thumbnail: Image44,
+        thumbnailPath: `src/blogs/59/12/thumbnail.png`,
+        images: {
+            "image%201.png": Image33,
+            "image%2010.png": Image34,
+            "image%202.png": Image35,
+            "image%203.png": Image36,
+            "image%204.png": Image37,
+            "image%205.png": Image38,
+            "image%206.png": Image39,
+            "image%207.png": Image40,
+            "image%208.png": Image41,
+            "image%209.png": Image42,
+            "image.png": Image43,
+        },
+        twitterEmbedded: false,
+        description: `
+｢デザイン｣そのものについてや､デザイン用ソフトの使い方に関する知識がほぼ無かった僕が､先輩の助けを大いに借りながら､菁々祭のグッズの1つであるアクリルキーホルダーをデザインした過程を紹介します｡
+`,
+        content: `
+# ・なぜ僕がグッズデザインをすることになったのか
+
+グッズの制作は､PRパート製作セクションが行っており､5月末にDiscord上でデザイン担当者を決める会議が行われました｡残念ながら､僕はその日､用事があって会議に参加できませんでした｡
+
+数日後､家に帰ってDiscordを開いてみると､なんと僕がアクリルキーホルダー(以下 アクキー)のデザイン担当に決定していました!?僕の知らぬ間に......
+
+![$↑家に帰って見たメッセージ｡｢アクキー｣の隣に､僕の名前が......](image.png)
+
+これ以前のデザインたるデザインの経験は､ [菁々祭ホームページのSPECIALページ](https://web.archive.org/web/20231202192505/https://seiseisai.com/2023/special/special.html)上のデザインのうちの1つだけでした｡その時はIllustrator(デザイン用のソフト)の基本操作を覚えるだけで精一杯だった僕に､どうやってグッズデザインをしろと???(泣)
+
+# とりあえず何かを作らないと
+
+去年のアクキーのデザインを見て､とりあえずこういう感じに作ってみよう､ということにしました｡
+
+![$↑去年のアクキーのデザイン｡めちゃ好き｡](image%201.png)
+
+とりあえず最初は､去年のデザインを参考に､中央にロゴを置いて､その周りに文字を置く､という方針で作り始めました｡ 今年のRESONANCEロゴは､流動的で特徴的な形なので､その形を活かしたデザインをしてみることにしました｡
+
+![$↑最初に作ったデザイン｡外側に行くにつれて､円形に近づくようにしている｡](image%202.png)
+
+アクキーの大きさを､今回は5cm×5cmに収める必要があるので､文字が小さすぎると読めなくなってしまいます｡そのあたりも気をつけながらデザインする必要があります｡
+
+![$↑デザイン第2案｡さっきのよりはベターな気がする？](image%203.png)
+
+また､文字を外側に配置しないバージョンも作りました｡
+けど､何か落ち着かない感じがしました｡どうしようもないまま､締め切りが迫ってくる......
+
+# 助けて～
+
+人生､行き詰まったときは､一人で抱えてはいけませんよね(？)｡ということで､先輩に助けを求めることにしました｡
+
+![$↑助けを求めた図｡困ったときは､人に相談するのが大事です｡](image%204.png)
+
+そして､優しい優しい先輩がその夜に通話してくださることになりました｡そこで､根本的に形を変えてみたらどうか､ということになり､今のデザインの原型が出来ました｡
+
+![$↑今のデザインの原型｡もとのデザインから大幅に変更｡
+](image%205.png)
+
+ロゴの特徴的な形を､あえて長方形と組み合わせることで､斬新な形が出来るのではないか､という発想です。
+
+でも､この状態だと､端の白い枠と被っているところの文字が読めなくなっています｡僕は､これまた解決策が見当つかなかったので先輩に解決策を聞いてみたところ､文字の周りをくりぬいたらどうか､というアドバイスをいただきました｡
+
+その後も何かと修正を重ねて､今の最終的なデザインになりました｡
+
+![$↑最終形｡結構満足しています｡](image%206.png)
+
+そして､業者に渡す用のデータを作成して､僕の仕事はおしまいです｡
+
+![$カットライン](image%207.png)
+
+![$デザイン](image%208.png)
+
+![$白版](image%209.png)
+
+※白版とは？
+
+→デザインが透けてしまうのを防ぐ､白インクの層のことです｡アクキーの裏面を見たら､何のことか分かると思います｡
+
+![$↑アクキーの裏側の写真｡これが白版です｡](image%2010.png)
+
+あとは､先輩が業者にデータを送り､発注したら､アクキー完成です｡
+
+# おわりに
+
+こうして､初心者の僕は､無事(？)アクキーデザインを完了しました｡自分のデザインしたグッズが多くの人たちの手に渡る､と考えると､なんだか不思議な気分です｡
+
+ところで､僕はアクキーをデザインしましたが､他にもたくさんのグッズがあります｡[現在､旧Twitterで発表されているもの](https://x.com/seiseisai_tdj/status/1671822217192296448)だけで､Tシャツ･トートバック･ボールペンがあり､これからさらにいくつか追加されます｡ぜひ文化祭当日にでも買っていって下さい！！！
+
+僕が以前書いた記事はこちら↓ ぜひ一緒にどうぞ！
+
+[【迷ってる人必見】菁々祭どこ巡る？体験型展示のすゝめ](/blog/59/02)
+`,
+    },
+    "59/13": {
+        title: `菁々祭を彩る門はどのように作られるのか？`,
+        date: `2023.08.25`,
+        author: `PR パート員 J.N.`,
+        topic: `門セクション`,
+        thumbnail: Image51,
+        thumbnailPath: `src/blogs/59/13/thumbnail.png`,
+        images: {
+            "image%201.png": Image45,
+            "image%202.png": Image46,
+            "image%203.png": Image47,
+            "image%204.png": Image48,
+            "image%205.png": Image49,
+            "image.png": Image50,
+        },
+        twitterEmbedded: false,
+        description: `
+文化祭当日、東大寺学園を訪れた時、鮮やかに作られた門が最初に目に入る人も多いのではないでしょうか？今回はそんな菁々祭の一大シンボルともいえる門を作る門セクションのトップに話を伺いました。
+`,
+        content: `
+# Q.「なぜ門セクションに入られたのでしょうか？」
+
+僕が門セクションに入ったのは、去年の春のことです。第 57 回文化祭の“朱雀門”を見て、誰の目にも留まる大きな門を作ることに憧れたのがきっかけです。去年、今年と、門を作る作業は苦労も多いですが本当に楽しく、入って良かったと思っています。
+
+# Q.「門はどのような工程を経て作られるのでしょうか？」
+
+## 1.題材決め
+
+日本・世界の名建築と言われるような建物をリストアップし、投票やコメントをして絞り込んでいきました。（昨年度）
+
+## 2.設計
+
+自分たちで、1 から門を設計していきます。全工程の中で 1 番と言ってもいいくらい、大変な作業です。
+
+## 3.模型作り
+
+設計図をもとに、小さな木材を使って 10 分の 1 ほどの模型を作ります。予想以上に楽しいものです。
+
+## 4.木材の切り出し＆やすりがけ
+
+![image.png](image.png)
+
+## 5.ペンキ塗り
+
+![image.png](image%201.png)
+
+## 6.パーツごとに組み立て
+
+![image.png](image%202.png)
+
+## 7.円形広場での組み立て
+
+![image.png](image%203.png)
+
+## 8.当日
+
+![image.png](image%204.png)
+
+## 9.解体
+
+![image.png](image%205.png)
+
+# Q.「今年の門は一体どうなるのでしょうか？」
+
+今回の門の題材は何なのかと度々聞かれますが、今年は題材にしたものはありません。完全オリジナルの門となります！ これは、第 55 回菁々祭のヨット”菁々丸”以来のことです。
+
+また、今年はきちんと文化祭当日までに門が完成するのか心配な方も多いと思います。開催前の完成に向けて、今年は 2 つの工夫をしました。
+
+1 つ目は、木材リストの配布です。切り出しする木材やペンキを塗る木材のリストをセクション員に配布し、次の作業が誰でも分かるようにしました。
+
+そして 2 つ目に設計の簡略化を行いました。これまでは膨大な時間をかけて手書きで設計をしていましたが、今年は 3DCG ソフト(blender)を用いて設計し簡略化しました。
+
+# Q.「後輩に向けて一言お願いします」
+
+この記事を読んで、もしくは僕と同じく門に触発されて、門を作ってみたいと思った人、次は君たちの番です！ぜひ来年は門セクションに入ってください！
+
+# おわりに
+
+今年の門にも乞うご期待！
+
+また、菁々祭には門以外にも様々な見どころがあります。楽しんでいってください！
+`,
+    },
     "59/14": {
         title: `音楽部と室内楽部のコラボ?!合同バンドのメンバーに聞く`,
         date: `2023.08.25`,
         author: `PRパート員 K.N`,
         topic: `音楽部・室内楽部`,
-        thumbnail: Image36,
+        thumbnail: Image55,
         thumbnailPath: `src/blogs/59/14/thumbnail.png`,
         images: {
-            "image%201.png": Image33,
-            "image%202.png": Image34,
-            "image.png": Image35,
+            "image%201.png": Image52,
+            "image%202.png": Image53,
+            "image.png": Image54,
         },
         twitterEmbedded: false,
         description: `
@@ -1022,44 +1222,44 @@ O さん：このような部活と部活のコラボは自分にとって新た
         date: `2023.10.08`,
         author: `文化祭実行委員長`,
         topic: `製作セクション`,
-        thumbnail: Image72,
+        thumbnail: Image91,
         thumbnailPath: `src/blogs/59/15/thumbnail.png`,
         images: {
-            "image%201.png": Image37,
-            "image%2010.png": Image38,
-            "image%2011.png": Image39,
-            "image%2012.png": Image40,
-            "image%2013.png": Image41,
-            "image%2014.png": Image42,
-            "image%2015.png": Image43,
-            "image%2016.png": Image44,
-            "image%2017.png": Image45,
-            "image%2018.png": Image46,
-            "image%2019.png": Image47,
-            "image%202.png": Image48,
-            "image%2020.png": Image49,
-            "image%2021.png": Image50,
-            "image%2022.png": Image51,
-            "image%2023.png": Image52,
-            "image%2024.png": Image53,
-            "image%2025.png": Image54,
-            "image%2026.png": Image55,
-            "image%2027.png": Image56,
-            "image%2028.png": Image57,
-            "image%2029.png": Image58,
-            "image%203.png": Image59,
-            "image%2030.png": Image60,
-            "image%2031.png": Image61,
-            "image%2032.png": Image62,
-            "image%2033.png": Image63,
-            "image%2034.png": Image64,
-            "image%204.png": Image65,
-            "image%205.png": Image66,
-            "image%206.png": Image67,
-            "image%207.png": Image68,
-            "image%208.png": Image69,
-            "image%209.png": Image70,
-            "image.png": Image71,
+            "image%201.png": Image56,
+            "image%2010.png": Image57,
+            "image%2011.png": Image58,
+            "image%2012.png": Image59,
+            "image%2013.png": Image60,
+            "image%2014.png": Image61,
+            "image%2015.png": Image62,
+            "image%2016.png": Image63,
+            "image%2017.png": Image64,
+            "image%2018.png": Image65,
+            "image%2019.png": Image66,
+            "image%202.png": Image67,
+            "image%2020.png": Image68,
+            "image%2021.png": Image69,
+            "image%2022.png": Image70,
+            "image%2023.png": Image71,
+            "image%2024.png": Image72,
+            "image%2025.png": Image73,
+            "image%2026.png": Image74,
+            "image%2027.png": Image75,
+            "image%2028.png": Image76,
+            "image%2029.png": Image77,
+            "image%203.png": Image78,
+            "image%2030.png": Image79,
+            "image%2031.png": Image80,
+            "image%2032.png": Image81,
+            "image%2033.png": Image82,
+            "image%2034.png": Image83,
+            "image%204.png": Image84,
+            "image%205.png": Image85,
+            "image%206.png": Image86,
+            "image%207.png": Image87,
+            "image%208.png": Image88,
+            "image%209.png": Image89,
+            "image.png": Image90,
         },
         twitterEmbedded: false,
         description: `
@@ -1306,13 +1506,13 @@ O さん：このような部活と部活のコラボは自分にとって新た
         date: `2024.09.05`,
         author: `PRパート員 S.K.`,
         topic: `製作セクション`,
-        thumbnail: Image77,
+        thumbnail: Image96,
         thumbnailPath: `src/blogs/60/03/thumbnail.png`,
         images: {
-            "image%201.png": Image73,
-            "image%202.png": Image74,
-            "image%203.png": Image75,
-            "image.png": Image76,
+            "image%201.png": Image92,
+            "image%202.png": Image93,
+            "image%203.png": Image94,
+            "image.png": Image95,
         },
         twitterEmbedded: false,
         description: `
@@ -1417,11 +1617,11 @@ MGA同好会という名称では、どのような活動をしているのか�
         date: `2024.09.05`,
         author: `PRパート員 S.Y.`,
         topic: `製作セクション`,
-        thumbnail: Image80,
+        thumbnail: Image99,
         thumbnailPath: `src/blogs/60/04/thumbnail.png`,
         images: {
-            "image%201.png": Image78,
-            "image.png": Image79,
+            "image%201.png": Image97,
+            "image.png": Image98,
         },
         twitterEmbedded: false,
         description: `
@@ -1476,10 +1676,10 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2024.08.22`,
         author: `パート員 S.Y.`,
         topic: `PRパート`,
-        thumbnail: Image82,
+        thumbnail: Image101,
         thumbnailPath: `src/blogs/60/05/thumbnail.png`,
         images: {
-            "image.png": Image81,
+            "image.png": Image100,
         },
         twitterEmbedded: false,
         description: `
@@ -1514,11 +1714,11 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2024.08.22`,
         author: `PRパート員 M.K.`,
         topic: `クイズ研究部`,
-        thumbnail: Image85,
+        thumbnail: Image104,
         thumbnailPath: `src/blogs/60/09/thumbnail.png`,
         images: {
-            "image%201.png": Image83,
-            "image.png": Image84,
+            "image%201.png": Image102,
+            "image.png": Image103,
         },
         twitterEmbedded: false,
         description: `
@@ -1571,10 +1771,10 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2024.08.22`,
         author: `PRパート員 A.Y. & Y.U. & R.N.`,
         topic: `会計パート`,
-        thumbnail: Image87,
+        thumbnail: Image106,
         thumbnailPath: `src/blogs/60/10/thumbnail.png`,
         images: {
-            "image.png": Image86,
+            "image.png": Image105,
         },
         twitterEmbedded: false,
         description: `
@@ -1633,11 +1833,11 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2024.09.05`,
         author: `PRパート員 S.K.`,
         topic: `製作セクション`,
-        thumbnail: Image90,
+        thumbnail: Image109,
         thumbnailPath: `src/blogs/60/11/thumbnail.png`,
         images: {
-            "image%201.png": Image88,
-            "image.png": Image89,
+            "image%201.png": Image107,
+            "image.png": Image108,
         },
         twitterEmbedded: false,
         description: `
@@ -1708,15 +1908,15 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2025.05.29`,
         author: `PRパート員 O.H.`,
         topic: `歴史部菁史会`,
-        thumbnail: Image97,
+        thumbnail: Image116,
         thumbnailPath: `src/blogs/61/01/thumbnail.jpg`,
         images: {
-            "1000003281.jpg": Image91,
-            "ann.jpg": Image92,
-            "kami.jpg": Image93,
-            "kaohame2.jpg": Image94,
-            "kareasa.jpg": Image95,
-            "ryouannzii.jpg": Image96,
+            "1000003281.jpg": Image110,
+            "ann.jpg": Image111,
+            "kami.jpg": Image112,
+            "kaohame2.jpg": Image113,
+            "kareasa.jpg": Image114,
+            "ryouannzii.jpg": Image115,
         },
         twitterEmbedded: false,
         description: `
@@ -1755,12 +1955,12 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2025.05.30`,
         author: `PRパート員 I.L.`,
         topic: `部活動紹介`,
-        thumbnail: Image99,
+        thumbnail: Image118,
         thumbnailPath: `src/blogs/61/02/thumbnail.png`,
         images: {
-            "8a8468b7-dca7-41d1-9a1e-af0f3a52acc0.png": Image98,
-            "%E3%83%97%E3%83%A9%E3%83%80%E3%83%B3%E5%88%87%E6%96%AD%E7%94%BB%E5%83%8F.png": Image100,
-            "%E5%A4%A7%E5%9E%8B%E5%B1%95%E7%A4%BA%E7%94%BB%E5%83%8F.png": Image101,
+            "8a8468b7-dca7-41d1-9a1e-af0f3a52acc0.png": Image117,
+            "%E3%83%97%E3%83%A9%E3%83%80%E3%83%B3%E5%88%87%E6%96%AD%E7%94%BB%E5%83%8F.png": Image119,
+            "%E5%A4%A7%E5%9E%8B%E5%B1%95%E7%A4%BA%E7%94%BB%E5%83%8F.png": Image120,
         },
         twitterEmbedded: false,
         description: `
@@ -1807,10 +2007,10 @@ TwitterやInstagramなどに投稿する際、最も多くの人がプレビュ�
         date: `2025.05.30`,
         author: `PRパート員 M.H.`,
         topic: `TDJ48`,
-        thumbnail: Image103,
+        thumbnail: Image122,
         thumbnailPath: `src/blogs/61/03/thumbnail.jpg`,
         images: {
-            "PXL_20250522_062121454_exported_364_17485933327125.jpg": Image102,
+            "PXL_20250522_062121454_exported_364_17485933327125.jpg": Image121,
         },
         twitterEmbedded: false,
         description: `
@@ -1919,15 +2119,15 @@ TDJ48は、例年菁々祭のステージで多くの観客を集めている東
         date: `2025.06.02`,
         author: `PRパート員 O.H.`,
         topic: `和太鼓同好会`,
-        thumbnail: Image110,
+        thumbnail: Image129,
         thumbnailPath: `src/blogs/61/04/thumbnail.jpg`,
         images: {
-            "1000016152.jpg": Image104,
-            "1000016155.jpg": Image105,
-            "1000016162.jpg": Image106,
-            "1000016165.jpg": Image107,
-            "1000016166.jpg": Image108,
-            "1000016168.jpg": Image109,
+            "1000016152.jpg": Image123,
+            "1000016155.jpg": Image124,
+            "1000016162.jpg": Image125,
+            "1000016165.jpg": Image126,
+            "1000016166.jpg": Image127,
+            "1000016168.jpg": Image128,
         },
         twitterEmbedded: false,
         description: `
@@ -2014,12 +2214,12 @@ Nさん、ありがとうございました！
         date: `2025.06.05`,
         author: `PRパート員 M.K.`,
         topic: `電子工作部`,
-        thumbnail: Image114,
+        thumbnail: Image133,
         thumbnailPath: `src/blogs/61/05/thumbnail.jpg`,
         images: {
-            "1745711961845.jpg": Image111,
-            "PXL_20250418_064701171.jpg": Image112,
-            "PXL_20250424_070245168.jpg": Image113,
+            "1745711961845.jpg": Image130,
+            "PXL_20250418_064701171.jpg": Image131,
+            "PXL_20250424_070245168.jpg": Image132,
         },
         twitterEmbedded: false,
         description: `
@@ -2056,7 +2256,7 @@ Nさん、ありがとうございました！
                   date: `9999.00.00`,
                   author: `PRパート員 A.A. & A.B. & A.C. & A.D. & A.E. & A.F`,
                   topic: `製作セクション・技術セクション・運営セクション・販売セクション`,
-                  thumbnail: Image115,
+                  thumbnail: Image134,
                   thumbnailPath: `src/blogs/test/01/thumbnail.png`,
                   images: {},
                   twitterEmbedded: true,

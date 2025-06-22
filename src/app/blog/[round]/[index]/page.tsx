@@ -92,7 +92,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     </div>
                 </div>
                 <div
-                    className={`sticky top-[104px] right-[8dvw] float-right clear-right mt-[80px] max-h-[calc(100dvh-80px)] w-[20dvw] min-w-[255px]
+                    className={`sticky top-[104px] float-right clear-right mt-[80px] mr-[8dvw] max-h-[calc(100dvh-80px)] w-[20dvw] min-w-[255px]
                         overflow-y-auto leading-[1.5] text-pri-black max-b:hidden`}
                 >
                     <Table toc={toc} />
