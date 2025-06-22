@@ -31,8 +31,8 @@ export default function Table({ toc }: { toc: { name: string; id: string }[] }) 
     }, [toc]);
 
     return (
-        <div className={"rounded-[20px] border-3 border-[#dedede] p-[20px] text-pri-black"}>
-            <div className="mb-[5px] text-[19px]/normal font-medium">目次</div>
+        <section className={"rounded-[20px] border-3 border-[#dedede] p-[20px] text-pri-black"}>
+            <h2 className="mb-[5px] text-[19px]/normal font-medium">目次</h2>
             <ul>
                 {toc.map((item) => (
                     <a href={`#${item.id}`} key={item.id}>
@@ -45,6 +45,6 @@ export default function Table({ toc }: { toc: { name: string; id: string }[] }) 
                     </a>
                 ))}
             </ul>
-        </div>
+        </section>
     );
 }

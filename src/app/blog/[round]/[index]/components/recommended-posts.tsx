@@ -43,7 +43,7 @@ export default function RecommendedPosts({
                     <p className={"ml-[5dvw] text-xl/normal font-medium first-letter:text-pri-red b:ml-[-10px]"}>
                         ＞ こちらの記事もおすすめ
                     </p>
-                    <div className={"mt-[30px] flex justify-center gap-4 md:justify-between max-b:md:justify-evenly"}>
+                    <div className={"mt-[30px] flex justify-center gap-4 min-[820px]:justify-evenly b:justify-between"}>
                         <div>
                             <BlogCardClient round={recommendedPaths[0].round} index={recommendedPaths[0].index} />
                         </div>

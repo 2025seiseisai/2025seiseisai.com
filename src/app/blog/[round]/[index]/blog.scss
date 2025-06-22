@@ -2,11 +2,10 @@ $pri-red: #de0d22;
 $pri-black: #0b0e0f;
 $breakpoint-b: 1000px;
 
+// テキストのスタイル
 article {
     font-size: 1rem;
     line-height: 1.9;
-
-    // テキストのスタイル
     color: $pri-black;
     word-break: break-all;
 }

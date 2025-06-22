@@ -27,7 +27,7 @@ export function ToTop() {
     return (
         <div
             className={`fixed bottom-[50px] left-[calc(100lvw-80px-clamp(30px,7svw,60px))] z-1 size-[clamp(30px,7svw,60px)] cursor-pointer
-                rounded-full bg-pri-red transition not-b:hidden hover:brightness-120 ${hidden ? "pointer-events-none opacity-0" : ""}`}
+                rounded-full bg-pri-red transition hover:brightness-120 max-b:hidden ${hidden ? "pointer-events-none opacity-0" : ""}`}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
             <ArrowUp className="size-full" />
