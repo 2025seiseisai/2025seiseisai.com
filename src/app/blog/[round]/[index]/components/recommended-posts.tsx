@@ -39,10 +39,10 @@ export default function RecommendedPosts({
     return (
         <>
             {recommendedPaths.length > 1 && (
-                <div className="my-[40px] text-pri-black">
-                    <p className={"ml-[5dvw] text-xl/normal font-medium first-letter:text-pri-red b:ml-[-10px]"}>
+                <section className="my-[40px] text-pri-black">
+                    <h2 className={"ml-[5dvw] text-xl/normal font-medium first-letter:text-pri-red b:ml-[-10px]"}>
                         ＞ こちらの記事もおすすめ
-                    </p>
+                    </h2>
                     <div className={"mt-[30px] flex justify-center gap-4 min-[820px]:justify-evenly b:justify-between"}>
                         <div>
                             <BlogCardClient round={recommendedPaths[0].round} index={recommendedPaths[0].index} />
@@ -51,7 +51,7 @@ export default function RecommendedPosts({
                             <BlogCardClient round={recommendedPaths[1].round} index={recommendedPaths[1].index} />
                         </div>
                     </div>
-                </div>
+                </section>
             )}
         </>
     );
