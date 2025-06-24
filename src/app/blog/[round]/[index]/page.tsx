@@ -143,7 +143,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 </div>
             </article>
             <nav className={"mx-auto my-[40px] w-[90dvw] b:mt-[60px] b:mb-[50px] b:w-[max(750px,56dvw)]"}>
-                <div className={"flex items-center justify-center transition-opacity hover:opacity-80 b:hidden"}>
+                <div className={"mx-auto w-max transition-opacity hover:opacity-80 b:hidden"}>
                     <Link
                         href="/2025/blog"
                         className={"flex items-center justify-center gap-3 text-[18px] font-medium text-pri-black"}
