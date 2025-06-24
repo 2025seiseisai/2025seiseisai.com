@@ -83,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <article>
                 <div
                     className={`mt-[20px] mr-auto ml-auto flex w-[90dvw] text-right text-sm/normal text-pri-black b:float-right b:mt-[80px]
-                        b:mr-[9.7dvw] b:block b:w-[20dvw] b:min-w-[255px] b:text-xl/normal`}
+                        b:mr-[9.7dvw] b:mb-[-80px] b:block b:w-[20dvw] b:min-w-[255px] b:text-xl/normal`}
                 >
                     <p className={"text-pri-red max-b:text-start"}>＃{topic}</p>
                     <div className="max-b:ml-auto">
