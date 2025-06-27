@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "deploy": "sh ./scripts/deploy.sh",
-        "dev": "node --env-file=.env.development prepare.mjs && npm install && opener http://localhost:3000 && next dev --turbopack",
+        "deploy": "./scripts/deploy.sh",
+        "dev": "node --env-file=.env.development ./scripts/prepare.mjs && npm install && opener http://localhost:3000 && next dev --turbopack",
         "build": "next build",
         "start": "next start",
         "lint": "next lint && stylelint \"src/**/*.(scss|less|css)\" && prettier --check .",

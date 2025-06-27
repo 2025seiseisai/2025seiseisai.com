@@ -5,7 +5,15 @@ import BlogCardImpl from "../../../blog-card-impl";
 
 import { useEffect, useState } from "react";
 
-export default function BlogCardClient({ round, index }: { round: string; index: string }) {
+export default function BlogCardClient({
+    round,
+    index,
+    showPast = true,
+}: {
+    round: string;
+    index: string;
+    showPast?: boolean;
+}) {
     const [blog, setBlog] = useState<BlogMetadata | undefined>(undefined);
     useEffect(() => {
         (async () => {
@@ -13,5 +21,5 @@ export default function BlogCardClient({ round, index }: { round: string; index:
         })();
     }, [index, round]);
 
-    return <BlogCardImpl round={round} index={index} blog={blog} />;
+    return <BlogCardImpl round={round} index={index} showPast={showPast} blog={blog} />;
 }

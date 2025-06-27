@@ -39,14 +39,11 @@ export default function RecommendedPosts({
     return (
         <>
             {recommendedPaths.length > 1 && (
-                <section className="my-[40px] flex w-full flex-col items-center">
-                    <h2
-                        className={`ml-[min(20%,100svw-320px)] w-full text-xl/normal font-medium text-pri-black first-letter:text-pri-red md:ml-0
-                        md:w-[620px]`}
-                    >
+                <section className="my-[40px] text-pri-black">
+                    <h2 className={"ml-[5dvw] text-xl/normal font-medium first-letter:text-pri-red b:ml-[-10px]"}>
                         ＞ こちらの記事もおすすめ
                     </h2>
-                    <div className={"mt-[30px] flex justify-center gap-[60px]"}>
+                    <div className={"mt-[30px] flex justify-center gap-4 min-[820px]:justify-evenly b:justify-between"}>
                         <div>
                             <BlogCardClient round={recommendedPaths[0].round} index={recommendedPaths[0].index} />
                         </div>
