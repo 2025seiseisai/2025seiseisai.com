@@ -22,7 +22,7 @@ export default function BlogList({
     useEffect(() => {
         const tmp = [...blogsRef.current];
         for (let i = 0; i < tmp.length; i++) {
-            const idx = Math.floor(Math.random() * tmp.length - i) + i;
+            const idx = Math.floor(Math.random() * (tmp.length - i)) + i;
             [tmp[i], tmp[idx]] = [tmp[idx], tmp[i]];
         }
         setShuffledBlogs(tmp);
