@@ -197,7 +197,7 @@ export async function getBlog(
     round: string,
     index: string,
     DownloadButton: (props: { url: string; filename: string; filesize: string }) => React.ReactNode,
-    BlogCard: (props: { round: string; index: string }) => React.ReactNode,
+    BlogCard: (props: any & { round: string; index: string }) => React.ReactNode,
     tweetTheme: "light" | "dark" = "light",
 ): Promise<{
     title: string;

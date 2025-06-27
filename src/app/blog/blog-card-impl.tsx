@@ -4,7 +4,17 @@ import spinnerStyles from "./spinner.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function BlogCardImpl({ round, index, blog }: { round: string; index: string; blog?: BlogMetadata }) {
+export default function BlogCardImpl({
+    round,
+    index,
+    showPast,
+    blog,
+}: {
+    round: string;
+    index: string;
+    showPast: boolean;
+    blog?: BlogMetadata;
+}) {
     return (
         <Link
             href={`/2025/blog/${round}/${index}`}
@@ -27,7 +37,7 @@ export default function BlogCardImpl({ round, index, blog }: { round: string; in
                         className={"h-[145px] w-full object-cover"}
                     />
                     <section className={"flex h-full w-5/6 flex-col items-center justify-center gap-[3px]"}>
-                        {round !== "61" && blog && (
+                        {round !== "61" && blog && showPast && (
                             <div
                                 className={`absolute top-[8px] right-[8px] flex aspect-square size-max items-center justify-center rounded-full border-1
                                 border-solid border-pri-red bg-[#ffffff]/80 p-1 text-[14px]/[1.5] text-pri-red`}
@@ -48,7 +58,7 @@ export default function BlogCardImpl({ round, index, blog }: { round: string; in
                         </div>
                         <h1
                             title={blog.title}
-                            className={"line-clamp-2 h-[54px] w-full text-[18px] font-medium text-pri-black"}
+                            className={"line-clamp-2 h-[54px] w-full text-[18px] font-medium break-all text-pri-black"}
                         >
                             {blog.title}
                         </h1>

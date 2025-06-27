@@ -39,7 +39,7 @@ export default function RecommendedPosts({
     return (
         <>
             {recommendedPaths.length > 1 && (
-                <div className="my-[40px] flex w-full flex-col items-center overflow-hidden">
+                <div className="my-[40px] flex w-full flex-col items-center">
                     <p
                         className={`ml-[min(20%,100svw-320px)] w-full text-xl/normal font-medium text-pri-black first-letter:text-pri-red md:ml-0
                         md:w-[620px]`}
