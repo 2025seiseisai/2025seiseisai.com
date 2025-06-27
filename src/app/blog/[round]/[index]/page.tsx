@@ -12,6 +12,7 @@ import BlogCard from "../../blog-card";
 import { ToTop } from "./components/buttons";
 import RecommendedPosts from "./components/recommended-posts";
 import Table from "./components/table";
+import TableForPC from "./components/table-for-pc";
 
 import "./blog.scss";
 
@@ -75,7 +76,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <ToTop />
             <Image src={thumbnail} alt="thumbnail" className={"h-[30svh] w-dvw object-cover object-center"} />
             <h1
-                className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem] font-medium text-pri-red
+                className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem]/normal font-medium text-pri-red
                     b:mt-[30px] b:px-[100px] b:text-center b:text-[2.5rem]`}
             >
                 {title}
@@ -96,7 +97,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                         overflow-y-auto leading-[1.5] text-pri-black max-b:hidden`}
                 >
                     <div className={"mt-[40px] mr-[1dvw] mb-[10px]"}>
-                        <Table toc={toc} />
+                        <TableForPC toc={toc} />
                         <nav>
                             <div className={"mt-[30px] flex w-full items-center justify-between"}>
                                 <Link
