@@ -31,7 +31,7 @@ export default function BlogList({
     return (
         <>
             <div className="mb-[38px] flex w-full justify-center select-none">
-                <div className="relative h-[36px] w-[min(max(72svw,250px),320px)] md:h-[45px] md:w-[400px]">
+                <div className="relative h-[34px] w-[min(max(72svw,250px),320px)] md:h-[45px] md:w-[400px]">
                     <div className="absolute inset-0 bg-[#0b0e0f] [clip-path:polygon(6%_0,100%_0,94%_100%,0_100%)]"></div>
                     <div className="absolute inset-0 [clip-path:polygon(0%_2px,100%_2px,100%_calc(100%-2px),0_calc(100%-2px))]">
                         <div className="h-full w-full bg-white [clip-path:polygon(calc(6%+2px)_0,calc(100%-2px)_0,calc(94%-2px)_100%,2px_100%)]"></div>
