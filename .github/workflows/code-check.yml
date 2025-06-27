@@ -30,7 +30,7 @@ jobs:
               if: steps.cache-restore.outputs.cache-hit != 'true'
               run: npm ci
 
-            - name: Run ESLint
+            - name: Lint code
               run: npm run lint
 
             - name: Run TypeScript type check

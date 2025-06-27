@@ -7,21 +7,21 @@ import Link from "next/link";
 export default function BlogCardImpl({
     round,
     index,
+    showPast,
     blog,
-    width = "w-[min(350px,calc(100svw-40px))]",
 }: {
     round: string;
     index: string;
+    showPast: boolean;
     blog?: BlogMetadata;
-    width?: string;
 }) {
     return (
         <Link
             href={`/2025/blog/${round}/${index}`}
             prefetch={false}
-            className={`${width} @container relative flex h-[350px] flex-initial flex-col items-center justify-between overflow-hidden
-                rounded-[0.625rem] border-2 border-pri-red bg-[#f7f7f7] leading-normal font-normal transition duration-500 ease-in-out
-                hover:scale-102 hover:opacity-90`}
+            className={`relative flex h-[280px] w-[280px] flex-col items-center justify-between overflow-hidden rounded-[10px] border-2
+                border-pri-red bg-[#f7f7f7] leading-normal font-normal transition duration-500 ease-out hover:scale-[101.5%]
+                hover:bg-[#ffffff] hover:drop-shadow-[0px_3px_10px_rgba(0,0,0,0.1)]`}
         >
             {!blog && (
                 <div className={"absolute flex h-full w-full items-center justify-center"}>
@@ -33,42 +33,38 @@ export default function BlogCardImpl({
                     <Image
                         src={blog.thumbnail}
                         alt="thumbnail"
-                        className={"h-[160px] w-full object-cover @[18.75rem]:h-[195px]"}
+                        quality={3}
+                        className={"h-[145px] w-full object-cover"}
                     />
-                    <section
-                        className={
-                            "flex h-[186px] w-5/6 flex-col items-center justify-center gap-[3px] @[18.75rem]:h-full"
-                        }
-                    >
-                        {round !== "61" && blog && (
+                    <section className={"flex h-full w-5/6 flex-col items-center justify-center gap-[3px]"}>
+                        {round !== "61" && blog && showPast && (
                             <div
                                 className={`absolute top-[8px] right-[8px] flex aspect-square size-max items-center justify-center rounded-full border-1
-                                border-solid border-pri-red bg-[#ffffff]/80 p-1 text-base text-pri-red`}
+                                border-solid border-pri-red bg-[#ffffff]/80 p-1 text-[14px]/[1.5] text-pri-red`}
                             >
                                 過去
                             </div>
                         )}
-                        <div
-                            className={
-                                "flex w-full flex-col items-start justify-between @[18.75rem]:flex-row @[18.75rem]:items-center"
-                            }
-                        >
-                            <p className="w-max text-[16px] text-pri-red">{blog.date}</p>
+                        <div className={"flex w-full items-center justify-between"}>
+                            <p className="w-max text-[15px] text-pri-red">{blog.date}</p>
                             <p
+                                title={blog.topic}
                                 className={
-                                    "max-w-[100%] truncate rounded-[5px] bg-pri-red px-[6px] text-[14px] text-[#ffffff] @[18.75rem]:max-w-[62%]"
+                                    "max-w-[140px] truncate rounded-[5px] bg-pri-red px-[6px] text-[13.5px] text-[#ffffff]"
                                 }
                             >
                                 ＃{blog.topic}
                             </p>
                         </div>
-                        <p
-                            className={`line-clamp-3 h-[81px] w-full text-[18px] font-medium text-pri-black @[18.75rem]:line-clamp-2 @[18.75rem]:h-[66px]
-                            @[18.75rem]:text-[22px]`}
+                        <h1
+                            title={blog.title}
+                            className={"line-clamp-2 h-[54px] w-full text-[18px] font-medium break-all text-pri-black"}
                         >
                             {blog.title}
+                        </h1>
+                        <p title={blog.author} className={"w-full truncate text-end text-[14px] text-pri-black"}>
+                            {blog.author}
                         </p>
-                        <p className={"w-full truncate text-end text-[15px] text-pri-black"}>{blog.author}</p>
                     </section>
                 </>
             )}

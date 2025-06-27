@@ -1,6 +1,6 @@
 import childProcess from "child_process";
 import fs from "fs";
-import extensions from "./.vscode/extensions.json" with { type: "json" };
+import extensions from "../.vscode/extensions.json" with { type: "json" };
 childProcess.exec("code --list-extensions", (error, stdout) => {
     if (error) {
         console.error("Error listing extensions:", error);
@@ -14,8 +14,6 @@ childProcess.exec("code --list-extensions", (error, stdout) => {
         childProcess.exec(`code --install-extension ${extension}`, (error) => {
             if (error) {
                 console.error(`Error installing extension ${extension}:`, error);
-            } else {
-                console.log(`Extension ${extension} installed successfully.`);
             }
         });
     }
