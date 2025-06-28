@@ -18,8 +18,12 @@ export default function BlogList({
 }) {
     const [displaying, setDisplaying] = useState("");
     useEffect(() => {
-        if (sessionStorage.getItem("blog-display") !== null) {
-            setDisplaying(sessionStorage.getItem("blog-display")!);
+        const saved = sessionStorage.getItem("blog-display");
+        if (saved !== null && ["59", "60", "61"].includes(saved)) {
+            setDisplaying(saved);
+        } else {
+            setDisplaying("61");
+            sessionStorage.setItem("blog-display", "61");
         }
     }, []);
     const blogsRef = useRef(blogs);
