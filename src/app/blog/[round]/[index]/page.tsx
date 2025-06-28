@@ -12,6 +12,7 @@ import BlogCard from "../../blog-card";
 import { ToTop } from "./components/buttons";
 import RecommendedPosts from "./components/recommended-posts";
 import Table from "./components/table";
+import TableForPC from "./components/table-for-pc";
 
 import "./blog.scss";
 
@@ -95,15 +96,15 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 />
             </div>
             <h1
-                className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem] font-medium text-pri-red
-                    b:mt-[30px] b:px-[100px] b:text-center b:text-[2.5rem]/normal`}
+                className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem]/normal font-medium text-pri-red
+                    b:mt-[30px] b:px-[100px] b:text-center b:text-[2.5rem]`}
             >
                 {title}
             </h1>
             <article>
                 <div
                     className={`mt-[20px] mr-auto ml-auto flex w-[90dvw] text-right text-sm/normal text-pri-black b:float-right b:mt-[80px]
-                        b:mr-[9.7dvw] b:block b:w-[20dvw] b:min-w-[255px] b:text-xl/normal`}
+                        b:mr-[9.7dvw] b:mb-[-80px] b:block b:w-[20dvw] b:min-w-[255px] b:text-xl/normal`}
                 >
                     <p className={"text-pri-red max-b:text-start"}>＃{topic}</p>
                     <div className="max-b:ml-auto">
@@ -111,42 +112,44 @@ export default async function Page({ params }: { params: Promise<{ round: string
                         <p>{author}</p>
                     </div>
                 </div>
-                <div
-                    className={`sticky top-[64px] float-right clear-right mt-[80px] mr-[7dvw] max-h-[calc(100dvh-64px)] w-[20dvw] min-w-[255px]
-                        overflow-y-auto leading-[1.5] text-pri-black max-b:hidden`}
+                <aside
+                    className={`sticky top-[64px] float-right clear-right mt-[80px] mr-[calc(8dvw-3px)] max-h-[calc(100dvh-64px)] w-[20dvw]
+                        min-w-[255px] overflow-y-auto leading-[1.5] text-pri-black max-b:hidden`}
                 >
-                    <div className={"mt-[40px] mr-[1dvw]"}>
-                        <Table toc={toc} />
-                        <div className={"mt-[30px] flex w-full items-center justify-between"}>
-                            <Link
-                                href={prevLink}
-                                className={"flex items-center text-left text-[18px] hover:opacity-80"}
-                            >
-                                <div className="text-pri-red select-none">＜&nbsp;</div>
-                                <div>前の記事へ</div>
-                            </Link>
-                            <Link
-                                href={nextLink}
-                                className={"flex items-center text-right text-[18px] hover:opacity-80"}
-                            >
-                                <div>次の記事へ</div>
-                                <div className="text-pri-red select-none">&nbsp;＞</div>
-                            </Link>
-                        </div>
-                        <div className="mt-[12px] flex justify-center">
-                            <Link href="/2025/blog">
-                                <div
-                                    className={
-                                        "m-1.5 flex w-max items-center gap-[8px] text-pri-black hover:opacity-80"
-                                    }
+                    <div className={"mt-[40px] mr-[3px] mb-[10px]"}>
+                        <TableForPC toc={toc} />
+                        <nav>
+                            <div className={"mt-[30px] flex w-full items-center justify-between"}>
+                                <Link
+                                    href={prevLink}
+                                    className={"flex items-center text-left text-[18px] hover:opacity-80"}
                                 >
-                                    <Grid className="w-[24px]" />
-                                    記事一覧へ
-                                </div>
-                            </Link>
-                        </div>
+                                    <div className="text-pri-red select-none">＜&nbsp;</div>
+                                    <div>前の記事へ</div>
+                                </Link>
+                                <Link
+                                    href={nextLink}
+                                    className={"flex items-center text-right text-[18px] hover:opacity-80"}
+                                >
+                                    <div>次の記事へ</div>
+                                    <div className="text-pri-red select-none">&nbsp;＞</div>
+                                </Link>
+                            </div>
+                            <div className="mt-[12px] flex justify-center">
+                                <Link href="/2025/blog">
+                                    <div
+                                        className={
+                                            "m-1.5 flex w-max items-center gap-[8px] text-pri-black hover:opacity-80"
+                                        }
+                                    >
+                                        <Grid className="size-[24px]" />
+                                        記事一覧へ
+                                    </div>
+                                </Link>
+                            </div>
+                        </nav>
                     </div>
-                </div>
+                </aside>
                 <div
                     className={
                         "mt-[40px] mr-auto ml-auto w-[90dvw] b:mt-[80px] b:ml-[8dvw] b:w-[56dvw] b:max-w-[calc(84dvw-275px)]"
@@ -161,7 +164,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                 </div>
             </article>
             <nav className={"mx-auto my-[40px] w-[90dvw] b:mt-[60px] b:mb-[50px] b:w-[max(750px,56dvw)]"}>
-                <div className={"flex items-center justify-center transition-opacity hover:opacity-80 b:hidden"}>
+                <div className={"mx-auto w-max transition-opacity hover:opacity-80 b:hidden"}>
                     <Link
                         href="/2025/blog"
                         className={"flex items-center justify-center gap-3 text-[18px] font-medium text-pri-black"}
