@@ -15,6 +15,7 @@ import Table from "./components/table";
 import TableForPC from "./components/table-for-pc";
 
 import "./blog.scss";
+import styles from "./thumbnail.module.scss";
 
 export const dynamicParams = false;
 
@@ -80,18 +81,14 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     alt="thumbnail-blur"
                     quality={5}
                     width={120}
-                    className={
-                        "absolute inset-0 m-auto w-full transform-[scale(1.05)] filter-[blur(40px)_brightness(1.2)_sepia(0.1)]"
-                    }
+                    className={`${styles.back} absolute inset-0 m-auto w-full transform-[scale(1.05)] filter-[blur(40px)_brightness(1.2)_sepia(0.1)]`}
                 />
                 <Image
                     src={thumbnail}
                     alt="thumbnail"
                     quality={70}
                     width={1440}
-                    className={
-                        "absolute inset-0 m-auto h-full w-[min(125svh,70svw)] overflow-hidden object-cover object-center"
-                    }
+                    className={`${styles.thumbnail} absolute inset-0 m-auto h-full overflow-hidden object-cover object-center`}
                     style={{ viewTransitionName: `blog-thumbnail-${round}-${index}` }}
                 />
             </div>

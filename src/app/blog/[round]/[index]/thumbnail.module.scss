@@ -1,0 +1,17 @@
+.thumbnail {
+    width: min(125svh, 70svw);
+}
+
+.back {
+    display: block;
+}
+
+@media (aspect-ratio <= 1414/1000) {
+    .thumbnail {
+        width: 100%;
+    }
+
+    .back {
+        display: none;
+    }
+}
