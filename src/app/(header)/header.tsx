@@ -69,11 +69,7 @@ export function Header() {
             document.body.style.position = "";
             document.body.style.top = "";
             document.body.style.overflowY = "";
-            window.scrollTo({
-                left: 0,
-                top: scrollTop,
-                behavior: "instant",
-            });
+            window.scrollTo(0, scrollTop);
             if (headerRef.current) {
                 headerRef.current.style.position = "";
                 headerRef.current.style.transform = "";

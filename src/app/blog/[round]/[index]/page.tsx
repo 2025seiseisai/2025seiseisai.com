@@ -78,7 +78,8 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <div className="relative h-[min(50svh,71svw)] w-full overflow-hidden">
                 <Image
                     src={thumbnail}
-                    alt="thumbnail-blur"
+                    alt=""
+                    aria-hidden
                     quality={5}
                     width={120}
                     className={`${styles.back} absolute inset-0 m-auto w-full transform-[scale(1.05)] filter-[blur(40px)_brightness(1.2)_sepia(0.1)]`}

@@ -145,7 +145,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     const gaID = process.env.NEXT_PUBLIC_GA_ID;
     return (
         <html lang="ja" className={noto_sans_jp.className}>
-            <body suppressHydrationWarning style={{ width: "100%" }}>
+            <body suppressHydrationWarning>
                 <HolyLoader height="2px" color="#de0d22" boxShadow="0 0 10px #0b0e0f" />
                 <Header />
                 <main>{children}</main>
