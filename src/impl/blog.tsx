@@ -184,15 +184,6 @@ function transformLinks(node: React.ReactNode, round: string, index: string): Re
     return node;
 }
 
-/**
- * @example
- * const { title, date, author, topic, content } = getBlog("60", "04", styles.image_with_caption, styles.table_of_contents);
- *
- * <h1>{title}</h1>
- * <h2>{date}</h2>
- * <h3>{author}</h3>
- * <article className={styles.blog_content}>{content}</article>
- */
 export async function getBlog(
     round: string,
     index: string,
@@ -399,12 +390,12 @@ export async function getBlog(
             if (alt === "" || alt === undefined || alt[0] !== "$")
                 return (
                     <figure className="blog_element">
-                        <Image src={image} alt="image" className="blog_element" />
+                        <Image src={image} alt="image" className="blog_element" quality={50} width={1440} />
                     </figure>
                 );
             return (
                 <figure className="blog_element">
-                    <Image src={image} alt={alt} className="blog_element" />
+                    <Image src={image} alt={alt} className="blog_element" quality={50} width={1440} />
                     <figcaption className="blog_element">{alt.substring(1)}</figcaption>
                 </figure>
             );

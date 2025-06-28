@@ -33,7 +33,8 @@ export default function BlogCardImpl({
                     <Image
                         src={blog.thumbnail}
                         alt="thumbnail"
-                        quality={3}
+                        quality={40}
+                        width={276}
                         className={"h-[145px] w-full object-cover"}
                         style={{ viewTransitionName: `blog-thumbnail-${round}-${index}` }}
                     />
