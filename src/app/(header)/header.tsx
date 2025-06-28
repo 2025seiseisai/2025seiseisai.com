@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Theme from "../(assets)/theme.svg";
 import ArchiveIcon from "./archive.svg";
 import ContactIcon from "./contact.svg";
@@ -51,6 +51,7 @@ function HeaderLink({
 export function Header() {
     const [open, setOpen] = useState(false);
     const [isOverlapping, setIsOverlapping] = useState(true);
+    const headerRef = useRef<HTMLDivElement>(null);
 
     const setOpenImpl = (open: boolean) => {
         setOpen(open);
@@ -59,6 +60,10 @@ export function Header() {
             document.body.style.position = "fixed";
             document.body.style.top = `-${scrollTop}px`;
             document.body.style.overflowY = "scroll";
+            if (headerRef.current) {
+                headerRef.current.style.position = "relative";
+                headerRef.current.style.transform = `translateY(${scrollTop}px)`;
+            }
         } else {
             const scrollTop = -parseInt(document.body.style.top || "0", 10);
             document.body.style.position = "";
@@ -69,6 +74,10 @@ export function Header() {
                 top: scrollTop,
                 behavior: "instant",
             });
+            if (headerRef.current) {
+                headerRef.current.style.position = "";
+                headerRef.current.style.transform = "";
+            }
         }
     };
 
@@ -80,7 +89,7 @@ export function Header() {
     }, [pathname]);
 
     return (
-        <header className={styles.header}>
+        <header ref={headerRef} className={styles.header}>
             <div className={`${styles.headerContent} ${isOverlapping && !open ? styles.headerContentOverlapping : ""}`}>
                 <Link href="/2025" className={styles.logoLink}>
                     <Theme className={styles.logo} />
