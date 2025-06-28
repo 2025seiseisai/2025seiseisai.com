@@ -93,10 +93,10 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     </div>
                 </div>
                 <aside
-                    className={`sticky top-[64px] float-right clear-right mt-[80px] mr-[7dvw] max-h-[calc(100dvh-64px)] w-[20dvw] min-w-[255px]
-                        overflow-y-auto leading-[1.5] text-pri-black max-b:hidden`}
+                    className={`sticky top-[64px] float-right clear-right mt-[80px] mr-[calc(8dvw-3px)] max-h-[calc(100dvh-64px)] w-[20dvw]
+                        min-w-[255px] overflow-y-auto leading-[1.5] text-pri-black max-b:hidden`}
                 >
-                    <div className={"mt-[40px] mr-[1dvw] mb-[10px]"}>
+                    <div className={"mt-[40px] mr-[3px] mb-[10px]"}>
                         <TableForPC toc={toc} />
                         <nav>
                             <div className={"mt-[30px] flex w-full items-center justify-between"}>
