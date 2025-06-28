@@ -73,7 +73,12 @@ export default async function Page({ params }: { params: Promise<{ round: string
     return (
         <>
             <ToTop />
-            <Image src={thumbnail} alt="thumbnail" className={"h-[30svh] w-dvw object-cover object-center"} />
+            <Image
+                src={thumbnail}
+                alt="thumbnail"
+                className={"h-[30svh] w-dvw object-cover object-center"}
+                style={{ viewTransitionName: `blog-thumbnail-${round}-${index}` }}
+            />
             <h1
                 className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem] font-medium text-pri-red
                     b:mt-[30px] b:px-[100px] b:text-center b:text-[2.5rem]/normal`}

@@ -41,19 +41,19 @@ export default function BlogList({
                             md:text-[32px]"
                     >
                         <p
-                            className="h-min w-[29%] cursor-pointer md:transform-[translateY(-2px)]"
+                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70 md:transform-[translateY(-2px)]"
                             onClick={() => setDisplaying("61")}
                         >
                             61<span className="text-[16px] md:text-[24px]">st</span>
                         </p>
                         <p
-                            className="h-min w-[29%] cursor-pointer md:transform-[translateY(-2px)]"
+                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70 md:transform-[translateY(-2px)]"
                             onClick={() => setDisplaying("60")}
                         >
                             60<span className="text-[16px] md:text-[24px]">th</span>
                         </p>
                         <p
-                            className="h-min w-[29%] cursor-pointer md:transform-[translateY(-2px)]"
+                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70 md:transform-[translateY(-2px)]"
                             onClick={() => setDisplaying("59")}
                         >
                             59<span className="text-[16px] md:text-[24px]">th</span>

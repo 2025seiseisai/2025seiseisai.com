@@ -55,24 +55,20 @@ export function Header() {
     const setOpenImpl = (open: boolean) => {
         setOpen(open);
         if (open && document.body.offsetHeight > window.innerHeight) {
-            const div = document.createElement("div");
-            div.style.width = "100px";
-            div.style.height = "100px";
-            div.style.overflow = "scroll";
-            div.style.position = "absolute";
-            div.style.top = "-9999px";
-            document.body.appendChild(div);
-            const scrollbarWidth = div.offsetWidth - div.clientWidth;
-            document.body.removeChild(div);
-            document.body.style.overflow = "hidden";
-            document.body.style.paddingRight = `${scrollbarWidth}px`;
-            document.body.style.backgroundColor = window.matchMedia("(prefers-color-scheme: dark)").matches
-                ? "#2c2c2c"
-                : "#fcfcfc";
+            const scrollTop = window.scrollY;
+            document.body.style.position = "fixed";
+            document.body.style.top = `-${scrollTop}px`;
+            document.body.style.overflowY = "scroll";
         } else {
-            document.body.style.overflow = "auto";
-            document.body.style.paddingRight = "0px";
-            document.body.style.backgroundColor = "white";
+            const scrollTop = -parseInt(document.body.style.top || "0", 10);
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.overflowY = "";
+            window.scrollTo({
+                left: 0,
+                top: scrollTop,
+                behavior: "instant",
+            });
         }
     };
 

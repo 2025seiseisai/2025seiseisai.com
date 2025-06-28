@@ -1,8 +1,8 @@
 import type { BlogMetadata } from "@/impl/blog";
 import spinnerStyles from "./spinner.module.scss";
 
+import { Link } from "next-view-transitions";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function BlogCardImpl({
     round,
@@ -35,6 +35,7 @@ export default function BlogCardImpl({
                         alt="thumbnail"
                         quality={3}
                         className={"h-[145px] w-full object-cover"}
+                        style={{ viewTransitionName: `blog-thumbnail-${round}-${index}` }}
                     />
                     <section className={"flex h-full w-5/6 flex-col items-center justify-center gap-[3px]"}>
                         {round !== "61" && blog && showPast && (
