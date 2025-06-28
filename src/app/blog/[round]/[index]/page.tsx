@@ -15,6 +15,7 @@ import Table from "./components/table";
 import TableForPC from "./components/table-for-pc";
 
 import "./blog.scss";
+import styles from "./thumbnail.module.scss";
 
 export const dynamicParams = false;
 
@@ -74,7 +75,24 @@ export default async function Page({ params }: { params: Promise<{ round: string
     return (
         <>
             <ToTop />
-            <Image src={thumbnail} alt="thumbnail" className={"h-[30svh] w-dvw object-cover object-center"} />
+            <div className="relative h-[min(50svh,71svw)] w-full overflow-hidden">
+                <Image
+                    src={thumbnail}
+                    alt=""
+                    aria-hidden
+                    quality={5}
+                    width={120}
+                    className={`${styles.back} absolute inset-0 m-auto w-full transform-[scale(1.05)] filter-[blur(40px)_brightness(1.2)_sepia(0.1)]`}
+                />
+                <Image
+                    src={thumbnail}
+                    alt="thumbnail"
+                    quality={70}
+                    width={1440}
+                    className={`${styles.thumbnail} absolute inset-0 m-auto h-full overflow-hidden object-cover object-center`}
+                    style={{ viewTransitionName: `blog-thumbnail-${round}-${index}` }}
+                />
+            </div>
             <h1
                 className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem]/normal font-medium text-pri-red
                     b:mt-[30px] b:px-[100px] b:text-center b:text-[2.5rem]`}

@@ -16,7 +16,16 @@ export default function BlogList({
         topic: string;
     }[];
 }) {
-    const [displaying, setDisplaying] = useState("61");
+    const [displaying, setDisplaying] = useState("");
+    useEffect(() => {
+        const saved = sessionStorage.getItem("blog-display");
+        if (saved !== null && ["59", "60", "61"].includes(saved)) {
+            setDisplaying(saved);
+        } else {
+            setDisplaying("61");
+            sessionStorage.setItem("blog-display", "61");
+        }
+    }, []);
     const blogsRef = useRef(blogs);
     const [shuffledBlogs, setShuffledBlogs] = useState<typeof blogs>([]);
     useEffect(() => {
@@ -28,6 +37,10 @@ export default function BlogList({
         setShuffledBlogs(tmp);
     }, [blogsRef]);
     const filteredBlogs = shuffledBlogs.filter((blog) => blog.round === displaying);
+    const setBlogDisplayState = (round: string) => {
+        setDisplaying(round);
+        sessionStorage.setItem("blog-display", round);
+    };
     return (
         <>
             <div className="mb-[38px] flex w-full justify-center select-none">
@@ -41,20 +54,20 @@ export default function BlogList({
                             md:text-[32px]"
                     >
                         <p
-                            className="h-min w-[29%] cursor-pointer md:transform-[translateY(-2px)]"
-                            onClick={() => setDisplaying("61")}
+                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70 md:transform-[translateY(-2px)]"
+                            onClick={() => setBlogDisplayState("61")}
                         >
                             61<span className="text-[16px] md:text-[24px]">st</span>
                         </p>
                         <p
-                            className="h-min w-[29%] cursor-pointer md:transform-[translateY(-2px)]"
-                            onClick={() => setDisplaying("60")}
+                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70 md:transform-[translateY(-2px)]"
+                            onClick={() => setBlogDisplayState("60")}
                         >
                             60<span className="text-[16px] md:text-[24px]">th</span>
                         </p>
                         <p
-                            className="h-min w-[29%] cursor-pointer md:transform-[translateY(-2px)]"
-                            onClick={() => setDisplaying("59")}
+                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70 md:transform-[translateY(-2px)]"
+                            onClick={() => setBlogDisplayState("59")}
                         >
                             59<span className="text-[16px] md:text-[24px]">th</span>
                         </p>
@@ -70,7 +83,7 @@ export default function BlogList({
                                           ? "polygon(calc(35% + 5px) 0,calc(71% - 5px) 0,calc(65% - 5px) 100%,calc(29% + 5px) 100%)"
                                           : displaying == "59"
                                             ? "polygon(calc(64% + 5px) 0,calc(100% - 5px) 0,calc(94% - 5px) 100%,calc(58% + 5px) 100%)"
-                                            : "",
+                                            : "polygon(0 0, 0 0)",
                             }}
                         >
                             <div

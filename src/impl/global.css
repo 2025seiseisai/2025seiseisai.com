@@ -10,17 +10,18 @@
 html,
 body {
     max-width: 100svw;
-    scroll-behavior: smooth;
     line-height: 1.5;
 }
 
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     display: flex;
     flex-direction: column;
+    width: 100%;
     min-height: 100dvh;
+    overflow-y: scroll;
     font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 main {

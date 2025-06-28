@@ -12,13 +12,13 @@
         "clean": "modclean --run",
         "type-check": "tsc --noEmit",
         "update-blogs": "node ./scripts/generate-blog-data.mjs",
-        "browser:chrome": "playwright test browser.test.ts --headed --project=chromium",
-        "browser:firefox": "playwright test browser.test.ts --headed --project=firefox",
-        "browser:safari": "playwright test browser.test.ts --headed --project=webkit",
-        "browser:mobile-chrome": "playwright test browser.test.ts --headed --project=Mobile-Chrome",
-        "browser:mobile-safari": "playwright test browser.test.ts --headed --project=Mobile-Safari",
-        "browser:local-edge": "playwright test browser.test.ts --headed --project=Microsoft-Edge",
-        "browser:local-chrome": "playwright test browser.test.ts --headed --project=Google-Chrome"
+        "browser:chrome": "playwright test browser.test.mjs --headed --project=chromium",
+        "browser:firefox": "playwright test browser.test.mjs --headed --project=firefox",
+        "browser:safari": "playwright test browser.test.mjs --headed --project=webkit",
+        "browser:mobile-chrome": "playwright test browser.test.mjs --headed --project=Mobile-Chrome",
+        "browser:mobile-safari": "playwright test browser.test.mjs --headed --project=Mobile-Safari",
+        "browser:local-edge": "playwright test browser.test.mjs --headed --project=Microsoft-Edge",
+        "browser:local-chrome": "playwright test browser.test.mjs --headed --project=Google-Chrome"
     },
     "dependencies": {
         "@next/third-parties": "^15.3.4",
@@ -29,6 +29,7 @@
         "next": "^15.3.4",
         "next-auth": "^5.0.0-beta.25",
         "next-mdx-remote": "^5.0.0",
+        "next-view-transitions": "file:next-view-transitions-0.3.4.tgz",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "react-tweet": "^3.2.2",

@@ -41,8 +41,8 @@ export default function RecommendedPosts({
             {recommendedPaths.length > 1 && (
                 <section className="my-[40px] flex w-full flex-col items-center">
                     <h2
-                        className={`ml-[min(20%,100svw-320px)] w-full text-xl/normal font-medium text-pri-black first-letter:text-pri-red md:ml-0
-                        md:w-[620px]`}
+                        className={`w-full pl-[min(20%,50svw-160px)] text-xl/normal font-medium text-pri-black first-letter:text-pri-red md:w-[620px]
+                        md:pl-0`}
                     >
                         ＞ こちらの記事もおすすめ
                     </h2>

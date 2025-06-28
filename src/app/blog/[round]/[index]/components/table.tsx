@@ -1,3 +1,5 @@
+"use client";
+
 export default function Table({
     toc,
     activeTitleId = "",
@@ -10,14 +12,23 @@ export default function Table({
             <h2 className="mb-[5px] text-[19px]/normal font-medium">目次</h2>
             <ul>
                 {toc.map((item) => (
-                    <a href={`#${item.id}`} key={item.id}>
-                        <li
+                    <li key={item.id}>
+                        <a
+                            href={`#${item.id}`}
                             className={`mx-[5px] flex w-full text-[14px]/[1.7] transition-all duration-300 before:content-['・'] hover:opacity-75 b:text-[13px]
                             ${item.id === activeTitleId && "bg-[#de0d2221]"}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const target = document.getElementById(item.id);
+                                if (target) {
+                                    history.pushState(null, "", `#${item.id}`);
+                                    target.scrollIntoView({ behavior: "smooth" });
+                                }
+                            }}
                         >
                             <p className="w-full truncate">{item.name}</p>
-                        </li>
-                    </a>
+                        </a>
+                    </li>
                 ))}
             </ul>
         </section>
