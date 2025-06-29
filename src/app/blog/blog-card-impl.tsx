@@ -44,6 +44,7 @@ export default function BlogCardImpl({
                         alt="thumbnail"
                         quality={40}
                         width={276}
+                        height={145}
                         className={"h-[145px] w-full object-cover"}
                     />
                     <section className={"flex h-full w-5/6 flex-col items-center justify-center gap-[3px]"}>
