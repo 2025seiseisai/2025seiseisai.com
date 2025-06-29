@@ -143,6 +143,10 @@
         padding-right: 10%;
         padding-left: 10%;
     }
+
+    @media ((width < 450px) and (height < 550px)) or (height < 500px) {
+        min-height: max(220px, 60svh);
+    }
 }
 
 .headerLink {
@@ -151,7 +155,7 @@
     height: calc(100% / 12);
     line-height: 1.4;
 
-    @media (aspect-ratio >= 1/1) and (width >= 950px) {
+    @media ((aspect-ratio >= 1/1) and (width >= 950px)) or ((width < 450px) and (height < 550px)) or ((width < 950px) and (height < 500px)) {
         width: 46%;
         height: calc(100% / 6);
         margin-right: 4%;
@@ -164,12 +168,17 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
+    @media (not ((aspect-ratio >= 1/1) and (width >= 950px))) and (((width < 450px) and (height < 550px)) or ((width < 950px) and (height < 500px))) {
+        justify-content: center;
+    }
 }
 
 .headerLinkTitle1 {
     font-size: 24px;
     font-weight: 600;
     color: #de0d22;
+    white-space: nowrap;
 
     @media (width < 1200px) {
         font-size: 20px;
@@ -194,6 +203,10 @@
 
     @media (width >= 1440px) and (height >= 750px) {
         font-size: 14px;
+    }
+
+    @media (not ((aspect-ratio >= 1/1) and (width >= 950px))) and (((width < 450px) and (height < 550px)) or ((width < 950px) and (height < 500px))) {
+        display: none;
     }
 }
 
@@ -256,12 +269,6 @@
     @include media(sm) {
         padding-bottom: min(50px, 7svh);
         padding-left: 10%;
-    }
-
-    @include media(lg) {
-        @media (height < 500px) {
-            padding-top: 0;
-        }
     }
 }
 
@@ -404,7 +411,7 @@
     display: flex;
     align-items: center;
     width: 85px;
-    font-size: 16px;
+    font-size: 15px;
     color: #0b0e0f;
 
     @include media(sm) {
@@ -422,6 +429,20 @@
 
         @media (height >= 800px) {
             font-size: 13px;
+        }
+    }
+
+    @include media(lg) {
+        @media (height < 500px) {
+            font-size: 13px;
+        }
+
+        @media (height < 400px) {
+            font-size: 12px;
+        }
+
+        @media (height >= 800px) {
+            font-size: 16px;
         }
     }
 }
@@ -446,6 +467,16 @@
 
         @media (height >= 800px) {
             font-size: 13px;
+        }
+    }
+
+    @include media(lg) {
+        @media (height < 500px) {
+            font-size: 12px;
+        }
+
+        @media (height < 400px) {
+            font-size: 11px;
         }
     }
 }
@@ -477,6 +508,16 @@
             font-size: 13px;
         }
     }
+
+    @include media(lg) {
+        @media (height < 500px) {
+            font-size: 11px;
+        }
+
+        @media (height < 400px) {
+            font-size: 10px;
+        }
+    }
 }
 
 .twitterText {
@@ -491,6 +532,12 @@
     @media (width < 450px) {
         @media (height < 500px) {
             font-size: 9px;
+        }
+    }
+
+    @include media(lg) {
+        @media (height < 500px) {
+            font-size: 10px;
         }
     }
 }
