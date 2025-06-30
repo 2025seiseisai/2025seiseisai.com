@@ -2,12 +2,20 @@ import subprocess
 import sys
 
 
-def run_command(cmd, error_msg):
-  result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-  if result.returncode != 0:
+def run_command(cmd, error_msg, capture_output=False):
+  process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+  output = ""
+  while True:
+    line = process.stdout.readline()
+    if not line and process.poll() is not None:
+      break
+    if line:
+      print(line, end='')
+      output += line
+  if process.wait() != 0:
     print(f"❌ {error_msg}")
     sys.exit(1)
-  return result.stdout.decode()
+  return output if capture_output else ""
 
 def main():
   if len(sys.argv) < 2:
@@ -29,7 +37,7 @@ def main():
   run_command("npm run build", "Build failed")
 
   print("🚀 Starting project...")
-  pm2_list = run_command("pm2 list", "Failed to list PM2 processes")
+  pm2_list = run_command("pm2 list", "Failed to list PM2 processes", capture_output=True)
   if "2025seiseisai" in pm2_list:
     print("🔁 Restarting existing process: 2025seiseisai")
     run_command("pm2 restart 2025seiseisai", "Failed to restart the project")
