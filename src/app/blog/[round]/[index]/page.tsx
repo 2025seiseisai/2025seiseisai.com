@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 import Image from "next/image";
 import Link from "next/link";
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 import DownloadIcon from "./components/download-icon.svg";
 import Grid from "./components/grid.svg";
@@ -84,14 +85,15 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     width={120}
                     className={`${styles.back} absolute inset-0 m-auto w-full transform-[scale(1.05)] filter-[blur(40px)_brightness(1.2)_sepia(0.1)]`}
                 />
-                <Image
-                    src={thumbnail}
-                    alt="thumbnail"
-                    quality={70}
-                    width={1440}
-                    className={`${styles.thumbnail} absolute inset-0 m-auto h-full overflow-hidden object-cover object-center`}
-                    style={{ viewTransitionName: `blog-thumbnail-${round}-${index}` }}
-                />
+                <ViewTransition name={`blog-thumbnail-${round}-${index}`}>
+                    <Image
+                        src={thumbnail}
+                        alt="thumbnail"
+                        quality={70}
+                        width={1440}
+                        className={`${styles.thumbnail} absolute inset-0 m-auto h-full overflow-hidden object-cover object-center`}
+                    />
+                </ViewTransition>
             </div>
             <h1
                 className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem]/normal font-medium text-pri-red
