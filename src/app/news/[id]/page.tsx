@@ -137,9 +137,9 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                     </h1>
                 </div>
                 <div className={"mt-[24px] flex items-center not-md:mt-[20px]"}>
-                    <p className={"text-[20px] not-md:text-[16px]"}>
+                    <time className={"text-[20px] not-md:text-[16px]"} dateTime={`${year}-${month}-${day}`}>
                         {year}.{month}.{day}
-                    </p>
+                    </time>
                     {importance && (
                         <div
                             className={`ml-[12px] flex h-[24px] items-center justify-center rounded-full bg-[#de0d22] pr-[12px] pl-[12px] text-[13px] text-white

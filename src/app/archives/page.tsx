@@ -79,7 +79,7 @@ export default function ArchivesPage() {
             >
                 <span className="text-[#de0d22]">A</span>rchives
             </h1>
-            <p className={"mt-[12px] mr-[20px] ml-[20px] text-[16px] md:mr-auto md:ml-auto md:w-[80%]"}>
+            <p className={"mt-[12px] mr-[20px] ml-[20px] text-[14px] md:mr-auto md:ml-auto md:w-[80%] md:text-[16px]"}>
                 ※都合により、一部のページを非表示としています。ご了承ください。
             </p>
             <div
