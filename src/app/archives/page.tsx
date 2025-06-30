@@ -1,6 +1,5 @@
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
-import Link from "next/link";
 import Image2019 from "./2019.png";
 import Image2020 from "./2020.png";
 import Image2021 from "./2021.png";
@@ -39,11 +38,11 @@ function ArchiveCard({
                     </span>
                 </h2>
                 {link.startsWith("https://seiseisai.com") ? (
-                    <Link href={link} className={"text-[16px] underline md:text-[18px]"} style={{ color }}>
+                    <a href={link} className={"text-[16px] underline md:text-[18px]"} style={{ color }}>
                         {link}
-                    </Link>
+                    </a>
                 ) : (
-                    <Link
+                    <a
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer nofollow"
@@ -54,7 +53,7 @@ function ArchiveCard({
                             {"http" + link.replace("https://web.archive.org/web/", "").split("http")[1]}
                         </span>
                         (Internet Archive)
-                    </Link>
+                    </a>
                 )}
                 {image && (
                     <Image
