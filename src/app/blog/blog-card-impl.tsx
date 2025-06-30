@@ -45,7 +45,7 @@ export default function BlogCardImpl({
                     <section className={"flex h-full w-5/6 flex-col items-center justify-center gap-[3px]"}>
                         {round !== "61" && blog && showPast && (
                             <div
-                                className={`absolute top-[8px] right-[8px] flex aspect-square size-max items-center justify-center rounded-full border-1
+                                className={`absolute top-[8px] right-[8px] flex aspect-square size-max h-auto items-center justify-center rounded-full border-1
                                 border-solid border-pri-red bg-[#ffffff]/80 p-1 text-[14px]/[1.5] text-pri-red`}
                             >
                                 過去
