@@ -3,19 +3,18 @@ import sys
 
 
 def run_command(cmd, error_msg, capture_output=False):
-  process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-  output = ""
-  while True:
-    line = process.stdout.readline()
-    if not line and process.poll() is not None:
-      break
-    if line:
-      print(line, end='')
-      output += line
-  if process.wait() != 0:
-    print(f"❌ {error_msg}")
-    sys.exit(1)
-  return output if capture_output else ""
+  if capture_output:
+    result = subprocess.run(cmd, shell=True, text=True, capture_output=True)
+    if result.returncode != 0:
+      print(f"❌ {error_msg}\n{result.stderr}")
+      sys.exit(1)
+    return result.stdout
+  else:
+    result = subprocess.run(cmd, shell=True)
+    if result.returncode != 0:
+      print(f"❌ {error_msg}")
+      sys.exit(1)
+    return None
 
 def main():
   if len(sys.argv) < 2:
