@@ -159,6 +159,10 @@
     @media ((width < 450px) and (height < 550px)) or (height < 500px) {
         min-height: max(220px, 60dvh);
     }
+
+    @media (height < 350px) {
+        min-height: max(140px, 55dvh);
+    }
 }
 
 .headerLink {
@@ -170,6 +174,12 @@
     @media ((aspect-ratio >= 1/1) and (width >= 950px)) or ((width < 450px) and (height < 550px)) or ((width < 950px) and (height < 500px)) {
         width: 46%;
         height: calc(100% / 6);
+        margin-right: 4%;
+    }
+
+    @media (height < 350px) {
+        width: 21%;
+        height: calc(100% / 3);
         margin-right: 4%;
     }
 }

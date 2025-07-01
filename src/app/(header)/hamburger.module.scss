@@ -2,7 +2,7 @@
     @include media(lg) {
         margin-top: 60px;
         margin-right: 60px;
-        margin-left: -20px;
+        margin-left: calc(min(40px, 8svw) - 60px);
         transform: scale(1.5);
 
         @media (aspect-ratio >= 1/1) and (width >= 950px) {
@@ -23,11 +23,13 @@
     @media (width <= 950px) {
         margin-top: 30px;
         margin-right: calc(8svw - 20px);
+        margin-left: calc(min(40px, 8svw) - (8svw - 20px));
     }
 
     @include media(sm) {
         margin-top: 35px;
         margin-right: 10svw;
+        margin-left: 0;
         transform: scale(1.2);
     }
 }
