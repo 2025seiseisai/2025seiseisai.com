@@ -95,7 +95,7 @@ export default function ArchivesPage() {
                 />
                 <ArchiveCard
                     round="第59回"
-                    theme="Resonance"
+                    theme="RESONANCE"
                     link="https://seiseisai.com/2023"
                     image={Image2023}
                     color="#52CC89"
@@ -109,14 +109,14 @@ export default function ArchivesPage() {
                 />
                 <ArchiveCard
                     round="第57回"
-                    theme="あおによし"
+                    theme="あをによし"
                     link="https://web.archive.org/web/20211011114827/https://seiseisai.com/2021/"
                     image={Image2021}
                     color="#3C2105"
                 />
                 <ArchiveCard
                     round="第56回"
-                    theme="Bright"
+                    theme="bright"
                     link="https://web.archive.org/web/20201101112845/https://www.seiseisai.com/"
                     image={Image2020}
                     color="#F29600"
