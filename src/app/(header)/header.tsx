@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import Theme from "../(assets)/theme.svg";
 import ArchiveIcon from "./archive.svg";
 import ContactIcon from "./contact.svg";
+import HamburgerFallback from "./hamburger-fallback.svg";
 import styles from "./header.module.scss";
 import InstagramIcon from "./instagram.svg";
 import { overlapEvent } from "./overlap-event";
@@ -13,7 +14,16 @@ import PrivacyIcon from "./privacy.svg";
 import XIcon from "./x.svg";
 import YouTubeIcon from "./youtube.svg";
 
-const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
+const Hamburger = dynamic(() => import("./hamburger"), {
+    ssr: false,
+    loading: () => (
+        <div className="z-100000002 mr-[min(40px,8svw)] flex aspect-1/1 h-[30px] w-auto items-center justify-center md:h-[40px]">
+            <div className={"h-2/3 w-2/3 md:h-1/2 md:w-1/2"}>
+                <HamburgerFallback />
+            </div>
+        </div>
+    ),
+});
 
 function HeaderLink({
     href,
@@ -50,7 +60,8 @@ function HeaderLink({
 
 export function Header() {
     const [open, setOpen] = useState(false);
-    const [isOverlapping, setIsOverlapping] = useState(true);
+    const [isOverlapping, setIsOverlapping] = useState(false);
+    const [isMouseOver, setIsMouseOver] = useState(false);
     const headerRef = useRef<HTMLDivElement>(null);
 
     const setOpenImpl = (open: boolean) => {
@@ -85,8 +96,16 @@ export function Header() {
     }, [pathname]);
 
     return (
-        <header ref={headerRef} className={styles.header}>
-            <div className={`${styles.headerContent} ${isOverlapping && !open ? styles.headerContentOverlapping : ""}`}>
+        <header
+            ref={headerRef}
+            className={styles.header}
+            onMouseEnter={() => setIsMouseOver(true)}
+            onMouseLeave={() => setIsMouseOver(false)}
+        >
+            <div className={styles.headerBackground}></div>
+            <div
+                className={`${styles.headerContent} ${isOverlapping && !open && !isMouseOver ? styles.headerContentOverlapping : ""}`}
+            >
                 <Link href="/2025" className={styles.logoLink}>
                     <Theme className={styles.logo} />
                 </Link>
