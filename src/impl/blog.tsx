@@ -61,6 +61,7 @@ export type BlogMetadata = {
  */
 export function getBlogMetadata(round: string, index: string): BlogMetadata {
     const blog = blogData[`${round}/${index}`];
+    console.log(blog.thumbnail.src);
     return {
         title: blog.title,
         date: blog.date,
