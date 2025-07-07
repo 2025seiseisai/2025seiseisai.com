@@ -1,5 +1,5 @@
 import { blogData } from "@/blogs/blog-data";
-import { enumetateParams, getBlog } from "@/impl/blog";
+import { enumerateParams, getBlog } from "@/impl/blog";
 import type { Metadata } from "next";
 
 import Image from "next/image";
@@ -21,7 +21,7 @@ import styles from "./thumbnail.module.scss";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-    return enumetateParams();
+    return enumerateParams();
 }
 
 export async function generateMetadata({
@@ -67,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
         BlogCard,
     );
     // 前のページ・後ろのページへのリンクはここから取得してください
-    const paths = enumetateParams().toSorted();
+    const paths = enumerateParams().toSorted();
     const currentIndex = paths.findIndex((p) => p.round === round && p.index === index);
     const prevPath = currentIndex > 0 ? paths[currentIndex - 1] : paths[paths.length - 1];
     const nextPath = currentIndex < paths.length - 1 ? paths[currentIndex + 1] : paths[0];
