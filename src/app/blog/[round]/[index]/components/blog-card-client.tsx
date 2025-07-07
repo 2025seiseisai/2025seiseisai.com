@@ -1,5 +1,4 @@
 "use client";
-import { getBlogMetadataAction } from "@/actions/blog-actions";
 import type { BlogMetadata } from "@/impl/blog";
 import BlogCardImpl from "../../../blog-card-impl";
 
@@ -17,7 +16,17 @@ export default function BlogCardClient({
     const [blog, setBlog] = useState<BlogMetadata | undefined>(undefined);
     useEffect(() => {
         (async () => {
-            setBlog(await getBlogMetadataAction(round, index));
+            try {
+                const response = await fetch(`/2025/api/blog/${round}/${index}`);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch blog metadata: ${response.statusText}`);
+                }
+                const metadata: BlogMetadata = await response.json();
+                setBlog(metadata);
+            } catch (error) {
+                console.error("Error fetching blog metadata:", error);
+                setBlog(undefined);
+            }
         })();
     }, [index, round]);
 

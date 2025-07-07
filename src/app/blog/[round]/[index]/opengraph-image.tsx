@@ -1,10 +1,10 @@
-import { enumetateParams, getBlogMetadata } from "@/impl/blog";
+import { enumerateParams, getBlogMetadata } from "@/impl/blog";
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 export function generateStaticParams() {
-    return enumetateParams();
+    return enumerateParams();
 }
 
 export const alt = "Thumbnail";
