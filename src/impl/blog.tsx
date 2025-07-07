@@ -61,7 +61,6 @@ export type BlogMetadata = {
  */
 export function getBlogMetadata(round: string, index: string): BlogMetadata {
     const blog = blogData[`${round}/${index}`];
-    console.log(blog.thumbnail.src);
     return {
         title: blog.title,
         date: blog.date,
@@ -78,7 +77,7 @@ export function getBlogMetadata(round: string, index: string): BlogMetadata {
  *     return enumetateParams();
  * }
  */
-export function enumetateParams(): { round: string; index: string }[] {
+export function enumerateParams(): { round: string; index: string }[] {
     return Object.keys(blogData).map((path) => {
         const [round, index] = path.split("/");
         return { round, index };

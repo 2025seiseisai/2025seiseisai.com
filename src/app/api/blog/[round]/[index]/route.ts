@@ -1,10 +1,10 @@
-import { enumetateParams, getBlogMetadata } from "@/impl/blog";
+import { enumerateParams, getBlogMetadata } from "@/impl/blog";
 import { NextRequest, NextResponse } from "next/server";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-    return enumetateParams();
+    return enumerateParams();
 }
 
 export async function GET(request: NextRequest, { params }: { params: Promise<{ round: string; index: string }> }) {
