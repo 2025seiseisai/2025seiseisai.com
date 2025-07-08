@@ -41,7 +41,7 @@ export function NotFound({
                             {message3}
                         </p>
                     </div>
-                    <Link href="/2025" className={styles.button_box}>
+                    <Link href="" className={styles.button_box}>
                         <ReturnTop className={styles.button} />
                     </Link>
                 </div>

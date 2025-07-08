@@ -55,7 +55,7 @@ export default function NewsList({
                                         : "border-[#de0d22]"
                                 } relative flex h-[60px] items-center border-t-[1.5px] text-[16px] transition-[border-color] duration-250 ease-out
                                 not-md:h-[50px]`}
-                                href={`/2025/news/${link}`}
+                                href={`/news/${link}`}
                             >
                                 {importance && (
                                     <div

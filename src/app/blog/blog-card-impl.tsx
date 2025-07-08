@@ -4,7 +4,7 @@ import spinnerStyles from "./spinner.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";
-import { unstable_ViewTransition as ViewTransition } from "react";
+import { unstable_ViewTransition as ViewTransition, useState } from "react";
 
 export default function BlogCardImpl({
     round,
@@ -17,13 +17,15 @@ export default function BlogCardImpl({
     showPast: boolean;
     blog?: BlogMetadata;
 }) {
+    const [useViewTransition, setUseViewTransition] = useState(false);
     return (
         <Link
-            href={`/2025/blog/${round}/${index}`}
+            href={`/blog/${round}/${index}`}
             prefetch={false}
             className={`relative flex h-[280px] w-[280px] flex-col items-center justify-between overflow-hidden rounded-[10px] border-2
                 border-pri-red bg-[#f7f7f7] leading-normal font-normal transition duration-500 ease-out hover:scale-[101.5%]
                 hover:bg-[#ffffff] hover:drop-shadow-[0px_3px_10px_rgba(0,0,0,0.1)]`}
+            onClick={() => setUseViewTransition(true)}
         >
             {!blog && (
                 <div className={"absolute flex h-full w-full items-center justify-center"}>
@@ -32,7 +34,18 @@ export default function BlogCardImpl({
             )}
             {blog && (
                 <>
-                    <ViewTransition name={`blog-thumbnail-${round}-${index}`}>
+                    {useViewTransition ? (
+                        <ViewTransition name={`blog-thumbnail-${round}-${index}`}>
+                            <Image
+                                src={blog.thumbnail}
+                                alt="thumbnail"
+                                quality={40}
+                                width={276}
+                                height={145}
+                                className={"h-[145px] w-full object-cover"}
+                            />
+                        </ViewTransition>
+                    ) : (
                         <Image
                             src={blog.thumbnail}
                             alt="thumbnail"
@@ -41,7 +54,7 @@ export default function BlogCardImpl({
                             height={145}
                             className={"h-[145px] w-full object-cover"}
                         />
-                    </ViewTransition>
+                    )}
                     <section className={"flex h-full w-5/6 flex-col items-center justify-center gap-[3px]"}>
                         {round !== "61" && blog && showPast && (
                             <div

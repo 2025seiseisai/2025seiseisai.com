@@ -153,7 +153,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 <article className="w-full">{mdx.content}</article>
                 <div className={"mt-[32px] flex w-full justify-center not-md:mt-[24px]"}>
                     <Link
-                        href="/2025/news"
+                        href="/news"
                         className={`rounded-[12px] border-[1.5px] pt-[4px] pr-[16px] pb-[4px] pl-[16px] text-[20px] text-[#de0d22] transition-opacity
                             duration-300 not-md:rounded-[8px] not-md:pt-[4px] not-md:pr-[12px] not-md:pb-[3px] not-md:pl-[12px] not-md:text-[16px]
                             hover:opacity-75`}
