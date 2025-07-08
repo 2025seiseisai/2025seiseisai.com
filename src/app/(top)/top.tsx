@@ -157,7 +157,7 @@ export async function Top() {
                         const day = String(item.date.getDate()).padStart(2, "0");
                         return (
                             <Link
-                                href={`/2025/news/${NewsManager.getLink(item._id)}`}
+                                href={`/news/${NewsManager.getLink(item._id)}`}
                                 key={item._id.toString()}
                                 className={styles.news_text}
                             >
@@ -171,7 +171,7 @@ export async function Top() {
                 </div>
 
                 <div className={styles.more_container}>
-                    <Link href="/2025/news" className={styles.more_parents}>
+                    <Link href="/news" className={styles.more_parents}>
                         <MoreAllow className={styles.more_allow} />
                         <div className={styles.more}>
                             <p>More</p>
@@ -201,7 +201,7 @@ export async function Top() {
             <p className={styles.title_3}>Contact</p>
             <p className={styles.title_3_jn}>お問い合わせ</p>
             <p className={styles.contact_text}>菁々祭に関するご質問はお問い合わせページからお願いいたします。</p>
-            <Link href={"/2025/contact"} className={styles.question}>
+            <Link href={"/contact"} className={styles.question}>
                 <Headphone className={styles.headphone} />
                 <p className={styles.question_text}>お問い合わせ</p>
                 <Logout className={styles.logout} />
