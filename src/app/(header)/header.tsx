@@ -129,7 +129,7 @@ export function Header() {
             <div className={`${styles.menuOverlay} ${open ? "" : styles.menuOverlayHidden}`}>
                 <div className={`${styles.menuContent} ${!open ? styles.menuContentClosed : styles.menuContentOpen}`}>
                     <div className={styles.menuLinksContainer}>
-                        <HeaderLink href="" title1="Top" title2="Webサイトトップページ" setOpen={setOpenImpl} />
+                        <HeaderLink href="/" title1="Top" title2="Webサイトトップページ" setOpen={setOpenImpl} />
                         <HeaderLink
                             href="/news"
                             title1="News"
