@@ -51,7 +51,7 @@ export function Footer() {
                         "text-[9px] max-[360px]:mt-[4px] max-[360px]:ml-[25px] max-[360px]:flex max-[360px]:w-[95svw] md:text-[13px]"
                     }
                 >
-                    <Link href="/2025/contact">
+                    <Link href="/contact">
                         <p
                             className={`mt-[32px] transition-[color_padding] duration-300 max-[360px]:mt-0 max-[360px]:mr-[12px] md:mt-[72px] md:hover:pl-[2px]
                                 md:hover:text-[#de0d22]`}
@@ -59,7 +59,7 @@ export function Footer() {
                             {">>お問い合わせ"}
                         </p>
                     </Link>
-                    <Link href="/2025/privacy-policy">
+                    <Link href="/privacy-policy">
                         <p
                             className={
                                 "mt-[4px] transition-[color_padding] duration-300 max-[360px]:mt-0 md:mt-[7px] md:hover:pl-[2px] md:hover:text-[#de0d22]"
@@ -87,7 +87,7 @@ export function Footer() {
                     >
                         Overview
                     </h1>
-                    <FooterLink href="/2025">Top</FooterLink>
+                    <FooterLink href="/">Top</FooterLink>
                     <DisabledFooterLink>
                         <p
                             className={
@@ -97,7 +97,7 @@ export function Footer() {
                             Theme & Logo
                         </p>
                     </DisabledFooterLink>
-                    <FooterLink href="/2025/news">News</FooterLink>
+                    <FooterLink href="/news">News</FooterLink>
                     <DisabledFooterLink>Access</DisabledFooterLink>
                 </span>
                 <span
@@ -128,7 +128,7 @@ export function Footer() {
                     >
                         Contents
                     </h1>
-                    <FooterLink href="/2025/blog">Blog</FooterLink>
+                    <FooterLink href="/blog">Blog</FooterLink>
                     <DisabledFooterLink>Special</DisabledFooterLink>
                     <DisabledFooterLink>Downloads</DisabledFooterLink>
                     <DisabledFooterLink>Gallery</DisabledFooterLink>
