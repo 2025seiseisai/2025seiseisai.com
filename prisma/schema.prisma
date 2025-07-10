@@ -5,7 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -29,13 +30,17 @@ model News {
   title      String
   date       DateTime @default(now())
   importance Boolean  @default(false)
-  content    String
+  content    String   @db.Text
+}
+
+enum GoodsStock {
+  あり
+  少なめ
+  わずか
+  なし
 }
 
 model Goods {
-  id           String @id @default(cuid())
-  name         String
-  price        Int
-  stock        Int    @default(1)
-  currentStock Int    @default(0)
+  name  String     @id
+  stock GoodsStock @default(あり)
 }

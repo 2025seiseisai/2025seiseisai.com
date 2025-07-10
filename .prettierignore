@@ -2,3 +2,5 @@
 
 manifest.json
 site.webmanifest
+
+/src/generated/prisma

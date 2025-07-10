@@ -8,16 +8,16 @@ export const metadata = {
 export const revalidate = 180;
 
 export default async function Page() {
-    const news = await NewsManager.getNewsSortedByDate();
+    const news = await NewsManager.getAllNews();
     return (
         <NewsList
             news={news.map((news) => {
                 return {
-                    _id: news._id.toString(),
+                    id: news.id,
                     date: news.date,
                     importance: news.importance,
                     title: news.title,
-                    link: NewsManager.getLink(news._id),
+                    link: NewsManager.getLink(news.id),
                 };
             })}
         />
