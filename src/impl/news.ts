@@ -4,7 +4,7 @@ import dbClient, { NewsModel } from "./database";
 export default class NewsManager {
     private static cachedNews: NewsModel[] | null = null;
     private static lastFetchTime: number = 0;
-    private static readonly CACHE_TTL = 1 * 1000; // 60 seconds in milliseconds
+    private static readonly CACHE_TTL = 60 * 1000; // 60 seconds in milliseconds
 
     public static async getAllNews(): Promise<NewsModel[]> {
         if (this.cachedNews !== null && Date.now() - this.lastFetchTime < this.CACHE_TTL) {
@@ -28,7 +28,7 @@ export default class NewsManager {
     }
 
     public static async getNewsById(id: string): Promise<NewsModel | null> {
-        return (await this.getAllNews()).find((news) => news.id == id) || null;
+        return (await this.getAllNews()).find((news) => news.id === id) || null;
     }
 
     public static getLink(id: string): string {

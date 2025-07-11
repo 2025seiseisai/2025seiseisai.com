@@ -38,9 +38,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
     ];
 
-    const newsPages = (await NewsManager.getAllNews()).map(({ _id, importance }) => {
+    const newsPages = (await NewsManager.getAllNews()).map(({ id, importance }) => {
         return {
-            url: `https://seiseisai.com/2025/news/${NewsManager.getLink(_id)}`,
+            url: `https://seiseisai.com/2025/news/${NewsManager.getLink(id)}`,
             lastModified: new Date(),
             priority: importance ? 0.4 : 0.3,
         };

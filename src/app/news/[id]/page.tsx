@@ -128,7 +128,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                     }
                     if (children === href && href.startsWith("https://youtu.be/")) {
                         return (
-                            <section className="news_youtube_elmbed">
+                            <section className="news_youtube_embed">
                                 <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
                             </section>
                         );
