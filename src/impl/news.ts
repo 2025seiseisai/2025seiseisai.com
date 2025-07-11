@@ -1,83 +1,44 @@
 import crypto from "crypto";
-import { ObjectId } from "mongodb";
-import { databaseInstance, workspaceId } from "./database";
-
-export interface NewsInterface {
-    _id: ObjectId;
-    workspace: ObjectId;
-    title: string;
-    date: Date;
-    importance: boolean;
-    content: string;
-}
-export interface NewsDocument extends Document, NewsInterface {}
-
-const newsCollection = databaseInstance.getCollection<NewsDocument>("news");
+import dbClient, { NewsModel } from "./database";
 
 export default class NewsManager {
-    private static cachedNews: NewsDocument[] | null = null;
+    private static cachedNews: NewsModel[] | null = null;
     private static lastFetchTime: number = 0;
-    private static readonly CACHE_TTL = 90 * 1000; // 90 seconds in milliseconds
+    private static readonly CACHE_TTL = 60 * 1000; // 60 seconds in milliseconds
 
-    private static isCacheValid(): boolean {
-        return this.cachedNews !== null && Date.now() - this.lastFetchTime < this.CACHE_TTL;
-    }
-
-    public static async getAllNews(): Promise<NewsInterface[]> {
-        if (this.isCacheValid()) {
-            return this.cachedNews!.map((doc): NewsInterface => {
-                return {
-                    _id: doc._id,
-                    workspace: doc.workspace,
-                    title: doc.title,
-                    date: doc.date,
-                    importance: doc.importance,
-                    content: doc.content,
-                };
-            });
+    public static async getAllNews(): Promise<NewsModel[]> {
+        if (this.cachedNews !== null && Date.now() - this.lastFetchTime < this.CACHE_TTL) {
+            return this.cachedNews;
         }
 
-        const news = await newsCollection.find({ workspace: workspaceId }).toArray();
+        const news = await dbClient.news.findMany({
+            orderBy: { date: "desc" },
+        });
+        for (const n of news) {
+            n.content = n.content.replaceAll("\\n", "\n");
+        }
         this.cachedNews = news;
         this.lastFetchTime = Date.now();
-        return news.map((doc): NewsInterface => {
-            return {
-                _id: doc._id,
-                workspace: doc.workspace,
-                title: doc.title,
-                date: doc.date,
-                importance: doc.importance,
-                content: doc.content,
-            };
-        });
+        return news;
     }
 
-    public static async getNewsSortedByDate(n?: number): Promise<NewsInterface[]> {
-        await this.getAllNews(); // Ensure cache is up to date
-
-        // Sort the cached news by date
-        const sortedNews = [...this.cachedNews!].sort(
-            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-        );
-
-        return n ? sortedNews.slice(0, n) : sortedNews;
+    public static async getNews(n: number): Promise<NewsModel[]> {
+        const news = await this.getAllNews();
+        return news.slice(0, n);
     }
 
-    public static async getNewsById(id: ObjectId): Promise<NewsInterface | null> {
-        await this.getAllNews(); // Ensure cache is up to date
-        return this.cachedNews!.find((news) => news._id.equals(id)) || null;
+    public static async getNewsById(id: string): Promise<NewsModel | null> {
+        return (await this.getAllNews()).find((news) => news.id === id) || null;
     }
 
-    public static getLink(id: ObjectId): string {
-        return crypto.createHash("sha256").update(id.toString()).digest("base64url").substring(0, 16);
+    public static getLink(id: string): string {
+        return crypto.createHash("sha256").update(id).digest("base64url").substring(0, 16);
     }
 
-    public static async getId(link: string): Promise<ObjectId | null> {
-        await this.getAllNews(); // Ensure cache is up to date
-
-        for (const news of this.cachedNews!) {
-            if (this.getLink(news._id) === link) {
-                return news._id;
+    public static async getId(link: string): Promise<string | null> {
+        for (const news of await this.getAllNews()) {
+            if (this.getLink(news.id) === link) {
+                return news.id;
             }
         }
         return null;

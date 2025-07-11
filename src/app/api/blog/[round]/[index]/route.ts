@@ -18,7 +18,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
             ...metadata,
             thumbnail: {
                 ...metadata.thumbnail,
-                src: metadata.thumbnail.src.replace("/server/assets/", "/_next/static/media/"),
+                src: metadata.thumbnail.src.replace("/server/assets/", "/2025/_next/static/media/"),
             },
         },
         { status: 200 },

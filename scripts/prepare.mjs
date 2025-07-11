@@ -1,6 +1,9 @@
 import childProcess from "child_process";
-import fs from "fs";
 import extensions from "../.vscode/extensions.json" with { type: "json" };
+if (process.env.DATABASE_URL === undefined) {
+    console.error("Error: DATABASE_URL is not set. Please set it in .env.development.");
+    process.exit(1);
+}
 childProcess.exec("code --list-extensions", (error, stdout) => {
     if (error) {
         console.error("Error listing extensions:", error);
@@ -18,6 +21,7 @@ childProcess.exec("code --list-extensions", (error, stdout) => {
         });
     }
 });
+/*
 if (process.env.AUTH_SECRET === undefined) {
     childProcess.exec("npx auth secret --raw", (error, stdout) => {
         if (error) {
@@ -27,3 +31,4 @@ if (process.env.AUTH_SECRET === undefined) {
         fs.appendFileSync(".env.development", `\nAUTH_SECRET="${auth_secret}"\n`);
     });
 }
+*/

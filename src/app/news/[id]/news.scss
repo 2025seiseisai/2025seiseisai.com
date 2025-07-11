@@ -1,0 +1,109 @@
+$pri-red: #de0d22;
+$pri-black: #0b0e0f;
+
+// テキストのスタイル
+article {
+    font-size: 18px;
+    line-height: 1.9;
+    color: $pri-black;
+    word-break: break-all;
+}
+
+.news_element {
+    width: 100%;
+}
+
+a.news_element {
+    color: $pri-red;
+    text-decoration: underline;
+
+    &:hover {
+        color: #bd0b1d;
+    }
+}
+
+// テキストブロックのスタイル
+div.news_element {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+// 見出しのスタイル
+h1.news_element {
+    padding-left: 10px;
+    overflow: initial;
+    font-size: 28px;
+    font-weight: 500;
+    border-left: $pri-red 4px solid;
+}
+
+h2.news_element {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+h3.news_element {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+h4.news_element {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h5.news_element {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+h6.news_element {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.news_youtube_embed {
+    width: 100%;
+
+    // YouTubeの埋め込み動画の親要素のスタイル
+    & > div {
+        display: flex;
+        justify-content: center;
+        width: 100% !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    // YouTubeの埋め込み動画のスタイル
+    & > div > lite-youtube {
+        width: 80%;
+        max-width: 80% !important;
+    }
+}
+
+.news_tweet_embed {
+    // Twitterの埋め込みツイートの親要素のスタイル
+    width: 100%;
+    margin-top: 20px;
+
+    // Twitterの埋め込みツイートのスタイル
+    & > div {
+        margin: 0 auto;
+        overflow: hidden;
+        border: 2px solid #de0d2280;
+        border-radius: 10px;
+        transition: box-shadow 0.2s ease-in-out;
+
+        &:hover {
+            background-color: #0b0e0f02;
+            box-shadow: #de0d2280 0 0 5px;
+        }
+
+        // 文字等を選択したときの色
+        *::selection {
+            color: #fff;
+            background-color: #006fd6;
+        }
+    }
+}

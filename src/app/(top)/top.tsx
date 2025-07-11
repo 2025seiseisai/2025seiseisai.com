@@ -25,7 +25,7 @@ const ibmPlexSansJP = IBM_Plex_Sans_JP({
 });
 
 export async function Top() {
-    const news = await NewsManager.getNewsSortedByDate(3);
+    const news = await NewsManager.getNews(3);
     return (
         <>
             <div
@@ -157,8 +157,8 @@ export async function Top() {
                         const day = String(item.date.getDate()).padStart(2, "0");
                         return (
                             <Link
-                                href={`/news/${NewsManager.getLink(item._id)}`}
-                                key={item._id.toString()}
+                                href={`/news/${NewsManager.getLink(item.id)}`}
+                                key={item.id}
                                 className={styles.news_text}
                             >
                                 <p className={styles.news_date}>

@@ -49,8 +49,12 @@
     },
     "code-runner.executorMap": {
         "javascript": "node",
-        "typescript": "\"./node_modules/.bin/tsx\""
+        "typescript": "\"./node_modules/.bin/tsx\"",
+        "prisma": "echo Reflecting $fileName... && \"./node_modules/.bin/prisma\" db push"
     },
     "code-runner.runInTerminal": true,
-    "code-runner.cwd": "${workspaceFolder}"
+    "code-runner.cwd": "${workspaceFolder}",
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
+    }
 }
