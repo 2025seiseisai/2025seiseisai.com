@@ -40,7 +40,13 @@ function ArchiveCard({
                     </span>
                 </h2>
                 {link.startsWith("https://seiseisai.com") ? (
-                    <a href={link} className={"text-[16px] underline md:text-[18px]"} style={{ color }}>
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={"text-[16px] underline md:text-[18px]"}
+                        style={{ color }}
+                    >
                         {link}
                     </a>
                 ) : (
