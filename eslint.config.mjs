@@ -1,5 +1,6 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import eslintPluginBetterTailwindcss from "eslint-plugin-better-tailwindcss";
+import reactCompiler from "eslint-plugin-react-compiler";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -38,6 +39,7 @@ const eslintConfig = [
             },
         },
     },
+    reactCompiler.configs.recommended,
 ];
 
 export default eslintConfig;

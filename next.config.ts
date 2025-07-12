@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     assetPrefix: "/2025",
     experimental: {
         viewTransition: true,
+        reactCompiler: true,
     },
     sassOptions: {
         additionalData: `@use "@/impl/_global.scss" as *;`,
