@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./page.module.scss";
 
 export const metadata = {
@@ -31,10 +30,10 @@ export default function Page() {
                 height={165}
             />
             {/* ダウンロードボタンの作り方 */}
-            {/* ボタンにしたい要素をLinkで囲う */}
-            <Link href="/special/wallpaper/4.png" download>
+            {/* ボタンにしたい要素をaタグで囲う */}
+            <a href="/special/wallpaper/4.png" download>
                 <p>壁紙4をダウンロード</p>
-            </Link>
+            </a>
             {/* 等間隔に並べたい場合は以下のようにするといい感じになります */}
             <div className={styles.flexContainer}>
                 <p>あ</p>
