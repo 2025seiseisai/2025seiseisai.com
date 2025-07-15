@@ -67,7 +67,7 @@ export function Header() {
     const setOpenImpl = (open: boolean) => {
         setOpen(open);
         if (!open) setIsMouseOver(false);
-        if (open && document.body.offsetHeight > window.innerHeight) {
+        if (open) {
             const scrollTop = window.scrollY;
             document.body.style.position = "fixed";
             document.body.style.top = `-${scrollTop}px`;

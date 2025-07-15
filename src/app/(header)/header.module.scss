@@ -194,6 +194,10 @@
     @media (not ((aspect-ratio >= 1/1) and (width >= 950px))) and (((width < 450px) and (height < 550px)) or ((width < 950px) and (height < 500px))) {
         justify-content: center;
     }
+
+    @media (height < 350px) {
+        justify-content: center;
+    }
 }
 
 .headerLinkTitle1 {
@@ -230,6 +234,10 @@
     @media (not ((aspect-ratio >= 1/1) and (width >= 950px))) and (((width < 450px) and (height < 550px)) or ((width < 950px) and (height < 500px))) {
         display: none;
     }
+
+    @media (height < 350px) {
+        display: none;
+    }
 }
 
 .headerLink > .headerLinkFront {
@@ -238,7 +246,7 @@
         background-color: #de0d22;
         clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
+        transition-duration: 130ms;
         transition-property: clip-path;
     }
 
@@ -247,7 +255,7 @@
         background-color: #0b0e0f;
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 180ms;
+        transition-duration: 150ms;
         transition-property: clip-path;
     }
 }
@@ -369,8 +377,8 @@
 
 .snsIcon {
     @include media(sm) {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
         margin-right: 10%;
 
         @media (height < 550px) {
@@ -380,16 +388,22 @@
 
         @media (width < 450px) {
             margin-right: 0;
-            margin-bottom: 3px;
+            margin-bottom: 5px;
+
+            @media (height < 700px) {
+                width: 20px;
+                height: 20px;
+            }
 
             @media (height < 600px) {
                 width: 16px;
                 height: 16px;
+                margin-bottom: 3px;
             }
 
             @media (height >= 800px) {
-                width: 22px;
-                height: 22px;
+                width: 24px;
+                height: 24px;
                 margin-bottom: 6px;
             }
         }
