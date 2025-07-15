@@ -27,7 +27,7 @@ function runCommand(cmd, errorMsg, captureOutput = false) {
 }
 
 if (process.argv.length < 3) {
-    console.log("Usage: node deploy.js <branch-name>");
+    console.log("Usage: node deploy.mjs <branch-name>");
     process.exit(1);
 }
 

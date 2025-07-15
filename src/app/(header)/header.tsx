@@ -64,10 +64,10 @@ export function Header() {
     const [isMouseOver, setIsMouseOver] = useState(false);
     const headerRef = useRef<HTMLDivElement>(null);
 
-    const setOpenImpl = (open: boolean) => {
-        setOpen(open);
-        if (!open) setIsMouseOver(false);
-        if (open) {
+    const setOpenImpl = (open_flag: boolean) => {
+        setOpen(open_flag);
+        if (!open_flag) setIsMouseOver(false);
+        if (open_flag) {
             const scrollTop = window.scrollY;
             document.body.style.position = "fixed";
             document.body.style.top = `-${scrollTop}px`;
