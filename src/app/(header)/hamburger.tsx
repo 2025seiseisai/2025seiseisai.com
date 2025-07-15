@@ -14,11 +14,7 @@ export default function Hamburger({ open, setOpen }: { open: boolean; setOpen: (
         <button
             className={`z-100000002 flex aspect-1/1 h-[30px] w-auto cursor-pointer items-center justify-center transition-all duration-500
                 outline-none md:h-[40px] ${open ? styles.opening : "mr-[min(40px,8svw)]"}`}
-            onClick={() => {
-                setTimeout(() => {
-                    setOpen(!open);
-                }, 20);
-            }}
+            onClick={() => setOpen(!open)}
         >
             <div className={"h-2/3 w-2/3 md:h-1/2 md:w-1/2"}>
                 <Lottie lottieRef={hamburgerRef} animationData={HamburgerAnimation} autoplay={false} loop={false} />
