@@ -1,9 +1,14 @@
 import childProcess from "child_process";
 import extensions from "../.vscode/extensions.json" with { type: "json" };
-if (process.env.DATABASE_URL === undefined) {
-    console.error("Error: DATABASE_URL is not set. Please set it in .env.development.");
-    process.exit(1);
+function checkEnvFile(name) {
+    if (process.env[name] === undefined) {
+        console.error(`Error: ${name} is not set. Please set it in .env.`);
+        process.exit(1);
+    }
 }
+checkEnvFile("AUTH_URL");
+checkEnvFile("DATABASE_URL");
+checkEnvFile("DIRECT_URL");
 childProcess.exec("code --list-extensions", (error, stdout) => {
     if (error) {
         console.error("Error listing extensions:", error);

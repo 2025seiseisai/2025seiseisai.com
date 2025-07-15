@@ -148,7 +148,6 @@ export function Header() {
                             title1="Access"
                             title2="東大寺学園へのアクセス方法"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
                             href="/events"
@@ -169,7 +168,6 @@ export function Header() {
                             title1="Goods"
                             title2="菁々祭オリジナルグッズ一覧"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
                             href="/tickets"
@@ -189,7 +187,6 @@ export function Header() {
                             title1="Special"
                             title2="壁紙やアイコンなど特別コンテンツ"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
                             href="/downloads"
