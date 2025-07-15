@@ -245,7 +245,7 @@
         color: #fff;
         background-color: #de0d22;
         clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1.2);
+        transition-timing-function: cubic-bezier(0.4, 0, 0.1, 1.2);
         transition-duration: 150ms;
         transition-property: clip-path;
     }
@@ -254,7 +254,7 @@
         color: #fff;
         background-color: #0b0e0f;
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1.2);
+        transition-timing-function: cubic-bezier(0.4, 0, 0.1, 1.2);
         transition-duration: 170ms;
         transition-property: clip-path;
     }
