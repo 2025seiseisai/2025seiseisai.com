@@ -244,35 +244,23 @@
     .headerLinkTitle1 {
         color: #fff;
         background-color: #de0d22;
-        opacity: 0;
+        clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1.2);
+        transition-duration: 150ms;
+        transition-property: clip-path;
     }
 
     .headerLinkTitle2 {
         color: #fff;
         background-color: #0b0e0f;
-        opacity: 0;
-    }
-}
-
-.headerLinkHoverEnabled > .headerLinkFront {
-    .headerLinkTitle1 {
-        opacity: 1;
-        clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 140ms;
-        transition-property: clip-path;
-    }
-
-    .headerLinkTitle2 {
-        opacity: 1;
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1.2);
         transition-duration: 170ms;
         transition-property: clip-path;
     }
 }
 
-.headerLinkHoverEnabled:hover > .headerLinkFront {
+.headerLink:hover > .headerLinkFront {
     .headerLinkTitle1 {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
