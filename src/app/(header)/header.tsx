@@ -64,10 +64,10 @@ export function Header() {
     const [isMouseOver, setIsMouseOver] = useState(false);
     const headerRef = useRef<HTMLDivElement>(null);
 
-    const setOpenImpl = (open: boolean) => {
-        setOpen(open);
-        if (!open) setIsMouseOver(false);
-        if (open && document.body.offsetHeight > window.innerHeight) {
+    const setOpenImpl = (open_flag: boolean) => {
+        setOpen(open_flag);
+        if (!open_flag) setIsMouseOver(false);
+        if (open_flag) {
             const scrollTop = window.scrollY;
             document.body.style.position = "fixed";
             document.body.style.top = `-${scrollTop}px`;
@@ -76,6 +76,9 @@ export function Header() {
                 headerRef.current.style.position = "relative";
                 headerRef.current.style.transform = `translateY(${scrollTop}px)`;
             }
+            Array.from(document.getElementsByClassName(styles.headerLink)).forEach((element) => {
+                element.classList.add(styles.headerLinkHoverEnabled);
+            });
         } else {
             const scrollTop = -parseInt(document.body.style.top || "0", 10);
             document.body.style.position = "";
@@ -86,6 +89,12 @@ export function Header() {
                 headerRef.current.style.position = "";
                 headerRef.current.style.transform = "";
             }
+            setTimeout(() => {
+                if (open) return;
+                Array.from(document.getElementsByClassName(styles.headerLinkHoverEnabled)).forEach((element) => {
+                    element.classList.remove(styles.headerLinkHoverEnabled);
+                });
+            }, 400);
         }
     };
 

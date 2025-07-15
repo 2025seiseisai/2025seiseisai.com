@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "deploy": "python3 ./scripts/deploy.py",
+        "deploy": "node ./scripts/deploy.mjs",
         "dev": "node --env-file=.env ./scripts/prepare.mjs && npm install && prisma generate && opener http://localhost:3000/2025 && next dev --turbopack",
         "build": "prisma generate && next build",
         "start": "next start",
