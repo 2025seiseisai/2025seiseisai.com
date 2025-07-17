@@ -3,7 +3,52 @@
     font-size: 36px;
     color: black;
 }
+.red{
+    color:#DE0D22;
+}
 
+.title{
+    font-family: Noto Sans JP;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 40px;
+    line-height: 150%;
+    letter-spacing: 0%;
+ }
+.sentence{
+    font-family: Noto Sans JP;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+.subtitle{
+    font-family: Noto Sans JP;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 32px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+.list{
+    font-family: Noto Sans JP;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+.large{
+    font-family: Noto Sans JP;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
 // スマホ用のスタイル
 @include media(sm) {
     .example {

@@ -8,9 +8,20 @@ export const metadata = {
 export default function Page() {
     return (
         <>
-            {/* ここに書く */}
-            <p className={styles.example}>スペシャル</p>
-            {/* Special用画像の張り方 */}
+            <p className={styles.title}>
+                    <span className={styles.red}>S</span>pecial
+            </p>
+            <p className={styles.sentence}>
+                第61回菁々祭のテーマ"分秒"をイメージして作られた壁紙やアイコン・ヘッダーなどに使える画像をダウンロードすることができます。菁々祭に向け、SNS上でも"分秒"を感じて盛り上がっていきましょう！使用にあたっては、下記の禁止事項を遵守していただくようお願いいたします。
+            </p>
+            <p className={styles.subtitle}>禁止事項</p>
+            <ul className={styles.list}>
+                <li>データの改変および再編集</li>
+                <li>データの二次配布</li>
+                <li>データの著作権者を名乗るなどの著作権を侵害する行為</li>
+                <li>データを無断で商用利用すること</li>
+            <p className={styles.large}><span className={styles.red}>WALLPAPER</span></p>
+            </ul>
             <Image
                 src="/2025/special/wallpaper/1.png" // 1.png~5.pngまであります
                 alt="壁紙"
