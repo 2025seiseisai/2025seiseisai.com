@@ -40,11 +40,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-gitignore*
-
 # Playwright
 node_modules/
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# prisma
+/src/generated/prisma
+
+gitignore*

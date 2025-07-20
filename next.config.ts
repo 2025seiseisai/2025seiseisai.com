@@ -2,6 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     /* config options here */
+    basePath: "/2025",
+    assetPrefix: "/2025",
+    experimental: {
+        viewTransition: true,
+        reactCompiler: true,
+    },
     sassOptions: {
         additionalData: `@use "@/impl/_global.scss" as *;`,
     },

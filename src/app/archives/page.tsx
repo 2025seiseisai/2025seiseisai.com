@@ -1,6 +1,7 @@
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
-import Link from "next/link";
+import Image2016 from "./2016.png";
+import Image2017 from "./2017.png";
 import Image2019 from "./2019.png";
 import Image2020 from "./2020.png";
 import Image2021 from "./2021.png";
@@ -39,11 +40,17 @@ function ArchiveCard({
                     </span>
                 </h2>
                 {link.startsWith("https://seiseisai.com") ? (
-                    <Link href={link} className={"text-[16px] underline md:text-[18px]"} style={{ color }}>
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={"text-[16px] underline md:text-[18px]"}
+                        style={{ color }}
+                    >
                         {link}
-                    </Link>
+                    </a>
                 ) : (
-                    <Link
+                    <a
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer nofollow"
@@ -54,7 +61,7 @@ function ArchiveCard({
                             {"http" + link.replace("https://web.archive.org/web/", "").split("http")[1]}
                         </span>
                         (Internet Archive)
-                    </Link>
+                    </a>
                 )}
                 {image && (
                     <Image
@@ -79,8 +86,8 @@ export default function ArchivesPage() {
             >
                 <span className="text-[#de0d22]">A</span>rchives
             </h1>
-            <p className={"mt-[12px] mr-[20px] ml-[20px] text-[16px] md:mr-auto md:ml-auto md:w-[80%]"}>
-                ※都合により、一部のページを非表示としています。ご了承ください。
+            <p className={"mt-[12px] mr-[20px] ml-[20px] text-[14px] md:mr-auto md:ml-auto md:w-[80%] md:text-[16px]"}>
+                ※一部のページはリンクが切れている場合があります。予めご了承ください。
             </p>
             <div
                 className={
@@ -90,54 +97,91 @@ export default function ArchivesPage() {
                 <ArchiveCard
                     round="第60回"
                     theme="IGNITION"
-                    link="https://seiseisai.com/2024"
+                    link="https://seiseisai.com/2024/"
                     image={Image2024}
                     color="#FF0084"
                 />
                 <ArchiveCard
                     round="第59回"
-                    theme="Resonance"
-                    link="https://seiseisai.com/2023"
+                    theme="RESONANCE"
+                    link="https://seiseisai.com/2023/"
                     image={Image2023}
                     color="#52CC89"
                 />
                 <ArchiveCard
                     round="第58回"
                     theme="四季彩"
-                    link="https://web.archive.org/web/20230406032142/https://seiseisai.com/"
+                    link="https://seiseisai.com/2022/"
                     image={Image2022}
                     color="#C04A88"
                 />
                 <ArchiveCard
                     round="第57回"
-                    theme="あおによし"
-                    link="https://web.archive.org/web/20211011114827/https://seiseisai.com/2021/"
+                    theme="あをによし"
+                    link="https://seiseisai.com/2021/"
                     image={Image2021}
-                    color="#3C2105"
+                    color="#3D2207"
                 />
                 <ArchiveCard
                     round="第56回"
-                    theme="Bright"
-                    link="https://web.archive.org/web/20201101112845/https://www.seiseisai.com/"
+                    theme="bright"
+                    link="https://seiseisai.com/2020/"
                     image={Image2020}
                     color="#F29600"
                 />
                 <ArchiveCard
                     round="第55回"
                     theme="Sailing"
-                    link="https://web.archive.org/web/20200621142300/https://seiseisai.com/"
+                    link="https://seiseisai.com/2019/"
                     image={Image2019}
                     color="#01A0E2"
                 />
                 <ArchiveCard
+                    round="第53回"
+                    theme="自由楽果"
+                    link="https://seiseisai.com/2017/"
+                    image={Image2017}
+                    color="#AB4443"
+                />
+                <ArchiveCard
                     round="第52回"
                     theme="Go Together"
-                    link="https://web.archive.org/web/20160827202755/http://seisei52nd.com/"
+                    link="https://seiseisai.com/2016/"
+                    image={Image2016}
+                    color="#415D8B"
                 />
                 <ArchiveCard
                     round="第51回"
                     theme="Re:Member"
                     link="https://web.archive.org/web/20150915024420/http://www.seisei51st.com:80/"
+                />
+                <ArchiveCard round="第49回" theme="漢度良好" link="https://seiseisai.com/2013/" color="#4BCE4A" />
+                <ArchiveCard
+                    round="第48回"
+                    theme="流星～二日間の輝き～"
+                    link="https://seiseisai.com/2012/"
+                    color="#9495C5"
+                />
+                <ArchiveCard
+                    round="第47回"
+                    theme="刻～Endlose Zeit～"
+                    link="https://seiseisai.com/2011/"
+                    color="#9D6D79"
+                />
+                <ArchiveCard
+                    round="第45回"
+                    theme="行け!!Men!!"
+                    link="https://web.archive.org/web/20090909062151/http://www.seisei45.org/home.html"
+                />
+                <ArchiveCard
+                    round="第44回"
+                    theme="ただいまあきない中~無飽地帯へようこそ~"
+                    link="https://web.archive.org/web/20080918072948/http://seiseisai44.net/"
+                />
+                <ArchiveCard
+                    round="第38回"
+                    theme="101%"
+                    link="https://web.archive.org/web/20020808060607/http://seisei.info/tdj/"
                 />
             </div>
         </>

@@ -1,13 +1,21 @@
+// 共通のスタイル
 .example {
-    /* スマホ用のCSS */
-    font-size: 10svw;
-    color: #0b0e0f;
+    font-size: 36px;
+    color: black;
 }
 
-@media screen and (width >= 768px) {
+// スマホ用のスタイル
+@include media(sm) {
     .example {
-        /* PC用のCSS */
-        font-size: 76.8px;
-        color: #de0d22;
+        background-color: blue;
+    }
+}
+
+// PC用のスタイル
+@include media(lg) {
+    .example {
+        // 上書き可能
+        color: red;
+        background-color: green;
     }
 }

@@ -77,7 +77,7 @@ export function getBlogMetadata(round: string, index: string): BlogMetadata {
  *     return enumetateParams();
  * }
  */
-export function enumetateParams(): { round: string; index: string }[] {
+export function enumerateParams(): { round: string; index: string }[] {
     return Object.keys(blogData).map((path) => {
         const [round, index] = path.split("/");
         return { round, index };

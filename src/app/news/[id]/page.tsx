@@ -1,16 +1,75 @@
+/* eslint @typescript-eslint/no-explicit-any: 0 */
+/* eslint better-tailwindcss/no-unregistered-classes: 0 */
 import NewsManager from "@/impl/news";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { compileMDX } from "next-mdx-remote/rsc";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import React from "react";
+import { Tweet } from "react-tweet";
+import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
+import "./news.scss";
 
 export const metadata = {
     title: "News | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
 };
 
 export const revalidate = 180;
+
+function transformLinks(node: React.ReactNode): React.ReactNode {
+    if (typeof node === "string" || typeof node === "number") {
+        return node;
+    }
+    if (Array.isArray(node)) {
+        return node.map((child, i) => <React.Fragment key={i}>{transformLinks(child)}</React.Fragment>);
+    }
+
+    if (React.isValidElement(node) && node.type === "a" && (node.props as any).href) {
+        const { href, children } = node.props as {
+            href: string;
+            children: React.ReactNode;
+        };
+        if (href[0] === "#" || href.startsWith("mailto:")) {
+            return (
+                <a href={href} className="news_element">
+                    {transformLinks(children)}
+                </a>
+            );
+        }
+        if (
+            (href.startsWith("https://") || href.startsWith("http://")) &&
+            href.split("/").at(-1)?.includes(".") &&
+            !href.endsWith(".html") &&
+            !href.endsWith(".htm") &&
+            !href.endsWith(".php")
+        ) {
+            return (
+                <Link href={href} download className="news_element">
+                    {transformLinks(children)}
+                </Link>
+            );
+        }
+        if (
+            (href.startsWith("https://") || href.startsWith("http://")) &&
+            !href.startsWith("https://seiseisai.com") &&
+            !href.startsWith("http://seiseisai.com")
+        ) {
+            return (
+                <Link href={href} target="_blank" rel="noopener noreferrer nofollow" className="news_element">
+                    {transformLinks(children)}
+                </Link>
+            );
+        }
+        return (
+            <Link href={href} className="news_element">
+                {transformLinks(children)}
+            </Link>
+        );
+    }
+
+    return node;
+}
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
     const id = await NewsManager.getId((await params).id);
@@ -21,107 +80,153 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const getJSX = (rec: any, children: any) => {
-        if (typeof children === "string") {
-            const sentences = children.split("\n");
-            return (
-                <>
-                    {sentences.map((sentence, idx) => {
+
+    const components = {
+        h1: ({ children }: { children: any }) => {
+            return <h1 className="news_element">{transformLinks(children)}</h1>;
+        },
+        h2: ({ children }: { children: any }) => {
+            return <h2 className="news_element">{transformLinks(children)}</h2>;
+        },
+        h3: ({ children }: { children: any }) => {
+            return <h3 className="news_element">{transformLinks(children)}</h3>;
+        },
+        h4: ({ children }: { children: any }) => {
+            return <h4 className="news_element">{transformLinks(children)}</h4>;
+        },
+        h5: ({ children }: { children: any }) => {
+            return <h5 className="news_element">{transformLinks(children)}</h5>;
+        },
+        h6: ({ children }: { children: any }) => {
+            return <h6 className="news_element">{transformLinks(children)}</h6>;
+        },
+        p: ({ children }: { children: any }) => {
+            if (Array.isArray(children)) {
+                return <div className="news_element">{transformLinks(children)}</div>;
+            }
+            if (React.isValidElement(children)) {
+                const type = (children as React.ReactElement).type;
+                const props = children.props as any;
+                if ((type as any).name === "img") {
+                    return children;
+                }
+                if (type === "a" && props.href) {
+                    const { href, children } = props as {
+                        href: string;
+                        children: React.ReactNode;
+                    };
+                    if (
+                        children === href &&
+                        (href.startsWith("https://youtube.com/watch?v=") ||
+                            href.startsWith("https://www.youtube.com/watch?v="))
+                    ) {
                         return (
-                            <span key={idx}>
-                                {sentence}
-                                {idx !== sentences.length - 1 && <br />}
-                            </span>
+                            <section className="news_youtube_embed">
+                                <YouTubeEmbed videoid={href.split("?v=").at(-1) || ""} />
+                            </section>
                         );
-                    })}
-                </>
-            );
-        }
-        if (Array.isArray(children)) {
+                    }
+                    if (children === href && href.startsWith("https://youtu.be/")) {
+                        return (
+                            <section className="news_youtube_embed">
+                                <YouTubeEmbed videoid={href.split("/").at(-1) || ""} />
+                            </section>
+                        );
+                    }
+                    if (
+                        children === href &&
+                        href.match(/^https?:\/\/(x\.com|twitter\.com)\/[a-zA-Z0-9_]+\/status\/\d+/)
+                    ) {
+                        const tweetId = href.match(/status\/(\d+)/)?.[1];
+                        if (tweetId) {
+                            return (
+                                <section className="news_tweet_embed" data-theme={"light"} suppressHydrationWarning>
+                                    <Tweet id={tweetId} />
+                                </section>
+                            );
+                        }
+                    }
+                    if (href[0] === "#" || href.startsWith("mailto:")) {
+                        return (
+                            <div className="news_element">
+                                <a href={href} className="news_element">
+                                    {transformLinks(children)}
+                                </a>
+                            </div>
+                        );
+                    }
+                    if (
+                        (href.startsWith("https://") || href.startsWith("http://")) &&
+                        href.split("/").at(-1)?.includes(".") &&
+                        !href.endsWith(".html") &&
+                        !href.endsWith(".htm") &&
+                        !href.endsWith(".php")
+                    ) {
+                        return (
+                            <div className="news_element">
+                                <Link href={href} download className={""}>
+                                    {transformLinks(children)}
+                                </Link>
+                            </div>
+                        );
+                    }
+                    if (
+                        (href.startsWith("https://") || href.startsWith("http://")) &&
+                        !href.startsWith("https://seiseisai.com") &&
+                        !href.startsWith("http://seiseisai.com")
+                    ) {
+                        return (
+                            <div className="news_element">
+                                <Link
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer nofollow"
+                                    className="news_element"
+                                >
+                                    {transformLinks(children)}
+                                </Link>
+                            </div>
+                        );
+                    }
+                    return (
+                        <div className="news_element">
+                            <Link href={href} className="news_element">
+                                {transformLinks(children)}
+                            </Link>
+                        </div>
+                    );
+                }
+            }
+            return <div className="news_element">{transformLinks(children)}</div>;
+        },
+        ul: ({ children }: { children: any }) => {
+            return <ul className="news_element">{children}</ul>;
+        },
+        li: ({ children }: { children: any }) => {
+            return <li className="news_element">{children}</li>;
+        },
+        ol: ({ children }: { children: any }) => {
+            return <ol className="news_element">{children}</ol>;
+        },
+        strong: ({ children }: { children: any }) => {
             return (
-                <>
-                    {children.map((child, idx) => (
-                        <span key={idx}>{rec(rec, child)}</span>
-                    ))}
-                </>
+                <span className="news_element" style={{ fontWeight: 600 }}>
+                    {children}
+                </span>
             );
-        }
-        return children;
+        },
     };
     const mdx = await compileMDX({
         source: content,
         options: {
+            parseFrontmatter: false,
             mdxOptions: {
-                remarkPlugins: [remarkGfm],
+                remarkPlugins: [remarkGfm, remarkBreaks],
             },
         },
-        components: {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h1: ({ children }: { children: any }) => {
-                return (
-                    <h1
-                        className={`mt-[8px] mb-[8px] border-l-4 border-[#de0d22] pl-[16px] text-[28px] not-md:border-l-3 not-md:pl-[10px]
-                            not-md:text-[24px]`}
-                    >
-                        {getJSX(getJSX, children)}
-                    </h1>
-                );
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h2: ({ children }: { children: any }) => {
-                return (
-                    <h2 className={"mt-[8px] mb-[8px] text-[26px] not-md:text-[22px]"}>{getJSX(getJSX, children)}</h2>
-                );
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h3: ({ children }: { children: any }) => {
-                return (
-                    <h3 className={"mt-[6px] mb-[6px] text-[24px] not-md:text-[21px]"}>{getJSX(getJSX, children)}</h3>
-                );
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h4: ({ children }: { children: any }) => {
-                return (
-                    <h4 className={"mt-[5px] mb-[5px] text-[22px] not-md:text-[20px]"}>{getJSX(getJSX, children)}</h4>
-                );
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h5: ({ children }: { children: any }) => {
-                return (
-                    <h5 className={"mt-[5px] mb-[5px] text-[21px] not-md:text-[19px]"}>{getJSX(getJSX, children)}</h5>
-                );
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            h6: ({ children }: { children: any }) => {
-                return (
-                    <h6 className={"mt-[5px] mb-[5px] text-[20px] not-md:text-[18px]"}>{getJSX(getJSX, children)}</h6>
-                );
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            p: ({ children }: { children: any }) => {
-                return (
-                    <div className={"mt-[4px] mb-[4px] text-[18px] font-normal not-md:text-[16px]"}>
-                        {getJSX(getJSX, children)}
-                    </div>
-                );
-            },
-            img: ({ src, alt }: { src: string; alt: string }) => {
-                return <Image src={src} alt={alt} />;
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            a: ({ href, children }: { href: string; children: any }) =>
-                href.startsWith("https://youtube.com/") ||
-                href.startsWith("https://www.youtube.com/") ||
-                href.startsWith("https://youtu.be/") ? (
-                    <YouTubeEmbed videoid={href.split("=").at(-1) || ""} />
-                ) : (
-                    <Link href={href} className="text-[#de0d22] underline">
-                        {getJSX(getJSX, children)}
-                    </Link>
-                ),
-        },
+        components,
     });
+
     return (
         <>
             <div
@@ -137,9 +242,9 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                     </h1>
                 </div>
                 <div className={"mt-[24px] flex items-center not-md:mt-[20px]"}>
-                    <p className={"text-[20px] not-md:text-[16px]"}>
+                    <time className={"text-[20px] not-md:text-[16px]"} dateTime={`${year}-${month}-${day}`}>
                         {year}.{month}.{day}
-                    </p>
+                    </time>
                     {importance && (
                         <div
                             className={`ml-[12px] flex h-[24px] items-center justify-center rounded-full bg-[#de0d22] pr-[12px] pl-[12px] text-[13px] text-white
@@ -153,7 +258,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 <article className="w-full">{mdx.content}</article>
                 <div className={"mt-[32px] flex w-full justify-center not-md:mt-[24px]"}>
                     <Link
-                        href="/2025/news"
+                        href="/news"
                         className={`rounded-[12px] border-[1.5px] pt-[4px] pr-[16px] pb-[4px] pl-[16px] text-[20px] text-[#de0d22] transition-opacity
                             duration-300 not-md:rounded-[8px] not-md:pt-[4px] not-md:pr-[12px] not-md:pb-[3px] not-md:pl-[12px] not-md:text-[16px]
                             hover:opacity-75`}

@@ -1,9 +1,10 @@
 import { blogData } from "@/blogs/blog-data";
-import { enumetateParams, getBlog } from "@/impl/blog";
+import { enumerateParams, getBlog } from "@/impl/blog";
 import type { Metadata } from "next";
 
 import Image from "next/image";
 import Link from "next/link";
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 import DownloadIcon from "./components/download-icon.svg";
 import Grid from "./components/grid.svg";
@@ -20,7 +21,7 @@ import styles from "./thumbnail.module.scss";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-    return enumetateParams();
+    return enumerateParams();
 }
 
 export async function generateMetadata({
@@ -66,12 +67,12 @@ export default async function Page({ params }: { params: Promise<{ round: string
         BlogCard,
     );
     // 前のページ・後ろのページへのリンクはここから取得してください
-    const paths = enumetateParams().toSorted();
+    const paths = enumerateParams().toSorted();
     const currentIndex = paths.findIndex((p) => p.round === round && p.index === index);
     const prevPath = currentIndex > 0 ? paths[currentIndex - 1] : paths[paths.length - 1];
     const nextPath = currentIndex < paths.length - 1 ? paths[currentIndex + 1] : paths[0];
-    const prevLink = `/2025/blog/${prevPath.round}/${prevPath.index}`;
-    const nextLink = `/2025/blog/${nextPath.round}/${nextPath.index}`;
+    const prevLink = `/blog/${prevPath.round}/${prevPath.index}`;
+    const nextLink = `/blog/${nextPath.round}/${nextPath.index}`;
     return (
         <>
             <ToTop />
@@ -84,14 +85,15 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     width={120}
                     className={`${styles.back} absolute inset-0 m-auto w-full transform-[scale(1.05)] filter-[blur(40px)_brightness(1.2)_sepia(0.1)]`}
                 />
-                <Image
-                    src={thumbnail}
-                    alt="thumbnail"
-                    quality={70}
-                    width={1440}
-                    className={`${styles.thumbnail} absolute inset-0 m-auto h-full overflow-hidden object-cover object-center`}
-                    style={{ viewTransitionName: `blog-thumbnail-${round}-${index}` }}
-                />
+                <ViewTransition name={`blog-thumbnail-${round}-${index}`}>
+                    <Image
+                        src={thumbnail}
+                        alt="thumbnail"
+                        quality={70}
+                        width={1440}
+                        className={`${styles.thumbnail} absolute inset-0 m-auto h-full overflow-hidden object-cover object-center`}
+                    />
+                </ViewTransition>
             </div>
             <h1
                 className={`mx-auto mt-[25px] max-w-[90svw] border-b-2 border-pri-black text-start text-[1.75rem]/normal font-medium text-pri-red
@@ -134,7 +136,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                                 </Link>
                             </div>
                             <div className="mt-[12px] flex justify-center">
-                                <Link href="/2025/blog">
+                                <Link href="/blog">
                                     <div
                                         className={
                                             "m-1.5 flex w-max items-center gap-[8px] text-pri-black hover:opacity-80"
@@ -164,7 +166,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <nav className={"mx-auto my-[40px] w-[90dvw] b:mt-[60px] b:mb-[50px] b:w-[max(750px,56dvw)]"}>
                 <div className={"mx-auto w-max transition-opacity hover:opacity-80 b:hidden"}>
                     <Link
-                        href="/2025/blog"
+                        href="/blog"
                         className={"flex items-center justify-center gap-3 text-[18px] font-medium text-pri-black"}
                     >
                         <Grid className="size-[28px]" />

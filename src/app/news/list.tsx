@@ -5,7 +5,7 @@ export default function NewsList({
     news,
 }: {
     news: {
-        _id: string;
+        id: string;
         date: Date;
         importance: boolean;
         title: string;
@@ -38,13 +38,13 @@ export default function NewsList({
                 </button>
             </div>
             <div className={"mt-[24px] mb-[60px] not-md:mt-[16px] not-md:mb-[40px]"}>
-                {news.map(({ _id, date, importance, title, link }, idx) => {
+                {news.map(({ id, date, importance, title, link }, idx) => {
                     const year = date.getFullYear();
                     const month = String(date.getMonth() + 1).padStart(2, "0");
                     const day = String(date.getDate()).padStart(2, "0");
                     return (
                         <div
-                            key={_id.toString()}
+                            key={id}
                             className={`${onlyImportant && !importance ? "max-h-[0px]" : "max-h-[60px] not-md:max-h-[50px]"} overflow-hidden
                             transition-[max-height] duration-300`}
                         >
@@ -55,7 +55,7 @@ export default function NewsList({
                                         : "border-[#de0d22]"
                                 } relative flex h-[60px] items-center border-t-[1.5px] text-[16px] transition-[border-color] duration-250 ease-out
                                 not-md:h-[50px]`}
-                                href={`/2025/news/${link}`}
+                                href={`/news/${link}`}
                             >
                                 {importance && (
                                     <div

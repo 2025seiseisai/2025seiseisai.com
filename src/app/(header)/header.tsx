@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import Theme from "../(assets)/theme.svg";
 import ArchiveIcon from "./archive.svg";
 import ContactIcon from "./contact.svg";
+import HamburgerFallback from "./hamburger-fallback.svg";
 import styles from "./header.module.scss";
 import InstagramIcon from "./instagram.svg";
 import { overlapEvent } from "./overlap-event";
@@ -13,7 +14,16 @@ import PrivacyIcon from "./privacy.svg";
 import XIcon from "./x.svg";
 import YouTubeIcon from "./youtube.svg";
 
-const Hamburger = dynamic(() => import("./hamburger"), { ssr: false });
+const Hamburger = dynamic(() => import("./hamburger"), {
+    ssr: false,
+    loading: () => (
+        <div className="z-100000002 mr-[min(40px,8svw)] flex aspect-1/1 h-[30px] w-auto items-center justify-center md:h-[40px]">
+            <div className={"h-2/3 w-2/3 md:h-1/2 md:w-1/2"}>
+                <HamburgerFallback />
+            </div>
+        </div>
+    ),
+});
 
 function HeaderLink({
     href,
@@ -50,12 +60,14 @@ function HeaderLink({
 
 export function Header() {
     const [open, setOpen] = useState(false);
-    const [isOverlapping, setIsOverlapping] = useState(true);
+    const [isOverlapping, setIsOverlapping] = useState(false);
+    const [isMouseOver, setIsMouseOver] = useState(false);
     const headerRef = useRef<HTMLDivElement>(null);
 
-    const setOpenImpl = (open: boolean) => {
-        setOpen(open);
-        if (open && document.body.offsetHeight > window.innerHeight) {
+    const setOpenImpl = (open_flag: boolean) => {
+        setOpen(open_flag);
+        if (!open_flag) setIsMouseOver(false);
+        if (open_flag) {
             const scrollTop = window.scrollY;
             document.body.style.position = "fixed";
             document.body.style.top = `-${scrollTop}px`;
@@ -85,22 +97,30 @@ export function Header() {
     }, [pathname]);
 
     return (
-        <header ref={headerRef} className={styles.header}>
-            <div className={`${styles.headerContent} ${isOverlapping && !open ? styles.headerContentOverlapping : ""}`}>
-                <Link href="/2025" className={styles.logoLink}>
+        <header
+            ref={headerRef}
+            className={styles.header}
+            onMouseEnter={() => setIsMouseOver(true)}
+            onMouseLeave={() => setIsMouseOver(false)}
+        >
+            <div className={styles.headerBackground}></div>
+            <div
+                className={`${styles.headerContent} ${isOverlapping && !open && !isMouseOver ? styles.headerContentOverlapping : ""}`}
+            >
+                <Link href="/" className={styles.logoLink}>
                     <Theme className={styles.logo} />
                 </Link>
                 <div className={styles.navLinks}>
-                    <Link href="/2025" className={styles.navLink}>
+                    <Link href="/" className={styles.navLink}>
                         Top
                     </Link>
-                    <Link href="/2025/news" className={styles.navLink}>
+                    <Link href="/news" className={styles.navLink}>
                         News
                     </Link>
-                    <Link href="/2025/blog" className={styles.navLink}>
+                    <Link href="/blog" className={styles.navLink}>
                         Blog
                     </Link>
-                    <Link href="/2025/contact" className={styles.navLink}>
+                    <Link href="/contact" className={styles.navLink}>
                         Contact
                     </Link>
                 </div>
@@ -109,77 +129,74 @@ export function Header() {
             <div className={`${styles.menuOverlay} ${open ? "" : styles.menuOverlayHidden}`}>
                 <div className={`${styles.menuContent} ${!open ? styles.menuContentClosed : styles.menuContentOpen}`}>
                     <div className={styles.menuLinksContainer}>
-                        <HeaderLink href="/2025" title1="Top" title2="Webサイトトップページ" setOpen={setOpenImpl} />
+                        <HeaderLink href="/" title1="Top" title2="Webサイトトップページ" setOpen={setOpenImpl} />
                         <HeaderLink
-                            href="/2025/news"
+                            href="/news"
                             title1="News"
                             title2="菁々祭に関する最新のお知らせ"
                             setOpen={setOpenImpl}
                         />
                         <HeaderLink
-                            href="/2025/theme-logo"
+                            href="/theme-logo"
                             title1="Theme & Logo"
                             title2="テーマとロゴの紹介"
                             setOpen={setOpenImpl}
                             disabled
                         />
                         <HeaderLink
-                            href="/2025/access"
+                            href="/access"
                             title1="Access"
                             title2="東大寺学園へのアクセス方法"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
-                            href="/2025/events"
+                            href="/events"
                             title1="Events"
                             title2="イベント内容やタイムテーブル"
                             setOpen={setOpenImpl}
                             disabled
                         />
                         <HeaderLink
-                            href="/2025/map"
+                            href="/map"
                             title1="Map"
                             title2="校内の展示・バザーの地図"
                             setOpen={setOpenImpl}
                             disabled
                         />
                         <HeaderLink
-                            href="/2025/goods"
+                            href="/goods"
                             title1="Goods"
                             title2="菁々祭オリジナルグッズ一覧"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
-                            href="/2025/tickets"
+                            href="/tickets"
                             title1="Tickets"
                             title2="Web整理券の取得・申込ページ"
                             setOpen={setOpenImpl}
                             disabled
                         />
                         <HeaderLink
-                            href="/2025/blog"
+                            href="/blog"
                             title1="Blog"
                             title2="PRパート員による菁々祭紹介"
                             setOpen={setOpenImpl}
                         />
                         <HeaderLink
-                            href="/2025/special"
+                            href="/special"
                             title1="Special"
                             title2="壁紙やアイコンなど特別コンテンツ"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
-                            href="/2025/downloads"
+                            href="/downloads"
                             title1="Downloads"
                             title2="部誌などのダウンロードページ"
                             setOpen={setOpenImpl}
                             disabled
                         />
                         <HeaderLink
-                            href="/2025/gallery"
+                            href="/gallery"
                             title1="Gallery"
                             title2="菁々祭デザインのギャラリー"
                             setOpen={setOpenImpl}
@@ -227,7 +244,7 @@ export function Header() {
                         <div className={styles.snsLinks}>
                             <div className={styles.snsLinkItem}>
                                 <Link
-                                    href="/2025/contact"
+                                    href="/contact"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
@@ -237,7 +254,7 @@ export function Header() {
                             </div>
                             <div className={styles.snsLinkItem}>
                                 <Link
-                                    href="/2025/privacy-policy"
+                                    href="/privacy-policy"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
@@ -251,7 +268,7 @@ export function Header() {
                             </div>
                             <div className={styles.snsLinkItem}>
                                 <Link
-                                    href="/2025/archives"
+                                    href="/archives"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
                                 >

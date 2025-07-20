@@ -6,6 +6,7 @@
         "stylelint.vscode-stylelint",
         "bradlc.vscode-tailwindcss",
         "formulahendry.code-runner",
-        "ritwickdey.liveserver"
+        "ritwickdey.liveserver",
+        "prisma.prisma"
     ]
 }
