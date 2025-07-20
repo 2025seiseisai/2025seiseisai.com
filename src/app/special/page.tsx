@@ -9,50 +9,58 @@ export default function Page() {
     return (
         <>
             <p className={styles.title}>
-                    <span className={styles.red}>S</span>pecial
+                <span className={styles.red}>S</span>pecial
             </p>
             <p className={styles.sentence}>
                 第61回菁々祭のテーマ"分秒"をイメージして作られた壁紙やアイコン・ヘッダーなどに使える画像をダウンロードすることができます。菁々祭に向け、SNS上でも"分秒"を感じて盛り上がっていきましょう！使用にあたっては、下記の禁止事項を遵守していただくようお願いいたします。
             </p>
-            <p className={styles.subtitle}>禁止事項</p>
-            <p className={styles.list}>
-                <li>データの改変および再編集</li>
-                <li>データの二次配布</li>
-                <li>データの著作権者を名乗るなどの著作権を侵害する行為</li>
-                <li>データを無断で商用利用すること</li>
+
+            <p className={styles.subtitle_block}>
+                <div className={`${styles.subtitle} ${styles.red}`}>禁止事項</div>
+                <span className={styles.list}>
+                    <div>・データの改変および再編集</div>
+                    <div>・データの二次配布</div>
+                    <div>・データの著作権者を名乗るなどの著作権を侵害する行為</div>
+                    <div>・データを無断で商用利用すること</div>
+                </span>
+                <div className={styles.border}></div>
+                <div className={styles.border2}></div>
+                <div className={styles.border3}></div>
             </p>
-            <p className={styles.large}><span className={styles.red}>WALLPAPER</span></p>
-            <Image
-                src="/2025/special/wallpaper/1.png" // 1.png~5.pngまであります
-                alt="壁紙"
-                width={180}
-                height={360}
-            />
-            <Image
-                src="/2025/special/icon/2.png" // 1.png~4.pngまであります
-                alt="アイコン"
-                width={150}
-                height={150}
-            />
-            <Image
-                src="/2025/special/header/3.png" // 1.png~4.pngまであります
-                alt="ヘッダー"
-                width={495}
-                height={165}
-            />
+
+            <p className={`${styles.large} ${styles.red}`}>WALLPAPER</p>
+            <p className={styles.wallpaper}>
+                <Image src="/2025/special/wallpaper/1.png" alt="壁紙" width={180} height={360} />
+                <Image src="/2025/special/wallpaper/2.png" alt="壁紙" width={180} height={360} />
+                <Image src="/2025/special/wallpaper/3.png" alt="壁紙" width={180} height={360} />
+                <Image src="/2025/special/wallpaper/4.png" alt="壁紙" width={180} height={360} />
+                <Image src="/2025/special/wallpaper/5.png" alt="壁紙" width={180} height={360} />
+            </p>
+            <p id="icon" className={`${styles.large} ${styles.red}`}>
+                ICON
+            </p>
+            <p className={styles.icon}>
+                <Image src="/2025/special/icon/1.png" alt="アイコン" width={240} height={240} />
+                <Image src="/2025/special/icon/2.png" alt="アイコン" width={240} height={240} />
+                <Image src="/2025/special/icon/3.png" alt="アイコン" width={240} height={240} />
+                <Image src="/2025/special/icon/4.png" alt="アイコン" width={240} height={240} />
+            </p>
+            <p id="header" className={`${styles.large} ${styles.red}`}>
+                HEADER
+            </p>
+            <p className={styles.header}>
+                <Image src="/2025/special/header/1.png" alt="ヘッダー" width={495} height={165} />
+                <Image src="/2025/special/header/2.png" alt="ヘッダー" width={495} height={165} />
+            </p>
+            <p className={styles.header}>
+                <Image src="/2025/special/header/3.png" alt="ヘッダー" width={495} height={165} />
+                <Image src="/2025/special/header/4.png" alt="ヘッダー" width={495} height={165} />
+            </p>
             {/* ダウンロードボタンの作り方 */}
             {/* ボタンにしたい要素をaタグで囲う */}
             <a href="/special/wallpaper/4.png" download>
                 <p>壁紙4をダウンロード</p>
             </a>
-            {/* 等間隔に並べたい場合は以下のようにするといい感じになります */}
-            <div className={styles.flexContainer}>
-                <p>あ</p>
-                <p>い</p>
-                <p>う</p>
-                <p>え</p>
-                <p>お</p>
-            </div>
         </>
     );
 }

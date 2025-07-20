@@ -3,52 +3,128 @@
     font-size: 36px;
     color: black;
 }
-.red{
-    color:#DE0D22;
+
+.red {
+    color: #de0d22;
 }
 
-.title{
-    font-family: Noto Sans JP;
-    font-weight: 700;
-    font-style: Bold;
+.title {
+    width: 1120px;
+    margin: 30px auto;
     font-size: 40px;
-    line-height: 150%;
-    letter-spacing: 0%;
- }
-.sentence{
-    font-family: Noto Sans JP;
-    font-weight: 500;
-    font-style: Medium;
-    font-size: 18px;
-    line-height: 150%;
-    letter-spacing: 0%;
-}
-.subtitle{
-    font-family: Noto Sans JP;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 32px;
-    line-height: 150%;
-    letter-spacing: 0%;
-    vertical-align: middle;
-}
-.list{
-    font-family: Noto Sans JP;
-    font-weight: 500;
-    font-style: Medium;
-    font-size: 18px;
-    line-height: 150%;
-    letter-spacing: 0%;
-    vertical-align: middle;
-}
-.large{
-    font-family: Noto Sans JP;
+    font-style: bold;
     font-weight: 700;
-    font-style: Bold;
-    font-size: 36px;
     line-height: 150%;
-    letter-spacing: 0%;
+    text-align: left;
 }
+
+.sentence {
+    width: 1022px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-style: medium;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: left;
+}
+
+.subtitle_block {
+    position: relative;
+    top: 25px;
+    left: calc(50% - 511px);
+    width: 1071px;
+    height: 182px;
+}
+
+.border {
+    position: absolute;
+    bottom: -2px;
+    left: -12px;
+    width: calc(100% - 48px);
+    height: calc(100% - 21px);
+    margin: 0;
+    border-right: 2px solid #de0d22;
+    border-bottom: 2px solid #de0d22;
+}
+
+.border2 {
+    position: absolute;
+    top: 23px;
+    left: 145px;
+    width: calc(100% - 207px);
+    border-top: 2px solid #de0d22;
+}
+
+.border3 {
+    position: absolute;
+    top: 35px;
+    left: -12px;
+    height: calc(100% - 33px);
+    border-left: 2px solid #de0d22;
+}
+
+.subtitle {
+    font-size: 32px;
+    font-style: medium;
+    font-weight: 500;
+    line-height: 150%;
+    vertical-align: middle;
+}
+
+.list {
+    position: relative;
+    top: 8px;
+    font-size: 18px;
+    font-style: medium;
+    font-weight: 500;
+    line-height: 150%;
+    vertical-align: middle;
+}
+
+.large {
+    padding: 20px 14px;
+    margin: 86px auto 0;
+    font-size: 36px;
+    font-style: bold;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+#icon {
+    margin-top: 95px;
+}
+
+#header {
+    margin-top: 90px;
+    margin-bottom: 19px;
+}
+
+.wallpaper {
+    display: flex;
+    gap: 48px;
+    width: 1120px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.icon {
+    display: flex;
+    gap: 48px;
+    width: 1120px;
+    height: 240px;
+    padding: 0 16px;
+    margin: 4px auto;
+}
+
+.header {
+    display: flex;
+    gap: 60px;
+    width: 1120px;
+    height: 185px;
+    padding: 0 35px;
+    margin: 0 auto 44px;
+}
+
 // スマホ用のスタイル
 @include media(sm) {
     .example {
@@ -63,21 +139,4 @@
         color: red;
         background-color: green;
     }
-}
-
-.flexContainer {
-    // 横並び
-    display: flex;
-
-    // 間隔
-    gap: 20px;
-
-    // 中央寄せ
-    justify-content: center;
-
-    // 画面幅の60%を使う
-    width: 60svw;
-
-    // 背景色
-    background-color: azure;
 }
