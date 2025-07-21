@@ -16,7 +16,7 @@ export default function Page() {
             </p>
 
             <p className={styles.subtitle_block}>
-                <div className={`${styles.subtitle} ${styles.red}`}>禁止事項</div>
+                <span className={`${styles.subtitle} ${styles.red}`}>禁止事項</span>
                 <span className={styles.list}>
                     <div>・データの改変および再編集</div>
                     <div>・データの二次配布</div>
