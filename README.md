@@ -6,9 +6,9 @@
 2. PostgreSQLサーバーを作成し、接続文字列を取得してください。supabaseで作成すると楽です。
 3. このリポジトリをクローンしてください。
 4. vscodeでクローンしたフォルダを開いてください。
-5. .envをプロジェクトルートに追加し、以下のようにしてください
+5. .envをプロジェクトルートに追加し、以下のようにしてください。
+   supabaseを使用する場合は[こちら](https://supabase.com/docs/guides/database/prisma)もご参照ください。
     ```
-    AUTH_URL="http://localhost:3000/
     DATABASE_URL="PostgreSQLの接続文字列"
     DIRECT_URL="PostgreSQLの接続文字列"
     ```
