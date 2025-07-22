@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Back from "./back.svg";
+import Download from "./download.svg";
 import styles from "./page.module.scss";
 
 export const metadata = {
@@ -29,38 +31,79 @@ export default function Page() {
             </div>
 
             <p className={`${styles.large} ${styles.red}`}>WALLPAPER</p>
-            <p className={styles.wallpaper}>
+            <div className={styles.wallpaper}>
                 <Image src="/2025/special/wallpaper/1.png" alt="壁紙" width={180} height={360} />
                 <Image src="/2025/special/wallpaper/2.png" alt="壁紙" width={180} height={360} />
                 <Image src="/2025/special/wallpaper/3.png" alt="壁紙" width={180} height={360} />
                 <Image src="/2025/special/wallpaper/4.png" alt="壁紙" width={180} height={360} />
                 <Image src="/2025/special/wallpaper/5.png" alt="壁紙" width={180} height={360} />
+                <p className={styles.downloadIcon}>
+                    <a href="/2025/special/wallpaper/1.png" title="壁紙1をダウンロード" download>
+                        <Download />
+                    </a>
+                    <a href="/2025/special/wallpaper/2.png" title="壁紙2をダウンロード" download>
+                        <Download />
+                    </a>
+                    <a href="/2025/special/wallpaper/3.png" title="壁紙3をダウンロード" download>
+                        <Download />
+                    </a>
+                    <a href="/2025/special/wallpaper/4.png" title="壁紙4をダウンロード" download>
+                        <Download />
+                    </a>
+                    <a href="/2025/special/wallpaper/5.png" title="壁紙5をダウンロード" download>
+                        <Download />
+                    </a>
+                </p>
+            </div>
+            <p className={styles.wall}>
+                <Back className={styles.back} />
             </p>
-            <p id="icon" className={`${styles.large} ${styles.red}`}>
-                ICON
-            </p>
-            <p className={styles.icon}>
+            <p className={`${styles.large} ${styles.red} ${styles.iconblock}`}>ICON</p>
+            <div className={styles.icon}>
                 <Image src="/2025/special/icon/1.png" alt="アイコン" width={240} height={240} />
                 <Image src="/2025/special/icon/2.png" alt="アイコン" width={240} height={240} />
                 <Image src="/2025/special/icon/3.png" alt="アイコン" width={240} height={240} />
                 <Image src="/2025/special/icon/4.png" alt="アイコン" width={240} height={240} />
-            </p>
-            <p id="header" className={`${styles.large} ${styles.red}`}>
-                HEADER
-            </p>
-            <p className={styles.header}>
+                <p className={`${styles.downloadIcon} ${styles.icon_download}`}>
+                    <a href="/2025/special/icon/1.png" title="アイコン1をダウンロード" download>
+                        <Download />
+                    </a>
+                    <a href="/2025/special/icon/2.png" title="アイコン2をダウンロード" download>
+                        <Download />
+                    </a>
+                    <a href="/2025/special/icon/3.png" title="アイコン3をダウンロード" download>
+                        <Download />
+                    </a>
+                    <a href="/2025/special/icon/4.png" title="アイコン4をダウンロード" download>
+                        <Download />
+                    </a>
+                </p>
+            </div>
+            <p className={`${styles.large} ${styles.red} ${styles.headerblock}`}>HEADER</p>
+            <div className={styles.header}>
                 <Image src="/2025/special/header/1.png" alt="ヘッダー" width={495} height={165} />
                 <Image src="/2025/special/header/2.png" alt="ヘッダー" width={495} height={165} />
-            </p>
-            <p className={styles.header}>
+                <p className={`${styles.downloadIcon} ${styles.header_download}`}>
+                    <a href="/2025/special/header/1.png" title="ヘッダー1をダウンロード" download>
+                        <Download />
+                    </a>
+                    <a href="/2025/special/header/2.png" title="ヘッダー2をダウンロード" download>
+                        <Download />
+                    </a>
+                </p>
+            </div>
+            <div className={styles.header}>
                 <Image src="/2025/special/header/3.png" alt="ヘッダー" width={495} height={165} />
                 <Image src="/2025/special/header/4.png" alt="ヘッダー" width={495} height={165} />
-            </p>
-            {/* ダウンロードボタンの作り方 */}
-            {/* ボタンにしたい要素をaタグで囲う */}
-            <a href="/special/wallpaper/4.png" download>
-                <p>壁紙4をダウンロード</p>
-            </a>
+                <p className={`${styles.downloadIcon} ${styles.header_download}`}>
+                    <a href="/2025/special/header/3.png" title="ヘッダー3をダウンロード" download>
+                        <Download />
+                    </a>
+                    <a href="/2025/special/header/4.png" title="ヘッダー4をダウンロード" download>
+                        <Download />
+                    </a>
+                </p>
+            </div>
         </>
     );
 }
