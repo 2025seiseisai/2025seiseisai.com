@@ -2,6 +2,10 @@
     color: #de0d22;
 }
 
+.black {
+    color: #0b0e0f;
+}
+
 .title {
     width: 1120px;
     margin: 30px auto;
@@ -13,7 +17,7 @@
 }
 
 .sentence {
-    width: 1022px;
+    width: min(1022px, 90vw);
     margin: 0 auto;
     font-size: 18px;
     font-style: medium;
@@ -25,9 +29,9 @@
 .subtitle_block {
     position: relative;
     top: 25px;
-    left: calc(50% - 511px);
-    width: 1071px;
+    width: min(1071px, 90vw);
     height: 182px;
+    margin: 0 auto; // left:calc(50% - 511px);?
 }
 
 .border {
