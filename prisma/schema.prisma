@@ -23,7 +23,7 @@ model Admin {
   authorityGoods      Boolean        @default(false)
   authorityGoodsStock Boolean        @default(false)
   authorityTickets    Boolean        @default(false)
-  AdminPassword       AdminPassword?
+  password            AdminPassword?
 }
 
 model AdminPassword {
