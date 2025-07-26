@@ -33,11 +33,41 @@ export default function Page() {
 
             <p className={`${styles.large} ${styles.red}`}>WALLPAPER</p>
             <div className={styles.wallpaper}>
-                <Image src="/2025/special/wallpaper/1.png" alt="壁紙" width={180} height={360} />
-                <Image src="/2025/special/wallpaper/2.png" alt="壁紙" width={180} height={360} />
-                <Image src="/2025/special/wallpaper/3.png" alt="壁紙" width={180} height={360} />
-                <Image src="/2025/special/wallpaper/4.png" alt="壁紙" width={180} height={360} />
-                <Image src="/2025/special/wallpaper/5.png" alt="壁紙" width={180} height={360} />
+                <Image
+                    className={styles.wallpaperImage}
+                    src="/2025/special/wallpaper/1.png"
+                    alt="壁紙"
+                    width={180}
+                    height={360}
+                />
+                <Image
+                    className={styles.wallpaperImage}
+                    src="/2025/special/wallpaper/2.png"
+                    alt="壁紙"
+                    width={180}
+                    height={360}
+                />
+                <Image
+                    className={styles.wallpaperImage}
+                    src="/2025/special/wallpaper/3.png"
+                    alt="壁紙"
+                    width={180}
+                    height={360}
+                />
+                <Image
+                    className={styles.wallpaperImage}
+                    src="/2025/special/wallpaper/4.png"
+                    alt="壁紙"
+                    width={180}
+                    height={360}
+                />
+                <Image
+                    className={styles.wallpaperImage}
+                    src="/2025/special/wallpaper/5.png"
+                    alt="壁紙"
+                    width={180}
+                    height={360}
+                />
                 <p className={styles.downloadIcon}>
                     <a href="/2025/special/wallpaper/1.png" title="壁紙1をダウンロード" download>
                         <Download />
@@ -61,10 +91,34 @@ export default function Page() {
             </p>
             <p className={`${styles.large} ${styles.red} ${styles.iconblock}`}>ICON</p>
             <div className={styles.icon}>
-                <Image src="/2025/special/icon/1.png" alt="アイコン" width={240} height={240} />
-                <Image src="/2025/special/icon/2.png" alt="アイコン" width={240} height={240} />
-                <Image src="/2025/special/icon/3.png" alt="アイコン" width={240} height={240} />
-                <Image src="/2025/special/icon/4.png" alt="アイコン" width={240} height={240} />
+                <Image
+                    className={styles.iconImage}
+                    src="/2025/special/icon/1.png"
+                    alt="アイコン"
+                    width={240}
+                    height={240}
+                />
+                <Image
+                    className={styles.iconImage}
+                    src="/2025/special/icon/2.png"
+                    alt="アイコン"
+                    width={240}
+                    height={240}
+                />
+                <Image
+                    className={styles.iconImage}
+                    src="/2025/special/icon/3.png"
+                    alt="アイコン"
+                    width={240}
+                    height={240}
+                />
+                <Image
+                    className={styles.iconImage}
+                    src="/2025/special/icon/4.png"
+                    alt="アイコン"
+                    width={240}
+                    height={240}
+                />
                 <p className={`${styles.downloadIcon} ${styles.icon_download}`}>
                     <a href="/2025/special/icon/1.png" title="アイコン1をダウンロード" download>
                         <Download />
@@ -82,8 +136,20 @@ export default function Page() {
             </div>
             <p className={`${styles.large} ${styles.red} ${styles.headerblock}`}>HEADER</p>
             <div className={styles.header}>
-                <Image src="/2025/special/header/1.png" alt="ヘッダー" width={495} height={165} />
-                <Image src="/2025/special/header/2.png" alt="ヘッダー" width={495} height={165} />
+                <Image
+                    className={styles.headerImage}
+                    src="/2025/special/header/1.png"
+                    alt="ヘッダー"
+                    width={495}
+                    height={165}
+                />
+                <Image
+                    className={styles.headerImage}
+                    src="/2025/special/header/2.png"
+                    alt="ヘッダー"
+                    width={495}
+                    height={165}
+                />
                 <p className={`${styles.downloadIcon} ${styles.header_download}`}>
                     <a href="/2025/special/header/1.png" title="ヘッダー1をダウンロード" download>
                         <Download />
@@ -94,8 +160,20 @@ export default function Page() {
                 </p>
             </div>
             <div className={styles.header}>
-                <Image src="/2025/special/header/3.png" alt="ヘッダー" width={495} height={165} />
-                <Image src="/2025/special/header/4.png" alt="ヘッダー" width={495} height={165} />
+                <Image
+                    className={styles.headerImage}
+                    src="/2025/special/header/3.png"
+                    alt="ヘッダー"
+                    width={495}
+                    height={165}
+                />
+                <Image
+                    className={styles.headerImage}
+                    src="/2025/special/header/4.png"
+                    alt="ヘッダー"
+                    width={495}
+                    height={165}
+                />
                 <p className={`${styles.downloadIcon} ${styles.header_download}`}>
                     <a href="/2025/special/header/3.png" title="ヘッダー3をダウンロード" download>
                         <Download />
