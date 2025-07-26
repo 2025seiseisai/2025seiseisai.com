@@ -16,14 +16,20 @@ datasource db {
 }
 
 model Admin {
-  id                  String  @id @default(cuid())
-  name                String
-  hashedPassword      String
-  authorityAdmins     Boolean @default(false)
-  authorityNews       Boolean @default(false)
-  authorityGoods      Boolean @default(false)
-  authorityGoodsStock Boolean @default(false)
-  authorityTickets    Boolean @default(false)
+  id                  String         @id @default(cuid())
+  name                String         @unique
+  authorityAdmins     Boolean        @default(false)
+  authorityNews       Boolean        @default(false)
+  authorityGoods      Boolean        @default(false)
+  authorityGoodsStock Boolean        @default(false)
+  authorityTickets    Boolean        @default(false)
+  password            AdminPassword?
+}
+
+model AdminPassword {
+  adminId        String @id
+  hashedPassword String
+  admin          Admin  @relation(fields: [adminId], references: [id], onDelete: Cascade)
 }
 
 model News {
