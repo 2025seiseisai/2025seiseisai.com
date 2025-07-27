@@ -86,9 +86,9 @@ export default function Page() {
                     </a>
                 </p>
             </div>
-            <p className={styles.wall}>
+            <div className={styles.wall}>
                 <Back className={styles.back} />
-            </p>
+            </div>
             <p className={`${styles.large} ${styles.red} ${styles.iconblock}`}>ICON</p>
             <div className={styles.icon}>
                 <Image

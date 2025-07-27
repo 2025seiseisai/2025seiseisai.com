@@ -9,8 +9,7 @@
 }
 
 .title {
-    width: 1180px;
-    padding: 0 30px;
+    width: min(1180px, 80vw);
     margin: 30px auto;
     font-size: 40px;
     font-weight: 700;
@@ -19,7 +18,7 @@
 }
 
 .sentence {
-    width: min(1022px, 90vw);
+    width: min(1022px, 80vw);
     margin: 0 auto;
     font-size: 18px;
     font-weight: 500;
@@ -31,17 +30,17 @@
     position: relative;
     top: 25px;
     z-index: 1;
-    width: min(1071px, 90vw);
-    height: 182px;
+    width: min(1022px, 80vw);
+    height: 184px;
     margin: 0 auto; // left:calc(50% - 511px);?
 }
 
 .border {
     position: absolute;
-    bottom: -2px;
-    left: -12px;
-    width: calc(100% - 48px);
-    height: calc(100% - 21px);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 23px);
     margin: 0;
     border-right: 2px solid #de0d22;
     border-bottom: 2px solid #de0d22;
@@ -50,20 +49,21 @@
 .border2 {
     position: absolute;
     top: 23px;
-    left: 145px;
-    width: calc(100% - 207px);
+    left: 157px;
+    width: calc(100% - 159px);
     border-top: 2px solid #de0d22;
 }
 
 .border3 {
     position: absolute;
     top: 35px;
-    left: -12px;
-    height: calc(100% - 33px);
+    left: 0;
+    height: calc(100% - 35px);
     border-left: 2px solid #de0d22;
 }
 
 .subtitle {
+    margin-left: 12px;
     font-size: 32px;
     font-weight: 500;
     line-height: 150%;
@@ -73,6 +73,8 @@
 .list {
     position: relative;
     top: 8px;
+    left: 0;
+    margin-inline: 12px;
     font-size: 18px;
     font-weight: 500;
     line-height: 150%;
@@ -117,9 +119,11 @@
 
 .back {
     position: fixed;
-    top: calc(50% - min(260px, 26.4svw));
-    left: calc(50% - min(443.5px, 45svw));
-    width: min(887px, 90svw);
+    width: 90svw;
+    height: 90svh;
+    inset: 0;
+    margin: auto;
+    padding-top: 64px;
 }
 
 .icon {
@@ -133,7 +137,6 @@
 
 .iconImage {
     width: min(20svw, 240px);
-    height: width;
 }
 
 .header {
@@ -148,7 +151,6 @@
 
 .headerImage {
     width: min(495px, 42svw);
-    height: width/3;
 }
 
 .downloadIcon {
