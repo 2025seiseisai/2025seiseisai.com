@@ -119,11 +119,11 @@
 
 .back {
     position: fixed;
+    inset: 0;
     width: 90svw;
     height: 90svh;
-    inset: 0;
-    margin: auto;
     padding-top: 64px;
+    margin: auto;
 }
 
 .icon {
@@ -159,8 +159,10 @@
     gap: min(calc(18.3vw - 60px), calc(3.3svw + 120px));
     margin-top: min(calc(30svw - 40px), 320px);
     margin-left: min(calc(15svw - 48px), 132px);
+
     & > a {
         transition-duration: 0.15s;
+
         &:hover {
             filter: drop-shadow(0 0 10px rgb(222 13 34 / 100%));
         }
