@@ -161,7 +161,7 @@
     margin-left: min(calc(15svw - 48px), 132px);
 
     & > a {
-        transition-duration: 0.15s;
+        transition: filter 0.15s;
 
         &:hover {
             filter: drop-shadow(0 0 10px rgb(222 13 34 / 100%));
