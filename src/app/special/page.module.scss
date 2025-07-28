@@ -1,7 +1,184 @@
-// 共通のスタイル
-.example {
+.red {
+    z-index: 1;
+    color: #de0d22;
+}
+
+.black {
+    z-index: 1;
+    color: #0b0e0f;
+}
+
+.title {
+    width: min(1022px, 80vw);
+    margin: 30px auto;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: left;
+}
+
+.sentence {
+    width: min(1022px, 80vw);
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: left;
+}
+
+.subtitle_block {
+    position: relative;
+    top: 25px;
+    z-index: 1;
+    width: min(1022px, 80vw);
+    height: 184px;
+    margin: 0 auto; // left:calc(50% - 511px);?
+}
+
+.border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 23px);
+    margin: 0;
+    border-right: 2px solid #de0d22;
+    border-bottom: 2px solid #de0d22;
+}
+
+.border2 {
+    position: absolute;
+    top: 23px;
+    left: 157px;
+    width: calc(100% - 159px);
+    border-top: 2px solid #de0d22;
+}
+
+.border3 {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    height: calc(100% - 35px);
+    border-left: 2px solid #de0d22;
+}
+
+.subtitle {
+    margin-left: 12px;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 150%;
+    vertical-align: middle;
+}
+
+.list {
+    position: relative;
+    top: 8px;
+    left: 0;
+    margin-inline: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    vertical-align: middle;
+}
+
+.large {
+    z-index: 1;
+    margin: 86px auto 0;
     font-size: 36px;
-    color: black;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.iconblock {
+    margin-top: min(95px, 6.6svw);
+}
+
+.headerblock {
+    margin-top: min(90px, 6.25svw);
+    margin-bottom: min(19px, 1.3svw);
+}
+
+.wall {
+    position: relative;
+}
+
+.wallpaper {
+    z-index: 1;
+    display: flex;
+    gap: 3.3svw;
+    width: auto;
+    height: auto;
+    padding: 27px 0;
+    margin: 0 auto;
+}
+
+.wallpaperImage {
+    width: min(15svw, 180px);
+    height: min(30svw, 360px);
+}
+
+.back {
+    position: fixed;
+    inset: 0;
+    width: 90svw;
+    height: 90svh;
+    padding-top: 64px;
+    margin: auto;
+}
+
+.icon {
+    z-index: 1;
+    display: flex;
+    gap: 3.3svw;
+    width: auto;
+    height: auto;
+    margin: 4px auto;
+}
+
+.iconImage {
+    width: min(20svw, 240px);
+}
+
+.header {
+    z-index: 1;
+    display: flex;
+    gap: 4.2svw;
+    width: auto;
+    height: auto;
+    padding: 0 35px 20px;
+    margin: 0 auto 44px;
+}
+
+.headerImage {
+    width: min(495px, 42svw);
+}
+
+.downloadIcon {
+    position: absolute;
+    display: flex;
+    gap: min(calc(18.3vw - 60px), calc(3.3svw + 120px));
+    margin-top: min(calc(30svw - 40px), 320px);
+    margin-left: min(calc(15svw - 48px), 132px);
+
+    & > a {
+        transition: filter 0.15s;
+
+        &:hover {
+            filter: drop-shadow(0 0 10px rgb(222 13 34 / 100%));
+        }
+    }
+}
+
+.icon_download {
+    gap: min(calc(3.3vw + 180px), calc(23.3vw - 60px));
+    margin-top: min(174px, 20svw - 66px);
+    margin-left: min(174px, 20svw - 66px);
+}
+
+.header_download {
+    gap: min(calc(4.2vw + 435px), calc(46.2vw - 60px));
+    margin-top: min(125px, 14svw - 40px);
+    margin-left: min(447px, 42svw - 48px);
 }
 
 // スマホ用のスタイル
@@ -18,21 +195,4 @@
         color: red;
         background-color: green;
     }
-}
-
-.flexContainer {
-    // 横並び
-    display: flex;
-
-    // 間隔
-    gap: 20px;
-
-    // 中央寄せ
-    justify-content: center;
-
-    // 画面幅の60%を使う
-    width: 60svw;
-
-    // 背景色
-    background-color: azure;
 }
