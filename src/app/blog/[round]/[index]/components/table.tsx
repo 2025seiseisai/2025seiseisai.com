@@ -15,7 +15,8 @@ export default function Table({
                     <li key={item.id}>
                         <a
                             href={`#${item.id}`}
-                            className={`mx-[5px] flex w-full text-[14px]/[1.7] transition-all duration-300 before:content-['・'] hover:opacity-75 b:text-[13px]
+                            className={`mx-[5px] flex w-full text-[14px]/[1.7] transition-all duration-300
+                            before:content-['・'] hover:opacity-75 b:text-[13px]
                             ${item.id === activeTitleId && "bg-[#de0d2221]"}`}
                             onClick={(e) => {
                                 e.preventDefault();

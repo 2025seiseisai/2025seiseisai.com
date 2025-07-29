@@ -28,9 +28,8 @@ function ArchiveCard({
 }) {
     return (
         <div
-            className={
-                "mb-[25px] rounded-[20px] bg-[#fcfcfc] pt-[20px] pb-[20px] text-[#0b0e0f] shadow-md md:mb-[40px] md:shadow-lg"
-            }
+            className={`mb-[25px] rounded-[20px] bg-[#fcfcfc] pt-[20px] pb-[20px] text-[#0b0e0f] shadow-md md:mb-[40px]
+                md:shadow-lg`}
         >
             <div className="flex flex-col items-center px-[20px]">
                 <h2 className="mb-[4px]">
@@ -80,9 +79,8 @@ export default function ArchivesPage() {
     return (
         <>
             <h1
-                className={
-                    "mt-[30px] ml-[20px] text-[28px] font-bold text-[#0b0e0f] md:mr-auto md:ml-auto md:w-[80%] md:text-[40px]"
-                }
+                className={`mt-[30px] ml-[20px] text-[28px] font-bold text-[#0b0e0f] md:mr-auto md:ml-auto md:w-[80%]
+                    md:text-[40px]`}
             >
                 <span className="text-[#de0d22]">A</span>rchives
             </h1>

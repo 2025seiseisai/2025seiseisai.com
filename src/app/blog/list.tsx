@@ -46,33 +46,45 @@ export default function BlogList({
             <div className="mb-[38px] flex w-full justify-center select-none">
                 <div className="relative h-[34px] w-[min(max(72svw,250px),320px)] md:h-[45px] md:w-[400px]">
                     <div className="absolute inset-0 bg-[#0b0e0f] [clip-path:polygon(6%_0,100%_0,94%_100%,0_100%)]"></div>
-                    <div className="absolute inset-0 [clip-path:polygon(0%_2px,100%_2px,100%_calc(100%-2px),0_calc(100%-2px))]">
-                        <div className="h-full w-full bg-white [clip-path:polygon(calc(6%+2px)_0,calc(100%-2px)_0,calc(94%-2px)_100%,2px_100%)]"></div>
+                    <div
+                        className="absolute inset-0
+                            [clip-path:polygon(0%_2px,100%_2px,100%_calc(100%-2px),0_calc(100%-2px))]"
+                    >
+                        <div
+                            className="h-full w-full bg-white
+                                [clip-path:polygon(calc(6%+2px)_0,calc(100%-2px)_0,calc(94%-2px)_100%,2px_100%)]"
+                        ></div>
                     </div>
                     <div
-                        className="absolute inset-0 flex items-center justify-center overflow-hidden text-center text-[22px] tracking-[-2%] text-[#de0d22]
-                            md:text-[32px]"
+                        className="absolute inset-0 flex items-center justify-center overflow-hidden text-center
+                            text-[22px] tracking-[-2%] text-[#de0d22] md:text-[32px]"
                     >
                         <p
-                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70 md:transform-[translateY(-2px)]"
+                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70
+                                md:transform-[translateY(-2px)]"
                             onClick={() => setBlogDisplayState("61")}
                         >
                             61<span className="text-[16px] md:text-[24px]">st</span>
                         </p>
                         <p
-                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70 md:transform-[translateY(-2px)]"
+                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70
+                                md:transform-[translateY(-2px)]"
                             onClick={() => setBlogDisplayState("60")}
                         >
                             60<span className="text-[16px] md:text-[24px]">th</span>
                         </p>
                         <p
-                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70 md:transform-[translateY(-2px)]"
+                            className="h-min w-[29%] transform-[opacity] cursor-pointer duration-300 hover:opacity-70
+                                md:transform-[translateY(-2px)]"
                             onClick={() => setBlogDisplayState("59")}
                         >
                             59<span className="text-[16px] md:text-[24px]">th</span>
                         </p>
                     </div>
-                    <div className="pointer-events-none absolute inset-0 [clip-path:polygon(0%_5px,100%_5px,100%_calc(100%-5px),0_calc(100%-5px))]">
+                    <div
+                        className="pointer-events-none absolute inset-0
+                            [clip-path:polygon(0%_5px,100%_5px,100%_calc(100%-5px),0_calc(100%-5px))]"
+                    >
                         <div
                             className="h-full w-full transition-[clip-path] duration-200 ease-in-out"
                             style={{
@@ -87,8 +99,8 @@ export default function BlogList({
                             }}
                         >
                             <div
-                                className="flex h-full w-full items-center justify-center overflow-hidden bg-[#de0d22] text-center text-[22px] tracking-[-2%]
-                                    text-white md:text-[32px]"
+                                className="flex h-full w-full items-center justify-center overflow-hidden bg-[#de0d22]
+                                    text-center text-[22px] tracking-[-2%] text-white md:text-[32px]"
                             >
                                 <p className="h-min w-[29%] md:transform-[translateY(-2px)]">
                                     61<span className="text-[16px] md:text-[24px]">st</span>

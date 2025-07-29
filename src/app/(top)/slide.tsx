@@ -31,8 +31,8 @@ export default function Slide() {
 
     return (
         <div
-            className={`mb-[20px] w-full overflow-hidden [clip-path:polygon(0_10%,100%_0,100%_90%,0_100%)] md:mt-[30px] md:mb-[30px]
-                md:[clip-path:polygon(0_20%,100%_0,100%_80%,0_100%)]`}
+            className={`mb-[20px] w-full overflow-hidden [clip-path:polygon(0_10%,100%_0,100%_90%,0_100%)] md:mt-[30px]
+                md:mb-[30px] md:[clip-path:polygon(0_20%,100%_0,100%_80%,0_100%)]`}
         >
             <div className={`${styles.animation} flex w-[2200%] sm:w-[1100%] lg:w-[733.334%]`}>
                 {indices.concat(indices).map((idx, key) => (
