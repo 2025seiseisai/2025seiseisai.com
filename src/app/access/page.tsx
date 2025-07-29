@@ -8,7 +8,7 @@ export default function Page() {
     return (
         <>
             {/* ここに書く */}
-            <p className={styles.example}>アクセス</p>
+            <p className={styles.example}>あくせす</p>
         </>
     );
 }
