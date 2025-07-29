@@ -230,12 +230,12 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     return (
         <>
             <div
-                className={`mr-[20px] mb-[60px] ml-[20px] flex flex-col text-[#0b0e0f] not-md:mb-[40px] md:mr-[10%] md:ml-[10%] lg:mr-[20%]
-                    lg:ml-[20%] lg:items-center`}
+                className={`mr-[20px] mb-[60px] ml-[20px] flex flex-col text-[#0b0e0f] not-md:mb-[40px] md:mr-[10%]
+                    md:ml-[10%] lg:mr-[20%] lg:ml-[20%] lg:items-center`}
             >
                 <div
-                    className={`mt-[30px] flex items-center border-b-[2px] border-[#0b0e0f] pb-[4px] md:pb-[8px] lg:w-[120%] lg:justify-center
-                        lg:pb-[12px]`}
+                    className={`mt-[30px] flex items-center border-b-[2px] border-[#0b0e0f] pb-[4px] md:pb-[8px]
+                        lg:w-[120%] lg:justify-center lg:pb-[12px]`}
                 >
                     <h1 className={"text-[40px] font-bold not-md:text-[28px] lg:text-[48px]"}>
                         <span className="text-[#de0d22]">N</span>ews
@@ -247,8 +247,9 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                     </time>
                     {importance && (
                         <div
-                            className={`ml-[12px] flex h-[24px] items-center justify-center rounded-full bg-[#de0d22] pr-[12px] pl-[12px] text-[13px] text-white
-                            not-md:ml-[8px] not-md:h-[20px] not-md:pr-[10px] not-md:pl-[10px] not-md:text-[12px]`}
+                            className={`ml-[12px] flex h-[24px] items-center justify-center rounded-full bg-[#de0d22]
+                            pr-[12px] pl-[12px] text-[13px] text-white not-md:ml-[8px] not-md:h-[20px] not-md:pr-[10px]
+                            not-md:pl-[10px] not-md:text-[12px]`}
                         >
                             重要
                         </div>
@@ -259,9 +260,9 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 <div className={"mt-[32px] flex w-full justify-center not-md:mt-[24px]"}>
                     <Link
                         href="/news"
-                        className={`rounded-[12px] border-[1.5px] pt-[4px] pr-[16px] pb-[4px] pl-[16px] text-[20px] text-[#de0d22] transition-opacity
-                            duration-300 not-md:rounded-[8px] not-md:pt-[4px] not-md:pr-[12px] not-md:pb-[3px] not-md:pl-[12px] not-md:text-[16px]
-                            hover:opacity-75`}
+                        className={`rounded-[12px] border-[1.5px] pt-[4px] pr-[16px] pb-[4px] pl-[16px] text-[20px]
+                            text-[#de0d22] transition-opacity duration-300 not-md:rounded-[8px] not-md:pt-[4px]
+                            not-md:pr-[12px] not-md:pb-[3px] not-md:pl-[12px] not-md:text-[16px] hover:opacity-75`}
                     >
                         {">> News一覧へ"}
                     </Link>

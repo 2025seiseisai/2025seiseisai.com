@@ -17,7 +17,10 @@ import YouTubeIcon from "./youtube.svg";
 const Hamburger = dynamic(() => import("./hamburger"), {
     ssr: false,
     loading: () => (
-        <div className="z-100000002 mr-[min(40px,8svw)] flex aspect-1/1 h-[30px] w-auto items-center justify-center md:h-[40px]">
+        <div
+            className="z-100000002 mr-[min(40px,8svw)] flex aspect-1/1 h-[30px] w-auto items-center justify-center
+                md:h-[40px]"
+        >
             <div className={"h-2/3 w-2/3 md:h-1/2 md:w-1/2"}>
                 <HamburgerFallback />
             </div>
@@ -105,7 +108,8 @@ export function Header() {
         >
             <div className={styles.headerBackground}></div>
             <div
-                className={`${styles.headerContent} ${isOverlapping && !open && !isMouseOver ? styles.headerContentOverlapping : ""}`}
+                className={`${styles.headerContent}
+                    ${isOverlapping && !open && !isMouseOver ? styles.headerContentOverlapping : ""}`}
             >
                 <Link href="/" className={styles.logoLink}>
                     <Theme className={styles.logo} />
@@ -285,7 +289,8 @@ export function Header() {
                     </div>
                 </div>
                 <div
-                    className={`${styles.menuBackground} ${!open ? styles.menuBackgroundClosed : styles.menuBackgroundOpen}`}
+                    className={`${styles.menuBackground}
+                        ${!open ? styles.menuBackgroundClosed : styles.menuBackgroundOpen}`}
                     onClick={() => setOpenImpl(false)}
                 ></div>
             </div>
