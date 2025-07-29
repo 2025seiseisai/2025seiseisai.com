@@ -14,9 +14,6 @@ export default class NewsManager {
         const news = await dbClient.news.findMany({
             orderBy: { date: "desc" },
         });
-        for (const n of news) {
-            n.content = n.content.replaceAll("\\n", "\n");
-        }
         this.cachedNews = news;
         this.lastFetchTime = Date.now();
         return news;

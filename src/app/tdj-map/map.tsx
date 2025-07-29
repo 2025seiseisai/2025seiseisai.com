@@ -14,7 +14,7 @@ function BuildScene(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
     grid.position.set(0, -102, 0);
     scene.add(grid);
     const loader = new THREE.TextureLoader();
-    const texture = loader.load("/tdj-map/gitignore.png");
+    const texture = loader.load("/2025/tdj-map/gitignore.png");
     texture.colorSpace = THREE.SRGBColorSpace;
     const tdjplane = new THREE.Mesh(
         new THREE.PlaneGeometry(2000, 2000, 1, 1),
