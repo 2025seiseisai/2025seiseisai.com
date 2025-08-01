@@ -29,6 +29,7 @@ const eslintConfig = [
             ...eslintPluginBetterTailwindcss.configs["recommended-warn"].rules,
             ...eslintPluginBetterTailwindcss.configs["recommended-error"].rules,
             "better-tailwindcss/no-unnecessary-whitespace": "off",
+            "better-tailwindcss/enforce-consistent-line-wrapping": "off",
             "better-tailwindcss/multiline": "off",
         },
         settings: {

@@ -8,8 +8,8 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
     return (
         <Link
             href={href}
-            className={`mt-[7px] inline-block w-full pl-0 text-[13px] transition-[color_padding] duration-300 md:mt-[20px] md:pl-[23px]
-                md:text-[16px] md:hover:pl-[25px] md:hover:text-[#de0d22]`}
+            className={`mt-[7px] inline-block w-full pl-0 text-[13px] transition-[color_padding] duration-300
+                md:mt-[20px] md:pl-[23px] md:text-[16px] md:hover:pl-[25px] md:hover:text-[#de0d22]`}
         >
             {children}
         </Link>
@@ -39,31 +39,28 @@ export function Footer() {
                         }
                     />
                     <p
-                        className={
-                            "mt-[5px] ml-[25px] w-[220px] text-[9px] md:mt-[12px] md:ml-[calc(19000svw/1440)] md:w-[321px] md:text-[13px]"
-                        }
+                        className={`mt-[5px] ml-[25px] w-[220px] text-[9px] md:mt-[12px] md:ml-[calc(19000svw/1440)]
+                            md:w-[321px] md:text-[13px]`}
                     >
                         © 2025 61st seiseisai “FUNBYO”, Created by PR part
                     </p>
                 </span>
                 <span
-                    className={
-                        "text-[9px] max-[360px]:mt-[4px] max-[360px]:ml-[25px] max-[360px]:flex max-[360px]:w-[95svw] md:text-[13px]"
-                    }
+                    className={`text-[9px] max-[360px]:mt-[4px] max-[360px]:ml-[25px] max-[360px]:flex
+                        max-[360px]:w-[95svw] md:text-[13px]`}
                 >
                     <Link href="/contact">
                         <p
-                            className={`mt-[32px] transition-[color_padding] duration-300 max-[360px]:mt-0 max-[360px]:mr-[12px] md:mt-[72px] md:hover:pl-[2px]
-                                md:hover:text-[#de0d22]`}
+                            className={`mt-[32px] transition-[color_padding] duration-300 max-[360px]:mt-0
+                                max-[360px]:mr-[12px] md:mt-[72px] md:hover:pl-[2px] md:hover:text-[#de0d22]`}
                         >
                             {">>お問い合わせ"}
                         </p>
                     </Link>
                     <Link href="/privacy-policy">
                         <p
-                            className={
-                                "mt-[4px] transition-[color_padding] duration-300 max-[360px]:mt-0 md:mt-[7px] md:hover:pl-[2px] md:hover:text-[#de0d22]"
-                            }
+                            className={`mt-[4px] transition-[color_padding] duration-300 max-[360px]:mt-0 md:mt-[7px]
+                                md:hover:pl-[2px] md:hover:text-[#de0d22]`}
                         >
                             {">>プライバシーポリシー"}
                         </p>
@@ -71,14 +68,12 @@ export function Footer() {
                 </span>
             </div>
             <div
-                className={
-                    "flex w-full flex-wrap font-light not-md:justify-between not-md:gap-x-[calc(3500svw/375)] md:h-[300px]"
-                }
+                className={`flex w-full flex-wrap font-light not-md:justify-between not-md:gap-x-[calc(3500svw/375)]
+                    md:h-[300px]`}
             >
                 <span
-                    className={
-                        "ml-[calc(1700svw/375)] not-md:flex-1 md:ml-[calc(19000svw/1440)] md:w-[calc(27500svw/1440)] lg:w-[calc(22500svw/1440)]"
-                    }
+                    className={`ml-[calc(1700svw/375)] not-md:flex-1 md:ml-[calc(19000svw/1440)]
+                        md:w-[calc(27500svw/1440)] lg:w-[calc(22500svw/1440)]`}
                 >
                     <h1
                         className={
@@ -90,9 +85,8 @@ export function Footer() {
                     <FooterLink href="/">Top</FooterLink>
                     <DisabledFooterLink>
                         <p
-                            className={
-                                "max-[400px]:!flex max-[400px]:!h-[21px] max-[400px]:!items-center max-[400px]:!text-[3.5svw]"
-                            }
+                            className={`max-[400px]:!flex max-[400px]:!h-[21px] max-[400px]:!items-center
+                                max-[400px]:!text-[3.5svw]`}
                         >
                             Theme & Logo
                         </p>
@@ -118,8 +112,8 @@ export function Footer() {
                     <DisabledFooterLink>Tickets</DisabledFooterLink>
                 </span>
                 <span
-                    className={`not-md:mr-[calc(1700svw/375)] not-md:flex-1 md:ml-[calc(8600svw/1440)] md:w-[calc(27500svw/1440)]
-                        lg:w-[calc(22500svw/1440)]`}
+                    className={`not-md:mr-[calc(1700svw/375)] not-md:flex-1 md:ml-[calc(8600svw/1440)]
+                        md:w-[calc(27500svw/1440)] lg:w-[calc(22500svw/1440)]`}
                 >
                     <h1
                         className={
@@ -134,8 +128,9 @@ export function Footer() {
                     <DisabledFooterLink>Gallery</DisabledFooterLink>
                 </span>
                 <span
-                    className={`flex flex-row not-md:mt-[16px] not-md:mr-[17px] not-md:mb-[16px] not-md:w-full not-md:justify-end not-md:gap-[5px]
-                        md:mt-auto md:mr-[calc(7900svw/1440)] md:mb-[30px] md:ml-auto md:flex-col md:gap-[8px] lg:flex-row`}
+                    className={`flex flex-row not-md:mt-[16px] not-md:mr-[17px] not-md:mb-[16px] not-md:w-full
+                        not-md:justify-end not-md:gap-[5px] md:mt-auto md:mr-[calc(7900svw/1440)] md:mb-[30px]
+                        md:ml-auto md:flex-col md:gap-[8px] lg:flex-row`}
                 >
                     <Link
                         href="https://x.com/seiseisai_tdj"
