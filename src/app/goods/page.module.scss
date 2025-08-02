@@ -1,20 +1,25 @@
-// 共通のスタイル
+/* 共通のスタイル */
 .example {
-    font-size: 36px;
+    font-size: 28px;
+    font-weight: bold;
     color: black;
 }
 
-// スマホ用のスタイル
+#g {
+    color: red;
+}
+
+/* スマホ用のスタイル */
 @include media(sm) {
     .example {
         background-color: blue;
     }
 }
 
-// PC用のスタイル
+/* PC用のスタイル */
 @include media(lg) {
     .example {
-        // 上書き可能
+        /* 上書き可能 */
         color: red;
         background-color: green;
     }
