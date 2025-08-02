@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./page.module.scss";
 
 export const metadata = {
@@ -7,8 +8,16 @@ export const metadata = {
 export default function Page() {
     return (
         <>
-            {/* ここに書く */}
-            <p className={styles.example}>グッズ</p>
+            <p className={styles.example}>
+                <span id="g">G</span>oods
+            </p>
+            <p>
+                <span>Tシャツ</span>
+                <span>900円</span>
+            </p>
+            <p>在庫あり</p>
+            <img src="app/goods/tshirt.svg" alt="Tシャツ" />
+            <p>第61回菁々祭のオリジナルTシャツです。S,M,L,XLのサイズをご用意しております。</p>
         </>
     );
 }
