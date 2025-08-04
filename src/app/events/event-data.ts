@@ -4,13 +4,14 @@ export type EventData = {
     name: string;
     description?: string;
     ticket?: true;
-    events: {
-        display?: string;
-        day: 1 | 2;
-        location: (typeof locations)[number];
-        start: `${HourType}:${MinuteType}`;
-        end: `${HourType}:${MinuteType}`;
-    }[];
+    day1: EventDetail[];
+    day2: EventDetail[];
+};
+export type EventDetail = {
+    label?: string;
+    location: (typeof locations)[number];
+    start: `${HourType}:${MinuteType}`;
+    end: `${HourType}:${MinuteType}`;
 };
 
 // 場所の候補は適宜更新してください。
@@ -27,51 +28,43 @@ export const eventData: EventData[] = [
         // 整理券が必要なイベントは以下のようにしてください。
         ticket: true,
 
-        events: [
+        day1: [
             {
-                // displayは省略可です。
-                display: "予選A (晴天時)",
-
-                day: 1,
+                // labelは省略可です。
+                label: "予選A (晴天時)",
                 location: "中庭",
                 start: "09:30",
                 end: "10:00",
             },
 
             {
-                display: "予選B (晴天時)",
-
-                day: 1,
+                label: "予選B (晴天時)",
                 location: "中庭",
                 start: "11:50",
                 end: "12:10",
             },
 
             {
-                display: "決勝",
-
-                day: 2,
-                location: "体育館",
-                start: "15:40",
-                end: "16:00",
-            },
-
-            {
-                display: "予選A (雨天時)",
-
-                day: 1,
+                label: "予選A (雨天時)",
                 location: "体育館",
                 start: "11:40",
                 end: "12:10",
             },
 
             {
-                display: "予選B (雨天時)",
-
-                day: 1,
+                label: "予選B (雨天時)",
                 location: "体育館",
                 start: "14:00",
                 end: "14:30",
+            },
+        ],
+
+        day2: [
+            {
+                label: "決勝",
+                location: "体育館",
+                start: "15:40",
+                end: "16:00",
             },
         ],
     },
