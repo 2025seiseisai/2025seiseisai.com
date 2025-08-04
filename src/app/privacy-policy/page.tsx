@@ -1,7 +1,5 @@
 import Link from "next/link";
-import Back from "./back.svg";
 import styles from "./page.module.scss";
-import SP_Back from "./sp_back.svg";
 
 export const metadata = {
     title: "Privacy Policy | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
@@ -11,10 +9,6 @@ export default function Page() {
     return (
         <>
             <div className={styles.content}>
-                <div className={styles.back}>
-                    <Back className={styles.back_image} />
-                    <SP_Back className={styles.sp_back_image} />
-                </div>
                 <p className={styles.title}>
                     <span className={styles.red}>P</span>rivacy Policy
                 </p>

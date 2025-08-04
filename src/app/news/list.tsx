@@ -21,8 +21,8 @@ export default function NewsList({
                     <span className="text-[#de0d22]">N</span>ews
                 </h1>
                 <button
-                    className={`${onlyImportant ? "bg-[#0b0e0f10] text-[#0b0e0f60]" : "bg-[#de0d22] text-white"}
-                        mt-[8px] ml-[40px] h-[32px] w-[64px] cursor-pointer rounded-[16px] pr-[8px] pl-[8px] text-[14px]
+                    className={`${onlyImportant ? "bg-[#F0F0F0] text-[#0b0e0f60]" : "bg-[#de0d22] text-white"} mt-[8px]
+                        ml-[40px] h-[32px] w-[64px] cursor-pointer rounded-[16px] pr-[8px] pl-[8px] text-[14px]
                         transition-[background-color_color] duration-300 not-md:ml-[28px] not-md:h-[28px]
                         not-md:w-[56px] not-md:text-[12px]`}
                     onClick={() => setOnlyImportant(false)}
@@ -30,8 +30,8 @@ export default function NewsList({
                     すべて
                 </button>
                 <button
-                    className={`${!onlyImportant ? "bg-[#0b0e0f10] text-[#0b0e0f60]" : "bg-[#de0d22] text-white"}
-                        mt-[8px] ml-[12px] h-[32px] w-[64px] cursor-pointer rounded-[16px] pr-[8px] pl-[8px] text-[14px]
+                    className={`${!onlyImportant ? "bg-[#F0F0F0] text-[#0b0e0f60]" : "bg-[#de0d22] text-white"} mt-[8px]
+                        ml-[12px] h-[32px] w-[64px] cursor-pointer rounded-[16px] pr-[8px] pl-[8px] text-[14px]
                         transition-[background-color_color] duration-300 not-md:ml-[10px] not-md:h-[28px]
                         not-md:w-[56px] not-md:text-[12px]`}
                     onClick={() => setOnlyImportant(true)}

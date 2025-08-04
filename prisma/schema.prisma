@@ -41,13 +41,14 @@ model News {
 }
 
 enum GoodsStock {
-  あり
-  少なめ
-  わずか
-  なし
+  売り切れ
+  残りわずか
+  在庫少なめ
+  在庫あり
 }
 
 model Goods {
-  name  String     @id
-  stock GoodsStock @default(あり)
+  id    String     @id @default(cuid())
+  name  String     @unique
+  stock GoodsStock @default(在庫あり)
 }

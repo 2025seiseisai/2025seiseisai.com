@@ -79,6 +79,10 @@ export function Header() {
                 headerRef.current.style.position = "relative";
                 headerRef.current.style.transform = `translateY(${scrollTop}px)`;
             }
+            const background = document.getElementsByClassName("background")[0] as HTMLElement;
+            if (background) {
+                background.style.transform = `translateY(${scrollTop}px)`;
+            }
         } else {
             const scrollTop = -parseInt(document.body.style.top || "0", 10);
             document.body.style.position = "";
@@ -88,6 +92,10 @@ export function Header() {
             if (headerRef.current) {
                 headerRef.current.style.position = "";
                 headerRef.current.style.transform = "";
+            }
+            const background = document.getElementsByClassName("background")[0] as HTMLElement;
+            if (background) {
+                background.style.transform = "";
             }
         }
     };
