@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import HolyLoader from "holy-loader";
 import { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
+import Background from "./(background)/back";
 import { Footer } from "./(footer)/footer";
 import { Header } from "./(header)/header";
 
@@ -147,6 +148,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="ja" className={noto_sans_jp.className}>
             <body suppressHydrationWarning>
                 <HolyLoader height="2px" color="#de0d22" boxShadow="0 0 10px #0b0e0f" />
+                <Background />
                 <Header />
                 <main>{children}</main>
                 <Footer />

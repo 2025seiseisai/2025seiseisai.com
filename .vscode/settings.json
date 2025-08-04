@@ -47,6 +47,7 @@
     "terminal.integrated.env.windows": {
         "PSExecutionPolicyPreference": "RemoteSigned"
     },
+    "terminal.integrated.scrollback": 5000,
     "code-runner.executorMap": {
         "javascript": "node",
         "typescript": "\"./node_modules/.bin/tsx\"",

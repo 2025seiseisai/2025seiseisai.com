@@ -1,0 +1,11 @@
+.back_pc {
+    @media (aspect-ratio < 1/1) {
+        display: none;
+    }
+}
+
+.back_mobile {
+    @media (aspect-ratio >= 1/1) {
+        display: none;
+    }
+}
