@@ -9,7 +9,7 @@
 }
 
 .title {
-    width: min(1022px, 80vw);
+    width: min(1022px, 80svw);
     margin: 30px auto;
     font-size: 40px;
     font-weight: 700;
@@ -17,8 +17,16 @@
     text-align: left;
 }
 
+@include media(sm) {
+    .title {
+        width: calc(100svw - 40px);
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+}
+
 .sentence {
-    width: min(1022px, 80vw);
+    width: min(1022px, 80svw);
     margin: 0 auto;
     font-size: 18px;
     font-weight: 500;
@@ -28,6 +36,7 @@
 
 @include media(sm) {
     .sentence {
+        width: calc(100svw - 40px);
         font-size: 16px;
     }
 }
@@ -36,14 +45,14 @@
     position: relative;
     top: 25px;
     z-index: 1;
-    width: min(1022px, 80vw);
+    width: min(1022px, 80svw);
     height: 184px;
     margin: 0 auto;
 }
 
 @include media(sm) {
     .subtitle_block {
-        width: min(346px, 80vw);
+        width: calc(100svw - 35px);
         height: 176px;
     }
 }
@@ -108,6 +117,7 @@
 
 @include media(sm) {
     .subtitle {
+        margin-left: 8px;
         font-size: 24px;
     }
 }
@@ -123,12 +133,25 @@
     vertical-align: middle;
 }
 
+@include media(sm) {
+    .list {
+        font-size: 16px;
+    }
+}
+
 .large {
     z-index: 1;
     margin: 86px auto 0;
     font-size: 36px;
     font-weight: 700;
     line-height: 150%;
+}
+
+@include media(sm) {
+    .large {
+        margin: 53px auto 0;
+        font-size: 32px;
+    }
 }
 
 .iconblock {
@@ -154,9 +177,24 @@
     margin: 0 auto;
 }
 
+@include media(sm) {
+    .wallpaper {
+        gap: 42px;
+        padding: 18px 0;
+        margin: 0 20px;
+    }
+}
+
 .wallpaperImage {
     width: min(15svw, 180px);
     height: min(30svw, 360px);
+}
+
+@include media(sm) {
+    .wallpaperImage {
+        width: 160px;
+        height: 320px;
+    }
 }
 
 .back {
@@ -199,14 +237,28 @@
     position: absolute;
     display: flex;
     gap: min(calc(18.3vw - 60px), calc(3.3svw + 120px));
+    padding-left: min(calc(15svw - 48px), 132px);
     margin-top: min(calc(30svw - 40px), 320px);
-    margin-left: min(calc(15svw - 48px), 132px);
 
     & > a {
         transition: filter 0.15s;
 
         &:hover {
             filter: drop-shadow(0 0 10px rgb(222 13 34 / 100%));
+        }
+    }
+}
+
+@include media(sm) {
+    .downloadIcon {
+        gap: 150px;
+        padding-left: 117px;
+        margin-top: 284px;
+        overflow-x: auto;
+
+        & > a {
+            max-width: 90%;
+            height: auto;
         }
     }
 }
