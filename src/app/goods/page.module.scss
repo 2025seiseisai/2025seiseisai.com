@@ -1,3 +1,5 @@
+/* stylelint-disable order/properties-order */
+
 /* 共通のスタイル */
 .example {
     font-size: 28px;
@@ -25,4 +27,165 @@
         color: red;
         background-color: green;
     }
+}
+
+/* src/app/goods/page.module.scss */
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+
+    #g {
+        color: #de0d22;
+    }
+}
+
+@media (width <= 640px) {
+    .title {
+        width: 335px;
+        height: 42px;
+        margin: 30px 20px 25px;
+    }
+}
+
+@media (width >= 1024px) {
+    .title {
+        color: red;
+        background-color: green;
+    }
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    margin-bottom: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 18px;
+    color: #333;
+}
+
+.status {
+    margin: 8px 0;
+    color: red;
+}
+
+.image {
+    margin: 12px 0;
+
+    svg {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.description {
+    font-size: 16px;
+    color: #555;
+}
+
+/* src/app/goods/page.module.scss */
+/* stylelint-disable-next-line no-duplicate-selectors */
+.example {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+}
+
+@media (width <= 640px) {
+    .example {
+        width: 335px;
+        height: 42px;
+        margin: 30px 20px 25px;
+
+        #g {
+            color: #de0d22;
+        }
+    }
+}
+
+@media (width >= 1024px) {
+    .example {
+        color: red;
+        background-color: green;
+    }
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.container {
+    padding: 20px;
+}
+
+.goodsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (width >= 640px) {
+    .goodsGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.item {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.price {
+    font-size: 18px;
+}
+
+.stock {
+    margin: 5px 0;
+}
+
+.available {
+    color: green;
+}
+
+.out {
+    color: red;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.image {
+    max-width: 100%;
+    margin: 15px 0;
+}
+
+.desc {
+    font-size: 14px;
+    color: #333;
 }
