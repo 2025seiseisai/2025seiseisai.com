@@ -1,7 +1,18 @@
 // 共通のスタイル
+$pri-red: #de0d22;
+$pri-black: #0b0e0f;
+$breakpoint-b: 1000px;
+
 .example {
     font-size: 36px;
     color: black;
+}
+.title {
+    font-size: 36px;
+    color: black;
+}
+.f529 {
+    background-image: url(/src/app/goods/img/back.png);
 }
 
 // スマホ用のスタイル
