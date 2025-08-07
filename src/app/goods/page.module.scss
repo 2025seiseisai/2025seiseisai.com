@@ -3,16 +3,132 @@ $pri-red: #de0d22;
 $pri-black: #0b0e0f;
 $breakpoint-b: 1000px;
 
-.example {
-    font-size: 36px;
-    color: black;
-}
 .title {
     font-size: 36px;
     color: black;
 }
-.f529 {
-    background-image: url(/src/app/goods/img/back.png);
+
+.container {
+    margin-left: 11vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.goods {
+    position: relative;
+    width: 350px;
+    height: 313px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    flex: 1/3;
+    box-sizing: border-box; /* paddingやborderが幅に影響しないように */
+    margin: 16px;
+}
+
+.f523 {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    border-bottom: 2px solid #0b0e0f;
+}
+
+.name {
+    position: absolute;
+    left: 6px;
+    top: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #de0d22;
+    line-height: 45px;
+}
+
+.price {
+    margin-left: 237px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 45px;
+}
+
+.f511 {
+    position: absolute;
+    margin-top: 8px;
+    left: 9px;
+    width: 76px;
+    height: 21px;
+    background: #de0d22;
+    border-radius: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    content: "在庫あり";
+}
+
+.wrapper {
+    margin-top: 37px;
+    width: 270px;
+    height: 163px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.squareImage {
+    width: 55%;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+}
+
+.f504 {
+    margin-top: 45px;
+    margin-left: 11vw;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.m {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+
+    position: absolute;
+    width: 256px;
+    height: 42px;
+    left: 160px;
+    top: 826px;
+
+    border-left: 4px solid #de0d22;
+}
+
+.zaiko {
+    width: 240px;
+    height: 42px;
+
+    font-family: "Noto Sans JP";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 150%;
+    /* ボックスの高さと同一、または42px */
+
+    color: #0b0e0f;
+
+    /* オートレイアウト内部 */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 // スマホ用のスタイル
