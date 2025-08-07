@@ -44,7 +44,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "和太鼓演奏",
-        description: "和太鼓を演奏します",
+        description: "和太鼓のみを使った演奏です。迫力満点の演奏をお届けするのでぜひお楽しみください。",
         day1: [
             { label: "晴天時", location: "転心殿前", start: "09:00", end: "09:50" },
             { label: "晴天時", location: "転心殿前", start: "13:30", end: "14:10" },
@@ -70,7 +70,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "TDJ48",
-        description: "坂道系を中心とした曲を女装して踊ります。",
+        description: "私たちTDJ48は坂道系などアイドルの曲を可愛く踊ります！",
         day1: [
             { location: "体育館", start: "12:10", end: "12:30" },
             { location: "体育館", start: "16:30", end: "16:50" },
@@ -82,7 +82,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "寺マス",
-        description: "アイドルマスターズの曲を女装して踊ります",
+        description: "2日間だけの魔法にかかったアイドルが、最高のステージで輝きます!プロデューサーさん、菁々祭ですよっ、菁々祭!!",
         day1: [
             { location: "体育館", start: "12:30", end: "12:50" },
             { location: "体育館", start: "15:30", end: "15:50" },
@@ -115,6 +115,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "T(DJ)²",
+        description:"東大寺学園史上初?!音楽好きによるDJパフォーマンスです!4人のDJが日替わりで、多種多様な音楽を流します。有名な曲から知る人ぞ知る名曲、マイナーな曲まで幅広く流しますので、知っている曲で楽しんだり、新たな曲と出会ったり、まずは一度お立ち寄りください!",
         day1: [
             { location: "4A", start: "11:50", end: "12:10" },
             { location: "体育館", start: "14:10", end: "15:00" },
@@ -157,7 +158,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "マッスルコンテスト",
-        description:"色々な種目により、東大寺学園の筋肉王を決める。1対1で勝ち上がりで行う。",
+        description:"東大寺学園のトップオブマッスル。突き進め、漢道。唸れ、筋肉。弾けろ、筋肉。輝け、筋肉。",
         day1: [
         ],
         day2: [
@@ -190,7 +191,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "菁々コンサート",
-        description:"有志の生徒が、圓融館で、曲を演奏する。",
+        description:"学園内の音楽好きの生徒たちが自由な発想と情熱で作り上げる、「菁々コンサート」を開催します。部活動の枠を超え、学年・組の垣根を超えて集まった仲間たちが、それぞれの想いを乗せた演奏をお届けします。",
         day1: [
             { location: "圓融館", start: "09:00", end: "09:50" },
         ],
@@ -209,7 +210,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "室内学部定期演奏会",
-        description:"室内楽部による圓融館での演奏会",
+        description:"小編成のオーケストラによる演奏会です。モーツァルトの交響曲から映画化で話題のミュージカル「Wicked」まで様々なジャンルを演奏します。生の演奏ならではの迫力をぜひご体感ください。",
         day1: [
             { location: "圓融館", start: "11:20", end: "13:00" },
         ],
@@ -219,7 +220,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "音楽部ライブ",
-        description:"音楽部によるバンド演奏",
+        description:"今年もアツいライブを開催！ 迫力満点のビートであなたの心を沸き上がらせます！！",
         day1: [
             { location: "圓融館", start: "13:20", end: "15:00" },
         ],
@@ -229,7 +230,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "映画祭",
-        description:"小講堂で生徒が作ったオリジナル映画を上映します",
+        description:"映画祭では、生徒たちが脚本から演技、撮影、編集まで全て自分達で行ったオリジナル映画が上映されます。個性あふれる独創的な作品をぜひ御覧ください。",
         day1: [
             { location: "小講堂", start: "10:50", end: "11:30" },
             { location: "小講堂", start: "12:40", end: "13:20" },
@@ -254,7 +255,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "クイズ研究部",
-        description:"クイズ大会他校のクイズ研究部を招待し、早押しクイズなどを行って優勝チームを決める。",
+        description:"関西のクイズ強豪校が一堂に会し、己の知識と知識をぶつけ合う！ハイレベルな戦いを是非ご覧ください。",
         day1: [
             { location: "視聴覚室", start: "10:50", end: "11:50" },
         ],
@@ -263,7 +264,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "無差別級ビブリオバトル",
-        description:"紹介するものが広義の本なビブリオバトル",
+        description:"参考書からマンガ・同人誌まで、本の形さえしていればなんでも出場可能なビブリオバトル！自分の「好き」を押し付けろ！",
         day1: [
             { location: "視聴覚室", start: "13:50", end: "14:50" },
         ],
@@ -273,7 +274,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "やさしい落語",
-        description:"現代口語で落語をする",
+        description:"落語。つまらない、難しい、といったイメージで敬遠している方も多いのではないでしょうか。そもそも興味を持ったこともないという人も少なくないはずです。そんな方に、是非聴いてほしい。現代口語でのやさしい落語です。",
         day1: [
         ],
         day2: [
@@ -282,7 +283,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "スリーレッドメン",
-        description:"有志バンド",
+        description:"軽音などのバンドでは扱わないこともあるいろいろなジャンルを弾きます。ぜひお越しください",
         day1: [
             { location: "音楽室", start: "10:10", end: "10:40" },
         ],
@@ -408,7 +409,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "レゴプログラミング講習会",
-        description:"レゴで作られたロボットを動かすプログラミングを体験してもらいます。地学室を使って2日とも1時間の講習を2回ずつ行います。一回の講習で5人までの参加が可能です。",
+        description:"レゴで作られたロボットを動かすプログラミングを体験できます！初心者の方でも大歓迎です、ぜひご参加ください！",
         day1: [
             { location: "地学室", start: "11:00", end: "12:00" },
             { location: "地学室", start: "13:00", end: "14:00" },
@@ -420,7 +421,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "ロケット発射実験",
-        description:"上グラウンドでロケットを打ち上げる",
+        description:"巷でよく見かけるペットボトルロケットは異なり、本物の火薬を使った本格的なロケットの発射実験です。 大空へ飛び立つロケットの迫力はきっと皆さんの思い出に残るでしょう。ぜひお越しください！",
         day1: [
             { location: "上グラウンド", start: "10:30", end: "10:50" },
             { location: "上グラウンド", start: "13:30", end: "13:50" },
@@ -446,6 +447,46 @@ export const eventData: EventData[] = [
             { label: "11時の部", location: "お化け屋敷", start: "11:00", end: "11:50" },
             { label: "13時の部", location: "お化け屋敷", start: "13:00", end: "13:50" },
             { label: "14時の部", location: "お化け屋敷", start: "14:00", end: "14:50" },
+        ]
+    },
+    {
+        name: "かわいいだけじゃだめですか？",
+        description:"去年、SNSで大バズりしたCUTIE STREET「かわいいだけじゃだめですか？」を踊ります!ぜひ盛り上げて下さい!",
+        day1: [
+        ],
+        day2: [
+        ]
+    },
+    {
+        name: "釈迦釈迦BOYS",
+        description:"2025年結成のスーパーロックバンド「Dear Deers」。バンドメンバーは竹迫音汰郎(ボーカル＆ギター)・全康旭(ギター)・藤本悠佑(キーボード)・初田隼悟(キーボード)・野中聖史(ベース)・伊藤仁(ドラム)。サザンの名曲から最近のヒット曲までを演奏します。よろしく！",
+        day1: [
+        ],
+        day2: [
+        ]
+    },
+    {
+        name: "江南無スタイル",
+        description:"寺ザイルで踊れない、カッコいいとは言えないけど昔流行ったこの曲を後夜祭とは別に踊ります！",
+        day1: [
+        ],
+        day2: [
+        ]
+    },
+    {
+        name: "異次元フェス",
+        description:"未定",
+        day1: [
+        ],
+        day2: [
+        ]
+    },
+    {
+        name: "プレゼン、ゲーム大会の二種類",
+        description:"未定",
+        day1: [
+        ],
+        day2: [
         ]
     },
 ]
