@@ -33,7 +33,6 @@ export const locations = [
     "地学室",
     "上グラウンド",
     "お化け屋敷",
-    "pending",
 ] as const;
 export const eventData: EventData[] = [
     {
