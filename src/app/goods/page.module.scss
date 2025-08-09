@@ -80,6 +80,7 @@ $pri-black: #0b0e0f;
     left: 50%;
     width: 50%; /* 親の50%の幅、高さは自動 */
     height: auto;
+    background-image: var(--bg-img); /* JSから渡す */
 }
 
 .desc {

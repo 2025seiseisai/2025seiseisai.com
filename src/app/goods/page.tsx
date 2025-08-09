@@ -1,5 +1,9 @@
 import Image from "next/image";
+import key from "./img/key.png";
+import mag from "./img/mag.png";
+import pen from "./img/pen.png";
 import tshirt from "./img/t.png";
+import ttb from "./img/ttb.png";
 import styles from "./page.module.scss";
 
 import back from "./img/back.png";
@@ -22,7 +26,7 @@ export default function Page() {
                     {/* 商品 */}
                     <div className={styles.goods}>
                         <div className={styles.f523}>
-                            <h2 className={styles.name}>Tシャツ1</h2>
+                            <h2 className={styles.name}>Tシャツ</h2>
                             <h2 className={styles.price}>900円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
@@ -35,7 +39,7 @@ export default function Page() {
                             }
                         >
                             <div className={styles.squareImage}>
-                                <Image src={tshirt} alt="Tシャツ1" fill style={{ objectFit: "cover" }} />
+                                <Image src={tshirt} alt="Tシャツ" fill style={{ objectFit: "cover" }} />
                             </div>
                         </div>
                         <p className={styles.desc}>
@@ -44,8 +48,8 @@ export default function Page() {
                     </div>
                     <div className={styles.goods}>
                         <div className={styles.f523}>
-                            <h2 className={styles.name}>Tシャツ2</h2>
-                            <h2 className={styles.price}>900円</h2>
+                            <h2 className={styles.name}>ボールペン</h2>
+                            <h2 className={styles.price}>300円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
                         <div
@@ -57,17 +61,17 @@ export default function Page() {
                             }
                         >
                             <div className={styles.squareImage}>
-                                <Image src={tshirt} alt="Tシャツ1" fill style={{ objectFit: "cover" }} />
+                                <Image src={pen} alt="ボールペン" fill style={{ objectFit: "cover" }} />
                             </div>
                         </div>
                         <p className={styles.desc}>
-                            第61回菁々祭のオリジナルTシャツです。S,M,L,XLのサイズをご用意しております。
+                            「分秒」のロゴがあしらわれたチャームのついたボールペンです。赤・黒の２種類をご用意しております。
                         </p>
                     </div>
                     <div className={styles.goods}>
                         <div className={styles.f523}>
-                            <h2 className={styles.name}>Tシャツ3</h2>
-                            <h2 className={styles.price}>900円</h2>
+                            <h2 className={styles.name}>マグカップ</h2>
+                            <h2 className={styles.price}>600円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
                         <div
@@ -79,17 +83,15 @@ export default function Page() {
                             }
                         >
                             <div className={styles.squareImage}>
-                                <Image src={tshirt} alt="Tシャツ1" fill style={{ objectFit: "cover" }} />
+                                <Image src={mag} alt="マグカップ" fill style={{ objectFit: "cover" }} />
                             </div>
                         </div>
-                        <p className={styles.desc}>
-                            第61回菁々祭のオリジナルTシャツです。S,M,L,XLのサイズをご用意しております。
-                        </p>
+                        <p className={styles.desc}>ロゴ入りのマグカップです。優雅なひと時をお楽しみください。</p>
                     </div>
                     <div className={styles.goods}>
                         <div className={styles.f523}>
-                            <h2 className={styles.name}>Tシャツ4</h2>
-                            <h2 className={styles.price}>900円</h2>
+                            <h2 className={styles.name}>トートバッグ</h2>
+                            <h2 className={styles.price}>600円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
                         <div
@@ -101,17 +103,15 @@ export default function Page() {
                             }
                         >
                             <div className={styles.squareImage}>
-                                <Image src={tshirt} alt="Tシャツ1" fill style={{ objectFit: "cover" }} />
+                                <Image src={ttb} alt="トートバッグ" fill style={{ objectFit: "cover" }} />
                             </div>
                         </div>
-                        <p className={styles.desc}>
-                            第61回菁々祭のオリジナルTシャツです。S,M,L,XLのサイズをご用意しております。
-                        </p>
+                        <p className={styles.desc}>時計がデザインに取り入れられた使いやすいトートバッグです。</p>
                     </div>
                     <div className={styles.goods}>
                         <div className={styles.f523}>
-                            <h2 className={styles.name}>Tシャツ5</h2>
-                            <h2 className={styles.price}>900円</h2>
+                            <h2 className={styles.name}>キーホルダー</h2>
+                            <h2 className={styles.price}>300円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
                         <div
@@ -123,11 +123,11 @@ export default function Page() {
                             }
                         >
                             <div className={styles.squareImage}>
-                                <Image src={tshirt} alt="Tシャツ1" fill style={{ objectFit: "cover" }} />
+                                <Image src={key} alt="Tシャツ1" fill style={{ objectFit: "cover" }} />
                             </div>
                         </div>
                         <p className={styles.desc}>
-                            第61回菁々祭のオリジナルTシャツです。S,M,L,XLのサイズをご用意しております。
+                            お土産などに適したアクリルキーホルダーです。カバンなどに付けてみては如何でしょうか。
                         </p>
                     </div>
                 </div>
