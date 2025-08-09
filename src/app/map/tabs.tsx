@@ -12,25 +12,34 @@ export function Tabs() {
             <div className="w-full lg:w-[min(max(calc(80svw*17/28),calc(80svw-550px)),calc(80svw-319px))]">
                 <div className="flex h-[36px] items-end md:h-[45px]">
                     <button
-                        className={`flex cursor-pointer items-center justify-center bg-[#de0d22] font-medium text-white transition-all duration-150
-                            ease-in-out hover:brightness-95
-                            ${activeTab === 1 ? "h-full w-[92px] text-[18px] md:w-[120px] md:text-[22px]" : "h-[30px] w-[80px] text-[15px] md:h-[36px] md:w-[100px] md:text-[18px]"}`}
+                        className={`flex cursor-pointer items-center justify-center bg-[#de0d22] font-medium text-white
+                            transition-all duration-150 ease-in-out hover:brightness-95 ${
+                                activeTab === 1
+                                    ? "h-full w-[92px] text-[18px] md:w-[120px] md:text-[22px]"
+                                    : "h-[30px] w-[80px] text-[15px] md:h-[36px] md:w-[100px] md:text-[18px]"
+                            }`}
                         onClick={() => setActiveTab(1)}
                     >
                         高校棟
                     </button>
                     <button
-                        className={`flex cursor-pointer items-center justify-center bg-[#CC0F22] font-medium text-white transition-all duration-150
-                            ease-in-out hover:brightness-95
-                            ${activeTab === 2 ? "h-full w-[92px] text-[18px] md:w-[120px] md:text-[22px]" : "h-[30px] w-[80px] text-[15px] md:h-[36px] md:w-[100px] md:text-[18px]"}`}
+                        className={`flex cursor-pointer items-center justify-center bg-[#CC0F22] font-medium text-white
+                            transition-all duration-150 ease-in-out hover:brightness-95 ${
+                                activeTab === 2
+                                    ? "h-full w-[92px] text-[18px] md:w-[120px] md:text-[22px]"
+                                    : "h-[30px] w-[80px] text-[15px] md:h-[36px] md:w-[100px] md:text-[18px]"
+                            }`}
                         onClick={() => setActiveTab(2)}
                     >
                         中学棟
                     </button>
                     <button
-                        className={`flex cursor-pointer items-center justify-center bg-[#B31E1E] font-medium text-white transition-all duration-150
-                            ease-in-out hover:brightness-95
-                            ${activeTab === 3 ? "h-full w-[92px] text-[18px] md:w-[120px] md:text-[22px]" : "h-[30px] w-[80px] text-[15px] md:h-[36px] md:w-[100px] md:text-[18px]"}`}
+                        className={`flex cursor-pointer items-center justify-center bg-[#B31E1E] font-medium text-white
+                            transition-all duration-150 ease-in-out hover:brightness-95 ${
+                                activeTab === 3
+                                    ? "h-full w-[92px] text-[18px] md:w-[120px] md:text-[22px]"
+                                    : "h-[30px] w-[80px] text-[15px] md:h-[36px] md:w-[100px] md:text-[18px]"
+                            }`}
                         onClick={() => setActiveTab(3)}
                     >
                         バザー
@@ -44,15 +53,18 @@ export function Tabs() {
                     />
                     {(activeTab === 1 || activeTab === 2) && (
                         <div
-                            className="absolute right-[5.88%] bottom-[8%] w-[28px] overflow-hidden rounded-[4px] border-1 border-[#e0e0e0] bg-white text-[12px]
-                                md:w-[32px] md:text-[14px]"
+                            className="absolute right-[5.88%] bottom-[8%] w-[28px] overflow-hidden rounded-[4px]
+                                border-1 border-[#e0e0e0] bg-white text-[12px] md:w-[32px] md:text-[14px]"
                         >
                             {activeTab === 1 &&
                                 Array.from({ length: 4 }, (_, i) => (
                                     <div className="aspect-square w-full" key={i}>
                                         <button
-                                            className={`aspect-square transition-all duration-150 ease-in-out
-                                            ${highSchoolFloor === 4 - i ? "m-[1.5px] w-[calc(100%-3px)] rounded-[6px] bg-[#0b0e0f16]" : "w-full bg-[#0b0e0f00] hover:bg-[#0b0e0f09]"}`}
+                                            className={`aspect-square transition-all duration-150 ease-in-out ${
+                                                highSchoolFloor === 4 - i
+                                                    ? "m-[1.5px] w-[calc(100%-3px)] rounded-[6px] bg-[#0b0e0f16]"
+                                                    : "w-full bg-[#0b0e0f00] hover:bg-[#0b0e0f09]"
+                                            }`}
                                             onClick={() => setHighSchoolFloor(4 - i)}
                                         >
                                             {4 - i}F
@@ -63,8 +75,11 @@ export function Tabs() {
                                 Array.from({ length: 3 }, (_, i) => (
                                     <div className="aspect-square w-full" key={i}>
                                         <button
-                                            className={`aspect-square transition-all duration-150 ease-in-out
-                                            ${middleSchoolFloor === 3 - i ? "m-[1.5px] w-[calc(100%-3px)] rounded-[6px] bg-[#0b0e0f16]" : "w-full bg-[#0b0e0f00] hover:bg-[#0b0e0f09]"}`}
+                                            className={`aspect-square transition-all duration-150 ease-in-out ${
+                                                middleSchoolFloor === 3 - i
+                                                    ? "m-[1.5px] w-[calc(100%-3px)] rounded-[6px] bg-[#0b0e0f16]"
+                                                    : "w-full bg-[#0b0e0f00] hover:bg-[#0b0e0f09]"
+                                            }`}
                                             onClick={() => setMiddleSchoolFloor(3 - i)}
                                         >
                                             {3 - i}F

@@ -170,17 +170,15 @@ export function Map3D({ resolution = 0.8, className = "" }: { resolution?: numbe
         const update_func = buildScene(scene, camera);
 
         // レンダリングループの開始
-        setTimeout(() => {
-            renderer.render(scene, camera);
-            const tick = () => {
-                controls.update();
-                update_func();
-                requestAnimationFrame(tick);
-                if (updated) renderer.render(scene, camera);
-                updated = false;
-            };
-            tick();
-        }, 100);
+        renderer.render(scene, camera);
+        const tick = () => {
+            controls.update();
+            update_func();
+            requestAnimationFrame(tick);
+            if (updated) renderer.render(scene, camera);
+            updated = false;
+        };
+        tick();
     }, [resolution]);
     return (
         <>
