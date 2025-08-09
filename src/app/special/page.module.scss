@@ -158,9 +158,23 @@
     margin-top: min(95px, 6.6svw);
 }
 
+@include media(sm) {
+    .iconblock {
+        margin-top: 81px;
+        margin-bottom: 15px;
+    }
+}
+
 .headerblock {
     margin-top: min(90px, 6.25svw);
     margin-bottom: min(19px, 1.3svw);
+}
+
+@include media(sm) {
+    .headerblock {
+        margin-top: 114px;
+        margin-bottom: 15px;
+    }
 }
 
 .wall {
@@ -170,7 +184,7 @@
 .wallpaper {
     z-index: 1;
     display: flex;
-    gap: 3.3svw;
+    gap: 1.65svw;
     width: auto;
     height: auto;
     padding: 27px 0;
@@ -179,9 +193,10 @@
 
 @include media(sm) {
     .wallpaper {
-        gap: 42px;
+        gap: 21px;
         padding: 18px 0;
         margin: 0 20px;
+        overflow: auto;
     }
 }
 
@@ -209,84 +224,102 @@
 .icon {
     z-index: 1;
     display: flex;
-    gap: 3.3svw;
+    gap: 1.65svw;
     width: auto;
     height: auto;
     margin: 4px auto;
 }
 
+@include media(sm) {
+    .icon {
+        gap: 16px;
+        margin: 0 20px;
+        overflow: auto;
+    }
+}
+
 .iconImage {
     width: min(20svw, 240px);
+    height: min(20svw, 240px);
+}
+
+@include media(sm) {
+    .iconImage {
+        width: 213px;
+        height: 213px;
+    }
 }
 
 .header {
     z-index: 1;
     display: flex;
-    gap: 4.2svw;
+    gap: 1.65svw;
     width: auto;
     height: auto;
     padding: 0 35px 20px;
     margin: 0 auto 44px;
 }
 
+@include media(sm) {
+    .header {
+        display: inline-block;
+        padding: 0;
+        margin: 0 auto;
+    }
+}
+
 .headerImage {
     width: min(495px, 42svw);
 }
 
+@include media(sm) {
+    .headerImage {
+        width: 324px;
+        height: 108px;
+    }
+}
+
 .downloadIcon {
-    position: absolute;
-    display: flex;
-    gap: min(calc(18.3vw - 60px), calc(3.3svw + 120px));
-    padding-left: min(calc(15svw - 48px), 132px);
-    margin-top: min(calc(30svw - 40px), 320px);
+    position: relative;
+    top: min(calc(30svw - 40px), 320px);
+    right: calc(1.65svw + 40px);
+    width: 0;
+    height: 0;
+    transition: filter 0.15s;
 
-    & > a {
-        transition: filter 0.15s;
-
-        &:hover {
-            filter: drop-shadow(0 0 10px rgb(222 13 34 / 100%));
-        }
+    &:hover {
+        filter: drop-shadow(0 0 10px rgb(222 13 34 / 100%));
     }
 }
 
 @include media(sm) {
     .downloadIcon {
-        gap: 150px;
-        padding-left: 117px;
-        margin-top: 284px;
-        overflow-x: auto;
-
-        & > a {
-            max-width: 90%;
-            height: auto;
-        }
+        top: 284px;
+        right: 69px;
+        transform: scale(0.9);
     }
 }
 
 .icon_download {
-    gap: min(calc(3.3vw + 180px), calc(23.3vw - 60px));
-    margin-top: min(174px, 20svw - 66px);
-    margin-left: min(174px, 20svw - 66px);
+    top: min(174px, calc(20svw - 66px));
+    right: calc(1.65svw + 66px);
 }
 
-.header_download {
-    gap: min(calc(4.2vw + 435px), calc(46.2vw - 60px));
-    margin-top: min(125px, 14svw - 40px);
-    margin-left: min(447px, 42svw - 48px);
-}
-
-// スマホ用のスタイル
 @include media(sm) {
-    .example {
-        background-color: blue;
+    .icon_download {
+        top: 155px;
+        right: 82px;
     }
 }
 
-// PC用のスタイル
-@include media(lg) {
-    .example {
-        // 上書き可能
-        color: red;
-        background-color: green;
+.header_download {
+    top: min(125px, 14svw - 40px);
+    right: calc(1.65svw + 48px);
+}
+
+@include media(sm) {
+    .header_download {
+        top: -44px;
+        right: -279px;
     }
 }
