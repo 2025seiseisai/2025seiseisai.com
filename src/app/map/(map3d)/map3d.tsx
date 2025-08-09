@@ -1,29 +1,38 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Polygons, Rects } from "./mapdata";
 
-function BuildScene(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
+function buildScene(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
+    // 照明の追加
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     const light1 = new THREE.DirectionalLight(0xffffff, 3.5);
     const light2 = new THREE.PointLight(0xffffff, 20000, 0, 1.5);
+    scene.add(ambientLight);
     scene.add(light1);
     scene.add(light2);
 
+    // 座標軸の追加
     const grid = new THREE.GridHelper(1000, 10);
     grid.position.set(0, -102, 0);
     scene.add(grid);
-    const loader = new THREE.TextureLoader();
-    const texture = loader.load("/2025/tdj-map/gitignore.png");
-    texture.colorSpace = THREE.SRGBColorSpace;
-    const tdjplane = new THREE.Mesh(
-        new THREE.PlaneGeometry(2000, 2000, 1, 1),
-        new THREE.MeshBasicMaterial({ map: texture }),
-    );
-    tdjplane.rotation.x = -Math.PI / 2;
-    tdjplane.position.set(320, -104, 0);
-    scene.add(tdjplane);
 
+    // 地面の追加
+    const loader = new THREE.TextureLoader();
+    const texture = loader.load("/2025/map/picture.gitignore.png");
+    if (texture) {
+        texture.colorSpace = THREE.SRGBColorSpace;
+        const tdjplane = new THREE.Mesh(
+            new THREE.PlaneGeometry(2000, 2000, 1, 1),
+            new THREE.MeshBasicMaterial({ map: texture }),
+        );
+        tdjplane.rotation.x = -Math.PI / 2;
+        tdjplane.position.set(320, -104, 0);
+        scene.add(tdjplane);
+    }
+
+    // 床 (長方形) の追加
     Rects.forEach(({ y, x1, z1, x2, z2, color }) => {
         if (color == undefined) color = 0xeeeeee;
         const width = Math.abs(x1 - x2);
@@ -42,6 +51,7 @@ function BuildScene(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
         scene.add(rect);
     });
 
+    // 床 (多角形) の追加
     Polygons.forEach(({ points, color }) => {
         if (points.length <= 2) return;
         if (color == undefined) color = 0xeeeeee;
@@ -95,71 +105,86 @@ function BuildScene(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
     });
 
     return () => {
+        // カメラの変更時に照明の位置を更新
         light1.position.set(camera.position.x, camera.position.y, camera.position.z);
         light2.position.set(camera.position.x, camera.position.y, camera.position.z);
     };
 }
 
-export function Map3D({}: { location: string }) {
+export function Map3D({ resolution = 0.8, className = "" }: { resolution?: number; className?: string }) {
+    const initialized = useRef(false);
     useEffect(() => {
-        const canvas = document.getElementById("canvas");
+        // 二度以上は初期化しない
+        if (initialized.current) return;
+        initialized.current = true;
+
+        // canvas, scene, renderer, camera, controlsの初期化
+        const canvas = document.getElementById("map_canvas");
         if (canvas === null) {
             console.error("Canvas not found");
             return;
         }
         const scene = new THREE.Scene();
-        const sizes = {
-            width: innerWidth,
-            height: innerHeight,
-        };
-        const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 2000);
-        camera.position.set(-300, 750, 750);
         const renderer = new THREE.WebGLRenderer({
             canvas: canvas || undefined,
             antialias: true,
             alpha: true,
         });
-        renderer.shadowMap.enabled = true;
-        renderer.setSize(sizes.width, sizes.height);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-        scene.add(ambientLight);
-
-        const update_func = BuildScene(scene, camera);
-
-        const controls = new OrbitControls(camera, document.getElementById("canvas"));
+        const camera = new THREE.PerspectiveCamera(75, 1.0, 0.1, 2000);
+        camera.position.set(-300, 750, 750);
+        const controls = new OrbitControls(camera, canvas);
         controls.enableDamping = true;
         controls.dampingFactor = 0.15;
         controls.minPolarAngle = Math.PI / 16;
         controls.maxPolarAngle = (Math.PI / 4) * 3;
         controls.minDistance = 500;
         controls.maxDistance = 1200;
-        controls.panSpeed = 20;
+        controls.panSpeed = 30;
         let updated = true;
         controls.addEventListener("change", () => (updated = true));
 
-        renderer.render(scene, camera);
-        const tick = () => {
-            controls.update();
-            update_func();
-            requestAnimationFrame(tick);
-            if (updated) renderer.render(scene, camera);
-            updated = false;
-        };
-        tick();
-
-        window.addEventListener("resize", () => {
-            sizes.width = window.innerWidth;
-            sizes.height = window.innerHeight;
-            camera.aspect = sizes.width / sizes.height;
+        // canvasサイズの反映 (リサイズ対応)
+        const setSize = (width: number, height: number) => {
+            camera.aspect = width / height;
             camera.updateProjectionMatrix();
-            renderer.setSize(sizes.width, sizes.height);
-            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(width, height);
+            let ratio = window.devicePixelRatio || 1;
+            const ua = navigator.userAgent.toLowerCase();
+            const isSafari = ua.includes("safari") && !ua.includes("chrome");
+            if (isSafari) {
+                const screenRatio = (window.screen.width * ratio) / window.innerWidth;
+                ratio = Math.max(ratio, screenRatio);
+            }
+            renderer.setPixelRatio(ratio * resolution);
+        };
+        setSize(canvas.clientWidth, canvas.clientHeight);
+        const resize_observer = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                setSize(entry.contentRect.width, entry.contentRect.height);
+                updated = true;
+            }
         });
-    }, []);
+        resize_observer.observe(canvas);
+
+        // オブジェクトをシーンに追加
+        const update_func = buildScene(scene, camera);
+
+        // レンダリングループの開始
+        setTimeout(() => {
+            renderer.render(scene, camera);
+            const tick = () => {
+                controls.update();
+                update_func();
+                requestAnimationFrame(tick);
+                if (updated) renderer.render(scene, camera);
+                updated = false;
+            };
+            tick();
+        }, 100);
+    }, [resolution]);
     return (
         <>
-            <canvas id="canvas"></canvas>
+            <canvas id="map_canvas" className={className}></canvas>
         </>
     );
 }
