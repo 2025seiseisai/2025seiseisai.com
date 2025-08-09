@@ -1,21 +1,141 @@
-// 共通のスタイル
-.example {
-    font-size: 36px;
-    color: black;
-}
+$pri-red: #de0d22;
+$pri-black: #0b0e0f;
 
-// スマホ用のスタイル
-@include media(sm) {
-    .example {
-        background-color: blue;
+.container {
+    display: grid;
+    gap: 20px;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @media (width >= 768px) {
+        grid-template-columns: repeat(3, 1fr); /* PCは3列 */
     }
 }
 
-// PC用のスタイル
-@include media(lg) {
-    .example {
-        // 上書き可能
-        color: red;
-        background-color: green;
+.goods {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.f523 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    border-bottom: 2px solid $pri-black;
+}
+
+.name {
+    margin-left: 10px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $pri-red;
+}
+
+.price {
+    margin-right: 10px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.f511 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 2px 10px;
+    margin-top: 8px;
+    margin-left: 20px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background: $pri-red;
+    border-radius: 33px;
+}
+
+.wrapper {
+    position: relative;
+    display: flex; /* 追加 */
+    align-items: center; /* 縦中央寄せ */
+    justify-content: center; /* 横中央寄せ */
+    width: 80%;
+    aspect-ratio: 270 / 163;
+    margin: 8px auto 20px;
+    overflow: hidden;
+    background-image: var(--bg-img);
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.squareImage {
+    position: relative;
+    width: 50%; /* 親の50%の幅 */
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    margin: 0 auto; /* 横中央寄せ */
+}
+
+.desc {
+    width: 90%;
+    margin: auto;
+    font-size: 16px;
+}
+
+.f504 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 80%;
+    margin: 60px auto;
+}
+
+.m {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+
+    /* デフォルトは右寄せ */
+    justify-content: flex-start;
+    padding-left: 12px;
+    border-left: 4px solid #de0d22;
+}
+
+.zaiko {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #0b0e0f;
+}
+
+/* モバイル対応 */
+@media (width <= 768px) {
+    .zaiko {
+        font-size: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    .goods {
+        width: 100%;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .name,
+    .price {
+        font-size: 1.2rem;
     }
 }
