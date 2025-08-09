@@ -60,27 +60,26 @@ $pri-black: #0b0e0f;
     border-radius: 33px;
 }
 
-/* 背景とTシャツ画像を中央寄せで比率維持 */
 .wrapper {
     position: relative;
-    width: 80%; /* 親の80% */
-    padding-top: 48%; /* アスペクト比維持（例: 270x163 ≈ 1.655） */
-    margin: 8px auto 20px; /* 中央寄せ */
-    overflow: hidden; /* はみ出し防止 */
-    background-image: var(--bg-img); /* JSから渡す */
+    display: flex; /* 追加 */
+    align-items: center; /* 縦中央寄せ */
+    justify-content: center; /* 横中央寄せ */
+    width: 80%;
+    aspect-ratio: 270 / 163;
+    margin: 8px auto 20px;
+    overflow: hidden;
+    background-image: var(--bg-img);
     background-position: center;
     background-size: cover;
     border-radius: 4px;
 }
 
-/* Tシャツ画像を中央に */
 .squareImage {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%; /* 親の50%の幅、高さは自動 */
-    height: auto;
-    background-image: var(--bg-img); /* JSから渡す */
+    position: relative;
+    width: 50%; /* 親の50%の幅 */
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    margin: 0 auto; /* 横中央寄せ */
 }
 
 .desc {
