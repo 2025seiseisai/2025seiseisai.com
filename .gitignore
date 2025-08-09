@@ -50,4 +50,4 @@ node_modules/
 # prisma
 /src/generated/prisma
 
-gitignore*
+*.gitignore.*
