@@ -13,7 +13,7 @@ export enum ExhibitionFloor {
     中学棟3階 = 7,
 }
 
-type ExhibitionType = {
+export type ExhibitionData = {
     location: keyof typeof locations;
     icon: string;
     description: string;
@@ -53,4 +53,4 @@ export const exhibitionData = {
         description: "帰宅部の展示にぜひお越しください！",
         // twitter_link, instagram_link, facebook_link, website_link, events, blogs, club_magazineは省略可なので、必要に応じて追加してください。
     },
-} as const satisfies Record<string, ExhibitionType>;
+} as const satisfies Record<string, ExhibitionData>;

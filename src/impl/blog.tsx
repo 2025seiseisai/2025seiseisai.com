@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
 /* eslint better-tailwindcss/no-unregistered-classes: 0 */
-import { blogData, resourceSize } from "@/blogs/blog-data";
+import { BlogData, blogData, resourceSize } from "@/blogs/blog-data";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image, { StaticImageData } from "next/image";
@@ -60,7 +60,7 @@ export type BlogMetadata = {
  * const { title, date, author, topic, thumbnail, thumbnailPath } = getBlogMetadata("60", "04");
  */
 export function getBlogMetadata(round: string, index: string): BlogMetadata {
-    const blog = blogData[`${round}/${index}`];
+    const blog = (blogData as Record<string, BlogData>)[`${round}/${index}`];
     return {
         title: blog.title,
         date: blog.date,
@@ -200,7 +200,7 @@ export async function getBlog(
     description: React.ReactNode;
     content: React.ReactNode;
 }> {
-    const blog = blogData[`${round}/${index}`];
+    const blog = (blogData as Record<string, BlogData>)[`${round}/${index}`];
     const { title, date, author, topic, thumbnail, images, description, content } = blog;
     const components = {
         h1: ({ children }: { children: any }) => {

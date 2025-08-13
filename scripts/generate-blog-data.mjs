@@ -14,7 +14,21 @@ import * as path from "path";
     });
     let imageCnt = 0;
     let imageImport = "";
-    let blogData = `export const blogData = {\n`;
+    let blogData = `export type BlogData = {
+    title: string;
+    date: string;
+    author: string;
+    topic: string;
+    thumbnail: StaticImageData;
+    thumbnailPath: string;
+    images: {
+        [key: string]: StaticImageData;
+    };
+    twitterEmbedded: boolean;
+    description: string;
+    content: string;
+};
+export const blogData = {\n`;
     let resourceSize = "export const resourceSize: { [key: string]: number } = {\n";
     const removeAlt = /^(!\[([^\]]+)\]\(([^)]+)\))\s*\r?\n([^\r\n]+)\s*$/gm;
     const tweetLinkPattern = /^\[(https?:\/\/(?:x\.com|twitter\.com)\/[a-zA-Z0-9_]+\/status\/\d+)\]\(\1\)$/;
@@ -137,23 +151,7 @@ import * as path from "path";
             }
         }
     }
-    blogData += `} as const satisfies Record<
-    string,
-    {
-        title: string;
-        date: string;
-        author: string;
-        topic: string;
-        thumbnail: StaticImageData;
-        thumbnailPath: string;
-        images: {
-            [key: string]: StaticImageData;
-        };
-        twitterEmbedded: boolean;
-        description: string;
-        content: string;
-    }
->;\n`;
+    blogData += `} as const satisfies Record<string, BlogData>;\n`;
     resourceSize += "};\n";
     const result =
         `// ===================================================================================\n` +
