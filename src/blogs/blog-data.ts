@@ -142,22 +142,7 @@ import Image135 from "./61/05/PXL_20250418_064701171.jpg";
 import Image136 from "./61/05/PXL_20250424_070245168.jpg";
 import Image137 from "./61/05/thumbnail.jpg";
 import Image138 from "./test/01/thumbnail.png";
-export const blogData: {
-    [key: string]: {
-        title: string;
-        date: string;
-        author: string;
-        topic: string;
-        thumbnail: StaticImageData;
-        thumbnailPath: string;
-        images: {
-            [key: string]: StaticImageData;
-        };
-        twitterEmbedded: boolean;
-        description: string;
-        content: string;
-    };
-} = {
+export const blogData = {
     "59/01": {
         title: `ロゴデザインの裏側に密着？！`,
         date: `2023.06.05`,
@@ -2496,8 +2481,24 @@ YouTube->[https://www.youtube.com/watch?v=VOhT8d8AIHY](https://www.youtube.com/w
               },
           }
         : {}),
-};
+} as const satisfies Record<
+    string,
+    {
+        title: string;
+        date: string;
+        author: string;
+        topic: string;
+        thumbnail: StaticImageData;
+        thumbnailPath: string;
+        images: {
+            [key: string]: StaticImageData;
+        };
+        twitterEmbedded: boolean;
+        description: string;
+        content: string;
+    }
+>;
 export const resourceSize: { [key: string]: number } = {
     "59/03/番茶党第36号（2022年発行）.pdf": 1159680,
-    "test/01/----test----.txt": 127,
+    "test/01/----test----.txt": 103,
 };
