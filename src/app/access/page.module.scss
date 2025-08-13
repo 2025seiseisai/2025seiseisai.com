@@ -11,6 +11,47 @@
     }
 }
 
+.bg {
+    min-height: "100vh";
+    background-color: color.#FFFFFF;
+} //　あとで消すかも
+
+p {
+    font-family: "Noto Sans JP", sans-serif;
+    color: #0b0e0f;
+}
+
+.red_text {
+    color: #de0d22;
+}
+
+.border_common {
+    border-color: color.#DE0D22;
+    border-style: solid;
+    border-width: 2px;
+}
+
+._56 {
+    width: 335;
+    height: 56;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.b_text {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.title_text {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.back_glay {
+    background-color: #f7f7f7;
+}
+
 // PC用のスタイル
 @include media(lg) {
     .example {
