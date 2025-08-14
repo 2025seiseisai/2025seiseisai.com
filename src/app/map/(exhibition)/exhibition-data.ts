@@ -1,6 +1,6 @@
 import { clubMagazineLinks } from "@/app/downloads/downloads-data";
 import type { eventNames } from "@/app/events/event-data";
-import type { blogData } from "@/blogs/blog-data";
+import type { BlogKey } from "@/blogs/blog-data";
 import { exhibitionIcons } from "./exhibition-icons";
 
 export enum ExhibitionFloor {
@@ -13,19 +13,6 @@ export enum ExhibitionFloor {
     中学棟3階 = 7,
 }
 
-export type ExhibitionData = {
-    location: keyof typeof locations;
-    icon: string;
-    description: string;
-    twitter_link?: string;
-    instagram_link?: string;
-    facebook_link?: string;
-    website_link?: string;
-    events?: (typeof eventNames)[number][];
-    blogs?: (keyof typeof blogData)[];
-    club_magazine?: string;
-};
-
 export const locations = {
     // 適宜更新してください。
     "6年A組": ExhibitionFloor.高校棟1階,
@@ -33,7 +20,7 @@ export const locations = {
     "6年C組": ExhibitionFloor.高校棟1階,
 } as const satisfies Record<string, ExhibitionFloor>;
 
-export const exhibitionData = {
+const exhibitionDataRaw = {
     // 以下は一例です。
     MGA同好会: {
         location: "6年A組", // locationsの中から選択
@@ -46,6 +33,7 @@ export const exhibitionData = {
         events: ["体験型ミステリー", "PTAコーラス", "T1グランプリ"], // eventsの中から選択。詳しくはsrc/app/events/event-data.tsを参照してください。
         blogs: ["59/01", "60/03"], // blogページを見て、関係しているのがあれば書いてください。
         club_magazine: clubMagazineLinks["MGA同好会"], // まだデータがないので書かなくて大丈夫です。
+        tweet_link: "https://x.com/seiseisai_tdj/status/1954896745940615445", // 展示団体の紹介。まだ書かなくて大丈夫です。
     },
     帰宅部: {
         location: "6年B組",
@@ -53,4 +41,23 @@ export const exhibitionData = {
         description: "帰宅部の展示にぜひお越しください！",
         // twitter_link, instagram_link, facebook_link, website_link, events, blogs, club_magazineは省略可なので、必要に応じて追加してください。
     },
-} as const satisfies Record<string, ExhibitionData>;
+} as const;
+
+export const exhibitionData: Readonly<
+    Record<
+        string,
+        Readonly<{
+            location: keyof typeof locations;
+            icon: string;
+            description: string;
+            twitter_link?: string;
+            instagram_link?: string;
+            facebook_link?: string;
+            website_link?: string;
+            events?: Readonly<(typeof eventNames)[number][]>;
+            blogs?: Readonly<BlogKey[]>;
+            club_magazine?: string;
+            tweet_link?: string;
+        }>
+    >
+> = exhibitionDataRaw;
