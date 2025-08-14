@@ -30,14 +30,17 @@ export default function Page() {
                             <h2 className={styles.price}>900円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
-                        <div
-                            className={styles.wrapper}
-                            style={
-                                {
-                                    "--bg-img": `url(${back.src})`,
-                                } as React.CSSProperties
-                            }
-                        >
+                        <div className={styles.wrapper}>
+                            <Image
+                                src={back}
+                                alt="background"
+                                fill
+                                priority
+                                style={{
+                                    objectFit: "cover",
+                                    zIndex: -1,
+                                }}
+                            />
                             <div className={styles.squareImage}>
                                 <Image src={tshirt} alt="Tシャツ" fill style={{ objectFit: "cover" }} />
                             </div>
