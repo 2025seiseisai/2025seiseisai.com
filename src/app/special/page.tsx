@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Back from "./back.svg";
 import Download from "./download.svg";
 import styles from "./page.module.scss";
 
@@ -85,9 +84,6 @@ export default function Page() {
                         <Download />
                     </a>
                 </p>
-            </div>
-            <div className={styles.wall}>
-                <Back className={styles.back} />
             </div>
             <p className={`${styles.large} ${styles.red} ${styles.iconblock}`}>ICON</p>
             <div className={styles.icon}>

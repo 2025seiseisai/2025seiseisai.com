@@ -56,7 +56,7 @@ export async function Top() {
             </div>
             <div
                 className={`${styles.wave_container} relative z-10000 mt-[-45px] flex w-full items-center justify-center
-                    overflow-hidden md:mt-[-64px]`}
+                    overflow-hidden bg-white md:mt-[-64px]`}
             >
                 <div className="absolute h-full w-full">
                     <Logo className={styles.animation_logo2} />

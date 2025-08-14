@@ -1,8 +1,6 @@
 import Link from "next/link";
-import Back from "./back.svg";
 import styles from "./page.module.scss";
 import ReturnTop from "./ReturnTop.svg";
-import SP_Back from "./sp_back.svg";
 
 export function NotFound({
     code,
@@ -20,10 +18,6 @@ export function NotFound({
     return (
         <>
             <div className={styles.content}>
-                <div className={styles.back}>
-                    <Back className={styles.back_image} />
-                    <SP_Back className={styles.sp_back_image} />
-                </div>
                 <div className={styles.container}>
                     <p className={styles.title}>
                         <span className={styles.red}>{code[0]}</span>

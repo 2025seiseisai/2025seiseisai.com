@@ -106,8 +106,8 @@ export function Footer() {
                     >
                         Guide
                     </h1>
-                    <DisabledFooterLink>Events</DisabledFooterLink>
-                    <DisabledFooterLink>Map</DisabledFooterLink>
+                    <FooterLink href="/events">Events</FooterLink>
+                    <FooterLink href="/map">Map</FooterLink>
                     <FooterLink href="/goods">Goods</FooterLink>
                     <DisabledFooterLink>Tickets</DisabledFooterLink>
                 </span>

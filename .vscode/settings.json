@@ -47,6 +47,7 @@
     "terminal.integrated.env.windows": {
         "PSExecutionPolicyPreference": "RemoteSigned"
     },
+    "terminal.integrated.scrollback": 5000,
     "code-runner.executorMap": {
         "javascript": "node",
         "typescript": "\"./node_modules/.bin/tsx\"",
@@ -56,5 +57,6 @@
     "code-runner.cwd": "${workspaceFolder}",
     "[prisma]": {
         "editor.defaultFormatter": "Prisma.prisma"
-    }
+    },
+    "prettier.prettierPath": "./node_modules/prettier"
 }
