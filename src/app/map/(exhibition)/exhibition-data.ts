@@ -33,6 +33,7 @@ const exhibitionDataRaw = {
         events: ["体験型ミステリー", "PTAコーラス", "T1グランプリ"], // eventsの中から選択。詳しくはsrc/app/events/event-data.tsを参照してください。
         blogs: ["59/01", "60/03"], // blogページを見て、関係しているのがあれば書いてください。
         club_magazine: clubMagazineLinks["MGA同好会"], // まだデータがないので書かなくて大丈夫です。
+        tweet_link: "https://x.com/seiseisai_tdj/status/1954896745940615445", // 展示団体の紹介。まだ書かなくて大丈夫です。
     },
     帰宅部: {
         location: "6年B組",
@@ -56,6 +57,7 @@ export const exhibitionData: Readonly<
             events?: Readonly<(typeof eventNames)[number][]>;
             blogs?: Readonly<BlogKey[]>;
             club_magazine?: string;
+            tweet_link?: string;
         }>
     >
 > = exhibitionDataRaw;
