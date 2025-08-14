@@ -30,14 +30,8 @@ export default function Page() {
                             <h2 className={styles.price}>900円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
-                        <div
-                            className={styles.wrapper}
-                            style={
-                                {
-                                    "--bg-img": `url(${back.src})`,
-                                } as React.CSSProperties
-                            }
-                        >
+                        <div className={styles.wrapper}>
+                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={tshirt} alt="Tシャツ" fill style={{ objectFit: "cover" }} />
                             </div>
@@ -52,14 +46,8 @@ export default function Page() {
                             <h2 className={styles.price}>300円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
-                        <div
-                            className={styles.wrapper}
-                            style={
-                                {
-                                    "--bg-img": `url(${back.src})`,
-                                } as React.CSSProperties
-                            }
-                        >
+                        <div className={styles.wrapper}>
+                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={pen} alt="ボールペン" fill style={{ objectFit: "cover" }} />
                             </div>
@@ -74,14 +62,8 @@ export default function Page() {
                             <h2 className={styles.price}>600円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
-                        <div
-                            className={styles.wrapper}
-                            style={
-                                {
-                                    "--bg-img": `url(${back.src})`,
-                                } as React.CSSProperties
-                            }
-                        >
+                        <div className={styles.wrapper}>
+                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={mag} alt="マグカップ" fill style={{ objectFit: "cover" }} />
                             </div>
@@ -94,14 +76,8 @@ export default function Page() {
                             <h2 className={styles.price}>600円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
-                        <div
-                            className={styles.wrapper}
-                            style={
-                                {
-                                    "--bg-img": `url(${back.src})`,
-                                } as React.CSSProperties
-                            }
-                        >
+                        <div className={styles.wrapper}>
+                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={ttb} alt="トートバッグ" fill style={{ objectFit: "cover" }} />
                             </div>
@@ -114,14 +90,8 @@ export default function Page() {
                             <h2 className={styles.price}>300円</h2>
                         </div>
                         <div className={styles.f511}>在庫あり</div>
-                        <div
-                            className={styles.wrapper}
-                            style={
-                                {
-                                    "--bg-img": `url(${back.src})`,
-                                } as React.CSSProperties
-                            }
-                        >
+                        <div className={styles.wrapper}>
+                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={key} alt="Tシャツ1" fill style={{ objectFit: "cover" }} />
                             </div>

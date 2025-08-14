@@ -71,6 +71,10 @@ $pri-black: #0b0e0f;
     background-size: cover;
 }
 
+.back {
+    position: absolute;
+}
+
 .squareImage {
     position: relative;
     width: 60%; /* 親の50%の幅 */
