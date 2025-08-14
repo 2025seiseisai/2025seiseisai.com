@@ -1,6 +1,6 @@
 import { clubMagazineLinks } from "@/app/downloads/downloads-data";
 import type { eventNames } from "@/app/events/event-data";
-import type { blogData } from "@/blogs/blog-data";
+import type { BlogKey } from "@/blogs/blog-data";
 import { exhibitionIcons } from "./exhibition-icons";
 
 export enum ExhibitionFloor {
@@ -12,19 +12,6 @@ export enum ExhibitionFloor {
     中学棟2階 = 6,
     中学棟3階 = 7,
 }
-
-export type ExhibitionData = {
-    location: keyof typeof locations;
-    icon: string;
-    description: string;
-    twitter_link?: string;
-    instagram_link?: string;
-    facebook_link?: string;
-    website_link?: string;
-    events?: (typeof eventNames)[number][];
-    blogs?: (keyof typeof blogData)[];
-    club_magazine?: string;
-};
 
 export const locations = {
     // 適宜更新してください。
@@ -53,4 +40,18 @@ export const exhibitionData = {
         description: "帰宅部の展示にぜひお越しください！",
         // twitter_link, instagram_link, facebook_link, website_link, events, blogs, club_magazineは省略可なので、必要に応じて追加してください。
     },
-} as const satisfies Record<string, ExhibitionData>;
+} as const satisfies Record<
+    string,
+    {
+        location: keyof typeof locations;
+        icon: string;
+        description: string;
+        twitter_link?: string;
+        instagram_link?: string;
+        facebook_link?: string;
+        website_link?: string;
+        events?: (typeof eventNames)[number][];
+        blogs?: BlogKey[];
+        club_magazine?: string;
+    }
+>;

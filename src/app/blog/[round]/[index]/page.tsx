@@ -1,4 +1,4 @@
-import { BlogData, blogData } from "@/blogs/blog-data";
+import { blogData } from "@/blogs/blog-data";
 import { enumerateParams, getBlog } from "@/impl/blog";
 import type { Metadata } from "next";
 
@@ -30,7 +30,7 @@ export async function generateMetadata({
     params: Promise<{ round: string; index: string }>;
 }): Promise<Metadata> {
     const { round, index } = await params;
-    const data = (blogData as Record<string, BlogData>)[`${round}/${index}`];
+    const data = blogData[`${round}/${index}`];
     return {
         title: `${data.title} | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025`,
         description: data.description,
