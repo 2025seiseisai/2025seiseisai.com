@@ -20,7 +20,7 @@ export const locations = {
     "6年C組": ExhibitionFloor.高校棟1階,
 } as const satisfies Record<string, ExhibitionFloor>;
 
-export const exhibitionData = {
+const exhibitionDataRaw = {
     // 以下は一例です。
     MGA同好会: {
         location: "6年A組", // locationsの中から選択
@@ -40,18 +40,22 @@ export const exhibitionData = {
         description: "帰宅部の展示にぜひお越しください！",
         // twitter_link, instagram_link, facebook_link, website_link, events, blogs, club_magazineは省略可なので、必要に応じて追加してください。
     },
-} as const satisfies Record<
-    string,
-    {
-        location: keyof typeof locations;
-        icon: string;
-        description: string;
-        twitter_link?: string;
-        instagram_link?: string;
-        facebook_link?: string;
-        website_link?: string;
-        events?: (typeof eventNames)[number][];
-        blogs?: BlogKey[];
-        club_magazine?: string;
-    }
->;
+} as const;
+
+export const exhibitionData: Readonly<
+    Record<
+        string,
+        Readonly<{
+            location: keyof typeof locations;
+            icon: string;
+            description: string;
+            twitter_link?: string;
+            instagram_link?: string;
+            facebook_link?: string;
+            website_link?: string;
+            events?: Readonly<(typeof eventNames)[number][]>;
+            blogs?: Readonly<BlogKey[]>;
+            club_magazine?: string;
+        }>
+    >
+> = exhibitionDataRaw;
