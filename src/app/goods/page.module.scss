@@ -4,7 +4,7 @@ $pri-black: #0b0e0f;
 .container {
     display: grid;
     gap: 20px;
-    max-width: 1200px;
+    width: 80%;
     padding: 0 20px;
     margin: 0 auto;
 
@@ -50,8 +50,8 @@ $pri-black: #0b0e0f;
     padding: 2px 10px;
     margin-top: 8px;
     margin-left: 20px;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 500;
     color: white;
     background: $pri-red;
     border-radius: 33px;
@@ -69,12 +69,11 @@ $pri-black: #0b0e0f;
     background-image: var(--bg-img);
     background-position: center;
     background-size: cover;
-    border-radius: 4px;
 }
 
 .squareImage {
     position: relative;
-    width: 50%; /* 親の50%の幅 */
+    width: 60%; /* 親の50%の幅 */
     aspect-ratio: 1 / 1; /* 正方形を維持 */
     margin: 0 auto; /* 横中央寄せ */
 }
