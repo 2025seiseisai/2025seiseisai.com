@@ -31,7 +31,7 @@ export default function Page() {
                         </div>
                         <div className={styles.f511}>在庫あり</div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={tshirt} alt="Tシャツ" fill style={{ objectFit: "cover" }} />
                             </div>
@@ -47,7 +47,7 @@ export default function Page() {
                         </div>
                         <div className={styles.f511}>在庫あり</div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={pen} alt="ボールペン" fill style={{ objectFit: "cover" }} />
                             </div>
@@ -63,7 +63,7 @@ export default function Page() {
                         </div>
                         <div className={styles.f511}>在庫あり</div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={mag} alt="マグカップ" fill style={{ objectFit: "cover" }} />
                             </div>
@@ -77,7 +77,7 @@ export default function Page() {
                         </div>
                         <div className={styles.f511}>在庫あり</div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={ttb} alt="トートバッグ" fill style={{ objectFit: "cover" }} />
                             </div>
@@ -91,7 +91,7 @@ export default function Page() {
                         </div>
                         <div className={styles.f511}>在庫あり</div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="背景" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
                                 <Image src={key} alt="Tシャツ1" fill style={{ objectFit: "cover" }} />
                             </div>
