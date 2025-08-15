@@ -9,7 +9,7 @@ export const metadata = {
 export default function Page() {
     return (
         <>
-            <p className={styles.example}>イベント一覧</p>
+            <p className={styles.example}>イベント紹介一覧</p>
 
             {eventData.map((event, i) => (
                 <details key={i}>
