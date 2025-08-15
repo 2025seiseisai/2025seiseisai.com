@@ -1,3 +1,5 @@
+/* eslint better-tailwindcss/no-unregistered-classes: 0 */
+import { eventData } from "./event-data.js";
 import styles from "./page.module.scss";
 
 export const metadata = {
@@ -7,8 +9,44 @@ export const metadata = {
 export default function Page() {
     return (
         <>
-            {/* ここに書く */}
-            <p className={styles.example}>イベント</p>
+            <p className={styles.example}>イベント一覧</p>
+
+            {eventData.map((event, i) => (
+                <details key={i}>
+                    <summary>{event.name}</summary>
+                    {event.description && <p>{event.description}</p>}
+
+                    {event.day1.length > 0 && (
+                        <>
+                            <h4>Day 1</h4>
+                            {event.day1.map((detail, j) => (
+                                <div key={j}>
+                                    {detail.label && <strong>{detail.label}</strong>}
+                                    <p>{detail.location}</p>
+                                    <p>
+                                        {detail.start} - {detail.end}
+                                    </p>
+                                </div>
+                            ))}
+                        </>
+                    )}
+
+                    {event.day2.length > 0 && (
+                        <>
+                            <h4>Day 2</h4>
+                            {event.day2.map((detail, j) => (
+                                <div key={j}>
+                                    {detail.label && <strong>{detail.label}</strong>}
+                                    <p>{detail.location}</p>
+                                    <p>
+                                        {detail.start} - {detail.end}
+                                    </p>
+                                </div>
+                            ))}
+                        </>
+                    )}
+                </details>
+            ))}
         </>
     );
 }

@@ -28,6 +28,7 @@
     "dependencies": {
         "@next/third-parties": "^15.4.5",
         "@prisma/client": "^6.13.0",
+        "embla-carousel-react": "^8.6.0",
         "gray-matter": "^4.0.3",
         "holy-loader": "^2.3.13",
         "lottie-react": "^2.4.1",

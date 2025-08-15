@@ -68,61 +68,6 @@ export const eventData: EventData[] = [
         ],
     },
     {
-        name: "ラブライブ！サンスクリット‼︎",
-        description: "ラブライブシリーズのコピーダンスユニットです。",
-        day1: [
-            { location: "体育館", start: "11:50", end: "12:10" },
-            { location: "体育館", start: "15:50", end: "16:10" },
-        ],
-        day2: [
-            { location: "体育館", start: "12:40", end: "13:00" },
-            { location: "体育館", start: "16:50", end: "17:10" },
-        ],
-    },
-    {
-        name: "TDJ48",
-        description: "私たちTDJ48は坂道系などアイドルの曲を可愛く踊ります！",
-        day1: [
-            { location: "体育館", start: "12:10", end: "12:30" },
-            { location: "体育館", start: "16:30", end: "16:50" },
-        ],
-        day2: [
-            { location: "体育館", start: "13:10", end: "13:30" },
-            { location: "体育館", start: "16:30", end: "16:50" },
-        ],
-    },
-    {
-        name: "寺マス",
-        description:
-            "2日間だけの魔法にかかったアイドルが、最高のステージで輝きます!プロデューサーさん、菁々祭ですよっ、菁々祭!!",
-        day1: [
-            { location: "体育館", start: "12:30", end: "12:50" },
-            { location: "体育館", start: "15:30", end: "15:50" },
-        ],
-        day2: [
-            { location: "体育館", start: "12:00", end: "12:20" },
-            { location: "体育館", start: "15:50", end: "16:10" },
-        ],
-    },
-    {
-        name: "E卍ILE",
-        description:
-            "BTSをはじめとしたK-POPの楽曲で、キレのあるパフォーマンスをお届けします! ダンス、表情、フォーメーション——細部までこだわって仕上げたステージは必見。憧れのアーティストに少しでも近づけるよう、全力で練習してきました。 一緒に盛り上がってください！応援よろしくお願いします！",
-        day1: [
-            { location: "体育館", start: "12:50", end: "13:10" },
-            { location: "体育館", start: "16:10", end: "16:30" },
-        ],
-        day2: [
-            { location: "体育館", start: "12:20", end: "12:40" },
-            { location: "体育館", start: "15:30", end: "15:50" },
-        ],
-    },
-    {
-        name: "令和の小町コンテスト",
-        day1: [{ label: "予選", location: "体育館", start: "13:20", end: "14:00" }],
-        day2: [{ label: "決勝", location: "体育館", start: "14:30", end: "15:00" }],
-    },
-    {
         name: "T(DJ)²",
         description:
             "東大寺学園史上初?!音楽好きによるDJパフォーマンスです!4人のDJが日替わりで、多種多様な音楽を流します。有名な曲から知る人ぞ知る名曲、マイナーな曲まで幅広く流しますので、知っている曲で楽しんだり、新たな曲と出会ったり、まずは一度お立ち寄りください!",
@@ -159,7 +104,7 @@ export const eventData: EventData[] = [
         day2: [{ location: "体育館", start: "13:30", end: "14:00" }],
     },
     {
-        name: "イケメンコンテスト",
+        name: "イケてるメンズコンテスト",
         day1: [],
         day2: [{ location: "体育館", start: "14:00", end: "14:30" }],
     },
