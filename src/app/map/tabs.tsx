@@ -71,7 +71,7 @@ export function Tabs() {
                     <div className="relative aspect-4/5 w-full md:aspect-680/400">
                         <Map3D
                             resolution={0.9}
-                            floor={currentFloor}
+                            floor={loaded ? currentFloor : -1}
                             className="absolute !h-full !w-full border-[1.5] border-t-0 border-[#e0e0e0] bg-[#fdfdfd]"
                         />
                         {loaded && (activeTab === 1 || activeTab === 2) && (

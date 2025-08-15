@@ -155,52 +155,86 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
     }
 
     // レンダリングループの開始
-    renderer.render(scene, camera);
-    const tick = () => {
-        controls.update();
+    const currentCameraPosition = new THREE.Vector3();
+    const targetCameraPosition = new THREE.Vector3();
+    const currentControlsTarget = new THREE.Vector3();
+    const targetControlsTarget = new THREE.Vector3();
+    let preventControlsUpdate = -1;
+    function tick() {
+        requestAnimationFrame(tick);
+        if (preventControlsUpdate === -1) return;
+        const nowTime = performance.now();
+        if (preventControlsUpdate <= nowTime) controls.update();
+        else {
+            const t = 1 - (preventControlsUpdate - nowTime) / 400;
+            const easing = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            camera.position.set(
+                currentCameraPosition.x * (1 - easing) + targetCameraPosition.x * easing,
+                currentCameraPosition.y * (1 - easing) + targetCameraPosition.y * easing,
+                currentCameraPosition.z * (1 - easing) + targetCameraPosition.z * easing,
+            );
+            controls.target.set(
+                currentControlsTarget.x * (1 - easing) + targetControlsTarget.x * easing,
+                currentControlsTarget.y * (1 - easing) + targetControlsTarget.y * easing,
+                currentControlsTarget.z * (1 - easing) + targetControlsTarget.z * easing,
+            );
+            camera.lookAt(controls.target);
+            updated = true;
+            --preventControlsUpdate;
+        }
         light1.position.set(camera.position.x, camera.position.y, camera.position.z);
         light2.position.set(camera.position.x, camera.position.y, camera.position.z);
-        requestAnimationFrame(tick);
         if (updated) renderer.render(scene, camera);
         updated = false;
-    };
+    }
     tick();
 
     // 表示しているフロアに応じてカメラの位置と回転の中心を設定
-    function setFloor(floor: number) {
+    function setFloor(floor: number, no_animation: boolean = false) {
+        updated = true;
+        if (no_animation) preventControlsUpdate = performance.now();
+        else preventControlsUpdate = performance.now() + 400;
+        currentCameraPosition.copy(camera.position);
+        currentControlsTarget.copy(controls.target);
         switch (floor) {
             case 0:
-                camera.position.set(-120, 500, 800);
-                controls.target.set(-100, 50, 500);
+                targetCameraPosition.set(-120, 500, 800);
+                targetControlsTarget.set(-100, 50, 500);
                 break;
             case 1:
-                camera.position.set(350, 170, 40);
-                controls.target.set(100, 0, -60);
+                targetCameraPosition.set(-400, 120, -370);
+                targetControlsTarget.set(-100, 0, -570);
                 break;
             case 2:
-                camera.position.set(550, 270, -130);
-                controls.target.set(100, 150, -50);
+                targetCameraPosition.set(-450, 270, -550);
+                targetControlsTarget.set(-100, 150, -100);
                 break;
             case 3:
-                camera.position.set(500, 420, -140);
-                controls.target.set(100, 300, -70);
+                targetCameraPosition.set(-400, 400, -520);
+                targetControlsTarget.set(-100, 300, -50);
                 break;
             case 4:
-                camera.position.set(-400, 120, -370);
-                controls.target.set(-100, 0, -570);
+                targetCameraPosition.set(-550, 550, 160);
+                targetControlsTarget.set(-100, 450, -100);
                 break;
             case 5:
-                camera.position.set(-450, 270, -550);
-                controls.target.set(-100, 150, -100);
+                targetCameraPosition.set(350, 170, 40);
+                targetControlsTarget.set(100, 0, -60);
                 break;
             case 6:
-                camera.position.set(-400, 400, -520);
-                controls.target.set(-100, 300, -50);
+                targetCameraPosition.set(550, 270, -130);
+                targetControlsTarget.set(100, 150, -50);
                 break;
             case 7:
-                camera.position.set(-550, 550, 160);
-                controls.target.set(-100, 450, -100);
+                targetCameraPosition.set(500, 420, -140);
+                targetControlsTarget.set(100, 300, -70);
                 break;
+        }
+        if (no_animation) {
+            camera.position.copy(targetCameraPosition);
+            controls.target.copy(targetControlsTarget);
+            camera.lookAt(controls.target);
+            renderer.render(scene, camera);
         }
     }
 
@@ -214,7 +248,7 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
 export function Map3D({
     resolution = 0.8,
     className = "",
-    floor = 2,
+    floor = -1,
 }: {
     resolution?: number;
     className?: string;
@@ -233,12 +267,17 @@ export function Map3D({
         }
         stateRef.current = initializeMap3D(canvasRef.current, resolution);
     }, [resolution]);
+
+    const prevFloor = useRef(floor);
     useEffect(() => {
+        if (floor < 0 || floor > 7 || !Number.isInteger(floor)) return;
+        if (prevFloor.current === floor) return;
         if (!stateRef.current) {
             console.error("Camera is not initialized.");
             return;
         }
-        stateRef.current.setFloor(floor);
+        stateRef.current.setFloor(floor, prevFloor.current === -1);
+        prevFloor.current = floor;
     }, [floor]);
 
     return <canvas ref={canvasRef} className={className} suppressHydrationWarning></canvas>;
