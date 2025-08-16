@@ -1,8 +1,7 @@
-import { clubMagazineLinks } from "@/app/downloads/downloads-data";
+// import { clubMagazineLinks } from "@/app/downloads/downloads-data";
 import type { eventNames } from "@/app/events/event-data";
-import { BlogKey } from "@/blogs/blog-data";
+import type { BlogKey } from "@/blogs/blog-data";
 import { exhibitionIcons } from "./exhibition-icons";
-import { BLOCKED_PAGES } from "next/dist/shared/lib/constants";
 
 export enum ExhibitionFloor {
     高校棟1階 = 1,
@@ -19,18 +18,14 @@ export const locations = {
     "1年A組": ExhibitionFloor.中学棟1階,
     "1年B組": ExhibitionFloor.中学棟1階,
     "1年C組": ExhibitionFloor.中学棟1階,
-    "1年D組": ExhibitionFloor.中学棟1階,
-    "1年E組": ExhibitionFloor.中学棟1階,
+    "1年C組, 1年D組, 1年E組": ExhibitionFloor.中学棟1階,
     "2年A組": ExhibitionFloor.中学棟2階,
     "2年B組": ExhibitionFloor.中学棟2階,
-    "2年C組": ExhibitionFloor.中学棟2階,
-    "2年D組": ExhibitionFloor.中学棟2階,
-    "2年E組": ExhibitionFloor.中学棟2階,
+    "2年C組, 2年D組, 2年E組": ExhibitionFloor.中学棟2階,
     "3年A組": ExhibitionFloor.中学棟3階,
     "3年B組": ExhibitionFloor.中学棟3階,
     "3年C組": ExhibitionFloor.中学棟3階,
-    "3年D組": ExhibitionFloor.中学棟3階,
-    "3年E組": ExhibitionFloor.中学棟3階,
+    "3年D組, 3年E組": ExhibitionFloor.中学棟3階,
     "4年A組": ExhibitionFloor.高校棟4階,
     "4年B組": ExhibitionFloor.高校棟4階,
     "4年C組": ExhibitionFloor.高校棟4階,
@@ -47,13 +42,12 @@ export const locations = {
     "6年D組": ExhibitionFloor.高校棟2階,
     "6年E組": ExhibitionFloor.高校棟2階,
     "6年F組": ExhibitionFloor.高校棟1階,
-    "和室": ExhibitionFloor.中学棟2階,
-    "演習室B": ExhibitionFloor.高校棟2階,
-    "演習室C": ExhibitionFloor.高校棟2階,
-    "生物室": ExhibitionFloor.高校棟3階,
-    "図書室": ExhibitionFloor.高校棟3階,
-    "情報教室": ExhibitionFloor.高校棟4階,
-    "美術室": ExhibitionFloor.高校棟4階,
+    和室: ExhibitionFloor.中学棟2階,
+    "演習室B, 演習室C": ExhibitionFloor.高校棟2階,
+    生物室: ExhibitionFloor.高校棟3階,
+    図書室: ExhibitionFloor.高校棟3階,
+    情報教室: ExhibitionFloor.高校棟4階,
+    美術室: ExhibitionFloor.高校棟4階,
 } as const satisfies Record<string, ExhibitionFloor>;
 
 const exhibitionDataRaw = {
@@ -68,18 +62,20 @@ const exhibitionDataRaw = {
     東菁会: {
         location: "1年B組",
         icon: exhibitionIcons["東菁会"],
-        description: "東菁会は卒業生の保護者の会です。書道・川柳・水墨画・陶芸・俳句の会が練習の成果を発表しています。ぜひ、ご覧ください。",
+        description:
+            "東菁会は卒業生の保護者の会です。書道・川柳・水墨画・陶芸・俳句の会が練習の成果を発表しています。ぜひ、ご覧ください。",
     },
-    独学研究会: {
+    独楽研究会: {
         location: "1年C組",
         icon: exhibitionIcons["fallback"],
         description: "ベーゴマとコマを展示してます。体験もできるので、ぜひ来てください！",
     },
     中一学年展示: {
-        location: "1年C組,1年D組, 1年E組, ",
+        location: "1年C組, 1年D組, 1年E組",
         icon: exhibitionIcons["学年展示"],
-        description: "・中1展示班では班ごとにアイデアを出して制作した作品を展示しています。授業で制作した作品とあわせてご覧ください。・中1装飾班はテーマの「分秒」に沿って、ステンドグラスと黒板アート、モニュメントを制作します。時を感じる作品をぜひご覧ください。",
-   },
+        description:
+            "・中1展示班では班ごとにアイデアを出して制作した作品を展示しています。授業で制作した作品とあわせてご覧ください。・中1装飾班はテーマの「分秒」に沿って、ステンドグラスと黒板アート、モニュメントを制作します。時を感じる作品をぜひご覧ください。",
+    },
     囲碁将棋部: {
         location: "2年A組",
         icon: exhibitionIcons["囲碁将棋部"],
@@ -101,12 +97,14 @@ const exhibitionDataRaw = {
     中二学年展示: {
         location: "2年C組, 2年D組, 2年E組",
         icon: exhibitionIcons["学年展示"],
-        description: "・生徒が授業中に制作した美術作品等を展示しております。・「宇宙と生命の進歩 ～過去，現在，そして新時代へ～」というテーマで制作を行いました。ごゆるりとお楽しみください。・体験型のミニゲームで遊ぼう！あんなゲーム、こんなゲームがあなたの挑戦を待っています。",
+        description:
+            "・生徒が授業中に制作した美術作品等を展示しております。・「宇宙と生命の進歩 ～過去，現在，そして新時代へ～」というテーマで制作を行いました。ごゆるりとお楽しみください。・体験型のミニゲームで遊ぼう！あんなゲーム、こんなゲームがあなたの挑戦を待っています。",
     },
     お茶席: {
         location: "和室",
         icon: exhibitionIcons["お茶席"],
-        description: "お抹茶と和菓子をご用意しております。お気軽にお越しください。（一般800円、在校生・小学生以下500円）",
+        description:
+            "お抹茶と和菓子をご用意しております。お気軽にお越しください。（一般800円、在校生・小学生以下500円）",
     },
     暗号同好会: {
         location: "3年A組",
@@ -126,10 +124,11 @@ const exhibitionDataRaw = {
         twitter_link: "https://x.com/RocketTdj63",
         blogs: ["61/02"],
     },
-    VOCALOID＆作曲同好会: {
+    "VOCALOID&作曲同好会": {
         location: "3年B組",
         icon: exhibitionIcons["VOCALOID&作曲同好会"],
-        description: "今年の展示はUTAU関連を中心に組み立てております。例年通りの楽曲発表等もございますので是非お越しください。",
+        description:
+            "今年の展示はUTAU関連を中心に組み立てております。例年通りの楽曲発表等もございますので是非お越しください。",
         blogs: ["59/02"],
     },
     休憩室: {
@@ -139,7 +138,8 @@ const exhibitionDataRaw = {
     中三学年展示: {
         location: "3年D組, 3年E組",
         icon: exhibitionIcons["学年展示"],
-        description: "今年のテーマはEXPO 77th。ゲートをくぐったあなたを、巨大迷路、ピンボール、映像など、数々のパビリオンが待っています。",
+        description:
+            "今年のテーマはEXPO 77th。ゲートをくぐったあなたを、巨大迷路、ピンボール、映像など、数々のパビリオンが待っています。",
     },
     グッズ販売: {
         location: "6年A組",
@@ -154,7 +154,8 @@ const exhibitionDataRaw = {
     民族音楽同好会: {
         location: "6年C組",
         icon: exhibitionIcons["fallback"],
-        description: "民族音楽同好会です！初展示です！主に世界の民族楽器や民族音楽についての紹介ポスターを展示しています！",
+        description:
+            "民族音楽同好会です！初展示です！主に世界の民族楽器や民族音楽についての紹介ポスターを展示しています！",
     },
     歴史部菁史会: {
         location: "6年C組",
@@ -165,7 +166,8 @@ const exhibitionDataRaw = {
     電子工作部: {
         location: "6年D組",
         icon: exhibitionIcons["電子工作部"],
-        description: "部員たちが製作した作品を展示、解説しています。大会に出場したロボットから、実際に遊べるミニゲームまで！",
+        description:
+            "部員たちが製作した作品を展示、解説しています。大会に出場したロボットから、実際に遊べるミニゲームまで！",
         twitter_link: "https://x.com/tdj_dennkou",
         blogs: ["61/05"],
     },
@@ -186,13 +188,15 @@ const exhibitionDataRaw = {
     お化け屋敷: {
         location: "演習室B, 演習室C",
         icon: exhibitionIcons["お化け屋敷"],
-        description: "お化け屋敷です。毎年設計から考えて作っています。以前より進化したお化け屋敷をぜひ楽しんでください。",
-        blogs: ["60/11","59/04"],
+        description:
+            "お化け屋敷です。毎年設計から考えて作っています。以前より進化したお化け屋敷をぜひ楽しんでください。",
+        blogs: ["60/11", "59/04"],
     },
     自動車研究会: {
         location: "5年A組",
         icon: exhibitionIcons["fallback"],
-        description: "去年新しくできた団体です。今は大会出場用車両の設計を主にやっています。自動車に関する様々な展示を行います。",
+        description:
+            "去年新しくできた団体です。今は大会出場用車両の設計を主にやっています。自動車に関する様々な展示を行います。",
     },
     ラーメン研究会: {
         location: "5年A組",
@@ -214,77 +218,87 @@ const exhibitionDataRaw = {
     数学研究部: {
         location: "5年C組",
         icon: exhibitionIcons["数学研究部"],
-        description: "数学研究部では、部誌や懸賞問題、計算テストといったみなさんに楽しんでいただけるコンテンツを用意しております。",
+        description:
+            "数学研究部では、部誌や懸賞問題、計算テストといったみなさんに楽しんでいただけるコンテンツを用意しております。",
         twitter_link: "https://x.com/tdjsuken2",
         instagram_link: "https://www.instagram.com/tdjsuken/#",
     },
     新聞部: {
         location: "5年D組",
         icon: exhibitionIcons["新聞部"],
-        description: "東大寺で最も古い部活、新聞部。例年大好評の部誌「番茶党」の配布の他、新聞のバックナンバーの展示などを行います。",
+        description:
+            "東大寺で最も古い部活、新聞部。例年大好評の部誌「番茶党」の配布の他、新聞のバックナンバーの展示などを行います。",
     },
     文藝同好会: {
         location: "5年D組",
         icon: exhibitionIcons["文藝同好会"],
-        description: "節目を迎えた文藝同好会　展示は生まれ変わり文化祭に変化をもたらす　その凝り固まった考えを今こそ改めるのだ!",
+        description:
+            "節目を迎えた文藝同好会　展示は生まれ変わり文化祭に変化をもたらす　その凝り固まった考えを今こそ改めるのだ!",
     },
     クイズ研究部: {
         location: "5年E組",
         icon: exhibitionIcons["クイズ研究部"],
         description: "クイズ研究部員が作ったペーパークイズを解いたり、早押しボタンを用いてクイズ体験ができます！",
         twitter_link: "https://x.com/TDJquiz",
-        blogs: ["60/09","60/03","59/02"],
+        blogs: ["60/09", "60/03", "59/02"],
     },
     科学部: {
-        location: ["生物室"],
+        location: "生物室",
         icon: exhibitionIcons["科学部"],
-        description: "常設で普段の活動の成果を展示しています。展示はすべて部員が作りました。演示実験もぜひ見に来てください！",
+        description:
+            "常設で普段の活動の成果を展示しています。展示はすべて部員が作りました。演示実験もぜひ見に来てください！",
         twitter_link: "https://x.com/tdjscienceclub",
     },
     書画展: {
         location: "図書室",
         icon: exhibitionIcons["fallback"],
-        description: "東大寺塔頭の書画や菁々会会員の作品を展示しております。塔頭の書画は販売もしております。ぜひ、ご覧ください。",
+        description:
+            "東大寺塔頭の書画や菁々会会員の作品を展示しております。塔頭の書画は販売もしております。ぜひ、ご覧ください。",
     },
     イベントパート: {
         location: "4年A組",
         icon: exhibitionIcons["fallback"],
     },
-    MGA同好会:{
+    MGA同好会: {
         location: "4年B組",
         icon: exhibitionIcons["MGA同好会"],
-        description: "部員たちが試行錯誤して作り上げた、最高のボードゲームが皆さんを待っています!ワンゲーム、プレイしませんか?",
-        Blogs: ["60/03","59/02"],
+        description:
+            "部員たちが試行錯誤して作り上げた、最高のボードゲームが皆さんを待っています!ワンゲーム、プレイしませんか?",
+        Blogs: ["60/03", "59/02"],
     },
-    ポケモン同好会:{
+    ポケモン同好会: {
         location: "4年C組",
         icon: exhibitionIcons["ポケモン同好会"],
-        description: "今年は以前までのポケカブースやポケモン検定に加えて新たにポケポケのデッキリストも展示しております！",
+        description:
+            "今年は以前までのポケカブースやポケモン検定に加えて新たにポケポケのデッキリストも展示しております！",
         blogs: ["59/02"],
     },
-    東方研究会:{
+    東方研究会: {
         location: "4年C組",
-        icon: exhibitionIcons["東方研究会"],
-        description: "遂に東大寺学園に東方研究会が発足！検定や部員の二次創作物など様々な展示をご用意してお待ちしております。",
+        icon: exhibitionIcons["fallback"],
+        description:
+            "遂に東大寺学園に東方研究会が発足！検定や部員の二次創作物など様々な展示をご用意してお待ちしております。",
     },
-    アニメ研究会:{
+    アニメ研究会: {
         location: "4年D組",
         icon: exhibitionIcons["アニメ研究会"],
-        description: "今年も菁々祭にアニメ研究会が！アニメクイズやイラスト展示など、部員達が精一杯表現する愛を感じてくださいッ！",
+        description:
+            "今年も菁々祭にアニメ研究会が！アニメクイズやイラスト展示など、部員達が精一杯表現する愛を感じてくださいッ！",
     },
-    ドラえもん研究会:{
+    ドラえもん研究会: {
         location: "4年D組",
         icon: exhibitionIcons["ドラえもん研究会"],
         description: "クイズ等々さまざまなイベントを用意しています！夢に満ちた世界へようこそ！",
         twitter_link: "https://x.com/DoraemonTDJ",
     },
-    マジック研究会:{
+    マジック同好会: {
         location: "4年E組",
-        icon: exhibitionIcons["マジック研究会"],
-        description: "皆さんの ”目の前”で繰り広げられる魔法に、目が離せなくなります！あなたも魔法の世界に立ち寄ってみませんか？",
+        icon: exhibitionIcons["マジック同好会"],
+        description:
+            "皆さんの ”目の前”で繰り広げられる魔法に、目が離せなくなります！あなたも魔法の世界に立ち寄ってみませんか？",
         twitter_link: "https://x.com/tdj_magic_club",
     },
-    情報研究部:{
+    情報研究部: {
         location: "情報教室",
         icon: exhibitionIcons["情報研究部"],
         description: "今年も部員渾身のゲームや、ロボット「ロボホン」があります！涼みにきてね！",
@@ -292,7 +306,7 @@ const exhibitionDataRaw = {
         website_link: "https://tdjsip.wixsite.com/tdjsip",
         Blogs: ["60/03"],
     },
-    美術部:{
+    美術部: {
         location: "美術室",
         icon: exhibitionIcons["美術部"],
         description: "美術部では部員の作品を展示しています。個性豊かな部員たちの1年間の成果です。",
@@ -300,9 +314,10 @@ const exhibitionDataRaw = {
     紅茶同好会: {
         location: "美術室",
         icon: exhibitionIcons["紅茶同好会"],
-        description: "普段はみんなで持ち寄って楽しんでいる同好会です。そんな中から茶葉を展示しております。紅茶を知らない人も是非！",
+        description:
+            "普段はみんなで持ち寄って楽しんでいる同好会です。そんな中から茶葉を展示しております。紅茶を知らない人も是非！",
         twitter_link: "https://x.com/TOUDAIJIteaclub",
-    },    
+    },
 } as const;
 
 export const exhibitionData: Readonly<
@@ -311,7 +326,7 @@ export const exhibitionData: Readonly<
         Readonly<{
             location: keyof typeof locations;
             icon: string;
-            description: string;
+            description?: string;
             twitter_link?: string;
             instagram_link?: string;
             facebook_link?: string;
