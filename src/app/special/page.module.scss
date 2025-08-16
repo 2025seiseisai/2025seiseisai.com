@@ -53,7 +53,13 @@
 @include media(sm) {
     .subtitle_block {
         width: calc(100svw - 35px);
-        height: 176px;
+        height: 168px;
+    }
+}
+
+@media (width >= 475px) {
+    .subtitle_block {
+        height: 152px;
     }
 }
 
@@ -135,6 +141,7 @@
 
 @include media(sm) {
     .list {
+        top: 0;
         font-size: 16px;
     }
 }
@@ -197,6 +204,7 @@
         padding: 18px 0;
         margin: 0 20px;
         overflow: auto;
+        scroll-snap-type: mandatory;
     }
 }
 
@@ -209,6 +217,7 @@
     .wallpaperImage {
         width: 160px;
         height: 320px;
+        scroll-snap-align: center;
     }
 }
 
@@ -235,6 +244,7 @@
         gap: 16px;
         margin: 0 20px;
         overflow: auto;
+        scroll-snap-type: mandatory;
     }
 }
 
@@ -247,6 +257,7 @@
     .iconImage {
         width: 213px;
         height: 213px;
+        scroll-snap-align: center;
     }
 }
 
@@ -262,9 +273,11 @@
 
 @include media(sm) {
     .header {
-        display: inline-block;
-        padding: 0;
-        margin: 0 auto;
+        gap: 10px;
+        padding: 0 20px 12px;
+        margin: 0 auto 54px;
+        overflow: auto;
+        scroll-snap-type: mandatory;
     }
 }
 
@@ -276,6 +289,7 @@
     .headerImage {
         width: 324px;
         height: 108px;
+        scroll-snap-align: center;
     }
 }
 
@@ -319,7 +333,7 @@
 
 @include media(sm) {
     .header_download {
-        top: -44px;
-        right: -279px;
+        top: 64px;
+        right: 48px;
     }
 }
