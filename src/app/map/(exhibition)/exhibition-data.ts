@@ -51,6 +51,8 @@ export const locations = {
     "演習室C": ExhibitionFloor.高校棟2階,
     "生物室": ExhibitionFloor.高校棟3階,
     "図書室": ExhibitionFloor.高校棟3階,
+    "情報教室": ExhibitionFloor.高校棟4階,
+    "美術室": ExhibitionFloor.高校棟4階,
 } as const satisfies Record<string, ExhibitionFloor>;
 
 const exhibitionDataRaw = {
@@ -68,185 +70,238 @@ const exhibitionDataRaw = {
         club_magazine: clubMagazineLinks["MGA同好会"], // まだデータがないので書かなくて大丈夫です。
         tweet_link: "https://x.com/seiseisai_tdj/status/1954896745940615445", // 展示団体の紹介。まだ書かなくて大丈夫です。
     },
-    帰宅部: {
-        location: "6年B組",
-        icon: exhibitionIcons["fallback"],
-        description: "帰宅部の展示にぜひお越しください！",
-        // twitter_link, instagram_link, facebook_link, website_link, events, blogs, club_magazineは省略可なので、必要に応じて追加してください。
-    },
     書道部: {
         location: "1年A組",
         icon: exhibitionIcons["書道部"],
         description: "1Aにて書道作品を展示しています。団扇、半紙に好きな文字も書かせてもらってるので是非お越し下さい。",
         twitter_link: "https://x.com/tdj_shodou",
         blogs: ["60/01"],
-    }
+    },
     東菁会: {
         location: "1年B組",
         icon: exhibitionIcons["東菁会"],
         description: "東菁会は卒業生の保護者の会です。書道・川柳・水墨画・陶芸・俳句の会が練習の成果を発表しています。ぜひ、ご覧ください。",
-    }
+    },
     独学研究会: {
         location: "1年C組",
         icon: exhibitionIcons["fallback"],
         description: "ベーゴマとコマを展示してます。体験もできるので、ぜひ来てください！",
-    }
+    },
     中一学年展示: {
         location: "1年C組,1年D組, 1年E組, ",
         icon: exhibitionIcons["学年展示"],
         description: "・中1展示班では班ごとにアイデアを出して制作した作品を展示しています。授業で制作した作品とあわせてご覧ください。・中1装飾班はテーマの「分秒」に沿って、ステンドグラスと黒板アート、モニュメントを制作します。時を感じる作品をぜひご覧ください。",
-   }
+   },
     囲碁将棋部: {
         location: "2年A組",
         icon: exhibitionIcons["囲碁将棋部"],
         description: "今年も部員と対局できます。部員に平手で勝てたら景品も！！",
-    }
+    },
     オセロ同好会: {
         location: "2年B組",
         icon: exhibitionIcons["オセロ同好会"],
         description: "誰もがルールを知っているオセロで白熱の戦いを繰り広げませんか？ぜひ一度お越しください！",
-    }
+    },
     チェス研究同好会: {
         location: "2年B組",
         icon: exhibitionIcons["チェス研究会"],
         description: "皆さんにチェスのルールを知ってもらい、友達や部員と対戦することができます！",
         twitter_link: "https://x.com/tdj_chessken",
-    }
+    },
     中二学年展示: {
         location: "2年C組, 2年D組, 2年E組",
         icon: exhibitionIcons["学年展示"],
         description: "・生徒が授業中に制作した美術作品等を展示しております。・「宇宙と生命の進歩 ～過去，現在，そして新時代へ～」というテーマで制作を行いました。ごゆるりとお楽しみください。・体験型のミニゲームで遊ぼう！あんなゲーム、こんなゲームがあなたの挑戦を待っています。",
-    }
+    },
     お茶席: {
         location: "和室",
         icon: exhibitionIcons["お茶席"],
         description: "お抹茶と和菓子をご用意しております。お気軽にお越しください。（一般800円、在校生・小学生以下500円）",
-    }
+    },
     暗号同好会: {
         location: "3年A組",
         icon: exhibitionIcons["暗号同好会"],
         description: "簡単な謎なぞから難解な暗号まで用意しています。今年は学校中を舞台にした新企画も！",
         twitter_link: "https://x.com/tdj_angou",
-    }
+    },
     謎解き同好会: {
         location: "3年A組",
         icon: exhibitionIcons["謎解き研究会"],
         description: "謎解きに必要なのは「ひらめき」だけ！謎でしか味わえない爽快感がここに。",
-    }
+    },
     ロケット研究部: {
         location: "3年B組",
         icon: exhibitionIcons["ロケット同好会"],
         description: "部員達の果てしない宇宙への興味をぜひご覧ください！",
-    }
+        twitter_link: "https://x.com/RocketTdj63",
+    },
     VOCALOID＆作曲同好会: {
         location: "3年B組",
         icon: exhibitionIcons["VOCALOID&作曲同好会"],
         description: "今年の展示はUTAU関連を中心に組み立てております。例年通りの楽曲発表等もございますので是非お越しください。",
-    }
+    },
     休憩室: {
         location: "3年C組",
         icon: exhibitionIcons["休憩室"],
-    }
+    },
     中三学年展示: {
         location: "3年D組, 3年E組",
         icon: exhibitionIcons["学年展示"],
         description: "今年のテーマはEXPO 77th。ゲートをくぐったあなたを、巨大迷路、ピンボール、映像など、数々のパビリオンが待っています。",
-    }
+    },
     グッズ販売: {
         location: "6年A組",
         icon: exhibitionIcons["fallback"],
         description: "文化祭公式グッズを販売しております。記念に一品、如何でしょうか。",
-    }
+    },
     園芸部: {
         location: "6年B組",
         icon: exhibitionIcons["園芸部"],
         description: "今年も植物展示とチューリップの球根販売を行います！お値打ち価格で販売中！(現金のみ取り扱い)",
-    }
+    },
     民族音楽同好会: {
         location: "6年C組",
         icon: exhibitionIcons["fallback"],
         description: "民族音楽同好会です！初展示です！主に世界の民族楽器や民族音楽についての紹介ポスターを展示しています！",
-    }
+    },
     歴史部菁史会: {
         location: "6年C組",
         icon: exhibitionIcons["歴史部菁史会"],
         description: "歴史部とかけまして太陽の塔と解きます。その心はどちらも中に入ると、思ったより奥が深いでしょう。",
-    }
+    },
     電子工作部: {
         location: "6年D組",
         icon: exhibitionIcons["電子工作部"],
         description: "部員たちが製作した作品を展示、解説しています。大会に出場したロボットから、実際に遊べるミニゲームまで！",
-    }
+        twitter_link: "https://x.com/tdj_dennkou",
+    },
     折り紙研究部: {
         location: "6年E組",
         icon: exhibitionIcons["折り紙研究部"],
         description: "折り紙って芸術だったんだ！",
-    }
+        twitter_link: "https://x.com/tdj_oriken",
+    },
     鉄道研究部: {
         location: "6年F組",
         icon: exhibitionIcons["鉄道研究部"],
         description: "写真や鉄道部品,新規作成したジオラマの展示等に加え,Nゲージの運転体験を実施！色々やってます！",
-    }
+        twitter_link: "https://x.com/tdj_tekken",
+    },
     お化け屋敷: {
         location: "演習室B, 演習室C",
         icon: exhibitionIcons["お化け屋敷"],
         description: "お化け屋敷です。毎年設計から考えて作っています。以前より進化したお化け屋敷をぜひ楽しんでください。",
-    }
+    },
     自動車研究会: {
         location: "5年A組",
         icon: exhibitionIcons["fallback"],
         description: "去年新しくできた団体です。今は大会出場用車両の設計を主にやっています。自動車に関する様々な展示を行います。",
-    }
+    },
     ラーメン研究会: {
         location: "5年A組",
         icon: exhibitionIcons["fallback"],
         description: "ラーメンを愛している部活です。ちょっと変わってるかもですが、ぜひ来てください！！！",
-    }
+        twitter_link: "https://x.com/tdjramen",
+        instagram_link: "https://www.instagram.com/tdj_ramen/?igsh=YWI1NXBkMTVlenUw&utm_source=qr#",
+    },
     英語部: {
         location: "5年B組",
         icon: exhibitionIcons["英語部"],
         description: "君の英語力試してみない？楽しい展示も！Join us for fun English challenges!",
-    }
+    },
     写真部: {
         location: "5年B組",
         icon: exhibitionIcons["写真部"],
         description: "写真部の一年の集大成です。是非ご覧下さい。",
-    }
+    },
     数学研究部: {
         location: "5年C組",
         icon: exhibitionIcons["数学研究部"],
         description: "数学研究部では、部誌や懸賞問題、計算テストといったみなさんに楽しんでいただけるコンテンツを用意しております。",
-    }
+        twitter_link: "https://x.com/tdjsuken2",
+        instagram_link: "https://www.instagram.com/tdjsuken/#",
+    },
     新聞部: {
         location: "5年D組",
         icon: exhibitionIcons["新聞部"],
         description: "東大寺で最も古い部活、新聞部。例年大好評の部誌「番茶党」の配布の他、新聞のバックナンバーの展示などを行います。",
-    }
+    },
     文藝同好会: {
         location: "5年D組",
         icon: exhibitionIcons["文藝同好会"],
         description: "節目を迎えた文藝同好会　展示は生まれ変わり文化祭に変化をもたらす　その凝り固まった考えを今こそ改めるのだ!",
-    }
+    },
     クイズ研究部: {
         location: "5年E組",
         icon: exhibitionIcons["クイズ研究部"],
         description: "クイズ研究部員が作ったペーパークイズを解いたり、早押しボタンを用いてクイズ体験ができます！",
-    }
+        twitter_link: "https://x.com/TDJquiz",
+    },
     科学部: {
         location: ["生物室"],
         icon: exhibitionIcons["科学部"],
         description: "常設で普段の活動の成果を展示しています。展示はすべて部員が作りました。演示実験もぜひ見に来てください！",
-    }
+        twitter_link: "https://x.com/tdjscienceclub",
+    },
     書画展: {
         location: "図書室",
         icon: exhibitionIcons["fallback"],
         description: "東大寺塔頭の書画や菁々会会員の作品を展示しております。塔頭の書画は販売もしております。ぜひ、ご覧ください。",
-    }
+    },
     イベントパート: {
         location: "4年A組",
         icon: exhibitionIcons["fallback"],
-        description: "文化祭のメインイベント、T1グランプリを開催します！",
-    }
+    },
+    MGA同好会:{
+        location: "4年B組",
+        icon: exhibitionIcons["MGA同好会"],
+        description: "部員たちが試行錯誤して作り上げた、最高のボードゲームが皆さんを待っています!ワンゲーム、プレイしませんか?",
+    },
+    ポケモン同好会:{
+        location: "4年C組",
+        icon: exhibitionIcons["ポケモン同好会"],
+        description: "今年は以前までのポケカブースやポケモン検定に加えて新たにポケポケのデッキリストも展示しております！",
+    },
+    東方研究会:{
+        location: "4年C組",
+        icon: exhibitionIcons["東方研究会"],
+        description: "遂に東大寺学園に東方研究会が発足！検定や部員の二次創作物など様々な展示をご用意してお待ちしております。",
+    },
+    アニメ研究会:{
+        location: "4年D組",
+        icon: exhibitionIcons["アニメ研究会"],
+        description: "今年も菁々祭にアニメ研究会が！アニメクイズやイラスト展示など、部員達が精一杯表現する愛を感じてくださいッ！",
+    },
+    ドラえもん研究会:{
+        location: "4年D組",
+        icon: exhibitionIcons["ドラえもん研究会"],
+        description: "クイズ等々さまざまなイベントを用意しています！夢に満ちた世界へようこそ！",
+        twitter_link: "https://x.com/DoraemonTDJ",
+    },
+    マジック研究会:{
+        location: "4年E組",
+        icon: exhibitionIcons["マジック研究会"],
+        description: "皆さんの ”目の前”で繰り広げられる魔法に、目が離せなくなります！あなたも魔法の世界に立ち寄ってみませんか？",
+        twitter_link: "https://x.com/tdj_magic_club",
+    },
+    情報研究部:{
+        location: "情報教室",
+        icon: exhibitionIcons["情報研究部"],
+        description: "今年も部員渾身のゲームや、ロボット「ロボホン」があります！涼みにきてね！",
+        twitter_link: "https://x.com/tdj_sip",
+        website_link: "https://tdjsip.wixsite.com/tdjsip",
+    },
+    美術部:{
+        location: "美術室",
+        icon: exhibitionIcons["美術部"],
+        description: "美術部では部員の作品を展示しています。個性豊かな部員たちの1年間の成果です。",
+    },
+    紅茶同好会: {
+        location: "美術室",
+        icon: exhibitionIcons["紅茶同好会"],
+        description: "普段はみんなで持ち寄って楽しんでいる同好会です。そんな中から茶葉を展示しております。紅茶を知らない人も是非！",
+        twitter_link: "https://x.com/TOUDAIJIteaclub",
+    },    
 } as const;
 
 export const exhibitionData: Readonly<
