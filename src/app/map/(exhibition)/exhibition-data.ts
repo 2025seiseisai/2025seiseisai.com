@@ -1,7 +1,8 @@
 import { clubMagazineLinks } from "@/app/downloads/downloads-data";
 import type { eventNames } from "@/app/events/event-data";
-import type { BlogKey } from "@/blogs/blog-data";
+import { BlogKey } from "@/blogs/blog-data";
 import { exhibitionIcons } from "./exhibition-icons";
+import { BLOCKED_PAGES } from "next/dist/shared/lib/constants";
 
 export enum ExhibitionFloor {
     高校棟1階 = 1,
@@ -75,7 +76,7 @@ const exhibitionDataRaw = {
         icon: exhibitionIcons["書道部"],
         description: "1Aにて書道作品を展示しています。団扇、半紙に好きな文字も書かせてもらってるので是非お越し下さい。",
         twitter_link: "https://x.com/tdj_shodou",
-        blogs: ["60/01"],
+        blogs: ["60/05"],
     },
     東菁会: {
         location: "1年B組",
@@ -96,11 +97,13 @@ const exhibitionDataRaw = {
         location: "2年A組",
         icon: exhibitionIcons["囲碁将棋部"],
         description: "今年も部員と対局できます。部員に平手で勝てたら景品も！！",
+        blogs: ["59/02"],
     },
     オセロ同好会: {
         location: "2年B組",
         icon: exhibitionIcons["オセロ同好会"],
         description: "誰もがルールを知っているオセロで白熱の戦いを繰り広げませんか？ぜひ一度お越しください！",
+        blogs: ["59/02"],
     },
     チェス研究同好会: {
         location: "2年B組",
@@ -134,11 +137,13 @@ const exhibitionDataRaw = {
         icon: exhibitionIcons["ロケット同好会"],
         description: "部員達の果てしない宇宙への興味をぜひご覧ください！",
         twitter_link: "https://x.com/RocketTdj63",
+        blogs: ["61/02"],
     },
     VOCALOID＆作曲同好会: {
         location: "3年B組",
         icon: exhibitionIcons["VOCALOID&作曲同好会"],
         description: "今年の展示はUTAU関連を中心に組み立てております。例年通りの楽曲発表等もございますので是非お越しください。",
+        blogs: ["59/02"],
     },
     休憩室: {
         location: "3年C組",
@@ -168,29 +173,34 @@ const exhibitionDataRaw = {
         location: "6年C組",
         icon: exhibitionIcons["歴史部菁史会"],
         description: "歴史部とかけまして太陽の塔と解きます。その心はどちらも中に入ると、思ったより奥が深いでしょう。",
+        blogs: ["61/01"],
     },
     電子工作部: {
         location: "6年D組",
         icon: exhibitionIcons["電子工作部"],
         description: "部員たちが製作した作品を展示、解説しています。大会に出場したロボットから、実際に遊べるミニゲームまで！",
         twitter_link: "https://x.com/tdj_dennkou",
+        blogs: ["61/05"],
     },
     折り紙研究部: {
         location: "6年E組",
         icon: exhibitionIcons["折り紙研究部"],
         description: "折り紙って芸術だったんだ！",
         twitter_link: "https://x.com/tdj_oriken",
+        blogs: ["59/06"],
     },
     鉄道研究部: {
         location: "6年F組",
         icon: exhibitionIcons["鉄道研究部"],
         description: "写真や鉄道部品,新規作成したジオラマの展示等に加え,Nゲージの運転体験を実施！色々やってます！",
         twitter_link: "https://x.com/tdj_tekken",
+        blogs: ["61/01"],
     },
     お化け屋敷: {
         location: "演習室B, 演習室C",
         icon: exhibitionIcons["お化け屋敷"],
         description: "お化け屋敷です。毎年設計から考えて作っています。以前より進化したお化け屋敷をぜひ楽しんでください。",
+        blogs: ["60/11","59/04"],
     },
     自動車研究会: {
         location: "5年A組",
@@ -236,6 +246,7 @@ const exhibitionDataRaw = {
         icon: exhibitionIcons["クイズ研究部"],
         description: "クイズ研究部員が作ったペーパークイズを解いたり、早押しボタンを用いてクイズ体験ができます！",
         twitter_link: "https://x.com/TDJquiz",
+        blogs: ["60/09","60/03","59/02"],
     },
     科学部: {
         location: ["生物室"],
@@ -256,11 +267,13 @@ const exhibitionDataRaw = {
         location: "4年B組",
         icon: exhibitionIcons["MGA同好会"],
         description: "部員たちが試行錯誤して作り上げた、最高のボードゲームが皆さんを待っています!ワンゲーム、プレイしませんか?",
+        Blogs: ["60/03","59/02"],
     },
     ポケモン同好会:{
         location: "4年C組",
         icon: exhibitionIcons["ポケモン同好会"],
         description: "今年は以前までのポケカブースやポケモン検定に加えて新たにポケポケのデッキリストも展示しております！",
+        blogs: ["59/02"],
     },
     東方研究会:{
         location: "4年C組",
@@ -290,6 +303,7 @@ const exhibitionDataRaw = {
         description: "今年も部員渾身のゲームや、ロボット「ロボホン」があります！涼みにきてね！",
         twitter_link: "https://x.com/tdj_sip",
         website_link: "https://tdjsip.wixsite.com/tdjsip",
+        Blogs: ["60/03"],
     },
     美術部:{
         location: "美術室",
