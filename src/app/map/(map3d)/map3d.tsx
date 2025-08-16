@@ -299,7 +299,6 @@ export function Map3D({
             initTargetValue = new THREE.Vector3();
             initTarget.current = initTargetValue;
         }
-        console.log("Map3D initialized with resolution:", resolution);
         return () => {
             if (stateRef.current) {
                 const { cameraPosition, controlsTarget } = stateRef.current.dispose();
@@ -307,7 +306,6 @@ export function Map3D({
                 initPositionValue.copy(cameraPosition);
                 initTargetValue.copy(controlsTarget);
             }
-            console.log("Map3D disposed");
         };
     }, [resolution, reloader]);
 
