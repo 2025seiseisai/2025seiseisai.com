@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { Polygons, Rects } from "./mapdata";
+import { Color, Polygons, Rects } from "./mapdata";
 
 function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
     // scene, renderer, camera, controlsの初期化
@@ -12,7 +12,7 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
         antialias: true,
         alpha: true,
     });
-    const camera = new THREE.PerspectiveCamera(75, 1.0, 0.1, 2000);
+    const camera = new THREE.PerspectiveCamera(75, 1.0, 0.1, 3000);
     const controls = new OrbitControls(camera, canvas);
     controls.enableDamping = true;
     controls.dampingFactor = 0.15;
@@ -57,7 +57,7 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
 
     // 座標軸の追加
     {
-        const grid = new THREE.GridHelper(1000, 10);
+        const grid = new THREE.GridHelper(2000, 20);
         grid.position.set(0, -102, 0);
         scene.add(grid);
     }
@@ -65,8 +65,7 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
     // 地面の追加 (開発環境のみ)
     if (process.env.NODE_ENV === "development") {
         const loader = new THREE.TextureLoader();
-        const texture = loader.load("/2025/map/picture.gitignore.png");
-        if (texture) {
+        const texture = loader.load("/2025/map/school-picture.jpg", () => {
             texture.colorSpace = THREE.SRGBColorSpace;
             const tdjplane = new THREE.Mesh(
                 new THREE.PlaneGeometry(2000, 2000, 1, 1),
@@ -75,7 +74,8 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
             tdjplane.rotation.x = -Math.PI / 2;
             tdjplane.position.set(320, -104, 0);
             scene.add(tdjplane);
-        }
+            updated = true;
+        });
     }
 
     // 床 (長方形) の追加
@@ -103,7 +103,7 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
     {
         Polygons.forEach(({ points, color }) => {
             if (points.length <= 2) return;
-            if (color == undefined) color = 0xeeeeee;
+            if (color == undefined) color = Color.white;
             const indices = Array(points.length - 2)
                 .fill(0)
                 .map((value, index) => [0, index + 1, index + 2])
@@ -214,8 +214,8 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
                 targetControlsTarget.set(-100, 300, -50);
                 break;
             case 4:
-                targetCameraPosition.set(-550, 550, 160);
-                targetControlsTarget.set(-100, 450, -100);
+                targetCameraPosition.set(-550, 550, 140);
+                targetControlsTarget.set(-100, 450, -70);
                 break;
             case 5:
                 targetCameraPosition.set(350, 170, 40);

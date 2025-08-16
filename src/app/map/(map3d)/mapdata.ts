@@ -1,31 +1,32 @@
-const color = {
-    red: 0xff6347,
-    blue: 0x6495ed,
-    yellow: 0xf0e68c,
-    green: 0x32cd32,
-    ylgreen: 0x98fb98,
-    gray: 0x999999,
-    ltblue: 0xc71585,
-    magenta: 0x87cefa,
-};
+export enum Color {
+    red = 0xff6347,
+    blue = 0x6495ed,
+    yellow = 0xf0e68c,
+    green = 0x32cd32,
+    ylgreen = 0x98fb98,
+    gray = 0x999999,
+    ltblue = 0xc71585,
+    magenta = 0x87cefa,
+    white = 0xeeeeee,
+}
 
-/** 長方形 y: y座標(高さ) x1,x2: 端のx座標 z1,z2: 端のz座標 color: 表面の色(省略した場合は白) */
-export const Rects: {
+type Rect = {
     y: number;
     x1: number;
     z1: number;
     x2: number;
     z2: number;
-    color?: number;
-}[] = [
-    // 中学棟1階
+    color?: Color;
+};
+
+const Rects_中学棟1階: Rect[] = [
     {
         y: 0,
         x1: -130,
         z1: 100,
         x2: 75,
         z2: -65,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 0,
@@ -33,7 +34,7 @@ export const Rects: {
         z1: -20,
         x2: 150,
         z2: 50,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 0,
@@ -41,7 +42,7 @@ export const Rects: {
         z1: -90,
         x2: 150,
         z2: -20,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 0,
@@ -49,7 +50,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -110,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 0,
@@ -57,7 +58,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -250,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 0,
@@ -65,7 +66,7 @@ export const Rects: {
         z1: -320,
         x2: 75,
         z2: -250,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 0,
@@ -94,7 +95,7 @@ export const Rects: {
         z1: 125,
         x2: 175,
         z2: 280,
-        color: color.gray,
+        color: Color.gray,
     },
     {
         y: 0,
@@ -102,16 +103,17 @@ export const Rects: {
         z1: 280,
         x2: 175,
         z2: 340,
-        color: color.gray,
+        color: Color.gray,
     },
-    // 中学棟2階
+];
+const Rects_中学棟2階: Rect[] = [
     {
         y: 150,
         x1: 100,
         z1: -20,
         x2: 150,
         z2: 50,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 150,
@@ -119,7 +121,7 @@ export const Rects: {
         z1: -90,
         x2: 150,
         z2: -20,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 150,
@@ -127,7 +129,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -110,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 150,
@@ -135,7 +137,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -250,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 150,
@@ -143,7 +145,7 @@ export const Rects: {
         z1: -320,
         x2: 75,
         z2: -250,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 150,
@@ -151,7 +153,7 @@ export const Rects: {
         z1: 250,
         x2: 50,
         z2: 340,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 150,
@@ -187,7 +189,7 @@ export const Rects: {
         z1: 180,
         x2: 50,
         z2: 250,
-        color: color.gray,
+        color: Color.gray,
     },
     {
         y: 150,
@@ -195,7 +197,7 @@ export const Rects: {
         z1: 125,
         x2: 175,
         z2: 280,
-        color: color.gray,
+        color: Color.gray,
     },
     {
         y: 150,
@@ -203,7 +205,7 @@ export const Rects: {
         z1: 280,
         x2: 175,
         z2: 340,
-        color: color.gray,
+        color: Color.gray,
     },
     {
         y: 150,
@@ -211,16 +213,17 @@ export const Rects: {
         z1: 280,
         x2: 100,
         z2: 340,
-        color: color.yellow,
+        color: Color.yellow,
     },
-    //中学棟3階
+];
+const Rects_中学棟3階: Rect[] = [
     {
         y: 300,
         x1: 100,
         z1: -20,
         x2: 150,
         z2: 50,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 300,
@@ -228,7 +231,7 @@ export const Rects: {
         z1: -90,
         x2: 150,
         z2: -20,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 300,
@@ -236,7 +239,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -110,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 300,
@@ -244,7 +247,7 @@ export const Rects: {
         z1: -180,
         x2: 150,
         z2: -250,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 300,
@@ -252,7 +255,7 @@ export const Rects: {
         z1: -320,
         x2: 75,
         z2: -250,
-        color: color.red,
+        color: Color.red,
     },
     {
         y: 300,
@@ -288,7 +291,7 @@ export const Rects: {
         z1: 225,
         x2: 175,
         z2: 340,
-        color: color.gray,
+        color: Color.gray,
     },
     {
         y: 300,
@@ -296,7 +299,7 @@ export const Rects: {
         z1: 175,
         x2: 175,
         z2: 225,
-        color: color.gray,
+        color: Color.gray,
     },
     {
         y: 300,
@@ -304,38 +307,17 @@ export const Rects: {
         z1: 125,
         x2: 175,
         z2: 175,
-        color: color.yellow,
+        color: Color.yellow,
     },
-    // 転心殿
-    {
-        y: 150,
-        x1: -150,
-        z1: 100,
-        x2: 0,
-        z2: 150,
-    },
-    {
-        y: 300,
-        x1: -150,
-        z1: 75,
-        x2: 0,
-        z2: 100,
-    },
-    {
-        y: 150,
-        x1: -130,
-        z1: 75,
-        x2: -150,
-        z2: 100,
-    },
-    // 高校棟1階
+];
+const Rects_高校棟1階: Rect[] = [
     {
         y: 0,
         x1: -175,
         z1: -375,
         x2: -250,
         z2: -450,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 0,
@@ -344,14 +326,15 @@ export const Rects: {
         x2: -290,
         z2: -375,
     },
-    // 高校棟2階
+];
+const Rects_高校棟2階: Rect[] = [
     {
         y: 150,
         x1: -375,
         z1: -50,
         x2: -300,
         z2: 50,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 150,
@@ -359,7 +342,7 @@ export const Rects: {
         z1: -50,
         x2: -175,
         z2: -120,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 150,
@@ -367,7 +350,7 @@ export const Rects: {
         z1: -120,
         x2: -175,
         z2: -190,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 150,
@@ -375,7 +358,7 @@ export const Rects: {
         z1: -210,
         x2: -175,
         z2: -280,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 150,
@@ -383,7 +366,7 @@ export const Rects: {
         z1: -280,
         x2: -175,
         z2: -350,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 150,
@@ -391,7 +374,7 @@ export const Rects: {
         z1: -375,
         x2: -175,
         z2: -450,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 150,
@@ -434,16 +417,17 @@ export const Rects: {
         z1: -30,
         x2: -150,
         z2: 75,
-        color: color.gray,
+        color: Color.gray,
     },
-    // 高校棟3階
+];
+const Rects_高校棟3階: Rect[] = [
     {
         y: 300,
         x1: -225,
         z1: 100,
         x2: -150,
         z2: 175,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 300,
@@ -451,7 +435,7 @@ export const Rects: {
         z1: -50,
         x2: -175,
         z2: -120,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 300,
@@ -459,7 +443,7 @@ export const Rects: {
         z1: -120,
         x2: -175,
         z2: -190,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 300,
@@ -467,7 +451,7 @@ export const Rects: {
         z1: -210,
         x2: -175,
         z2: -280,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 300,
@@ -475,7 +459,7 @@ export const Rects: {
         z1: -280,
         x2: -175,
         z2: -350,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 300,
@@ -483,7 +467,7 @@ export const Rects: {
         z1: -375,
         x2: -175,
         z2: -450,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 300,
@@ -491,7 +475,7 @@ export const Rects: {
         z1: -25,
         x2: -150,
         z2: 50,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 300,
@@ -499,7 +483,7 @@ export const Rects: {
         z1: -25,
         x2: -300,
         z2: 50,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 300,
@@ -538,20 +522,28 @@ export const Rects: {
     },
     {
         y: 300,
+        x1: -225,
+        z1: -375,
+        x2: -300,
+        z2: -350,
+    },
+    {
+        y: 300,
         x1: -325,
         z1: 100,
         x2: -250,
         z2: 175,
-        color: color.gray,
+        color: Color.gray,
     },
-    // 高校棟4階
+];
+const Rects_高校棟4階: Rect[] = [
     {
         y: 450,
         x1: -225,
         z1: -50,
         x2: -175,
         z2: -120,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 450,
@@ -559,7 +551,7 @@ export const Rects: {
         z1: -120,
         x2: -175,
         z2: -190,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 450,
@@ -567,7 +559,7 @@ export const Rects: {
         z1: -210,
         x2: -175,
         z2: -280,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 450,
@@ -575,15 +567,7 @@ export const Rects: {
         z1: -280,
         x2: -175,
         z2: -350,
-        color: color.blue,
-    },
-    {
-        y: 450,
-        x1: -250,
-        z1: -375,
-        x2: -175,
-        z2: -450,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 450,
@@ -591,7 +575,7 @@ export const Rects: {
         z1: -25,
         x2: -150,
         z2: 75,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 450,
@@ -599,7 +583,7 @@ export const Rects: {
         z1: -25,
         x2: -300,
         z2: 50,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 450,
@@ -607,7 +591,7 @@ export const Rects: {
         z1: 100,
         x2: -250,
         z2: 175,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 450,
@@ -615,7 +599,7 @@ export const Rects: {
         z1: 100,
         x2: -150,
         z2: 175,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 450,
@@ -627,7 +611,7 @@ export const Rects: {
     {
         y: 450,
         x1: -250,
-        z1: -375,
+        z1: -350,
         x2: -225,
         z2: 75,
     },
@@ -645,14 +629,38 @@ export const Rects: {
         x2: -225,
         z2: 100,
     },
-    // 図書館棟1階
+];
+const Rects_転心殿: Rect[] = [
+    {
+        y: 150,
+        x1: -150,
+        z1: 100,
+        x2: 0,
+        z2: 150,
+    },
+    {
+        y: 300,
+        x1: -150,
+        z1: 75,
+        x2: 0,
+        z2: 100,
+    },
+    {
+        y: 150,
+        x1: -130,
+        z1: 75,
+        x2: -150,
+        z2: 100,
+    },
+];
+const Rects_図書館棟1階: Rect[] = [
     {
         y: 200,
         x1: -250,
         z1: 300,
         x2: -175,
         z2: 350,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 200,
@@ -660,7 +668,7 @@ export const Rects: {
         z1: 350,
         x2: -175,
         z2: 400,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 200,
@@ -668,7 +676,7 @@ export const Rects: {
         z1: 400,
         x2: -175,
         z2: 475,
-        color: color.green,
+        color: Color.green,
     },
     {
         y: 150,
@@ -711,7 +719,7 @@ export const Rects: {
         z1: 300,
         x2: -275,
         z2: 330,
-        color: color.gray,
+        color: Color.gray,
     },
     {
         y: 200,
@@ -719,7 +727,7 @@ export const Rects: {
         z1: 350,
         x2: -275,
         z2: 420,
-        color: color.gray,
+        color: Color.gray,
     },
     {
         y: 200,
@@ -727,7 +735,7 @@ export const Rects: {
         z1: 420,
         x2: -275,
         z2: 475,
-        color: color.gray,
+        color: Color.gray,
     },
     {
         y: 200,
@@ -735,16 +743,17 @@ export const Rects: {
         z1: 250,
         x2: -250,
         z2: 275,
-        color: color.yellow,
+        color: Color.yellow,
     },
-    // 図書館棟2階
+];
+const Rects_図書館棟2階: Rect[] = [
     {
         y: 350,
         x1: -325,
         z1: 300,
         x2: -175,
         z2: 475,
-        color: color.blue,
+        color: Color.blue,
     },
     {
         y: 350,
@@ -752,7 +761,7 @@ export const Rects: {
         z1: 250,
         x2: -250,
         z2: 275,
-        color: color.yellow,
+        color: Color.yellow,
     },
     {
         y: 350,
@@ -760,7 +769,7 @@ export const Rects: {
         z1: 275,
         x2: -275,
         z2: 300,
-        color: color.yellow,
+        color: Color.yellow,
     },
     {
         y: 350,
@@ -776,7 +785,8 @@ export const Rects: {
         x2: -250,
         z2: 300,
     },
-    // 圓融館・体育館
+];
+const Rects_圓融館_体育館: Rect[] = [
     {
         y: 0,
         x1: 100,
@@ -804,7 +814,7 @@ export const Rects: {
         z1: -325,
         x2: 175,
         z2: -450,
-        color: color.ltblue,
+        color: Color.ltblue,
     },
     {
         y: -100,
@@ -812,16 +822,17 @@ export const Rects: {
         z1: -525,
         x2: -200,
         z2: -900,
-        color: color.magenta,
+        color: Color.magenta,
     },
-    // 中庭
+];
+const Rects_中庭: Rect[] = [
     {
         y: 200,
         x1: -130,
         z1: -75,
         x2: 20,
         z2: 50,
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         y: 200,
@@ -829,7 +840,7 @@ export const Rects: {
         z1: -35,
         x2: -160,
         z2: -75,
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         y: 100,
@@ -837,7 +848,7 @@ export const Rects: {
         z1: -110,
         x2: -10,
         z2: -190,
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         y: 100,
@@ -845,7 +856,7 @@ export const Rects: {
         z1: -225,
         x2: -115,
         z2: -190,
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         y: 150,
@@ -853,7 +864,7 @@ export const Rects: {
         z1: -190,
         x2: -175,
         z2: -210,
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         y: 90,
@@ -861,7 +872,7 @@ export const Rects: {
         z1: -150,
         x2: 25,
         z2: -225,
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         y: 50,
@@ -869,7 +880,7 @@ export const Rects: {
         z1: -250,
         x2: -110,
         z2: -350,
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         y: 50,
@@ -877,7 +888,7 @@ export const Rects: {
         z1: -300,
         x2: -120,
         z2: -350,
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         y: 0,
@@ -887,15 +898,29 @@ export const Rects: {
         z2: -75,
     },
 ];
-/** 多角形
- *  points: 頂点 ([x座標, y座標, z座標]のタプル) を反時計回りに並べた配列
- *  color: 表面の色(省略した場合は白)
- * */
-export const Polygons: {
+
+/** 長方形 y: y座標(高さ) x1,x2: 端のx座標 z1,z2: 端のz座標 color: 表面の色(省略した場合は白) */
+export const Rects: Rect[] = [
+    ...Rects_中学棟1階,
+    ...Rects_中学棟2階,
+    ...Rects_中学棟3階,
+    ...Rects_転心殿,
+    ...Rects_高校棟1階,
+    ...Rects_高校棟2階,
+    ...Rects_高校棟3階,
+    ...Rects_高校棟4階,
+    ...Rects_図書館棟1階,
+    ...Rects_図書館棟2階,
+    ...Rects_圓融館_体育館,
+    ...Rects_中庭,
+];
+
+type Polygon = {
     points: [number, number, number][];
-    color?: number;
-}[] = [
-    // 小講堂
+    color?: Color;
+};
+
+const Polygons_小講堂: Polygon[] = [
     {
         points: [
             [0, 300, 100],
@@ -904,7 +929,7 @@ export const Polygons: {
             [100, 300, 140],
             [60, 300, 100],
         ],
-        color: color.red,
+        color: Color.red,
     },
     {
         points: [
@@ -913,7 +938,8 @@ export const Polygons: {
             [100, 300, 100],
         ],
     },
-    // 中庭
+];
+const Polygons_中庭: Polygon[] = [
     {
         points: [
             [20, 200, -75],
@@ -921,7 +947,7 @@ export const Polygons: {
             [5, 100, -110],
             [5, 200, -75],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -930,7 +956,7 @@ export const Polygons: {
             [-130, 150, -190],
             [-115, 100, -190],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -938,7 +964,7 @@ export const Polygons: {
             [-10, 100, -190],
             [-95, 100, -190],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -947,7 +973,7 @@ export const Polygons: {
             [-145, 200, -75],
             [-130, 200, -75],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -956,7 +982,7 @@ export const Polygons: {
             [-145, 150, 75],
             [-130, 150, 75],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -965,7 +991,7 @@ export const Polygons: {
             [5, 200, 50],
             [5, 150, 75],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -974,7 +1000,7 @@ export const Polygons: {
             [20, 100, -170],
             [20, 100, -150],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -983,7 +1009,7 @@ export const Polygons: {
             [-20, 90, -250],
             [-20, 100, -225],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -992,7 +1018,7 @@ export const Polygons: {
             [-50, 50, -350],
             [-50, 50, -300],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -1001,7 +1027,7 @@ export const Polygons: {
             [0, 50, -360],
             [0, 50, -330],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -1010,7 +1036,7 @@ export const Polygons: {
             [-35, 50, -300],
             [-35, 100, -225],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -1019,7 +1045,7 @@ export const Polygons: {
             [-50, 50, -300],
             [-50, 50 + 50 * (2 / 3), -250],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -1027,7 +1053,7 @@ export const Polygons: {
             [-20, 50, -318],
             [-50, 50, -300],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -1036,7 +1062,7 @@ export const Polygons: {
             [-88, 50, -250],
             [-88, 100, -225],
         ],
-        color: color.ylgreen,
+        color: Color.ylgreen,
     },
     {
         points: [
@@ -1055,7 +1081,8 @@ export const Polygons: {
             [-130, 0, -65],
         ],
     },
-    // 体育館
+];
+const Polygons_体育館: Polygon[] = [
     {
         points: [
             [-60, 0, -425],
@@ -1064,7 +1091,8 @@ export const Polygons: {
             [-100, 0, -425],
         ],
     },
-    // 図書館棟
+];
+const Polygons_図書館棟: Polygon[] = [
     {
         points: [
             [-225, 150, 225],
@@ -1082,3 +1110,9 @@ export const Polygons: {
         ],
     },
 ];
+
+/** 多角形
+ *  points: 頂点 ([x座標, y座標, z座標]のタプル) を反時計回りに並べた配列
+ *  color: 表面の色(省略した場合は白)
+ * */
+export const Polygons: Polygon[] = [...Polygons_小講堂, ...Polygons_中庭, ...Polygons_体育館, ...Polygons_図書館棟];
