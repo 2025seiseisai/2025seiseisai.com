@@ -58,19 +58,6 @@ export const locations = {
 
 const exhibitionDataRaw = {
     // 以下は一例です。
-    MGA同好会: {
-        location: "6年A組", // locationsの中から選択
-        icon: exhibitionIcons["MGA同好会"], // アイコンは新規団体だとないやつもあるので、その場合は exhibitionIcons["fallback"] にしといてください。
-        description: "MGA同好会にぜひお越しください！",
-        twitter_link: "https://x.com/mga_club", // なければ省略 (https://x.com/i/lists/1436285198606340103/members)
-        instagram_link: "https://www.instagram.com/mga_club/", // 適当にググってください。無理して調べる必要はないです。
-        facebook_link: "https://www.facebook.com/mga.club", // 適当にググってください。無理して調べる必要はないです。
-        website_link: "https://example.com", // 書かなくて大丈夫です。もし現在も更新されているサイトで知っているのがあれば書いてください。
-        events: ["体験型ミステリー", "PTAコーラス", "T1グランプリ"], // eventsの中から選択。詳しくはsrc/app/events/event-data.tsを参照してください。
-        blogs: ["59/01", "60/03"], // blogページを見て、関係しているのがあれば書いてください。
-        club_magazine: clubMagazineLinks["MGA同好会"], // まだデータがないので書かなくて大丈夫です。
-        tweet_link: "https://x.com/seiseisai_tdj/status/1954896745940615445", // 展示団体の紹介。まだ書かなくて大丈夫です。
-    },
     書道部: {
         location: "1年A組",
         icon: exhibitionIcons["書道部"],
