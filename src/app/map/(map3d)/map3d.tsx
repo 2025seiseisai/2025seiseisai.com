@@ -4,7 +4,12 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Color, Polygons, Rects } from "./mapdata";
 
-function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
+function initializeMap3D(
+    canvas: HTMLCanvasElement,
+    resolution: number,
+    initPosition: THREE.Vector3 | null,
+    initTarget: THREE.Vector3 | null,
+) {
     // scene, renderer, camera, controlsの初期化
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({
@@ -13,7 +18,9 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
         alpha: true,
     });
     const camera = new THREE.PerspectiveCamera(75, 1.0, 0.1, 3000);
+    if (initPosition) camera.position.copy(initPosition);
     const controls = new OrbitControls(camera, canvas);
+    if (initTarget) controls.target.copy(initTarget);
     controls.enableDamping = true;
     controls.dampingFactor = 0.15;
     controls.minPolarAngle = Math.PI / 16;
@@ -159,9 +166,10 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
     const targetCameraPosition = new THREE.Vector3();
     const currentControlsTarget = new THREE.Vector3();
     const targetControlsTarget = new THREE.Vector3();
-    let preventControlsUpdate = -1;
+    let preventControlsUpdate = initPosition && initTarget ? performance.now() : -1;
+    let frameHandler: number | null = null;
     function tick() {
-        requestAnimationFrame(tick);
+        frameHandler = requestAnimationFrame(tick);
         if (preventControlsUpdate === -1) return;
         const nowTime = performance.now();
         if (preventControlsUpdate <= nowTime) controls.update();
@@ -188,6 +196,21 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
         updated = false;
     }
     tick();
+
+    // レンダリングの終了
+    function dispose() {
+        if (frameHandler) cancelAnimationFrame(frameHandler);
+        const cameraPosition = camera.position.clone();
+        const controlsTarget = controls.target.clone();
+        resizeObserver.disconnect();
+        renderer.dispose();
+        scene.clear();
+        controls.dispose();
+        return {
+            cameraPosition,
+            controlsTarget,
+        };
+    }
 
     // 表示しているフロアに応じてカメラの位置と回転の中心を設定
     function setFloor(floor: number, no_animation: boolean = false) {
@@ -239,6 +262,7 @@ function initializeMap3D(canvas: HTMLCanvasElement, resolution: number) {
     }
 
     return {
+        dispose,
         setFloor,
     };
 }
@@ -254,19 +278,38 @@ export function Map3D({
     className?: string;
     floor?: number; // フロア番号 (0: 転心殿前, 1-4: 高校棟, 5-7: 中学棟)
 }) {
-    const initialized = useRef(false);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const stateRef = useRef<ReturnType<typeof initializeMap3D>>(null);
+    const reloader = process.env.NODE_ENV === "development" ? Math.random() : -1;
+    const initPosition = useRef<THREE.Vector3 | null>(null);
+    const initTarget = useRef<THREE.Vector3 | null>(null);
     useEffect(() => {
-        // 二度以上は初期化しない
-        if (initialized.current) return;
-        initialized.current = true;
         if (!canvasRef.current) {
             console.error("Canvas element is not available.");
             return;
         }
-        stateRef.current = initializeMap3D(canvasRef.current, resolution);
-    }, [resolution]);
+        let initPositionValue = initPosition.current;
+        let initTargetValue = initTarget.current;
+        stateRef.current = initializeMap3D(canvasRef.current, resolution, initPositionValue, initTargetValue);
+        if (!initPositionValue) {
+            initPositionValue = new THREE.Vector3();
+            initPosition.current = initPositionValue;
+        }
+        if (!initTargetValue) {
+            initTargetValue = new THREE.Vector3();
+            initTarget.current = initTargetValue;
+        }
+        console.log("Map3D initialized with resolution:", resolution);
+        return () => {
+            if (stateRef.current) {
+                const { cameraPosition, controlsTarget } = stateRef.current.dispose();
+                stateRef.current = null;
+                initPositionValue.copy(cameraPosition);
+                initTargetValue.copy(controlsTarget);
+            }
+            console.log("Map3D disposed");
+        };
+    }, [resolution, reloader]);
 
     const prevFloor = useRef(floor);
     useEffect(() => {
