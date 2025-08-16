@@ -1,12 +1,33 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Bazaar1, Bazaar2, Bazaar3 } from "./(bazaar)/bazaar";
 import { Exhibition1, Exhibition2 } from "./(exhibition)/exhibition";
 import { Map3D } from "./(map3d)/map3d";
 export function Tabs() {
+    const [loaded, setLoaded] = useState(false);
     const [activeTab, setActiveTab] = useState(1);
     const [highSchoolFloor, setHighSchoolFloor] = useState(2);
     const [middleSchoolFloor, setMiddleSchoolFloor] = useState(2);
+    const currentFloor = activeTab === 3 ? 0 : activeTab === 1 ? highSchoolFloor : middleSchoolFloor + 4;
+
+    useEffect(() => {
+        if (sessionStorage.getItem("mapPageActiveTab")) {
+            setActiveTab(Number(sessionStorage.getItem("mapPageActiveTab")));
+        }
+        if (sessionStorage.getItem("mapPageHighSchoolFloor")) {
+            setHighSchoolFloor(Number(sessionStorage.getItem("mapPageHighSchoolFloor")));
+        }
+        if (sessionStorage.getItem("mapPageMiddleSchoolFloor")) {
+            setMiddleSchoolFloor(Number(sessionStorage.getItem("mapPageMiddleSchoolFloor")));
+        }
+        setLoaded(true);
+    }, []);
+    useEffect(() => {
+        sessionStorage.setItem("mapPageActiveTab", String(activeTab));
+        sessionStorage.setItem("mapPageHighSchoolFloor", String(highSchoolFloor));
+        sessionStorage.setItem("mapPageMiddleSchoolFloor", String(middleSchoolFloor));
+    }, [activeTab, highSchoolFloor, middleSchoolFloor]);
+
     return (
         <div className="mx-auto mt-[19px] w-[calc(100svw-40px)] md:w-[80svw]">
             <div className="flex w-full not-lg:flex-col">
@@ -15,7 +36,7 @@ export function Tabs() {
                         <button
                             className={`flex cursor-pointer items-center justify-center bg-[#de0d22] font-medium
                                 text-white transition-all duration-150 ease-in-out hover:brightness-95 ${
-                                    activeTab === 1
+                                    loaded && activeTab === 1
                                         ? "h-full w-[92px] text-[18px] md:w-[120px] md:text-[22px]"
                                         : "h-[30px] w-[80px] text-[15px] md:h-[36px] md:w-[100px] md:text-[18px]"
                                 }`}
@@ -26,7 +47,7 @@ export function Tabs() {
                         <button
                             className={`flex cursor-pointer items-center justify-center bg-[#CC0F22] font-medium
                                 text-white transition-all duration-150 ease-in-out hover:brightness-95 ${
-                                    activeTab === 2
+                                    loaded && activeTab === 2
                                         ? "h-full w-[92px] text-[18px] md:w-[120px] md:text-[22px]"
                                         : "h-[30px] w-[80px] text-[15px] md:h-[36px] md:w-[100px] md:text-[18px]"
                                 }`}
@@ -37,7 +58,7 @@ export function Tabs() {
                         <button
                             className={`flex cursor-pointer items-center justify-center bg-[#B31E1E] font-medium
                                 text-white transition-all duration-150 ease-in-out hover:brightness-95 ${
-                                    activeTab === 3
+                                    loaded && activeTab === 3
                                         ? "h-full w-[92px] text-[18px] md:w-[120px] md:text-[22px]"
                                         : "h-[30px] w-[80px] text-[15px] md:h-[36px] md:w-[100px] md:text-[18px]"
                                 }`}
@@ -49,10 +70,10 @@ export function Tabs() {
                     </div>
                     <div className="relative aspect-4/5 w-full md:aspect-680/400">
                         <Map3D
-                            resolution={0.9}
+                            floor={loaded ? currentFloor : -1}
                             className="absolute !h-full !w-full border-[1.5] border-t-0 border-[#e0e0e0] bg-[#fdfdfd]"
                         />
-                        {(activeTab === 1 || activeTab === 2) && (
+                        {loaded && (activeTab === 1 || activeTab === 2) && (
                             <div
                                 className="absolute right-[5.88%] bottom-[8%] w-[28px] overflow-hidden rounded-[4px]
                                     border-1 border-[#e0e0e0] bg-white text-[12px] md:w-[32px] md:text-[14px]"
@@ -92,23 +113,19 @@ export function Tabs() {
                         )}
                     </div>
                     <div className="w-full lg:hidden">
-                        {activeTab === 1 || activeTab === 2 ? (
-                            <Exhibition1 floor={activeTab === 1 ? highSchoolFloor : middleSchoolFloor + 4} />
-                        ) : (
-                            <Bazaar1 />
-                        )}
+                        {loaded &&
+                            (activeTab === 1 || activeTab === 2 ? <Exhibition1 floor={currentFloor} /> : <Bazaar1 />)}
                     </div>
-                    <div className="w-full">{activeTab === 1 || activeTab === 2 ? <Exhibition2 /> : <Bazaar2 />}</div>
+                    <div className="w-full">
+                        {loaded && (activeTab === 1 || activeTab === 2 ? <Exhibition2 /> : <Bazaar2 />)}
+                    </div>
                 </div>
                 <div className="flex-1 not-lg:hidden">
-                    {activeTab === 1 || activeTab === 2 ? (
-                        <Exhibition1 floor={activeTab === 1 ? highSchoolFloor : middleSchoolFloor + 4} />
-                    ) : (
-                        <Bazaar1 />
-                    )}
+                    {loaded &&
+                        (activeTab === 1 || activeTab === 2 ? <Exhibition1 floor={currentFloor} /> : <Bazaar1 />)}
                 </div>
             </div>
-            <div className="flex-1">{activeTab === 3 && <Bazaar3 />}</div>
+            <div className="flex-1">{loaded && activeTab === 3 && <Bazaar3 />}</div>
         </div>
     );
 }
