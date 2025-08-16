@@ -17,3 +17,12 @@ export function Bazaar2() {
         </>
     );
 }
+
+export function Bazaar3() {
+    return (
+        <>
+            {/* ここに書く */}
+            <p className={styles.example}>バザー3</p>
+        </>
+    );
+}
