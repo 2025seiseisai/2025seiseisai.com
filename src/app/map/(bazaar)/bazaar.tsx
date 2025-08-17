@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { exhibitionIcons } from "../(exhibition)/exhibition-icons"; // ファイルの先頭でimport
 import styles from "./page.module.scss";
-import { div } from "three/tsl";
 
 export function Bazaar1() {
     return (
