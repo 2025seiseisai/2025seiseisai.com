@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { exhibitionIcons } from "../(exhibition)/exhibition-icons"; // ファイルの先頭でimport
 import styles from "./page.module.scss";
 
 export function Bazaar1() {
@@ -123,9 +125,29 @@ export function Bazaar2() {
 
 export function Bazaar3() {
     return (
-        <>
-            {/* ここに書く */}
-            <p className={styles.example}>バザー3</p>
-        </>
+        <div className={styles.wrapper3}>
+            <div className={styles.shopCard}>
+                <div className={styles.upside}>
+                    <div className={styles.iconContainer}>
+                        <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />
+                    </div>
+                    <div className={styles.textContent}>
+                        <h2 className={styles.shopName}>グッズ販売</h2>
+                        <div className={styles.tags}>
+                            <span className={styles.tag}>6年A組</span>
+                            <span className={styles.tag_realmoney}>現金</span>
+                        </div>
+                    </div>
+                    <Link href="" className={styles.link}>
+                        <p>オリジナルグッズ</p>
+                    </Link>
+                </div>
+                <p className={styles.descriptionBazzer3}>
+                    文化祭公式グッズを販売しております。
+                    <br />
+                    記念に一品、如何でしょうか。
+                </p>
+            </div>
+        </div>
     );
 }
