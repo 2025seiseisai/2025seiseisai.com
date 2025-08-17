@@ -32,3 +32,80 @@
         background-color: green;
     }
 }
+
+// アコーディオン全体/
+details {
+    margin-bottom: 8px;
+    overflow: hidden;
+    background-color: #fde8ea;
+    border: 1px solid #e0d0d0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+// summary部分（タイトル部分）
+summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    cursor: pointer;
+    list-style: none;
+    background-color: #f5b5bb;
+
+    &::marker {
+        content: "";
+    }
+
+    &::after {
+        font-size: 14px;
+        content: "▶";
+        transition: transform 0.2s ease;
+    }
+}
+
+// 開いたときの矢印回転
+details[open] summary::after {
+    transform: rotate(90deg);
+}
+
+// details の中身
+details > *:not(summary) {
+    padding: 12px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+}
+
+// Day 見出し
+details h4 {
+    margin: 12px 0 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #c00;
+}
+
+// イベント詳細
+details div {
+    padding-left: 8px;
+    margin-bottom: 10px;
+    border-left: 3px solid #e0d0d0;
+}
+
+details strong {
+    display: block;
+    margin-bottom: 2px;
+    font-weight: 600;
+    color: #333;
+}
+
+details p {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #555;
+}
