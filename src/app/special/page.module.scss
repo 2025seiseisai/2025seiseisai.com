@@ -156,7 +156,7 @@
 
 @include media(sm) {
     .large {
-        margin: 53px auto 0;
+        margin: 70px auto 0;
         font-size: 32px;
     }
 }
@@ -167,7 +167,7 @@
 
 @include media(sm) {
     .iconblock {
-        margin-top: 81px;
+        margin-top: 66px;
         margin-bottom: 15px;
     }
 }
@@ -179,7 +179,7 @@
 
 @include media(sm) {
     .headerblock {
-        margin-top: 114px;
+        margin-top: 68px;
         margin-bottom: 15px;
     }
 }
@@ -201,8 +201,8 @@
 @include media(sm) {
     .wallpaper {
         gap: 21px;
-        padding: 18px 0;
-        margin: 0 20px;
+        padding: 18px 40px;
+        margin: 0;
         overflow: auto;
         scroll-snap-type: x mandatory;
     }
@@ -237,12 +237,13 @@
     width: auto;
     height: auto;
     margin: 4px auto;
+    padding-inline: 40px;
 }
 
 @include media(sm) {
     .icon {
         gap: 16px;
-        margin: 0 20px;
+        margin: 0;
         overflow: auto;
         scroll-snap-type: x mandatory;
     }
@@ -272,8 +273,8 @@
 @include media(sm) {
     .header {
         gap: 20px;
-        padding: 0 20px 12px;
-        margin: 0 20px 54px;
+        padding: 0 40px 12px;
+        margin: 0 0 54px;
         overflow: auto;
         scroll-snap-type: x mandatory;
     }
