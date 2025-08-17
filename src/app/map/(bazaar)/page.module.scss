@@ -87,6 +87,78 @@
     font-size: 22px;
 }
 
+.wrapper3 {
+    display: flex;
+    flex-wrap: wrap; /* 画面幅が狭くなったら折り返す */
+    gap: 24px;
+    border: 1.5px solid rgb(222 13 34 / 100%);
+}
+
+.shopCard {
+    flex: 1 1 45%; /* 画面幅に応じて伸縮し、最小幅45% */
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.upside {
+    display: flex;
+    gap: 16px; /* アイコン、テキスト、リンク間の余白 */
+    align-items: center; /* 垂直方向の中央揃え */
+}
+
+.iconContainer {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.textContent {
+    flex-grow: 1;
+}
+
+.shopName {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.tag {
+    padding: 4px 8px;
+    color: white;
+    background-color: #e57373;
+    border-radius: 4px;
+}
+
+.link {
+    display: flex; /* これが重要！Link自身もFlexコンテナにする */
+    flex-shrink: 0;
+    gap: 4px; /* 矢印とテキストの間の余白 */
+    align-items: center; /* 矢印とテキストを垂直方向で揃える */
+    font-size: 0.8rem;
+    color: rgb(222 13 34 / 100%);
+}
+
+.link::before {
+    color: rgb(11 14 15 / 100%);
+    content: "▶";
+}
+
+.descriptionBazzer3 {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 // スマホ用のスタイル
 @include media(sm) {
     .example {
