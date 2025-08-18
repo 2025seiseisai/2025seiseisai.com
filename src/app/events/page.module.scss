@@ -56,17 +56,19 @@ summary {
     &::marker {
         content: "";
     }
-
-    &::after {
-        font-size: 14px;
-        content: "▶";
-        transition: transform 0.2s ease;
-    }
 }
 
-// 開いたときの矢印回転
-details[open] summary::after {
-    transform: rotate(90deg);
+.icon {
+  flex-shrink: 0;      // アイコンが縮まないように固定
+  width: 40px;         // ▶ と同じくらいの大きさに調整
+  height: 40px;
+  margin-left: 8px;    // タイトルとの間隔
+  transition: transform 0.2s ease;
+}
+
+/* 開いたときに回転 */
+.open {
+  transform: rotate(90deg);
 }
 
 // details の中身
@@ -106,6 +108,18 @@ details p {
 }
 
 .accordion[open] {
-  width: 1042px !important;
-  height: 402px !important;
+    width: 1042px !important;
+    height: 402px !important;
+}
+
+.detailItem {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.mappinIcon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
 }
