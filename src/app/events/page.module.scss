@@ -109,3 +109,8 @@ details p {
     font-size: 14px;
     color: #555;
 }
+
+.accordion[open] {
+  width: 1042px !important;
+  height: 402px !important;
+}
