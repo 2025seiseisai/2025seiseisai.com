@@ -39,67 +39,78 @@ details {
     background-color: #DE0D2226;
 }
 
-// summary部分（タイトル部分）
-summary {
+.summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #222;
+    padding: 16px;
     cursor: pointer;
-    list-style: none;
-    background-color: #f5b5bb;
-
-    &::marker {
-        content: "";
-    }
+    background-color: #DE0D2226;
 }
 
+/* 題名 */
+  .eventName {
+    position: absolute;
+    top: 31px;
+    left: 120px;
+    height: 58px;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 58px;
+    color: #000;
+  }
+
+/* 回転 */
+.summary.open {
+  .icon {
+    transform: rotate(90deg);
+  }
+}
+
+/* Playアイコン */
 .icon {
-  flex-shrink: 0;      // アイコンが縮まないように固定
-  width: 40px;         // ▶ と同じくらいの大きさに調整
+  flex-shrink: 0;
+  width: 40px;
   height: 40px;
-  margin-left: 8px;    // タイトルとの間隔
+  margin-left: 8px;
   transition: transform 0.2s ease;
 }
 
-// details の中身
-details > *:not(summary) {
-    padding: 12px 20px;
-    font-size: 14px;
-    background: #DE0D2226;
-
+/* Day全体 */
+.detailsDay {
+    position: absolute;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
 }
 
-// Day 見出し
-details h4 {
-    margin: 12px 0 8px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #c00;
+/* 個別アイコン */
+.detailsDay .detailItem {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
 }
 
-// イベント詳細
-details div {
-    padding-left: 8px;
-    margin-bottom: 10px;
-    border-left: 3px solid #e0d0d0;
+/* アイコンサイズ */
+.detailsDay .mappinIcon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
 }
 
-details strong {
-    display: block;
-    margin-bottom: 2px;
-    font-weight: 600;
-    color: #333;
+/* ラベル */
+.detailsDay strong {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
 }
 
-details p {
-    margin: 2px 0;
-    font-size: 14px;
-    color: #555;
+/* 詳細 */
+.detailsDay p {
+  font-size: 24px;
+  color: #000;
 }
 
 .accordion[open] {
@@ -109,12 +120,21 @@ details p {
 
 .detailItem {
     display: flex;
-    gap: 8px;
     align-items: center;
 }
 
-.mappinIcon {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
+/* チケットアイコン用 */
+.ticketPhoto {
+  position: absolute;
+  top: 35px;     // summary の上端から少し下
+  left: 872px;   // アコーディオン右端から余白
+  width: 168px;   // SVG の幅
+  height: 50px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* details が open の時だけ表示 */
+details[open] .ticketPhoto {
+  opacity: 1;
 }

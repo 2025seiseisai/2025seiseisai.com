@@ -4,6 +4,7 @@ import styles from "./page.module.scss";
 import React, { useState } from "react";
 import Play from "./play.svg";
 import Mappin from "./map-pin.svg";
+import Ticket from "./ticket.svg";
 
 
 export const metadata = {
@@ -17,6 +18,15 @@ export default function Page() {
     setOpenIndexes(prev =>
       isOpen ? [...prev, index] : prev.filter(i => i !== index)
     );
+    };
+
+    const getAccordionTop = (index: number) => {
+    let top = 820; // 1つ目のtop
+    for (let i = 0; i < index; i++) {
+      top += openIndexes.includes(i) ? 402 : 120; // 前のアコーディオンが開いているなら402、閉じているなら120
+      top += 32; // 間隔
+    }
+    return top;
     };
 
     return (
@@ -36,25 +46,32 @@ export default function Page() {
                         style={{
                             position: "absolute",
                             left: "199px",
-                            top: `${820 + i * 152}px`,
+                            top: `${getAccordionTop(i)}px`,
                             width: "1042px",
-                            height: "120px",
+                            height: isOpen ? 402 : 120,
                             overflow: "hidden",
                         }}
                     >
-                        <summary className={styles.summary}>
-                            <span>{event.name}</span>
-                            <Play className={`${styles.icon} ${isOpen ? styles.open : ""}`} />
-                            {event.name}
+                        <summary className={`${styles.summary} ${isOpen ? styles.open : ""}`}>
+                            <span className={styles.eventName}>{event.name}</span>
+                            <Play className={styles.icon} />
                         </summary>
-                        {event.description && <p>{event.description}</p>}
 
-                        {event.day1.length > 0 && (
+                        {event.ticket && (
+                            <div className={styles.ticketPhoto}>
+                            <Ticket />
+                            </div>
+                        )}
+
+                        {isOpen && event.description && <p>{event.description}</p>}
+
+                        {isOpen && event.day1.length > 0 && (
                             <>
                                 <h4>Day 1</h4>
+                                <div className={styles.detailsDay}>
                                 {event.day1.map((detail, j) => (
                                     <div key={j} className={styles.detailItem}>
-                                        <Mappin className={styles.mappinIcon} />
+                                        {<Mappin className={styles.mappinIcon} />}
                                         <div>
                                             {detail.label && <strong>{detail.label}</strong>}
                                             <p>{detail.location}</p>
@@ -62,15 +79,17 @@ export default function Page() {
                                         </div>
                                     </div>
                                 ))}
+                                </div>
                             </>
                         )}
 
-                        {event.day2.length > 0 && (
+                        {isOpen && event.day2.length > 0 && (
                             <>
                                 <h4>Day 2</h4>
+                                <div className={styles.detailsDay}>
                                 {event.day2.map((detail, j) => (
                                     <div key={j} className={styles.detailItem}>
-                                        <Mappin className={styles.mappinIcon} />
+                                        {<Mappin className={styles.mappinIcon} />}
                                         <div>
                                             {detail.label && <strong>{detail.label}</strong>}
                                             <p>{detail.location}</p>
@@ -78,6 +97,7 @@ export default function Page() {
                                         </div>
                                     </div>
                                 ))}
+                                </div>
                             </>
                         )}
                     </details>
