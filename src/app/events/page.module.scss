@@ -39,7 +39,7 @@ body {
     background-color: #fff;
 }
 
-.introduction{
+.introduction {
     position: absolute;
     top: 360px;
     left: 160px;
@@ -50,7 +50,7 @@ body {
     color: #000;
 }
 
-.introductionIcon{
+.introductionIcon {
     position: absolute;
     top: 360px;
     left: 160px;
@@ -58,11 +58,19 @@ body {
     height: 98px;
 }
 
+.backIcon {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 120px;
+    height: 120px;
+}
+
 // アコーディオン全体/
 details {
     position: relative;
     overflow: hidden;
-    background-color: #DE0D2226;
+    background-color: #de0d2226;
 }
 
 .summary {
@@ -71,11 +79,11 @@ details {
     justify-content: space-between;
     padding: 16px;
     cursor: pointer;
-    background-color: #DE0D2226;
+    background-color: #de0d2226;
 }
 
 /* 題名 */
-  .eventName {
+.eventName {
     position: absolute;
     top: 31px;
     left: 120px;
@@ -84,22 +92,22 @@ details {
     font-size: 40px;
     font-weight: 500;
     color: #000;
-  }
+}
 
 /* 回転 */
 .summary.open {
-  .icon {
-    transform: rotate(90deg);
-  }
+    .icon {
+        transform: rotate(90deg);
+    }
 }
 
 /* Playアイコン */
 .icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  margin-left: 8px;
-  transition: transform 0.2s ease;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
 }
 
 /* Day全体 */
@@ -135,8 +143,8 @@ details {
 
 /* 詳細 */
 .detailsDay p {
-  font-size: 24px;
-  color: #000;
+    font-size: 24px;
+    color: #000;
 }
 
 .accordion[open] {
@@ -151,16 +159,16 @@ details {
 
 /* チケットアイコン用 */
 .ticketPhoto {
-  position: absolute;
-  top: 35px;     // summary の上端から少し下
-  left: 872px;   // アコーディオン右端から余白
-  width: 168px;   // SVG の幅
-  height: 50px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+    position: absolute;
+    top: 35px; // summary の上端から少し下
+    left: 872px; // アコーディオン右端から余白
+    width: 168px; // SVG の幅
+    height: 50px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 /* details が open の時だけ表示 */
 details[open] .ticketPhoto {
-  opacity: 1;
+    opacity: 1;
 }

@@ -6,6 +6,7 @@ import Play from "./play.svg";
 import Mappin from "./map-pin.svg";
 import Ticket from "./ticket.svg";
 import Line from "./introduction-line.svg";
+import Back from "./back.svg";
 
 export const metadata = {
     title: "Event | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
@@ -31,6 +32,7 @@ export default function Page() {
 
     return (
         <>
+            <Back className={styles.backIcon} />
             <Line className={styles.introductionIcon} />
             <p className={styles.introduction}>イベント紹介一覧</p>
 
