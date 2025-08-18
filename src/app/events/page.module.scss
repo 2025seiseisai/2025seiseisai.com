@@ -66,11 +66,6 @@ summary {
   transition: transform 0.2s ease;
 }
 
-/* 開いたときに回転 */
-.open {
-  transform: rotate(90deg);
-}
-
 // details の中身
 details > *:not(summary) {
     padding: 12px 20px;
