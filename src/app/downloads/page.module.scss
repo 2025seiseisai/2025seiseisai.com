@@ -9,6 +9,82 @@
     .example {
         background-color: blue;
     }
+
+    .center {
+        text-align: center;
+    }
+
+    .total{
+        margin: 0 20px;
+    }
+
+    .text{
+        font-size: 16px;
+    }
+
+    .title_total{
+        margin: 28px 0 24px;
+    }
+
+    .title {
+        margin-bottom: 25px;
+        font-size: 32px;
+    }
+
+    .title::first-letter {
+        color: red;
+    }
+
+    .pamphret {
+        display: flex;
+        align-items: center;
+        block-size: 0 45px;
+    }
+
+    .pamphret::before,
+    .pamphret::after {
+        flex-grow: 1;
+        content: "";
+        border-top: 1px solid #000;
+    }
+
+    .pamphret::before {
+        margin-right: 1rem;
+    }
+
+    .pamphret::after {
+        margin-left: 1rem;
+    }
+
+    .pamphret_English {
+        font-size: 22px;
+        font-weight: bold;
+        color: red;
+    }
+
+    .pamphret_Japanese {
+        font-size: 9.72px;
+    }
+
+    .pamphret_doenload{
+        display: flex;
+        flex-direction: column;
+        margin: 12px 12px 0 8px;
+        font-size: 18px;
+        color: red;
+    }
+
+    .pamphret_download_button{
+        width: 31.5vw;
+        height: 26px;
+        font-size: 12px;
+        color: white;
+        background-color: red;
+        border-radius: 3px;
+
+    }
+
+
 }
 
 // PC用のスタイル
