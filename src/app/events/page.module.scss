@@ -35,12 +35,8 @@
 
 // アコーディオン全体/
 details {
-    margin-bottom: 8px;
     overflow: hidden;
-    background-color: #fde8ea;
-    border: 1px solid #e0d0d0;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    background-color: #DE0D2226;
 }
 
 // summary部分（タイトル部分）
@@ -77,9 +73,8 @@ details[open] summary::after {
 details > *:not(summary) {
     padding: 12px 20px;
     font-size: 14px;
-    line-height: 1.6;
-    background: #fff;
-    border-top: 1px solid #e5e5e5;
+    background: #DE0D2226;
+
 }
 
 // Day 見出し

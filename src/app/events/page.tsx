@@ -15,7 +15,6 @@ export default function Page() {
       isOpen ? [...prev, index] : prev.filter(i => i !== index)
     );
   };
-
     return (
         <>
             <p className={styles.example}>イベント紹介一覧</p>
@@ -33,9 +32,8 @@ export default function Page() {
                             position: "absolute",
                             left: "199px",
                             top: `${820 + i * 152}px`,
-                            width: "1242px",
+                            width: "1042px",
                             height: "120px",
-                            transition: "all 0.3s ease",
                             overflow: "hidden",
                         }}
                     >
