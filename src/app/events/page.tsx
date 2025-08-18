@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Play from "./play.svg";
 import Mappin from "./map-pin.svg";
 import Ticket from "./ticket.svg";
-
+import Line from "./introduction-line.svg";
 
 export const metadata = {
     title: "Event | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
@@ -31,7 +31,8 @@ export default function Page() {
 
     return (
         <>
-            <p className={styles.example}>イベント紹介一覧</p>
+            <Line className={styles.introductionIcon} />
+            <p className={styles.introduction}>イベント紹介一覧</p>
 
             {eventData.map((event, i) => {
                 const isOpen = openIndexes.includes(i);

@@ -33,8 +33,34 @@
     }
 }
 
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+}
+
+.introduction{
+    position: absolute;
+    top: 360px;
+    left: 160px;
+    width: 512px;
+    height: 93px;
+    font-size: 64px;
+    font-weight: 500;
+    color: #000;
+}
+
+.introductionIcon{
+    position: absolute;
+    top: 360px;
+    left: 160px;
+    width: 12px;
+    height: 98px;
+}
+
 // アコーディオン全体/
 details {
+    position: relative;
     overflow: hidden;
     background-color: #DE0D2226;
 }
@@ -53,10 +79,10 @@ details {
     position: absolute;
     top: 31px;
     left: 120px;
+    width: 400px;
     height: 58px;
     font-size: 40px;
     font-weight: 500;
-    line-height: 58px;
     color: #000;
   }
 
