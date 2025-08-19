@@ -88,41 +88,39 @@
 }
 
 .wrapper3 {
-    display: flex;
-    flex-wrap: wrap; /* 画面幅が狭くなったら折り返す */
-    gap: 24px;
+    display: grid; /* Flexboxの代わりにGridレイアウトを使用 */
+    grid-template-columns: repeat(2, 1fr); /* 2つの均等な幅の列を作成 */
+    gap: 20px; /* 要素間の余白 */
+    padding: 20px; /* コンテナ内の余白 */
+    margin-top: 24px;
+    margin-bottom: 50px;
     border: 1.5px solid rgb(222 13 34 / 100%);
 }
 
-.shopCard {
-    flex: 1 1 45%; /* 画面幅に応じて伸縮し、最小幅45% */
-    gap: 16px;
-    padding: 16px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.headShop {
+    flex: 1 1 45%; /* `width: 45%;`の代わりに`flex`プロパティを使用 */
+    margin-top: 20px;
+    margin-left: 40px;
 }
 
 .upside {
     display: flex;
-    gap: 16px; /* アイコン、テキスト、リンク間の余白 */
+    gap: 32px;
     align-items: center; /* 垂直方向の中央揃え */
+    justify-content: flex-start; /* 子要素を両端に配置 */
 }
 
 .iconContainer {
     flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-
-.textContent {
-    flex-grow: 1;
+    width: 56px;
+    height: 56px;
 }
 
 .shopName {
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 20px;
+    font-style: medium;
+    font-weight: 500;
+    line-height: 150%;
 }
 
 .tags {
@@ -130,33 +128,53 @@
     gap: 8px;
     align-items: center;
     margin-top: 4px;
+    color: rgb(255 255 255 / 100%);
 }
 
 .tag {
-    padding: 4px 8px;
-    color: white;
-    background-color: #e57373;
-    border-radius: 4px;
+    padding: 3px 11px;
+    font-size: 11px;
+    font-style: medium;
+    font-weight: 500;
+    line-height: 100%;
+    background-color: rgb(222 13 34 / 100%);
+    border-radius: 16px;
+}
+
+.tag_realmoney {
+    padding: 3px 11px;
+    font-size: 11px;
+    font-style: medium;
+    font-weight: 500;
+    line-height: 100%;
+    background-color: rgb(244 99 30 / 100%);
+    border-radius: 16px;
 }
 
 .link {
     display: flex; /* これが重要！Link自身もFlexコンテナにする */
     flex-shrink: 0;
-    gap: 4px; /* 矢印とテキストの間の余白 */
-    align-items: center; /* 矢印とテキストを垂直方向で揃える */
+    gap: 6px; /* 矢印とテキストの間の余白 */
     font-size: 0.8rem;
     color: rgb(222 13 34 / 100%);
+    text-decoration: none;
 }
 
-.link::before {
+.arrowIcon {
     color: rgb(11 14 15 / 100%);
-    content: "▶";
+}
+
+.linkText {
+    text-decoration: underline; /* テキストにのみ下線を適用 */
 }
 
 .descriptionBazzer3 {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    margin-top: 3px;
+    margin-left: 88px;
+    font-size: 13px;
+    font-style: medium;
+    font-weight: 500;
+    line-height: 150%;
 }
 
 // スマホ用のスタイル
