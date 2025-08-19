@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { exhibitionIcons } from "../(exhibition)/exhibition-icons"; // ファイルの先頭でimport
 import styles from "./page.module.scss";
+import { div } from "three/tsl";
 
 export function Bazaar1() {
     return (
@@ -126,7 +127,7 @@ export function Bazaar2() {
 export function Bazaar3() {
     return (
         <div className={styles.wrapper3}>
-            <div className={styles.shopCard}>
+            <div className={styles.headShop}>
                 <div className={styles.upside}>
                     <div className={styles.iconContainer}>
                         <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />
@@ -139,13 +140,85 @@ export function Bazaar3() {
                         </div>
                     </div>
                     <Link href="" className={styles.link}>
-                        <p>オリジナルグッズ</p>
+                        <span className={styles.arrowIcon}>▶</span>
+                        <span className={styles.linkText}>オリジナルグッズ</span>
                     </Link>
                 </div>
                 <p className={styles.descriptionBazzer3}>
                     文化祭公式グッズを販売しております。
                     <br />
                     記念に一品、如何でしょうか。
+                </p>
+            </div>
+
+            <div className={styles.headShop}>
+                <div className={styles.upside}>
+                    <div className={styles.iconContainer}>
+                        <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["園芸部"] }} />
+                    </div>
+                    <div className={styles.textContent}>
+                        <h2 className={styles.shopName}>球根・苗販売</h2>
+                        <div className={styles.tags}>
+                            <span className={styles.tag}>6年B組</span>
+                            <span className={styles.tag_realmoney}>現金</span>
+                        </div>
+                    </div>
+                    <Link href="" className={styles.link}>
+                        <span className={styles.arrowIcon}>▶</span>
+                        <span className={styles.linkText}>園芸部</span>
+                    </Link>
+                </div>
+                <p className={styles.descriptionBazzer3}>
+                    今年も植物展示とチューリップの球根販売を行います！
+                    <br />
+                    お値打ち価格で販売中！
+                </p>
+            </div>
+
+            <div className={styles.headShop}>
+                <div className={styles.upside}>
+                    <div className={styles.iconContainer}>
+                        <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["文藝同好会"] }} />
+                    </div>
+                    <div className={styles.textContent}>
+                        <h2 className={styles.shopName}>菁々古書店</h2>
+                        <div className={styles.tags}>
+                            <span className={styles.tag}>5年A組</span>
+                        </div>
+                    </div>
+                    <Link href="" className={styles.link}>
+                        <span className={styles.arrowIcon}>▶</span>
+                        <span className={styles.linkText}>文藝同好会</span>
+                    </Link>
+                </div>
+                <p className={styles.descriptionBazzer3}>
+                    文庫本・単行本・新書などを雑多に販売しています。掘り出し物が100シビから！
+                    <br />
+                    余った金券でぜひお越しください！
+                </p>
+            </div>
+
+            <div className={styles.headShop}>
+                <div className={styles.upside}>
+                    <div className={styles.iconContainer}>
+                        <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["お茶席"] }} />
+                    </div>
+                    <div className={styles.textContent}>
+                        <h2 className={styles.shopName}>お茶席</h2>
+                        <div className={styles.tags}>
+                            <span className={styles.tag}>和室</span>
+                            <span className={styles.tag_realmoney}>現金</span>
+                        </div>
+                    </div>
+                    <Link href="" className={styles.link}>
+                        <span className={styles.arrowIcon}>▶</span>
+                        <span className={styles.linkText}>お茶席</span>
+                    </Link>
+                </div>
+                <p className={styles.descriptionBazzer3}>
+                    お抹茶と和菓子をご用意しております。お気軽にお越しください。
+                    <br />
+                    （一般800円、在校生・小学生以下500円）
                 </p>
             </div>
         </div>
