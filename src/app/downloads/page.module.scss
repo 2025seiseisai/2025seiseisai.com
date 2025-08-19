@@ -14,59 +14,61 @@
         text-align: center;
     }
 
-    .total{
+    .total {
         margin: 0 20px;
     }
 
-    .text{
+    .text {
         font-size: 16px;
     }
 
-    .title_total{
+    .title_total {
         margin: 28px 0 24px;
     }
 
     .title {
         margin-bottom: 25px;
         font-size: 32px;
+        font-weight: 700;
     }
 
     .title::first-letter {
         color: red;
     }
 
-    .pamphret {
+    .subtitle {
         display: flex;
         align-items: center;
         block-size: 0 45px;
     }
 
-    .pamphret::before,
-    .pamphret::after {
+    .subtitle::before,
+    .subtitle::after {
         flex-grow: 1;
         content: "";
         border-top: 1px solid #000;
     }
 
-    .pamphret::before {
+    .subtitle::before {
         margin-right: 1rem;
     }
 
-    .pamphret::after {
+    .subtitle::after {
         margin-left: 1rem;
     }
 
-    .pamphret_English {
+    .subtitle_English {
         font-size: 22px;
         font-weight: bold;
         color: red;
     }
 
-    .pamphret_Japanese {
+    .subtitle_Japanese {
         font-size: 9.72px;
+        font-weight: bold;
     }
 
-    .pamphret_doenload{
+    .pamphret_download {
         display: flex;
         flex-direction: column;
         margin: 12px 12px 0 8px;
@@ -74,17 +76,81 @@
         color: red;
     }
 
-    .pamphret_download_button{
+    .pamphret_download_button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 31.5vw;
         height: 26px;
+        margin-left: auto;
         font-size: 12px;
         color: white;
         background-color: red;
         border-radius: 3px;
-
     }
 
+    .dawnload_icon {
+        width: 12px;
+        height: 12px;
+        margin-left: 6px;
+    }
 
+    .club_magazine_headline summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .club_magazine_headline summary {
+        position: relative;
+        display: flex;
+        height: 36px;
+        cursor: pointer;
+        list-style: none;
+        border-left: 3px solid #de0d22;
+    }
+
+    .magazine_icon {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        margin-left: auto;
+    }
+
+    .icon_open {
+        display: none;
+    }
+
+    .club_magazine_headline[open] .icon_open {
+        display: inline;
+    }
+
+    .club_magazine_headline[open] .icon_closed {
+        display: none;
+    }
+
+    .club_icons {
+        width: 30px;
+        height: 30px;
+        margin-left: 7px;
+    }
+
+    .magazine_dawnload_botton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15vw;
+        height: 26px;
+        margin-right: 12px;
+        margin-left: auto;
+        font-size: 12px;
+        color: white;
+        background-color: red;
+        border-radius: 3px;
+    }
+
+    .magazine_total {
+        margin-top: 20px;
+    }
 }
 
 // PC用のスタイル
