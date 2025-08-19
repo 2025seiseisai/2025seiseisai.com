@@ -201,7 +201,7 @@
 @include media(sm) {
     .wallpaper {
         gap: 21px;
-        padding: 18px 40px;
+        padding: 18px calc(50% - 80px);
         margin: 0;
         overflow: auto;
         scroll-snap-type: x mandatory;
@@ -236,13 +236,13 @@
     gap: 1.65svw;
     width: auto;
     height: auto;
-    padding-inline: 40px;
     margin: 4px auto;
 }
 
 @include media(sm) {
     .icon {
         gap: 16px;
+        padding-inline: calc(50% - 106.5px);
         margin: 0;
         overflow: auto;
         scroll-snap-type: x mandatory;
@@ -273,7 +273,7 @@
 @include media(sm) {
     .header {
         gap: 20px;
-        padding: 0 40px 12px;
+        padding: 0 calc(50% - 162px) 12px;
         margin: 0 0 54px;
         overflow: auto;
         scroll-snap-type: x mandatory;
