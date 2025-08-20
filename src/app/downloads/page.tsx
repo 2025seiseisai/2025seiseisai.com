@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { exhibitionIcons } from "../map/(exhibition)/exhibition-icons"; // ファイルの先頭でimport
+import { exhibitionIcons } from "../map/(exhibition)/exhibition-icons";
 import Icon from "./dawnload_icon.svg";
 import Icon_open from "./minas_icon.svg";
 import styles from "./page.module.scss";
