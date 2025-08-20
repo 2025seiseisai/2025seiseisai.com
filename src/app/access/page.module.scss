@@ -16,19 +16,18 @@
     background-color: #fff;
 } //　あとで消すかも
 
-p {
+.text {
     font-family: "Noto Sans JP", sans-serif;
     color: #0b0e0f;
 }
 
 .red_text {
+    font-family: "Noto Sans JP", sans-serif;
     color: #de0d22;
 }
 
 .border_common {
-    border-color: #de0d22;
-    border-style: solid;
-    border-width: 2px;
+    border-bottom: #de0d22 solid 2px;
 }
 
 ._56 {
@@ -43,12 +42,16 @@ p {
     font-weight: 400;
 }
 
+.border_side {
+    border-left: #de0d22 solid 4px;
+}
+
 .title_text {
     font-size: 22px;
     font-weight: 500;
 }
 
-.back_glay {
+.back_logo {
     background-color: #f7f7f7;
 }
 

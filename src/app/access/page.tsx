@@ -1,4 +1,6 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
+import Rectangle from "./images/Rectangle (2).svg";
+import Railway from "./images/access_railway_2025 (1).svg";
 import styles from "./page.module.scss";
 export const metadata = {
     title: "Access | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
@@ -14,37 +16,62 @@ export default function Page() {
                     height: 2020,
                 }}
             >
-                <p
+                <div
                     style={{
-                        fontSize: "28px",
-                        fontWeight: 700,
-                        top: "8px",
-                        left: "20px",
-                        width: "90px",
-                        height: "42px",
+                        position: "absolute",
+                        width: 90,
+                        height: 42,
+                        top: 30,
+                        left: 20,
                     }}
                 >
-                    <span className={styles.red_text}>A</span>ccess
-                </p>
+                    <p
+                        style={{
+                            fontSize: "28px",
+                            fontWeight: 700,
+                        }}
+                        className={`${styles.text}`}
+                    >
+                        <span className={styles.red_text}>A</span>ccess
+                    </p>
+                </div>
+                <Rectangle
+                    width={375}
+                    height={134}
+                    style={{
+                        position: "absolute",
+                        top: 88,
+                    }}
+                />
+
                 <div
                     style={{
                         position: "absolute",
                         width: "335px",
                         height: "285px",
-                        top: "216px",
+                        top: "238px",
                         left: "20px",
                     }}
                 >
                     <div className={`${styles.border_common} ${styles._56}`}>
-                        <p
+                        <div
                             style={{
-                                fontSize: "20px",
-                                fontWeight: 500,
-                                textAlign: "center",
+                                width: 240,
+                                height: 30,
+                                marginTop: 13,
+                                marginLeft: 48,
                             }}
                         >
-                            東大寺学園中学・高等学校
-                        </p>
+                            <p
+                                style={{
+                                    fontSize: "20px",
+                                    fontWeight: 500,
+                                }}
+                                className={`${styles.text}`}
+                            >
+                                東大寺学園中学・高等学校
+                            </p>
+                        </div>
                     </div>
                     <div
                         style={{
@@ -56,25 +83,25 @@ export default function Page() {
                     >
                         <p
                             style={{
-                                paddingLeft: 10,
-                                paddingTop: 19,
-                                paddingBottom: 19,
+                                marginLeft: 10,
+                                marginTop: 19,
+                                marginBottom: 19,
                                 width: 48,
                                 height: 24,
                             }}
-                            className={styles.b_text}
+                            className={`${styles.text} ${styles.b_text}`}
                         >
                             所在地
                         </p>
                         <p
                             style={{
-                                paddingRight: 65,
-                                paddingTop: 7,
-                                paddingBottom: 7,
+                                marginRight: 65,
+                                marginTop: 7,
+                                marginBottom: 7,
                                 width: 180,
                                 height: 48,
                             }}
-                            className={styles.b_text}
+                            className={`${styles.text} ${styles.b_text}`}
                         >
                             〒631-0803
                             <br />
@@ -89,21 +116,21 @@ export default function Page() {
                     >
                         <p
                             style={{
-                                paddingLeft: 10,
-                                paddingTop: 16,
-                                paddingBottom: 16,
+                                marginLeft: 10,
+                                marginTop: 16,
+                                marginBottom: 16,
                                 width: 64,
                                 height: 24,
                             }}
-                            className={styles.b_text}
+                            className={`${styles.text} ${styles.b_text}`}
                         >
                             電話番号
                         </p>
                         <p
                             style={{
-                                paddingRight: 141,
-                                paddingTop: 16,
-                                paddingBottom: 16,
+                                marginRight: 141,
+                                marginTop: 16,
+                                marginBottom: 16,
                                 width: 104,
                                 height: 24,
                             }}
@@ -120,21 +147,21 @@ export default function Page() {
                     >
                         <p
                             style={{
-                                paddingLeft: 10,
-                                paddingTop: 16,
-                                paddingBottom: 16,
+                                marginLeft: 10,
+                                marginTop: 16,
+                                marginBottom: 16,
                                 width: 28,
                                 height: 24,
                             }}
-                            className={styles.b_text}
+                            className={`${styles.text} ${styles.b_text}`}
                         >
                             FAX
                         </p>
                         <p
                             style={{
-                                paddingRight: 145,
-                                paddingTop: 16,
-                                paddingBottom: 16,
+                                marginRight: 145,
+                                marginTop: 16,
+                                marginBottom: 16,
                                 width: 100,
                                 height: 24,
                             }}
@@ -151,9 +178,9 @@ export default function Page() {
                     >
                         <p
                             style={{
-                                paddingLeft: 10,
-                                paddingTop: 16,
-                                paddingBottom: 16,
+                                marginLeft: 10,
+                                marginTop: 16,
+                                marginBottom: 16,
                                 width: 54,
                                 height: 24,
                             }}
@@ -163,15 +190,17 @@ export default function Page() {
                         </p>
                         <div
                             style={{
-                                paddingRight: 87,
-                                paddingTop: 16,
-                                paddingBottom: 16,
+                                marginRight: 87,
+                                marginTop: 16,
+                                marginBottom: 16,
                                 width: 158,
                                 height: 24,
                             }}
-                            className={styles.b_text}
+                            className={`${styles.text} ${styles.b_text}`}
                         >
-                            <a href="https://www.tdj.ac.jp">https://www.tdj.ac.jp</a>
+                            <a href="https://www.tdj.ac.jp" className={`${styles.text} ${styles.b_text}`}>
+                                https://www.tdj.ac.jp
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -180,7 +209,7 @@ export default function Page() {
                         position: "absolute",
                         width: 335,
                         height: 318,
-                        top: 44,
+                        top: 567,
                         left: 20,
                     }}
                 >
@@ -207,7 +236,7 @@ export default function Page() {
                                 height: 48,
                             }}
                         >
-                            <p className={styles.b_text}>
+                            <p className={`${styles.text} ${styles.b_text}`}>
                                 近鉄高の原駅より
                                 <br />
                                 徒歩 約<span className={styles.red_text}>25</span>分　バス 約
@@ -221,7 +250,7 @@ export default function Page() {
                                 height: 50,
                             }}
                         >
-                            <p className={styles.b_text}>
+                            <p className={`${styles.text} ${styles.b_text}`}>
                                 近鉄平城駅より
                                 <br />
                                 徒歩 約<span className={styles.red_text}>25</span>分
@@ -251,7 +280,7 @@ export default function Page() {
                                 height: 34,
                                 marginLeft: 12,
                             }}
-                            className={styles.title_text}
+                            className={`${styles.text} ${styles.title_text}`}
                         >
                             バス運行表
                         </p>
@@ -288,14 +317,18 @@ export default function Page() {
                                 height: 34,
                                 marginLeft: 12,
                             }}
-                            className={styles.title_text}
+                            className={`${styles.text} ${styles.title_text}`}
                         >
                             路線図
                         </p>
-
-                        <div //路線図画像
-                        ></div>
                     </div>
+                    <Railway
+                        width={335}
+                        height={306}
+                        style={{
+                            marginBottom: 0,
+                        }}
+                    />
                 </div>
                 <div
                     style={{
@@ -320,7 +353,7 @@ export default function Page() {
                                 height: 34,
                                 marginLeft: 12,
                             }}
-                            className={styles.title_text}
+                            className={`${styles.text} ${styles.title_text}`}
                         >
                             高の原駅からの行き方
                         </p>
@@ -336,49 +369,6 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div
-                style={{
-                    width: 375,
-                    height: 290,
-                }}
-            >
-                <div
-                    style={{
-                        width: 375,
-                        height: 61,
-                    }}
-                    className={styles.back_logo}
-                >
-                    <div //ロゴ画像
-                    ></div>
-                    <div
-                        style={{
-                            width: 184,
-                            height: 11,
-                            marginLeft: 22,
-                            marginBottom: 9,
-                        }}
-                    >
-                        <p
-                            style={{
-                                fontSize: 7,
-                                fontWeight: 300,
-                            }}
-                        >
-                            © 2025 61st seiseisai “FUNBYO”, Created by PR part
-                        </p>
-                    </div>
-                </div>
-                <div
-                    style={{
-                        width: 617,
-                        height: 137,
-                        marginLeft: 17,
-                        marginTop: 26,
-                    }}
-                ></div>
             </div>
         </>
     );
