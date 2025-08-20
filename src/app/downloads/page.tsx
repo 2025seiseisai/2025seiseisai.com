@@ -43,13 +43,12 @@ function Container({ title, children }: { title: string; children: React.ReactNo
 // それぞれの行のクラブの整理 入れる箱ごとに分けています もうすでにあるのは、テストで入れてみたものです
 const club_A = ["アニメ研究会", "囲碁将棋部", "英語部"];
 const club_K = ["クイズ研究部"];
-const club_S = [];
-const club_T = [];
-const club_N = [];
-const club_H = [];
-const club_M = [];
-const club_R = [];
-const club_Alphabet = [];
+const club_S = ["数学研究部"];
+const club_T = ["登山同好会"];
+const club_H = ["ポケモン研究会"];
+const club_M = ["マジック同好会"];
+const club_R = ["ロケット同好会"];
+const club_Alphabet = ["MGA同好会"];
 
 // いちばんしたのは　　A-Z  のやつです
 
@@ -141,13 +140,6 @@ export default function Page() {
                         <div className={styles.magazine_total}>
                             <Container title="た行">
                                 {club_T.map((club) => (
-                                    <Nameplate key={club} name={club} />
-                                ))}
-                            </Container>
-                        </div>
-                        <div className={styles.magazine_total}>
-                            <Container title="な行">
-                                {club_N.map((club) => (
                                     <Nameplate key={club} name={club} />
                                 ))}
                             </Container>
