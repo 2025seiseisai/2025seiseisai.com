@@ -18,7 +18,7 @@ function Nameplate({ name }: { name: string }) {
         <li>
             <div className="mt-2 inline-flex w-full">
                 <div className={styles.club_icons} dangerouslySetInnerHTML={{ __html: icon }} />
-                <p className="ml-2">{name}</p>
+                <p className="ml-2 text-xl">{name}</p>
                 <Link href="" className={styles.magazine_dawnload_botton}>
                     読む<Icon2 className="ml-1 h-3 w-3"></Icon2>
                 </Link>
@@ -29,7 +29,7 @@ function Nameplate({ name }: { name: string }) {
 
 function Container({ title, children }: { title: string; children: React.ReactNode }) {
     return (
-        <details className={styles.club_magazine_headline} open>
+        <details className={styles.club_magazine_headline}>
             <summary>
                 <p className="ml-2.5 text-2xl">{title}</p>
                 <Icon_open className={`${styles.magazine_icon} ${styles.icon_open}`}></Icon_open>
@@ -40,9 +40,18 @@ function Container({ title, children }: { title: string; children: React.ReactNo
     );
 }
 
-// それぞれの行のクラブの整理
+// それぞれの行のクラブの整理 入れる箱ごとに分けています もうすでにあるのは、テストで入れてみたものです
 const club_A = ["アニメ研究会", "囲碁将棋部", "英語部"];
 const club_K = ["クイズ研究部"];
+const club_S = [];
+const club_T = [];
+const club_N = [];
+const club_H = [];
+const club_M = [];
+const club_R = [];
+const club_Alphabet = [];
+
+// いちばんしたのは　　A-Z  のやつです
 
 export default function Page() {
     return (
@@ -68,7 +77,9 @@ export default function Page() {
                     {/* パンフレットダウンロードについての説明 */}
                     <div className="mt-4">
                         <p className="text-base">
-                            校門でのパンフレット配布もございますが、ダウンロードしておくと便利です。用途に合わせて、高画質版･中画質版･低画質版をご用意しました。東大寺学園は電波が弱い場所が多いため､校内では低画質版のダウンロードをおすすめします。
+                            校門でのパンフレット配布もございますが、ダウンロードしておくと便利です。
+                            <br />
+                            用途に合わせて、高画質版･中画質版･低画質版をご用意しました。東大寺学園は電波が弱い場所が多いため､校内では低画質版のダウンロードをおすすめします。
                         </p>
                         <div className={styles.pamphret_download}>
                             <div className="mb-2 inline-flex">
@@ -116,6 +127,55 @@ export default function Page() {
                         <div className={styles.magazine_total}>
                             <Container title="か行">
                                 {club_K.map((club) => (
+                                    <Nameplate key={club} name={club} />
+                                ))}
+                            </Container>
+                        </div>
+                        <div className={styles.magazine_total}>
+                            <Container title="さ行">
+                                {club_S.map((club) => (
+                                    <Nameplate key={club} name={club} />
+                                ))}
+                            </Container>
+                        </div>
+                        <div className={styles.magazine_total}>
+                            <Container title="た行">
+                                {club_T.map((club) => (
+                                    <Nameplate key={club} name={club} />
+                                ))}
+                            </Container>
+                        </div>
+                        <div className={styles.magazine_total}>
+                            <Container title="な行">
+                                {club_N.map((club) => (
+                                    <Nameplate key={club} name={club} />
+                                ))}
+                            </Container>
+                        </div>
+                        <div className={styles.magazine_total}>
+                            <Container title="は行">
+                                {club_H.map((club) => (
+                                    <Nameplate key={club} name={club} />
+                                ))}
+                            </Container>
+                        </div>
+                        <div className={styles.magazine_total}>
+                            <Container title="ま行">
+                                {club_M.map((club) => (
+                                    <Nameplate key={club} name={club} />
+                                ))}
+                            </Container>
+                        </div>
+                        <div className={styles.magazine_total}>
+                            <Container title="ら行">
+                                {club_R.map((club) => (
+                                    <Nameplate key={club} name={club} />
+                                ))}
+                            </Container>
+                        </div>
+                        <div className={styles.magazine_total}>
+                            <Container title="A - Z">
+                                {club_Alphabet.map((club) => (
                                     <Nameplate key={club} name={club} />
                                 ))}
                             </Container>
