@@ -19,7 +19,7 @@
 
 @include media(sm) {
     .title {
-        width: calc(100svw - 40px);
+        width: calc(100% - 40px);
         margin-bottom: 25px;
         font-size: 28px;
     }
@@ -36,7 +36,7 @@
 
 @include media(sm) {
     .sentence {
-        width: calc(100svw - 40px);
+        width: calc(100% - 40px);
         font-size: 16px;
     }
 }
@@ -52,7 +52,7 @@
 
 @include media(sm) {
     .subtitle_block {
-        width: calc(100svw - 35px);
+        width: calc(100% - 35px);
         height: 168px;
     }
 
@@ -252,6 +252,7 @@
 .iconImage {
     width: min(20svw, 240px);
     height: min(20svw, 240px);
+    border-radius: calc(infinity * 1px);
 }
 
 @include media(sm) {

@@ -43,7 +43,7 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/1.png"
                     title="壁紙1をダウンロード"
-                    download
+                    download="wallpaper_1"
                 >
                     <Download />
                 </a>
@@ -58,7 +58,7 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/2.png"
                     title="壁紙2をダウンロード"
-                    download
+                    download="wallpaper_2"
                 >
                     <Download />
                 </a>
@@ -73,7 +73,7 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/3.png"
                     title="壁紙3をダウンロード"
-                    download
+                    download="wallpaper_3"
                 >
                     <Download />
                 </a>
@@ -88,7 +88,7 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/4.png"
                     title="壁紙4をダウンロード"
-                    download
+                    download="wallpaper_4"
                 >
                     <Download />
                 </a>
@@ -103,7 +103,7 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/5.png"
                     title="壁紙5をダウンロード"
-                    download
+                    download="wallpaper_5"
                 >
                     <Download />
                 </a>
@@ -121,7 +121,7 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/1.png"
                     title="アイコン1をダウンロード"
-                    download
+                    download="icon_1"
                 >
                     <Download />
                 </a>
@@ -136,7 +136,7 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/2.png"
                     title="アイコン2をダウンロード"
-                    download
+                    download="icon_2"
                 >
                     <Download />
                 </a>
@@ -151,7 +151,7 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/3.png"
                     title="アイコン3をダウンロード"
-                    download
+                    download="icon_3"
                 >
                     <Download />
                 </a>
@@ -166,7 +166,7 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/4.png"
                     title="アイコン4をダウンロード"
-                    download
+                    download="icon_4"
                 >
                     <Download />
                 </a>
@@ -184,7 +184,7 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/1.png"
                     title="ヘッダー1をダウンロード"
-                    download
+                    download="header_1"
                 >
                     <Download />
                 </a>
@@ -199,7 +199,7 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/2.png"
                     title="ヘッダー2をダウンロード"
-                    download
+                    download="header_2"
                 >
                     <Download />
                 </a>
@@ -216,7 +216,7 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/3.png"
                     title="ヘッダー3をダウンロード"
-                    download
+                    download="header_3"
                 >
                     <Download />
                 </a>
@@ -231,7 +231,7 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/4.png"
                     title="ヘッダー4をダウンロード"
-                    download
+                    download="header_4"
                 >
                     <Download />
                 </a>
