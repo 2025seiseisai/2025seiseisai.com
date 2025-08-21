@@ -1,12 +1,13 @@
 /* eslint better-tailwindcss/no-unregistered-classes: 0 */
-import { eventData } from "./event-data.js";
-import styles from "./page.module.scss";
-import React, { useState } from "react";
-import Play from "./play.svg";
-import Mappin from "./map-pin.svg";
-import Ticket from "./ticket.svg";
-import Line from "./introduction-line.svg";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import Back from "./back.svg";
+import { eventData } from "./event-data.js";
+import Line from "./introduction-line.svg";
+import Mappin from "./map-pin.svg";
+import styles from "./page.module.scss";
+import Play from "./play.svg";
+import Ticket from "./ticket.svg";
 
 export const metadata = {
     title: "Event | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
@@ -14,25 +15,24 @@ export const metadata = {
 
 export default function Page() {
     const [openIndexes, setOpenIndexes] = useState<number[]>([]);
+    const router = useRouter();
 
     const toggleOpen = (index: number, isOpen: boolean) => {
-    setOpenIndexes(prev =>
-      isOpen ? [...prev, index] : prev.filter(i => i !== index)
-    );
+        setOpenIndexes((prev) => (isOpen ? [...prev, index] : prev.filter((i) => i !== index)));
     };
 
     const getAccordionTop = (index: number) => {
-    let top = 820; // 1つ目のtop
-    for (let i = 0; i < index; i++) {
-      top += openIndexes.includes(i) ? 402 : 120; // 前のアコーディオンが開いているなら402、閉じているなら120
-      top += 32; // 間隔
-    }
-    return top;
+        let top = 820; // 1つ目のtop
+        for (let i = 0; i < index; i++) {
+            top += openIndexes.includes(i) ? 402 : 120; // 前のアコーディオンが開いているなら402、閉じているなら120
+            top += 32; // 間隔
+        }
+        return top;
     };
 
     return (
         <>
-            <Back className={styles.backIcon} />
+            <Back className={styles.backIcon} onClick={() => router.back()} style={{ cursor: "pointer" }} />
             <Line className={styles.introductionIcon} />
             <p className={styles.introduction}>イベント紹介一覧</p>
 
@@ -44,8 +44,7 @@ export default function Page() {
                         key={i}
                         className={styles.accordion}
                         open={isOpen}
-                        onToggle={e =>
-                            toggleOpen(i, (e.target as HTMLDetailsElement).open)}
+                        onToggle={(e) => toggleOpen(i, (e.target as HTMLDetailsElement).open)}
                         style={{
                             position: "absolute",
                             left: "199px",
@@ -62,7 +61,7 @@ export default function Page() {
 
                         {event.ticket && (
                             <div className={styles.ticketPhoto}>
-                            <Ticket />
+                                <Ticket />
                             </div>
                         )}
 
@@ -72,16 +71,18 @@ export default function Page() {
                             <>
                                 <h4>Day 1</h4>
                                 <div className={styles.detailsDay}>
-                                {event.day1.map((detail, j) => (
-                                    <div key={j} className={styles.detailItem}>
-                                        {<Mappin className={styles.mappinIcon} />}
-                                        <div>
-                                            {detail.label && <strong>{detail.label}</strong>}
-                                            <p>{detail.location}</p>
-                                            <p>{detail.start} - {detail.end}</p>
+                                    {event.day1.map((detail, j) => (
+                                        <div key={j} className={styles.detailItem}>
+                                            {<Mappin className={styles.mappinIcon} />}
+                                            <div>
+                                                {detail.label && <strong>{detail.label}</strong>}
+                                                <p>{detail.location}</p>
+                                                <p>
+                                                    {detail.start} - {detail.end}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
                                 </div>
                             </>
                         )}
@@ -90,16 +91,18 @@ export default function Page() {
                             <>
                                 <h4>Day 2</h4>
                                 <div className={styles.detailsDay}>
-                                {event.day2.map((detail, j) => (
-                                    <div key={j} className={styles.detailItem}>
-                                        {<Mappin className={styles.mappinIcon} />}
-                                        <div>
-                                            {detail.label && <strong>{detail.label}</strong>}
-                                            <p>{detail.location}</p>
-                                            <p>{detail.start} - {detail.end}</p>
+                                    {event.day2.map((detail, j) => (
+                                        <div key={j} className={styles.detailItem}>
+                                            {<Mappin className={styles.mappinIcon} />}
+                                            <div>
+                                                {detail.label && <strong>{detail.label}</strong>}
+                                                <p>{detail.location}</p>
+                                                <p>
+                                                    {detail.start} - {detail.end}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
                                 </div>
                             </>
                         )}
