@@ -13,7 +13,7 @@ export default function Hamburger({ open, setOpen }: { open: boolean; setOpen: (
     return (
         <button
             className={`z-100000002 flex aspect-1/1 h-[30px] w-auto cursor-pointer items-center justify-center
-                transition-all duration-500 outline-none md:h-[40px] ${open ? styles.opening : "mr-[min(40px,8svw)]"}`}
+                transition-all duration-500 outline-none md:h-[40px] ${open ? styles.opening : "mr-[min(35px,7svw)]"}`}
             onClick={() => {
                 setTimeout(() => {
                     setOpen(!open);
