@@ -184,7 +184,7 @@ export async function Top() {
             <p className={styles.title_3}>Reservation</p>
             <p className={styles.title_3_jn}>予約</p>
             <p className={styles.contact_text}>来校の際はご予約が必要となります。ご予約はこちらからご確認ください。</p>
-            <Link href={"/contact"} className={`${styles.question} ${styles.no_mb}`}>
+            <Link href={"/reservation"} className={`${styles.question} ${styles.no_mb}`}>
                 <Smartphone className={styles.headphone} />
                 <p className={styles.question_text}>予約はこちらから</p>
                 <Logout className={styles.logout} />
