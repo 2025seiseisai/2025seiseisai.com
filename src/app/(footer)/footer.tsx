@@ -92,7 +92,7 @@ export function Footer() {
                         </p>
                     </DisabledFooterLink>
                     <FooterLink href="/news">News</FooterLink>
-                    <FooterLink href="/access">Access</FooterLink>
+                    <DisabledFooterLink>Access</DisabledFooterLink>
                 </span>
                 <span
                     className={
@@ -106,9 +106,9 @@ export function Footer() {
                     >
                         Guide
                     </h1>
-                    <FooterLink href="/events">Events</FooterLink>
-                    <FooterLink href="/map">Map</FooterLink>
-                    <FooterLink href="/goods">Goods</FooterLink>
+                    <DisabledFooterLink>Events</DisabledFooterLink>
+                    <DisabledFooterLink>Map</DisabledFooterLink>
+                    <DisabledFooterLink>Goods</DisabledFooterLink>
                     <DisabledFooterLink>Tickets</DisabledFooterLink>
                 </span>
                 <span
@@ -123,9 +123,9 @@ export function Footer() {
                         Contents
                     </h1>
                     <FooterLink href="/blog">Blog</FooterLink>
-                    <FooterLink href="/special">Special</FooterLink>
+                    <DisabledFooterLink>Special</DisabledFooterLink>
                     <DisabledFooterLink>Downloads</DisabledFooterLink>
-                    <DisabledFooterLink>Gallery</DisabledFooterLink>
+                    <FooterLink href="/archives">Archives</FooterLink>
                 </span>
                 <span
                     className={`flex flex-row not-md:mt-[16px] not-md:mr-[17px] not-md:mb-[16px] not-md:w-full
