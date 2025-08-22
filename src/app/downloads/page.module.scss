@@ -1,11 +1,15 @@
 // 共通のスタイル
 .example {
     font-size: 36px;
-    color: black;
+    color: #0b0e0f;
 }
 
 // スマホ用のスタイル
 @include media(sm) {
+    body {
+        color: #0b0e0f;
+    }
+
     .example {
         background-color: blue;
     }
@@ -33,7 +37,7 @@
     }
 
     .title::first-letter {
-        color: red;
+        color: #de0d22;
     }
 
     .subtitle {
@@ -46,7 +50,7 @@
     .subtitle::after {
         flex-grow: 1;
         content: "";
-        border-top: 1px solid #000;
+        border-top: 1px solid #0b0e0f;
     }
 
     .subtitle::before {
@@ -60,7 +64,7 @@
     .subtitle_English {
         font-size: 22px;
         font-weight: bold;
-        color: red;
+        color: #de0d22;
     }
 
     .subtitle_Japanese {
@@ -73,19 +77,19 @@
         flex-direction: column;
         margin: 12px 12px 0 8px;
         font-size: 18px;
-        color: red;
+        color: #de0d22;
     }
 
     .pamphret_download_button {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 31.5vw;
+        width: 118px;
         height: 26px;
         margin-left: auto;
         font-size: 12px;
         color: white;
-        background-color: red;
+        background-color: #de0d22;
         border-radius: 3px;
     }
 
@@ -110,6 +114,7 @@
 
     .magazine_icon {
         flex-shrink: 0;
+        align-items: center;
         width: 20px;
         height: 20px;
         margin-right: 10px;
@@ -129,6 +134,7 @@
     }
 
     .club_icons {
+        align-items: center;
         width: 30px;
         height: 30px;
         margin-left: 7px;
@@ -138,13 +144,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 15vw;
+        width: 60px;
         height: 26px;
         margin-right: 12px;
         margin-left: auto;
         font-size: 12px;
         color: white;
-        background-color: red;
+        background-color: #de0d22;
         border-radius: 3px;
     }
 
@@ -157,7 +163,7 @@
 @include media(lg) {
     .example {
         // 上書き可能
-        color: red;
+        color: #de0d22;
         background-color: green;
     }
 }
