@@ -162,7 +162,7 @@
 }
 
 .iconblock {
-    margin-top: min(95px, 6.6svw);
+    margin-top: 83px;
 }
 
 @include media(sm) {
@@ -173,8 +173,8 @@
 }
 
 .headerblock {
-    margin-top: min(90px, 6.25svw);
-    margin-bottom: min(19px, 1.3svw);
+    margin-top: 83px;
+    margin-bottom: 20px;
 }
 
 @include media(sm) {
@@ -194,7 +194,7 @@
     gap: 1.65svw;
     width: auto;
     height: auto;
-    padding: 27px 0;
+    padding: 20px 0;
     margin: 0 auto;
 }
 
@@ -236,7 +236,7 @@
     gap: 1.65svw;
     width: auto;
     height: auto;
-    margin: 4px auto;
+    margin: 20px auto 0;
 }
 
 @include media(sm) {
