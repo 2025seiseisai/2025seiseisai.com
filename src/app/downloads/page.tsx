@@ -29,13 +29,15 @@ function Nameplate({ name }: { name: string }) {
 
 function Container({ title, children }: { title: string; children: React.ReactNode }) {
     return (
-        <details className={styles.club_magazine_headline}>
+        <details className={styles.club_magazine_headline} name="club">
             <summary>
                 <p className="ml-[10px] text-[24px]">{title}</p>
                 <Icon_open className={`${styles.magazine_icon} ${styles.icon_open}`}></Icon_open>
                 <Icon_closed className={`${styles.magazine_icon} ${styles.icon_closed}`}></Icon_closed>
             </summary>
-            <ul>{children}</ul>
+            <div className={styles.content}>
+                <ul>{children}</ul>
+            </div>
         </details>
     );
 }
