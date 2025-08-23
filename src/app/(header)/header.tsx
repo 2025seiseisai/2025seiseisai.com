@@ -4,13 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Theme from "../(assets)/theme.svg";
-import ArchiveIcon from "./archive.svg";
 import ContactIcon from "./contact.svg";
 import HamburgerFallback from "./hamburger-fallback.svg";
 import styles from "./header.module.scss";
 import InstagramIcon from "./instagram.svg";
 import { overlapEvent } from "./overlap-event";
 import PrivacyIcon from "./privacy.svg";
+import ReservationIcon from "./reservation.svg";
 import XIcon from "./x.svg";
 import YouTubeIcon from "./youtube.svg";
 
@@ -136,6 +136,9 @@ export function Header() {
                         Contact
                     </Link>
                 </div>
+                <Link href="/reservation" className={styles.navReservationLink}>
+                    事前予約
+                </Link>
                 <Hamburger open={open} setOpen={setOpenImpl} />
             </div>
             <div className={`${styles.menuOverlay} ${open ? "" : styles.menuOverlayHidden}`}>
@@ -201,11 +204,10 @@ export function Header() {
                             disabled
                         />
                         <HeaderLink
-                            href="/gallery"
-                            title1="Gallery"
-                            title2="菁々祭デザインのギャラリー"
+                            href="/archives"
+                            title1="Archives"
+                            title2="過去の菁々祭Webサイト"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                     </div>
                     <div className={styles.linksContainer}>
@@ -273,16 +275,12 @@ export function Header() {
                             </div>
                             <div className={styles.snsLinkItem}>
                                 <Link
-                                    href="/archives"
+                                    href="/reservation"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
                                 >
-                                    <ArchiveIcon className={styles.snsIcon} />
-                                    <p className={styles.privacyText}>
-                                        過去の
-                                        <br />
-                                        Webサイト
-                                    </p>
+                                    <ReservationIcon className={styles.snsIcon} />
+                                    <p className={styles.contactText}>事前予約</p>
                                 </Link>
                             </div>
                         </div>
