@@ -18,7 +18,7 @@ function Nameplate({ name }: { name: string }) {
         <li>
             <div className="mt-[8px] inline-flex w-full">
                 <div className={styles.club_icons} dangerouslySetInnerHTML={{ __html: icon }} />
-                <p className="ml-[8px] items-center text-xl">{name}</p>
+                <p className="ml-[8px] items-center text-[20px]">{name}</p>
                 <Link target="_blank" rel="noopener noreferrer" href="" className={styles.magazine_dawnload_botton}>
                     読む<Icon2 className="ml-[4px] h-[12px] w-[12px]"></Icon2>
                 </Link>
@@ -75,7 +75,7 @@ export default function Page() {
 
                     {/* パンフレットダウンロードについての説明 */}
                     <div className="mt-[16px]">
-                        <p className="text-base">
+                        <p className="text-[16px]">
                             校門でのパンフレット配布もございますが、ダウンロードしておくと便利です。
                             <br />
                             用途に合わせて、高画質版･中画質版･低画質版をご用意しました。東大寺学園は電波が弱い場所が多いため､校内では低画質版のダウンロードをおすすめします。

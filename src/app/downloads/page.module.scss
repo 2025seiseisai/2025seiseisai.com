@@ -167,3 +167,48 @@
         background-color: green;
     }
 }
+
+/* アコーディオン開閉 */
+
+@supports (interpolate-size: allow-keywords) {
+    :root {
+        interpolate-size: allow-keywords;
+    }
+
+    details.club_magazine_headline {
+        &::details-content {
+            height: 0;
+            overflow: clip;
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.5s;
+            transition-property: height, content-visibility;
+            transition-behavior: allow-discrete;
+        }
+
+        &[open]::details-content {
+            height: auto;
+        }
+    }
+}
+
+@supports not (interpolate-size: allow-keywords) {
+    details.club_magazine_headline {
+        &::details-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.5s;
+            transition-property: grid-template-rows, content-visibility;
+            transition-behavior: allow-discrete;
+        }
+
+        &[open]::details-content {
+            grid-template-rows: 1fr;
+        }
+
+        & > ul {
+            min-height: 0;
+            overflow: hidden;
+        }
+    }
+}
