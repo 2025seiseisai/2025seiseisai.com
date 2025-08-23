@@ -18,4 +18,14 @@
         color: red;
         background-color: green;
     }
+
+    .tagContainer {
+        display: absolute;
+        gap: 12px;
+        width: 680px;
+        height: auto;
+        margin-top: 24px;
+        margin-left: 160px;
+        border: 1.5px solid red;
+    }
 }
