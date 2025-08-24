@@ -24,7 +24,7 @@
     width: 32px;
     height: 32px;
     margin-right: 16px; /* 右側に余白を追加 */
-    background-color: red;
+    background-color: de0d22;
 }
 
 .number-content {
@@ -32,6 +32,7 @@
     height: 30px;
     margin-top: 1px;
     margin-left: 10px;
+    font-size: 20px;
     color: white;
 }
 
@@ -40,27 +41,24 @@
     width: 198px;
     height: 30px;
     font-size: 20px;
-    font-style: medium;
     font-weight: 500;
     line-height: 150%;
 }
 
 .cost {
     font-size: 24px;
-    font-style: medium;
     font-weight: 500;
     line-height: 150%;
     letter-spacing: 0%;
 }
 
 .unit {
-    font-size: 20px;
+    font-size: 12px;
 }
 
 .description {
     margin-left: 44px;
     font-size: 13px;
-    font-style: medium;
     font-weight: 500;
     line-height: 150%;
 }
@@ -90,8 +88,7 @@
 .wrapper3 {
     display: grid; /* Flexboxの代わりにGridレイアウトを使用 */
     grid-template-columns: repeat(2, 1fr); /* 2つの均等な幅の列を作成 */
-    gap: 20px; /* 要素間の余白 */
-    padding: 20px; /* コンテナ内の余白 */
+    padding: 10px;
     margin-top: 24px;
     margin-bottom: 50px;
     border: 1.5px solid rgb(222 13 34 / 100%);
@@ -99,7 +96,8 @@
 
 .headShop {
     flex: 1 1 45%; /* `width: 45%;`の代わりに`flex`プロパティを使用 */
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 40px;
 }
 
@@ -118,7 +116,6 @@
 
 .shopName {
     font-size: 20px;
-    font-style: medium;
     font-weight: 500;
     line-height: 150%;
 }
@@ -134,7 +131,6 @@
 .tag {
     padding: 3px 11px;
     font-size: 11px;
-    font-style: medium;
     font-weight: 500;
     line-height: 100%;
     background-color: rgb(222 13 34 / 100%);
@@ -144,7 +140,6 @@
 .tag_realmoney {
     padding: 3px 11px;
     font-size: 11px;
-    font-style: medium;
     font-weight: 500;
     line-height: 100%;
     background-color: rgb(244 99 30 / 100%);
@@ -161,7 +156,7 @@
 }
 
 .arrowIcon {
-    color: rgb(11 14 15 / 100%);
+    color: 0b0e0f;
 }
 
 .linkText {
@@ -172,7 +167,6 @@
     margin-top: 3px;
     margin-left: 88px;
     font-size: 13px;
-    font-style: medium;
     font-weight: 500;
     line-height: 150%;
 }
