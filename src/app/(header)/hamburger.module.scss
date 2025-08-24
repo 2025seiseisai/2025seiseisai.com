@@ -29,7 +29,7 @@
     @include media(sm) {
         margin-top: 35px;
         margin-right: 10svw;
-        margin-left: 0;
+        margin-left: calc(min(35px, 7svw) - 10svw);
         transform: scale(1.2);
     }
 }
