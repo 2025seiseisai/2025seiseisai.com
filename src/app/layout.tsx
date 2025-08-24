@@ -27,7 +27,8 @@ export const metadata: Metadata = {
         },
     ],
     // generator: "Next.js",
-    keywords: "第61回菁々祭, 菁々祭, 東大寺学園, 東大寺, 文化祭, 61seisei, 2025, 分秒, 9/6, 9/7, 2025",
+    keywords:
+        "東大寺学園, 文化祭, 菁々祭, 東大寺, 学園祭, 2025, 東大寺学園文化祭, 東大寺文化祭, せいせいさい, 申し込み, seiseisai, 東大寺学園中学校・高等学校, 青々祭, ホームページ, tdj, 分秒",
     // referrer: "",
     creator: "東大寺学園PRパート技術セクション",
     // publisher: "東大寺学園PRパート技術セクション",
