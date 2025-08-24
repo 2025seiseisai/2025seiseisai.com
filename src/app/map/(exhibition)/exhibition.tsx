@@ -21,33 +21,13 @@ export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
 export function Exhibition2() {
     return (
         <div className={styles.tagContainer}>
-            <div>
-                <p>各種タグについて</p>
-            </div>
-            <div className={styles.tagstamp}>
-                <div className={styles.tagiconstamp}>
-                    <p>スタンプラリー</p>
-                </div>
-                <div className={styles.tagtextstamp}>
-                    <p>スタンプラリーを行っている団体です。</p>
-                </div>
-            </div>
-            <div className={styles.tagevents}>
-                <div className={styles.tagiconevents}>
-                    <p>イベント</p>
-                </div>
-                <div className={styles.tagtextevents}>
-                    <p>イベントを行っている団体です。詳しくは<span style={{ textDecoration: 'underline' }}>Evens</span>をチェック！</p>
-                </div>
-            </div>
-            <div className={styles.tagbazaar}>
-                <div className={styles.tagiconbazaar}>
-                    <p>バザー</p>
-                </div>
-                <div className={styles.tagtextbazaar}>
-                    <p>バザーでの販売を行っている団体です。</p>
-                </div>
-            </div>
+            <p className={styles.tagtitle}>各種タグについて</p>
+            <p className={styles.tagiconstamp}>スタンプラリー</p>
+            <p className={styles.tagtextstamp}>スタンプラリーを行っている団体です。</p>
+            <p className={styles.tagiconevents}>イベント</p>
+            <p className={styles.tagtextevents}>イベントを行っている団体です。詳しくは<span className={styles.underline} >Evens</span>をチェック！</p>
+            <p className={styles.tagiconbazaar}>バザー</p>
+            <p className={styles.tagtextbazaar}>バザーでの販売を行っている団体です。</p>
         </div>
     );
 }
