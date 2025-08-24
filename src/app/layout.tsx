@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     },
     appleWebApp: {
         // capable: false,
-        title: "61seisei",
+        // title: "61seisei",
         // startupImage: {},
         // statusBarStyle: "default",
     },
@@ -127,12 +127,19 @@ export const metadata: Metadata = {
         // windows_universal: {},
         // web: {},
     },
-    /*
     archives: [
         "https://seiseisai.com/2024",
         "https://seiseisai.com/2023",
+        "https://seiseisai.com/2022",
+        "https://seiseisai.com/2021",
+        "https://seiseisai.com/2020",
+        "https://seiseisai.com/2019",
+        "https://seiseisai.com/2017",
+        "https://seiseisai.com/2016",
+        "https://seiseisai.com/2013",
+        "https://seiseisai.com/2012",
+        "https://seiseisai.com/2011",
     ],
-    */
     // assets: "https://seiseisai.com/assets",
     // bookmarks: "https://seiseisai.com/bookmarks",
     pagination: {
