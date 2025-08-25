@@ -90,7 +90,7 @@ const exhibitionDataRaw = {
     },
     独楽研究会: {
         location: "1年C組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["独楽研究会"],
         stamp: true,
         description: "ベーゴマとコマを展示してます。体験もできるので、ぜひ来てください！",
         twitter_link: "https://x.com/tdj_dokuraku",
@@ -136,6 +136,7 @@ const exhibitionDataRaw = {
         location: "和室",
         icon: exhibitionIcons["お茶席"],
         stamp: false,
+        bazzaar: true,
         description:
             "お抹茶と和菓子をご用意しております。お気軽にお越しください。（一般800円、在校生・小学生以下500円）",
     },
@@ -186,20 +187,22 @@ const exhibitionDataRaw = {
     },
     グッズ販売: {
         location: "6年A組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["PRパート"],
         stamp: false,
+        bazzaar: true,
         description: "文化祭公式グッズを販売しております。記念に一品、如何でしょうか。",
     },
     園芸部: {
         location: "6年B組",
         icon: exhibitionIcons["園芸部"],
         stamp: true,
+        bazzaar: true,
         description: "今年も植物展示とチューリップの球根販売を行います！お値打ち価格で販売中！（現金のみ取り扱い）",
         twitter_link: "https://x.com/tdj_engei",
     },
     民族音楽同好会: {
         location: "6年C組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["民族音楽同好会"],
         stamp: true,
         description:
             "民族音楽同好会です！初展示です！主に世界の民族楽器や民族音楽についての紹介ポスターを展示しています！",
@@ -272,7 +275,7 @@ const exhibitionDataRaw = {
     },
     自動車研究会: {
         location: "5年A組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["自動車研究会"],
         stamp: true,
         description:
             "去年新しくできた団体です。今は大会出場用車両の設計を主にやっています。自動車に関する様々な展示を行います。",
@@ -320,6 +323,7 @@ const exhibitionDataRaw = {
         location: "5年D組",
         icon: exhibitionIcons["文藝同好会"],
         stamp: true,
+        bazzar: true,
         description:
             "節目を迎えた文藝同好会　展示は生まれ変わり文化祭に変化をもたらす　その凝り固まった考えを今こそ改めるのだ!",
     },
@@ -369,7 +373,7 @@ const exhibitionDataRaw = {
     },
     東方研究会: {
         location: "4年C組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["東方研究会"],
         stamp: true,
         description:
             "遂に東大寺学園に東方研究会が発足！検定や部員の二次創作物など様々な展示をご用意してお待ちしております。",
@@ -432,6 +436,7 @@ export const exhibitionData: Readonly<
             location: keyof typeof locations;
             icon: string;
             stamp: boolean;
+            bazzaar?: true;
             description?: string;
             twitter_link?: string;
             instagram_link?: string;
