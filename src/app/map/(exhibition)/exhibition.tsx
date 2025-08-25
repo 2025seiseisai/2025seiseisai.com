@@ -1,7 +1,7 @@
 import { ExhibitionFloor, locations, exhibitionData } from "./exhibition-data";
 import styles from "./page.module.scss";
 import { exhibitionIcons } from "../(exhibition)/exhibition-icons"; // ファイルの先頭でimport
-
+import Link from "next/link";
 function Bazaar() {
     // SVGがdivで囲まれて埋め込まれる
     // divの大きさを変えることでSVGの大きさも変わる
@@ -12,21 +12,26 @@ export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
     const filteredExs =
     Object.entries(exhibitionData).filter(
         ([, data]) => locations[data.location] === floor
-    );
+        );
     return (
         <div>
-            <image
-                src={exhibitionIcons}
-                width={56}
-                height={56}
-            />
-            {filteredExs.map((ex) => (
-                <div key={ex[0]}>
-                <p>{ex[0]}</p>
-                {ex[1].stamp && <div>スタンプラリー</div>}
+            {filteredExs.map(([name, data]) => (
+                <div key={name} className={styles.card}>
+                    <div className={styles.icon} />
+                    <div className={styles.content}>
+                        <div className={styles.location}>{data.location}</div>
+                        <div className={styles.title}>{name}</div>
+                        <div className={styles.buttons}>
+                            {data.stamp && <button className={styles.button}>スタンプラリー</button>}
+                            {data.events && <button className={styles.button}>イベント</button>}
+                            <button className={styles.button}>バザー</button>
+                        </div>
+                    </div>
+                    <Link href="https://seiseisai.com/"  target="_blank" rel="noopener noreferrer">
+                        <div className={styles.arrow}>➡️</div>
+                    </Link>
                 </div>
             ))}
-
         </div>
     );
 }
