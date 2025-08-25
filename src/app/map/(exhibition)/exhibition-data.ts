@@ -136,7 +136,7 @@ const exhibitionDataRaw = {
         location: "和室",
         icon: exhibitionIcons["お茶席"],
         stamp: false,
-        bazzaar: true,
+        bazaar: true,
         description:
             "お抹茶と和菓子をご用意しております。お気軽にお越しください。（一般800円、在校生・小学生以下500円）",
     },
@@ -189,14 +189,14 @@ const exhibitionDataRaw = {
         location: "6年A組",
         icon: exhibitionIcons["PRパート"],
         stamp: false,
-        bazzaar: true,
+        bazaar: true,
         description: "文化祭公式グッズを販売しております。記念に一品、如何でしょうか。",
     },
     園芸部: {
         location: "6年B組",
         icon: exhibitionIcons["園芸部"],
         stamp: true,
-        bazzaar: true,
+        bazaar: true,
         description: "今年も植物展示とチューリップの球根販売を行います！お値打ち価格で販売中！（現金のみ取り扱い）",
         twitter_link: "https://x.com/tdj_engei",
     },
@@ -323,7 +323,7 @@ const exhibitionDataRaw = {
         location: "5年D組",
         icon: exhibitionIcons["文藝同好会"],
         stamp: true,
-        bazzar: true,
+        bazaar: true,
         description:
             "節目を迎えた文藝同好会　展示は生まれ変わり文化祭に変化をもたらす　その凝り固まった考えを今こそ改めるのだ!",
     },
@@ -436,7 +436,7 @@ export const exhibitionData: Readonly<
             location: keyof typeof locations;
             icon: string;
             stamp: boolean;
-            bazzaar?: true;
+            bazaar?: true;
             description?: string;
             twitter_link?: string;
             instagram_link?: string;
