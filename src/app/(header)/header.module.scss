@@ -641,10 +641,8 @@
     }
 
     @include media(sm) {
-        position: fixed;
-        right: calc(min(35px, 7svw) + 32px);
         padding: 5px 16px;
-        margin-right: 16px;
+        margin-right: max(16px, 3.5svw);
         font-size: 11px;
     }
 }

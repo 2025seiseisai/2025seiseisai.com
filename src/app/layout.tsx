@@ -27,7 +27,8 @@ export const metadata: Metadata = {
         },
     ],
     // generator: "Next.js",
-    keywords: "第61回菁々祭, 菁々祭, 東大寺学園, 東大寺, 文化祭, 61seisei, 2025, 分秒, 9/6, 9/7, 2025",
+    keywords:
+        "東大寺学園, 文化祭, 菁々祭, 東大寺, 学園祭, 2025, 東大寺学園文化祭, 東大寺文化祭, せいせいさい, 申し込み, seiseisai, 東大寺学園中学校・高等学校, 青々祭, ホームページ, tdj, 分秒",
     // referrer: "",
     creator: "東大寺学園PRパート技術セクション",
     // publisher: "東大寺学園PRパート技術セクション",
@@ -98,7 +99,7 @@ export const metadata: Metadata = {
     },
     appleWebApp: {
         // capable: false,
-        title: "61seisei",
+        // title: "61seisei",
         // startupImage: {},
         // statusBarStyle: "default",
     },
@@ -126,12 +127,19 @@ export const metadata: Metadata = {
         // windows_universal: {},
         // web: {},
     },
-    /*
     archives: [
         "https://seiseisai.com/2024",
         "https://seiseisai.com/2023",
+        "https://seiseisai.com/2022",
+        "https://seiseisai.com/2021",
+        "https://seiseisai.com/2020",
+        "https://seiseisai.com/2019",
+        "https://seiseisai.com/2017",
+        "https://seiseisai.com/2016",
+        "https://seiseisai.com/2013",
+        "https://seiseisai.com/2012",
+        "https://seiseisai.com/2011",
     ],
-    */
     // assets: "https://seiseisai.com/assets",
     // bookmarks: "https://seiseisai.com/bookmarks",
     pagination: {
