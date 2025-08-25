@@ -1,4 +1,4 @@
-import { ExhibitionFloor } from "./exhibition-data";
+import { ExhibitionFloor, locations, exhibitionData } from "./exhibition-data";
 import styles from "./page.module.scss";
 import { exhibitionIcons } from "../(exhibition)/exhibition-icons"; // ファイルの先頭でimport
 
@@ -8,12 +8,27 @@ function Bazaar() {
     return <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />
 }
 
+const filteredExs =
+    Object.entries(exhibitionData).filter(
+        ([, data]) => locations[data.location] === floor
+    );
+
 export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
     return (
-        <div className={styles.exhibitionContainer}>
-            {/* ここに書く */};
-            <p className={styles.example}>エキシビション1</p>
+        <div>
             <p>現在のフロア: {floor}</p>
+            <image
+                src={exhibitionIcons}
+                width={56}
+                height={56}
+            />
+            {filteredExs.map((ex) => (
+                <div key={ex[0]}>
+                <p>{ex[0]}</p>
+                {ex[1].stamp && <div>スタンプラリー</div>}
+                </div>
+            ))}
+
         </div>
     );
 }
