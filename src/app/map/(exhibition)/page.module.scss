@@ -18,4 +18,140 @@
         color: red;
         background-color: green;
     }
+
+    .card {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        border-bottom: 1px solid red;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        margin-right: 16px;
+        background-color: #ccc;
+        border-radius: 50%;
+    }
+
+    .content {
+        flex: 1;
+    }
+
+    .location {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .buttons {
+        margin-top: 8px;
+    }
+
+    .button {
+        padding: 6px 12px;
+        margin-right: 8px;
+        cursor: pointer;
+        background-color: #eee;
+        border: none;
+        border-radius: 4px;
+
+    }
+
+    .arrow {
+        font-size: 24px;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+
+    .tagContainer {
+        display: absolute;
+        width: 680px;
+        height: auto;
+        margin-top: 24px;
+        margin-left: 160px;
+        border: 1.5px solid red;
+    }
+
+    .tagtitle {
+        display: block;
+        margin-top: 30px;
+        margin-left: 160px;
+        font-size: 20px;
+        font-style: medium;
+        font-weight: noto sans jp;
+        text-align: center;
+    }
+
+    .tagiconstamp{
+        display: block;
+        width: auto;
+        height: 24px;
+        margin-top: 52px;
+        margin-left: 52px;
+        text-align: center;
+        background-color: #de0d22;
+        border-radius: 10px;
+    }
+
+    .tagiconevents{
+        display: block;
+        width: auto;
+        height: 24px;
+        margin-top: 89px;
+        margin-left: 52px;
+        text-align: center;
+        background-color: #f4631e;
+        border-radius: 10px;
+    }
+
+    .tagiconbazaar{
+        display: block;
+        width: auto;
+        height: 24px;
+        margin-top: 126px;
+        margin-left: 52px;
+        text-align: center;
+        background-color: #ff9f00;
+        border-radius: 10px;
+    }
+
+    .tagtextstamp{
+        display: block;
+        width: auto;
+        height: 20px;
+        margin-top: 54px;
+        margin-left: 213px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: noto sans jp;
+    }
+
+    .tagtextevents{
+        display: block;
+        width: auto;
+        height: 20px;
+        margin-top: 91px;
+        margin-left: 213px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: noto sans jp;
+    }
+
+    .tagtextbazaar{
+        display: block;
+        width: auto;
+        height: 20px;
+        margin-top: 128px;
+        margin-left: 213px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: noto sans jp;
+    }
 }
