@@ -8,15 +8,13 @@ function Bazaar() {
     return <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />
 }
 
-const filteredExs =
+export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
+    const filteredExs =
     Object.entries(exhibitionData).filter(
         ([, data]) => locations[data.location] === floor
     );
-
-export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
     return (
         <div>
-            <p>現在のフロア: {floor}</p>
             <image
                 src={exhibitionIcons}
                 width={56}
