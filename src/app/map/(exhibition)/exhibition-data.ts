@@ -90,7 +90,7 @@ const exhibitionDataRaw = {
     },
     独楽研究会: {
         location: "1年C組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["独楽研究会"],
         stamp: true,
         description: "ベーゴマとコマを展示してます。体験もできるので、ぜひ来てください！",
         twitter_link: "https://x.com/tdj_dokuraku",
@@ -199,7 +199,7 @@ const exhibitionDataRaw = {
     },
     民族音楽同好会: {
         location: "6年C組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["民族音楽同好会"],
         stamp: true,
         description:
             "民族音楽同好会です！初展示です！主に世界の民族楽器や民族音楽についての紹介ポスターを展示しています！",
@@ -272,7 +272,7 @@ const exhibitionDataRaw = {
     },
     自動車研究会: {
         location: "5年A組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["自動車研究会"],
         stamp: true,
         description:
             "去年新しくできた団体です。今は大会出場用車両の設計を主にやっています。自動車に関する様々な展示を行います。",
@@ -369,7 +369,7 @@ const exhibitionDataRaw = {
     },
     東方研究会: {
         location: "4年C組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["東方研究会"],
         stamp: true,
         description:
             "遂に東大寺学園に東方研究会が発足！検定や部員の二次創作物など様々な展示をご用意してお待ちしております。",

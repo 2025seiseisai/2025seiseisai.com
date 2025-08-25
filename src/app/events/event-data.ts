@@ -39,7 +39,7 @@ export const eventNames = [
     "中2演劇", // 中２学年演劇
     "中1合唱・ハンドベル", // 中１学年発表
     "中1ダンス", // 中１学年ダンス
-    "チェスのルール説明", // 追加
+    "チェスのルール説明",
     "和太鼓演奏",
     "ラブライブ！サンスクリット‼︎",
     "TDJ48",
@@ -47,7 +47,7 @@ export const eventNames = [
     "E卍ILE",
     "令和の小町コンテスト",
     "T(DJ)²",
-    "例の集団",
+    "例の集団", //
     "中3演劇", // 中３学年演劇
     "中1演劇・ハンドベル・ダンス", // 重複?
     "T1グランプリ", // T-1グランプリ
@@ -66,7 +66,7 @@ export const eventNames = [
     "やさしい落語", // かんたん落語
     "スリーレッドメン",
     "PTAコーラス",
-    "謎解きをキザめ", // ？
+    "謎解きをキザめ", // なくなった？
     "TVOCオリジナル曲発表",
     "マジックショー",
     "ラジコンレース大会",
@@ -268,6 +268,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "模擬授業",
+        ticket: true,
         day1: [
             { location: "視聴覚室", start: "09:30", end: "10:00" },
             { location: "視聴覚室", start: "13:00", end: "13:30" },
@@ -351,6 +352,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "ラジコンレース大会",
+        ticket: true,
         day1: [
             { location: "5A", start: "09:30", end: "09:50" },
             { location: "5A", start: "10:30", end: "10:50" },
@@ -366,6 +368,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "TDJ-RPGチャンピオンシップ",
+        ticket: true,
         day1: [{ location: "情報教室", start: "11:00", end: "13:00" }],
         day2: [{ location: "情報教室", start: "11:00", end: "13:00" }],
     },
@@ -392,6 +395,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "体験型ミステリー",
+        ticket: true,
         day1: [{ location: "地学室", start: "09:20", end: "10:50" }],
         day2: [{ location: "地学室", start: "13:00", end: "14:30" }],
     },
@@ -399,6 +403,7 @@ export const eventData: EventData[] = [
         name: "レゴプログラミング講習会",
         description:
             "レゴで作られたロボットを動かすプログラミングを体験できます！初心者の方でも大歓迎です、ぜひご参加ください！",
+        ticket: true,
         day1: [
             { location: "地学室", start: "11:00", end: "12:00" },
             { location: "地学室", start: "13:00", end: "14:00" },
