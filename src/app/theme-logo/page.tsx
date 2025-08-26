@@ -18,7 +18,7 @@ export default function Page() {
             {/* ここに書く */}
             <h1 className={styles.example}>テーマロゴ</h1>
             <LogotypeC className={styles.logotype_c} />
-            <a href="/2025/theme-logo/logotype_colour.png" download>
+            <a href="/2025/theme-logo/logotype_color.png" download>
                 <DownloadIcon className={styles.download_icon} />
             </a>
             <LogotypeM className={styles.logotype_m} />
@@ -26,7 +26,7 @@ export default function Page() {
                 <DownloadIcon className={styles.download_icon} />
             </a>
             <LogoC className={styles.logo_c} />
-            <a href="/2025/theme-logo/logo_colour.png" download>
+            <a href="/2025/theme-logo/logo_color.png" download>
                 <DownloadIcon className={styles.download_icon} />
             </a>
             <LogoM className={styles.logo_m} />
@@ -34,7 +34,7 @@ export default function Page() {
                 <DownloadIcon className={styles.download_icon} />
             </a>
             <TypoC className={styles.typo_c} />
-            <a href="/2025/theme-logo/typo_colour.png" download>
+            <a href="/2025/theme-logo/typo_color.png" download>
                 <DownloadIcon className={styles.download_icon} />
             </a>
             <TypoM className={styles.typo_m} />
