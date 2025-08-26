@@ -283,6 +283,7 @@
 
 .headerImage {
     width: min(495px, 42svw);
+    height: min(165px, 14svw);
 }
 
 @include media(sm) {
