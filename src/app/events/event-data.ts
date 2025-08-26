@@ -1,7 +1,7 @@
 type HourType = "09" | "10" | "11" | "12" | "13" | "14" | "15" | "16" | "17";
 type MinuteType = "00" | "05" | "10" | "15" | "20" | "25" | "30" | "35" | "40" | "45" | "50" | "55";
 export type EventData = {
-    name: string;
+    name: (typeof eventNames)[number];
     description?: string;
     ticket?: true;
     day1: EventDetail[];
@@ -34,6 +34,59 @@ export const locations = [
     "上グラウンド",
     "お化け屋敷",
 ] as const;
+
+export const eventNames = [
+    "中2演劇", // 中２学年演劇
+    "中1合唱・ハンドベル", // 中１学年発表
+    "中1ダンス", // 中１学年ダンス
+    "チェスのルール説明",
+    "和太鼓演奏",
+    "ラブライブ！サンスクリット‼︎",
+    "TDJ48",
+    "寺マス",
+    "E卍ILE",
+    "令和の小町コンテスト",
+    "T(DJ)²",
+    "例の集団", //
+    "中3演劇", // 中３学年演劇
+    "中1演劇・ハンドベル・ダンス", // 重複?
+    "T1グランプリ", // T-1グランプリ
+    "マッスルコンテスト",
+    "イケメンコンテスト", // イケてるメンズコンテスト
+    "結婚式",
+    "？？？",
+    "菁々コンサート",
+    "カラオケコンテスト",
+    "室内学部定期演奏会",
+    "音楽部ライブ",
+    "映画祭",
+    "模擬授業",
+    "クイズ大会",
+    "無差別級ビブリオバトル",
+    "やさしい落語", // かんたん落語
+    "スリーレッドメン",
+    "PTAコーラス",
+    "謎解きをキザめ", // なくなった？
+    "TVOCオリジナル曲発表",
+    "マジックショー",
+    "ラジコンレース大会",
+    "TDJ-RPGチャンピオンシップ",
+    "競技プログラミング入門",
+    "化学の演示実験",
+    "解剖の演示実験",
+    "体験型ミステリー",
+    "レゴプログラミング講習会",
+    "ロケット発射実験",
+    "お化け屋敷",
+    "かわいいだけじゃだめですか？",
+    "釈迦釈迦BOYS",
+    "江南無スタイル",
+    "異次元フェス",
+    "プレゼン、ゲーム大会の二種類",
+    "菁々祭ツアー", // 追加
+    "学校案内", // 追加
+] as const;
+
 export const eventData: EventData[] = [
     {
         name: "中2演劇",
@@ -215,6 +268,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "模擬授業",
+        ticket: true,
         day1: [
             { location: "視聴覚室", start: "09:30", end: "10:00" },
             { location: "視聴覚室", start: "13:00", end: "13:30" },
@@ -225,7 +279,7 @@ export const eventData: EventData[] = [
         ],
     },
     {
-        name: "クイズ研究部",
+        name: "クイズ大会",
         description: "関西のクイズ強豪校が一堂に会し、己の知識と知識をぶつけ合う！ハイレベルな戦いを是非ご覧ください。",
         day1: [{ location: "視聴覚室", start: "10:50", end: "11:50" }],
         day2: [],
@@ -298,6 +352,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "ラジコンレース大会",
+        ticket: true,
         day1: [
             { location: "5A", start: "09:30", end: "09:50" },
             { location: "5A", start: "10:30", end: "10:50" },
@@ -313,6 +368,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "TDJ-RPGチャンピオンシップ",
+        ticket: true,
         day1: [{ location: "情報教室", start: "11:00", end: "13:00" }],
         day2: [{ location: "情報教室", start: "11:00", end: "13:00" }],
     },
@@ -339,6 +395,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "体験型ミステリー",
+        ticket: true,
         day1: [{ location: "地学室", start: "09:20", end: "10:50" }],
         day2: [{ location: "地学室", start: "13:00", end: "14:30" }],
     },
@@ -346,6 +403,7 @@ export const eventData: EventData[] = [
         name: "レゴプログラミング講習会",
         description:
             "レゴで作られたロボットを動かすプログラミングを体験できます！初心者の方でも大歓迎です、ぜひご参加ください！",
+        ticket: true,
         day1: [
             { location: "地学室", start: "11:00", end: "12:00" },
             { location: "地学室", start: "13:00", end: "14:00" },
@@ -418,4 +476,4 @@ export const eventData: EventData[] = [
         day1: [],
         day2: [],
     },
-];
+] as const satisfies EventData[];

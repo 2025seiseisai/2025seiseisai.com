@@ -106,8 +106,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
             <article>
                 <div
                     className={`mt-[20px] mr-auto ml-auto flex w-[90dvw] text-right text-sm/normal text-pri-black
-                        b:float-right b:mt-[80px] b:mr-[9.7dvw] b:mb-[-80px] b:block b:w-[20dvw] b:min-w-[255px]
-                        b:text-xl/normal`}
+                        b:float-right b:mt-[80px] b:mr-[9.7dvw] b:block b:w-[20dvw] b:min-w-[255px] b:text-xl/normal`}
                 >
                     <p className={"text-pri-red max-b:text-start"}>＃{topic}</p>
                     <div className="max-b:ml-auto">
@@ -116,9 +115,8 @@ export default async function Page({ params }: { params: Promise<{ round: string
                     </div>
                 </div>
                 <aside
-                    className={`sticky top-[64px] float-right clear-right mt-[80px] mr-[calc(8dvw-3px)]
-                        max-h-[calc(100dvh-64px)] w-[20dvw] min-w-[255px] overflow-y-auto leading-[1.5] text-pri-black
-                        max-b:hidden`}
+                    className={`sticky top-[64px] float-right clear-right mr-[calc(8dvw-3px)] max-h-[calc(100dvh-64px)]
+                        w-[20dvw] min-w-[255px] overflow-y-auto leading-[1.5] text-pri-black max-b:hidden`}
                 >
                     <div className={"mt-[40px] mr-[3px] mb-[10px]"}>
                         <TableForPC toc={toc} />

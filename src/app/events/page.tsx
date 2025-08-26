@@ -2,7 +2,7 @@
 
 "use client";
 import React, { useState } from "react";
-import { eventData, locations, EventDetail } from "./event-data";
+import { eventData, locations} from "./event-data";
 import pagestyles from "./page.module.scss";
 import timestyles from "./time.module.scss";
 import Events from "./Ebents.svg"
@@ -13,7 +13,7 @@ import Seriken from "./seriken.svg";
 import Utenji from "./utenji.svg";
 
 export const metadata = {
-  title: "Event | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+    title: "Events | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
 };
 
 <Events className={pagestyles.events} />
