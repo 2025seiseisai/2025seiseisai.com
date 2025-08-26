@@ -1,40 +1,128 @@
 /* eslint better-tailwindcss/no-unregistered-classes: 0 */
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import Back from "./back.svg";
-import { eventData } from "./event-data.js";
-import Line from "./introduction-line.svg";
-import Mappin from "./map-pin.svg";
-import styles from "./page.module.scss";
+
+"use client";
+import React, { useState } from "react";
+import { eventData, locations, EventDetail } from "./event-data";
+import pagestyles from "./page.module.scss";
+import timestyles from "./time.module.scss";
+import Events from "./Ebents.svg"
 import Play from "./play.svg";
 import Ticket from "./ticket.svg";
+import Mappin from "./map-pin.svg";
+import Seriken from "./seriken.svg";
+import Utenji from "./utenji.svg";
 
 export const metadata = {
-    title: "Event | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+  title: "Event | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
 };
 
-export default function Page() {
-    const [openIndexes, setOpenIndexes] = useState<number[]>([]);
-    const router = useRouter();
+<Events className={pagestyles.events} />
 
-    const toggleOpen = (index: number, isOpen: boolean) => {
-        setOpenIndexes((prev) => (isOpen ? [...prev, index] : prev.filter((i) => i !== index)));
-    };
+export default function TimeTablePage() {
+  // --- タイムテーブル用 state ---
+  const [day, setDay] = useState<"day1" | "day2">("day1");
+  const [locationIndex, setLocationIndex] = useState(0);
 
-    const getAccordionTop = (index: number) => {
-        let top = 820; // 1つ目のtop
-        for (let i = 0; i < index; i++) {
-            top += openIndexes.includes(i) ? 402 : 120; // 前のアコーディオンが開いているなら402、閉じているなら120
-            top += 32; // 間隔
-        }
-        return top;
-    };
+  // --- アコーディオン用 state ---
+  const [openIndexes, setOpenIndexes] = useState<number[]>([]);
+  const toggleOpen = (index: number, isOpen: boolean) => {
+    setOpenIndexes((prev) =>
+      isOpen ? [...prev, index] : prev.filter((i) => i !== index)
+    );
+  };
+  const getAccordionTop = (index: number) => {
+    let top = 1704; // 1つ目のtop
+    for (let i = 0; i < index; i++) {
+      top += openIndexes.includes(i) ? 402 : 120;
+      top += 20;
+    }
+    return top;
+  };
 
-    return (
-        <>
-            <Back className={styles.backIcon} onClick={() => router.back()} style={{ cursor: "pointer" }} />
-            <Line className={styles.introductionIcon} />
-            <p className={styles.introduction}>イベント紹介一覧</p>
+  // --- 時間目盛り ---
+  const hours = ["09", "10", "11", "12", "13", "14", "15", "16", "17"];
+
+    // --- 表示する場所 ---
+  const location = locations[locationIndex];
+
+  // --- 時間を分に変換する関数 ---
+  const toMinutes = (time: string) => {
+    const [h, m] = time.split(":").map(Number);
+    return (h - 9) * 60 + m;
+  };
+
+  return (
+    <div className={timestyles.page}>
+      {/* --- Day切り替え --- */}
+      <div className={timestyles.controls}>
+        <button onClick={() => setDay("day1")}>Day 1</button>
+        <button onClick={() => setDay("day2")}>Day 2</button>
+      </div>
+
+      {/* --- 場所切り替え --- */}
+      <div className={timestyles.controls}>
+        <button
+          onClick={() =>
+            setLocationIndex((prev) =>
+              prev === 0 ? locations.length - 1 : prev - 1
+            )
+          }
+        >
+          ←
+        </button>
+        <span>{location}</span>
+        <button
+          onClick={() =>
+            setLocationIndex((prev) =>
+              prev === locations.length - 1 ? 0 : prev + 1
+            )
+          }
+        >
+          →
+        </button>
+      </div>
+
+      {/* --- 時間軸 --- */}
+      <div className={timestyles.timeline}>
+        <div className={timestyles.timeScale}>
+          {hours.map((h) => (
+            <div key={h} className={timestyles.timeMark}>
+              {h}:00
+            </div>
+          ))}
+        </div>
+
+        {/* --- イベントバー --- */}
+        <div className={timestyles.events}>
+          {eventData.map((event, i) =>
+            event[day]
+              .filter((d) => d.location === location)
+              .map((d, j) => {
+                const start = toMinutes(d.start);
+                const end = toMinutes(d.end);
+                const duration = end - start;
+                return (
+                  <div
+                    key={`${i}-${j}`}
+                    className={timestyles.event}
+                    style={{
+                      left: `${(start / (8 * 60)) * 100}%`,
+                      width: `${(duration / (8 * 60)) * 100}%`,
+                    }}
+                  >
+                    {event.name}
+                    {d.label && <span>（{d.label}）</span>}
+                  </div>
+                );
+              })
+          )}
+        </div>
+      </div>
+
+          <Utenji className={pagestyles.utenji} />
+          <Seriken className={pagestyles.seriken} />
+
+            <p className={pagestyles.introduction}>イベント紹介一覧</p>
 
             {eventData.map((event, i) => {
                 const isOpen = openIndexes.includes(i);
@@ -42,7 +130,7 @@ export default function Page() {
                 return (
                     <details
                         key={i}
-                        className={styles.accordion}
+                        className={pagestyles.accordion}
                         open={isOpen}
                         onToggle={(e) => toggleOpen(i, (e.target as HTMLDetailsElement).open)}
                         style={{
@@ -54,13 +142,13 @@ export default function Page() {
                             overflow: "hidden",
                         }}
                     >
-                        <summary className={`${styles.summary} ${isOpen ? styles.open : ""}`}>
-                            <span className={styles.eventName}>{event.name}</span>
-                            <Play className={styles.icon} />
+                        <summary className={`${pagestyles.summary} ${isOpen ? pagestyles.open : ""}`}>
+                            <span className={pagestyles.eventName}>{event.name}</span>
+                            <Play className={pagestyles.icon} />
                         </summary>
 
                         {event.ticket && (
-                            <div className={styles.ticketPhoto}>
+                            <div className={pagestyles.ticketPhoto}>
                                 <Ticket />
                             </div>
                         )}
@@ -70,10 +158,10 @@ export default function Page() {
                         {isOpen && event.day1.length > 0 && (
                             <>
                                 <h4>Day 1</h4>
-                                <div className={styles.detailsDay}>
+                                <div className={pagestyles.detailsDay}>
                                     {event.day1.map((detail, j) => (
-                                        <div key={j} className={styles.detailItem}>
-                                            {<Mappin className={styles.mappinIcon} />}
+                                        <div key={j} className={pagestyles.detailItem}>
+                                            {<Mappin className={pagestyles.mappinIcon} />}
                                             <div>
                                                 {detail.label && <strong>{detail.label}</strong>}
                                                 <p>{detail.location}</p>
@@ -90,10 +178,10 @@ export default function Page() {
                         {isOpen && event.day2.length > 0 && (
                             <>
                                 <h4>Day 2</h4>
-                                <div className={styles.detailsDay}>
+                                <div className={pagestyles.detailsDay}>
                                     {event.day2.map((detail, j) => (
-                                        <div key={j} className={styles.detailItem}>
-                                            {<Mappin className={styles.mappinIcon} />}
+                                        <div key={j} className={pagestyles.detailItem}>
+                                            {<Mappin className={pagestyles.mappinIcon} />}
                                             <div>
                                                 {detail.label && <strong>{detail.label}</strong>}
                                                 <p>{detail.location}</p>
@@ -109,6 +197,6 @@ export default function Page() {
                     </details>
                 );
             })}
-        </>
+        </div>
     );
 }
