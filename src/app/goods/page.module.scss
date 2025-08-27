@@ -44,6 +44,13 @@ $pri-black: #0b0e0f;
     font-weight: bold;
 }
 
+.f511wrap {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+}
+
 .f511 {
     display: flex;
     align-items: center;
