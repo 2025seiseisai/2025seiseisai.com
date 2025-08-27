@@ -186,7 +186,7 @@ const exhibitionDataRaw = {
     },
     グッズ販売: {
         location: "6年A組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["PRパート"],
         stamp: false,
         description: "文化祭公式グッズを販売しております。記念に一品、如何でしょうか。",
     },
@@ -343,7 +343,7 @@ const exhibitionDataRaw = {
     },
     書画展: {
         location: "図書室",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["東菁会"],
         stamp: false,
         description:
             "東大寺塔頭の書画や菁々会会員の作品を展示しております。塔頭の書画は販売もしております。ぜひ、ご覧ください。",
