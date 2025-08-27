@@ -9,7 +9,7 @@
 }
 
 .title {
-    width: min(1022px, 80vw);
+    width: min(1022px, 80svw);
     margin: 30px auto;
     font-size: 40px;
     font-weight: 700;
@@ -17,8 +17,16 @@
     text-align: left;
 }
 
+@include media(sm) {
+    .title {
+        width: calc(100% - 40px);
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+}
+
 .sentence {
-    width: min(1022px, 80vw);
+    width: min(1022px, 80svw);
     margin: 0 auto;
     font-size: 18px;
     font-weight: 500;
@@ -26,13 +34,33 @@
     text-align: left;
 }
 
+@include media(sm) {
+    .sentence {
+        width: calc(100% - 40px);
+        font-size: 16px;
+    }
+}
+
 .subtitle_block {
     position: relative;
     top: 25px;
     z-index: 1;
-    width: min(1022px, 80vw);
+    width: min(1022px, 80svw);
     height: 184px;
-    margin: 0 auto; // left:calc(50% - 511px);?
+    margin: 0 auto;
+}
+
+@include media(sm) {
+    .subtitle_block {
+        width: calc(100% - 35px);
+        height: 168px;
+    }
+
+    @media (width >= 475px) {
+        .subtitle_block {
+            height: 152px;
+        }
+    }
 }
 
 .border {
@@ -46,6 +74,15 @@
     border-bottom: 2px solid #de0d22;
 }
 
+@include media(sm) {
+    .border {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 18px);
+    }
+}
+
 .border2 {
     position: absolute;
     top: 23px;
@@ -54,12 +91,26 @@
     border-top: 2px solid #de0d22;
 }
 
+@include media(sm) {
+    .border2 {
+        top: 18px;
+        left: 113px;
+        width: calc(100% - 113px);
+    }
+}
+
 .border3 {
     position: absolute;
-    top: 35px;
+    bottom: 0;
     left: 0;
     height: calc(100% - 35px);
     border-left: 2px solid #de0d22;
+}
+
+@include media(sm) {
+    .border3 {
+        height: calc(100% - 18px);
+    }
 }
 
 .subtitle {
@@ -68,6 +119,13 @@
     font-weight: 500;
     line-height: 150%;
     vertical-align: middle;
+}
+
+@include media(sm) {
+    .subtitle {
+        margin-left: 8px;
+        font-size: 24px;
+    }
 }
 
 .list {
@@ -81,6 +139,13 @@
     vertical-align: middle;
 }
 
+@include media(sm) {
+    .list {
+        top: 0;
+        font-size: 16px;
+    }
+}
+
 .large {
     z-index: 1;
     margin: 86px auto 0;
@@ -89,13 +154,34 @@
     line-height: 150%;
 }
 
+@include media(sm) {
+    .large {
+        margin: 70px auto 0;
+        font-size: 32px;
+    }
+}
+
 .iconblock {
-    margin-top: min(95px, 6.6svw);
+    margin-top: 83px;
+}
+
+@include media(sm) {
+    .iconblock {
+        margin-top: 66px;
+        margin-bottom: 15px;
+    }
 }
 
 .headerblock {
-    margin-top: min(90px, 6.25svw);
-    margin-bottom: min(19px, 1.3svw);
+    margin-top: 83px;
+    margin-bottom: 20px;
+}
+
+@include media(sm) {
+    .headerblock {
+        margin-top: 68px;
+        margin-bottom: 15px;
+    }
 }
 
 .wall {
@@ -105,16 +191,34 @@
 .wallpaper {
     z-index: 1;
     display: flex;
-    gap: 3.3svw;
+    gap: 1.65svw;
     width: auto;
     height: auto;
-    padding: 27px 0;
+    padding: 20px 0;
     margin: 0 auto;
+}
+
+@include media(sm) {
+    .wallpaper {
+        gap: 21px;
+        padding: 18px calc(50% - 80px);
+        margin: 0;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+    }
 }
 
 .wallpaperImage {
     width: min(15svw, 180px);
     height: min(30svw, 360px);
+}
+
+@include media(sm) {
+    .wallpaperImage {
+        width: 160px;
+        height: 320px;
+        scroll-snap-align: center;
+    }
 }
 
 .back {
@@ -129,70 +233,109 @@
 .icon {
     z-index: 1;
     display: flex;
-    gap: 3.3svw;
+    gap: 1.65svw;
     width: auto;
     height: auto;
-    margin: 4px auto;
+    margin: 20px auto 0;
+}
+
+@include media(sm) {
+    .icon {
+        gap: 16px;
+        padding-inline: calc(50% - 106.5px);
+        margin: 0;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+    }
 }
 
 .iconImage {
     width: min(20svw, 240px);
+    height: min(20svw, 240px);
+    border-radius: calc(infinity * 1px);
+}
+
+@include media(sm) {
+    .iconImage {
+        width: 213px;
+        height: 213px;
+        scroll-snap-align: center;
+    }
 }
 
 .header {
     z-index: 1;
     display: flex;
-    gap: 4.2svw;
-    width: auto;
-    height: auto;
+    gap: 1.65svw;
     padding: 0 35px 20px;
     margin: 0 auto 44px;
 }
 
+@include media(sm) {
+    .header {
+        gap: 20px;
+        padding: 0 calc(50% - 162px) 12px;
+        margin: 0 0 54px;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+    }
+}
+
 .headerImage {
     width: min(495px, 42svw);
+    height: min(165px, 14svw);
+}
+
+@include media(sm) {
+    .headerImage {
+        flex-shrink: 0;
+        width: 324px;
+        height: 108px;
+        scroll-snap-align: center;
+    }
 }
 
 .downloadIcon {
-    position: absolute;
-    display: flex;
-    gap: min(calc(18.3vw - 60px), calc(3.3svw + 120px));
-    margin-top: min(calc(30svw - 40px), 320px);
-    margin-left: min(calc(15svw - 48px), 132px);
+    position: relative;
+    top: min(calc(30svw - 40px), 320px);
+    right: calc(1.65svw + 40px);
+    width: 0;
+    height: 0;
+    transition: filter 0.15s;
 
-    & > a {
-        transition: filter 0.15s;
+    &:hover {
+        filter: drop-shadow(0 0 10px rgb(222 13 34 / 100%));
+    }
+}
 
-        &:hover {
-            filter: drop-shadow(0 0 10px rgb(222 13 34 / 100%));
-        }
+@include media(sm) {
+    .downloadIcon {
+        top: 284px;
+        right: 69px;
+        transform: scale(0.9);
     }
 }
 
 .icon_download {
-    gap: min(calc(3.3vw + 180px), calc(23.3vw - 60px));
-    margin-top: min(174px, 20svw - 66px);
-    margin-left: min(174px, 20svw - 66px);
+    top: min(174px, calc(20svw - 66px));
+    right: calc(1.65svw + 66px);
 }
 
-.header_download {
-    gap: min(calc(4.2vw + 435px), calc(46.2vw - 60px));
-    margin-top: min(125px, 14svw - 40px);
-    margin-left: min(447px, 42svw - 48px);
-}
-
-// スマホ用のスタイル
 @include media(sm) {
-    .example {
-        background-color: blue;
+    .icon_download {
+        top: 155px;
+        right: 82px;
     }
 }
 
-// PC用のスタイル
-@include media(lg) {
-    .example {
-        // 上書き可能
-        color: red;
-        background-color: green;
+.header_download {
+    top: min(125px, 14svw - 40px);
+    right: calc(1.65svw + 48px);
+}
+
+@include media(sm) {
+    .header_download {
+        top: 64px;
+        right: 58px;
     }
 }
