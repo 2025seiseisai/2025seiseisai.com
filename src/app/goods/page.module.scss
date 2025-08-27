@@ -8,7 +8,7 @@ $pri-black: #0b0e0f;
     padding: 0 20px;
     margin: 0 auto;
 
-    @media (width >= 768px) {
+    @include media(lg) {
         grid-template-columns: repeat(3, 1fr); /* PCは3列 */
     }
 }
@@ -75,9 +75,6 @@ $pri-black: #0b0e0f;
     aspect-ratio: 270 / 163;
     margin: 8px auto 20px;
     overflow: hidden;
-    background-image: var(--bg-img);
-    background-position: center;
-    background-size: cover;
 }
 
 .back {
@@ -102,12 +99,12 @@ $pri-black: #0b0e0f;
     flex-direction: column;
     gap: 8px;
 
-    @include media(sm) {
+    @include media(lg) {
         width: 80%;
     }
 
-    @include media(lg) {
-        margin: 20px;
+    @include media(sm) {
+        margin-inline: 20px;
     }
 
     margin: 60px auto;
