@@ -72,7 +72,7 @@
         font-weight: bold;
     }
 
-    .pamphret_download {
+    .pamphlet_download {
         display: flex;
         flex-direction: column;
         margin: 12px 12px 0 8px;
@@ -80,7 +80,7 @@
         color: #de0d22;
     }
 
-    .pamphret_download_button {
+    .pamphlet_download_button {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -93,7 +93,7 @@
         border-radius: 3px;
     }
 
-    .dawnload_icon {
+    .download_icon {
         width: 12px;
         height: 12px;
         margin-left: 6px;
@@ -138,7 +138,7 @@
         margin-left: 7px;
     }
 
-    .magazine_dawnload_botton {
+    .magazine_download_button {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -163,5 +163,45 @@
         // 上書き可能
         color: #de0d22;
         background-color: green;
+    }
+}
+
+/* アコーディオン開閉 */
+details.club_magazine_headline {
+    &::details-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        content-visibility: unset;
+        transition: grid-template-rows 0.5s ease-in-out;
+    }
+
+    &[open]::details-content {
+        grid-template-rows: 1fr;
+    }
+
+    & > .magazine_content {
+        min-height: 0;
+        overflow: hidden;
+    }
+}
+
+@supports not selector(::details-content) {
+    details.club_magazine_headline {
+        content-visibility: unset;
+
+        & > .magazine_content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s ease-in-out;
+        }
+
+        &[open] > .magazine_content {
+            grid-template-rows: 1fr;
+        }
+
+        & > .magazine_content > ul {
+            min-height: 0;
+            overflow: hidden;
+        }
     }
 }

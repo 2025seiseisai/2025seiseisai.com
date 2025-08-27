@@ -18,8 +18,8 @@ function Nameplate({ name }: { name: string }) {
         <li>
             <div className="mt-[8px] inline-flex w-full items-center">
                 <div className={styles.club_icons} dangerouslySetInnerHTML={{ __html: icon }} />
-                <p className="ml-[8px] text-xl">{name}</p>
-                <Link target="_blank" rel="noopener noreferrer" href="" className={styles.magazine_dawnload_botton}>
+                <p className="ml-[8px] text-[20px]">{name}</p>
+                <Link target="_blank" rel="noopener noreferrer" href="" className={styles.magazine_download_button}>
                     読む<Icon2 className="ml-[4px] h-[12px] w-[12px]"></Icon2>
                 </Link>
             </div>
@@ -29,13 +29,15 @@ function Nameplate({ name }: { name: string }) {
 
 function Container({ title, children }: { title: string; children: React.ReactNode }) {
     return (
-        <details className={styles.club_magazine_headline}>
+        <details className={styles.club_magazine_headline} name="club">
             <summary className="items-center">
                 <p className="ml-[10px] text-[24px]">{title}</p>
                 <Icon_open className={`${styles.magazine_icon} ${styles.icon_open}`}></Icon_open>
                 <Icon_closed className={`${styles.magazine_icon} ${styles.icon_closed}`}></Icon_closed>
             </summary>
-            <ul>{children}</ul>
+            <div className={styles.magazine_content}>
+                <ul>{children}</ul>
+            </div>
         </details>
     );
 }
@@ -75,28 +77,28 @@ export default function Page() {
 
                     {/* パンフレットダウンロードについての説明 */}
                     <div className="mt-[16px]">
-                        <p className="text-base">
+                        <p className="text-16px">
                             校門でのパンフレット配布もございますが、ダウンロードしておくと便利です。
                             <br />
                             用途に合わせて、高画質版･中画質版･低画質版をご用意しました。東大寺学園は電波が弱い場所が多いため､校内では低画質版のダウンロードをおすすめします。
                         </p>
-                        <div className={styles.pamphret_download}>
+                        <div className={styles.pamphlet_download}>
                             <div className="mb-[8px] inline-flex items-center">
                                 <p>高画質版(47MB)</p>
-                                <a download="" href="" className={styles.pamphret_download_button}>
-                                    ダウンロード <Icon className={styles.dawnload_icon}></Icon>
+                                <a download="" href="" className={styles.pamphlet_download_button}>
+                                    ダウンロード <Icon className={styles.download_icon}></Icon>
                                 </a>
                             </div>
                             <div className="mb-[8px] inline-flex items-center">
                                 <p>中画質版(11MB)</p>
-                                <a download="" href="" className={styles.pamphret_download_button}>
-                                    ダウンロード <Icon className={styles.dawnload_icon}></Icon>
+                                <a download="" href="" className={styles.pamphlet_download_button}>
+                                    ダウンロード <Icon className={styles.download_icon}></Icon>
                                 </a>
                             </div>
                             <div className="mb-[8px] inline-flex items-center">
                                 <p>低画質版(6MB)</p>
-                                <a download="" href="" className={styles.pamphret_download_button}>
-                                    ダウンロード <Icon className={styles.dawnload_icon}></Icon>
+                                <a download="" href="" className={styles.pamphlet_download_button}>
+                                    ダウンロード <Icon className={styles.download_icon}></Icon>
                                 </a>
                             </div>
                         </div>
