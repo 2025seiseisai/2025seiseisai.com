@@ -125,7 +125,7 @@ export function Footer() {
                     <FooterLink href="/blog">Blog</FooterLink>
                     <FooterLink href="/special">Special</FooterLink>
                     <DisabledFooterLink>Downloads</DisabledFooterLink>
-                    <DisabledFooterLink>Gallery</DisabledFooterLink>
+                    <FooterLink href="/archives">Archives</FooterLink>
                 </span>
                 <span
                     className={`flex flex-row not-md:mt-[16px] not-md:mr-[17px] not-md:mb-[16px] not-md:w-full
