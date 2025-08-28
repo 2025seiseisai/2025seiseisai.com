@@ -22,6 +22,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
+            url: "https://seiseisai.com/2025/goods",
+            lastModified: new Date(),
+            priority: 0.8,
+        },
+        {
             url: "https://seiseisai.com/2025/reservation",
             lastModified: new Date(),
             priority: 0.4,
