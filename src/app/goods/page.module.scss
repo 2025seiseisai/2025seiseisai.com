@@ -32,7 +32,7 @@ $pri-black: #0b0e0f;
 
 .f523 {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     height: 45px;
     border-bottom: 2px solid $pri-black;
@@ -47,10 +47,15 @@ $pri-black: #0b0e0f;
 }
 
 .price {
+    padding-bottom: 2px;
     margin-right: 6px;
     overflow: visible;
     font-size: 24px;
     font-weight: bold;
+
+    @include media(sm) {
+        padding-bottom: 0;
+    }
 }
 
 @container (width <= 260px) {
