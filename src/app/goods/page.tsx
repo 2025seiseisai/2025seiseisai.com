@@ -8,11 +8,16 @@ import styles from "./page.module.scss";
 
 import back from "./img/back.png";
 
+import { getGoodsStock } from "@/impl/goods";
+
 export const metadata = {
     title: "Goods | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
 };
 
-export default function Page() {
+export const revalidate = 60;
+
+export default async function Page() {
+    const stock = await getGoodsStock();
     return (
         <>
             <h1
@@ -21,6 +26,11 @@ export default function Page() {
             >
                 <span className="text-[#de0d22]">G</span>oods
             </h1>
+            <p className="mb-[10px] ml-[20px] text-[16px] md:mb-[16px] md:ml-[10svw] md:text-[18px]">
+                多数のグッズを取り揃えています。
+                <br />
+                菁々祭訪問の記念にどうぞ。売り切れに注意！
+            </p>
             <div className="mb-[45px]">
                 <div className={styles.container}>
                     {/* 商品 */}
@@ -30,10 +40,10 @@ export default function Page() {
                             <h2 className={styles.price}>900円</h2>
                         </div>
                         <div className={styles.f511wrap}>
-                            <div className={styles.f511}>S: 在庫あり</div>
-                            <div className={styles.f511}>M: 在庫あり</div>
-                            <div className={styles.f511}>L: 在庫あり</div>
-                            <div className={styles.f511}>XL: 在庫あり</div>
+                            <div className={styles.f511}>S: {stock["Tシャツ-S"]}</div>
+                            <div className={styles.f511}>M: {stock["Tシャツ-M"]}</div>
+                            <div className={styles.f511}>L: {stock["Tシャツ-L"]}</div>
+                            <div className={styles.f511}>XL: {stock["Tシャツ-XL"]}</div>
                         </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
@@ -51,8 +61,8 @@ export default function Page() {
                             <h2 className={styles.price}>300円</h2>
                         </div>
                         <div className={styles.f511wrap}>
-                            <div className={styles.f511}>赤: 在庫あり</div>
-                            <div className={styles.f511}>黒: 在庫あり</div>
+                            <div className={styles.f511}>赤: {stock["ボールペン-赤"]}</div>
+                            <div className={styles.f511}>黒: {stock["ボールペン-黒"]}</div>
                         </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
@@ -70,7 +80,7 @@ export default function Page() {
                             <h2 className={styles.price}>600円</h2>
                         </div>
                         <div className={styles.f511wrap}>
-                            <div className={styles.f511}>在庫あり</div>
+                            <div className={styles.f511}>{stock["マグカップ"]}</div>
                         </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
@@ -86,7 +96,7 @@ export default function Page() {
                             <h2 className={styles.price}>600円</h2>
                         </div>
                         <div className={styles.f511wrap}>
-                            <div className={styles.f511}>在庫あり</div>
+                            <div className={styles.f511}>{stock["トートバッグ"]}</div>
                         </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
@@ -102,7 +112,7 @@ export default function Page() {
                             <h2 className={styles.price}>300円</h2>
                         </div>
                         <div className={styles.f511wrap}>
-                            <div className={styles.f511}>在庫あり</div>
+                            <div className={styles.f511}>{stock["アクリルキーホルダー"]}</div>
                         </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
@@ -115,6 +125,17 @@ export default function Page() {
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div className={`${styles.f504} ${styles.small_gap}`}>
+                <div className={styles.m}>
+                    <h2 className={styles.zaiko}>整理券について</h2>
+                </div>
+                <p className={styles.stock_desc}>
+                    グッズの購入には整理券が必要となります。
+                    <br />
+                    グラウンドの整理券配布場所にてお求めください。
+                </p>
             </div>
 
             <div className={styles.f504}>

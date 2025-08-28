@@ -4,8 +4,11 @@ $pri-black: #0b0e0f;
 .container {
     display: grid;
     gap: 35px;
-    padding: 0 20px;
     margin: 0 auto;
+
+    @include media(sm) {
+        padding: 0 20px;
+    }
 
     @include media(lg) {
         grid-template-columns: repeat(3, 1fr); /* PCは3列 */
@@ -119,6 +122,14 @@ $pri-black: #0b0e0f;
 
     @include media(sm) {
         margin-inline: 20px;
+    }
+}
+
+.small_gap {
+    margin-bottom: 30px;
+
+    @include media(sm) {
+        margin-bottom: 25px;
     }
 }
 
