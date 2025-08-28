@@ -21,17 +21,17 @@ export default async function Page() {
     return (
         <>
             <h1
-                className="mt-[30px] mb-[25px] ml-[20px] text-[28px] font-bold md:mb-[30px] md:ml-[10svw]
-                    md:text-[40px]"
+                className="mt-[30px] mb-[25px] ml-[20px] text-[28px] font-bold md:mb-[30px] md:ml-[10svw] md:text-[40px]
+                    text-pri-black"
             >
                 <span className="text-[#de0d22]">G</span>oods
             </h1>
-            <p className="mb-[10px] ml-[20px] text-[16px] md:mb-[16px] md:ml-[10svw] md:text-[18px]">
+            <p className="mb-[10px] ml-[20px] text-[16px] md:mb-[16px] md:ml-[10svw] md:text-[18px] text-pri-black">
                 多数のグッズを取り揃えています。
                 <br />
                 菁々祭訪問の記念にどうぞ。売り切れに注意！
             </p>
-            <div className="mb-[45px]">
+            <div className="mb-[45px] text-pri-black">
                 <div className={styles.container}>
                     {/* 商品 */}
                     <div className={styles.goods}>
