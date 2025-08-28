@@ -1,21 +1,208 @@
-// 共通のスタイル
-.example {
-    font-size: 36px;
-    color: black;
-}
+$pri-red: #de0d22;
+$pri-black: #0b0e0f;
 
-// スマホ用のスタイル
-@include media(sm) {
-    .example {
-        background-color: blue;
+.container {
+    display: grid;
+    gap: 35px;
+    margin: 0 auto;
+
+    @include media(sm) {
+        padding: 0 20px;
+    }
+
+    @include media(lg) {
+        width: 80%;
+    }
+
+    @media (width >= 560px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width >= 1024px) {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-// PC用のスタイル
-@include media(lg) {
-    .example {
-        // 上書き可能
-        color: red;
-        background-color: green;
+.goods {
+    display: flex;
+    flex-direction: column;
+    container-type: inline-size;
+    overflow: hidden;
+}
+
+.f523 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 45px;
+    border-bottom: 2px solid $pri-black;
+}
+
+.name {
+    margin-left: 6px;
+    overflow: visible;
+    font-size: 28px;
+    font-weight: bold;
+    color: $pri-red;
+}
+
+.price {
+    margin-right: 6px;
+    overflow: visible;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@container (width <= 260px) {
+    .name {
+        font-size: calc(100cqw / 10);
+    }
+
+    .price {
+        font-size: calc(100cqw / 12);
+    }
+}
+
+.f511wrap {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+
+    // scrollbar-width: none; /* Firefox */
+}
+
+.f511 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    padding: 0 10px;
+    margin-top: 8px;
+    margin-left: 9px;
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    background: $pri-red;
+    border-radius: 33px;
+}
+
+.wrapper {
+    position: relative;
+    display: flex; /* 追加 */
+    align-items: center; /* 縦中央寄せ */
+    justify-content: center; /* 横中央寄せ */
+    width: min(80%, 300px);
+    aspect-ratio: 270 / 163;
+    margin: 8px auto 20px;
+    overflow: hidden;
+}
+
+.back {
+    position: absolute;
+}
+
+.squareImage {
+    position: relative;
+    width: 50%; /* 親の50%の幅 */
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    margin: 0 auto; /* 横中央寄せ */
+}
+
+.desc {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.f504 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 auto 50px;
+    color: $pri-black;
+
+    @include media(lg) {
+        width: 80%;
+    }
+
+    @include media(sm) {
+        margin-inline: 20px;
+    }
+}
+
+.small_gap {
+    margin-bottom: 30px;
+
+    @include media(sm) {
+        margin-bottom: 25px;
+    }
+}
+
+.m {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+
+    /* デフォルトは右寄せ */
+    justify-content: flex-start;
+    padding-left: 12px;
+    border-left: 4px solid #de0d22;
+}
+
+.zaiko {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #0b0e0f;
+}
+
+.stock_desc {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* モバイル対応 */
+@include media(sm) {
+    .zaiko {
+        font-size: 22px;
+    }
+
+    .stock_desc {
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 30px;
+        margin: auto;
+    }
+
+    .goods {
+        width: 100%;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .desc {
+        font-size: 14px;
+    }
+
+    .f511 {
+        margin-top: 11px;
+        font-size: 12px;
+    }
+
+    .wrapper {
+        margin: 11px auto 20px;
     }
 }
