@@ -21,7 +21,7 @@ export default function Page() {
             >
                 <span className="text-[#de0d22]">G</span>oods
             </h1>
-            <div className="md:mb-[50px]">
+            <div className="mb-[45px]">
                 <div className={styles.container}>
                     {/* 商品 */}
                     <div className={styles.goods}>

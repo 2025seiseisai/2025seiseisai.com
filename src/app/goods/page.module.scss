@@ -16,6 +16,7 @@ $pri-black: #0b0e0f;
 .goods {
     display: flex;
     flex-direction: column;
+    container-type: inline-size;
     overflow: hidden;
 }
 
@@ -40,6 +41,16 @@ $pri-black: #0b0e0f;
     overflow: visible;
     font-size: 24px;
     font-weight: bold;
+}
+
+@container (width <= 260px) {
+    .name {
+        font-size: calc(100cqw / 10);
+    }
+
+    .price {
+        font-size: calc(100cqw / 12);
+    }
 }
 
 .f511wrap {
@@ -98,7 +109,7 @@ $pri-black: #0b0e0f;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin: 45px auto 50px;
+    margin: 0 auto 50px;
 
     @include media(lg) {
         width: 80%;
@@ -173,6 +184,7 @@ $pri-black: #0b0e0f;
     }
 
     .wrapper {
+        width: min(80%, 300px);
         margin: 11px auto 20px;
     }
 }
