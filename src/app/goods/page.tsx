@@ -30,10 +30,10 @@ export default function Page() {
                             <h2 className={styles.price}>900円</h2>
                         </div>
                         <div className={styles.f511wrap}>
-                            <div className={styles.f511}>S:在庫あり</div>
-                            <div className={styles.f511}>M:在庫あり</div>
-                            <div className={styles.f511}>L:在庫あり</div>
-                            <div className={styles.f511}>XL:在庫あり</div>
+                            <div className={styles.f511}>S: 在庫あり</div>
+                            <div className={styles.f511}>M: 在庫あり</div>
+                            <div className={styles.f511}>L: 在庫あり</div>
+                            <div className={styles.f511}>XL: 在庫あり</div>
                         </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
@@ -51,8 +51,8 @@ export default function Page() {
                             <h2 className={styles.price}>300円</h2>
                         </div>
                         <div className={styles.f511wrap}>
-                            <div className={styles.f511}>赤:在庫あり</div>
-                            <div className={styles.f511}>黒:在庫あり</div>
+                            <div className={styles.f511}>赤: 在庫あり</div>
+                            <div className={styles.f511}>黒: 在庫あり</div>
                         </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
