@@ -69,7 +69,9 @@ export default function Page() {
                             <h2 className={styles.name}>マグカップ</h2>
                             <h2 className={styles.price}>600円</h2>
                         </div>
-                        <div className={styles.f511}>在庫あり</div>
+                        <div className={styles.f511wrap}>
+                            <div className={styles.f511}>在庫あり</div>
+                        </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
@@ -83,7 +85,9 @@ export default function Page() {
                             <h2 className={styles.name}>トートバッグ</h2>
                             <h2 className={styles.price}>600円</h2>
                         </div>
-                        <div className={styles.f511}>在庫あり</div>
+                        <div className={styles.f511wrap}>
+                            <div className={styles.f511}>在庫あり</div>
+                        </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
@@ -97,7 +101,9 @@ export default function Page() {
                             <h2 className={styles.name}>キーホルダー</h2>
                             <h2 className={styles.price}>300円</h2>
                         </div>
-                        <div className={styles.f511}>在庫あり</div>
+                        <div className={styles.f511wrap}>
+                            <div className={styles.f511}>在庫あり</div>
+                        </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
