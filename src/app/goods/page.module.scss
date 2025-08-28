@@ -11,8 +11,15 @@ $pri-black: #0b0e0f;
     }
 
     @include media(lg) {
-        grid-template-columns: repeat(3, 1fr); /* PCは3列 */
         width: 80%;
+    }
+
+    @media (width >= 560px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width >= 1024px) {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -170,7 +177,6 @@ $pri-black: #0b0e0f;
     .container {
         flex-direction: column;
         gap: 30px;
-        align-items: center;
         margin: auto;
     }
 

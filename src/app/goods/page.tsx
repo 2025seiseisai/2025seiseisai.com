@@ -44,6 +44,7 @@ export default async function Page() {
                             <div className={styles.f511}>M: {stock["Tシャツ-M"]}</div>
                             <div className={styles.f511}>L: {stock["Tシャツ-L"]}</div>
                             <div className={styles.f511}>XL: {stock["Tシャツ-XL"]}</div>
+                            <div style={{ marginRight: "9px" }} />
                         </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
@@ -63,6 +64,7 @@ export default async function Page() {
                         <div className={styles.f511wrap}>
                             <div className={styles.f511}>赤: {stock["ボールペン-赤"]}</div>
                             <div className={styles.f511}>黒: {stock["ボールペン-黒"]}</div>
+                            <div style={{ marginRight: "9px" }} />
                         </div>
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
