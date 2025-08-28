@@ -26,10 +26,13 @@ export default async function Page() {
             >
                 <span className="text-[#de0d22]">G</span>oods
             </h1>
-            <p className="mb-[10px] ml-[20px] text-[16px] text-pri-black md:mb-[16px] md:ml-[10svw] md:text-[18px]">
-                多数のグッズを取り揃えています。
+            <p
+                className="mb-[10px] w-full px-[20px] text-[16px] text-pri-black md:mb-[16px] md:px-[10svw]
+                    md:text-[18px]"
+            >
+                こだわりのオリジナルグッズを取り揃えております。
                 <br />
-                菁々祭訪問の記念にどうぞ。売り切れに注意！
+                来場記念におひとついかがでしょうか？
             </p>
             <div className="mb-[45px] text-pri-black">
                 <div className={styles.container}>
@@ -53,7 +56,7 @@ export default async function Page() {
                             </div>
                         </div>
                         <p className={styles.desc}>
-                            第61回菁々祭のオリジナルTシャツです。S,M,L,XLのサイズをご用意しております。
+                            第61回菁々祭のオリジナルTシャツです。S･M･L･XLのサイズをご用意しております。
                         </p>
                     </div>
                     <div className={styles.goods}>
@@ -95,7 +98,7 @@ export default async function Page() {
                                 <Image src={mag} alt="マグカップ" fill style={{ objectFit: "cover" }} />
                             </div>
                         </div>
-                        <p className={styles.desc}>ロゴ入りのマグカップです。優雅なひと時をお楽しみください。</p>
+                        <p className={styles.desc}>ロゴ入りのマグカップです。優雅なひとときをお楽しみください。</p>
                     </div>
                     <div className={styles.goods}>
                         <div className={styles.f523}>
@@ -128,7 +131,7 @@ export default async function Page() {
                             </div>
                         </div>
                         <p className={styles.desc}>
-                            お土産などに適したアクリルキーホルダーです。カバンなどに付けてみては如何でしょうか。
+                            お土産などに適したアクリルキーホルダーです。カバンなどに付けてみてはいかがでしょうか。
                         </p>
                     </div>
                 </div>
@@ -136,13 +139,18 @@ export default async function Page() {
 
             <div className={`${styles.f504} ${styles.small_gap}`}>
                 <div className={styles.m}>
-                    <h2 className={styles.zaiko}>整理券について</h2>
+                    <h2 className={styles.zaiko}>購入に関する注意点</h2>
                 </div>
-                <p className={styles.stock_desc}>
-                    グッズの購入には整理券が必要となります。
-                    <br />
-                    グラウンドの整理券配布場所にてお求めください。
-                </p>
+                <ul
+                    className="flex w-full list-disc flex-col gap-1 pl-6 text-[16px] font-normal text-pri-black
+                        md:text-[18px]"
+                >
+                    <li>グッズの購入には整理券が必要です。</li>
+                    <li>整理券はグラウンドの配布場所にてお求めください。</li>
+                    <li>整理券があっても必ず購入できるとは限りません。</li>
+                    <li>購入はお一人様につき各グッズ2点までです。</li>
+                    <li>在校生は購入できません。</li>
+                </ul>
             </div>
 
             <div className={styles.f504}>
