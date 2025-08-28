@@ -115,7 +115,7 @@ export default function Page() {
                 <div className={styles.m}>
                     <h2 className={styles.zaiko}>在庫について</h2>
                 </div>
-                <p>
+                <p className={styles.stock_desc}>
                     随時更新しておりますが多少の誤差がある場合がございます。
                     <br />
                     詳しくはグッズ販売所の掲示、もしくはスタッフにお尋ねください。

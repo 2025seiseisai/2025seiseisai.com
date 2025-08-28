@@ -3,13 +3,13 @@ $pri-black: #0b0e0f;
 
 .container {
     display: grid;
-    gap: 20px;
-    width: 80%;
+    gap: 35px;
     padding: 0 20px;
     margin: 0 auto;
 
     @include media(lg) {
         grid-template-columns: repeat(3, 1fr); /* PCは3列 */
+        width: 80%;
     }
 }
 
@@ -17,35 +17,34 @@ $pri-black: #0b0e0f;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: #fff;
-    border-radius: 8px;
 }
 
 .f523 {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     height: 45px;
     border-bottom: 2px solid $pri-black;
 }
 
 .name {
-    margin-left: 10px;
+    margin-left: 6px;
     overflow: visible;
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: bold;
     color: $pri-red;
 }
 
 .price {
-    margin-right: 10px;
+    margin-right: 6px;
     overflow: visible;
-    font-size: 1.4rem;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .f511wrap {
     display: flex;
+    width: 100%;
     overflow: auto;
     white-space: nowrap;
     scrollbar-width: none; /* Firefox */
@@ -54,11 +53,11 @@ $pri-black: #0b0e0f;
 .f511 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: fit-content;
-    padding: 2px 10px;
+    padding: 0 10px;
     margin-top: 8px;
-    margin-left: 16px;
+    margin-left: 9px;
     font-size: 13px;
     font-weight: 500;
     color: white;
@@ -89,16 +88,17 @@ $pri-black: #0b0e0f;
 }
 
 .desc {
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    margin: 0 auto;
     font-size: 16px;
+    font-weight: 400;
 }
 
 .f504 {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin: 60px auto;
+    margin: 45px auto 50px;
 
     @include media(lg) {
         width: 80%;
@@ -128,26 +128,51 @@ $pri-black: #0b0e0f;
     color: #0b0e0f;
 }
 
+.stock_desc {
+    font-size: 18px;
+    font-weight: 400;
+}
+
 /* モバイル対応 */
 @include media(sm) {
     .zaiko {
-        font-size: 20px;
+        font-size: 22px;
+    }
+
+    .stock_desc {
+        font-size: 16px;
     }
 
     .container {
         flex-direction: column;
+        gap: 30px;
         align-items: center;
         margin: auto;
     }
 
     .goods {
         width: 100%;
-        max-width: 90%;
         margin: auto;
     }
 
-    .name,
+    .name {
+        font-size: 24px;
+    }
+
     .price {
-        font-size: 1.2rem;
+        font-size: 20px;
+    }
+
+    .desc {
+        font-size: 14px;
+    }
+
+    .f511 {
+        margin-top: 11px;
+        font-size: 12px;
+    }
+
+    .wrapper {
+        margin: 11px auto 20px;
     }
 }
