@@ -115,6 +115,7 @@ $pri-black: #0b0e0f;
     flex-direction: column;
     gap: 8px;
     margin: 0 auto 50px;
+    color: $pri-black;
 
     @include media(lg) {
         width: 80%;
