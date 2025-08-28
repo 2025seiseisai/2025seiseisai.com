@@ -86,7 +86,7 @@ $pri-black: #0b0e0f;
     display: flex; /* 追加 */
     align-items: center; /* 縦中央寄せ */
     justify-content: center; /* 横中央寄せ */
-    width: 80%;
+    width: min(80%, 300px);
     aspect-ratio: 270 / 163;
     margin: 8px auto 20px;
     overflow: hidden;
@@ -176,7 +176,6 @@ $pri-black: #0b0e0f;
 
     .goods {
         width: 100%;
-        margin: auto;
     }
 
     .name {
@@ -197,7 +196,6 @@ $pri-black: #0b0e0f;
     }
 
     .wrapper {
-        width: min(80%, 300px);
         margin: 11px auto 20px;
     }
 }
