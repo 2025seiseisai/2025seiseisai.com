@@ -67,7 +67,12 @@ export default async function Page() {
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image src={pen} alt="ボールペン" fill style={{ objectFit: "cover" }} />
+                                <Image
+                                    src={pen}
+                                    alt="ボールペン"
+                                    fill
+                                    style={{ objectFit: "cover", transform: "scale(1.3)" }}
+                                />
                             </div>
                         </div>
                         <p className={styles.desc}>
