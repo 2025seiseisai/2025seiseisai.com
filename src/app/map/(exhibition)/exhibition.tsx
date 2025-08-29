@@ -36,16 +36,34 @@ export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
     );
 }
 
+const tags = [
+  {
+    label: 'スタンプラリー',
+    color: 'red',
+    description: 'スタンプラリーを行っている団体です。',
+  },
+  {
+    label: 'イベント',
+    color: 'orange',
+    description: 'イベントを行っている団体です。詳しくは Events をチェック！',
+  },
+  {
+    label: 'バザー',
+    color: 'yellow',
+    description: 'バザーでの販売を行っている団体です。',
+  },
+];
+
+
 export function Exhibition2() {
     return (
-        <div className={styles.tagContainer}>
-            <p className={styles.tagtitle}>各種タグについて</p>
-            <p className={styles.tagiconstamp}>スタンプラリー</p>
-            <p className={styles.tagtextstamp}>スタンプラリーを行っている団体です。</p>
-            <p className={styles.tagiconevents}>イベント</p>
-            <p className={styles.tagtextevents}>イベントを行っている団体です。詳しくは<link><a className={styles.underline} >Evens</a></link>をチェック！</p>
-            <p className={styles.tagiconbazaar}>バザー</p>
-            <p className={styles.tagtextbazaar}>バザーでの販売を行っている団体です。</p>
+        <div className={styles.container}>
+            {tags.map((tag, index) => (
+                <div key={index} className={styles.tagItem}>
+                    <span className={`${styles.tag} ${styles[tag.color]}`}>{tag.label}</span>
+                    <span className={styles.description}>{tag.description}</span>
+                </div>
+            ))}
         </div>
     );
 }

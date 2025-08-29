@@ -71,88 +71,44 @@
         text-decoration: underline;
     }
 
-    .tagContainer {
-        display: absolute;
+    .container {
         width: 680px;
-        height: auto;
-        margin-top: 24px;
-        margin-left: 160px;
-        border: 1.5px solid red;
+        padding: 16px;
+        font-family: sans-serif;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
     }
 
-    .tagtitle {
+    .tagItem {
         display: flex;
-        margin-top: 30px;
-        margin-left: 160px;
-        font-size: 20px;
-        font-style: medium;
-        font-weight: noto sans jp;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .tag {
+        min-width: 100px;
+        padding: 4px 12px;
+        margin-right: 12px;
+        font-weight: bold;
+        color: white;
         text-align: center;
+        border-radius: 4px;
     }
 
-    .tagiconstamp{
-        display: flex;
-        width: auto;
-        height: 24px;
-        margin-top: 52px;
-        margin-left: 52px;
-        text-align: center;
-        background-color: #de0d22;
-        border-radius: 10px;
+    .red {
+        background-color: #e74c3c;
     }
 
-    .tagiconevents{
-        display: flex;
-        width: auto;
-        height: 24px;
-        margin-top: 89px;
-        margin-left: 52px;
-        text-align: center;
-        background-color: #f4631e;
-        border-radius: 10px;
+    .orange {
+        background-color: #f39c12;
     }
 
-    .tagiconbazaar{
-        display: flex;
-        width: auto;
-        height: 24px;
-        margin-top: 126px;
-        margin-left: 52px;
-        text-align: center;
-        background-color: #ff9f00;
-        border-radius: 10px;
+    .yellow {
+        color: #333;
+        background-color: #f1c40f;
     }
 
-    .tagtextstamp{
-        display: flex;
-        width: auto;
-        height: 20px;
-        margin-top: 54px;
-        margin-left: 213px;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: noto sans jp;
-    }
-
-    .tagtextevents{
-        display: flex;
-        width: auto;
-        height: 20px;
-        margin-top: 91px;
-        margin-left: 213px;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: noto sans jp;
-    }
-
-    .tagtextbazaar{
-        display: flex;
-        width: auto;
-        height: 20px;
-        margin-top: 128px;
-        margin-left: 213px;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: noto sans jp;
+    .description {
+        flex: 1;
     }
 }
