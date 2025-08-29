@@ -1,4 +1,3 @@
-/*
 .embla {
     overflow: hidden;
 }
@@ -10,6 +9,28 @@
 .embla__slide {
     flex: 0 0 100%;
     min-width: 0;
+}
+
+// 共通のスタイル
+.example {
+    font-size: 36px;
+    color: black;
+}
+
+// スマホ用のスタイル
+@include media(sm) {
+    .example {
+        background-color: blue;
+    }
+}
+
+// PC用のスタイル
+@include media(lg) {
+    .example {
+        // 上書き可能
+        color: red;
+        background-color: green;
+    }
 }
 
 .introduction {
@@ -48,6 +69,7 @@
     background-color: #de0d2226;
 }
 
+/* 題名 */
 .eventName {
     position: absolute;
     top: 31px;
@@ -59,12 +81,14 @@
     color: #000;
 }
 
+/* 回転 */
 .summary.open {
     .icon {
         transform: rotate(90deg);
     }
 }
 
+/* Playアイコン */
 .icon {
     flex-shrink: 0;
     width: 40px;
@@ -73,6 +97,7 @@
     transition: transform 0.2s ease;
 }
 
+/* Day全体 */
 .detailsDay {
     position: absolute;
     padding: 20px 40px;
@@ -81,6 +106,7 @@
     color: #000;
 }
 
+/* 個別アイコン */
 .detailsDay .detailItem {
     display: flex;
     gap: 12px;
@@ -88,18 +114,21 @@
     margin-bottom: 16px;
 }
 
+/* アイコンサイズ */
 .detailsDay .mappinIcon {
     flex-shrink: 0;
     width: 48px;
     height: 48px;
 }
 
+/* ラベル */
 .detailsDay strong {
     font-size: 24px;
     font-weight: 500;
     color: #000;
 }
 
+/* 詳細 */
 .detailsDay p {
     font-size: 24px;
     color: #000;
@@ -110,6 +139,7 @@
     align-items: center;
 }
 
+/* チケットアイコン用 */
 .ticketPhoto {
     position: absolute;
     top: 35px; // summary の上端から少し下
@@ -120,6 +150,7 @@
     transition: opacity 0.2s ease;
 }
 
+/* details が open の時だけ表示 */
 .details[open] .ticketPhoto {
     opacity: 1;
 }
@@ -131,4 +162,3 @@
     width: 92px;
     height: 42px;
 }
-*/

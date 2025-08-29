@@ -3,7 +3,7 @@
 "use client";
 import React, { useState } from "react";
 import { eventData, locations} from "./event-data";
-import pagestyles from "./page.module.scss";
+import pagestyles from "./event.module.scss";
 import timestyles from "./time.module.scss";
 import Events from "./events-photo/Events.svg"
 import Play from "./events-photo/play.svg";

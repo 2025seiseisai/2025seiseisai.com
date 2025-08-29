@@ -1,5 +1,4 @@
 import childProcess from "child_process";
-import "dotenv/config";
 import extensions from "../.vscode/extensions.json" with { type: "json" };
 function checkEnvFile(name) {
     if (process.env[name] === undefined) {
