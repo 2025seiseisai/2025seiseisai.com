@@ -22,9 +22,9 @@ export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
                         <div className={styles.location}>{data.location}</div>
                         <div className={styles.title}>{name}</div>
                         <div className={styles.buttons}>
-                            {data.stamp && <button className={styles.button}>スタンプラリー</button>}
-                            {data.events && <button className={styles.button}>イベント</button>}
-                            <button className={styles.button}>バザー</button>
+                            {data.stamp && <button className={styles.stampbutton}>スタンプラリー</button>}
+                            {data.events && <button className={styles.eventsbutton}>イベント</button>}
+                            <button className={styles.bazaarbutton}>バザー</button>
                         </div>
                     </div>
                     <Link href="https://seiseisai.com/"  target="_blank" rel="noopener noreferrer">
@@ -45,7 +45,20 @@ const tags = [
   {
     label: 'イベント',
     color: 'orange',
-    description: 'イベントを行っている団体です。詳しくは Events をチェック！',
+    description: (
+    <>
+      イベントを行っている団体です。詳しくは{' '}
+      <a
+        href="http://localhost:3000/2025"
+        className={styles.highlight}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Events
+      </a>{' '}
+      をチェック！
+    </>
+  ),
   },
   {
     label: 'バザー',
@@ -58,6 +71,7 @@ const tags = [
 export function Exhibition2() {
     return (
         <div className={styles.container}>
+            <p className={styles.tagname}>各種タグについて</p>
             {tags.map((tag, index) => (
                 <div key={index} className={styles.tagItem}>
                     <span className={`${styles.tag} ${styles[tag.color]}`}>{tag.label}</span>
