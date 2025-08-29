@@ -16,11 +16,11 @@ function Nameplate({ name }: { name: string }) {
     const icon = icons[name] ?? icons["fallback"] ?? "";
     return (
         <li>
-            <div className="mt-[8px] inline-flex w-full items-center">
+            <div className={styles.club_magazine_detail}>
                 <div className={styles.club_icons} dangerouslySetInnerHTML={{ __html: icon }} />
-                <p className="ml-[8px] text-[20px]">{name}</p>
+                <p className={styles.club_name}>{name}</p>
                 <Link target="_blank" rel="noopener noreferrer" href="" className={styles.magazine_download_button}>
-                    読む<Icon2 className="ml-[4px] h-[12px] w-[12px]"></Icon2>
+                    読む<Icon2 className={styles.magazine_download_icon}></Icon2>
                 </Link>
             </div>
         </li>
@@ -31,7 +31,7 @@ function Container({ title, children }: { title: string; children: React.ReactNo
     return (
         <details className={styles.club_magazine_headline} name="club">
             <summary className="items-center">
-                <p className="ml-[10px] text-[24px]">{title}</p>
+                <p className={styles.club_subtitle}>{title}</p>
                 <Icon_open className={`${styles.magazine_icon} ${styles.icon_open}`}></Icon_open>
                 <Icon_closed className={`${styles.magazine_icon} ${styles.icon_closed}`}></Icon_closed>
             </summary>
@@ -76,26 +76,26 @@ export default function Page() {
                     </div>
 
                     {/* パンフレットダウンロードについての説明 */}
-                    <div className="mt-[16px]">
-                        <p className="text-[16px]">
+                    <div className={styles.pamphret_detail}>
+                        <p className={styles.text}>
                             校門でのパンフレット配布もございますが、ダウンロードしておくと便利です。
                             <br />
                             用途に合わせて、高画質版･中画質版･低画質版をご用意しました。東大寺学園は電波が弱い場所が多いため､校内では低画質版のダウンロードをおすすめします。
                         </p>
                         <div className={styles.pamphlet_download}>
-                            <div className="mb-[8px] inline-flex items-center">
+                            <div className={styles.pamphret_download_detail}>
                                 <p>高画質版(47MB)</p>
                                 <a download="" href="" className={styles.pamphlet_download_button}>
                                     ダウンロード <Icon className={styles.download_icon}></Icon>
                                 </a>
                             </div>
-                            <div className="mb-[8px] inline-flex items-center">
+                            <div className={styles.pamphret_download_detail}>
                                 <p>中画質版(11MB)</p>
                                 <a download="" href="" className={styles.pamphlet_download_button}>
                                     ダウンロード <Icon className={styles.download_icon}></Icon>
                                 </a>
                             </div>
-                            <div className="mb-[8px] inline-flex items-center">
+                            <div className={styles.pamphret_download_detail}>
                                 <p>低画質版(6MB)</p>
                                 <a download="" href="" className={styles.pamphlet_download_button}>
                                     ダウンロード <Icon className={styles.download_icon}></Icon>
@@ -106,7 +106,7 @@ export default function Page() {
                 </div>
 
                 {/* 部誌について */}
-                <div className="mt-[24px] mb-[45px]">
+                <div className={styles.magazine_all}>
                     <div className={styles.subtitle}>
                         <div>
                             <p className={`${styles.subtitle_English} ${styles.center}`}>Club magazine</p>
@@ -117,7 +117,7 @@ export default function Page() {
 
                     {/* 部誌についての説明 */}
 
-                    <div>
+                    <div className={styles.magazine_detail}>
                         <div className={styles.magazine_total}>
                             <Container title="あ行">
                                 {club_A.map((club) => (
