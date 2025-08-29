@@ -1,10 +1,7 @@
 import { exhibitionIcons } from "../(exhibition)/exhibition-icons"; // ファイルの先頭でimport
 
-function Bazaar() {
-    // SVGがdivで囲まれて埋め込まれる
-    // divの大きさを変えることでSVGの大きさも変わる
-    return <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />;
-}
+   // return <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />;
+
 import { ExhibitionFloor, locations, exhibitionData } from "./exhibition-data";
 import styles from "./page.module.scss";
 import Link from "next/link";
@@ -16,7 +13,7 @@ export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
             {filteredExs.map(([name, data]) => (
                 <div key={name} className={styles.card}>
                     <div className={styles.icon}>
-                        <img src={data.icon} alt={`${name} icon`} className={styles.iconImage} />
+                        <div dangerouslySetInnerHTML={{ __html: exhibitionIcons[name] }} />
                     </div>
                     <div className={styles.content}>
                         <div className={styles.location}>{data.location}</div>
