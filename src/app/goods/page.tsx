@@ -90,7 +90,7 @@ export default async function Page() {
                             </div>
                         </div>
                         <p className={styles.desc}>
-                            「分秒」のロゴがあしらわれたチャームのついたボールペンです。赤・黒の２種類をご用意しております。
+                            「分秒」のロゴがあしらわれたチャームのついたボールペンです。赤･黒の２種類をご用意しております。
                         </p>
                     </div>
                     <div className={styles.goods}>
