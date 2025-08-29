@@ -5,16 +5,12 @@ import React, { useState } from "react";
 import { eventData, locations} from "./event-data";
 import pagestyles from "./page.module.scss";
 import timestyles from "./time.module.scss";
-import Events from "./Ebents.svg"
-import Play from "./play.svg";
-import Ticket from "./ticket.svg";
-import Mappin from "./map-pin.svg";
-import Seriken from "./seriken.svg";
-import Utenji from "./utenji.svg";
-
-export const metadata = {
-    title: "Events | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
-};
+import Events from "./events-photo/Events.svg"
+import Play from "./events-photo/play.svg";
+import Ticket from "./events-photo/ticket.svg";
+import Mappin from "./events-photo/map-pin.svg";
+import Seriken from "./events-photo/seriken.svg";
+import Utenji from "./events-photo/utenji.svg";
 
 <Events className={pagestyles.events} />
 

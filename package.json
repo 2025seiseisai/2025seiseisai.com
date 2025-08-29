@@ -4,8 +4,8 @@
     "private": true,
     "scripts": {
         "deploy": "node ./scripts/deploy.mjs",
-        "dev": "node --env-file=.env ./scripts/prepare.mjs && npm install && prisma generate && opener http://localhost:3000/2025 && node --env-file=.env ./scripts/launch.mjs",
-        "build": "prisma generate && next build --turbopack",
+        "dev": "next build",
+        "build": "next start",
         "start": "next start",
         "lint": "next lint && stylelint \"src/**/*.(scss|less|css)\" && prettier --check .",
         "format": "next lint --fix && stylelint \"src/**/*.(scss|less|css)\" --fix && prettier --write .",
@@ -28,6 +28,7 @@
     "dependencies": {
         "@next/third-parties": "^15.5.0",
         "@prisma/client": "^6.14.0",
+        "dotenv": "^17.2.1",
         "gray-matter": "^4.0.3",
         "holy-loader": "^2.3.13",
         "lottie-react": "^2.4.1",
@@ -55,6 +56,7 @@
         "@types/three": "^0.179.0",
         "autoprefixer": "^10.4.21",
         "babel-plugin-react-compiler": "^19.1.0-rc.2",
+        "cross-env": "^10.0.0",
         "eslint": "^9",
         "eslint-config-next": "15.5.0",
         "eslint-plugin-better-tailwindcss": "^3.7.5",
@@ -65,7 +67,6 @@
         "postcss-preset-env": "^10.3.0",
         "prettier": "^3.6.2",
         "prettier-plugin-classnames": "^0.8.2",
-
         "prisma": "^6.14.0",
         "stylelint": "^16.23.1",
         "stylelint-config-recess-order": "^7.2.0",
