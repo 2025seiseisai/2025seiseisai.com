@@ -52,7 +52,16 @@ export default async function Page() {
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image src={tshirt} alt="Tシャツ" fill style={{ objectFit: "cover" }} />
+                                <Image
+                                    src={tshirt}
+                                    alt="Tシャツ"
+                                    fill
+                                    style={{
+                                        objectFit: "cover",
+                                        transform: "translateX(-3%) scale(1.04)",
+                                        filter: "brightness(0.98)",
+                                    }}
+                                />
                             </div>
                         </div>
                         <p className={styles.desc}>
@@ -76,7 +85,7 @@ export default async function Page() {
                                     src={pen}
                                     alt="ボールペン"
                                     fill
-                                    style={{ objectFit: "cover", transform: "scale(1.3)" }}
+                                    style={{ objectFit: "cover", transform: "scale(1.4)" }}
                                 />
                             </div>
                         </div>
@@ -95,7 +104,16 @@ export default async function Page() {
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image src={mag} alt="マグカップ" fill style={{ objectFit: "cover" }} />
+                                <Image
+                                    src={mag}
+                                    alt="マグカップ"
+                                    fill
+                                    style={{
+                                        objectFit: "cover",
+                                        transform: "translateY(4%) scale(1.03)",
+                                        filter: "brightness(1.05)",
+                                    }}
+                                />
                             </div>
                         </div>
                         <p className={styles.desc}>ロゴ入りのマグカップです。優雅なひとときをお楽しみください。</p>
@@ -111,7 +129,16 @@ export default async function Page() {
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image src={ttb} alt="トートバッグ" fill style={{ objectFit: "cover" }} />
+                                <Image
+                                    src={ttb}
+                                    alt="トートバッグ"
+                                    fill
+                                    style={{
+                                        objectFit: "cover",
+                                        transform: "scale(1.125)",
+                                        filter: "brightness(1.15)",
+                                    }}
+                                />
                             </div>
                         </div>
                         <p className={styles.desc}>時計がデザインに取り入れられた使いやすいトートバッグです。</p>
@@ -127,7 +154,12 @@ export default async function Page() {
                         <div className={styles.wrapper}>
                             <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image src={key} alt="Tシャツ1" fill style={{ objectFit: "cover" }} />
+                                <Image
+                                    src={key}
+                                    alt="アクリルキーホルダー"
+                                    fill
+                                    style={{ objectFit: "cover", transform: "scale(1.04)" }}
+                                />
                             </div>
                         </div>
                         <p className={styles.desc}>
