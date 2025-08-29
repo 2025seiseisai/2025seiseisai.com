@@ -194,6 +194,11 @@ export const eventData: EventData[] = [
         day2: [{ location: "体育館", start: "09:00", end: "09:40" }],
     },
     {
+        name: "中1演劇・ハンドベル・ダンス",
+        day1: [],
+        day2: [{ location: "体育館", start: "10:00", end: "10:50" }],
+    },
+    {
         name: "T-1グランプリ",
         day1: [],
         day2: [{ location: "体育館", start: "11:10", end: "11:50" }],

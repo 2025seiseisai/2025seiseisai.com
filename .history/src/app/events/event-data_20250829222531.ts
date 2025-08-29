@@ -35,8 +35,8 @@ export const locations = [
 ] as const;
 
 export const eventNames = [
-    "中2学年演劇", // 中２学年演劇
-    "中1学年発表", // 中１学年発表
+    "中2演劇", // 中２学年演劇
+    "中1合唱・ハンドベル", // 中１学年発表
     "中1ダンス", // 中１学年ダンス
     "チェスのルール説明",
     "和太鼓演奏",
@@ -47,7 +47,8 @@ export const eventNames = [
     "令和の小町コンテスト",
     "T(DJ)²",
     "例の集団", //
-    "中3学年演劇", // 中３学年演劇
+    "中3演劇", // 中３学年演劇
+    "中1演劇・ハンドベル・ダンス", // 重複?
     "T-1グランプリ", // T-1グランプリ
     "マッスルコンテスト",
     "イケてるメンズコンテスト", // イケてるメンズコンテスト
@@ -87,14 +88,14 @@ export const eventNames = [
 
 export const eventData: EventData[] = [
     {
-        name: "中2学年演劇",
+        name: "中2演劇",
         day1: [{ location: "体育館", start: "09:00", end: "09:50" }],
         day2: [],
     },
     {
-        name: "中1学年発表",
+        name: "中1合唱・ハンドベル",
         day1: [{ location: "体育館", start: "10:10", end: "11:00" }],
-        day2: [{ location: "体育館", start: "10:00", end: "10:50" }],
+        day2: [],
     },
     {
         name: "中1ダンス",
@@ -189,9 +190,14 @@ export const eventData: EventData[] = [
         day2: [],
     },
     {
-        name: "中3学年演劇",
+        name: "中3演劇",
         day1: [],
         day2: [{ location: "体育館", start: "09:00", end: "09:40" }],
+    },
+    {
+        name: "中1演劇・ハンドベル・ダンス",
+        day1: [],
+        day2: [{ location: "体育館", start: "10:00", end: "10:50" }],
     },
     {
         name: "T-1グランプリ",

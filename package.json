@@ -5,7 +5,7 @@
     "scripts": {
         "deploy": "node ./scripts/deploy.mjs",
         "dev": "node --env-file=.env ./scripts/prepare.mjs && npm install && prisma generate && opener http://localhost:3000/2025 && node --env-file=.env ./scripts/launch.mjs",
-        "build": "prisma generate && next build",
+        "build": "prisma generate && next build --turbopack",
         "start": "next start",
         "lint": "next lint && stylelint \"src/**/*.(scss|less|css)\" && prettier --check .",
         "format": "next lint --fix && stylelint \"src/**/*.(scss|less|css)\" --fix && prettier --write .",
