@@ -13,7 +13,7 @@ export default function Page() {
                 style={{
                     position: "relative",
                     width: 375,
-                    height: 2020,
+                    height: 2042,
                 }}
             >
                 <div
@@ -47,10 +47,10 @@ export default function Page() {
                 <div
                     style={{
                         position: "absolute",
-                        width: "335px",
-                        height: "285px",
-                        top: "238px",
-                        left: "20px",
+                        width: 335,
+                        height: 285,
+                        top: 238,
+                        left: 20,
                     }}
                 >
                     <div className={`${styles.border_common} ${styles._56}`}>
