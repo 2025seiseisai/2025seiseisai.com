@@ -59,7 +59,7 @@ export default async function Page() {
                                     style={{
                                         objectFit: "cover",
                                         transform: "translateX(-3%) scale(1.04)",
-                                        filter: "brightness(0.96)",
+                                        filter: "brightness(0.98)",
                                     }}
                                 />
                             </div>
