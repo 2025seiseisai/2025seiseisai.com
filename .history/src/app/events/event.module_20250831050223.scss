@@ -118,10 +118,7 @@
 
 .detailItem {
     display: flex;
-    gap: 8px;
     align-items: center;
-    font-size: 14px;
-    color: #000;
 }
 
 /* チケットアイコン用 */
@@ -191,26 +188,11 @@
 }
 
 .content {
-    padding: 6px 8px;
+    padding: 12px 16px;
 }
-
 
 .dayTitle {
     margin: 8px 0;
     font-weight: 600;
     color: #000;
-}
-
-.mappinIcon {
-    flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-}
-
-.location {
-  min-width: 60px;
-}
-
-.time {
-  min-width: 120px;
 }

@@ -198,23 +198,23 @@ export default function TimeTablePage() {
                         <>
                             <h4 className={pagestyles.dayTitle}>【2日目】</h4>
                             <div className={pagestyles.detailsDay}>
-                                {event.day2.map((detail, j) => (
-                                    <div key={j} className={pagestyles.detailItem}>
-                                    <Mappin className={pagestyles.mappinIcon} />
-                                    <span className={pagestyles.location}>{detail.location}</span>
-                                    <span className={pagestyles.time}>{detail.start} - {detail.end}</span>
-                                    <span className={pagestyles.label}>{detail.label}</span>
-                                </div>
-                                ))}
-                            </div>
-                        </>
-                        )}
-
-                        {/* 説明文 */}
-                            {event.description && (
-                                <p className={pagestyles.description}>{event.description}</p>
-                            )}
+                            {event.day2.map((detail, j) => (
+                            <div key={j} className={pagestyles.detailItem}>
+                            <Mappin className={pagestyles.mappinIcon} />
+                            <span className={pagestyles.location}>{detail.location}</span>
+                            <span className={pagestyles.time}>{detail.start} - {detail.end}</span>
+                            <span className={pagestyles.label}>{detail.label}</span>
                         </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {/* 説明文 */}
+      {event.description && (
+        <p className={pagestyles.description}>{event.description}</p>
+                            )}
+                            </div>
                     </details>
                 );
             })}

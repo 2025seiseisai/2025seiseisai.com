@@ -204,17 +204,17 @@ export default function TimeTablePage() {
                                     <span className={pagestyles.location}>{detail.location}</span>
                                     <span className={pagestyles.time}>{detail.start} - {detail.end}</span>
                                     <span className={pagestyles.label}>{detail.label}</span>
-                                </div>
-                                ))}
-                            </div>
-                        </>
-                        )}
+                                    </div>
+                                    ))}
+                                    </div>
+                                    </>
+                                )}
 
-                        {/* 説明文 */}
-                            {event.description && (
-                                <p className={pagestyles.description}>{event.description}</p>
-                            )}
-                        </div>
+                            {/* 説明文 */}
+                                    {event.description && (
+                                    <p className={pagestyles.description}>{event.description}</p>
+                                )}
+                            </div>
                     </details>
                 );
             })}

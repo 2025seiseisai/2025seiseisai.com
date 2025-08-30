@@ -210,11 +210,11 @@ export default function TimeTablePage() {
                         </>
                         )}
 
-                        {/* 説明文 */}
-                            {event.description && (
-                                <p className={pagestyles.description}>{event.description}</p>
-                            )}
-                        </div>
+                            {/* 説明文 */}
+                                    {event.description && (
+                                    <p className={pagestyles.description}>{event.description}</p>
+                                )}
+                            </div>
                     </details>
                 );
             })}

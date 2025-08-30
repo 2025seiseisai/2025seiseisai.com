@@ -214,7 +214,7 @@ export default function TimeTablePage() {
                             {event.description && (
                                 <p className={pagestyles.description}>{event.description}</p>
                             )}
-                        </div>
+                            </div>
                     </details>
                 );
             })}

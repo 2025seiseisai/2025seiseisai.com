@@ -176,45 +176,45 @@ export default function TimeTablePage() {
                         )}
 
                         <div className={pagestyles.content}>
-                        {/* Day1 */}
-                        {event.day1.length > 0 && (
-                        <>
-                            <h4 className={pagestyles.dayTitle}>【1日目】</h4>
-                            <div className={pagestyles.detailsDay}>
-                                {event.day1.map((detail, j) => (
-                            <div key={j} className={pagestyles.detailItem}>
-                            <Mappin className={pagestyles.mappinIcon} />
-                            <span className={pagestyles.location}>{detail.location}</span>
-                            <span className={pagestyles.time}>{detail.start} - {detail.end}</span>
-                            <span className={pagestyles.label}>{detail.label}</span>
-                        </div>
-                        ))}
-                        </div>
-                        </>
-                        )}
+      {/* Day1 */}
+      {event.day1.length > 0 && (
+        <>
+          <h4 className={pagestyles.dayTitle}>【1日目】</h4>
+          <div className={pagestyles.detailsDay}>
+            {event.day1.map((detail, j) => (
+              <div key={j} className={pagestyles.detailItem}>
+                <Mappin className={pagestyles.mappinIcon} />
+                <span className={pagestyles.location}>{detail.location}</span>
+                <span className={pagestyles.time}>{detail.start} - {detail.end}</span>
+                <span className={pagestyles.label}>{detail.label}</span>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
-                        {/* Day2 */}
-                        {event.day2.length > 0 && (
-                        <>
-                            <h4 className={pagestyles.dayTitle}>【2日目】</h4>
-                            <div className={pagestyles.detailsDay}>
-                                {event.day2.map((detail, j) => (
-                                    <div key={j} className={pagestyles.detailItem}>
-                                    <Mappin className={pagestyles.mappinIcon} />
-                                    <span className={pagestyles.location}>{detail.location}</span>
-                                    <span className={pagestyles.time}>{detail.start} - {detail.end}</span>
-                                    <span className={pagestyles.label}>{detail.label}</span>
-                                </div>
-                                ))}
-                            </div>
-                        </>
-                        )}
+      {/* Day2 */}
+      {event.day2.length > 0 && (
+        <>
+          <h4 className={pagestyles.dayTitle}>【2日目】</h4>
+          <div className={pagestyles.detailsDay}>
+            {event.day2.map((detail, j) => (
+              <div key={j} className={pagestyles.detailItem}>
+                <Mappin className={pagestyles.mappinIcon} />
+                <span className={pagestyles.location}>{detail.location}</span>
+                <span className={pagestyles.time}>{detail.start} - {detail.end}</span>
+                <span className={pagestyles.label}>{detail.label}</span>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
-                        {/* 説明文 */}
-                            {event.description && (
-                                <p className={pagestyles.description}>{event.description}</p>
+      {/* 説明文 */}
+      {event.description && (
+        <p className={pagestyles.description}>{event.description}</p>
                             )}
-                        </div>
+                            </div>
                     </details>
                 );
             })}
