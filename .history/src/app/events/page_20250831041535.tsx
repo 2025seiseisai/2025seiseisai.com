@@ -163,6 +163,11 @@ export default function TimeTablePage() {
                         className={pagestyles.accordion}
                         open={isOpen}
                         onToggle={(e) => toggleOpen(i, (e.target as HTMLDetailsElement).open)}
+                        style={{
+                            width: "335px",
+                            overflow: "hidden",
+                            transition: "height 0.3s ease",
+                        }}
                     >
                         <summary className={`${pagestyles.summary} ${isOpen ? pagestyles.open : ""}`}>
                             <span className={pagestyles.eventName}>{event.name}</span>

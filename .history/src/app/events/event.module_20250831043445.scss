@@ -73,7 +73,6 @@
 
 /* Day全体 */
 .detailsDay {
-    margin: 12px 16px;
     font-size: 16px;
     font-weight: 500;
     color: #000;
@@ -174,7 +173,7 @@
     width: 335px;
     overflow: hidden;
     background: #de0d2226;
-    border: 1px solid #de0d2226;
-    border-radius: 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
 }

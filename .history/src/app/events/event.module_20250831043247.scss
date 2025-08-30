@@ -66,14 +66,14 @@
 }
 
 .ticketicon {
+     margin: 8px 0 0 16px;
     width: 54px;
     height: 14px;
-    margin: 8px 0 0 16px;
 }
 
 /* Day全体 */
 .detailsDay {
-    margin: 12px 16px;
+    position: absolute;
     font-size: 16px;
     font-weight: 500;
     color: #000;
@@ -115,9 +115,10 @@
 
 /* チケットアイコン用 */
 .ticketPhoto {
-    width: 54px;
+    top: 40px; // summary の上端から少し下
+    left: 40px; // アコーディオン右端から余白
+    width: 54px; // SVG の幅
     height: 14px;
-    margin: 8px 0 0 16px;
     opacity: 0;
     transition: opacity 0.2s ease;
 }
@@ -173,8 +174,8 @@
 .accordion {
     width: 335px;
     overflow: hidden;
-    background: #de0d2226;
-    border: 1px solid #de0d2226;
-    border-radius: 0;
+    background: #DE0D2226;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
 }
