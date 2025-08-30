@@ -112,10 +112,11 @@
     width: 100%;
     max-width: 400px;
     height: auto;
-    min-height: calc(105px * 8 + 87px);
+    min-height: 0;
     overflow-y: visible;
     background: #fff;
     border-radius: 8px;
+    p
 }
 
 .timelineLines {
@@ -228,6 +229,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+.page p {
+    display: none;
 }
 
 .eventsIcon {

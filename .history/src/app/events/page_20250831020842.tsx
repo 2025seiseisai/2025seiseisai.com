@@ -61,7 +61,6 @@ export default function TimeTablePage() {
 
     const HOUR_HEIGHT = 105;
     const OFFSET_TOP = 53;
-    const halfHours = Array.from({ length: 8 * 2 + 1 }, (_, i) => i * 0.5);
 
     // --- 時間目盛り ---
     const hours = ["09", "10", "11", "12", "13", "14", "15", "16", "17"];
@@ -109,10 +108,10 @@ export default function TimeTablePage() {
                                 </div>
 
                                 <div className={timestyles.timelineLines}>
-                                    {halfHours.map((halfHour, idx) => {
-                                    const top = OFFSET_TOP + halfHour * HOUR_HEIGHT; // 30分=0.5時間
-                                    return <Line key={idx} className={timestyles.line} style={{ top: `${top}px` }} />;
-                                    })}
+                                    {hours.map((h, idx) => {
+                                    const top = 272 + idx * 105; // 9:00スタートのオフセット + 1時間105px
+      return <Line key={idx} className={timestyles.line} style={{ top: `${top}px` }} />;
+    })}
                                 </div>
 
                                 {/* イベントバー */}
@@ -150,8 +149,9 @@ export default function TimeTablePage() {
                 </div>
             </div>
 
-            <Utenji className={pagestyles.utenjiIcon} />
-            <Seriken className={pagestyles.serikenIcon} />
+            <Utenji className={pagestyles.utenji} />
+            <Seriken className={pagestyles.seriken} />
+
             <p className={pagestyles.introduction}>イベント紹介一覧</p>
 
             {eventData.map((event, i) => {

@@ -33,6 +33,25 @@
     }
 }
 
+.introduction {
+    position: absolute;
+    top: 360px;
+    left: 160px;
+    width: 512px;
+    height: 93px;
+    font-size: 64px;
+    font-weight: 500;
+    color: #000;
+}
+
+.introductionIcon {
+    position: absolute;
+    top: 360px;
+    left: 160px;
+    width: 12px;
+    height: 98px;
+}
+
 .backIcon {
     position: absolute;
     top: 200px;
@@ -81,6 +100,7 @@
 /* Day全体 */
 .detailsDay {
     position: absolute;
+    padding: 20px 40px;
     font-size: 16px;
     font-weight: 500;
     color: #000;
@@ -103,15 +123,14 @@
 
 /* ラベル */
 .detailsDay strong {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 500;
     color: #000;
 }
 
 /* 詳細 */
 .detailsDay p {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 24px;
     color: #000;
 }
 
@@ -142,39 +161,4 @@
     left: 20px;
     width: 92px;
     height: 42px;
-}
-
-.utenjiIcon {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    margin-top: 0; // タイムテーブル下から35px
-}
-
-.serikenIcon {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-}
-
-.introduction {
-    position: relative;
-    width: 240px;
-    height: 36px;
-    margin-top: 35px;
-    font-size: 24px;
-    font-weight: 500;
-    color: #000;
-
-    &::before {
-        position: absolute;
-        top: 0;
-        left: -6px;
-        width: 6px;
-        height: 36px;
-        content: "";
-        background-color: red;
-    }
 }

@@ -18,7 +18,6 @@ import Ticket from "./events-photo/ticket.svg";
 import Utenji from "./events-photo/utenji.svg";
 import Play from "./events-photo/yajirusi.svg";
 import timestyles from "./time.module.scss";
-import Line from "./events-photo/line.svg";
 
 export default function TimeTablePage() {
     // --- アコーディオン用 state ---
@@ -59,10 +58,6 @@ export default function TimeTablePage() {
     const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
-    const HOUR_HEIGHT = 105;
-    const OFFSET_TOP = 53;
-    const halfHours = Array.from({ length: 8 * 2 + 1 }, (_, i) => i * 0.5);
-
     // --- 時間目盛り ---
     const hours = ["09", "10", "11", "12", "13", "14", "15", "16", "17"];
 
@@ -73,10 +68,10 @@ export default function TimeTablePage() {
     };
 
   return (
-        <div className={timestyles.page}>
-      {/* --- Location切り替え（左右ボタン＋スワイプ） --- */}
         <Events className={pagestyles.eventsIcon} />
 
+        <div className={timestyles.page}>
+            {/* --- Location切り替え（左右ボタン＋スワイプ） --- */}
             <div className={timestyles.topControls}>
                 <button onClick={scrollPrev} className={timestyles.arrowBtn}>
                     <Left />
@@ -108,13 +103,6 @@ export default function TimeTablePage() {
                                     ))}
                                 </div>
 
-                                <div className={timestyles.timelineLines}>
-                                    {halfHours.map((halfHour, idx) => {
-                                    const top = OFFSET_TOP + halfHour * HOUR_HEIGHT; // 30分=0.5時間
-                                    return <Line key={idx} className={timestyles.line} style={{ top: `${top}px` }} />;
-                                    })}
-                                </div>
-
                                 {/* イベントバー */}
                                 <div className={timestyles.events}>
                                     {eventData.map((event, i) =>
@@ -129,8 +117,8 @@ export default function TimeTablePage() {
                                                         key={`${i}-${j}`}
                                                         className={timestyles.event}
                                                         style={{
-                                                            top: `${OFFSET_TOP +(start / 60) * HOUR_HEIGHT}px`,
-                                                            height: `${(duration / 60) * HOUR_HEIGHT}px`,
+                                                            top: `${(start / (8 * 60)) * 100}%`,
+                                                            height: `${(duration / (8 * 60)) * 100}%`,
                                                         }}
                                                     >
                                                         <span className={timestyles.startTime}>{d.start}</span>
@@ -150,8 +138,9 @@ export default function TimeTablePage() {
                 </div>
             </div>
 
-            <Utenji className={pagestyles.utenjiIcon} />
-            <Seriken className={pagestyles.serikenIcon} />
+            <Utenji className={pagestyles.utenji} />
+            <Seriken className={pagestyles.seriken} />
+
             <p className={pagestyles.introduction}>イベント紹介一覧</p>
 
             {eventData.map((event, i) => {
@@ -167,7 +156,7 @@ export default function TimeTablePage() {
                             position: "absolute",
                             left: "199px",
                             top: `${getAccordionTop(i)}px`,
-                            width: "335px",
+                            width: "1042px",
                             height: isOpen ? 402 : 120,
                             overflow: "hidden",
                         }}

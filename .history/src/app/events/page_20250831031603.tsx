@@ -152,6 +152,7 @@ export default function TimeTablePage() {
 
             <Utenji className={pagestyles.utenjiIcon} />
             <Seriken className={pagestyles.serikenIcon} />
+
             <p className={pagestyles.introduction}>イベント紹介一覧</p>
 
             {eventData.map((event, i) => {

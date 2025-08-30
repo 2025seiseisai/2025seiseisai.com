@@ -111,27 +111,13 @@
     position: relative;
     width: 100%;
     max-width: 400px;
-    height: auto;
-    min-height: calc(105px * 8 + 87px);
-    overflow-y: visible;
+    height: 720px; /* 画面に応じて調整 */
+    overflow-y: auto;
     background: #fff;
     border-radius: 8px;
 }
 
-.timelineLines {
-    position: absolute;
-    right: 0;
-    left: 60px; /* 時間軸の横 */
-    z-index: 1.5;
-    height: 100%;
-    pointer-events: none;
-}
 
-.line {
-    position: absolute;
-    width: 100%;
-    height: auto;
-}
 
 .timeScale {
     position: absolute;
@@ -164,7 +150,7 @@
     position: absolute;
     right: 8px;
     left: 60px;
-    z-index: 1;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     align-items: center; /* 中央寄せ */
@@ -180,7 +166,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 0;
         width: 6px; /* 幅6px */
         height: 100%;
         content: "";
@@ -192,7 +177,7 @@
     position: absolute;
     top: 0;
     left: 6;
-    z-index: 2;
+    z-index: 1;
     width: 500px;
     font-size: 12px;
     line-height: 1;
@@ -228,6 +213,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+.page p {
+    display: none;
 }
 
 .eventsIcon {

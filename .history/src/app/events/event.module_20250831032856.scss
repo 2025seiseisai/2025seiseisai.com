@@ -33,6 +33,14 @@
     }
 }
 
+.introductionIcon {
+    position: absolute;
+    top: 360px;
+    left: 160px;
+    width: 12px;
+    height: 98px;
+}
+
 .backIcon {
     position: absolute;
     top: 200px;
@@ -160,21 +168,12 @@
 }
 
 .introduction {
-    position: relative;
+    position: absolute;
     width: 240px;
     height: 36px;
     margin-top: 35px;
     font-size: 24px;
     font-weight: 500;
     color: #000;
-
-    &::before {
-        position: absolute;
-        top: 0;
-        left: -6px;
-        width: 6px;
-        height: 36px;
-        content: "";
-        background-color: red;
-    }
+    text-align: center;
 }

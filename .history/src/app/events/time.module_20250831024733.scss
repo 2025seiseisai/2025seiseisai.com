@@ -111,11 +111,11 @@
     position: relative;
     width: 100%;
     max-width: 400px;
-    height: auto;
-    min-height: calc(105px * 8 + 87px);
-    overflow-y: visible;
+    height: 720px; /* 画面に応じて調整 */
     background: #fff;
     border-radius: 8px;
+    min-height: calc(105px * 8 + 272px); // 9:00〜17:00 + 上部オフセット
+  overflow-y: visible;
 }
 
 .timelineLines {
@@ -228,6 +228,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+.page p {
+    display: none;
 }
 
 .eventsIcon {
