@@ -9,11 +9,7 @@
 }
 
 .title {
-<<<<<<< HEAD
     width: min(1022px, 80svw);
-=======
-    width: min(1022px, 80dvw);
->>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
     margin: 30px auto;
     font-size: 40px;
     font-weight: 700;
@@ -23,11 +19,7 @@
 
 @include media(sm) {
     .title {
-<<<<<<< HEAD
         width: calc(100% - 40px);
-=======
-        width: calc(100svw - 40px);
->>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
         margin-bottom: 25px;
         font-size: 28px;
     }
@@ -44,11 +36,7 @@
 
 @include media(sm) {
     .sentence {
-<<<<<<< HEAD
         width: calc(100% - 40px);
-=======
-        width: calc(100svw - 40px);
->>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
         font-size: 16px;
     }
 }
@@ -64,11 +52,7 @@
 
 @include media(sm) {
     .subtitle_block {
-<<<<<<< HEAD
         width: calc(100% - 35px);
-=======
-        width: calc(100svw - 35px);
->>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
         height: 168px;
     }
 
@@ -292,10 +276,7 @@
 .iconImage {
     width: min(20svw, 240px);
     height: min(20svw, 240px);
-<<<<<<< HEAD
     border-radius: calc(infinity * 1px);
-=======
->>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
 }
 
 @include media(sm) {
