@@ -36,7 +36,7 @@ function Container({ title, children }: { title: string; children: React.ReactNo
                 <Icon_closed className={`${styles.magazine_icon} ${styles.icon_closed}`}></Icon_closed>
             </summary>
             <div className={styles.magazine_content}>
-                <ul>{children}</ul>
+                <ul className={styles.magazine_list}>{children}</ul>
             </div>
         </details>
     );
@@ -118,61 +118,65 @@ export default function Page() {
                     {/* 部誌についての説明 */}
 
                     <div className={styles.magazine_detail}>
-                        <div className={styles.magazine_total}>
-                            <Container title="あ行">
-                                {club_A.map((club) => (
-                                    <Nameplate key={club} name={club} />
-                                ))}
-                            </Container>
+                        <div className={styles.magazine_detail_left}>
+                            <div className={styles.magazine_total}>
+                                <Container title="あ行">
+                                    {club_A.map((club) => (
+                                        <Nameplate key={club} name={club} />
+                                    ))}
+                                </Container>
+                            </div>
+                            <div className={styles.magazine_total}>
+                                <Container title="か行">
+                                    {club_K.map((club) => (
+                                        <Nameplate key={club} name={club} />
+                                    ))}
+                                </Container>
+                            </div>
+                            <div className={styles.magazine_total}>
+                                <Container title="さ行">
+                                    {club_S.map((club) => (
+                                        <Nameplate key={club} name={club} />
+                                    ))}
+                                </Container>
+                            </div>
+                            <div className={styles.magazine_total}>
+                                <Container title="た行">
+                                    {club_T.map((club) => (
+                                        <Nameplate key={club} name={club} />
+                                    ))}
+                                </Container>
+                            </div>
                         </div>
-                        <div className={styles.magazine_total}>
-                            <Container title="か行">
-                                {club_K.map((club) => (
-                                    <Nameplate key={club} name={club} />
-                                ))}
-                            </Container>
-                        </div>
-                        <div className={styles.magazine_total}>
-                            <Container title="さ行">
-                                {club_S.map((club) => (
-                                    <Nameplate key={club} name={club} />
-                                ))}
-                            </Container>
-                        </div>
-                        <div className={styles.magazine_total}>
-                            <Container title="た行">
-                                {club_T.map((club) => (
-                                    <Nameplate key={club} name={club} />
-                                ))}
-                            </Container>
-                        </div>
-                        <div className={styles.magazine_total}>
-                            <Container title="は行">
-                                {club_H.map((club) => (
-                                    <Nameplate key={club} name={club} />
-                                ))}
-                            </Container>
-                        </div>
-                        <div className={styles.magazine_total}>
-                            <Container title="ま行">
-                                {club_M.map((club) => (
-                                    <Nameplate key={club} name={club} />
-                                ))}
-                            </Container>
-                        </div>
-                        <div className={styles.magazine_total}>
-                            <Container title="ら行">
-                                {club_R.map((club) => (
-                                    <Nameplate key={club} name={club} />
-                                ))}
-                            </Container>
-                        </div>
-                        <div className={styles.magazine_total}>
-                            <Container title="A - Z">
-                                {club_Alphabet.map((club) => (
-                                    <Nameplate key={club} name={club} />
-                                ))}
-                            </Container>
+                        <div className={styles.magazine_detail_right}>
+                            <div className={styles.magazine_total}>
+                                <Container title="は行">
+                                    {club_H.map((club) => (
+                                        <Nameplate key={club} name={club} />
+                                    ))}
+                                </Container>
+                            </div>
+                            <div className={styles.magazine_total}>
+                                <Container title="ま行">
+                                    {club_M.map((club) => (
+                                        <Nameplate key={club} name={club} />
+                                    ))}
+                                </Container>
+                            </div>
+                            <div className={styles.magazine_total}>
+                                <Container title="ら行">
+                                    {club_R.map((club) => (
+                                        <Nameplate key={club} name={club} />
+                                    ))}
+                                </Container>
+                            </div>
+                            <div className={styles.magazine_total}>
+                                <Container title="A - Z">
+                                    {club_Alphabet.map((club) => (
+                                        <Nameplate key={club} name={club} />
+                                    ))}
+                                </Container>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -220,7 +220,7 @@
     }
 
     .title_total {
-        margin: 30.6px 0 30px;
+        margin: 30px 0;
     }
 
     .title {
@@ -295,15 +295,27 @@
         margin-left: 6px;
     }
 
+    .magazine_all {
+        margin-bottom: 60px;
+    }
+
     .magazine_detail {
-        display: grid;
-        grid-template-rows: repeat(4, auto);
-        grid-auto-flow: column;
-        gap: 0 40px;
+        display: flex;
+    }
+
+    .magazine_detail_left {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .magazine_detail_right {
+        width: 50%;
+        margin-left: 20px;
     }
 
     .club_magazine_headline {
         margin-top: 20px;
+        background-color: white;
     }
 
     .club_magazine_headline summary::-webkit-details-marker {
@@ -344,7 +356,7 @@
         margin-left: auto;
     }
 
-    .magazine_content {
+    .magazine_list {
         margin: 4px 0 11px;
     }
 
