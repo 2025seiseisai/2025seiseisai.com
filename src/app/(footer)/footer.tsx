@@ -92,7 +92,7 @@ export function Footer() {
                         </p>
                     </DisabledFooterLink>
                     <FooterLink href="/news">News</FooterLink>
-                    <FooterLink href="/access">Access</FooterLink>
+                    <DisabledFooterLink>Access</DisabledFooterLink>
                 </span>
                 <span
                     className={
@@ -106,8 +106,8 @@ export function Footer() {
                     >
                         Guide
                     </h1>
-                    <FooterLink href="/events">Events</FooterLink>
-                    <FooterLink href="/map">Map</FooterLink>
+                    <DisabledFooterLink>Events</DisabledFooterLink>
+                    <DisabledFooterLink>Map</DisabledFooterLink>
                     <FooterLink href="/goods">Goods</FooterLink>
                     <DisabledFooterLink>Tickets</DisabledFooterLink>
                 </span>
@@ -122,7 +122,7 @@ export function Footer() {
                     >
                         Contents
                     </h1>
-                    <FooterLink href="/blog">Blog</FooterLink>
+                    <DisabledFooterLink>Blog</DisabledFooterLink>
                     <FooterLink href="/special">Special</FooterLink>
                     <DisabledFooterLink>Downloads</DisabledFooterLink>
                     <FooterLink href="/archives">Archives</FooterLink>
