@@ -43,7 +43,11 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/1.png"
                     title="壁紙1をダウンロード"
+<<<<<<< HEAD
                     download="wallpaper_01"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -58,7 +62,11 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/2.png"
                     title="壁紙2をダウンロード"
+<<<<<<< HEAD
                     download="wallpaper_02"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -73,7 +81,11 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/3.png"
                     title="壁紙3をダウンロード"
+<<<<<<< HEAD
                     download="wallpaper_03"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -88,7 +100,11 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/4.png"
                     title="壁紙4をダウンロード"
+<<<<<<< HEAD
                     download="wallpaper_04"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -103,7 +119,11 @@ export default function Page() {
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/5.png"
                     title="壁紙5をダウンロード"
+<<<<<<< HEAD
                     download="wallpaper_05"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -121,7 +141,11 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/1.png"
                     title="アイコン1をダウンロード"
+<<<<<<< HEAD
                     download="icon_01"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -136,7 +160,11 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/2.png"
                     title="アイコン2をダウンロード"
+<<<<<<< HEAD
                     download="icon_02"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -151,7 +179,11 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/3.png"
                     title="アイコン3をダウンロード"
+<<<<<<< HEAD
                     download="icon_03"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -166,7 +198,11 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/4.png"
                     title="アイコン4をダウンロード"
+<<<<<<< HEAD
                     download="icon_04"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -184,7 +220,11 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/1.png"
                     title="ヘッダー1をダウンロード"
+<<<<<<< HEAD
                     download="header_01"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -199,7 +239,11 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/2.png"
                     title="ヘッダー2をダウンロード"
+<<<<<<< HEAD
                     download="header_02"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -216,7 +260,11 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/3.png"
                     title="ヘッダー3をダウンロード"
+<<<<<<< HEAD
                     download="header_03"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>
@@ -231,7 +279,11 @@ export default function Page() {
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/4.png"
                     title="ヘッダー4をダウンロード"
+<<<<<<< HEAD
                     download="header_04"
+=======
+                    download
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
                 >
                     <Download />
                 </a>

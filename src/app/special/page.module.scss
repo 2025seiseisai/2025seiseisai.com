@@ -9,7 +9,11 @@
 }
 
 .title {
+<<<<<<< HEAD
     width: min(1022px, 80svw);
+=======
+    width: min(1022px, 80dvw);
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
     margin: 30px auto;
     font-size: 40px;
     font-weight: 700;
@@ -19,7 +23,11 @@
 
 @include media(sm) {
     .title {
+<<<<<<< HEAD
         width: calc(100% - 40px);
+=======
+        width: calc(100svw - 40px);
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
         margin-bottom: 25px;
         font-size: 28px;
     }
@@ -36,7 +44,11 @@
 
 @include media(sm) {
     .sentence {
+<<<<<<< HEAD
         width: calc(100% - 40px);
+=======
+        width: calc(100svw - 40px);
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
         font-size: 16px;
     }
 }
@@ -52,7 +64,11 @@
 
 @include media(sm) {
     .subtitle_block {
+<<<<<<< HEAD
         width: calc(100% - 35px);
+=======
+        width: calc(100svw - 35px);
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
         height: 168px;
     }
 
@@ -172,9 +188,23 @@
     }
 }
 
+@include media(sm) {
+    .iconblock {
+        margin-top: 66px;
+        margin-bottom: 15px;
+    }
+}
+
 .headerblock {
     margin-top: 83px;
     margin-bottom: 20px;
+}
+
+@include media(sm) {
+    .headerblock {
+        margin-top: 68px;
+        margin-bottom: 15px;
+    }
 }
 
 @include media(sm) {
@@ -249,10 +279,23 @@
     }
 }
 
+@include media(sm) {
+    .icon {
+        gap: 16px;
+        padding-inline: calc(50% - 106.5px);
+        margin: 0;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+    }
+}
+
 .iconImage {
     width: min(20svw, 240px);
     height: min(20svw, 240px);
+<<<<<<< HEAD
     border-radius: calc(infinity * 1px);
+=======
+>>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
 }
 
 @include media(sm) {
@@ -284,6 +327,15 @@
 .headerImage {
     width: min(495px, 42svw);
     height: min(165px, 14svw);
+}
+
+@include media(sm) {
+    .headerImage {
+        flex-shrink: 0;
+        width: 324px;
+        height: 108px;
+        scroll-snap-align: center;
+    }
 }
 
 @include media(sm) {
