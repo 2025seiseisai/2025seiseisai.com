@@ -50,7 +50,7 @@ const club_T = ["登山同好会"];
 const club_H = ["ポケモン研究会"];
 const club_M = ["マジック同好会"];
 const club_R = ["ロケット同好会"];
-const club_Alphabet = ["MGA同好会"];
+const club_Alphabet = ["MGA同好会", "VOCALOID&作曲同好会"];
 
 // いちばんしたのは　　A-Z  のやつです
 
@@ -76,26 +76,26 @@ export default function Page() {
                     </div>
 
                     {/* パンフレットダウンロードについての説明 */}
-                    <div className={styles.pamphret_detail}>
+                    <div className={styles.pamphlet_detail}>
                         <p className={styles.text}>
                             校門でのパンフレット配布もございますが、ダウンロードしておくと便利です。
                             <br />
                             用途に合わせて、高画質版･中画質版･低画質版をご用意しました。東大寺学園は電波が弱い場所が多いため､校内では低画質版のダウンロードをおすすめします。
                         </p>
                         <div className={styles.pamphlet_download}>
-                            <div className={styles.pamphret_download_detail}>
+                            <div className={styles.pamphlet_download_detail}>
                                 <p>高画質版(47MB)</p>
                                 <a download="" href="" className={styles.pamphlet_download_button}>
                                     ダウンロード <Icon className={styles.download_icon}></Icon>
                                 </a>
                             </div>
-                            <div className={styles.pamphret_download_detail}>
+                            <div className={styles.pamphlet_download_detail}>
                                 <p>中画質版(11MB)</p>
                                 <a download="" href="" className={styles.pamphlet_download_button}>
                                     ダウンロード <Icon className={styles.download_icon}></Icon>
                                 </a>
                             </div>
-                            <div className={styles.pamphret_download_detail}>
+                            <div className={styles.pamphlet_download_detail}>
                                 <p>低画質版(6MB)</p>
                                 <a download="" href="" className={styles.pamphlet_download_button}>
                                     ダウンロード <Icon className={styles.download_icon}></Icon>

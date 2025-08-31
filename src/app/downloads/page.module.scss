@@ -72,7 +72,7 @@
         font-weight: bold;
     }
 
-    .pamphret_detail {
+    .pamphlet_detail {
         margin-top: 16px;
     }
 
@@ -84,7 +84,7 @@
         color: #de0d22;
     }
 
-    .pamphret_download_detail {
+    .pamphlet_download_detail {
         display: inline-flex;
         align-items: center;
         margin-bottom: 8px;
@@ -121,7 +121,7 @@
     }
 
     .club_name {
-        margin-left: 8px;
+        margin-inline: 8px;
         font-size: 20px;
     }
 
@@ -164,6 +164,7 @@
     }
 
     .club_icons {
+        flex-shrink: 0;
         width: 30px;
         height: 30px;
         margin-left: 7px;
@@ -171,6 +172,7 @@
 
     .magazine_download_button {
         display: flex;
+        flex-shrink: 0;
         align-items: center;
         justify-content: center;
         width: 60px;
@@ -216,7 +218,7 @@
     }
 
     .total {
-        margin: 0 160px;
+        margin: 0 10svw;
     }
 
     .title_total {
@@ -262,7 +264,7 @@
         font-weight: bold;
     }
 
-    .pamphret_detail {
+    .pamphlet_detail {
         margin: 20px 40px 50px;
     }
 
@@ -344,8 +346,14 @@
     }
 
     .club_name {
-        margin-left: 18px;
+        margin-inline: 18px;
         font-size: 20px;
+    }
+
+    @media (width < 795px) {
+        .club_name {
+            margin-inline: 10px;
+        }
     }
 
     .magazine_icon {
@@ -373,13 +381,21 @@
     }
 
     .club_icons {
+        flex-shrink: 0;
         width: 40px;
         height: 40px;
         margin-left: 8px;
     }
 
+    @media (width < 795px) {
+        .club_icons {
+            margin-left: 5px;
+        }
+    }
+
     .magazine_download_button {
         display: flex;
+        flex-shrink: 0;
         align-items: center;
         justify-content: center;
         width: 70px;
@@ -416,26 +432,5 @@ details.club_magazine_headline {
     & > .magazine_content {
         min-height: 0;
         overflow: hidden;
-    }
-}
-
-@supports not selector(::details-content) {
-    details.club_magazine_headline {
-        content-visibility: unset;
-
-        & > .magazine_content {
-            display: grid;
-            grid-template-rows: 0fr;
-            transition: grid-template-rows 0.5s ease-in-out;
-        }
-
-        &[open] > .magazine_content {
-            grid-template-rows: 1fr;
-        }
-
-        & > .magazine_content > ul {
-            min-height: 0;
-            overflow: hidden;
-        }
     }
 }
