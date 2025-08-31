@@ -641,15 +641,11 @@
     }
 
     @include media(sm) {
-<<<<<<< HEAD
-        padding: 5px 16px;
-        margin-right: max(16px, 3.5svw);
-=======
         position: fixed;
         right: calc(min(35px, 7svw) + 32px);
         padding: 5px 16px;
+        margin-right: max(16px, 3.5svw);
         margin-right: 16px;
->>>>>>> f1448632e1706fbf46cdf79f2d0d3c38e9904781
         font-size: 11px;
     }
 }

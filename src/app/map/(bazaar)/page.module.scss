@@ -20,7 +20,7 @@
     width: 32px;
     height: 32px;
     margin-right: 16px; /* 右側に余白を追加 */
-    background-color: de0d22;
+    background-color: #de0d22;
 }
 
 .number-content {
@@ -172,187 +172,34 @@
     font-weight: 500;
     line-height: 150%;
     color: #0b0e0f;
-}
-
-.wrapper1 {
-    width: 400px;
-    margin-top: 33px;
-    margin-left: 44px;
-}
-
-.container {
-    margin-top: 14px;
-}
-
-.head {
-    display: flex;
-    align-items: center; /* 子要素を垂直方向に中央揃え */
-    justify-content: space-between; /* 子要素を両端に寄せる */
-}
-
-.number {
-    width: 32px;
-    height: 32px;
-    margin-right: 16px; /* 右側に余白を追加 */
-    background-color: de0d22;
-}
-
-.number-content {
-    width: 12px;
-    height: 30px;
-    margin-top: 1px;
-    margin-left: 10px;
-    font-size: 20px;
-    color: white;
-}
-
-.title {
-    flex-grow: 1; /* 残りのスペースをすべて占めるように設定 */
-    width: 198px;
-    height: 30px;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 150%;
-}
-
-.cost {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 150%;
-    letter-spacing: 0%;
-}
-
-.unit {
-    font-size: 12px;
-}
-
-.description {
-    margin-left: 44px;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 150%;
-}
-
-.wrapper2 {
-    display: flex; /* Flexboxを有効にして、子要素を横並びにする */
-    align-items: flex-start; /* 子要素を上端に揃える */
-    margin-top: 32px;
-}
-
-.line {
-    width: 4px;
-    height: 33px;
-    margin-left: 16px;
-    background-color: rgb(222 13 34 / 100%);
-}
-
-.content {
-    margin-left: 10px;
-    font-size: 14px;
-}
-
-.title-2 {
-    font-size: 22px;
-}
-
-.wrapper3 {
-    display: grid; /* Flexboxの代わりにGridレイアウトを使用 */
-    grid-template-columns: repeat(2, 1fr); /* 2つの均等な幅の列を作成 */
-    padding: 10px;
-    margin-top: 24px;
-    margin-bottom: 50px;
-    border: 1.5px solid rgb(222 13 34 / 100%);
-}
-
-.headShop {
-    flex: 1 1 45%; /* `width: 45%;`の代わりに`flex`プロパティを使用 */
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 40px;
-}
-
-.upside {
-    display: flex;
-    gap: 32px;
-    align-items: center; /* 垂直方向の中央揃え */
-    justify-content: flex-start; /* 子要素を両端に配置 */
-}
-
-.iconContainer {
-    flex-shrink: 0;
-    width: 56px;
-    height: 56px;
-}
-
-.shopName {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 150%;
-}
-
-.tags {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    margin-top: 4px;
-    color: rgb(255 255 255 / 100%);
-}
-
-.tag {
-    padding: 3px 11px;
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 100%;
-    background-color: rgb(222 13 34 / 100%);
-    border-radius: 16px;
-}
-
-.tag_realmoney {
-    padding: 3px 11px;
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 100%;
-    background-color: rgb(244 99 30 / 100%);
-    border-radius: 16px;
-}
-
-.link {
-    display: flex; /* これが重要！Link自身もFlexコンテナにする */
-    flex-shrink: 0;
-    gap: 6px; /* 矢印とテキストの間の余白 */
-    font-size: 0.8rem;
-    color: rgb(222 13 34 / 100%);
-    text-decoration: none;
-}
-
-.arrowIcon {
-    color: 0b0e0f;
-}
-
-.linkText {
-    text-decoration: underline; /* テキストにのみ下線を適用 */
-}
-
-.descriptionBazzer3 {
-    margin-top: 3px;
-    margin-left: 88px;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 150%;
 }
 
 // スマホ用のスタイル
 @include media(sm) {
-    .example {
-        background-color: blue;
+    .wrapper1 {
+        margin-left: 0; // 左マージンをリセット
+    }
+
+    .wrapper3 {
+        display: flex; // スマホ版ではFlexboxを使用
+        flex-direction: column; // 垂直方向に並べる
+        gap: 20px; // 要素間の間隔を追加
+    }
+
+    .headShop {
+        // スマホ版でのheadShopのスタイルを調整
+        margin-left: 0; // 左マージンをリセット
     }
 }
 
 // PC用のスタイル
 @include media(lg) {
-    .example {
-        // 上書き可能
-        color: red;
-        background-color: green;
+    .wrapper3 {
+        display: grid; // PC版ではGridを使用
+        grid-template-columns: repeat(2, 1fr); // 2列のグリッド
+    }
+
+    .headShop {
+        margin-left: 40px; // PC版での左マージン
     }
 }
