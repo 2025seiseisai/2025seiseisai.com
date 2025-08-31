@@ -206,7 +206,7 @@
     line-height: 1;
     color: #000;
     text-align: center;
-    transform: translateX(calc(-50% + 16px)) translateY(calc(-50%));
+    transform: translateX(-50%) translateY(calc(-50%  7px));
 }
 
 .endTime {
@@ -219,7 +219,7 @@
     line-height: 1;
     color: #000;
     text-align: center;
-    transform: translateX(calc(-50% + 16px)) translateY(calc(50%));
+    transform: translateX(-50%) translateY(calc(50% - 7px));
 }
 
 .eventName {

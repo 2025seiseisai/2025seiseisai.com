@@ -51,7 +51,7 @@ export default function TimeTablePage() {
     const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
     const HOUR_HEIGHT = 105;
-    const OFFSET_TOP = 17;
+    const OFFSET_TOP = 53;
     const halfHours = Array.from({ length: 8 * 2 + 1 }, (_, i) => i * 0.5);
 
     // --- 時間目盛り ---
@@ -66,9 +66,7 @@ export default function TimeTablePage() {
   return (
         <div className={timestyles.page}>
       {/* --- Location切り替え（左右ボタン＋スワイプ） --- */}
-            <div className={timestyles.eventsWrapper}>
-                <Events className={pagestyles.eventsIcon} />
-            </div>
+        <Events className={pagestyles.eventsIcon} />
 
             <div className={timestyles.topControls}>
                 <button onClick={scrollPrev} className={timestyles.arrowBtn}>
@@ -166,9 +164,9 @@ export default function TimeTablePage() {
 
                                 {event.ticket && (
                                 <div className={pagestyles.ticketPhoto}>
-                                    <Ticket className={pagestyles.ticketicon} />
-                                </div>
-                                )}
+                                <Ticket className={pagestyles.ticketicon} />
+                            </div>
+                            )}
                             </div>
                         </summary>
 

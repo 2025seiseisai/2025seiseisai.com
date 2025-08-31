@@ -38,12 +38,10 @@
 }
 
 .page {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 16px;
     align-items: center;
-    padding-top: 60px;
     padding-left: 20px;
     margin-top: 20px;
 }
@@ -96,7 +94,6 @@
 }
 
 .emblaSlide {
-    position: relative;
     display: flex;
     flex: 0 0 100%;
     flex-direction: column;
@@ -104,8 +101,8 @@
 }
 
 .locationName {
-    position: relative;
-    margin: 0;
+    top: 213px;
+    margin-bottom: 8px;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
@@ -113,12 +110,9 @@
 
 .timeline {
     position: relative;
-    width: 100%;
-    max-width: 400px;
+    width: 256%;
     height: auto;
-    min-height: calc(105px * 8);
-    padding-top: 0;
-    margin-top: 0;
+    min-height: calc(105px * 8 + 87px);
     overflow-y: visible;
     background: #fff;
     border-radius: 8px;
@@ -129,7 +123,6 @@
     right: 0;
     left: 60px; /* 時間軸の横 */
     z-index: 1.5;
-    width: 264px;
     height: 100%;
     pointer-events: none;
 }
@@ -176,7 +169,6 @@
     flex-direction: column;
     align-items: center; /* 中央寄せ */
     justify-content: center; /* 中央寄せ */
-    width: 256px;
     padding: 4px;
     font-size: 0.85rem;
     color: #000;
@@ -206,7 +198,8 @@
     line-height: 1;
     color: #000;
     text-align: center;
-    transform: translateX(calc(-50% + 16px)) translateY(calc(-50%));
+    transform: translateX(-50%); /* 中央寄せ */
+    transform: translate(-50%, -50%); /* 上端に文字中央を合わせる */
 }
 
 .endTime {
@@ -219,7 +212,8 @@
     line-height: 1;
     color: #000;
     text-align: center;
-    transform: translateX(calc(-50% + 16px)) translateY(calc(50%));
+    transform: translateX(-50%); /* 中央寄せ */
+    transform: translate(-50%, 50%); /* 下端に文字中央を合わせる */
 }
 
 .eventName {
@@ -237,16 +231,10 @@
 }
 
 .eventsIcon {
-    display: block;
-    width: 80px;
-    height: auto;
-}
-
-.eventsWrapper {
     position: absolute;
     top: 16px;
-    left: 50%;
+    left: 0;
     z-index: 10;
-    pointer-events: none;
-    transform: translateX(-111.5px);
+    width: 80px;
+    height: auto;
 }

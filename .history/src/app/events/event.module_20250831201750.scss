@@ -34,7 +34,7 @@
 }
 
 .summary {
-    display: block;
+    display: flex;
     gap: 8px;
     align-items: center;
     padding: 12px 16px;
@@ -67,6 +67,12 @@
     height: 12px;
     margin-left: 8px;
     transition: transform 0.2s ease;
+}
+
+.ticketicon {
+    width: 54px;
+    height: 14px;
+    margin: 8px 0 0 16px;
 }
 
 /* Day全体 */
@@ -120,19 +126,11 @@
 
 /* チケットアイコン用 */
 .ticketPhoto {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 65px;
-    height: 16px;
-    margin: 8px 0 0 16px;
-    margin-top: 4px;
-    transition: opacity 0.2s ease;
-}
-
-.ticketicon {
     width: 54px;
     height: 14px;
+    margin: 8px 0 0 16px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 /* details が open の時だけ表示 */
@@ -141,11 +139,14 @@
 }
 
 .events {
-    position: absolute;
+    position: relative; /* absolute 削除 */
     top: 75px;
     left: 20px;
+    align-self: flex-start; /* ← 親が flex 中央寄せでもこの要素だけ左寄せ */
     width: 92px;
     height: 42px;
+    margin-bottom: 16px;
+    margin-left: 20px;
 }
 
 .utenjiIcon {
@@ -164,11 +165,13 @@
 }
 
 .introduction {
+    align-self: flex-start; /* ← この要素だけ左寄せ */
+  margin-left: 20px; 
     position: relative;
     width: 240px;
     height: 36px;
     margin-top: 35px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     color: #000;
 
@@ -214,10 +217,4 @@
 
 .time {
     min-width: 120px;
-}
-
-.titleRow {
-    display: flex;
-    gap: 8px;
-    align-items: center;
 }

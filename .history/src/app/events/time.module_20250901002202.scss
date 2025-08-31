@@ -104,7 +104,8 @@
 }
 
 .locationName {
-    position: relative;
+    position: absolute;
+    top: 0;
     margin: 0;
     font-size: 28px;
     font-weight: bold;
@@ -116,12 +117,12 @@
     width: 100%;
     max-width: 400px;
     height: auto;
-    min-height: calc(105px * 8);
-    padding-top: 0;
+    min-height: calc(105px * 8 + 87px);
     margin-top: 0;
     overflow-y: visible;
     background: #fff;
     border-radius: 8px;
+    margin-top: 0;
 }
 
 .timelineLines {
@@ -129,7 +130,7 @@
     right: 0;
     left: 60px; /* 時間軸の横 */
     z-index: 1.5;
-    width: 264px;
+    width: 256px;
     height: 100%;
     pointer-events: none;
 }
@@ -206,7 +207,8 @@
     line-height: 1;
     color: #000;
     text-align: center;
-    transform: translateX(calc(-50% + 16px)) translateY(calc(-50%));
+    transform: translateX(-50%); /* 中央寄せ */
+    transform: translate(-50%, -50%); /* 上端に文字中央を合わせる */
 }
 
 .endTime {
@@ -219,7 +221,8 @@
     line-height: 1;
     color: #000;
     text-align: center;
-    transform: translateX(calc(-50% + 16px)) translateY(calc(50%));
+    transform: translateX(-50%); /* 中央寄せ */
+    transform: translate(-50%, 50%); /* 下端に文字中央を合わせる */
 }
 
 .eventName {

@@ -206,7 +206,8 @@
     line-height: 1;
     color: #000;
     text-align: center;
-    transform: translateX(calc(-50% + 16px)) translateY(calc(-50%));
+    transform: translateX(-50%); /* 中央寄せ */
+    transform: translate(-50%, -50% - 7px); /* 上端に文字中央を合わせる */
 }
 
 .endTime {
@@ -219,7 +220,8 @@
     line-height: 1;
     color: #000;
     text-align: center;
-    transform: translateX(calc(-50% + 16px)) translateY(calc(50%));
+    transform: translateX(-50%); /* 中央寄せ */
+    transform: translate(-50%, 50% + 7px); /* 下端に文字中央を合わせる */
 }
 
 .eventName {
