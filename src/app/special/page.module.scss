@@ -172,23 +172,9 @@
     }
 }
 
-@include media(sm) {
-    .iconblock {
-        margin-top: 66px;
-        margin-bottom: 15px;
-    }
-}
-
 .headerblock {
     margin-top: 83px;
     margin-bottom: 20px;
-}
-
-@include media(sm) {
-    .headerblock {
-        margin-top: 68px;
-        margin-bottom: 15px;
-    }
 }
 
 @include media(sm) {
@@ -263,16 +249,6 @@
     }
 }
 
-@include media(sm) {
-    .icon {
-        gap: 16px;
-        padding-inline: calc(50% - 106.5px);
-        margin: 0;
-        overflow: auto;
-        scroll-snap-type: x mandatory;
-    }
-}
-
 .iconImage {
     width: min(20svw, 240px);
     height: min(20svw, 240px);
@@ -308,15 +284,6 @@
 .headerImage {
     width: min(495px, 42svw);
     height: min(165px, 14svw);
-}
-
-@include media(sm) {
-    .headerImage {
-        flex-shrink: 0;
-        width: 324px;
-        height: 108px;
-        scroll-snap-align: center;
-    }
 }
 
 @include media(sm) {
