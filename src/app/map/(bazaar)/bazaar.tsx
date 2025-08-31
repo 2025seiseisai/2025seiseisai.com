@@ -32,7 +32,6 @@ export function Bazaar1() {
                 </div>
                 <p className={styles.description}>
                     今年の卓球部はチュロスを販売！ココア・シュガー・シナモンの3種類のフレイバーをぜひ楽しみください！
-                    今年の卓球部はチュロスを販売！ココア・シュガー・シナモンの3種類のフレイバーをおぜひ楽しみください！
                 </p>
             </div>
 
@@ -63,7 +62,6 @@ export function Bazaar1() {
                 </div>
                 <p className={styles.description}>
                     バザーパートは今年も暑い時期にぴったりのドリンクとシューアイスを販売します。
-                    バザーパートは今年も暑い時期に暑い時期にぴったりのドリンクとシューアイスを販売します。
                 </p>
             </div>
 
