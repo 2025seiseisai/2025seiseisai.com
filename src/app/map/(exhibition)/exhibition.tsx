@@ -21,11 +21,13 @@ export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
                         <div className={styles.buttons}>
                             {data.stamp && <button className={styles.stampbutton}>スタンプラリー</button>}
                             {data.events && <button className={styles.eventsbutton}>イベント</button>}
-                            <button className={styles.bazaarbutton}>バザー</button>
+                            {data.bazaar && <button className={styles.bazaarbutton}>バザー</button>}
                         </div>
                     </div>
                     <Link href="https://seiseisai.com/" target="_blank" rel="noopener noreferrer">
-                        <div className={styles.arrow}>→</div>
+                        <div className={styles.arrow}>
+                            <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["arrow"] }} />
+                        </div>
                     </Link>
                 </div>
             ))}

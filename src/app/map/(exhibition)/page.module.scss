@@ -8,7 +8,7 @@
         display: flex;
         align-items: center;
         padding: 16px;
-        border-bottom: 1px solid red;
+        border-bottom: 1px solid #de0d22;
     }
 
     .icon {
@@ -22,10 +22,6 @@
         flex: 1;
     }
 
-    .location {
-        font-size: 14px;
-        color: #666;
-    }
 
     .title {
         font-size: 20px;
@@ -40,7 +36,6 @@
         padding: 6px 12px;
         margin-right: 8px;
         color: white;
-        cursor: pointer;
         background-color: #de0d22;
         border: none;
         border-radius: 4px;
@@ -50,7 +45,6 @@
         padding: 6px 12px;
         margin-right: 8px;
         color: white;
-        cursor: pointer;
         background-color: #f4631e;
         border: none;
         border-radius: 4px;
@@ -59,18 +53,9 @@
     .bazaarbutton {
         padding: 6px 12px;
         color: white;
-        cursor: pointer;
         background-color: #ff9f00;
         border: none;
         border-radius: 4px;
-    }
-
-    .arrow {
-        width: 40px;
-        font-size: 24px;
-        text-align: center;
-        border: #333 1px solid;
-        border-radius: 50%; /* 完全な円形 */
     }
 
     .underline {
@@ -109,16 +94,15 @@
     }
 
     .red {
-        background-color: #e74c3c;
+        background-color: #de0d22;
     }
 
     .orange {
-        background-color: #f39c12;
+        background-color: #f4631e;
     }
 
     .yellow {
-        color: #333;
-        background-color: #f1c40f;
+        background-color: #ff9f00;
     }
 
     .description {
@@ -136,6 +120,32 @@
     .example {
         background-color: blue;
     }
+
+    .location {
+        font-size: 12px;
+        color: #0b0e0f;
+    }
+
+    .title {
+        font-size: 20px;
+        color: #0b0e0f;
+    }
+
+    .buttons {
+        font-size: 10px;
+    }
+
+    .tagname{
+        font-size: 18px;
+    }
+
+    .tag{
+        font-size: 13px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
 }
 
 // PC用のスタイル
@@ -144,6 +154,32 @@
         // 上書き可能
         color: red;
         background-color: green;
+    }
+
+    .location {
+        font-size: 12px;
+        color: #0b0e0f;
+    }
+
+    .title {
+        font-size: 20px;
+        color: #0b0e0f;
+    }
+
+    .buttons {
+        font-size: 10px;
+    }
+
+    .tagname{
+        font-size: 20px;
+    }
+
+    .tag{
+        font-size: 15px;
+    }
+
+    .description {
+        font-size: 14px;
     }
 
 
