@@ -253,7 +253,6 @@
 
 .shosaiBtn {
     position: absolute;
-    top: 50%;
     right: 4px;
     bottom: 4px;
     display: flex;
@@ -262,7 +261,6 @@
     cursor: pointer;
     background: none;
     border: none;
-    transform: translateY(-50%);
 
     svg {
         width: 20px;

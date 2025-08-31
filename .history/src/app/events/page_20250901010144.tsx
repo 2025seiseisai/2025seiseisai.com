@@ -131,20 +131,20 @@ export default function TimeTablePage() {
                                                         </div>
                                                         <span className={timestyles.endTime}>{d.end}</span>
                                                         <button
-                                                            className={timestyles.shosaiBtn}
-                                                            onClick={() => {
-                                                                setOpenIndexes((prev) =>
-                                                                    prev.includes(i) ? prev : [...prev, i]
-                                                                );
-                                                                setTimeout(() => {
+    className={timestyles.shosaiBtn}
+    onClick={() => {
+      // アコーディオンを開く
+      setOpenIndexes((prev) =>
+        prev.includes(i) ? prev : [...prev, i]
+      );
+      // 対応する詳細までスクロール
                                                                     document.getElementById(`event-${i}`)?.scrollIntoView({
-                                                                        behavior: "smooth",
-                                                                        block: "start",
-                                                                    });
-                                                                }, 0);
-                                                            }}
+                                                                    behavior: "smooth",
+                                                                    block: "start",
+                                                                });
+                                                                }}
                                                             >
-                                                            <Shosai />
+                                                        <Shosai />
                                                         </button>
                                                     </div>
                                                 );
@@ -166,7 +166,7 @@ export default function TimeTablePage() {
 
                 return (
                     <details
-                        id={`event-${i}`}
+                        id={eventId}
                         key={i}
                         className={pagestyles.accordion}
                         open={isOpen}

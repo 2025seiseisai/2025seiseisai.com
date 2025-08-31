@@ -138,10 +138,10 @@ export default function TimeTablePage() {
                                                                 );
                                                                 setTimeout(() => {
                                                                     document.getElementById(`event-${i}`)?.scrollIntoView({
-                                                                        behavior: "smooth",
-                                                                        block: "start",
-                                                                    });
-                                                                }, 0);
+    behavior: "smooth",
+    block: "start",
+  });
+}, 0);
                                                             }}
                                                             >
                                                             <Shosai />

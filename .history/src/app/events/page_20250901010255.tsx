@@ -136,14 +136,12 @@ export default function TimeTablePage() {
                                                                 setOpenIndexes((prev) =>
                                                                     prev.includes(i) ? prev : [...prev, i]
                                                                 );
-                                                                setTimeout(() => {
-                                                                    document.getElementById(`event-${i}`)?.scrollIntoView({
-                                                                        behavior: "smooth",
-                                                                        block: "start",
-                                                                    });
-                                                                }, 0);
+                                                                document.getElementById(`event-${i}`)?.scrollIntoView({
+                                                                    behavior: "smooth",
+                                                                    block: "start",
+                                                                });
                                                             }}
-                                                            >
+                                                        >
                                                             <Shosai />
                                                         </button>
                                                     </div>
@@ -166,7 +164,7 @@ export default function TimeTablePage() {
 
                 return (
                     <details
-                        id={`event-${i}`}
+                        id={eventId}
                         key={i}
                         className={pagestyles.accordion}
                         open={isOpen}

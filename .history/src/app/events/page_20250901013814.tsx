@@ -141,7 +141,7 @@ export default function TimeTablePage() {
                                                                         behavior: "smooth",
                                                                         block: "start",
                                                                     });
-                                                                }, 0);
+}, 0);
                                                             }}
                                                             >
                                                             <Shosai />

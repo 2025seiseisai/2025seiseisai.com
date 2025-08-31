@@ -19,7 +19,6 @@ import Utenji from "./events-photo/utenji.svg";
 import Play from "./events-photo/yajirusi.svg";
 import timestyles from "./time.module.scss";
 import Line from "./events-photo/line.svg";
-import Shosai from "./events-photo/shosai.svg";
 
 export default function TimeTablePage() {
     // --- アコーディオン用 state ---
@@ -29,13 +28,16 @@ export default function TimeTablePage() {
     };
 
     // Day切替
-    const [day, setDay] = useState<"day1" | "day2">("day1");;
+    const [day, setDay] = useState<"day1" | "day2">("day1");
+    // Location切替
+    const [setLocationIndex] = useState(0);
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
     // Emblaスライド変更時にlocationIndex更新
     const onSelect = useCallback(() => {
         if (!emblaApi) return;
+        setLocationIndex(emblaApi.selectedScrollSnap());
     }, [emblaApi]);
 
     useEffect(() => {
@@ -130,22 +132,6 @@ export default function TimeTablePage() {
                                                             {d.label && <span>（{d.label}）</span>}
                                                         </div>
                                                         <span className={timestyles.endTime}>{d.end}</span>
-                                                        <button
-                                                            className={timestyles.shosaiBtn}
-                                                            onClick={() => {
-                                                                setOpenIndexes((prev) =>
-                                                                    prev.includes(i) ? prev : [...prev, i]
-                                                                );
-                                                                setTimeout(() => {
-                                                                    document.getElementById(`event-${i}`)?.scrollIntoView({
-                                                                        behavior: "smooth",
-                                                                        block: "start",
-                                                                    });
-                                                                }, 0);
-                                                            }}
-                                                            >
-                                                            <Shosai />
-                                                        </button>
                                                     </div>
                                                 );
                                             }),
@@ -166,7 +152,6 @@ export default function TimeTablePage() {
 
                 return (
                     <details
-                        id={`event-${i}`}
                         key={i}
                         className={pagestyles.accordion}
                         open={isOpen}

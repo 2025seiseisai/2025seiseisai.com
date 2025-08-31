@@ -137,11 +137,11 @@ export default function TimeTablePage() {
                                                                     prev.includes(i) ? prev : [...prev, i]
                                                                 );
                                                                 setTimeout(() => {
-                                                                    document.getElementById(`event-${i}`)?.scrollIntoView({
+                                                                 document.getElementById(`event-${i}`)?.scrollIntoView({
                                                                         behavior: "smooth",
                                                                         block: "start",
                                                                     });
-                                                                }, 0);
+                                                                }0);
                                                             }}
                                                             >
                                                             <Shosai />

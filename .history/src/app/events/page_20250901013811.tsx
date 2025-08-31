@@ -140,8 +140,8 @@ export default function TimeTablePage() {
                                                                     document.getElementById(`event-${i}`)?.scrollIntoView({
                                                                         behavior: "smooth",
                                                                         block: "start",
-                                                                    });
-                                                                }, 0);
+  });
+}, 0);
                                                             }}
                                                             >
                                                             <Shosai />

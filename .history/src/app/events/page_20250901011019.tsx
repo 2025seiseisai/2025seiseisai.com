@@ -136,12 +136,6 @@ export default function TimeTablePage() {
                                                                 setOpenIndexes((prev) =>
                                                                     prev.includes(i) ? prev : [...prev, i]
                                                                 );
-                                                                setTimeout(() => {
-                                                                    document.getElementById(`event-${i}`)?.scrollIntoView({
-                                                                        behavior: "smooth",
-                                                                        block: "start",
-                                                                    });
-                                                                }, 0);
                                                             }}
                                                             >
                                                             <Shosai />
