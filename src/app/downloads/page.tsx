@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { exhibitionIcons } from "../map/(exhibition)/exhibition-icons";
 import Icon from "./dawnload_icon.svg";
+import IconPC from "./download_icon_pc.svg";
 import Icon_open from "./minas_icon.svg";
 import styles from "./page.module.scss";
 import Icon_closed from "./plus_icon.svg";
@@ -86,19 +87,25 @@ export default function Page() {
                             <div className={styles.pamphlet_download_detail}>
                                 <p>高画質版(47MB)</p>
                                 <a download="" href="" className={styles.pamphlet_download_button}>
-                                    ダウンロード <Icon className={styles.download_icon}></Icon>
+                                    ダウンロード
+                                    <Icon className={styles.download_icon_sm} />
+                                    <IconPC className={styles.download_icon_lg} />
                                 </a>
                             </div>
                             <div className={styles.pamphlet_download_detail}>
                                 <p>中画質版(11MB)</p>
                                 <a download="" href="" className={styles.pamphlet_download_button}>
-                                    ダウンロード <Icon className={styles.download_icon}></Icon>
+                                    ダウンロード
+                                    <Icon className={styles.download_icon_sm} />
+                                    <IconPC className={styles.download_icon_lg} />
                                 </a>
                             </div>
                             <div className={styles.pamphlet_download_detail}>
                                 <p>低画質版(6MB)</p>
                                 <a download="" href="" className={styles.pamphlet_download_button}>
-                                    ダウンロード <Icon className={styles.download_icon}></Icon>
+                                    ダウンロード
+                                    <Icon className={styles.download_icon_sm} />
+                                    <IconPC className={styles.download_icon_lg} />
                                 </a>
                             </div>
                         </div>

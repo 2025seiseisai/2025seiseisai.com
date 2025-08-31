@@ -103,10 +103,15 @@
         border-radius: 3px;
     }
 
-    .download_icon {
+    .download_icon_sm {
+        display: block;
         width: 12px;
         height: 12px;
         margin-left: 6px;
+    }
+
+    .download_icon_lg {
+        display: none;
     }
 
     .magazine_all {
@@ -291,7 +296,12 @@
         border-radius: 3px;
     }
 
-    .download_icon {
+    .download_icon_sm {
+        display: none;
+    }
+
+    .download_icon_lg {
+        display: block;
         width: 20px;
         height: 20px;
         margin-left: 6px;
