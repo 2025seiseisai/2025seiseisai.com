@@ -6,7 +6,7 @@
 
 .header {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(9, 1fr); // 9:00〜17:00
     margin-bottom: 8px;
     font-size: 12px;
     text-align: center;

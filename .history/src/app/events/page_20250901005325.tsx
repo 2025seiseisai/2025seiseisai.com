@@ -65,7 +65,7 @@ export default function TimeTablePage() {
 
   return (
         <div className={timestyles.page}>
-      {/*Location切り替え（左右ボタン＋スワイプ*/}
+      {/* --- Location切り替え（左右ボタン＋スワイプ） --- */}
             <div className={timestyles.eventsWrapper}>
                 <Events className={pagestyles.eventsIcon} />
             </div>

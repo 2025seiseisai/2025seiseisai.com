@@ -57,7 +57,7 @@ export default function TimeTablePage() {
     //時間目盛り
     const hours = ["09", "10", "11", "12", "13", "14", "15", "16", "17"];
 
-    //時間を分に変換する関数
+    // --- 時間を分に変換する関数
     const toMinutes = (time: string) => {
         const [h, m] = time.split(":").map(Number);
         return (h - 9) * 60 + m;
@@ -65,7 +65,7 @@ export default function TimeTablePage() {
 
   return (
         <div className={timestyles.page}>
-      {/*Location切り替え（左右ボタン＋スワイプ*/}
+      {/* --- Location切り替え（左右ボタン＋スワイプ） --- */}
             <div className={timestyles.eventsWrapper}>
                 <Events className={pagestyles.eventsIcon} />
             </div>
