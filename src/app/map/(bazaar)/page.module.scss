@@ -19,7 +19,7 @@
 .number {
     width: 32px;
     height: 32px;
-    margin-right: 16px; /* 右側に余白を追加 */
+    margin-right: 16px; /* 右側に余白を追加  スマホ版？ */
     background-color: #de0d22;
 }
 
@@ -72,13 +72,13 @@
     width: 4px;
     height: 33px;
     margin-left: 16px;
-    background-color: rgb(222 13 34 / 100%);
+    background-color: #de0d22;
 }
 
 .content {
     margin-left: 10px;
     font-size: 14px;
-    color: #0b0e0f;
+    color: #0b0e0f; // スマホ版もここらへん色同じ？
 }
 
 .title-2 {
@@ -88,11 +88,11 @@
 
 .wrapper3 {
     display: grid; /* Flexboxの代わりにGridレイアウトを使用 */
-    grid-template-columns: repeat(2, 1fr); /* 2つの均等な幅の列を作成 */
+    grid-template-columns: repeat(2, 1fr); /* 2つの均等な幅の列を作成 スマホ？ */
     padding: 10px;
     margin-top: 24px;
     margin-bottom: 50px;
-    border: 1.5px solid rgb(222 13 34 / 100%);
+    border: 1.5px solid #de0d22;
 }
 
 .headShop {
@@ -135,7 +135,7 @@
     font-size: 11px;
     font-weight: 500;
     line-height: 100%;
-    background-color: rgb(222 13 34 / 100%);
+    background-color: #de0d22;
     border-radius: 16px;
 }
 
@@ -144,7 +144,7 @@
     font-size: 11px;
     font-weight: 500;
     line-height: 100%;
-    background-color: rgb(244 99 30 / 100%);
+    background-color: #de0d22;
     border-radius: 16px;
 }
 
@@ -153,7 +153,7 @@
     flex-shrink: 0;
     gap: 6px; /* 矢印とテキストの間の余白 */
     font-size: 0.8rem;
-    color: rgb(222 13 34 / 100%);
+    color: #de0d22;
     text-decoration: none;
 }
 
@@ -177,18 +177,59 @@
 // スマホ用のスタイル
 @include media(sm) {
     .wrapper1 {
+        width: 100%; // 幅を100%に設定
+        margin-top: 11px; // 25-14px
         margin-left: 0; // 左マージンをリセット
+    }
+
+    .title {
+        font-size: 18px; // フォントサイズを少し小さく
+        color: #000;
+    }
+
+    .cost {
+        color: #000;
+    }
+
+    .description {
+        font-size: 11px; // フォントサイズを少し小さく
+        color: #000;
+    }
+
+    .wrapper2 {
+        margin-top: 25px;
+        margin-left: 0; // 左マージンをリセット
+    }
+
+    .line {
+        margin-left: 0; // 左マージンをリセット
+    }
+
+    .Bazzar2-description {
+        margin-top: 8px;
+        margin-left: -14px; // 左マージンをリセット
     }
 
     .wrapper3 {
         display: flex; // スマホ版ではFlexboxを使用
         flex-direction: column; // 垂直方向に並べる
         gap: 20px; // 要素間の間隔を追加
+        margin-bottom: 45px;
     }
 
     .headShop {
+        margin-bottom: 1px;
+
         // スマホ版でのheadShopのスタイルを調整
-        margin-left: 0; // 左マージンをリセット
+        margin-left: 10px;
+    }
+
+    .headShopGoods {
+    }
+
+    .headShopTeaTable {
+        margin-bottom: 10px;
+        margin-left: 0; // headShopが優先されるかも
     }
 }
 

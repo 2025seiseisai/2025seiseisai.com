@@ -31,7 +31,7 @@ export function Bazaar1() {
                     </span>
                 </div>
                 <p className={styles.description}>
-                    今年の卓球部はチュロスを販売！ココア・シュガー・シナモンの3種類のフレイバーをぜひ楽しみください！
+                    今年の卓球部はチュロスを販売！ココア・シュガー・シナモンの3種類のフレーバーをぜひ楽しみください！
                 </p>
             </div>
 
@@ -55,7 +55,7 @@ export function Bazaar1() {
                     <div className={styles.number}>
                         <p className={styles["number-content"]}>4</p>
                     </div>
-                    <h2 className={styles.title}>ドリンク・シューアイス</h2>
+                    <h2 className={styles.title}>シューアイス・ドリンク</h2>
                     <span className={styles.cost}>
                         100<span className={styles.unit}>シビ</span>
                     </span>
@@ -114,10 +114,12 @@ export function Bazaar2() {
             <div className={styles.line}></div>
             <div className={styles.content}>
                 <h2 className={styles["title-2"]}>金券について</h2>
-                <p>学内店舗は一部を除き、すべて金券でのお取り扱いです。</p>
-                <p>金券は金券販売所にて販売しています。</p>
-                <p>金券は500シビ単位の販売です。(1シビ=1円)</p>
-                <p>金券の返金は、各日昼頃から金券販売所にて行います。</p>
+                <div className={styles["Bazzar2-description"]}>
+                    <p>バザー店舗は一部を除き、すべて金券でのお取り扱いです。</p>
+                    <p>金券は金券販売所にて販売しています。</p>
+                    <p>金券は500シビ単位での販売です。(1シビ=1円)</p>
+                    <p>金券の返金は、各日13:00以降に金券販売所にて行います。</p>
+                </div>
             </div>
         </div>
     );
@@ -126,7 +128,7 @@ export function Bazaar2() {
 export function Bazaar3() {
     return (
         <div className={styles.wrapper3}>
-            <div className={styles.headShop}>
+            <div className={`${styles.headShop} ${styles.headShopGoods}`}>
                 <div className={styles.upside}>
                     <div className={styles.iconContainer}>
                         <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />
@@ -146,7 +148,7 @@ export function Bazaar3() {
                 <p className={styles.descriptionBazzer3}>
                     文化祭公式グッズを販売しております。
                     <br />
-                    記念に一品、如何でしょうか。
+                    記念に一品、いかがでしょうか。
                 </p>
             </div>
 
@@ -180,9 +182,9 @@ export function Bazaar3() {
                         <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["文藝同好会"] }} />
                     </div>
                     <div className={styles.textContent}>
-                        <h2 className={styles.shopName}>菁々古書店</h2>
+                        <h2 className={styles.shopName}>東大寺古書店</h2>
                         <div className={styles.tags}>
-                            <span className={styles.tag}>5年A組</span>
+                            <span className={styles.tag}>5年D組</span>
                         </div>
                     </div>
                     <Link href="" className={styles.link}>
@@ -197,7 +199,7 @@ export function Bazaar3() {
                 </p>
             </div>
 
-            <div className={styles.headShop}>
+            <div className={`${styles.headShop} ${styles.headShopTeaTable}`}>
                 <div className={styles.upside}>
                     <div className={styles.iconContainer}>
                         <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["お茶席"] }} />
