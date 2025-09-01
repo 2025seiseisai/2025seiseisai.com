@@ -144,7 +144,7 @@
     font-size: 11px;
     font-weight: 500;
     line-height: 100%;
-    background-color: #de0d22;
+    background-color: #f4631e;
     border-radius: 16px;
 }
 
@@ -213,23 +213,62 @@
     .wrapper3 {
         display: flex; // スマホ版ではFlexboxを使用
         flex-direction: column; // 垂直方向に並べる
-        gap: 20px; // 要素間の間隔を追加
+        gap: 11px; // 要素間の間隔を追加
+        padding: 20px;
         margin-bottom: 45px;
     }
 
     .headShop {
-        margin-bottom: 1px;
+        margin-top: 0;
+        margin-bottom: 0;
 
         // スマホ版でのheadShopのスタイルを調整
-        margin-left: 10px;
+        margin-left: 0;
     }
 
-    .headShopGoods {
+    .upside {
+        position: relative;
+        gap: 0;
     }
 
-    .headShopTeaTable {
-        margin-bottom: 10px;
-        margin-left: 0; // headShopが優先されるかも
+    .iconContainer {
+        width: 46px;
+        height: 46px;
+    }
+
+    .textContent {
+        margin-left: 20px;
+    }
+
+    .shopName {
+        font-size: 18px;
+    }
+
+    .tags {
+        margin-top: 6px;
+    }
+
+    .tag {
+        padding: 2px 8px;
+        font-size: 10px;
+    }
+
+    .tag_realmoney {
+        padding: 2px 9px;
+        font-size: 10px;
+    }
+
+    .link {
+        position: absolute;
+        margin-top: 76px; // 57+14.5
+        margin-left: 66px;
+        font-size: 10px;
+    }
+
+    .descriptionBazzer3 {
+        margin-top: 29px;
+        margin-left: 66px;
+        font-size: 11px;
     }
 }
 

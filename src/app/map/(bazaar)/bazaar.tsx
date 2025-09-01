@@ -128,7 +128,7 @@ export function Bazaar2() {
 export function Bazaar3() {
     return (
         <div className={styles.wrapper3}>
-            <div className={`${styles.headShop} ${styles.headShopGoods}`}>
+            <div className={styles.headShop}>
                 <div className={styles.upside}>
                     <div className={styles.iconContainer}>
                         <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />
