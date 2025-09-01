@@ -2,7 +2,9 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { Color, Polygons, Rects } from "./mapdata";
+import { SVGLoader } from "three/examples/jsm/Addons.js";
+import { exhibitionIcons } from "../(exhibition)/exhibition-icons";
+import { Boxes, Color, ExhibitionPositions, Polygons, Rects } from "./mapdata";
 
 function initializeMap3D(
     canvas: HTMLCanvasElement,
@@ -158,6 +160,134 @@ function initializeMap3D(
                 geometry.computeVertexNormals();
                 scene.add(new THREE.Mesh(geometry, new THREE.MeshPhongMaterial({ color: 0xaaaaaa })));
             }
+        });
+    }
+    {
+        //展示アイコンの追加
+        function setIcon(exhibitionName: string, setX: number, setY: number, setZ: number) {
+            const SVGData =
+                exhibitionName in exhibitionIcons
+                    ? exhibitionIcons[exhibitionName as keyof typeof exhibitionIcons]
+                    : exhibitionIcons["fallback"];
+            const loader = new SVGLoader();
+            const data = loader.parse(SVGData);
+            const object = new THREE.Group();
+
+            for (let i = 0; i < data.paths.length; i++) {
+                const path = data.paths[i];
+                console.log(path);
+                //circle/rect か path しかないはずなので、それぞれで場合分けしてよい
+                if (path.userData?.node.nodeName != "path") {
+                    //fill部分を表示
+                    const material = new THREE.MeshBasicMaterial({
+                        // color: path.userData?.style.fill,
+                        color: "white",
+                        side: THREE.DoubleSide,
+                    });
+                    const shapes = SVGLoader.createShapes(path);
+                    shapes.forEach((shape) => {
+                        const geometry = new THREE.ShapeGeometry(shape);
+                        const mesh = new THREE.Mesh(geometry, material);
+                        object.add(mesh);
+                    });
+                }
+
+                path.subPaths.forEach((subPath) => {
+                    const points = subPath.getPoints(200).map((p) => new THREE.Vector3(p.x, p.y, 0));
+                    const curve = new THREE.CatmullRomCurve3(points);
+                    const geometry = new THREE.TubeGeometry(curve, 50, 0.2, 6, false);
+                    const material = new THREE.MeshBasicMaterial({
+                        // color: path.userData?.style.stroke,
+                        color: "black",
+                        side: THREE.DoubleSide,
+                    });
+                    const mesh = new THREE.Mesh(geometry, material);
+                    object.add(mesh);
+                });
+            }
+            //ローカル座標系の原点を重心にする
+
+            const boundingBox = new THREE.Box3().setFromObject(object);
+            const center = new THREE.Vector3();
+            boundingBox.getCenter(center);
+            object.children.forEach((child) => {
+                child.position.sub(center);
+            });
+
+            object.scale.set(-2, -2, 2);
+            object.position.set(setX, setY, setZ);
+            scene.add(object);
+        }
+
+        for (let i = 0; i < ExhibitionPositions.length; i++) {
+            const [name, x, y, z] = ExhibitionPositions[i];
+            setIcon(name, x, y + 20, z);
+        }
+    }
+    {
+        //見ずらいので、いるのかといわれれば微妙。
+        function setText(text: string, setX: number, setY: number, setZ: number) {
+            //展示団体名の表示
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d")!;
+
+            const fontSize = 192;
+
+            ctx.font = fontSize + "px Sans Serif";
+            ctx.fillStyle = "black";
+            canvas.width = ctx.measureText(text).width * 1.2;
+            canvas.height = fontSize * 1.2;
+
+            ctx.fillStyle = "black";
+            ctx.lineWidth = 5; // 枠の太さ
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+            ctx.font = fontSize + "px Sans Serif";
+            ctx.fillStyle = "black";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+            const texture = new THREE.CanvasTexture(canvas);
+
+            const geometry = new THREE.PlaneGeometry((25 * canvas.width) / canvas.height, 25);
+            const material = new THREE.MeshBasicMaterial({
+                map: texture,
+                transparent: true,
+                side: THREE.DoubleSide,
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(setX, setY, setZ);
+            mesh.scale.set(0.5, 0.5, 0.5);
+            // シーンに追加
+            scene.add(mesh);
+        }
+
+        for (let i = 0; i < ExhibitionPositions.length; i++) {
+            const [name, x, y, z] = ExhibitionPositions[i];
+            setText(name, x, y + 50, z);
+        }
+    }
+    {
+        //階段の追加
+        Boxes.forEach((boxData) => {
+            const [x1, y1, z1] = boxData.begin;
+            const [x2, y2, z2] = boxData.end;
+            const dx = Math.abs(x1 - x2);
+            const dy = Math.abs(y1 - y2);
+            const dz = Math.abs(z1 - z2);
+
+            const geometry = new THREE.BoxGeometry(dx, dy, dz);
+            const material = new THREE.MeshBasicMaterial({
+                color: boxData.color,
+                transparent: true,
+                opacity: 0.5,
+                depthWrite: false,
+            });
+
+            const box = new THREE.Mesh(geometry, material);
+            box.position.set((x1 + x2) / 2, (y1 + y2) / 2, (z1 + z2) / 2);
+
+            scene.add(box);
         });
     }
 

@@ -8,6 +8,7 @@ export enum Color {
     ltblue = 0xc71585,
     magenta = 0x87cefa,
     white = 0xeeeeee,
+    brown = 0xc0ae9a,
 }
 
 type Rect = {
@@ -21,6 +22,7 @@ type Rect = {
 
 const Rects_中学棟1階: Rect[] = [
     {
+        //雑華ホール
         y: 0,
         x1: -130,
         z1: 100,
@@ -29,6 +31,7 @@ const Rects_中学棟1階: Rect[] = [
         color: Color.red,
     },
     {
+        //1A
         y: 0,
         x1: 100,
         z1: -20,
@@ -37,6 +40,7 @@ const Rects_中学棟1階: Rect[] = [
         color: Color.red,
     },
     {
+        //1B
         y: 0,
         x1: 100,
         z1: -90,
@@ -45,6 +49,7 @@ const Rects_中学棟1階: Rect[] = [
         color: Color.red,
     },
     {
+        //1C
         y: 0,
         x1: 100,
         z1: -180,
@@ -53,6 +58,7 @@ const Rects_中学棟1階: Rect[] = [
         color: Color.red,
     },
     {
+        //1D
         y: 0,
         x1: 100,
         z1: -180,
@@ -61,6 +67,7 @@ const Rects_中学棟1階: Rect[] = [
         color: Color.red,
     },
     {
+        //1E
         y: 0,
         x1: -5,
         z1: -320,
@@ -108,6 +115,7 @@ const Rects_中学棟1階: Rect[] = [
 ];
 const Rects_中学棟2階: Rect[] = [
     {
+        //2A
         y: 150,
         x1: 100,
         z1: -20,
@@ -116,6 +124,7 @@ const Rects_中学棟2階: Rect[] = [
         color: Color.red,
     },
     {
+        //2B
         y: 150,
         x1: 100,
         z1: -90,
@@ -124,6 +133,7 @@ const Rects_中学棟2階: Rect[] = [
         color: Color.red,
     },
     {
+        //2C
         y: 150,
         x1: 100,
         z1: -180,
@@ -132,6 +142,7 @@ const Rects_中学棟2階: Rect[] = [
         color: Color.red,
     },
     {
+        //2D
         y: 150,
         x1: 100,
         z1: -180,
@@ -140,6 +151,7 @@ const Rects_中学棟2階: Rect[] = [
         color: Color.red,
     },
     {
+        //2E
         y: 150,
         x1: -5,
         z1: -320,
@@ -148,6 +160,7 @@ const Rects_中学棟2階: Rect[] = [
         color: Color.red,
     },
     {
+        //和室
         y: 150,
         x1: 0,
         z1: 250,
@@ -218,6 +231,7 @@ const Rects_中学棟2階: Rect[] = [
 ];
 const Rects_中学棟3階: Rect[] = [
     {
+        //3A
         y: 300,
         x1: 100,
         z1: -20,
@@ -226,6 +240,7 @@ const Rects_中学棟3階: Rect[] = [
         color: Color.red,
     },
     {
+        //3B
         y: 300,
         x1: 100,
         z1: -90,
@@ -234,6 +249,7 @@ const Rects_中学棟3階: Rect[] = [
         color: Color.red,
     },
     {
+        //3C
         y: 300,
         x1: 100,
         z1: -180,
@@ -242,6 +258,7 @@ const Rects_中学棟3階: Rect[] = [
         color: Color.red,
     },
     {
+        //3D
         y: 300,
         x1: 100,
         z1: -180,
@@ -250,6 +267,7 @@ const Rects_中学棟3階: Rect[] = [
         color: Color.red,
     },
     {
+        //3E
         y: 300,
         x1: -5,
         z1: -320,
@@ -329,6 +347,7 @@ const Rects_高校棟1階: Rect[] = [
 ];
 const Rects_高校棟2階: Rect[] = [
     {
+        //音楽室
         y: 150,
         x1: -375,
         z1: -50,
@@ -337,6 +356,7 @@ const Rects_高校棟2階: Rect[] = [
         color: Color.blue,
     },
     {
+        //6A
         y: 150,
         x1: -225,
         z1: -50,
@@ -345,6 +365,7 @@ const Rects_高校棟2階: Rect[] = [
         color: Color.blue,
     },
     {
+        //6B
         y: 150,
         x1: -225,
         z1: -120,
@@ -353,6 +374,7 @@ const Rects_高校棟2階: Rect[] = [
         color: Color.blue,
     },
     {
+        //6C
         y: 150,
         x1: -225,
         z1: -210,
@@ -361,6 +383,7 @@ const Rects_高校棟2階: Rect[] = [
         color: Color.blue,
     },
     {
+        //6D
         y: 150,
         x1: -225,
         z1: -280,
@@ -369,6 +392,7 @@ const Rects_高校棟2階: Rect[] = [
         color: Color.blue,
     },
     {
+        //6E
         y: 150,
         x1: -250,
         z1: -375,
@@ -422,6 +446,7 @@ const Rects_高校棟2階: Rect[] = [
 ];
 const Rects_高校棟3階: Rect[] = [
     {
+        //生物室
         y: 300,
         x1: -225,
         z1: 100,
@@ -430,6 +455,7 @@ const Rects_高校棟3階: Rect[] = [
         color: Color.blue,
     },
     {
+        //5A
         y: 300,
         x1: -225,
         z1: -50,
@@ -438,6 +464,7 @@ const Rects_高校棟3階: Rect[] = [
         color: Color.blue,
     },
     {
+        //5B
         y: 300,
         x1: -225,
         z1: -120,
@@ -446,6 +473,7 @@ const Rects_高校棟3階: Rect[] = [
         color: Color.blue,
     },
     {
+        //5C
         y: 300,
         x1: -225,
         z1: -210,
@@ -454,6 +482,7 @@ const Rects_高校棟3階: Rect[] = [
         color: Color.blue,
     },
     {
+        //5D
         y: 300,
         x1: -225,
         z1: -280,
@@ -538,6 +567,7 @@ const Rects_高校棟3階: Rect[] = [
 ];
 const Rects_高校棟4階: Rect[] = [
     {
+        //4B
         y: 450,
         x1: -225,
         z1: -50,
@@ -546,6 +576,7 @@ const Rects_高校棟4階: Rect[] = [
         color: Color.blue,
     },
     {
+        //4C
         y: 450,
         x1: -225,
         z1: -120,
@@ -554,6 +585,7 @@ const Rects_高校棟4階: Rect[] = [
         color: Color.blue,
     },
     {
+        //4D
         y: 450,
         x1: -225,
         z1: -210,
@@ -562,6 +594,7 @@ const Rects_高校棟4階: Rect[] = [
         color: Color.blue,
     },
     {
+        //4E
         y: 450,
         x1: -225,
         z1: -280,
@@ -570,6 +603,7 @@ const Rects_高校棟4階: Rect[] = [
         color: Color.blue,
     },
     {
+        //視聴覚室
         y: 450,
         x1: -225,
         z1: -25,
@@ -578,6 +612,7 @@ const Rects_高校棟4階: Rect[] = [
         color: Color.blue,
     },
     {
+        //4A
         y: 450,
         x1: -375,
         z1: -25,
@@ -586,6 +621,7 @@ const Rects_高校棟4階: Rect[] = [
         color: Color.blue,
     },
     {
+        //情報教室
         y: 450,
         x1: -325,
         z1: 100,
@@ -594,6 +630,7 @@ const Rects_高校棟4階: Rect[] = [
         color: Color.blue,
     },
     {
+        //美術室
         y: 450,
         x1: -250,
         z1: 100,
@@ -1092,6 +1129,8 @@ const Polygons_体育館: Polygon[] = [
         ],
     },
 ];
+
+//階段エフェクトを置くことにしたので、削除
 const Polygons_図書館棟: Polygon[] = [
     {
         points: [
@@ -1115,4 +1154,174 @@ const Polygons_図書館棟: Polygon[] = [
  *  points: 頂点 ([x座標, y座標, z座標]のタプル) を反時計回りに並べた配列
  *  color: 表面の色(省略した場合は白)
  * */
-export const Polygons: Polygon[] = [...Polygons_小講堂, ...Polygons_中庭, ...Polygons_体育館, ...Polygons_図書館棟];
+export const Polygons: Polygon[] = [
+    ...Polygons_小講堂,
+    ...Polygons_中庭,
+    ...Polygons_体育館,
+    /*, ...Polygons_図書館棟,*/
+];
+
+//begin-endを対角線とする直方体
+type Box = {
+    begin: [number, number, number];
+    end: [number, number, number];
+    color?: Color;
+};
+
+//中学棟職員室側
+const Boxes_中学棟: Box[] = [
+    {
+        //昇降口
+        begin: [125, 0, 75],
+        end: [175, 300, 125],
+        color: Color.gray,
+    },
+    {
+        //CD間1
+        begin: [25, 0, -125],
+        end: [75, 50, -75],
+        color: Color.gray,
+    },
+    {
+        //CD間2
+        begin: [25, 50, -125],
+        end: [75, 100, -75],
+        color: Color.yellow,
+    },
+    {
+        //CD間3
+        begin: [25, 100, -125],
+        end: [75, 200, -75],
+        color: Color.gray,
+    },
+    {
+        //CD間4
+        begin: [25, 200, -125],
+        end: [75, 250, -75],
+        color: Color.yellow,
+    },
+    {
+        //CD間5
+        begin: [25, 250, -125],
+        end: [75, 300, -75],
+        color: Color.gray,
+    },
+];
+
+const Boxes_高校棟: Box[] = [
+    {
+        //昇降口
+        begin: [-300, 150, 25],
+        end: [-250, 450, 75],
+        color: Color.gray,
+    },
+    {
+        //CD間1
+        begin: [-300, 150, -225],
+        end: [-250, 200, -175],
+        color: Color.gray,
+    },
+    {
+        //CD間2
+        begin: [-300, 200, -225],
+        end: [-250, 250, -175],
+        color: Color.yellow,
+    },
+    {
+        //CD間3
+        begin: [-300, 250, -225],
+        end: [-250, 350, -175],
+        color: Color.gray,
+    },
+    {
+        //CD間4
+        begin: [-300, 350, -225],
+        end: [-250, 400, -175],
+        color: Color.yellow,
+    },
+    {
+        //CD間5
+        begin: [-300, 400, -225],
+        end: [-250, 450, -175],
+        color: Color.gray,
+    },
+    {
+        //体育館
+        begin: [-250, 0, -425],
+        end: [-290, 300, -375],
+        color: Color.gray,
+    },
+];
+
+const Boxes_図書館棟: Box[] = [
+    {
+        begin: [-200, 150, 250],
+        end: [-250, 350, 225],
+        color: Color.gray,
+    },
+];
+
+export const Boxes: Box[] = [...Boxes_中学棟, ...Boxes_高校棟, ...Boxes_図書館棟];
+
+export const ExhibitionPositions: [string, number, number, number][] = [
+    //中学棟1階
+    ["書道部", 125, 0, 15], //1A
+    ["東菁会", 125, 0, -55], //1B
+    ["独楽同好会", 125, 0, -127.5], //1C-1
+    ["学年展示", 125, 0, -162.5], //1C-2
+    ["学年展示", 125, 0, -215], //1D
+    ["学年展示", 35, 0, -285], //1E
+
+    //中学棟2階
+    ["囲碁将棋部", 125, 150, 15], //2A
+    ["オセロ同好会", 125, 150, -37.5], //2B-1
+    ["チェス研究会", 125, 150, -72.5], //2B-2
+    ["学年展示", 125, 150, -145], //2C
+    ["学年展示", 125, 150, -215], //2D
+    ["学年展示", 35, 150, -285], //2E
+    //["お茶席", 25, 150, 295], //和室
+    //↑svg形式が他とは違くて、他のアイコンの30倍くらい大きい。svgのrxを取ってくればこちらで変更することもできるが...
+
+    //中学棟3階
+    ["謎解き研究会", 125, 300, -2.5], //3A-1
+    ["暗号同好会", 125, 300, 32.5], //3A-1
+    ["ロケット研究部", 125, 300, -37.5], //3B-1
+    ["VOCALOID&作曲同好会", 125, 300, -72.5], //3B-2
+    ["休憩室", 125, 300, -145], //3C
+    //↑circleやrectではなくpathで囲い込みがされているので、白く塗られていない。
+    ["学年展示", 125, 300, -215], //3D
+    ["学年展示", 35, 300, -285], //3E
+
+    //高校棟1階
+    ["鉄道研究部", -212.5, 20, -412.5],
+
+    //高校棟2階
+    ["PRパート", -200, 150, -85], //6A
+    ["園芸部", -200, 150, -155], //6B
+    ["歴史部菁史会", -200, 150, -227.5], //6C-1
+    ["民族音楽同好会", -200, 150, -262.5], //6C-2
+    ["電子工作部", -200, 150, -315], //6D
+    ["折り紙研究部", -212.5, 150, -412.5], //6E
+
+    //高校棟3階
+    ["科学部", -187.5, 300, 137.5], //生物室
+    ["自動車研究会", -200, 300, -67.5], //5A-1
+    ["ラーメン研究会", -200, 300, -102.5], //5A-2
+    ["英語部", -200, 300, -137.5], //5B-1
+    ["写真部", -200, 300, -172.5], //5B-2
+    ["数学研究部", -200, 300, -245], //5C
+    ["新聞部", -200, 300, -297.5], //5D-1
+    ["文藝同好会", -200, 300, -332.5], //5D-2
+    ["クイズ研究部", -200, 300, -412.5], //5E
+
+    //高校棟4階
+    ["美術部", -200, 450, 117.5], //美術室-1
+    ["紅茶同好会", -200, 450, 167.5], //美術室-1
+    ["情報研究部", -287.5, 450, 137.5], //情報教室
+    ["MGA同好会", -200, 450, -85], //4B
+    ["ポケモン同好会", -200, 450, -137.5], //4C-1
+    ["東方研究会", -200, 450, -172.5], //4C-2
+    ["アニメ研究会", -200, 450, -227.5], //4D-1
+    ["ドラえもん研究会", -200, 450, -297.5], //4D-2
+    ["マジック同好会", -200, 450, -315], //4E
+];
