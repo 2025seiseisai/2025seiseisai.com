@@ -17,6 +17,7 @@ import Vector_sm from "./images/Vector.svg";
 import MoreAllow from "./images/arrow-right-circle.svg";
 import Headphone from "./images/headphones.svg";
 import Logout from "./images/log-out.svg";
+import Smartphone from "./images/smartphone.svg";
 import Slide from "./slide";
 
 const ibmPlexSansJP = IBM_Plex_Sans_JP({
@@ -180,6 +181,14 @@ export async function Top() {
                     </Link>
                 </div>
             </div>
+            <p className={styles.title_3}>Reservation</p>
+            <p className={styles.title_3_jn}>予約</p>
+            <p className={styles.contact_text}>来校の際はご予約が必要となります。ご予約はこちらからご確認ください。</p>
+            <Link href={"/reservation"} className={`${styles.question} ${styles.no_mb}`}>
+                <Smartphone className={styles.headphone} />
+                <p className={styles.question_text}>予約はこちらから</p>
+                <Logout className={styles.logout} />
+            </Link>
             <p className={styles.title_3}>Access</p>
             <p className={styles.title_3_jn}>アクセス</p>
             <div className={styles.access_container}>

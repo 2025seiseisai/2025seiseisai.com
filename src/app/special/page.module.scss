@@ -19,7 +19,7 @@
 
 @include media(sm) {
     .title {
-        width: calc(100svw - 40px);
+        width: calc(100% - 40px);
         margin-bottom: 25px;
         font-size: 28px;
     }
@@ -36,7 +36,7 @@
 
 @include media(sm) {
     .sentence {
-        width: calc(100svw - 40px);
+        width: calc(100% - 40px);
         font-size: 16px;
     }
 }
@@ -52,7 +52,7 @@
 
 @include media(sm) {
     .subtitle_block {
-        width: calc(100svw - 35px);
+        width: calc(100% - 35px);
         height: 168px;
     }
 
@@ -162,7 +162,7 @@
 }
 
 .iconblock {
-    margin-top: min(95px, 6.6svw);
+    margin-top: 83px;
 }
 
 @include media(sm) {
@@ -173,8 +173,8 @@
 }
 
 .headerblock {
-    margin-top: min(90px, 6.25svw);
-    margin-bottom: min(19px, 1.3svw);
+    margin-top: 83px;
+    margin-bottom: 20px;
 }
 
 @include media(sm) {
@@ -194,7 +194,7 @@
     gap: 1.65svw;
     width: auto;
     height: auto;
-    padding: 27px 0;
+    padding: 20px 0;
     margin: 0 auto;
 }
 
@@ -236,7 +236,7 @@
     gap: 1.65svw;
     width: auto;
     height: auto;
-    margin: 4px auto;
+    margin: 20px auto 0;
 }
 
 @include media(sm) {
@@ -252,6 +252,7 @@
 .iconImage {
     width: min(20svw, 240px);
     height: min(20svw, 240px);
+    border-radius: calc(infinity * 1px);
 }
 
 @include media(sm) {
@@ -282,6 +283,7 @@
 
 .headerImage {
     width: min(495px, 42svw);
+    height: min(165px, 14svw);
 }
 
 @include media(sm) {

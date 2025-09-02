@@ -623,3 +623,26 @@
         clip-path: polygon(0 0, -20% 0, -40% 100%, 0 100%);
     }
 }
+
+.navReservationLink {
+    padding: 6px 20px;
+    margin-right: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #de0d22;
+    text-decoration: none;
+    background-color: #fff0;
+    border: 1.5px solid #de0d22;
+    border-radius: 5px;
+    transition: background-color 150ms ease-in-out;
+
+    &:hover {
+        background-color: #0b0e0f10;
+    }
+
+    @include media(sm) {
+        padding: 5px 16px;
+        margin-right: max(16px, 3.5svw);
+        font-size: 11px;
+    }
+}
