@@ -1,8 +1,7 @@
 // 共通のスタイル
 
 .wrapper1 {
-    width: 400px;
-    margin-top: 33px;
+    margin-top: 47px;
     margin-left: 44px;
 }
 
@@ -17,6 +16,7 @@
 }
 
 .number {
+    flex-shrink: 0;
     width: 32px;
     height: 32px;
     margin-right: 16px; /* 右側に余白を追加  スマホ版？ */
@@ -34,8 +34,7 @@
 
 .title {
     flex-grow: 1; /* 残りのスペースをすべて占めるように設定 */
-    width: 198px;
-    height: 30px;
+    margin-right: 16px;
     font-size: 20px;
     font-weight: 500;
     line-height: 150%;
@@ -43,11 +42,16 @@
 }
 
 .cost {
+    flex-shrink: 0;
     font-size: 24px;
     font-weight: 500;
     line-height: 150%;
     color: #0b0e0f;
-    letter-spacing: 0%;
+    letter-spacing: 0;
+}
+
+.cash {
+    font-size: 22px;
 }
 
 .unit {
@@ -55,6 +59,7 @@
 }
 
 .description {
+    margin-top: 3px;
     margin-left: 44px;
     font-size: 13px;
     font-weight: 500;
@@ -81,6 +86,10 @@
     color: #0b0e0f; // スマホ版もここらへん色同じ？
 }
 
+.Bazaar2-description {
+    margin-top: 8px;
+}
+
 .title-2 {
     font-size: 22px;
     color: #0b0e0f;
@@ -96,10 +105,18 @@
 }
 
 .headShop {
-    flex: 1 1 45%; /* `width: 45%;`の代わりに`flex`プロパティを使用 */
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.headShopLeft {
+    margin-right: 20px;
     margin-left: 40px;
+}
+
+.headShopRight {
+    margin-right: 40px;
+    margin-left: 20px;
 }
 
 .upside {
@@ -175,25 +192,28 @@
 }
 
 // スマホ用のスタイル
-@include media(sm) {
+@media (width<=1024px) {
     .wrapper1 {
         width: 100%; // 幅を100%に設定
         margin-top: 11px; // 25-14px
         margin-left: 0; // 左マージンをリセット
     }
 
-    .title {
-        font-size: 18px; // フォントサイズを少し小さく
-        color: #000;
+    .container {
+        margin-top: 24px;
     }
 
-    .cost {
-        color: #000;
+    .title {
+        margin-right: 12px;
+        font-size: 18px; // フォントサイズを少し小さく
+    }
+
+    .number {
+        margin-right: 12px;
     }
 
     .description {
         font-size: 11px; // フォントサイズを少し小さく
-        color: #000;
     }
 
     .wrapper2 {
@@ -205,7 +225,7 @@
         margin-left: 0; // 左マージンをリセット
     }
 
-    .Bazzar2-description {
+    .Bazaar2-description {
         margin-top: 8px;
         margin-left: -14px; // 左マージンをリセット
     }
@@ -213,17 +233,13 @@
     .wrapper3 {
         display: flex; // スマホ版ではFlexboxを使用
         flex-direction: column; // 垂直方向に並べる
-        gap: 11px; // 要素間の間隔を追加
+        gap: 18px; // 要素間の間隔を追加
         padding: 20px;
         margin-bottom: 45px;
     }
 
     .headShop {
-        margin-top: 0;
-        margin-bottom: 0;
-
-        // スマホ版でのheadShopのスタイルを調整
-        margin-left: 0;
+        margin: 0;
     }
 
     .upside {
@@ -269,17 +285,5 @@
         margin-top: 29px;
         margin-left: 66px;
         font-size: 11px;
-    }
-}
-
-// PC用のスタイル
-@include media(lg) {
-    .wrapper3 {
-        display: grid; // PC版ではGridを使用
-        grid-template-columns: repeat(2, 1fr); // 2列のグリッド
-    }
-
-    .headShop {
-        margin-left: 40px; // PC版での左マージン
     }
 }

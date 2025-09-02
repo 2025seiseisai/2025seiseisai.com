@@ -71,7 +71,9 @@ export function Bazaar1() {
                         <p className={styles["number-content"]}>5</p>
                     </div>
                     <h2 className={styles.title}>キッチンカー</h2>
-                    <span className={styles.cost}>現金</span>
+                    <span className={styles.cost}>
+                        <span className={styles.cash}></span>現金
+                    </span>
                 </div>
             </div>
 
@@ -114,7 +116,7 @@ export function Bazaar2() {
             <div className={styles.line}></div>
             <div className={styles.content}>
                 <h2 className={styles["title-2"]}>金券について</h2>
-                <div className={styles["Bazzar2-description"]}>
+                <div className={styles["Bazaar2-description"]}>
                     <p>バザー店舗は一部を除き、すべて金券でのお取り扱いです。</p>
                     <p>金券は金券販売所にて販売しています。</p>
                     <p>金券は500シビ単位での販売です。(1シビ=1円)</p>
@@ -128,7 +130,7 @@ export function Bazaar2() {
 export function Bazaar3() {
     return (
         <div className={styles.wrapper3}>
-            <div className={styles.headShop}>
+            <div className={`${styles.headShopLeft} ${styles.headShop}`}>
                 <div className={styles.upside}>
                     <div className={styles.iconContainer}>
                         <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />
@@ -140,10 +142,12 @@ export function Bazaar3() {
                             <span className={styles.tag_realmoney}>現金</span>
                         </div>
                     </div>
-                    <Link href="" className={styles.link}>
+                    <div className={styles.link}>
                         <span className={styles.arrowIcon}>▶</span>
-                        <span className={styles.linkText}>オリジナルグッズ</span>
-                    </Link>
+                        <Link href="" className={styles.linkText}>
+                            オリジナルグッズ
+                        </Link>
+                    </div>
                 </div>
                 <p className={styles.descriptionBazzer3}>
                     文化祭公式グッズを販売しております。
@@ -152,7 +156,7 @@ export function Bazaar3() {
                 </p>
             </div>
 
-            <div className={styles.headShop}>
+            <div className={`${styles.headShopRight} ${styles.headShop}`}>
                 <div className={styles.upside}>
                     <div className={styles.iconContainer}>
                         <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["園芸部"] }} />
@@ -164,10 +168,12 @@ export function Bazaar3() {
                             <span className={styles.tag_realmoney}>現金</span>
                         </div>
                     </div>
-                    <Link href="" className={styles.link}>
+                    <div className={styles.link}>
                         <span className={styles.arrowIcon}>▶</span>
-                        <span className={styles.linkText}>園芸部</span>
-                    </Link>
+                        <Link href="" className={styles.linkText}>
+                            園芸部
+                        </Link>
+                    </div>
                 </div>
                 <p className={styles.descriptionBazzer3}>
                     今年も植物展示とチューリップの球根販売を行います！
@@ -176,7 +182,7 @@ export function Bazaar3() {
                 </p>
             </div>
 
-            <div className={styles.headShop}>
+            <div className={`${styles.headShopLeft} ${styles.headShop}`}>
                 <div className={styles.upside}>
                     <div className={styles.iconContainer}>
                         <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["文藝同好会"] }} />
@@ -187,10 +193,12 @@ export function Bazaar3() {
                             <span className={styles.tag}>5年D組</span>
                         </div>
                     </div>
-                    <Link href="" className={styles.link}>
+                    <div className={styles.link}>
                         <span className={styles.arrowIcon}>▶</span>
-                        <span className={styles.linkText}>文藝同好会</span>
-                    </Link>
+                        <Link href="" className={styles.linkText}>
+                            文藝同好会
+                        </Link>
+                    </div>
                 </div>
                 <p className={styles.descriptionBazzer3}>
                     文庫本・単行本・新書などを雑多に販売しています。掘り出し物が100シビから！
@@ -199,7 +207,7 @@ export function Bazaar3() {
                 </p>
             </div>
 
-            <div className={`${styles.headShop} ${styles.headShopTeaTable}`}>
+            <div className={`${styles.headShopRight} ${styles.headShop}`}>
                 <div className={styles.upside}>
                     <div className={styles.iconContainer}>
                         <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["お茶席"] }} />
@@ -211,10 +219,12 @@ export function Bazaar3() {
                             <span className={styles.tag_realmoney}>現金</span>
                         </div>
                     </div>
-                    <Link href="" className={styles.link}>
+                    <div className={styles.link}>
                         <span className={styles.arrowIcon}>▶</span>
-                        <span className={styles.linkText}>お茶席</span>
-                    </Link>
+                        <Link href="" className={styles.linkText}>
+                            お茶席
+                        </Link>
+                    </div>
                 </div>
                 <p className={styles.descriptionBazzer3}>
                     お抹茶と和菓子をご用意しております。お気軽にお越しください。
