@@ -1,21 +1,289 @@
 // 共通のスタイル
-.example {
-    font-size: 36px;
-    color: black;
+
+.wrapper1 {
+    margin-top: 47px;
+    margin-left: 44px;
+}
+
+.container {
+    margin-top: 14px;
+}
+
+.head {
+    display: flex;
+    align-items: center; /* 子要素を垂直方向に中央揃え */
+    justify-content: space-between; /* 子要素を両端に寄せる */
+}
+
+.number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    margin-right: 16px; /* 右側に余白を追加  スマホ版？ */
+    background-color: #de0d22;
+}
+
+.number-content {
+    width: 12px;
+    height: 30px;
+    margin-top: 1px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.title {
+    flex-grow: 1; /* 残りのスペースをすべて占めるように設定 */
+    margin-right: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #0b0e0f;
+}
+
+.cost {
+    flex-shrink: 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #0b0e0f;
+    letter-spacing: 0;
+}
+
+.cash {
+    font-size: 22px;
+}
+
+.unit {
+    font-size: 12px;
+}
+
+.description {
+    margin-top: 3px;
+    margin-left: 44px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #0b0e0f;
+}
+
+.wrapper2 {
+    display: flex; /* Flexboxを有効にして、子要素を横並びにする */
+    align-items: flex-start; /* 子要素を上端に揃える */
+    margin-top: 32px;
+}
+
+.line {
+    width: 4px;
+    height: 33px;
+    margin-left: 16px;
+    background-color: #de0d22;
+}
+
+.content {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #0b0e0f; // スマホ版もここらへん色同じ？
+}
+
+.Bazaar2-description {
+    margin-top: 8px;
+}
+
+.title-2 {
+    font-size: 22px;
+    color: #0b0e0f;
+}
+
+.wrapper3 {
+    display: grid; /* Flexboxの代わりにGridレイアウトを使用 */
+    grid-template-columns: repeat(2, 1fr); /* 2つの均等な幅の列を作成 スマホ？ */
+    padding: 10px;
+    margin-top: 24px;
+    margin-bottom: 50px;
+    border: 1.5px solid #de0d22;
+}
+
+.headShop {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.headShopLeft {
+    margin-right: 20px;
+    margin-left: 40px;
+}
+
+.headShopRight {
+    margin-right: 40px;
+    margin-left: 20px;
+}
+
+.upside {
+    display: flex;
+    gap: 32px;
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: flex-start; /* 子要素を両端に配置 */
+}
+
+.iconContainer {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+}
+
+.shopName {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #0b0e0f;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 4px;
+    color: rgb(255 255 255 / 100%);
+}
+
+.tag {
+    padding: 3px 11px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 100%;
+    background-color: #de0d22;
+    border-radius: 16px;
+}
+
+.tag_realmoney {
+    padding: 3px 11px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 100%;
+    background-color: #f4631e;
+    border-radius: 16px;
+}
+
+.link {
+    display: flex; /* これが重要！Link自身もFlexコンテナにする */
+    flex-shrink: 0;
+    gap: 6px; /* 矢印とテキストの間の余白 */
+    font-size: 0.8rem;
+    color: #de0d22;
+    text-decoration: none;
+}
+
+.arrowIcon {
+    color: #0b0e0f;
+}
+
+.linkText {
+    text-decoration: underline; /* テキストにのみ下線を適用 */
+}
+
+.descriptionBazaar3 {
+    margin-top: 3px;
+    margin-left: 88px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #0b0e0f;
 }
 
 // スマホ用のスタイル
-@include media(sm) {
-    .example {
-        background-color: blue;
+@media (width<=1024px) {
+    .wrapper1 {
+        width: 100%; // 幅を100%に設定
+        margin-top: 11px; // 25-14px
+        margin-left: 0; // 左マージンをリセット
     }
-}
 
-// PC用のスタイル
-@include media(lg) {
-    .example {
-        // 上書き可能
-        color: red;
-        background-color: green;
+    .container {
+        margin-top: 24px;
+    }
+
+    .title {
+        margin-right: 12px;
+        font-size: 18px; // フォントサイズを少し小さく
+    }
+
+    .number {
+        margin-right: 12px;
+    }
+
+    .description {
+        font-size: 11px; // フォントサイズを少し小さく
+    }
+
+    .wrapper2 {
+        margin-top: 25px;
+        margin-left: 0; // 左マージンをリセット
+    }
+
+    .line {
+        margin-left: 0; // 左マージンをリセット
+    }
+
+    .Bazaar2-description {
+        margin-top: 8px;
+        margin-left: -14px; // 左マージンをリセット
+    }
+
+    .wrapper3 {
+        display: flex; // スマホ版ではFlexboxを使用
+        flex-direction: column; // 垂直方向に並べる
+        gap: 18px; // 要素間の間隔を追加
+        padding: 20px;
+        margin-bottom: 45px;
+    }
+
+    .headShop {
+        margin: 0;
+    }
+
+    .upside {
+        position: relative;
+        gap: 0;
+    }
+
+    .iconContainer {
+        width: 46px;
+        height: 46px;
+    }
+
+    .textContent {
+        margin-left: 20px;
+    }
+
+    .shopName {
+        font-size: 18px;
+    }
+
+    .tags {
+        margin-top: 6px;
+    }
+
+    .tag {
+        padding: 2px 8px;
+        font-size: 10px;
+    }
+
+    .tag_realmoney {
+        padding: 2px 9px;
+        font-size: 10px;
+    }
+
+    .link {
+        position: absolute;
+        margin-top: 76px; // 57+14.5
+        margin-left: 66px;
+        font-size: 10px;
+    }
+
+    .descriptionBazaar3 {
+        margin-top: 29px;
+        margin-left: 66px;
+        font-size: 11px;
     }
 }
