@@ -186,13 +186,21 @@ function initializeMap3D(
             const material = new THREE.MeshBasicMaterial({
                 map: texture,
                 transparent: true,
-                side: THREE.DoubleSide,
+                side: THREE.FrontSide,
                 depthWrite: false,
             });
 
-            const mesh = new THREE.Mesh(geometry, material);
-            mesh.position.set(setX, setY, setZ);
-            scene.add(mesh);
+            const group = new THREE.Group();
+            group.position.set(setX, setY, setZ);
+
+            const frontMesh = new THREE.Mesh(geometry, material);
+            group.add(frontMesh);
+
+            const backMesh = new THREE.Mesh(geometry, material);
+            backMesh.rotation.y = Math.PI;
+            group.add(backMesh);
+
+            scene.add(group);
         }
 
         for (let i = 0; i < ExhibitionPositions.length; i++) {
@@ -229,13 +237,22 @@ function initializeMap3D(
             const material = new THREE.MeshBasicMaterial({
                 map: texture,
                 transparent: true,
-                side: THREE.DoubleSide,
+                side: THREE.FrontSide,
             });
-            const mesh = new THREE.Mesh(geometry, material);
-            mesh.position.set(setX, setY, setZ);
-            mesh.scale.set(0.5, 0.5, 0.5);
+
+            const group = new THREE.Group();
+            group.position.set(setX, setY, setZ);
+            group.scale.set(0.5, 0.5, 0.5);
+
+            const frontMesh = new THREE.Mesh(geometry, material);
+            group.add(frontMesh);
+
+            const backMesh = new THREE.Mesh(geometry, material);
+            backMesh.rotation.y = Math.PI;
+            group.add(backMesh);
+
             // シーンに追加
-            scene.add(mesh);
+            scene.add(group);
         }
 
         for (let i = 0; i < ExhibitionPositions.length; i++) {
