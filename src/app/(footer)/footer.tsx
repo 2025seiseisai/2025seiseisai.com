@@ -122,7 +122,7 @@ export function Footer() {
                     >
                         Contents
                     </h1>
-                    <DisabledFooterLink>Blog</DisabledFooterLink>
+                    <FooterLink href="/blog">Blog</FooterLink>
                     <FooterLink href="/special">Special</FooterLink>
                     <DisabledFooterLink>Downloads</DisabledFooterLink>
                     <FooterLink href="/archives">Archives</FooterLink>

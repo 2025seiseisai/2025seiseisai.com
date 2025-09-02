@@ -132,8 +132,8 @@ export function Header() {
                     <Link href="/blog" className={styles.navLink}>
                         Blog
                     </Link>
-                    <Link href="/contact" className={styles.navLink}>
-                        Contact
+                    <Link href="/goods" className={styles.navLink}>
+                        Goods
                     </Link>
                 </div>
                 <Link href="/reservation" className={styles.navReservationLink}>
