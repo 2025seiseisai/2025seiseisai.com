@@ -13,6 +13,7 @@ function initializeMap3D(
 ) {
     // scene, renderer, camera, controlsの初期化
     const scene = new THREE.Scene();
+    const billboardObjects: THREE.Object3D[] = [];
     const renderer = new THREE.WebGLRenderer({
         canvas: canvas,
         antialias: true,
@@ -190,17 +191,10 @@ function initializeMap3D(
                 depthWrite: false,
             });
 
-            const group = new THREE.Group();
-            group.position.set(setX, setY, setZ);
-
-            const frontMesh = new THREE.Mesh(geometry, material);
-            group.add(frontMesh);
-
-            const backMesh = new THREE.Mesh(geometry, material);
-            backMesh.rotation.y = Math.PI;
-            group.add(backMesh);
-
-            scene.add(group);
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(setX, setY, setZ);
+            scene.add(mesh);
+            billboardObjects.push(mesh);
         }
 
         for (let i = 0; i < ExhibitionPositions.length; i++) {
@@ -217,7 +211,7 @@ function initializeMap3D(
 
             const fontSize = 192;
 
-            ctx.font = fontSize + "px Sans Serif";
+            ctx.font = fontSize + "px Noto Sans JP, Noto Sans JP Fallback";
             ctx.fillStyle = "black";
             canvas.width = ctx.measureText(text).width * 1.2;
             canvas.height = fontSize * 1.2;
@@ -226,7 +220,7 @@ function initializeMap3D(
             ctx.lineWidth = 5; // 枠の太さ
             ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-            ctx.font = fontSize + "px Sans Serif";
+            ctx.font = fontSize + "px Noto Sans JP, Noto Sans JP Fallback";
             ctx.fillStyle = "black";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
@@ -240,25 +234,22 @@ function initializeMap3D(
                 side: THREE.FrontSide,
             });
 
-            const group = new THREE.Group();
-            group.position.set(setX, setY, setZ);
-            group.scale.set(0.5, 0.5, 0.5);
-
-            const frontMesh = new THREE.Mesh(geometry, material);
-            group.add(frontMesh);
-
-            const backMesh = new THREE.Mesh(geometry, material);
-            backMesh.rotation.y = Math.PI;
-            group.add(backMesh);
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(setX, setY, setZ);
+            mesh.scale.set(0.5, 0.5, 0.5);
 
             // シーンに追加
-            scene.add(group);
+            scene.add(mesh);
+            billboardObjects.push(mesh);
         }
 
-        for (let i = 0; i < ExhibitionPositions.length; i++) {
-            const [name, x, y, z] = ExhibitionPositions[i];
-            setText(name, x, y + 50, z);
-        }
+        document.fonts.ready.then(() => {
+            updated = true;
+            for (let i = 0; i < ExhibitionPositions.length; i++) {
+                const [name, x, y, z] = ExhibitionPositions[i];
+                setText(name, x, y + 50, z);
+            }
+        });
     }
     {
         //階段の追加
@@ -313,6 +304,13 @@ function initializeMap3D(
             updated = true;
             --preventControlsUpdate;
         }
+
+        // ビルボードオブジェクトの回転を更新
+        const dir = Math.atan2(camera.position.x - controls.target.x, camera.position.z - controls.target.z);
+        for (const obj of billboardObjects) {
+            obj.rotation.y = dir;
+        }
+
         light1.position.set(camera.position.x, camera.position.y, camera.position.z);
         light2.position.set(camera.position.x, camera.position.y, camera.position.z);
         if (updated) renderer.render(scene, camera);
