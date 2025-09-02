@@ -149,7 +149,7 @@ export function Bazaar3() {
                         </Link>
                     </div>
                 </div>
-                <p className={styles.descriptionBazzer3}>
+                <p className={styles.descriptionBazaar3}>
                     文化祭公式グッズを販売しております。
                     <br />
                     記念に一品、いかがでしょうか。
@@ -175,7 +175,7 @@ export function Bazaar3() {
                         </Link>
                     </div>
                 </div>
-                <p className={styles.descriptionBazzer3}>
+                <p className={styles.descriptionBazaar3}>
                     今年も植物展示とチューリップの球根販売を行います！
                     <br />
                     お値打ち価格で販売中！
@@ -200,7 +200,7 @@ export function Bazaar3() {
                         </Link>
                     </div>
                 </div>
-                <p className={styles.descriptionBazzer3}>
+                <p className={styles.descriptionBazaar3}>
                     文庫本・単行本・新書などを雑多に販売しています。掘り出し物が100シビから！
                     <br />
                     余った金券でぜひお越しください！
@@ -226,7 +226,7 @@ export function Bazaar3() {
                         </Link>
                     </div>
                 </div>
-                <p className={styles.descriptionBazzer3}>
+                <p className={styles.descriptionBazaar3}>
                     お抹茶と和菓子をご用意しております。お気軽にお越しください。
                     <br />
                     （一般800円、在校生・小学生以下500円）
