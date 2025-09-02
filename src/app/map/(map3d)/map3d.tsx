@@ -2,7 +2,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { SVGLoader } from "three/examples/jsm/Addons.js";
 import { exhibitionIcons } from "../(exhibition)/exhibition-icons";
 import { Boxes, Color, ExhibitionPositions, Polygons, Rects } from "./mapdata";
 
@@ -165,58 +164,35 @@ function initializeMap3D(
     {
         //展示アイコンの追加
         function setIcon(exhibitionName: string, setX: number, setY: number, setZ: number) {
-            const SVGData =
+            const SVGData = (
                 exhibitionName in exhibitionIcons
                     ? exhibitionIcons[exhibitionName as keyof typeof exhibitionIcons]
-                    : exhibitionIcons["fallback"];
-            const loader = new SVGLoader();
-            const data = loader.parse(SVGData);
-            const object = new THREE.Group();
+                    : exhibitionIcons["fallback"]
+            ).replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" ');
 
-            for (let i = 0; i < data.paths.length; i++) {
-                const path = data.paths[i];
-                console.log(path);
-                //circle/rect か path しかないはずなので、それぞれで場合分けしてよい
-                if (path.userData?.node.nodeName != "path") {
-                    //fill部分を表示
-                    const material = new THREE.MeshBasicMaterial({
-                        // color: path.userData?.style.fill,
-                        color: "white",
-                        side: THREE.DoubleSide,
-                    });
-                    const shapes = SVGLoader.createShapes(path);
-                    shapes.forEach((shape) => {
-                        const geometry = new THREE.ShapeGeometry(shape);
-                        const mesh = new THREE.Mesh(geometry, material);
-                        object.add(mesh);
-                    });
-                }
+            const textureLoader = new THREE.TextureLoader();
+            const texture = textureLoader.load(
+                "data:image/svg+xml;charset=utf-8," + encodeURIComponent(SVGData),
+                (tex) => {
+                    tex.colorSpace = THREE.SRGBColorSpace;
+                    updated = true;
+                },
+            );
 
-                path.subPaths.forEach((subPath) => {
-                    const points = subPath.getPoints(200).map((p) => new THREE.Vector3(p.x, p.y, 0));
-                    const curve = new THREE.CatmullRomCurve3(points);
-                    const geometry = new THREE.TubeGeometry(curve, 50, 0.2, 6, false);
-                    const material = new THREE.MeshBasicMaterial({
-                        // color: path.userData?.style.stroke,
-                        color: "black",
-                        side: THREE.DoubleSide,
-                    });
-                    const mesh = new THREE.Mesh(geometry, material);
-                    object.add(mesh);
-                });
-            }
-            //ローカル座標系の原点を重心にする
+            const planeHeight = 40;
+            const planeWidth = 40;
 
-            const boundingBox = new THREE.Box3().setFromObject(object);
-            const center = new THREE.Vector3();
-            boundingBox.getCenter(center);
-            object.children.forEach((child) => {
-                child.position.sub(center);
+            const geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
+            const material = new THREE.MeshBasicMaterial({
+                map: texture,
+                transparent: true,
+                side: THREE.DoubleSide,
+                depthWrite: false,
             });
 
-            object.scale.set(-2, -2, 2);
-            object.position.set(setX, setY, setZ);
-            scene.add(object);
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(setX, setY, setZ);
+            scene.add(mesh);
         }
 
         for (let i = 0; i < ExhibitionPositions.length; i++) {
@@ -249,7 +225,7 @@ function initializeMap3D(
             ctx.fillText(text, canvas.width / 2, canvas.height / 2);
             const texture = new THREE.CanvasTexture(canvas);
 
-            const geometry = new THREE.PlaneGeometry((25 * canvas.width) / canvas.height, 25);
+            const geometry = new THREE.PlaneGeometry((20 * canvas.width) / canvas.height, 20);
             const material = new THREE.MeshBasicMaterial({
                 map: texture,
                 transparent: true,
@@ -400,13 +376,13 @@ function initializeMap3D(
 // resolution: 解像度(1.0が最大, 0.8がデフォルト)
 // className: canvasのクラス名
 export function Map3D({
-    resolution = 0.8,
+    resolution = 1.0,
     className = "",
     floor = -1,
 }: {
     resolution?: number;
     className?: string;
-    floor?: number; // フロア番号 (0: 転心殿前, 1-4: 高校棟, 5-7: 中学棟)
+    floor?: number; // フロア番号 (0: 転心殿前, 1-4: 高校棠, 5-7: 中学棠)
 }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const stateRef = useRef<ReturnType<typeof initializeMap3D>>(null);
