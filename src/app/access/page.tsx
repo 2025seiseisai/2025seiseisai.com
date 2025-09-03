@@ -1,4 +1,5 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
+import Link from "next/link";
 import styles from "./page.module.scss";
 //イメージ
 import Image from "next/image";
@@ -40,7 +41,11 @@ export default function Page() {
                 <div className={styles.address_line}>
                     <div className={styles.address_title}>学校HP</div>
                     <div className={styles.address_fixer}>
-                        <div className={styles.address_detail}>https://www.tdj.ac.jp</div>
+                        <div className={styles.address_detail}>
+                            <Link className={styles.underline} href="https://www.tdj.ac.jp">
+                                https://www.tdj.ac.jp
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -41,7 +41,16 @@
 }
 
 .address_line {
+    @include media(sm) {
+        height: 56px;
+    }
+
+    @include media(lg) {
+        height: 62px;
+    }
+
     display: flex;
+    align-items: center;
     border-bottom: 2px solid rgb(222 13 34 / 100%);
 }
 
@@ -85,6 +94,10 @@
     }
 
     font-weight: 400;
+}
+
+.underline {
+    border-bottom: 1px solid black;
 }
 
 .access_container {
@@ -133,10 +146,12 @@
 .distance {
     @include media(sm) {
         display: flex;
+        margin-top: 20px;
         font-size: 16px;
     }
 
     @include media(lg) {
+        margin-top: 25px;
         margin-left: 60px;
         font-size: 20px;
     }
@@ -168,7 +183,7 @@
     padding: 2px 8px;
     margin-bottom: 15px;
     margin-left: 10%;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 500;
     border-left: 4px solid rgb(222 13 34 / 100%);
 }
