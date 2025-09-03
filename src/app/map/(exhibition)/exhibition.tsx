@@ -5,29 +5,32 @@ import { exhibitionIcons } from "../(exhibition)/exhibition-icons"; // ファイ
 import { ExhibitionFloor, locations, exhibitionData } from "./exhibition-data";
 import styles from "./page.module.scss";
 import Link from "next/link";
+import Arrow from "./arrow-right-circle.png";
+import stamp from "./Frame 292.png";
+import event from "./Frame 294.png";
+import bazaar from "./Frame 295.png";
+import Image from "next/image";
 
 export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
     const filteredExs = Object.entries(exhibitionData).filter(([, data]) => locations[data.location] === floor);
     return (
-        <div>
+        <div className={styles.containers}>
             {filteredExs.map(([name, data]) => (
                 <div key={name} className={styles.card}>
                     <div className={styles.icon}>
-                        <div dangerouslySetInnerHTML={{ __html: exhibitionIcons[name] }} />
+                        <div dangerouslySetInnerHTML={{ __html: data.icon}} />
                     </div>
                     <div className={styles.content}>
                         <div className={styles.location}>{data.location}</div>
                         <div className={styles.title}>{name}</div>
                         <div className={styles.buttons}>
-                            {data.stamp && <button className={styles.stampbutton}>スタンプラリー</button>}
-                            {data.events && <button className={styles.eventsbutton}>イベント</button>}
-                            {data.bazaar && <button className={styles.bazaarbutton}>バザー</button>}
+                            {data.stamp && <div className={styles.stampbutton}><Image src={stamp} alt="stamp"/></div>}
+                            {data.events && <div className={styles.eventsbutton}><Image src={event} alt="event"/></div>}
+                            {data.bazaar && <div className={styles.bazaarbutton}><Image src={bazaar} alt="bazaar"/></div>}
                         </div>
                     </div>
-                    <Link href="https://seiseisai.com/" target="_blank" rel="noopener noreferrer">
-                        <div className={styles.arrow}>
-                            <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["arrow"] }} />
-                        </div>
+                    <Link href={`https://seiseisai.com/`} className={styles.link}>
+                        <Image src={Arrow} alt="arrow" className={styles.arrow} />
                     </Link>
                 </div>
             ))}

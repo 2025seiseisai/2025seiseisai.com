@@ -4,6 +4,13 @@
     color: black;
 }
 
+.containers {
+    width: 400px;
+    margin-top: 163px;;
+    margin-left: 880px;
+    border-top: #de0d22 1px solid;
+}
+
 .card {
         display: flex;
         align-items: center;
@@ -29,33 +36,8 @@
     }
 
     .buttons {
-        margin-top: 8px;
-    }
-
-    .stampbutton {
-        padding: 6px 12px;
-        margin-right: 8px;
-        color: white;
-        background-color: #de0d22;
-        border: none;
-        border-radius: 4px;
-    }
-
-    .eventsbutton {
-        padding: 6px 12px;
-        margin-right: 8px;
-        color: white;
-        background-color: #f4631e;
-        border: none;
-        border-radius: 4px;
-    }
-
-    .bazaarbutton {
-        padding: 6px 12px;
-        color: white;
-        background-color: #ff9f00;
-        border: none;
-        border-radius: 4px;
+        display: flex;
+        gap: 8px;
     }
 
     .underline {
@@ -64,10 +46,9 @@
     }
 
     .container {
-        display: absolute;
-        width: 100%;
+        width: 680px;
         padding: 16px;
-        margin-top: auto;
+        margin-top: 581px;
         font-family: sans-serif;
         border: 1px solid #de0d22;
     }
