@@ -9,6 +9,9 @@ import Arrow from "./arrow-right-circle.png";
 import stamp from "./Frame 292.png";
 import event from "./Frame 294.png";
 import bazaar from "./Frame 295.png";
+import stamps from "./Frame 296.png";
+import events from "./event.png";
+import bazaars from "./bazaar.png";
 import Image from "next/image";
 
 export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
@@ -24,9 +27,9 @@ export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
                         <div className={styles.location}>{data.location}</div>
                         <div className={styles.title}>{name}</div>
                         <div className={styles.buttons}>
-                            {data.stamp && <div className={styles.stampbutton}><Image src={stamp} alt="stamp"/></div>}
-                            {data.events && <div className={styles.eventsbutton}><Image src={event} alt="event"/></div>}
-                            {data.bazaar && <div className={styles.bazaarbutton}><Image src={bazaar} alt="bazaar"/></div>}
+                            {data.stamp && <div ><Image src={stamp} alt="stamp"/></div>}
+                            {data.events && <div ><Image src={event} alt="event"/></div>}
+                            {data.bazaar && <div ><Image src={bazaar} alt="bazaar"/></div>}
                         </div>
                     </div>
                     <Link href={`https://seiseisai.com/`} className={styles.link}>
@@ -40,15 +43,23 @@ export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
 
 const tags = [
     {
-        label: "スタンプラリー",
+        label: (
+            <>
+                <Image src={stamps} alt="stamps" />
+            </>
+        ),
         color: "red",
-        description: "スタンプラリーを行っている団体です。",
+        description: (<div className={styles.stampdestriction}>スタンプラリーを行っている団体です。</div>),
     },
     {
-        label: "イベント",
+        label: (
+            <>
+                <Image src={events} alt="events" className={styles.eventsbutton}/>
+            </>
+        ),
         color: "orange",
         description: (
-            <>
+            <div className={styles.eventdescription}>
                 イベントを行っている団体です。詳しくは{" "}
                 <a
                     href="http://localhost:3000/2025"
@@ -59,13 +70,19 @@ const tags = [
                     Events
                 </a>{" "}
                 をチェック！
-            </>
+            </div>
         ),
     },
     {
-        label: "バザー",
+        label: (
+            <>
+                <Image src={bazaars} alt="bazaars" className={styles.bazaarbutton}/>
+            </>
+        ),
         color: "yellow",
-        description: "バザーでの販売を行っている団体です。",
+        description: (
+            <div className={styles.bazaardescription}> バザーでの販売を行っている団体です。</div>
+        ),
     },
 ];
 

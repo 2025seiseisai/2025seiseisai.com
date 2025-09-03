@@ -4,97 +4,7 @@
     color: black;
 }
 
-.containers {
-    width: 400px;
-    margin-top: 163px;;
-    margin-left: 880px;
-    border-top: #de0d22 1px solid;
-}
 
-.card {
-        display: flex;
-        align-items: center;
-        padding: 16px;
-        border-bottom: 1px solid #de0d22;
-    }
-
-    .icon {
-        width: 50px;
-        height: 50px;
-        margin-right: 16px;
-        border-radius: 50%;
-    }
-
-    .content {
-        flex: 1;
-    }
-
-
-    .title {
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .buttons {
-        display: flex;
-        gap: 8px;
-    }
-
-    .underline {
-        color: #de0d22;
-        text-decoration: underline;
-    }
-
-    .container {
-        width: 680px;
-        padding: 16px;
-        margin-top: 581px;
-        font-family: sans-serif;
-        border: 1px solid #de0d22;
-    }
-
-    .tagItem {
-        display: flex;
-        align-items: center;
-        margin-bottom: 12px;
-    }
-
-    .tagname{
-        margin-bottom: 8px;
-        font-weight: bold;
-    }
-
-    .tag {
-        min-width: 100px;
-        padding: 4px 12px;
-        margin-right: 12px;
-        font-weight: medium;
-        color: white;
-        text-align: center;
-        border-radius: 4px;
-    }
-
-    .red {
-        background-color: #de0d22;
-    }
-
-    .orange {
-        background-color: #f4631e;
-    }
-
-    .yellow {
-        background-color: #ff9f00;
-    }
-
-    .description {
-        flex: 1;
-    }
-
-    .highlight {
-        font-weight: bold;
-        color: #de0d22;
-        text-decoration: underline;
-    }
 
 // スマホ用のスタイル
 @include media(sm) {
@@ -107,25 +17,106 @@
         color: #0b0e0f;
     }
 
+
+
+
+
+    .tag{
+        height: 20px;
+        margin-left: 25px;
+    }
+
+
+
+    .containers {
+    width: 335px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-top: #de0d22 1px solid;
+}
+
+.card {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        border-bottom: 1px solid #de0d22;
+    }
+
+    .icon {
+        width: 56px;
+        height: 56px;
+        margin-right: 16px;
+        border-radius: 50%;
+    }
+
+    .content {
+        flex: 1;
+    }
+
+
     .title {
         font-size: 20px;
+        font-weight: bold;
         color: #0b0e0f;
     }
 
     .buttons {
+        display: flex;
+        gap: 8px;
         font-size: 10px;
     }
 
-    .tagname{
-        font-size: 18px;
+    .underline {
+        color: #de0d22;
+        text-decoration: underline;
     }
 
-    .tag{
-        font-size: 13px;
+    .container {
+        width: 335px;
+        padding-bottom: 10px;
+        margin-left: 20px;
+        font-family: sans-serif;
+        border: 1px solid #de0d22;
     }
+
+    .tagItem {
+        align-items: center;
+        margin-left: 25px;
+    }
+
+    .tagname{
+        margin-top: 10px;
+        margin-left: 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .stampbutton{
+        width: 129px;
+        height: 24px;
+    }
+
+    .eventsbutton{
+        width: 84px;
+        height: 24px;
+    }
+
+    .bazaarbutton{
+        width: 70.5px;
+        height: 24px;
+    }
+
+
 
     .description {
+        margin-left: 40px;
         font-size: 13px;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: #de0d22;
+        text-decoration: underline;
     }
 }
 
@@ -142,26 +133,114 @@
         color: #0b0e0f;
     }
 
+    .tag{
+        font-size: 15px;
+
+    }
+
+
+.containers {
+    width: 400px;
+    margin-top: 20px;
+    margin-left: 140px;
+    border-top: #de0d22 1px solid;
+}
+
+.card {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        border-bottom: 1px solid #de0d22;
+    }
+
+    .icon {
+        width: 56px;
+        height: 56px;
+        margin-right: 16px;
+        border-radius: 50%;
+    }
+
+    .content {
+        flex: 1;
+    }
+
+
     .title {
         font-size: 20px;
+        font-weight: bold;
         color: #0b0e0f;
     }
 
     .buttons {
+        display: flex;
+        gap: 8px;
         font-size: 10px;
     }
 
-    .tagname{
-        font-size: 20px;
+    .underline {
+        color: #de0d22;
+        text-decoration: underline;
     }
 
-    .tag{
-        font-size: 15px;
+    .container {
+        width: 680px;
+        padding-bottom: 16px;
+        margin-top: 20px;
+        font-family: sans-serif;
+        border: 1px solid #de0d22;
+    }
+
+    .tagItem {
+        display:flex;
+        align-items: center;
+        margin-bottom: 12px;
+        margin-left: 52px;
+    }
+
+    .tagname{
+        margin-top: 16px;
+        margin-bottom: 8px;
+        margin-left: 52px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .stampbutton{
+        width: 129px;
+        height: 24px;
+    }
+
+    .eventsbutton{
+        width: 84px;
+        height: 24px;
+    }
+
+    .bazaarbutton{
+        width: 70.5px;
+        height: 24px;
+    }
+
+    .stampdestriction{
+        margin-left: 32px;
+    }
+
+    .eventdescription {
+        margin-left: 77px;
+    }
+
+    .bazaardescription {
+        margin-left: 90.5px;
     }
 
     .description {
+        flex: 1;
         font-size: 14px;
     }
 
+    .highlight {
+        font-weight: bold;
+        color: #de0d22;
+        text-decoration: underline;
+    }
 
 }
