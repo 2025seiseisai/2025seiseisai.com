@@ -19,18 +19,20 @@
 }
 
 .school_name {
+    margin: 0 auto;
+    margin-top: 35px;
+
     @include media(sm) {
+        margin-bottom: 13px;
         font-size: 20px;
         font-weight: 500;
     }
 
     @include media(lg) {
-        font-size: 40px;
+        margin-bottom: 12px;
+        font-size: 32px;
         font-weight: 500;
     }
-
-    margin: 0 auto;
-    margin-top: 35px;
 }
 
 .address_container {
@@ -38,36 +40,46 @@
     max-width: 960px;
     margin: 0 auto;
     border-top: 2px solid rgb(222 13 34 / 100%);
+
+    @include media(sm) {
+        width: calc(100% - 40px);
+    }
 }
 
 .address_line {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(222 13 34 / 100%);
+
     @include media(sm) {
         height: 56px;
     }
 
     @include media(lg) {
-        height: 62px;
+        height: 58px;
     }
-
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid rgb(222 13 34 / 100%);
 }
 
 .address_title {
+    margin-left: 5%;
+    font-weight: 400;
+
     @include media(sm) {
+        width: 90px;
         font-size: 16px;
     }
 
     @include media(lg) {
-        font-size: 20px;
+        width: 0;
+        margin-right: -3%;
+        font-size: 18px;
+        text-wrap: nowrap;
     }
-
-    margin-left: 5%;
-    font-weight: 400;
 }
 
 .address_title_fax {
+    font-weight: 400;
+
     @include media(sm) {
         font-size: 16px;
     }
@@ -75,29 +87,32 @@
     @include media(lg) {
         font-size: 20px;
     }
-
-    font-weight: 400;
 }
 
 .address_fixer {
-    padding-left: 10%;
     margin: 0 auto;
+
+    @include media(sm) {
+        width: calc(95% - 90px);
+        margin: 0;
+        margin-right: 5%;
+    }
 }
 
 .address_detail {
+    font-weight: 400;
+
     @include media(sm) {
         font-size: 16px;
     }
 
     @include media(lg) {
-        font-size: 20px;
+        font-size: 18px;
     }
-
-    font-weight: 400;
 }
 
 .underline {
-    border-bottom: 1px solid black;
+    text-decoration: underline;
 }
 
 .access_container {
@@ -119,6 +134,7 @@
 
 .map {
     @include media(sm) {
+        max-width: calc(100% - 40px);
         aspect-ratio: 1200/630;
         margin: 0 auto;
         margin-top: 20px;
@@ -139,11 +155,13 @@
 
 .distance_container {
     @include media(sm) {
-        margin-left: 20%;
+        margin-left: min(calc(30% - 50px), 20%);
     }
 }
 
 .distance {
+    font-weight: 400;
+
     @include media(sm) {
         display: flex;
         margin-top: 20px;
@@ -155,8 +173,6 @@
         margin-left: 60px;
         font-size: 20px;
     }
-
-    font-weight: 400;
 }
 
 .distance2 {
@@ -199,20 +215,4 @@
     max-width: 600px;
     margin: 0 auto;
     margin-bottom: 50px;
-}
-
-// スマホ用のスタイル
-@include media(sm) {
-    .example {
-        background-color: blue;
-    }
-}
-
-// PC用のスタイル
-@include media(lg) {
-    .example {
-        // 上書き可能
-        color: red;
-        background-color: green;
-    }
 }
