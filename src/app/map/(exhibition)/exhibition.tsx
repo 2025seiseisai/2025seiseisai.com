@@ -1,6 +1,3 @@
-import { exhibitionIcons } from "../(exhibition)/exhibition-icons"; // ファイルの先頭でimport
-
-   // return <div dangerouslySetInnerHTML={{ __html: exhibitionIcons["PRパート"] }} />;
 
 import { ExhibitionFloor, locations, exhibitionData } from "./exhibition-data";
 import styles from "./page.module.scss";
