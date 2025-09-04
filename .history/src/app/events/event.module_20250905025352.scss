@@ -157,43 +157,44 @@
 
 .utenjiIcon {
     width: 32px;
-    height: 32px;
+    
+    height: auto;
 }
 
 .utenjiHeader {
     display: flex;
-    gap: 18px;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 0;
+    gap: 8px; /* アイコンとタイトルの間隔 */
+    align-items: center; /* アイコンと文字の縦位置を揃える */
+    justify-content: center; /* 中央寄せ */
+    margin-bottom: 12px;
 }
 
 .utenjiBox {
     box-sizing: border-box;
     width: 335px;
     padding: 8px;
-    border: 2px solid red;
+    text-align: center; /* テキスト中央寄せ */
+    border: 2px solid red; /* 赤枠 */
 }
 
 .utenjiSection {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* 横方向の中央揃え */
     padding: 0 20px;
-    margin-top: 0;
+    margin-top: 35px;
+    text-align: center; /* テキスト中央揃え */
 }
 
 .utenjiTitle {
-    display: flex;
-    align-items: center;
-    margin: 9px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #000;
+    margin-bottom: 12px;
+    font-size: 20px; /* 指定どおり20px */
+    font-weight: bold;
+    color: #000; /* 黒一色 */
 }
 
 .utenjiText {
-    max-width: 500px;
+    max-width: 500px; /* 読みやすい横幅制限 */
     font-size: 14px;
     font-weight: 400px;
     line-height: 1.6;

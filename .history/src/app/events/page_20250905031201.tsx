@@ -177,7 +177,7 @@ export default function TimeTablePage() {
                     <Seriken className={pagestyles.utenjiIcon} />
                     <div className={pagestyles.utenjiTitle}>整理券について</div>
                 </div>
-                <p className={pagestyles.utenjiText}>「要整理券」のマークがついたイベントには整理券が必要です。各種整理券は整理券配布場所にてイベント開始の一時間前から配布します。</p>
+                <p className={pagestyles.serikenText}>「要整理券」のマークがついたイベントには整理券が必要です。各種整理券は整理券配布場所にてイベント開始の一時間前から配布します。</p>
               </div>
             </div>
             <div className={pagestyles.eventListHeader}>

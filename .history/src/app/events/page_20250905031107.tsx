@@ -171,13 +171,13 @@ export default function TimeTablePage() {
                 <p className={pagestyles.utenjiText}>雨天時は転心殿前・グラウンドのイベントはすべて中止になります。雨天時のスケジュールをご確認ください。</p>
               </div>
             </div>
-            <div className={pagestyles.utenjiSection}>
-              <div className={pagestyles.utenjiBox}>
-                <div className={pagestyles.utenjiHeader}>
-                    <Seriken className={pagestyles.utenjiIcon} />
-                    <div className={pagestyles.utenjiTitle}>整理券について</div>
+            <div className={pagestyles.serikenSection}>
+              <div className={pagestyles.serikenBox}>
+                <div className={pagestyles.serikenHeader}>
+                    <Seriken className={pagestyles.serikenIcon} />
+                    <div className={pagestyles.serikenTitle}>整理券について</div>
                 </div>
-                <p className={pagestyles.utenjiText}>「要整理券」のマークがついたイベントには整理券が必要です。各種整理券は整理券配布場所にてイベント開始の一時間前から配布します。</p>
+                <p className={pagestyles.serikenText}>「要整理券」のマークがついたイベントには整理券が必要です。各種整理券は整理券配布場所にてイベント開始の一時間前</p>
               </div>
             </div>
             <div className={pagestyles.eventListHeader}>
