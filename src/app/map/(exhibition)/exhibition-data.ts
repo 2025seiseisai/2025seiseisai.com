@@ -284,7 +284,7 @@ const exhibitionDataRaw = {
     },
     ラーメン研究会: {
         location: "5年A組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["ラーメン研究会"],
         stamp: true,
         description: "ラーメンを愛している部活です。ちょっと変わってるかもですが、ぜひ来てください！！！",
         twitter_link: "https://x.com/tdjramen",
@@ -347,7 +347,7 @@ const exhibitionDataRaw = {
     },
     書画展: {
         location: "図書室",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["東菁会"],
         stamp: false,
         description:
             "東大寺塔頭の書画や菁々会会員の作品を展示しております。塔頭の書画は販売もしております。ぜひ、ご覧ください。",
