@@ -1,21 +1,239 @@
-// 共通のスタイル
-.example {
-    font-size: 36px;
-    color: black;
-}
+.Access_title {
+    @include media(sm) {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        margin-left: 10%;
+        font-size: 28px;
+        font-weight: 700;
+    }
 
-// スマホ用のスタイル
-@include media(sm) {
-    .example {
-        background-color: blue;
+    @include media(lg) {
+        display: none;
     }
 }
 
-// PC用のスタイル
-@include media(lg) {
-    .example {
-        // 上書き可能
-        color: red;
-        background-color: green;
+.school_img {
+    width: 100%;
+    max-height: 245px;
+    object-fit: cover;
+}
+
+.school_name {
+    margin: 0 auto;
+    margin-top: 35px;
+
+    @include media(sm) {
+        margin-bottom: 13px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    @include media(lg) {
+        margin-bottom: 12px;
+        font-size: 32px;
+        font-weight: 500;
+    }
+}
+
+.address_container {
+    width: 80%;
+    max-width: 960px;
+    margin: 0 auto;
+    border-top: 2px solid rgb(222 13 34 / 100%);
+
+    @include media(sm) {
+        width: calc(100% - 40px);
+    }
+}
+
+.address_line {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(222 13 34 / 100%);
+
+    @include media(sm) {
+        height: 56px;
+    }
+
+    @include media(lg) {
+        height: 58px;
+    }
+}
+
+.address_title {
+    margin-left: 5%;
+    font-weight: 400;
+
+    @include media(sm) {
+        width: 90px;
+        font-size: 16px;
+    }
+
+    @include media(lg) {
+        width: 0;
+        margin-right: -3%;
+        font-size: 18px;
+        text-wrap: nowrap;
+    }
+}
+
+.address_title_fax {
+    font-weight: 400;
+
+    @include media(sm) {
+        font-size: 16px;
+    }
+
+    @include media(lg) {
+        font-size: 20px;
+    }
+}
+
+.address_fixer {
+    margin: 0 auto;
+
+    @include media(sm) {
+        width: calc(95% - 90px);
+        margin: 0;
+        margin-right: 5%;
+    }
+}
+
+.address_detail {
+    font-weight: 400;
+
+    @include media(sm) {
+        font-size: 16px;
+    }
+
+    @include media(lg) {
+        font-size: 18px;
+    }
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.access_container {
+    @include media(sm) {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 45px;
+    }
+
+    @include media(lg) {
+        display: flex;
+        width: 80%;
+        max-width: 960px;
+        margin: 0 auto;
+        margin-top: 55px;
+        margin-bottom: 45px;
+    }
+}
+
+.map {
+    @include media(sm) {
+        max-width: calc(100% - 40px);
+        aspect-ratio: 1200/630;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    @include media(lg) {
+        flex-basis: 50%;
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 1200/630;
+    }
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.distance_container {
+    @include media(sm) {
+        margin-left: min(calc(30% - 50px), 20%);
+    }
+}
+
+.distance {
+    font-weight: 400;
+
+    @include media(sm) {
+        display: flex;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    @include media(lg) {
+        margin-top: 25px;
+        margin-left: 60px;
+        font-size: 20px;
+    }
+}
+
+.distance2 {
+    @include media(sm) {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    @include media(lg) {
+        margin-left: 78px;
+        font-size: 20px;
+    }
+}
+
+.distance_sm {
+    @include media(sm) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.titles {
+    padding: 2px 8px;
+    margin-bottom: 15px;
+    margin-left: 10%;
+    font-size: 22px;
+    font-weight: 500;
+    border-left: 4px solid rgb(222 13 34 / 100%);
+
+    @include media(sm) {
+        margin-left: 20px;
+    }
+}
+
+.railway {
+    width: 70%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+
+    @include media(sm) {
+        width: calc(100% - 40px);
+    }
+}
+
+.youtube_link {
+    width: 70%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    @include media(sm) {
+        width: calc(100% - 40px);
+    }
+}
+
+.bus_img {
+    width: min(80%, 600px);
+    margin: 0 auto 30px;
+
+    @include media(sm) {
+        width: calc(100% - 40px);
     }
 }

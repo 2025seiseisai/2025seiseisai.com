@@ -4,6 +4,10 @@
     color: #0b0e0f;
 }
 
+.title::first-letter {
+    color: #de0d22;
+}
+
 // スマホ用のスタイル
 @include media(sm) {
     body {
@@ -18,12 +22,12 @@
         text-align: center;
     }
 
-    .total {
-        margin: 0 20px;
-    }
-
     .text {
         font-size: 16px;
+    }
+
+    .total {
+        margin: 0 20px;
     }
 
     .title_total {
@@ -34,10 +38,6 @@
         margin-bottom: 25px;
         font-size: 32px;
         font-weight: 700;
-    }
-
-    .title::first-letter {
-        color: #de0d22;
     }
 
     .subtitle {
@@ -72,12 +72,22 @@
         font-weight: bold;
     }
 
+    .pamphlet_detail {
+        margin-top: 16px;
+    }
+
     .pamphlet_download {
         display: flex;
         flex-direction: column;
         margin: 12px 12px 0 8px;
         font-size: 18px;
         color: #de0d22;
+    }
+
+    .pamphlet_download_detail {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 8px;
     }
 
     .pamphlet_download_button {
@@ -93,10 +103,31 @@
         border-radius: 3px;
     }
 
-    .download_icon {
+    .download_icon_sm {
+        display: block;
         width: 12px;
         height: 12px;
         margin-left: 6px;
+    }
+
+    .download_icon_lg {
+        display: none;
+    }
+
+    .magazine_all {
+        margin: 24px 0 45px;
+    }
+
+    .club_magazine_detail {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .club_name {
+        margin-inline: 8px;
+        font-size: 20px;
     }
 
     .club_magazine_headline summary::-webkit-details-marker {
@@ -120,6 +151,11 @@
         margin-left: auto;
     }
 
+    .club_subtitle {
+        margin-left: 10px;
+        font-size: 24px;
+    }
+
     .icon_open {
         display: none;
     }
@@ -133,6 +169,7 @@
     }
 
     .club_icons {
+        flex-shrink: 0;
         width: 30px;
         height: 30px;
         margin-left: 7px;
@@ -140,6 +177,7 @@
 
     .magazine_download_button {
         display: flex;
+        flex-shrink: 0;
         align-items: center;
         justify-content: center;
         width: 60px;
@@ -152,6 +190,13 @@
         border-radius: 3px;
     }
 
+    .magazine_download_icon {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-left: 4px;
+    }
+
     .magazine_total {
         margin-top: 20px;
     }
@@ -159,10 +204,225 @@
 
 // PC用のスタイル
 @include media(lg) {
+    body {
+        color: #0b0e0f;
+    }
+
+    .center {
+        text-align: center;
+    }
+
     .example {
         // 上書き可能
         color: #de0d22;
         background-color: green;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+
+    .total {
+        margin: 0 10svw;
+    }
+
+    .title_total {
+        margin: 30px 0;
+    }
+
+    .title {
+        margin-bottom: 30px;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        display: flex;
+        align-items: center;
+        block-size: 0 45px;
+    }
+
+    .subtitle::before,
+    .subtitle::after {
+        flex-grow: 1;
+        content: "";
+        border-top: 2px solid #0b0e0f;
+    }
+
+    .subtitle::before {
+        margin-right: 1rem;
+    }
+
+    .subtitle::after {
+        margin-left: 1rem;
+    }
+
+    .subtitle_English {
+        font-size: 36px;
+        font-weight: bold;
+        color: #de0d22;
+    }
+
+    .subtitle_Japanese {
+        margin-top: -6px;
+        font-size: 17.5px;
+        font-weight: bold;
+    }
+
+    .pamphlet_detail {
+        margin: 20px 40px 50px;
+    }
+
+    .pamphlet_download {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+        font-size: 22px;
+        color: #de0d22;
+    }
+
+    .pamphlet_download_button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 130px;
+        height: 25px;
+        margin: 0 auto;
+        margin-top: 8px;
+        font-size: 14px;
+        color: white;
+        text-align: center;
+        background-color: #de0d22;
+        border-radius: 3px;
+    }
+
+    .download_icon_sm {
+        display: none;
+    }
+
+    .download_icon_lg {
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-left: 6px;
+    }
+
+    .magazine_all {
+        margin-bottom: 60px;
+    }
+
+    .magazine_detail {
+        display: flex;
+    }
+
+    .magazine_detail_left {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .magazine_detail_right {
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    .club_magazine_headline {
+        margin-top: 20px;
+        background-color: white;
+    }
+
+    .club_magazine_headline summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .club_magazine_headline summary {
+        position: relative;
+        display: flex;
+        height: 36px;
+        cursor: pointer;
+        list-style: none;
+        border-left: 3px solid #de0d22;
+    }
+
+    .club_subtitle {
+        margin-left: 10px;
+        font-size: 24px;
+    }
+
+    .club_magazine_detail {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .club_name {
+        margin-inline: 18px;
+        font-size: 20px;
+    }
+
+    @media (width < 795px) {
+        .club_name {
+            margin-inline: 10px;
+        }
+    }
+
+    .magazine_icon {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        margin-left: auto;
+    }
+
+    .magazine_list {
+        margin: 4px 0 11px;
+    }
+
+    .icon_open {
+        display: none;
+    }
+
+    .club_magazine_headline[open] .icon_open {
+        display: inline;
+    }
+
+    .club_magazine_headline[open] .icon_closed {
+        display: none;
+    }
+
+    .club_icons {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        margin-left: 8px;
+    }
+
+    @media (width < 795px) {
+        .club_icons {
+            margin-left: 5px;
+        }
+    }
+
+    .magazine_download_button {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 28px;
+        margin-right: 2px;
+        margin-left: auto;
+        font-size: 14px;
+        color: white;
+        background-color: #de0d22;
+        border-radius: 3px;
+    }
+
+    .magazine_download_icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-left: 4px;
     }
 }
 
@@ -182,26 +442,5 @@ details.club_magazine_headline {
     & > .magazine_content {
         min-height: 0;
         overflow: hidden;
-    }
-}
-
-@supports not selector(::details-content) {
-    details.club_magazine_headline {
-        content-visibility: unset;
-
-        & > .magazine_content {
-            display: grid;
-            grid-template-rows: 0fr;
-            transition: grid-template-rows 0.5s ease-in-out;
-        }
-
-        &[open] > .magazine_content {
-            grid-template-rows: 1fr;
-        }
-
-        & > .magazine_content > ul {
-            min-height: 0;
-            overflow: hidden;
-        }
     }
 }
