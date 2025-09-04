@@ -6,7 +6,7 @@ import { exhibitionData } from "../(exhibition)/exhibition-data";
 
 export const dynamicParams = false;
 
-export function genetateStaticParams() {
+export function generateStaticParams() {
     return Object.keys(exhibitionData).map((exhibition) => ({
         exhibition: crypto.createHash("sha256").update(exhibition).digest("hex").substring(0, 16),
     }));
