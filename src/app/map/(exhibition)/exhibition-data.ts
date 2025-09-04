@@ -155,7 +155,7 @@ const exhibitionDataRaw = {
     },
     ロケット研究部: {
         location: "3年B組",
-        icon: exhibitionIcons["ロケット同好会"],
+        icon: exhibitionIcons["ロケット研究部"],
         stamp: true,
         description: "部員達の果てしない宇宙への興味をぜひご覧ください！",
         twitter_link: "https://x.com/RocketTdj63",

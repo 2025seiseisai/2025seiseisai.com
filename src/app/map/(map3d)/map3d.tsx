@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { exhibitionIcons } from "../(exhibition)/exhibition-icons";
+import { mapIcons } from "./map-icons";
 import { Boxes, Color, ExhibitionPositions, Polygons, Rects } from "./mapdata";
 
 function initializeMap3D(
@@ -164,11 +165,13 @@ function initializeMap3D(
     }
     {
         //展示アイコンの追加
-        function setIcon(exhibitionName: string, setX: number, setY: number, setZ: number) {
+        function setIcon(iconName: string, setX: number, setY: number, setZ: number, scale: number) {
             const SVGData = (
-                exhibitionName in exhibitionIcons
-                    ? exhibitionIcons[exhibitionName as keyof typeof exhibitionIcons]
-                    : exhibitionIcons["fallback"]
+                iconName in exhibitionIcons
+                    ? exhibitionIcons[iconName as keyof typeof exhibitionIcons]
+                    : iconName in mapIcons
+                      ? mapIcons[iconName as keyof typeof mapIcons]
+                      : exhibitionIcons["fallback"]
             ).replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" ');
 
             const textureLoader = new THREE.TextureLoader();
@@ -193,13 +196,17 @@ function initializeMap3D(
 
             const mesh = new THREE.Mesh(geometry, material);
             mesh.position.set(setX, setY, setZ);
+            mesh.scale.set(scale, scale, scale);
             scene.add(mesh);
             billboardObjects.push(mesh);
         }
 
+        const smallScale: string[] = ["トイレ", "男子トイレ", "女子トイレ", "階段", "自動販売機"];
+
         for (let i = 0; i < ExhibitionPositions.length; i++) {
             const [name, x, y, z] = ExhibitionPositions[i];
-            setIcon(name, x, y + 20, z);
+            const scale = smallScale.includes(name) ? 0.7 : 1;
+            setIcon(name, x, y + 20, z, scale);
         }
     }
     {
@@ -227,7 +234,7 @@ function initializeMap3D(
             ctx.fillText(text, canvas.width / 2, canvas.height / 2);
             const texture = new THREE.CanvasTexture(canvas);
 
-            const geometry = new THREE.PlaneGeometry((20 * canvas.width) / canvas.height, 20);
+            const geometry = new THREE.PlaneGeometry((10 * canvas.width) / canvas.height, 10);
             const material = new THREE.MeshBasicMaterial({
                 map: texture,
                 transparent: true,
@@ -236,19 +243,24 @@ function initializeMap3D(
 
             const mesh = new THREE.Mesh(geometry, material);
             mesh.position.set(setX, setY, setZ);
-            mesh.scale.set(0.5, 0.5, 0.5);
 
             // シーンに追加
             scene.add(mesh);
             billboardObjects.push(mesh);
         }
 
+        const exception: string[] = ["トイレ", "男子トイレ", "女子トイレ", "階段"];
+
         document.fonts.ready.then(() => {
             updated = true;
             for (let i = 0; i < ExhibitionPositions.length; i++) {
                 const [name, x, y, z] = ExhibitionPositions[i];
-                setText(name, x, y + 50, z);
+                if (!exception.includes(name)) setText(name, x, y + 50, z);
             }
+
+            //体育館・圓融館
+            setText("圓融館", 312.5, 0 + 20, -387.5);
+            setText("体育館", -87.5, -100 + 20, -712.5);
         });
     }
     {
