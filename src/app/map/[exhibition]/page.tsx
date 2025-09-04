@@ -8,14 +8,14 @@ export const dynamicParams = false;
 
 export function genetateStaticParams() {
     return Object.keys(exhibitionData).map((exhibition) => ({
-        exhibition: crypto.createHash("sha256").update(exhibition).digest("hex"),
+        exhibition: crypto.createHash("sha256").update(exhibition).digest("hex").substring(0, 16),
     }));
 }
 
 export default async function Page({ params }: { params: Promise<{ exhibition: string }> }) {
     const id = (await params).exhibition;
     const name = Object.keys(exhibitionData).find(
-        (exhibition) => crypto.createHash("sha256").update(exhibition).digest("hex") === id,
+        (exhibition) => crypto.createHash("sha256").update(exhibition).digest("hex").substring(0, 16) === id,
     );
     if (!name) notFound();
     const data = exhibitionData[name];
@@ -26,18 +26,34 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
             {/* 展示教室 */}
             {data.location}
             {/* アイコン */}
-            <div dangerouslySetInnerHTML={{ __html: data.icon }} />
+            <div className="" dangerouslySetInnerHTML={{ __html: data.icon }} />
             {/* 説明 */}
             {data.description}
-            {/* twitter */}
-            {data.twitter_link && <Link href={data.twitter_link}>Twitterへのリンク</Link>}
-            {/* instagram */}
-            {data.instagram_link && <Link href={data.instagram_link}>Instagramへのリンク</Link>}
-            {/* youtube */}
-            {data.facebook_link && <Link href={data.facebook_link}>Facebookへのリンク</Link>}
-            {/* website */}
-            {data.website_link && <Link href={data.website_link}>Webサイトへのリンク</Link>}
-            {/* イベント */}
+            {/* twitterのリンク (あれば) */}
+            {data.twitter_link && (
+                <Link href={data.twitter_link} target="_blank" rel="noopener noreferrer nofollow">
+                    Twitterへのリンク
+                </Link>
+            )}
+            {/* instagramのリンク (あれば) */}
+            {data.instagram_link && (
+                <Link href={data.instagram_link} target="_blank" rel="noopener noreferrer nofollow">
+                    Instagramへのリンク
+                </Link>
+            )}
+            {/* facebookのリンク (あれば) */}
+            {data.facebook_link && (
+                <Link href={data.facebook_link} target="_blank" rel="noopener noreferrer nofollow">
+                    Facebookへのリンク
+                </Link>
+            )}
+            {/* webサイトのリンク (あれば) */}
+            {data.website_link && (
+                <Link href={data.website_link} target="_blank" rel="noopener noreferrer nofollow">
+                    Webサイトへのリンク
+                </Link>
+            )}
+            {/* イベント (複数ある場合もある) */}
             {data.events?.map((event) => (
                 <div key={event}>イベントの名前：{event}</div>
             ))}
@@ -47,7 +63,7 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
                     部誌：<Link href={data.club_magazine}>リンク</Link>
                 </div>
             )}
-            {/* ブログ　*/}
+            {/* ブログのカード (複数ある場合もある) */}
             {data.blogs?.map((blog) => {
                 const [round, index] = blog.split("/");
                 return <BlogCardClient key={blog} round={round} index={index} showPast={false} />;

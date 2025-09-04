@@ -17,12 +17,12 @@ files.forEach((file) => {
     const result = optimize(data, {
         path: file,
         multipass: true, // 複数回最適化してさらに小さく
-        //floatPrecision: 2, // 小数点以下の精度を2桁
+        floatPrecision: 2, // 小数点以下の精度を2桁
         plugins: [
             { name: "removeViewBox", active: false }, // viewBoxは残す（レスポンシブ対応のため）
             "removeXMLProcInst", // <?xml ... ?> 削除
-            //"removeXMLNS", // xmlns削除（HTML埋め込みなら不要）
-            //"removeXlink", // xlink:href削除
+            "removeXMLNS", // xmlns削除（HTML埋め込みなら不要）
+            "removeXlink", // xlink:href削除
             { name: "inlineStyles", params: { onlyMatchedOnce: false } }, // CSSを属性化
             "removeUselessDefs", // 未使用<defs>削除
             "cleanupAttrs", // 空や重複属性削除
