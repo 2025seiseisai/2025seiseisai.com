@@ -202,12 +202,20 @@
     font-size: 22px;
     font-weight: 500;
     border-left: 4px solid rgb(222 13 34 / 100%);
+
+    @include media(sm) {
+        margin-left: 20px;
+    }
 }
 
 .railway {
     width: 70%;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
+
+    @include media(sm) {
+        width: calc(100% - 40px);
+    }
 }
 
 .youtube_link {
@@ -215,4 +223,17 @@
     max-width: 600px;
     margin: 0 auto;
     margin-bottom: 50px;
+
+    @include media(sm) {
+        width: calc(100% - 40px);
+    }
+}
+
+.bus_img {
+    width: min(80%, 600px);
+    margin: 0 auto 30px;
+
+    @include media(sm) {
+        width: calc(100% - 40px);
+    }
 }
