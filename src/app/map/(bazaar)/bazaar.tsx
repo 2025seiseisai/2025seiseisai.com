@@ -144,7 +144,7 @@ export function Bazaar3() {
                     </div>
                     <div className={styles.link}>
                         <span className={styles.arrowIcon}>▶</span>
-                        <Link href="" className={styles.linkText}>
+                        <Link href="/goods" className={styles.linkText}>
                             オリジナルグッズ
                         </Link>
                     </div>
@@ -170,7 +170,7 @@ export function Bazaar3() {
                     </div>
                     <div className={styles.link}>
                         <span className={styles.arrowIcon}>▶</span>
-                        <Link href="" className={styles.linkText}>
+                        <Link href="/map/105a745ec654c241" className={styles.linkText}>
                             園芸部
                         </Link>
                     </div>
@@ -195,7 +195,7 @@ export function Bazaar3() {
                     </div>
                     <div className={styles.link}>
                         <span className={styles.arrowIcon}>▶</span>
-                        <Link href="" className={styles.linkText}>
+                        <Link href="/map/2c08f35a0ed95ebe" className={styles.linkText}>
                             文藝同好会
                         </Link>
                     </div>
@@ -221,7 +221,7 @@ export function Bazaar3() {
                     </div>
                     <div className={styles.link}>
                         <span className={styles.arrowIcon}>▶</span>
-                        <Link href="" className={styles.linkText}>
+                        <Link href="/map/02b8db20bf4f30e5" className={styles.linkText}>
                             お茶席
                         </Link>
                     </div>
