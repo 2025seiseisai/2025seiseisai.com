@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./page.module.scss";
 //イメージ
 import Image from "next/image";
+import Bus from "./img/bus.jpg";
 import Railway from "./img/railway_map.jpg";
 import School from "./img/school.png";
 export const metadata = {
@@ -73,7 +74,10 @@ export default function Page() {
                     </p>
                 </div>
             </div>
-            {/*<p className={styles.titles}>バス運行表</p>*/}
+            <p className={styles.titles}>バス運行表</p>
+            <div className={styles.bus_img}>
+                <Image src={Bus} alt="Bus Image" />
+            </div>
             <p className={styles.titles}>路線図</p>
             <div className={styles.railway}>
                 <Image src={Railway} alt="Railway Image" />
