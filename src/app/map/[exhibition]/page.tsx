@@ -1,0 +1,57 @@
+import BlogCardClient from "@/app/blog/[round]/[index]/components/blog-card-client";
+import crypto from "crypto";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { exhibitionData } from "../(exhibition)/exhibition-data";
+
+export const dynamicParams = false;
+
+export function genetateStaticParams() {
+    return Object.keys(exhibitionData).map((exhibition) => ({
+        exhibition: crypto.createHash("sha256").update(exhibition).digest("hex"),
+    }));
+}
+
+export default async function Page({ params }: { params: Promise<{ exhibition: string }> }) {
+    const id = (await params).exhibition;
+    const name = Object.keys(exhibitionData).find(
+        (exhibition) => crypto.createHash("sha256").update(exhibition).digest("hex") === id,
+    );
+    if (!name) notFound();
+    const data = exhibitionData[name];
+    return (
+        <>
+            {/* 名称 */}
+            {name}
+            {/* 展示教室 */}
+            {data.location}
+            {/* アイコン */}
+            <div dangerouslySetInnerHTML={{ __html: data.icon }} />
+            {/* 説明 */}
+            {data.description}
+            {/* twitter */}
+            {data.twitter_link && <Link href={data.twitter_link}>Twitterへのリンク</Link>}
+            {/* instagram */}
+            {data.instagram_link && <Link href={data.instagram_link}>Instagramへのリンク</Link>}
+            {/* youtube */}
+            {data.facebook_link && <Link href={data.facebook_link}>Facebookへのリンク</Link>}
+            {/* website */}
+            {data.website_link && <Link href={data.website_link}>Webサイトへのリンク</Link>}
+            {/* イベント */}
+            {data.events?.map((event) => (
+                <div key={event}>イベントの名前：{event}</div>
+            ))}
+            {/* 部誌 */}
+            {data.club_magazine && (
+                <div>
+                    部誌：<Link href={data.club_magazine}>リンク</Link>
+                </div>
+            )}
+            {/* ブログ　*/}
+            {data.blogs?.map((blog) => {
+                const [round, index] = blog.split("/");
+                return <BlogCardClient key={blog} round={round} index={index} showPast={false} />;
+            })}
+        </>
+    );
+}
