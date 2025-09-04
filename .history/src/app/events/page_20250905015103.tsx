@@ -63,25 +63,21 @@ export default function TimeTablePage() {
 
   return (
         <div className={timestyles.page}>
-          <div className={timestyles.eventsWrapper}>
-              <div className={timestyles.eventsTitle}>
-                <span className={timestyles.firstLetter}>E</span>vents
-              </div>
+      {/*Location切り替え（左右ボタン＋スワイプ*/}
+            <div className={timestyles.eventsWrapper}>
+                <Events className={pagestyles.eventsIcon} />
             </div>
+            <h1 className={pagestyles.eventsTitle}>
+  <span className={pagestyles.firstLetter}>E</span>vents
+</h1>
             <div className={timestyles.topControls}>
                 <button onClick={scrollPrev} className={timestyles.arrowBtn}>
                     <Left />
                 </button>
 
-              <div className={timestyles.dayControls}>
-                  <div className={timestyles.dayButtonGroup}>
-                      <button onClick={() => setDay("day1")}>{day === "day1" ? <Day1on /> : <Day1off />}</button>
-                      <span className={timestyles.dayLabel}>9.06 sat</span>
-                  </div>
-                  <div className={timestyles.dayButtonGroup}>
-                      <button onClick={() => setDay("day2")}>{day === "day2" ? <Day2on /> : <Day2off />}</button>
-                      <span className={timestyles.dayLabel}>9.07 sun</span>
-                  </div>
+                <div className={timestyles.dayControls}>
+                    <button onClick={() => setDay("day1")}>{day === "day1" ? <Day1on /> : <Day1off />}</button>
+                    <button onClick={() => setDay("day2")}>{day === "day2" ? <Day2on /> : <Day2off />}</button>
                 </div>
 
                 <button onClick={scrollNext} className={timestyles.arrowBtn}>

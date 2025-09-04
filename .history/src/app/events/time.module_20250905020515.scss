@@ -53,9 +53,6 @@
 .dayControls {
     display: flex;
     gap: 12px;
-    align-items: flex-start;
-    justify-content: center;
-    margin-top: 30px;
 
     button {
         display: flex;
@@ -72,23 +69,10 @@
     }
 }
 
-.dayButtonGroup {
-  display: flex;
-  flex-direction: column; /* ボタンと日付を縦並び */
-  align-items: center;
-}
-
-.dayLabel {
-  margin-top: 6px;
-  font-size: 14px;
-  color: #333;
-}
-
 .arrowBtn {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 37px;
     cursor: pointer;
     background: none;
     border: none;
@@ -278,6 +262,7 @@
     top: 16px; // 上から16px
     left: 50%; // ページの中心
     z-index: 100; // 必要に応じて前面に表示
+    margin-bottom: 30px;
     transform: translateX(-167.5px); // 中心から左に126.5px
 }
 

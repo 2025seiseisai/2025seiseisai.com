@@ -53,8 +53,6 @@
 .dayControls {
     display: flex;
     gap: 12px;
-    align-items: flex-start;
-    justify-content: center;
     margin-top: 30px;
 
     button {
@@ -72,26 +70,14 @@
     }
 }
 
-.dayButtonGroup {
-  display: flex;
-  flex-direction: column; /* ボタンと日付を縦並び */
-  align-items: center;
-}
-
-.dayLabel {
-  margin-top: 6px;
-  font-size: 14px;
-  color: #333;
-}
-
 .arrowBtn {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 37px;
     cursor: pointer;
     background: none;
     border: none;
+    margin-top: 30px;
 
     img {
         width: 32px;

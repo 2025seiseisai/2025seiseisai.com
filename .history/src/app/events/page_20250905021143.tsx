@@ -79,9 +79,7 @@ export default function TimeTablePage() {
                       <span className={timestyles.dayLabel}>9.06 sat</span>
                   </div>
                   <div className={timestyles.dayButtonGroup}>
-                      <button onClick={() => setDay("day2")}>{day === "day2" ? <Day2on /> : <Day2off />}</button>
-                      <span className={timestyles.dayLabel}>9.07 sun</span>
-                  </div>
+                    <button onClick={() => setDay("day2")}>{day === "day2" ? <Day2on /> : <Day2off />}</button>
                 </div>
 
                 <button onClick={scrollNext} className={timestyles.arrowBtn}>
