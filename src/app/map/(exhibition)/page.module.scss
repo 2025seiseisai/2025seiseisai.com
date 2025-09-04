@@ -1,246 +1,151 @@
-// 共通のスタイル
-.example {
-    font-size: 36px;
-    color: black;
+.location {
+    font-size: 12px;
+    color: #0b0e0f;
 }
 
-
-
-// スマホ用のスタイル
-@include media(sm) {
-    .example {
-        background-color: blue;
-    }
-
-    .location {
-        font-size: 12px;
-        color: #0b0e0f;
-    }
-
-
-
-
-
-    .tag{
-        height: 20px;
-        margin-left: 25px;
-    }
-
-
-
-    .containers {
-    width: 335px;
+.containers {
     margin-top: 20px;
-    margin-left: 20px;
-    border-top: #de0d22 1px solid;
+    border-top: #de0d22 1.5px solid;
 }
 
 .card {
-        display: flex;
-        align-items: center;
-        padding: 16px;
-        border-bottom: 1px solid #de0d22;
+    display: flex;
+    align-items: center;
+    padding: 7px 12px 9px;
+    font-weight: 600;
+    border-bottom: 1.5px solid #de0d22;
+}
+
+.icon {
+    width: 56px;
+    height: 56px;
+    margin-right: 16px;
+}
+
+.content {
+    flex: 1;
+}
+
+.title {
+    margin-right: 6px;
+    margin-bottom: 3px;
+    font-size: 20px;
+    color: #0b0e0f;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+    font-size: 10px;
+}
+
+.underline {
+    color: #de0d22;
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    border: 1.5px solid #de0d22;
+}
+
+.stampbutton {
+    width: 129px;
+    height: 24px;
+}
+
+.eventsbutton {
+    width: 84px;
+    height: 24px;
+}
+
+.bazaarbutton {
+    width: 70.5px;
+    height: 24px;
+}
+
+.highlight {
+    color: #de0d22;
+    text-decoration: underline;
+}
+
+// スマホ用のスタイル
+@media (width < 1024px) {
+    .containers {
+        width: 100%;
     }
 
-    .icon {
-        width: 56px;
-        height: 56px;
-        margin-right: 16px;
-        border-radius: 50%;
-    }
-
-    .content {
-        flex: 1;
-    }
-
-
-    .title {
-        font-size: 20px;
-        font-weight: bold;
-        color: #0b0e0f;
-    }
-
-    .buttons {
-        display: flex;
-        gap: 8px;
-        font-size: 10px;
-    }
-
-    .underline {
-        color: #de0d22;
-        text-decoration: underline;
+    @media (width <= 375px) {
+        .card {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
     }
 
     .container {
-        width: 335px;
-        padding-bottom: 10px;
-        margin-left: 20px;
-        font-family: sans-serif;
-        border: 1px solid #de0d22;
+        margin-top: 32px;
+        margin-bottom: 45px;
     }
 
     .tagItem {
-        align-items: center;
+        margin-bottom: 10px;
         margin-left: 25px;
     }
 
-    .tagname{
+    .tagname {
         margin-top: 10px;
+        margin-bottom: 11px;
         margin-left: 15px;
         font-size: 18px;
-        font-weight: bold;
     }
-
-    .stampbutton{
-        width: 129px;
-        height: 24px;
-    }
-
-    .eventsbutton{
-        width: 84px;
-        height: 24px;
-    }
-
-    .bazaarbutton{
-        width: 70.5px;
-        height: 24px;
-    }
-
-
 
     .description {
-        margin-left: 40px;
+        margin-top: 6px;
+        margin-right: 20px;
+        margin-left: 15px;
         font-size: 13px;
-    }
-
-    .highlight {
-        font-weight: bold;
-        color: #de0d22;
-        text-decoration: underline;
     }
 }
 
 // PC用のスタイル
-@include media(lg) {
-    .example {
-        // 上書き可能
-        color: red;
-        background-color: green;
+@media (width >= 1024px) {
+    .tag {
+        width: 129px;
     }
 
-    .location {
-        font-size: 12px;
-        color: #0b0e0f;
-    }
+    .containers {
+        width: calc(100% - 40px);
+        margin-top: 43px;
+        margin-bottom: 50px;
+        margin-left: 40px;
 
-    .tag{
-        font-size: 15px;
-
-    }
-
-
-.containers {
-    width: 400px;
-    margin-top: 20px;
-    margin-left: 140px;
-    border-top: #de0d22 1px solid;
-}
-
-.card {
-        display: flex;
-        align-items: center;
-        padding: 16px;
-        border-bottom: 1px solid #de0d22;
-    }
-
-    .icon {
-        width: 56px;
-        height: 56px;
-        margin-right: 16px;
-        border-radius: 50%;
-    }
-
-    .content {
-        flex: 1;
-    }
-
-
-    .title {
-        font-size: 20px;
-        font-weight: bold;
-        color: #0b0e0f;
-    }
-
-    .buttons {
-        display: flex;
-        gap: 8px;
-        font-size: 10px;
-    }
-
-    .underline {
-        color: #de0d22;
-        text-decoration: underline;
+        @media (width <= 1060px) {
+            width: calc(100% - 20px);
+            margin-left: 20px;
+        }
     }
 
     .container {
-        width: 680px;
-        padding-bottom: 16px;
         margin-top: 20px;
-        font-family: sans-serif;
-        border: 1px solid #de0d22;
+        margin-bottom: 50px;
     }
 
     .tagItem {
-        display:flex;
+        display: flex;
         align-items: center;
-        margin-bottom: 12px;
+        margin-bottom: 13px;
         margin-left: 52px;
     }
 
-    .tagname{
-        margin-top: 16px;
-        margin-bottom: 8px;
-        margin-left: 52px;
+    .tagname {
+        margin: 13px 0 9px 36px;
         font-size: 20px;
-        font-weight: bold;
-    }
-
-    .stampbutton{
-        width: 129px;
-        height: 24px;
-    }
-
-    .eventsbutton{
-        width: 84px;
-        height: 24px;
-    }
-
-    .bazaarbutton{
-        width: 70.5px;
-        height: 24px;
-    }
-
-    .stampdestriction{
-        margin-left: 32px;
-    }
-
-    .eventdescription {
-        margin-left: 77px;
-    }
-
-    .bazaardescription {
-        margin-left: 90.5px;
     }
 
     .description {
         flex: 1;
+        padding-right: 36px;
+        padding-left: 32px;
         font-size: 14px;
     }
-
-    .highlight {
-        font-weight: bold;
-        color: #de0d22;
-        text-decoration: underline;
-    }
-
 }

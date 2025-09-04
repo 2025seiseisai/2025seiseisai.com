@@ -1,38 +1,55 @@
-
-import { ExhibitionFloor, locations, exhibitionData } from "./exhibition-data";
-import styles from "./page.module.scss";
+import crypto from "crypto";
 import Link from "next/link";
-import Arrow from "./arrow-right-circle.png";
-import stamp from "./Frame 292.png";
-import event from "./Frame 294.png";
-import bazaar from "./Frame 295.png";
-import stamps from "./Frame 296.png";
-import events from "./event.png";
-import bazaars from "./bazaar.png";
-import Image from "next/image";
+import Arrow from "./arrow-right-circle.svg";
+import { exhibitionData, ExhibitionFloor, locations } from "./exhibition-data";
+import styles from "./page.module.scss";
 
 export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
     const filteredExs = Object.entries(exhibitionData).filter(([, data]) => locations[data.location] === floor);
     return (
         <div className={styles.containers}>
             {filteredExs.map(([name, data]) => (
-                <div key={name} className={styles.card}>
-                    <div className={styles.icon}>
-                        <div dangerouslySetInnerHTML={{ __html: data.icon}} />
-                    </div>
-                    <div className={styles.content}>
-                        <div className={styles.location}>{data.location}</div>
-                        <div className={styles.title}>{name}</div>
-                        <div className={styles.buttons}>
-                            {data.stamp && <div ><Image src={stamp} alt="stamp"/></div>}
-                            {data.events && <div ><Image src={event} alt="event"/></div>}
-                            {data.bazaar && <div ><Image src={bazaar} alt="bazaar"/></div>}
+                <Link
+                    key={name}
+                    href={`/map/${crypto.createHash("sha256").update(name).digest("hex").substring(0, 16)}`}
+                >
+                    <div className={styles.card}>
+                        <div className={styles.icon}>
+                            <div dangerouslySetInnerHTML={{ __html: data.icon }} />
                         </div>
+                        <div className={styles.content}>
+                            <div className={styles.location}>{data.location}</div>
+                            <div className={styles.title}>{name}</div>
+                            <div className={styles.buttons}>
+                                {data.stamp && (
+                                    <div
+                                        className="rounded-full bg-[#de0d22] px-[8px] pb-[1px] text-[10px] font-normal
+                                            text-white"
+                                    >
+                                        スタンプラリー
+                                    </div>
+                                )}
+                                {data.events && (
+                                    <div
+                                        className="rounded-full bg-[#f4631e] px-[8px] pb-[1px] text-[10px] font-normal
+                                            text-white"
+                                    >
+                                        イベント
+                                    </div>
+                                )}
+                                {data.bazaar && (
+                                    <div
+                                        className="rounded-full bg-[#ff9f00] px-[8px] pb-[1px] text-[10px] font-normal
+                                            text-white"
+                                    >
+                                        バザー
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                        <Arrow />
                     </div>
-                    <Link href={`https://seiseisai.com/`} className={styles.link}>
-                        <Image src={Arrow} alt="arrow" className={styles.arrow} />
-                    </Link>
-                </div>
+                </Link>
             ))}
         </div>
     );
@@ -41,45 +58,44 @@ export function Exhibition1({ floor }: { floor: ExhibitionFloor }) {
 const tags = [
     {
         label: (
-            <>
-                <Image src={stamps} alt="stamps" />
-            </>
-        ),
-        color: "red",
-        description: (<div className={styles.stampdestriction}>スタンプラリーを行っている団体です。</div>),
-    },
-    {
-        label: (
-            <>
-                <Image src={events} alt="events" className={styles.eventsbutton}/>
-            </>
-        ),
-        color: "orange",
-        description: (
-            <div className={styles.eventdescription}>
-                イベントを行っている団体です。詳しくは{" "}
-                <a
-                    href="http://localhost:3000/2025"
-                    className={styles.highlight}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Events
-                </a>{" "}
-                をチェック！
+            <div
+                className="inline-block rounded-full bg-[#de0d22] px-[9px] pb-[1px] text-[13px] font-normal text-white
+                    lg:px-[12px] lg:text-[15px]"
+            >
+                スタンプラリー
             </div>
         ),
+        description: <p>スタンプラリーを行っている団体です。</p>,
     },
     {
         label: (
-            <>
-                <Image src={bazaars} alt="bazaars" className={styles.bazaarbutton}/>
-            </>
+            <div
+                className="inline-block rounded-full bg-[#f4631e] px-[9px] pb-[1px] text-[13px] font-normal text-white
+                    lg:px-[12px] lg:text-[15px]"
+            >
+                イベント
+            </div>
         ),
-        color: "yellow",
         description: (
-            <div className={styles.bazaardescription}> バザーでの販売を行っている団体です。</div>
+            <p>
+                イベントを行っている団体です。詳しくは
+                <Link href="/events" className={styles.highlight}>
+                    Events
+                </Link>
+                をチェック！
+            </p>
         ),
+    },
+    {
+        label: (
+            <div
+                className="inline-block rounded-full bg-[#ff9f00] px-[9px] pb-[1px] text-[13px] font-normal text-white
+                    lg:px-[12px] lg:text-[15px]"
+            >
+                バザー
+            </div>
+        ),
+        description: <p>バザーでの販売を行っている団体です。</p>,
     },
 ];
 
@@ -89,8 +105,8 @@ export function Exhibition2() {
             <p className={styles.tagname}>各種タグについて</p>
             {tags.map((tag, index) => (
                 <div key={index} className={styles.tagItem}>
-                    <span className={`${styles.tag} ${styles[tag.color]}`}>{tag.label}</span>
-                    <span className={styles.description}>{tag.description}</span>
+                    <div className={styles.tag}>{tag.label}</div>
+                    <div className={styles.description}>{tag.description}</div>
                 </div>
             ))}
         </div>
