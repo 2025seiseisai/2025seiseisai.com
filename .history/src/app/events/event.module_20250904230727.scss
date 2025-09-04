@@ -177,7 +177,7 @@
     margin-bottom: 20px; /* 下余白はお好みで調整 */
 
     /* アコーディオンの左端と揃える */
-    margin-left: -180px; /* 既存アコーディオンの left と同じ値 */
+    margin-left: -83px; /* 既存アコーディオンの left と同じ値 */
 }
 
 .redBar {
@@ -187,6 +187,8 @@
 }
 
 .introduction {
+    width: 240px;
+    height: 36px;
     font-size: 24px;
     font-weight: 500;
     font-weight: bold;

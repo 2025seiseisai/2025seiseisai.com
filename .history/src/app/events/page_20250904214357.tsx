@@ -14,7 +14,7 @@ import Left from "./events-photo/left.svg";
 import Mappin from "./events-photo/map-pin.svg";
 import Right from "./events-photo/right.svg";
 import Seriken from "./events-photo/seriken.svg";
-import Ticket from "./events-photo/tickets.svg";
+import Ticket from "./events-photo/ticket.svg";
 import Utenji from "./events-photo/utenji.svg";
 import Play from "./events-photo/yajirusi.svg";
 import timestyles from "./time.module.scss";
@@ -159,10 +159,7 @@ export default function TimeTablePage() {
 
             <Utenji className={pagestyles.utenjiIcon} />
             <Seriken className={pagestyles.serikenIcon} />
-            <div className={pagestyles.eventListHeader}>
-                <div className={pagestyles.redBar}></div>
-                <span className={pagestyles.introduction}>イベント紹介</span>
-            </div>
+            <p className={pagestyles.introduction}>イベント紹介</p>
 
           <div className={pagestyles.accordionWrapper}>
             {eventData.map((event, i) => {
@@ -196,10 +193,9 @@ export default function TimeTablePage() {
                         {event.day1.length > 0 && (
                         <>
                             <div className={pagestyles.detailsBlock}>
-                                <div className={pagestyles.headerRow}>
-                                    <Mappin className={pagestyles.mappinIcon} />
-                                    <h4 className={pagestyles.dayTitle}>【1日目】</h4>
-                                </div>
+                                <Mappin className={pagestyles.mappinIcon} />
+                            <div className={pagestyles.detailsContent}></div>
+                                <h4 className={pagestyles.dayTitle}>【1日目】</h4>
                                 <div className={pagestyles.detailsDay}>
                                     {event.day1.map((detail, j) => (
                                 <div key={j} className={pagestyles.detailItem}>
@@ -216,11 +212,11 @@ export default function TimeTablePage() {
                         {/* Day2 */}
                             {event.day2.length > 0 && (
                         <>
-                            <div className={pagestyles.detailsBlock}>
-                                <div className={pagestyles.headerRow}>
-                                    <Mappin className={pagestyles.mappinIcon} />
-                                    <h4 className={pagestyles.dayTitle}>【2日目】</h4>
-                                </div>
+                                    <div className={pagestyles.detailsBlock}>
+                                        <div className={pagestyles.headerRow}>
+                                            <Mappin className={pagestyles.mappinIcon} />
+                                            <h4 className={pagestyles.dayTitle}>【2日目】</h4>
+                                            </div>
                                 <div className={pagestyles.detailsDay}>
                                     {event.day2.map((detail, j) => (
                                 <div key={j} className={pagestyles.detailItem}>

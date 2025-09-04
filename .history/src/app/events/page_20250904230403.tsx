@@ -161,7 +161,7 @@ export default function TimeTablePage() {
             <Seriken className={pagestyles.serikenIcon} />
             <div className={pagestyles.eventListHeader}>
                 <div className={pagestyles.redBar}></div>
-                <span className={pagestyles.introduction}>イベント紹介</span>
+                <span className={pagestyles.introduction}>イベント紹介一覧</span>
             </div>
 
           <div className={pagestyles.accordionWrapper}>

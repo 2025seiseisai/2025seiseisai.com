@@ -126,6 +126,7 @@
 /* チケットアイコン用 */
 .ticketPhoto {
     display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: flex-start;
     width: 65px;
@@ -133,13 +134,18 @@
     margin: 2px 0 0 16px;
     margin-top: 4px;
     transition: opacity 0.2s ease;
+
+    img,
+    svg {
+        border-radius: 16px;
+    }
 }
 
 .ticketicon {
-    display: block;
     width: 65px;
     height: 16px;
     overflow: hidden;
+    border-radius: 8px;
 }
 
 /* details が open の時だけ表示 */
@@ -170,27 +176,24 @@
     height: auto;
 }
 
-.eventListHeader {
-    display: flex;
-    gap: 8px; /* 赤帯と文字の間のスペース */
-    align-items: center;
-    margin-bottom: 20px; /* 下余白はお好みで調整 */
-
-    /* アコーディオンの左端と揃える */
-    margin-left: -180px; /* 既存アコーディオンの left と同じ値 */
-}
-
-.redBar {
-  width: 6px;
-  height: 36px;
-  background-color: red;
-}
-
 .introduction {
-    font-size: 24px;
+    position: relative;
+    width: 240px;
+    height: 36px;
+    margin-top: 35px;
+    font-size: 20px;
     font-weight: 500;
-    font-weight: bold;
     color: #000;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: -47;
+        width: 6px;
+        height: 36px;
+        content: "";
+        background-color: red;
+    }
 }
 
 .accordion {
