@@ -151,7 +151,7 @@
 .timeline {
     position: relative;
     width: 100%;
-    max-width: 256px;
+    max-width: ;
     height: auto;
     min-height: calc(105px * 8);
     padding-top: 0;
@@ -166,9 +166,9 @@
 .timelineLines {
     position: absolute;
     right: 0;
-    left: 22%;
+    left: 60px;
     z-index: 1.5;
-    width: 110%;
+    width: 264px;
     height: 100%;
     pointer-events: none;
 }
