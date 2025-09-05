@@ -87,24 +87,36 @@ export default function Page() {
                         </p>
                         <div className={styles.pamphlet_download}>
                             <div className={styles.pamphlet_download_detail}>
-                                <p>高画質版(47MB)</p>
-                                <a download="" href="" className={styles.pamphlet_download_button}>
+                                <p>高画質版(13.8MB)</p>
+                                <a
+                                    download
+                                    href="/2025/downloads/第61回菁々祭パンフレット高画質版.pdf"
+                                    className={styles.pamphlet_download_button}
+                                >
                                     ダウンロード
                                     <Icon className={styles.download_icon_sm} />
                                     <IconPC className={styles.download_icon_lg} />
                                 </a>
                             </div>
                             <div className={styles.pamphlet_download_detail}>
-                                <p>中画質版(11MB)</p>
-                                <a download="" href="" className={styles.pamphlet_download_button}>
+                                <p>中画質版(7.1MB)</p>
+                                <a
+                                    download
+                                    href="/2025/downloads/第61回菁々祭パンフレット中画質版.pdf"
+                                    className={styles.pamphlet_download_button}
+                                >
                                     ダウンロード
                                     <Icon className={styles.download_icon_sm} />
                                     <IconPC className={styles.download_icon_lg} />
                                 </a>
                             </div>
                             <div className={styles.pamphlet_download_detail}>
-                                <p>低画質版(6MB)</p>
-                                <a download="" href="" className={styles.pamphlet_download_button}>
+                                <p>低画質版(3.5MB)</p>
+                                <a
+                                    download
+                                    href="/2025/downloads/第61回菁々祭パンフレット低画質版.pdf"
+                                    className={styles.pamphlet_download_button}
+                                >
                                     ダウンロード
                                     <Icon className={styles.download_icon_sm} />
                                     <IconPC className={styles.download_icon_lg} />
