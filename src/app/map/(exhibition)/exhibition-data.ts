@@ -1,5 +1,4 @@
 // import { clubMagazineLinks } from "@/app/downloads/downloads-data";
-import { clubMagazineLinks } from "@/app/downloads/downloads-data";
 import type { eventNames } from "@/app/events/event-data";
 import type { BlogKey } from "@/blogs/blog-data";
 import { exhibitionIcons } from "./exhibition-icons";
@@ -74,7 +73,7 @@ export const locations = {
     },
  */
 const exhibitionDataRaw = {
-    園芸部: {
+    /*    園芸部: {
         location: "1年A組",
         icon: exhibitionIcons["ドラえもん研究会"],
         stamp: true,
@@ -89,6 +88,8 @@ const exhibitionDataRaw = {
         club_magazine: clubMagazineLinks["MGA同好会"],
         tweet_link: "https://x.com/seiseisai_tdj/status/1954896745940615445",
     },
+    */
+
     書道部: {
         location: "1年A組",
         icon: exhibitionIcons["書道部"],
@@ -210,14 +211,14 @@ const exhibitionDataRaw = {
         bazaar: true,
         description: "文化祭公式グッズを販売しております。記念に一品、如何でしょうか。",
     },
-    /*園芸部: {
+    園芸部: {
         location: "6年B組",
         icon: exhibitionIcons["園芸部"],
         stamp: true,
         bazaar: true,
         description: "今年も植物展示とチューリップの球根販売を行います！お値打ち価格で販売中！（現金のみ取り扱い）",
         twitter_link: "https://x.com/tdj_engei",
-    },*/
+    },
     民族音楽同好会: {
         location: "6年C組",
         icon: exhibitionIcons["民族音楽同好会"],
