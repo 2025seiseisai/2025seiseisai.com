@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { exhibitionIcons } from "../(exhibition)/exhibition-icons";
 import { mapIcons } from "./map-icons";
-import { Boxes, Color, ExhibitionPositions, Polygons, Rects } from "./mapdata";
+import { BazaarPositions, Boxes, Color, ExhibitionPositions, Polygons, Rects } from "./mapdata";
 
 function initializeMap3D(
     canvas: HTMLCanvasElement,
@@ -211,7 +211,7 @@ function initializeMap3D(
     }
     {
         //見ずらいので、いるのかといわれれば微妙。
-        function setText(text: string, setX: number, setY: number, setZ: number) {
+        function setText(text: string, setX: number, setY: number, setZ: number, scale: number, color: string) {
             //展示団体名の表示
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d")!;
@@ -219,13 +219,21 @@ function initializeMap3D(
             const fontSize = 192;
 
             ctx.font = fontSize + "px Noto Sans JP, Noto Sans JP Fallback";
-            ctx.fillStyle = "black";
             canvas.width = ctx.measureText(text).width * 1.2;
             canvas.height = fontSize * 1.2;
 
             ctx.fillStyle = "black";
             ctx.lineWidth = 5; // 枠の太さ
             ctx.strokeRect(0, 0, canvas.width, canvas.height);
+            if (color != "none") {
+                ctx.fillStyle = color;
+                ctx.fillRect(
+                    ctx.lineWidth,
+                    ctx.lineWidth,
+                    canvas.width - 2 * ctx.lineWidth,
+                    canvas.height - 2 * ctx.lineWidth,
+                );
+            }
 
             ctx.font = fontSize + "px Noto Sans JP, Noto Sans JP Fallback";
             ctx.fillStyle = "black";
@@ -243,6 +251,7 @@ function initializeMap3D(
 
             const mesh = new THREE.Mesh(geometry, material);
             mesh.position.set(setX, setY, setZ);
+            mesh.scale.set(scale, scale, scale);
 
             // シーンに追加
             scene.add(mesh);
@@ -255,12 +264,17 @@ function initializeMap3D(
             updated = true;
             for (let i = 0; i < ExhibitionPositions.length; i++) {
                 const [name, x, y, z] = ExhibitionPositions[i];
-                if (!exception.includes(name)) setText(name, x, y + 50, z);
+                if (!exception.includes(name)) setText(name, x, y + 50, z, 1, "none");
             }
 
             //体育館・圓融館
-            setText("圓融館", 312.5, 0 + 20, -387.5);
-            setText("体育館", -87.5, -100 + 20, -712.5);
+            setText("圓融館", 312.5, 0 + 20, -387.5, 1, "none");
+            setText("体育館", -87.5, -100 + 20, -712.5, 1, "none");
+
+            for (let i = 0; i < BazaarPositions.length; i++) {
+                const [name, x, y, z, color] = BazaarPositions[i];
+                setText(name, x, y + 20, z, 3, color);
+            }
         });
     }
     {
