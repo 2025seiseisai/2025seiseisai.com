@@ -73,12 +73,31 @@ export const locations = {
     },
  */
 const exhibitionDataRaw = {
+    /*    園芸部: {
+        location: "1年A組",
+        icon: exhibitionIcons["ドラえもん研究会"],
+        stamp: true,
+        bazaar: true,
+        description: "東大寺部は、東大寺の歴史や文化を紹介する展示を行っています。ぜひお越しください！",
+        twitter_link: "https://x.com/mga_club",
+        instagram_link: "https://www.instagram.com/mga_club/",
+        facebook_link: "https://www.facebook.com/mga.club",
+        website_link: "https://example.com",
+        events: ["体験型ミステリー", "PTAコーラス", "T1グランプリ"],
+        blogs: ["59/01", "60/03"],
+        club_magazine: clubMagazineLinks["MGA同好会"],
+        tweet_link: "https://x.com/seiseisai_tdj/status/1954896745940615445",
+    },
+    */
+
     書道部: {
         location: "1年A組",
         icon: exhibitionIcons["書道部"],
         stamp: true,
         description: "1Aにて書道作品を展示しています。団扇、半紙に好きな文字も書かせてもらってるので是非お越し下さい。",
         twitter_link: "https://x.com/tdj_shodou",
+        /*テスト用 */
+        /*instagram_link: "https://www.instagram.com/todaiji.official/",*/
         blogs: ["60/05"],
     },
     東菁会: {
