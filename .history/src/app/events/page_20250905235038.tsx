@@ -211,8 +211,8 @@ export default function TimeTablePage() {
                                 </div>
 
                                 {event.ticket && (
-                                <div className={pagestyles.ticketLabel}>
-                                    要整理券
+                                <div className={pagestyles.ticketPhoto}>
+                                    <Ticket className={pagestyles.ticket} />
                                 </div>
                                 )}
                             </div>

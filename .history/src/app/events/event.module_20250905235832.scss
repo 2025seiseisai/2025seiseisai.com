@@ -123,14 +123,14 @@
 }
 
 .ticketLabel {
-    display: inline-block;
-    padding: 0 8.4px;
-    margin-left: 10%;
+    display: inline-block;      // テキストに合わせて四角くなる
+    top: 1.2px;
+    left: 8.4
     font-size: 12px;
-    font-weight: 500;
-    color: #fff;
-    background-color: #de0d22;
-    border: 1px solid #de0d22;
+    font-weight: bold;
+    color: #fff;                // 文字色を白
+    background-color: #de0d22;  // 赤背景
+    border: 1px solid #de0d22;  // 枠も赤
     border-radius: 9999px;
 }
 

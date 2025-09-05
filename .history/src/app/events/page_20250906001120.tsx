@@ -215,6 +215,7 @@ export default function TimeTablePage() {
                                     要整理券
                                 </div>
                                 )}
+                                    </div>
                             </div>
                         </summary>
 

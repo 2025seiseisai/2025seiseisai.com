@@ -122,16 +122,18 @@
     transition: opacity 0.2s ease;
 }
 
+.ticketicon {
+    display: block;
+    width: 65px;
+    height: 16px;
+    overflow: hidden;
+}
+
 .ticketLabel {
-    display: inline-block;
-    padding: 0 8.4px;
-    margin-left: 10%;
-    font-size: 12px;
-    font-weight: 500;
-    color: #fff;
-    background-color: #de0d22;
-    border: 1px solid #de0d22;
-    border-radius: 9999px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #de0d22; /* 赤文字にする場合 */
+  margin-left: 8px; /* アイコンとテキストの間隔を整える */
 }
 
 .details[open] .ticketPhoto {

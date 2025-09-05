@@ -123,15 +123,10 @@
 }
 
 .ticketLabel {
-    display: inline-block;
-    padding: 0 8.4px;
-    margin-left: 10%;
+    margin-left: 8px; /* アイコンとテキストの間隔を整える */
     font-size: 12px;
-    font-weight: 500;
-    color: #fff;
-    background-color: #de0d22;
-    border: 1px solid #de0d22;
-    border-radius: 9999px;
+    font-weight: bold;
+    color: #de0d22;
 }
 
 .details[open] .ticketPhoto {

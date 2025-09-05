@@ -122,10 +122,14 @@
     transition: opacity 0.2s ease;
 }
 
+.ticketWrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .ticketLabel {
     display: inline-block;
-    padding: 0 8.4px;
-    margin-left: 10%;
+    padding: 1.2px 8.4px;
     font-size: 12px;
     font-weight: 500;
     color: #fff;

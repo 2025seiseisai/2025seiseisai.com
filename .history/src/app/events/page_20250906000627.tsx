@@ -210,6 +210,11 @@ export default function TimeTablePage() {
                                     <span className={pagestyles.eventName}>{event.name}</span>
                                 </div>
 
+                                .ticketWrapper {
+  display: flex;
+  justify-content: flex-start; /* 左端に揃える */
+  margin-top: 4px;             /* 上との隙間調整 */
+}
                                 {event.ticket && (
                                 <div className={pagestyles.ticketLabel}>
                                     要整理券

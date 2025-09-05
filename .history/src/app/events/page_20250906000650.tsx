@@ -210,11 +210,13 @@ export default function TimeTablePage() {
                                     <span className={pagestyles.eventName}>{event.name}</span>
                                 </div>
 
+                                <div className={pagestyles.ticketWrapper}>
                                 {event.ticket && (
                                 <div className={pagestyles.ticketLabel}>
                                     要整理券
                                 </div>
-                                )}
+                                    )}
+                                    </div>
                             </div>
                         </summary>
 
