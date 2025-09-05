@@ -61,7 +61,7 @@
 .description {
     margin-top: 3px;
     margin-left: 44px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 150%;
     color: #0b0e0f;
@@ -82,7 +82,7 @@
 
 .content {
     margin-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
     color: #0b0e0f; // スマホ版もここらへん色同じ？
 }
 
@@ -192,7 +192,7 @@
 }
 
 // スマホ用のスタイル
-@media (width<=1024px) {
+@media (width < 1024px) {
     .wrapper1 {
         width: 100%; // 幅を100%に設定
         margin-top: 11px; // 25-14px
@@ -213,7 +213,7 @@
     }
 
     .description {
-        font-size: 11px; // フォントサイズを少し小さく
+        font-size: 13px; // フォントサイズを少し小さく
     }
 
     .wrapper2 {
@@ -227,7 +227,7 @@
 
     .Bazaar2-description {
         margin-top: 8px;
-        margin-left: -14px; // 左マージンをリセット
+        margin-left: -3px;
     }
 
     .wrapper3 {
@@ -284,6 +284,6 @@
     .descriptionBazaar3 {
         margin-top: 29px;
         margin-left: 66px;
-        font-size: 11px;
+        font-size: 13px;
     }
 }
