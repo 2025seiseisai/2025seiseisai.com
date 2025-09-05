@@ -114,7 +114,7 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
                 {data.club_magazine && (
                     <section className={styles.event_wrapper}>
                         <h2 className={styles.event_title}>部誌</h2>
-                        <Item href={data.club_magazine}>aaa</Item>
+                        <Item href={data.club_magazine}>{`${name}の部誌を見る`}</Item>
                     </section>
                 )}
             </div>
