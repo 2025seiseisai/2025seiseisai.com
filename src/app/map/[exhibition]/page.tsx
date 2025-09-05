@@ -6,6 +6,7 @@ import { exhibitionData } from "../(exhibition)/exhibition-data";
 import styles from "./page.module.scss";
 /*img */
 import External from "./img/external-link.svg";
+import Event_Frame from "./img/Frame 303.svg";
 import Instagram from "./img/instagram.svg";
 import Twitter from "./img/twitter_26px.svg";
 
@@ -73,9 +74,20 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
             </div>
 
             {/* イベント (複数ある場合もある) */}
-            {data.events?.map((event) => (
-                <div key={event}>イベントの名前：{event}</div>
-            ))}
+            {data.events && data.events.length > 0 && (
+                <div className={styles.event_title}>
+                    イベント開催情報
+                    <div className={styles.event_container}>
+                        <Event_Frame className={styles.event_frame} />
+                        {data.events?.map((event) => (
+                            <div key={event} className={styles.event_name}>
+                                {event}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
             {/* 部誌 */}
             {data.club_magazine && (
                 <div>
@@ -83,10 +95,17 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
                 </div>
             )}
             {/* ブログのカード (複数ある場合もある) */}
-            {data.blogs?.map((blog) => {
-                const [round, index] = blog.split("/");
-                return <BlogCardClient key={blog} round={round} index={index} showPast={false} />;
-            })}
+            {data.blogs && data.blogs.length > 0 && (
+                <div>
+                    <div className={styles.blog_text}>関連コンテンツ</div>{" "}
+                    <div className={styles.blog_card}>
+                        {data.blogs?.map((blog) => {
+                            const [round, index] = blog.split("/");
+                            return <BlogCardClient key={blog} round={round} index={index} showPast={false} />;
+                        })}
+                    </div>
+                </div>
+            )}
         </>
     );
 }
