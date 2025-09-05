@@ -79,6 +79,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description: "1Aにて書道作品を展示しています。団扇、半紙に好きな文字も書かせてもらってるので是非お越し下さい。",
         twitter_link: "https://x.com/tdj_shodou",
+        instagram_link: "https://www.instagram.com/todaiji.official/",
         blogs: ["60/05"],
     },
     東菁会: {

@@ -3,6 +3,11 @@ import crypto from "crypto";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { exhibitionData } from "../(exhibition)/exhibition-data";
+import styles from "./page.module.scss";
+/*img */
+import External from "./img/external-link.svg";
+import Instagram from "./img/instagram.svg";
+import Twitter from "./img/twitter_26px.svg";
 
 export const dynamicParams = false;
 
@@ -21,38 +26,52 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
     const data = exhibitionData[name];
     return (
         <>
-            {/* 名称 */}
-            {name}
-            {/* 展示教室 */}
-            {data.location}
-            {/* アイコン */}
-            <div className="" dangerouslySetInnerHTML={{ __html: data.icon }} />
+            <div className={styles.club_title_container}>
+                {/* アイコン */}
+                <div className={styles.icon} dangerouslySetInnerHTML={{ __html: data.icon }} />
+                <div className={styles.club_title}>
+                    {/* 展示教室 */}
+                    <div className={styles.club_location}>{data.location}</div>
+                    {/* 名称 */}
+                    <div className={styles.club_name}>{name}</div>
+                </div>
+            </div>
             {/* 説明 */}
-            {data.description}
-            {/* twitterのリンク (あれば) */}
-            {data.twitter_link && (
-                <Link href={data.twitter_link} target="_blank" rel="noopener noreferrer nofollow">
-                    Twitterへのリンク
-                </Link>
-            )}
-            {/* instagramのリンク (あれば) */}
-            {data.instagram_link && (
-                <Link href={data.instagram_link} target="_blank" rel="noopener noreferrer nofollow">
-                    Instagramへのリンク
-                </Link>
-            )}
-            {/* facebookのリンク (あれば) */}
-            {data.facebook_link && (
-                <Link href={data.facebook_link} target="_blank" rel="noopener noreferrer nofollow">
-                    Facebookへのリンク
-                </Link>
-            )}
-            {/* webサイトのリンク (あれば) */}
-            {data.website_link && (
-                <Link href={data.website_link} target="_blank" rel="noopener noreferrer nofollow">
-                    Webサイトへのリンク
-                </Link>
-            )}
+            <div className={styles.description}> {data.description}</div>
+            <div className={styles.links}>
+                {/* twitterのリンク (あれば) */}
+                {data.twitter_link && (
+                    <Link href={data.twitter_link} target="_blank" rel="noopener noreferrer nofollow">
+                        <div className={styles.link}>
+                            <Twitter className={styles.link_icon} />X (旧Twitter)
+                            <External className={styles.link_external} />
+                        </div>
+                    </Link>
+                )}
+                {/* instagramのリンク (あれば) */}
+                {data.instagram_link && (
+                    <Link href={data.instagram_link} target="_blank" rel="noopener noreferrer nofollow">
+                        <div className={styles.link}>
+                            <Instagram className={styles.link_icon} />
+                            Instagram
+                            <External className={styles.link_external} />
+                        </div>
+                    </Link>
+                )}
+                {/* facebookのリンク (あれば) */}
+                {data.facebook_link && (
+                    <Link href={data.facebook_link} target="_blank" rel="noopener noreferrer nofollow">
+                        Facebookへのリンク
+                    </Link>
+                )}
+                {/* webサイトのリンク (あれば) */}
+                {data.website_link && (
+                    <Link href={data.website_link} target="_blank" rel="noopener noreferrer nofollow">
+                        Webサイトへのリンク
+                    </Link>
+                )}
+            </div>
+
             {/* イベント (複数ある場合もある) */}
             {data.events?.map((event) => (
                 <div key={event}>イベントの名前：{event}</div>

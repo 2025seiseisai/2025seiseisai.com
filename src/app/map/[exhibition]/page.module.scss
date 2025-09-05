@@ -1,0 +1,53 @@
+.club_title_container {
+    display: flex;
+    margin-top: 45px;
+    margin-left: 10%;
+}
+
+.club_title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.club_name {
+    font-size: 32px;
+    line-height: 30px;
+}
+
+.club_location {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.icon {
+    width: 80px;
+}
+
+.description {
+    margin-top: 25px;
+    margin-right: 12%;
+    margin-left: 12%;
+}
+
+.links {
+    display: flex;
+    margin-top: 25px;
+    margin-left: 15%;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    margin-left: 45px;
+}
+
+.link_icon {
+    width: 24px;
+    margin-right: 8px;
+}
+
+.link_external {
+    width: 24px;
+    margin-left: 8px;
+}
