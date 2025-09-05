@@ -136,6 +136,7 @@ const exhibitionDataRaw = {
         location: "和室",
         icon: exhibitionIcons["お茶席"],
         stamp: false,
+        bazaar: true,
         description:
             "お抹茶と和菓子をご用意しております。お気軽にお越しください。（一般800円、在校生・小学生以下500円）",
     },
@@ -186,14 +187,16 @@ const exhibitionDataRaw = {
     },
     グッズ販売: {
         location: "6年A組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["PRパート"],
         stamp: false,
+        bazaar: true,
         description: "文化祭公式グッズを販売しております。記念に一品、如何でしょうか。",
     },
     園芸部: {
         location: "6年B組",
         icon: exhibitionIcons["園芸部"],
         stamp: true,
+        bazaar: true,
         description: "今年も植物展示とチューリップの球根販売を行います！お値打ち価格で販売中！（現金のみ取り扱い）",
         twitter_link: "https://x.com/tdj_engei",
     },
@@ -281,7 +284,7 @@ const exhibitionDataRaw = {
     },
     ラーメン研究会: {
         location: "5年A組",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["ラーメン研究会"],
         stamp: true,
         description: "ラーメンを愛している部活です。ちょっと変わってるかもですが、ぜひ来てください！！！",
         twitter_link: "https://x.com/tdjramen",
@@ -320,6 +323,7 @@ const exhibitionDataRaw = {
         location: "5年D組",
         icon: exhibitionIcons["文藝同好会"],
         stamp: true,
+        bazaar: true,
         description:
             "節目を迎えた文藝同好会　展示は生まれ変わり文化祭に変化をもたらす　その凝り固まった考えを今こそ改めるのだ!",
     },
@@ -343,7 +347,7 @@ const exhibitionDataRaw = {
     },
     書画展: {
         location: "図書室",
-        icon: exhibitionIcons["fallback"],
+        icon: exhibitionIcons["東菁会"],
         stamp: false,
         description:
             "東大寺塔頭の書画や菁々会会員の作品を展示しております。塔頭の書画は販売もしております。ぜひ、ご覧ください。",
@@ -432,6 +436,7 @@ export const exhibitionData: Readonly<
             location: keyof typeof locations;
             icon: string;
             stamp: boolean;
+            bazaar?: true;
             description?: string;
             twitter_link?: string;
             instagram_link?: string;
