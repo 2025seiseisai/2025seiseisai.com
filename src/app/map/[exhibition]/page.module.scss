@@ -1,0 +1,155 @@
+.container {
+    width: 80%;
+    margin-inline: auto;
+    margin-bottom: 50px;
+
+    @include media(sm) {
+        width: calc(100% - 40px);
+        margin-bottom: 45px;
+    }
+}
+
+.club_title_container {
+    display: flex;
+    margin-top: 45px;
+}
+
+.club_title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 25px;
+}
+
+.club_name {
+    font-size: 32px;
+    line-height: 30px;
+
+    @include media(sm) {
+        font-size: 30px;
+    }
+}
+
+.club_location {
+    font-size: 14px;
+    line-height: 17px;
+
+    @include media(sm) {
+        font-size: 15px;
+    }
+}
+
+.icon {
+    width: 80px;
+
+    @include media(sm) {
+        width: 60px;
+    }
+}
+
+.description {
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: 400;
+
+    @include media(sm) {
+        font-size: 16px;
+    }
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 45px;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: 400;
+
+    @include media(sm) {
+        gap: 20px 15px;
+        font-size: 14px;
+    }
+}
+
+.link {
+    display: flex;
+    align-items: center;
+}
+
+.link_icon {
+    width: 24px;
+    margin-right: 8px;
+
+    @include media(sm) {
+        width: 21px;
+    }
+}
+
+.link_external {
+    width: 21px;
+    margin-left: 8px;
+
+    @include media(sm) {
+        width: 18px;
+    }
+}
+
+.event_wrapper {
+    margin-top: 40px;
+
+    @include media(lg) {
+        flex: 1;
+    }
+}
+
+.event_title {
+    font-size: 28px;
+
+    @include media(sm) {
+        font-size: 21px;
+    }
+}
+
+.event_frame {
+    margin-left: 2%;
+}
+
+.event_name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 12px;
+    font-size: 20px;
+    font-weight: 400;
+
+    @include media(sm) {
+        font-size: 18px;
+    }
+}
+
+.blog_text {
+    margin-top: 24px;
+    font-size: 28px;
+
+    @include media(sm) {
+        font-size: 26px;
+    }
+}
+
+.blog_card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    @include media(lg) {
+        gap: 30px;
+    }
+
+    @include media(sm) {
+        gap: 20px;
+        align-items: center;
+    }
+}
