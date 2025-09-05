@@ -132,12 +132,12 @@ export function Header() {
                     <Link href="/blog" className={styles.navLink}>
                         Blog
                     </Link>
-                    <Link href="/contact" className={styles.navLink}>
-                        Contact
+                    <Link href="/map" className={styles.navLink}>
+                        Map
                     </Link>
                 </div>
-                <Link href="/reservation" className={styles.navReservationLink}>
-                    事前予約
+                <Link href="https://tickets.seiseisai.com/" className={styles.navReservationLink}>
+                    Web整理券
                 </Link>
                 <Hamburger open={open} setOpen={setOpenImpl} />
             </div>
@@ -169,6 +169,7 @@ export function Header() {
                             title1="Events"
                             title2="イベント内容やタイムテーブル"
                             setOpen={setOpenImpl}
+                            disabled
                         />
                         <HeaderLink href="/map" title1="Map" title2="校内の展示・バザーの地図" setOpen={setOpenImpl} />
                         <HeaderLink
@@ -178,11 +179,10 @@ export function Header() {
                             setOpen={setOpenImpl}
                         />
                         <HeaderLink
-                            href="/tickets"
+                            href="https://tickets.seiseisai.com/"
                             title1="Tickets"
                             title2="Web整理券の取得・申込ページ"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
                             href="/blog"
@@ -197,11 +197,10 @@ export function Header() {
                             setOpen={setOpenImpl}
                         />
                         <HeaderLink
-                            href="/downloads"
-                            title1="Downloads"
-                            title2="部誌などのダウンロードページ"
+                            href="/brochures"
+                            title1="Brochures"
+                            title2="パンフレットと各部活の部誌"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
                             href="/archives"

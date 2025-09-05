@@ -10,7 +10,7 @@ import Icon_closed from "./plus_icon.svg";
 import Icon2 from "./reading_icon.svg";
 
 export const metadata = {
-    title: "Downloads | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+    title: "Brochures | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
 };
 
 function Nameplate({ name }: { name: string }) {
@@ -63,9 +63,9 @@ export default function Page() {
             <div className={styles.total}>
                 {/* 初めの説明 */}
                 <div className={styles.title_total}>
-                    <p className={styles.title}>Downloads</p>
+                    <p className={styles.title}>Brochures</p>
                     <p className={styles.text}>
-                        こちらでは菁々祭パンフレット、各部活の部誌をダウンロードしていただけます。菁々祭終了後も公開しておりますので、手に入れることのできなかった部活の部誌などを読んでいただくことができます。
+                        こちらでは菁々祭パンフレット、各部活の部誌をご覧いただけます。菁々祭終了後も公開しておりますので、手に入れることのできなかった部活の部誌などを読んでいただくことができます。
                     </p>
                 </div>
                 {/* パンフレットについて */}

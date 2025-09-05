@@ -1,6 +1,10 @@
 import Link from "next/link";
 import OpenIcon from "./open.svg";
 
+export const metadata = {
+    title: "Reservation | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+};
+
 export default function ReservePage() {
     return (
         <>
