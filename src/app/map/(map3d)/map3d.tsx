@@ -212,7 +212,6 @@ function initializeMap3D(
         }
     }
     {
-        //見ずらいので、いるのかといわれれば微妙。
         function setText(
             text: string,
             setX: number,
@@ -385,8 +384,8 @@ function initializeMap3D(
         currentControlsTarget.copy(controls.target);
         switch (floor) {
             case 0:
-                targetCameraPosition.set(50, 320, 1000);
-                targetControlsTarget.set(-100, 50, 500);
+                targetCameraPosition.set(140, 320, 1100);
+                targetControlsTarget.set(10, 50, 500);
                 break;
             case 1:
                 targetCameraPosition.set(-400, 120, -370);
@@ -440,7 +439,7 @@ export function Map3D({
 }: {
     resolution?: number;
     className?: string;
-    floor?: number; // フロア番号 (0: 転心殿前, 1-4: 高校棠, 5-7: 中学棠)
+    floor?: number; // フロア番号 (0: 転心殿前, 1-4: 高校棟, 5-7: 中学棟)
 }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const stateRef = useRef<ReturnType<typeof initializeMap3D>>(null);
