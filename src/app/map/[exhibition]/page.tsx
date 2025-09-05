@@ -35,11 +35,11 @@ function LinkItem({ children, href }: { children: React.ReactNode; href: string 
 
 function Item({ children, href }: { children: string; href: string }) {
     return (
-        <div className="flex items-center w-4/5 mx-auto gap-[10px]">
-            <Pin className="w-[37px] md:w-[40px] aspect-2/1 shrink-0" />
-            <div className="text-[18px] md:text-[20px] font-normal grow-1 text-start">{children}</div>
+        <div className="mx-auto flex w-4/5 items-center gap-[10px]">
+            <Pin className="aspect-2/1 w-[37px] shrink-0 md:w-[40px]" />
+            <div className="grow-1 text-start text-[18px] font-normal md:text-[20px]">{children}</div>
             <Link href={href}>
-                <Arrow className="shrink-0 size-[29px] md:size-[32px]" />
+                <Arrow className="size-[29px] shrink-0 md:size-[32px]" />
             </Link>
         </div>
     );
@@ -100,7 +100,7 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
                 {data.events && data.events.length > 0 && (
                     <section className={styles.event_wrapper}>
                         <h2 className={styles.event_title}>イベント開催情報</h2>
-                        <div className="flex flex-col gap-[6px] mt-[12px]">
+                        <div className="mt-[12px] flex flex-col gap-[6px]">
                             {data.events?.map((event) => (
                                 <Item key={event} href="/">
                                     {event}
