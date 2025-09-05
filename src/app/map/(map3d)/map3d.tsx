@@ -2,7 +2,9 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { Color, Polygons, Rects } from "./mapdata";
+import { exhibitionIcons } from "../(exhibition)/exhibition-icons";
+import { mapIcons } from "./map-icons";
+import { BazaarPositions, Boxes, Color, ExhibitionPositions, Polygons, Rects } from "./mapdata";
 
 function initializeMap3D(
     canvas: HTMLCanvasElement,
@@ -12,6 +14,7 @@ function initializeMap3D(
 ) {
     // scene, renderer, camera, controlsの初期化
     const scene = new THREE.Scene();
+    const billboardObjects: THREE.Object3D[] = [];
     const renderer = new THREE.WebGLRenderer({
         canvas: canvas,
         antialias: true,
@@ -69,7 +72,8 @@ function initializeMap3D(
         scene.add(grid);
     }
 
-    // 地面の追加 (開発環境のみ)
+    // 地面の追加
+    /*
     if (process.env.NODE_ENV === "development") {
         const loader = new THREE.TextureLoader();
         const texture = loader.load("/2025/map/school-picture.jpg", () => {
@@ -84,6 +88,7 @@ function initializeMap3D(
             updated = true;
         });
     }
+    */
 
     // 床 (長方形) の追加
     {
@@ -160,6 +165,157 @@ function initializeMap3D(
             }
         });
     }
+    {
+        //展示アイコンの追加
+        function setIcon(iconName: string, setX: number, setY: number, setZ: number, scale: number) {
+            const SVGData = (
+                iconName in exhibitionIcons
+                    ? exhibitionIcons[iconName as keyof typeof exhibitionIcons]
+                    : iconName in mapIcons
+                      ? mapIcons[iconName as keyof typeof mapIcons]
+                      : exhibitionIcons["fallback"]
+            ).replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" ');
+
+            const textureLoader = new THREE.TextureLoader();
+            const texture = textureLoader.load(
+                "data:image/svg+xml;charset=utf-8," + encodeURIComponent(SVGData),
+                (tex) => {
+                    tex.colorSpace = THREE.SRGBColorSpace;
+                    updated = true;
+                },
+            );
+
+            const planeHeight = 40;
+            const planeWidth = 40;
+
+            const geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
+            const material = new THREE.MeshBasicMaterial({
+                map: texture,
+                transparent: true,
+                side: THREE.FrontSide,
+                depthWrite: false,
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(setX, setY, setZ);
+            mesh.scale.set(scale, scale, scale);
+            scene.add(mesh);
+            billboardObjects.push(mesh);
+        }
+
+        const smallScale: string[] = ["トイレ", "男子トイレ", "女子トイレ", "階段", "自動販売機"];
+
+        for (let i = 0; i < ExhibitionPositions.length; i++) {
+            const [name, x, y, z] = ExhibitionPositions[i];
+            const scale = smallScale.includes(name) ? 0.7 : 1;
+            setIcon(name, x, y + 20, z, scale);
+        }
+    }
+    {
+        function setText(
+            text: string,
+            setX: number,
+            setY: number,
+            setZ: number,
+            scale: number,
+            color: string,
+            size: number = 10,
+        ) {
+            //展示団体名の表示
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d")!;
+
+            const fontSize = 192;
+
+            ctx.font = fontSize + "px Noto Sans JP, Noto Sans JP Fallback";
+            canvas.width = ctx.measureText(text).width * 1.2;
+            canvas.height = fontSize * 1.2;
+
+            ctx.fillStyle = "black";
+            ctx.lineWidth = 5; // 枠の太さ
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
+            if (color != "none") {
+                ctx.fillStyle = color;
+                ctx.fillRect(
+                    ctx.lineWidth,
+                    ctx.lineWidth,
+                    canvas.width - 2 * ctx.lineWidth,
+                    canvas.height - 2 * ctx.lineWidth,
+                );
+            }
+
+            ctx.font = fontSize + "px Noto Sans JP, Noto Sans JP Fallback";
+            ctx.fillStyle = "black";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.colorSpace = THREE.SRGBColorSpace;
+
+            const geometry = new THREE.PlaneGeometry((size * canvas.width) / canvas.height, size);
+            const material = new THREE.MeshBasicMaterial({
+                map: texture,
+                transparent: true,
+                side: THREE.FrontSide,
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(setX, setY, setZ);
+            mesh.scale.set(scale, scale, scale);
+
+            // シーンに追加
+            scene.add(mesh);
+            billboardObjects.push(mesh);
+        }
+
+        const exception: string[] = ["トイレ", "男子トイレ", "女子トイレ", "階段"];
+
+        document.fonts.ready.then(() => {
+            updated = true;
+            for (let i = 0; i < ExhibitionPositions.length; i++) {
+                const [name, x, y, z] = ExhibitionPositions[i];
+                if (!exception.includes(name)) setText(name, x, y + 50, z, 1, "none");
+            }
+
+            setText("圓融館", 312.5, 0 + 20, -387.5, 1, "none", 20);
+            setText("体育館", -87.5, -100 + 20, -712.5, 1, "none", 30);
+            setText("小講堂", 50, 300 + 15, 175, 1, "none", 20);
+            setText("中庭", -62.5, 200 + 20, -25, 1, "none", 20);
+            setText("音楽室", -337.5, 150 + 10, 0, 1, "none", 10);
+            setText("地学室", -337.5, 300 + 10, 12.5, 1, "none", 10);
+            setText("4年A組", -337.5, 450 + 10, 12.5, 1, "none", 10);
+            setText("視聴覚室", -187.5, 450 + 10, 25, 1, "none", 10);
+            setText("物理室", -187.5, 300 + 10, 12.5, 1, "none", 10);
+
+            for (let i = 0; i < BazaarPositions.length; i++) {
+                const [name, x, y, z, color] = BazaarPositions[i];
+                setText(name, x, y + 20, z, 3, color);
+            }
+        });
+    }
+    {
+        //階段の追加
+        Boxes.forEach((boxData) => {
+            const [x1, y1, z1] = boxData.begin;
+            const [x2, y2, z2] = boxData.end;
+            const dx = Math.abs(x1 - x2);
+            const dy = Math.abs(y1 - y2);
+            const dz = Math.abs(z1 - z2);
+
+            const geometry = new THREE.BoxGeometry(dx, dy, dz);
+            const material = new THREE.MeshBasicMaterial({
+                color: boxData.color,
+                transparent: true,
+                opacity: 0.5,
+                depthWrite: false,
+            });
+
+            const box = new THREE.Mesh(geometry, material);
+            box.position.set((x1 + x2) / 2, (y1 + y2) / 2, (z1 + z2) / 2);
+
+            scene.add(box);
+        });
+    }
 
     // レンダリングループの開始
     const currentCameraPosition = new THREE.Vector3();
@@ -190,6 +346,13 @@ function initializeMap3D(
             updated = true;
             --preventControlsUpdate;
         }
+
+        // ビルボードオブジェクトの回転を更新
+        const dir = Math.atan2(camera.position.x - controls.target.x, camera.position.z - controls.target.z);
+        for (const obj of billboardObjects) {
+            obj.rotation.y = dir;
+        }
+
         light1.position.set(camera.position.x, camera.position.y, camera.position.z);
         light2.position.set(camera.position.x, camera.position.y, camera.position.z);
         if (updated) renderer.render(scene, camera);
@@ -221,8 +384,8 @@ function initializeMap3D(
         currentControlsTarget.copy(controls.target);
         switch (floor) {
             case 0:
-                targetCameraPosition.set(-120, 500, 800);
-                targetControlsTarget.set(-100, 50, 500);
+                targetCameraPosition.set(140, 320, 1100);
+                targetControlsTarget.set(10, 50, 500);
                 break;
             case 1:
                 targetCameraPosition.set(-400, 120, -370);
@@ -270,7 +433,7 @@ function initializeMap3D(
 // resolution: 解像度(1.0が最大, 0.8がデフォルト)
 // className: canvasのクラス名
 export function Map3D({
-    resolution = 0.8,
+    resolution = 1.0,
     className = "",
     floor = -1,
 }: {
