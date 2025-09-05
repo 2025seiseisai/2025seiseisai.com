@@ -5,6 +5,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { eventData, locations } from "./event-data";
 import pagestyles from "./event.module.scss";
+import Day1off from "./events-photo/day1off.svg";
+import Day1on from "./events-photo/day1on.svg";
+import Day2off from "./events-photo/day2off.svg";
+import Day2on from "./events-photo/day2on.svg";
 import Left from "./events-photo/left.svg";
 import Mappin from "./events-photo/map-pin.svg";
 import Right from "./events-photo/right.svg";
@@ -13,6 +17,7 @@ import Ticket from "./events-photo/tickets.svg";
 import Utenji from "./events-photo/utenji.svg";
 import Play from "./events-photo/yajirusi.svg";
 import timestyles from "./time.module.scss";
+import Line from "./events-photo/line.svg";
 import Shosai from "./events-photo/shosai.svg";
 
 export default function TimeTablePage() {
@@ -72,14 +77,14 @@ export default function TimeTablePage() {
                         className={`${timestyles.dayBtn} ${day === "day1" ? timestyles.active : ""}`}
                         onClick={() => setDay("day1")}
                     >
-                        1日目
+                        Day 1
                     </button>
                     <button
                         className={`${timestyles.dayBtn} ${day === "day2" ? timestyles.active : ""}`}
                         onClick={() => setDay("day2")}
                     >
-                        2日目
-                    </button>
+                        Day 2
+  </button>
                 </div>
 
                 <button onClick={scrollNext} className={timestyles.arrowBtn}>
@@ -105,17 +110,10 @@ export default function TimeTablePage() {
 
                                 <div className={timestyles.timelineLines}>
                                     {halfHours.map((halfHour, idx) => {
-                                    const top = OFFSET_TOP + halfHour * (HOUR_HEIGHT);
-                                    return (
-                                        <div
-                                        key={idx}
-                                        className={timestyles.dashed}
-                                        style={{ top: `${top}px` }}
-                                        />
-                                        );
+                                    const top = OFFSET_TOP + halfHour * HOUR_HEIGHT; // 30分=0.5時間
+                                    return <Line key={idx} className={timestyles.line} style={{ top: `${top}px` }} />;
                                     })}
                                 </div>
-
 
                                 {/* イベントバー */}
                                 <div className={timestyles.events}>

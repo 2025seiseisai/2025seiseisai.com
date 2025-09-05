@@ -122,7 +122,7 @@ export const eventData: EventData[] = [
         name: "ラブライブ！サンスクリット‼︎",
         description: "ラブライブシリーズのコピーダンスユニットです。",
         day1: [
-            { location: "体育館", start: "12:50", end: "13:10" },
+            { location: "体育館", start: "11:50", end: "12:10" },
             { location: "体育館", start: "15:50", end: "16:10" },
         ],
         day2: [
@@ -160,7 +160,7 @@ export const eventData: EventData[] = [
         description:
             "BTSをはじめとしたK-POPの楽曲で、キレのあるパフォーマンスをお届けします! ダンス、表情、フォーメーション——細部までこだわって仕上げたステージは必見。憧れのアーティストに少しでも近づけるよう、全力で練習してきました。 一緒に盛り上がってください！応援よろしくお願いします！",
         day1: [
-            { location: "体育館", start: "12:30", end: "12:50" },
+            { location: "体育館", start: "12:50", end: "13:10" },
             { location: "体育館", start: "16:10", end: "16:30" },
         ],
         day2: [
@@ -170,8 +170,8 @@ export const eventData: EventData[] = [
     },
     {
         name: "令和の小町コンテスト",
-        day1: [],
-        day2: [{location: "体育館", start: "14:30", end: "15:00" }],
+        day1: [{ label: "予選", location: "体育館", start: "13:20", end: "14:00" }],
+        day2: [{ label: "決勝", location: "体育館", start: "14:30", end: "15:00" }],
     },
     {
         name: "T(DJ)²",

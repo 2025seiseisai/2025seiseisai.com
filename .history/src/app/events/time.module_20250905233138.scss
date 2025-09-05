@@ -56,17 +56,15 @@
     align-items: flex-start;
     justify-content: center;
     margin-top: 30px;
-    border-radius: 9999px;
 
     .dayBtn {
-        padding: 3px 15px;
-        font-size: 14px;
+        padding: 6px 20px;
+        font-size: 18px;
         font-weight: bold;
-        color: #fff;
+        color: #555;
         cursor: pointer;
-        background: #d9d9d9;
+        background: none;
         border: none;
-        border-radius: 9999px;
         transition: all 0.2s ease;
 
         &:hover {
@@ -75,6 +73,9 @@
     }
 
     .active {
+        width: 32px;
+        max-width: 8vw;
+        height: auto;
         margin-right: auto;
         margin-left: auto;
         color: #fff;

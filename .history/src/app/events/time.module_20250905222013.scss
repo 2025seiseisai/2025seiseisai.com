@@ -56,17 +56,15 @@
     align-items: flex-start;
     justify-content: center;
     margin-top: 30px;
-    border-radius: 9999px;
 
     .dayBtn {
-        padding: 3px 15px;
-        font-size: 14px;
+        padding: 6px 12px;
+        font-size: 18px;
         font-weight: bold;
-        color: #fff;
+        color: #555;
         cursor: pointer;
-        background: #d9d9d9;
+        background: none;
         border: none;
-        border-radius: 9999px;
         transition: all 0.2s ease;
 
         &:hover {
@@ -80,13 +78,13 @@
         color: #fff;
         background-color: #de0d22;
         border: 1px solid #de0d22;
-        border-radius: 9999px;
+        border-radius: 50%;
     }
 }
 
 .dayButtonGroup {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* ボタンと日付を縦並び */
     align-items: center;
 }
 
@@ -150,7 +148,7 @@
     margin-top: 0;
     margin-bottom: 40px;
     overflow-y: visible;
-    background: none;
+    background: #fff;
     border-radius: 8px;
 }
 
@@ -162,17 +160,6 @@
     width: 264px;
     height: 100%;
     pointer-events: none;
-}
-
-.dashed {
-    position: absolute;
-    right: 0;
-    left: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, #0b0e0f, #0b0e0f 14px, transparent 14px, transparent 28px);
-    background-repeat: repeat-x;
-    background-position: left center;
-    background-size: 28px 1px;
 }
 
 .line {
@@ -202,6 +189,7 @@
     text-align: right;
 }
 
+/* イベント */
 .events {
     position: relative;
     height: 100%;
@@ -296,8 +284,8 @@
 }
 
 .eventsWrapper {
-    position: absolute;
-    top: 16px;
+    position: absolute; // ページ上に配置
+    top: 16px; // 上から16px
     left: 50%;
     z-index: 100;
     transform: translateX(-167.5px);

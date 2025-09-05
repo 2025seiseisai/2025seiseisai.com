@@ -13,6 +13,7 @@ import Ticket from "./events-photo/tickets.svg";
 import Utenji from "./events-photo/utenji.svg";
 import Play from "./events-photo/yajirusi.svg";
 import timestyles from "./time.module.scss";
+import Line from "./events-photo/line.svg";
 import Shosai from "./events-photo/shosai.svg";
 
 export default function TimeTablePage() {
@@ -94,6 +95,19 @@ export default function TimeTablePage() {
 
                             {/* タイムテーブル*/}
                             <div className={timestyles.timeline}>
+                                <div className={timestyles.dashedLines}>
+                                {hours.map((h, i) => (
+                                <div
+                                    key={i}
+                                    className={timestyles.dashed}
+                                        style={{ top: `${i * 105}px` }} // 1時間=105px の高さ
+                                        {halfHours.map((halfHour, idx) => {
+                                    const top = OFFSET_TOP + halfHour * HOUR_HEIGHT; // 30分=0.5時間
+                                    return <Line key={idx} className={timestyles.line} style={{ top: `${top}px` }} />;
+                                    })}
+                                />
+                                ))}
+                                </div>
                                 {/* 時間軸 */}
                                 <div className={timestyles.timeScale}>
                                     {hours.map((h) => (
@@ -105,17 +119,10 @@ export default function TimeTablePage() {
 
                                 <div className={timestyles.timelineLines}>
                                     {halfHours.map((halfHour, idx) => {
-                                    const top = OFFSET_TOP + halfHour * (HOUR_HEIGHT);
-                                    return (
-                                        <div
-                                        key={idx}
-                                        className={timestyles.dashed}
-                                        style={{ top: `${top}px` }}
-                                        />
-                                        );
+                                    const top = OFFSET_TOP + halfHour * HOUR_HEIGHT; // 30分=0.5時間
+                                    return <Line key={idx} className={timestyles.line} style={{ top: `${top}px` }} />;
                                     })}
                                 </div>
-
 
                                 {/* イベントバー */}
                                 <div className={timestyles.events}>

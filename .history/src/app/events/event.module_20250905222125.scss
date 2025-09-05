@@ -11,17 +11,20 @@
     min-width: 0;
 }
 
+// 共通のスタイル
 .example {
     font-size: 36px;
     color: black;
 }
 
+// スマホ用のスタイル
 @include media(sm) {
     .example {
         background-color: blue;
     }
 }
 
+// PC用のスタイル
 @include media(lg) {
     .example {
         color: red;

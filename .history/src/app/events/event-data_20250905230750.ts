@@ -170,8 +170,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "令和の小町コンテスト",
-        day1: [],
-        day2: [{location: "体育館", start: "14:30", end: "15:00" }],
+        day2: [{ label: "決勝", location: "体育館", start: "14:30", end: "15:00" }],
     },
     {
         name: "T(DJ)²",

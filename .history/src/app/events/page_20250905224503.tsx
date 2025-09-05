@@ -13,6 +13,7 @@ import Ticket from "./events-photo/tickets.svg";
 import Utenji from "./events-photo/utenji.svg";
 import Play from "./events-photo/yajirusi.svg";
 import timestyles from "./time.module.scss";
+import Line from "./events-photo/line.svg";
 import Shosai from "./events-photo/shosai.svg";
 
 export default function TimeTablePage() {
@@ -105,16 +106,18 @@ export default function TimeTablePage() {
 
                                 <div className={timestyles.timelineLines}>
                                     {halfHours.map((halfHour, idx) => {
-                                    const top = OFFSET_TOP + halfHour * (HOUR_HEIGHT);
-                                    return (
-                                        <div
-                                        key={idx}
-                                        className={timestyles.dashed}
-                                        style={{ top: `${top}px` }}
-                                        />
-                                        );
-                                    })}
-                                </div>
+                                    const top = OFFSET_TOP + halfHour * (HOUR_HEIGHT / 2);
+    // 30分刻み → HOUR_HEIGHT の半分ずつ
+
+    return (
+      <div
+        key={idx}
+        className={timestyles.dashed}
+        style={{ top: `${top}px` }}
+      />
+    );
+  })}
+</div>
 
 
                                 {/* イベントバー */}

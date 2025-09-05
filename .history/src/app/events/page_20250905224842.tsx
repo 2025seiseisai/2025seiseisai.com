@@ -13,6 +13,7 @@ import Ticket from "./events-photo/tickets.svg";
 import Utenji from "./events-photo/utenji.svg";
 import Play from "./events-photo/yajirusi.svg";
 import timestyles from "./time.module.scss";
+import Line from "./events-photo/line.svg";
 import Shosai from "./events-photo/shosai.svg";
 
 export default function TimeTablePage() {
