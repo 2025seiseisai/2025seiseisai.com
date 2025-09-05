@@ -72,7 +72,8 @@ function initializeMap3D(
         scene.add(grid);
     }
 
-    // 地面の追加 (開発環境のみ)
+    // 地面の追加
+    /*
     if (process.env.NODE_ENV === "development") {
         const loader = new THREE.TextureLoader();
         const texture = loader.load("/2025/map/school-picture.jpg", () => {
@@ -87,6 +88,7 @@ function initializeMap3D(
             updated = true;
         });
     }
+    */
 
     // 床 (長方形) の追加
     {
@@ -211,7 +213,15 @@ function initializeMap3D(
     }
     {
         //見ずらいので、いるのかといわれれば微妙。
-        function setText(text: string, setX: number, setY: number, setZ: number, scale: number, color: string) {
+        function setText(
+            text: string,
+            setX: number,
+            setY: number,
+            setZ: number,
+            scale: number,
+            color: string,
+            size: number = 10,
+        ) {
             //展示団体名の表示
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d")!;
@@ -241,8 +251,9 @@ function initializeMap3D(
             ctx.textBaseline = "middle";
             ctx.fillText(text, canvas.width / 2, canvas.height / 2);
             const texture = new THREE.CanvasTexture(canvas);
+            texture.colorSpace = THREE.SRGBColorSpace;
 
-            const geometry = new THREE.PlaneGeometry((10 * canvas.width) / canvas.height, 10);
+            const geometry = new THREE.PlaneGeometry((size * canvas.width) / canvas.height, size);
             const material = new THREE.MeshBasicMaterial({
                 map: texture,
                 transparent: true,
@@ -267,9 +278,15 @@ function initializeMap3D(
                 if (!exception.includes(name)) setText(name, x, y + 50, z, 1, "none");
             }
 
-            //体育館・圓融館
-            setText("圓融館", 312.5, 0 + 20, -387.5, 1, "none");
-            setText("体育館", -87.5, -100 + 20, -712.5, 1, "none");
+            setText("圓融館", 312.5, 0 + 20, -387.5, 1, "none", 20);
+            setText("体育館", -87.5, -100 + 20, -712.5, 1, "none", 30);
+            setText("小講堂", 50, 300 + 15, 175, 1, "none", 20);
+            setText("中庭", -62.5, 200 + 20, -25, 1, "none", 20);
+            setText("音楽室", -337.5, 150 + 10, 0, 1, "none", 10);
+            setText("地学室", -337.5, 300 + 10, 12.5, 1, "none", 10);
+            setText("4年A組", -337.5, 450 + 10, 12.5, 1, "none", 10);
+            setText("視聴覚室", -187.5, 450 + 10, 25, 1, "none", 10);
+            setText("物理室", -187.5, 300 + 10, 12.5, 1, "none", 10);
 
             for (let i = 0; i < BazaarPositions.length; i++) {
                 const [name, x, y, z, color] = BazaarPositions[i];
@@ -368,7 +385,7 @@ function initializeMap3D(
         currentControlsTarget.copy(controls.target);
         switch (floor) {
             case 0:
-                targetCameraPosition.set(-120, 500, 800);
+                targetCameraPosition.set(50, 320, 1000);
                 targetControlsTarget.set(-100, 50, 500);
                 break;
             case 1:
