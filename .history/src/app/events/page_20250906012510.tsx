@@ -98,6 +98,7 @@ export default function TimeTablePage() {
                         <div className={timestyles.emblaSlide} key={index}>
                             <span className={timestyles.locationName}>{loc}</span>
 
+                            
                             {/* タイムテーブル*/}
                             <div className={timestyles.timeline}>
                                 {/* 時間軸 */}

@@ -44,7 +44,7 @@
     flex-direction: column;
     gap: 16px;
     align-items: center;
-    padding-top: 0;
+    padding-top: 60px;
     padding-right: 5.33%;
     padding-left: 5.33%;
     margin-top: 20px;
@@ -160,7 +160,7 @@
     overflow-y: visible;
     background: none;
     border-radius: 8px;
-    transform: translateX(-55px);
+    transform: translateX(-20px);
 }
 
 .timelineLines {
@@ -279,7 +279,7 @@
 .topControls {
     display: flex;
     flex-wrap: nowrap;
-    gap: 45px;
+    gap: 24px;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -310,8 +310,7 @@
     left: 20px;
     z-index: 100;
     margin-bottom: 30px;
-    margin-left: 20px;
-    transform: translateX(-141.5px);
+    transform: translateX(-121/5px);
 }
 
 .eventsTitle {

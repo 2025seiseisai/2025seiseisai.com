@@ -56,7 +56,6 @@ export default function TimeTablePage() {
 
   return (
         <div className={timestyles.page}>
-          <div className={timestyles.eventsWrapper}>
               <div className={timestyles.eventsTitle}>
                 <span className={timestyles.firstLetter}>E</span>vents
               </div>
@@ -98,75 +97,76 @@ export default function TimeTablePage() {
                         <div className={timestyles.emblaSlide} key={index}>
                             <span className={timestyles.locationName}>{loc}</span>
 
+                            <div className={timestyles.timelineWrapper}>
                             {/* タイムテーブル*/}
-                            <div className={timestyles.timeline}>
-                                {/* 時間軸 */}
-                                <div className={timestyles.timeScale}>
-                                    {hours.map((h) => (
-                                        <div key={h} className={timestyles.timeMark}>
-                                            {h}:00
-                                        </div>
-                                    ))}
-                                </div>
+                                <div className={timestyles.timeline}>
+                                    {/* 時間軸 */}
+                                    <div className={timestyles.timeScale}>
+                                        {hours.map((h) => (
+                                            <div key={h} className={timestyles.timeMark}>
+                                                {h}:00
+                                            </div>
+                                        ))}
+                                    </div>
 
-                                <div className={timestyles.timelineLines}>
-                                    {halfHours.map((halfHour, idx) => {
-                                    const top = OFFSET_TOP + halfHour * (HOUR_HEIGHT);
-                                    return (
-                                        <div
-                                        key={idx}
-                                        className={timestyles.dashed}
-                                        style={{ top: `${top}px` }}
-                                        />
-                                        );
-                                    })}
-                                </div>
+                                    <div className={timestyles.timelineLines}>
+                                        {halfHours.map((halfHour, idx) => {
+                                        const top = OFFSET_TOP + halfHour * (HOUR_HEIGHT);
+                                        return (
+                                            <div
+                                            key={idx}
+                                            className={timestyles.dashed}
+                                            style={{ top: `${top}px` }}
+                                            />
+                                            );
+                                        })}
+                                    </div>
 
 
-                                {/* イベントバー */}
-                                <div className={timestyles.events}>
-                                    {eventData.map((event, i) =>
-                                        event[day]
-                                            .filter((d) => d.location === loc)
-                                            .map((d, j) => {
-                                                const start = toMinutes(d.start);
-                                                const end = toMinutes(d.end);
-                                                const duration = end - start;
-                                                return (
-                                                    <div
-                                                        key={`${i}-${j}`}
-                                                        className={timestyles.event}
-                                                        style={{
-                                                            top: `${OFFSET_TOP +(start / 60) * HOUR_HEIGHT}px`,
-                                                            height: `${(duration / 60) * HOUR_HEIGHT}px`,
-                                                        }}
-                                                    >
-                                                        <span className={timestyles.startTime}>{d.start}</span>
-                                                        <div className={timestyles.eventName}>
-                                                            {event.name}
-                                                            {d.label && <span>（{d.label}）</span>}
-                                                        </div>
-                                                        <span className={timestyles.endTime}>{d.end}</span>
-                                                        <button
-                                                            className={timestyles.shosaiBtn}
-                                                            onClick={() => {
-                                                                setOpenIndexes((prev) =>
-                                                                    prev.includes(i) ? prev : [...prev, i]
-                                                                );
-                                                                setTimeout(() => {
-                                                                    document.getElementById(`event-${i}`)?.scrollIntoView({
-                                                                        behavior: "smooth",
-                                                                        block: "start",
-                                                                    });
-                                                                }, 0);
+                                    {/* イベントバー */}
+                                    <div className={timestyles.events}>
+                                        {eventData.map((event, i) =>
+                                            event[day]
+                                                .filter((d) => d.location === loc)
+                                                .map((d, j) => {
+                                                    const start = toMinutes(d.start);
+                                                    const end = toMinutes(d.end);
+                                                    const duration = end - start;
+                                                    return (
+                                                        <div
+                                                            key={`${i}-${j}`}
+                                                            className={timestyles.event}
+                                                            style={{
+                                                                top: `${OFFSET_TOP +(start / 60) * HOUR_HEIGHT}px`,
+                                                                height: `${(duration / 60) * HOUR_HEIGHT}px`,
                                                             }}
-                                                            >
-                                                            <Shosai />
-                                                        </button>
-                                                    </div>
-                                                );
-                                            }),
-                                    )}
+                                                        >
+                                                            <span className={timestyles.startTime}>{d.start}</span>
+                                                            <div className={timestyles.eventName}>
+                                                                {event.name}
+                                                                {d.label && <span>（{d.label}）</span>}
+                                                            </div>
+                                                            <span className={timestyles.endTime}>{d.end}</span>
+                                                            <button
+                                                                className={timestyles.shosaiBtn}
+                                                                onClick={() => {
+                                                                    setOpenIndexes((prev) =>
+                                                                        prev.includes(i) ? prev : [...prev, i]
+                                                                    );
+                                                                    setTimeout(() => {
+                                                                        document.getElementById(`event-${i}`)?.scrollIntoView({
+                                                                            behavior: "smooth",
+                                                                            block: "start",
+                                                                        });
+                                                                    }, 0);
+                                                                }}
+                                                                >
+                                                                <Shosai />
+                                                            </button>
+                                                        </div>
+                                                    );
+                                                }),
+                                            
                                 </div>
                             </div>
                         </div>

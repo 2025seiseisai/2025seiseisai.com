@@ -98,24 +98,25 @@ export default function TimeTablePage() {
                         <div className={timestyles.emblaSlide} key={index}>
                             <span className={timestyles.locationName}>{loc}</span>
 
+                            <div className={timestyles.timelineWrapper}>
                             {/* タイムテーブル*/}
-                            <div className={timestyles.timeline}>
-                                {/* 時間軸 */}
-                                <div className={timestyles.timeScale}>
-                                    {hours.map((h) => (
-                                        <div key={h} className={timestyles.timeMark}>
-                                            {h}:00
-                                        </div>
-                                    ))}
-                                </div>
+                                <div className={timestyles.timeline}>
+                                    {/* 時間軸 */}
+                                    <div className={timestyles.timeScale}>
+                                        {hours.map((h) => (
+                                            <div key={h} className={timestyles.timeMark}>
+                                                {h}:00
+                                            </div>
+                                        ))}
+                                    </div>
 
-                                <div className={timestyles.timelineLines}>
-                                    {halfHours.map((halfHour, idx) => {
-                                    const top = OFFSET_TOP + halfHour * (HOUR_HEIGHT);
-                                    return (
-                                        <div
-                                        key={idx}
-                                        className={timestyles.dashed}
+                                    <div className={timestyles.timelineLines}>
+                                        {halfHours.map((halfHour, idx) => {
+                                        const top = OFFSET_TOP + halfHour * (HOUR_HEIGHT);
+                                        return (
+                                            <div
+                                            key={idx}
+                                            className={timestyles.dashed}
                                         style={{ top: `${top}px` }}
                                         />
                                         );
@@ -167,6 +168,7 @@ export default function TimeTablePage() {
                                                 );
                                             }),
                                     )}
+                                </div>
                                 </div>
                             </div>
                         </div>

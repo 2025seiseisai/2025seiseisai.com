@@ -98,12 +98,13 @@ export default function TimeTablePage() {
                         <div className={timestyles.emblaSlide} key={index}>
                             <span className={timestyles.locationName}>{loc}</span>
 
+                            <div className={timestyles.timelineWrapper}>
                             {/* タイムテーブル*/}
-                            <div className={timestyles.timeline}>
-                                {/* 時間軸 */}
-                                <div className={timestyles.timeScale}>
-                                    {hours.map((h) => (
-                                        <div key={h} className={timestyles.timeMark}>
+                                <div className={timestyles.timeline}>
+                                    {/* 時間軸 */}
+                                    <div className={timestyles.timeScale}>
+                                        {hours.map((h) => (
+                                            <div key={h} className={timestyles.timeMark}>
                                             {h}:00
                                         </div>
                                     ))}
@@ -167,6 +168,7 @@ export default function TimeTablePage() {
                                                 );
                                             }),
                                     )}
+                                </div>
                                 </div>
                             </div>
                         </div>

@@ -44,9 +44,7 @@
     flex-direction: column;
     gap: 16px;
     align-items: center;
-    padding-top: 0;
-    padding-right: 5.33%;
-    padding-left: 5.33%;
+        padding: 60px 20px 20px;
     margin-top: 20px;
 }
 
@@ -55,7 +53,7 @@
     gap: 12px;
     align-items: flex-start;
     justify-content: center;
-    margin-top: 0;
+    margin-top: 30px;
     border-radius: 9999px;
 
     .dayBtn {
@@ -119,11 +117,9 @@
 
 /* Embla Carousel */
 .embla {
-    display: flex;
     flex: none;
-    justify-content: center;
     width: 100%;
-    max-width: 500px;
+    max-width: calc(100% - 0px);
     overflow: hidden;
 }
 
@@ -145,7 +141,6 @@
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    transform: none;
 }
 
 .timeline {
@@ -160,7 +155,6 @@
     overflow-y: visible;
     background: none;
     border-radius: 8px;
-    transform: translateX(-55px);
 }
 
 .timelineLines {
@@ -279,7 +273,7 @@
 .topControls {
     display: flex;
     flex-wrap: nowrap;
-    gap: 45px;
+    gap: 24px;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -305,13 +299,11 @@
 }
 
 .eventsWrapper {
-    position: relative;
-    top: 16px;
-    left: 20px;
+    position: relative; // 絶対配置ではなく
+    top: 0;
+    left: 121.5;
     z-index: 100;
-    margin-bottom: 30px;
-    margin-left: 20px;
-    transform: translateX(-141.5px);
+    margin-bottom: 30px; // EventsとDayボタンの間隔
 }
 
 .eventsTitle {

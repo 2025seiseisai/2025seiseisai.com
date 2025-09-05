@@ -98,8 +98,9 @@ export default function TimeTablePage() {
                         <div className={timestyles.emblaSlide} key={index}>
                             <span className={timestyles.locationName}>{loc}</span>
 
+                            <div className={timestyles.timelineWrapper}>
                             {/* タイムテーブル*/}
-                            <div className={timestyles.timeline}>
+                                <div className={timestyles.timeline}>
                                 {/* 時間軸 */}
                                 <div className={timestyles.timeScale}>
                                     {hours.map((h) => (
@@ -167,6 +168,7 @@ export default function TimeTablePage() {
                                                 );
                                             }),
                                     )}
+                                </div>
                                 </div>
                             </div>
                         </div>

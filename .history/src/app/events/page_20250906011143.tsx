@@ -75,7 +75,7 @@ export default function TimeTablePage() {
                         1日目
                       </button>
                       <span className={timestyles.dayLabel}>9.06 sat</span>
-                    </div>
+                                </div>
 
                   <div className={timestyles.dayButtonWrapper}>
                       <button
@@ -84,7 +84,6 @@ export default function TimeTablePage() {
                     >
                         2日目
                       </button>
-                      <span className={timestyles.dayLabel}>9.07 sun</span>
                     </div>
                 </div>
 
