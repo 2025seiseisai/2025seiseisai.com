@@ -171,20 +171,20 @@ export const eventData: EventData[] = [
     {
         name: "令和の小町コンテスト",
         day1: [],
-        day2: [{location: "体育館", start: "14:30", end: "15:00" }],
+        day2: [{ location: "体育館", start: "14:30", end: "15:00" }],
     },
     {
         name: "T(DJ)²",
         description:
             "東大寺学園史上初?!音楽好きによるDJパフォーマンスです!4人のDJが日替わりで、多種多様な音楽を流します。有名な曲から知る人ぞ知る名曲、マイナーな曲まで幅広く流しますので、知っている曲で楽しんだり、新たな曲と出会ったり、まずは一度お立ち寄りください!",
         day1: [
-            { location: "4A", start: "11:50", end: "12:10" },
+            { location: "4A", start: "11:50", end: "12:50" },
             { location: "体育館", start: "14:10", end: "15:00" },
         ],
         day2: [{ location: "4A", start: "11:20", end: "12:20" }],
     },
     {
-        name: "例の集団",
+        name: "江南無スタイル",
         day1: [{ location: "体育館", start: "16:50", end: "17:00" }],
         day2: [],
     },
@@ -213,11 +213,6 @@ export const eventData: EventData[] = [
         name: "結婚式",
         day1: [],
         day2: [{ location: "体育館", start: "16:10", end: "16:30" }],
-    },
-    {
-        name: "？？？",
-        day1: [],
-        day2: [{ location: "体育館", start: "17:10", end: "17:30" }],
     },
     {
         name: "菁々コンサート",
@@ -294,7 +289,7 @@ export const eventData: EventData[] = [
     {
         name: "スリーレッドメン",
         description: "軽音などのバンドでは扱わないこともあるいろいろなジャンルを弾きます。ぜひお越しください",
-        day1: [{ location: "音楽室", start: "10:10", end: "10:40" }],
+        day1: [{ location: "音楽室", start: "09:50", end: "10:05" }],
         day2: [],
     },
     {
@@ -438,35 +433,8 @@ export const eventData: EventData[] = [
         ],
     },
     {
-        name: "かわいいだけじゃだめですか？",
-        description:
-            "去年、SNSで大バズりしたCUTIE STREET「かわいいだけじゃだめですか？」を踊ります!ぜひ盛り上げて下さい!",
-        day1: [],
-        day2: [],
-    },
-    {
         name: "釈迦釈迦BOYS",
-        description:
-            "2025年結成のスーパーロックバンド「Dear Deers」。バンドメンバーは竹迫音汰郎(ボーカル＆ギター)・全康旭(ギター)・藤本悠佑(キーボード)・初田隼悟(キーボード)・野中聖史(ベース)・伊藤仁(ドラム)。サザンの名曲から最近のヒット曲までを演奏します。よろしく！",
-        day1: [],
-        day2: [],
-    },
-    {
-        name: "江南無スタイル",
-        description: "寺ザイルで踊れない、カッコいいとは言えないけど昔流行ったこの曲を後夜祭とは別に踊ります！",
-        day1: [],
-        day2: [],
-    },
-    {
-        name: "異次元フェス",
-        description: "未定",
-        day1: [],
-        day2: [],
-    },
-    {
-        name: "プレゼン、ゲーム大会の二種類",
-        description: "未定",
-        day1: [],
+        day1: [{ location: "音楽室", start: "10:05", end: "10:20" }],
         day2: [],
     },
 ] as const satisfies EventData[];
