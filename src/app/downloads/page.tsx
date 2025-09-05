@@ -3,6 +3,7 @@ import React from "react";
 import { exhibitionIcons } from "../map/(exhibition)/exhibition-icons";
 import Icon from "./dawnload_icon.svg";
 import IconPC from "./download_icon_pc.svg";
+import { clubMagazineLinks } from "./downloads-data";
 import Icon_open from "./minas_icon.svg";
 import styles from "./page.module.scss";
 import Icon_closed from "./plus_icon.svg";
@@ -15,12 +16,13 @@ export const metadata = {
 function Nameplate({ name }: { name: string }) {
     const icons = exhibitionIcons as Record<string, string>;
     const icon = icons[name] ?? icons["fallback"] ?? "";
+    const link = clubMagazineLinks[name] ?? "";
     return (
         <li>
             <div className={styles.club_magazine_detail}>
                 <div className={styles.club_icons} dangerouslySetInnerHTML={{ __html: icon }} />
                 <p className={styles.club_name}>{name}</p>
-                <Link target="_blank" rel="noopener noreferrer" href="" className={styles.magazine_download_button}>
+                <Link target="_blank" rel="noopener noreferrer" href={link} className={styles.magazine_download_button}>
                     読む<Icon2 className={styles.magazine_download_icon}></Icon2>
                 </Link>
             </div>
@@ -44,13 +46,13 @@ function Container({ title, children }: { title: string; children: React.ReactNo
 }
 
 // それぞれの行のクラブの整理 入れる箱ごとに分けています もうすでにあるのは、テストで入れてみたものです
-const club_A = ["アニメ研究会", "囲碁将棋部", "英語部"];
-const club_K = ["クイズ研究部"];
-const club_S = ["数学研究部"];
-const club_T = ["登山同好会"];
-const club_H = ["ポケモン研究会"];
-const club_M = ["マジック同好会"];
-const club_R = ["ロケット同好会"];
+const club_A = ["アニメ研究会", "暗号同好会", "囲碁将棋部", "英語部", "園芸部", "オセロ同好会", "折り紙研究部"];
+const club_K = ["科学部", "クイズ研究部", "語学研究会", "独楽研究会"];
+const club_S = ["自動車研究会", "情報研究部", "書道部", "新聞部", "数学研究部"];
+const club_T = ["チェス研究会", "鉄道研究部", "電子工作部", "東方研究会", "登山同好会", "ドラえもん研究会"];
+const club_N = ["謎解き研究会"];
+const club_H = ["文藝同好会"];
+const club_R = ["ラーメン研究会", "歴史部菁史会", "ロケット研究部"];
 const club_Alphabet = ["MGA同好会", "VOCALOID&作曲同好会"];
 
 // いちばんしたのは　　A-Z  のやつです
@@ -157,15 +159,15 @@ export default function Page() {
                         </div>
                         <div className={styles.magazine_detail_right}>
                             <div className={styles.magazine_total}>
-                                <Container title="は行">
-                                    {club_H.map((club) => (
+                                <Container title="な行">
+                                    {club_N.map((club) => (
                                         <Nameplate key={club} name={club} />
                                     ))}
                                 </Container>
                             </div>
                             <div className={styles.magazine_total}>
-                                <Container title="ま行">
-                                    {club_M.map((club) => (
+                                <Container title="は行">
+                                    {club_H.map((club) => (
                                         <Nameplate key={club} name={club} />
                                     ))}
                                 </Container>
