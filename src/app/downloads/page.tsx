@@ -89,8 +89,8 @@ export default function Page() {
                             <div className={styles.pamphlet_download_detail}>
                                 <p>高画質版(13.8MB)</p>
                                 <a
-                                    download
-                                    href="/2025/downloads/第61回菁々祭パンフレット高画質版.pdf"
+                                    download="第61回菁々祭パンフレット高画質版.pdf"
+                                    href="/2025/downloads/pamphlet_high.pdf"
                                     className={styles.pamphlet_download_button}
                                 >
                                     ダウンロード
@@ -101,8 +101,8 @@ export default function Page() {
                             <div className={styles.pamphlet_download_detail}>
                                 <p>中画質版(7.1MB)</p>
                                 <a
-                                    download
-                                    href="/2025/downloads/第61回菁々祭パンフレット中画質版.pdf"
+                                    download="第61回菁々祭パンフレット中画質版.pdf"
+                                    href="/2025/downloads/pamphlet_medium.pdf"
                                     className={styles.pamphlet_download_button}
                                 >
                                     ダウンロード
@@ -113,8 +113,8 @@ export default function Page() {
                             <div className={styles.pamphlet_download_detail}>
                                 <p>低画質版(3.5MB)</p>
                                 <a
-                                    download
-                                    href="/2025/downloads/第61回菁々祭パンフレット低画質版.pdf"
+                                    download="第61回菁々祭パンフレット低画質版.pdf"
+                                    href="/2025/downloads/pamphlet_low.pdf"
                                     className={styles.pamphlet_download_button}
                                 >
                                     ダウンロード
