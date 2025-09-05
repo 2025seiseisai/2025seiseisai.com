@@ -102,7 +102,7 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
                         <h2 className={styles.event_title}>イベント開催情報</h2>
                         <div className="mt-[12px] flex flex-col gap-[6px]">
                             {data.events?.map((event) => (
-                                <Item key={event} href="/">
+                                <Item key={event} href="/events">
                                     {event}
                                 </Item>
                             ))}
