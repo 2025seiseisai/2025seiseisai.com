@@ -97,24 +97,19 @@ export const eventData: EventData[] = [
     {
         name: "中1ダンス",
         description: "ダンスを踊ります。レッスンの成果を発揮し、キレッキレのダンスをお見せします。",
-        day1: [
-            { label: "晴天時", location: "転心殿前", start: "11:30", end: "11:50" },
-            { label: "雨天時", location: "体育館", start: "10:50", end: "11:00" },
-        ],
-        day2: [{ label: "晴天時", location: "転心殿前", start: "12:10", end: "12:30" }],
+        day1: [{ location: "転心殿前", start: "11:30", end: "11:50" }],
+        day2: [{ location: "転心殿前", start: "12:10", end: "12:30" }],
     },
     {
         name: "和太鼓演奏",
         description: "和太鼓のみを使った演奏です。迫力満点の演奏をお届けするのでぜひお楽しみください。",
         day1: [
-            { label: "晴天時", location: "転心殿前", start: "09:00", end: "09:50" },
-            { label: "晴天時", location: "転心殿前", start: "13:30", end: "14:10" },
-            { label: "雨天時", location: "体育館", start: "11:10", end: "11:40" },
+            { location: "転心殿前", start: "09:00", end: "09:50" },
+            { location: "転心殿前", start: "13:30", end: "14:10" },
         ],
         day2: [
-            { label: "晴天時", location: "転心殿前", start: "09:00", end: "09:50" },
-            { label: "晴天時", location: "転心殿前", start: "13:30", end: "14:10" },
-            { label: "雨天時", location: "圓融館", start: "12:00", end: "12:20" },
+            { location: "転心殿前", start: "09:00", end: "09:50" },
+            { location: "転心殿前", start: "13:30", end: "14:10" },
         ],
     },
     {
