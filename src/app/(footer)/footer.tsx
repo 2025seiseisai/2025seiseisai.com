@@ -106,10 +106,10 @@ export function Footer() {
                     >
                         Guide
                     </h1>
-                    <DisabledFooterLink>Events</DisabledFooterLink>
+                    <FooterLink href="/events">Events</FooterLink>
                     <FooterLink href="/map">Map</FooterLink>
                     <FooterLink href="/goods">Goods</FooterLink>
-                    <FooterLink href="https://tickets.seiseisai.com/">Tickets</FooterLink>
+                    <DisabledFooterLink>Tickets</DisabledFooterLink>
                 </span>
                 <span
                     className={`not-md:mr-[calc(1700svw/375)] not-md:flex-1 md:ml-[calc(8600svw/1440)]
