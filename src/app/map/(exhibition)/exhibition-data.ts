@@ -362,7 +362,6 @@ const exhibitionDataRaw = {
         description:
             "常設で普段の活動の成果を展示しています。展示はすべて部員が作りました。演示実験もぜひ見に来てください！",
         twitter_link: "https://x.com/tdjscienceclub",
-        events: ["化学の演示実験", "解剖の演示実験"],
     },
     書画展: {
         location: "図書室",
