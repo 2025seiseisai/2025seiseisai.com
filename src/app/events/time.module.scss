@@ -42,36 +42,27 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     align-items: center;
-    padding-top: 0;
-    padding-right: 5.33%;
-    padding-left: 5.33%;
-    margin-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .dayControls {
     display: flex;
-    gap: 12px;
-    align-items: flex-start;
+    gap: 15px;
     justify-content: center;
-    margin-top: 0;
-    border-radius: 9999px;
+    margin-bottom: 20px;
 
     .dayBtn {
-        padding: 3px 15px;
+        padding: 1px 18px 2px;
         font-size: 14px;
-        font-weight: bold;
+        line-height: 24px;
         color: #fff;
         cursor: pointer;
         background: #d9d9d9;
         border: none;
         border-radius: 9999px;
         transition: all 0.2s ease;
-
-        &:hover {
-            color: #000;
-        }
     }
 
     .active {
@@ -79,7 +70,6 @@
         margin-left: auto;
         color: #fff;
         background-color: #de0d22;
-        border: 1px solid #de0d22;
         border-radius: 9999px;
     }
 }
@@ -96,42 +86,40 @@
     align-items: center;
 }
 
+.dayNumber {
+    font-size: 20px;
+}
+
 .dayLabel {
     font-size: 14px;
     color: #0b0e0f;
 }
 
 .arrowBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 37px;
     cursor: pointer;
     background: none;
     border: none;
 
-    img {
+    svg {
         width: 32px;
-        max-width: 8vw;
-        height: auto;
+        height: 32px;
     }
 }
 
 /* Embla Carousel */
 .embla {
-    display: flex;
-    flex: none;
-    justify-content: center;
-    width: 100%;
+    width: calc(100svw - 40px);
+    max-width: 100%;
+    margin-bottom: 35px;
     overflow: hidden;
 }
 
 .emblaContainer {
     display: flex;
+    gap: 20px;
 }
 
 .emblaSlide {
-    position: relative;
     display: flex;
     flex: 0 0 100%;
     flex-direction: column;
@@ -139,33 +127,22 @@
 }
 
 .locationName {
-    position: relative;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
     font-size: 28px;
-    font-weight: bold;
     text-align: center;
-    transform: none;
 }
 
 .timeline {
     position: relative;
-    width: calc(100% - 40px);
-    max-width: 100%;
-    height: auto;
-    min-height: calc(105px * 8);
-    padding-top: 0;
-    margin-top: 0;
-    margin-bottom: 40px;
+    width: 100%;
+    height: 1047px;
     overflow-y: visible;
-    background: none;
-    border-radius: 8px;
 }
 
 .timelineLines {
     position: absolute;
     right: 0;
     left: 5%;
-    z-index: 1.5;
     width: 90%;
     height: 100%;
     pointer-events: none;
@@ -174,7 +151,8 @@
 .dashed {
     position: absolute;
     right: 0;
-    left: 0;
+    left: 50px;
+    z-index: -100;
     height: 1px;
     background-image: linear-gradient(to right, #0b0e0f, #0b0e0f 14px, transparent 14px, transparent 28px);
     background-repeat: repeat-x;
@@ -188,25 +166,11 @@
     height: auto;
 }
 
-.timeScale {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 16%;
-    height: 100%;
-    padding: 0;
-}
-
 .timeMark {
-    height: 105px;
-    padding-right: 4px;
+    position: absolute;
+    left: 7px;
     font-size: 16px;
-    line-height: 105px;
-    color: #000;
-    text-align: right;
+    line-height: 23px;
 }
 
 .events {
@@ -216,14 +180,12 @@
 
 .event {
     position: absolute;
-    right: 8px;
-    left: 16px;
-    z-index: 1;
+    right: 12px;
+    left: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: calc(84% - 4px);
     padding: 4px;
     font-size: 0.85rem;
     color: #000;
@@ -277,10 +239,11 @@
 .topControls {
     display: flex;
     flex-wrap: nowrap;
-    gap: 45px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
+    max-width: 380px;
+    padding: 0 7px;
 }
 
 .shosaiBtn {
@@ -303,17 +266,12 @@
 }
 
 .eventsWrapper {
-    position: relative;
-    top: 16px;
-    left: 20px;
-    z-index: 100;
+    width: 100%;
+    margin-top: 30px;
     margin-bottom: 30px;
-    margin-left: 20px;
-    transform: translateX(-141.5px);
 }
 
 .eventsTitle {
-    margin: 0;
     font-size: 28px;
     font-weight: 700;
     font-weight: bold;
@@ -321,20 +279,4 @@
 
 .firstLetter {
     color: #de0d22;
-}
-
-@media (width >= 768px) {
-    .timeline {
-        width: 70%;
-        min-height: 8 * 105px;
-    }
-
-    .timeScale {
-        width: 12%;
-    }
-
-    .event {
-        left: 12%;
-        width: 88%;
-    }
 }

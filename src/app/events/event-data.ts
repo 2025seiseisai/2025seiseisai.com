@@ -20,13 +20,12 @@ export const locations = [
     "圓融館",
     "小講堂",
     "視聴覚室",
-    "4A",
+    "4年A組",
     "音楽室",
-    "2B",
-    "3A",
-    "3B",
-    "4E",
-    "5A",
+    "2年B組",
+    "3年B組",
+    "4年E組",
+    "5年A組",
     "情報教室",
     "物理室",
     "地学室",
@@ -46,13 +45,11 @@ export const eventNames = [
     "E卍ILE",
     "令和の小町コンテスト",
     "T(DJ)²",
-    "例の集団", //
     "中3学年演劇", // 中３学年演劇
     "T-1グランプリ", // T-1グランプリ
     "マッスルコンテスト",
     "イケてるメンズコンテスト", // イケてるメンズコンテスト
     "結婚式",
-    "？？？",
     "菁々コンサート",
     "カラオケコンテスト",
     "室内学部定期演奏会",
@@ -78,8 +75,6 @@ export const eventNames = [
     "かわいいだけじゃだめですか？",
     "釈迦釈迦BOYS",
     "江南無スタイル",
-    "異次元フェス",
-    "プレゼン、ゲーム大会の二種類",
     "菁々祭ツアー", // 追加
     "学校案内", // 追加
 ] as const;
@@ -93,31 +88,27 @@ export const eventData: EventData[] = [
     },
     {
         name: "中1学年発表",
-        description: "演劇「ハリー・ポッターと賢者の石」と、ハンドベルで「喜びの歌」「校歌」などを披露します。初々しい演技と少数精鋭でのぞむ発表をご期待ください。",
+        description:
+            "演劇「ハリー・ポッターと賢者の石」と、ハンドベルで「喜びの歌」「校歌」などを披露します。初々しい演技と少数精鋭でのぞむ発表をご期待ください。",
         day1: [{ location: "体育館", start: "10:10", end: "10:50" }],
         day2: [{ location: "体育館", start: "10:00", end: "10:50" }],
     },
     {
         name: "中1ダンス",
         description: "ダンスを踊ります。レッスンの成果を発揮し、キレッキレのダンスをお見せします。",
-        day1: [
-            { label: "晴天時", location: "転心殿前", start: "11:30", end: "11:50" },
-            { label: "雨天時", location: "体育館", start: "10:50", end: "11:00" },
-        ],
-        day2: [{ label: "晴天時", location: "転心殿前", start: "12:10", end: "12:30" }],
+        day1: [{ location: "転心殿前", start: "11:30", end: "11:50" }],
+        day2: [{ location: "転心殿前", start: "12:10", end: "12:30" }],
     },
     {
         name: "和太鼓演奏",
         description: "和太鼓のみを使った演奏です。迫力満点の演奏をお届けするのでぜひお楽しみください。",
         day1: [
-            { label: "晴天時", location: "転心殿前", start: "09:00", end: "09:50" },
-            { label: "晴天時", location: "転心殿前", start: "13:30", end: "14:10" },
-            { label: "雨天時", location: "体育館", start: "11:10", end: "11:40" },
+            { location: "転心殿前", start: "09:00", end: "09:50" },
+            { location: "転心殿前", start: "13:30", end: "14:10" },
         ],
         day2: [
-            { label: "晴天時", location: "転心殿前", start: "09:00", end: "09:50" },
-            { label: "晴天時", location: "転心殿前", start: "13:30", end: "14:10" },
-            { label: "雨天時", location: "圓融館", start: "12:00", end: "12:20" },
+            { location: "転心殿前", start: "09:00", end: "09:50" },
+            { location: "転心殿前", start: "13:30", end: "14:10" },
         ],
     },
     {
@@ -159,8 +150,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "E卍ILE",
-        description:
-            "磨き上げたダイナミックなパフォーマンスで皆さんを魅了します!一緒に盛り上がりましょう!!",
+        description: "磨き上げたダイナミックなパフォーマンスで皆さんを魅了します!一緒に盛り上がりましょう!!",
         day1: [
             { location: "体育館", start: "12:30", end: "12:50" },
             { location: "体育館", start: "16:10", end: "16:30" },
@@ -181,10 +171,10 @@ export const eventData: EventData[] = [
         description:
             "東大寺学園史上初?!音楽好きによるDJパフォーマンスです!有名曲からマイナー曲まで幅広く流します!ぜひどうぞ!",
         day1: [
-            { location: "4A", start: "11:50", end: "12:50" },
+            { location: "4年A組", start: "11:50", end: "12:50" },
             { location: "体育館", start: "14:10", end: "15:00" },
         ],
-        day2: [{ location: "4A", start: "11:20", end: "12:20" }],
+        day2: [{ location: "4年A組", start: "11:20", end: "12:20" }],
     },
     {
         name: "江南無スタイル",
@@ -212,7 +202,8 @@ export const eventData: EventData[] = [
     },
     {
         name: "イケてるメンズコンテスト",
-        description: "大仏様にもまけないイケてる漢が菁々祭を沸かせにやってきた!あなたの心だけでなく勝利まで掴むのはいったい誰だ!",
+        description:
+            "大仏様にもまけないイケてる漢が菁々祭を沸かせにやってきた!あなたの心だけでなく勝利まで掴むのはいったい誰だ!",
         day1: [],
         day2: [{ location: "体育館", start: "14:00", end: "14:30" }],
     },
@@ -266,34 +257,26 @@ export const eventData: EventData[] = [
         name: "模擬授業「菁々祭プランとUKクイズ」",
         description: "",
         ticket: true,
-        day1: [
-            { location: "視聴覚室", start: "09:30", end: "10:00" },
-        ],
-        day2: [
-            { location: "視聴覚室", start: "09:30", end: "10:00" },
-        ],
+        day1: [{ location: "視聴覚室", start: "09:30", end: "10:00" }],
+        day2: [{ location: "視聴覚室", start: "09:30", end: "10:00" }],
     },
     {
         name: "模擬授業「アニメde社会科」",
         description: "",
         ticket: true,
-        day1: [
-            { location: "視聴覚室", start: "13:00", end: "13:30" },
-        ],
-        day2: [
-            { location: "視聴覚室", start: "13:00", end: "13:30" },
-        ],
+        day1: [{ location: "視聴覚室", start: "13:00", end: "13:30" }],
+        day2: [{ location: "視聴覚室", start: "13:00", end: "13:30" }],
     },
     {
         name: "クイズ大会",
-        description: "全国優勝校の灘をはじめとする関西のクイズ強豪校が東大寺学園に集結。今年栄冠に輝くのはどの学校かーーー",
+        description:
+            "全国優勝校の灘をはじめとする関西のクイズ強豪校が東大寺学園に集結。今年栄冠に輝くのはどの学校かーーー",
         day1: [{ location: "視聴覚室", start: "10:50", end: "11:50" }],
         day2: [],
     },
     {
         name: "無差別級ビブリオバトル",
-        description:
-            "鉄壁から同人誌まで!何でもありの菁々祭特別仕様ビブリオバトル!!",
+        description: "鉄壁から同人誌まで!何でもありの菁々祭特別仕様ビブリオバトル!!",
         day1: [{ location: "視聴覚室", start: "13:50", end: "14:50" }],
         day2: [],
     },
@@ -302,7 +285,7 @@ export const eventData: EventData[] = [
         description:
             "落語を始めて聴く方、なんとなく難しそうだと感じている方におすすめです。現代口語での優しい落語です。",
         day1: [],
-        day2: [{ location: "4A", start: "10:30", end: "11:00" }],
+        day2: [{ location: "4年A組", start: "10:30", end: "11:00" }],
     },
     {
         name: "スリーレッドメン",
@@ -312,7 +295,8 @@ export const eventData: EventData[] = [
     },
     {
         name: "PTAコーラス",
-        description: "新曲「エール」は聴く人みんなを元気にして、元気を押してくれる応援ソング!室内楽部とのコラボでお届けします♪",
+        description:
+            "新曲「エール」は聴く人みんなを元気にして、元気を押してくれる応援ソング!室内楽部とのコラボでお届けします♪",
         day1: [],
         day2: [
             { label: "高校生", location: "音楽室", start: "09:30", end: "10:00" },
@@ -321,38 +305,40 @@ export const eventData: EventData[] = [
     },
     {
         name: "チェスのルール説明",
-        description: "未経験者・初心者でも分かりやすいようにチェスのルールを説明します。世界で最も遊ばれている盤ゲームをあなたも!!",
+        description:
+            "未経験者・初心者でも分かりやすいようにチェスのルールを説明します。世界で最も遊ばれている盤ゲームをあなたも!!",
         day1: [
-            { location: "2B", start: "11:00", end: "11:20" },
-            { location: "2B", start: "13:00", end: "13:20" },
-            { location: "2B", start: "14:30", end: "14:50" },
+            { location: "2年B組", start: "11:00", end: "11:20" },
+            { location: "2年B組", start: "13:00", end: "13:20" },
+            { location: "2年B組", start: "14:30", end: "14:50" },
         ],
         day2: [
-            { location: "2B", start: "11:00", end: "11:20" },
-            { location: "2B", start: "13:00", end: "13:20" },
-            { location: "2B", start: "14:30", end: "14:50" },
+            { location: "2年B組", start: "11:00", end: "11:20" },
+            { location: "2年B組", start: "13:00", end: "13:20" },
+            { location: "2年B組", start: "14:30", end: "14:50" },
         ],
     },
     {
         name: "TVOCオリジナル曲発表",
         description: "今年の文化祭も新楽曲を用意しております。12時より公開となりますので、ぜひお越しください。",
-        day1: [{ location: "3B", start: "12:00", end: "12:15" }],
-        day2: [{ location: "3B", start: "12:00", end: "12:15" }],
+        day1: [{ location: "3年B組", start: "12:00", end: "12:15" }],
+        day2: [{ location: "3年B組", start: "12:00", end: "12:15" }],
     },
     {
         name: "マジックショー",
-        description: "一歩踏み入れると、そこはまるで別世界。次々と巻き起こる魔法をたいかんしてみませんか。”時よ、止まれ”",
+        description:
+            "一歩踏み入れると、そこはまるで別世界。次々と巻き起こる魔法をたいかんしてみませんか。”時よ、止まれ”",
         day1: [
-            { location: "4E", start: "10:50", end: "11:15" },
-            { location: "4E", start: "11:25", end: "11:50" },
-            { location: "4E", start: "13:50", end: "14:15" },
-            { location: "4E", start: "14:25", end: "14:50" },
+            { location: "4年E組", start: "10:50", end: "11:15" },
+            { location: "4年E組", start: "11:25", end: "11:50" },
+            { location: "4年E組", start: "13:50", end: "14:15" },
+            { location: "4年E組", start: "14:25", end: "14:50" },
         ],
         day2: [
-            { location: "4E", start: "10:50", end: "11:15" },
-            { location: "4E", start: "11:25", end: "11:50" },
-            { location: "4E", start: "13:50", end: "14:15" },
-            { location: "4E", start: "14:25", end: "14:50" },
+            { location: "4年E組", start: "10:50", end: "11:15" },
+            { location: "4年E組", start: "11:25", end: "11:50" },
+            { location: "4年E組", start: "13:50", end: "14:15" },
+            { location: "4年E組", start: "14:25", end: "14:50" },
         ],
     },
     {
@@ -360,16 +346,16 @@ export const eventData: EventData[] = [
         description: "特製のミニサーキットで実施するラジコンカーレースです。初心者から上級者まで楽しめます。",
         ticket: true,
         day1: [
-            { location: "5A", start: "09:30", end: "09:50" },
-            { location: "5A", start: "10:30", end: "10:50" },
-            { location: "5A", start: "11:30", end: "11:50" },
-            { location: "5A", start: "13:30", end: "13:50" },
+            { location: "5年A組", start: "09:30", end: "09:50" },
+            { location: "5年A組", start: "10:30", end: "10:50" },
+            { location: "5年A組", start: "11:30", end: "11:50" },
+            { location: "5年A組", start: "13:30", end: "13:50" },
         ],
         day2: [
-            { location: "5A", start: "10:50", end: "11:15" },
-            { location: "5A", start: "11:25", end: "11:50" },
-            { location: "5A", start: "13:50", end: "14:15" },
-            { location: "5A", start: "14:25", end: "14:50" },
+            { location: "5年A組", start: "10:50", end: "11:15" },
+            { location: "5年A組", start: "11:25", end: "11:50" },
+            { location: "5年A組", start: "13:50", end: "14:15" },
+            { location: "5年A組", start: "14:25", end: "14:50" },
         ],
     },
     {
@@ -387,16 +373,17 @@ export const eventData: EventData[] = [
     },
     {
         name: "科学部演示実験",
-        description: "小学生でも知っている実験や、普段の生活では関わることのない解剖等、科学部らしいことをゆる～く実験、かいせつするよ",
+        description:
+            "小学生でも知っている実験や、普段の生活では関わることのない解剖等、科学部らしいことをゆる～く実験、かいせつするよ",
         day1: [
             { label: "化学", location: "物理室", start: "11:30", end: "12:00" },
             { label: "化学", location: "物理室", start: "13:00", end: "13:30" },
-            { label: "解剖",location: "物理室", start: "14:00", end: "14:30" }
+            { label: "解剖", location: "物理室", start: "14:00", end: "14:30" },
         ],
         day2: [
             { label: "化学", location: "物理室", start: "11:30", end: "12:00" },
             { label: "化学", location: "物理室", start: "13:00", end: "13:30" },
-            { label: "解剖", location: "物理室", start: "14:00", end: "14:30" }
+            { label: "解剖", location: "物理室", start: "14:00", end: "14:30" },
         ],
     },
     {
@@ -422,8 +409,7 @@ export const eventData: EventData[] = [
     },
     {
         name: "ロケット発射実験",
-        description:
-            "火薬を使った本格的なロケットの発射実験です。是非お越しください!",
+        description: "火薬を使った本格的なロケットの発射実験です。是非お越しください!",
         day1: [
             { location: "上グラウンド", start: "10:30", end: "10:50" },
             { location: "上グラウンド", start: "13:30", end: "13:50" },
@@ -453,21 +439,24 @@ export const eventData: EventData[] = [
     },
     {
         name: "釈迦釈迦BOYS",
-        description: "竹迫・野中・伊藤・藤本・初田・全によるスーパーロックバンド。サザンの名曲から最近のヒット曲まで演奏。よろしく!",
+        description:
+            "竹迫・野中・伊藤・藤本・初田・全によるスーパーロックバンド。サザンの名曲から最近のヒット曲まで演奏。よろしく!",
         day1: [{ location: "音楽室", start: "10:05", end: "10:20" }],
         day2: [],
     },
     {
         name: "菁々祭ツアー",
-        description: "中学3年生が展示を巡り、取材で得た情報を紹介します。見どころや裏話を交え、生成祭をより深く楽しめます。時間は10:30~/11:30~/12:30~/13:30~/14:30~となっております。",
-        ticket:true,
+        description:
+            "中学3年生が展示を巡り、取材で得た情報を紹介します。見どころや裏話を交え、生成祭をより深く楽しめます。時間は10:30~/11:30~/12:30~/13:30~/14:30~となっております。",
+        ticket: true,
         day1: [],
         day2: [],
     },
     {
         name: "学校案内",
-        description: "PRパート員が図書館や食堂など学園の施設を案内します。特徴や魅力を紹介しながら、校内を楽しく巡ります。時間は10:00~/11:00~/12:00~/13:00~/14:00~となっております。",
-        ticket:true,
+        description:
+            "PRパート員が図書館や食堂など学園の施設を案内します。特徴や魅力を紹介しながら、校内を楽しく巡ります。時間は10:00~/11:00~/12:00~/13:00~/14:00~となっております。",
+        ticket: true,
         day1: [],
         day2: [],
     },

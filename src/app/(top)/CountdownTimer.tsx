@@ -86,12 +86,12 @@ export default function Countdown() {
 
     if (viewState === "after") {
         //タイマー非表示
-        return <div className={styles.timer_container}></div>;
+        return title;
     }
 
     if (viewState === "during1" || viewState === "during2") {
         // 開催中
-        return <div className={styles.timer_container}></div>;
+        return title;
     }
 
     // 通常カウントダウン (before, intermission)

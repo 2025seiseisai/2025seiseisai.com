@@ -34,8 +34,7 @@
     gap: 0.5rem;
     align-items: center;
     width: 100%;
-    padding: 0.75rem 1rem;
-    font-size: 1.25rem;
+    padding: 8px 0 8px 10px;
     font-weight: 500;
     color: #fff;
     cursor: pointer;
@@ -55,37 +54,21 @@
 }
 
 .icon {
-    left: 0.625rem;
     flex-shrink: 0;
     width: 0.75rem;
     height: 0.75rem;
-    margin-left: 0.5rem;
     transition: transform 0.2s ease;
 }
 
 .detailsDay {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
     align-items: flex-start;
-    padding-left: 17%;
-    margin: 0.375rem 1rem 0.75rem 0;
-    font-size: 16px;
-    font-weight: 500;
-    color: #000;
-}
+    margin-left: 72px;
 
-.detailsDay .detailItem {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-}
-
-.detailsDay .mappinIcon {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 1.5rem;
+    @media (width < 370px) {
+        margin-left: 64px;
+    }
 }
 
 .detailsDay strong {
@@ -104,9 +87,11 @@
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    font-size: 0.875rem;
-    line-height: 1.2;
-    color: #000;
+    font-size: 14px;
+
+    @media (width < 350px) {
+        font-size: 12px;
+    }
 }
 
 .ticketPhoto {
@@ -122,13 +107,13 @@
 
 .ticketLabel {
     display: inline-block;
-    padding: 0 0.525rem;
-    margin-left: 10%;
+    padding: 1px 8.5px;
+    margin-left: 22px;
     font-size: 12px;
     font-weight: 500;
+    line-height: 14px;
     color: #fff;
     background-color: #de0d22;
-    border: 1px solid #de0d22;
     border-radius: 9999px;
 }
 
@@ -151,35 +136,28 @@
 
 .utenjiHeader {
     display: flex;
-    gap: 4.5%;
+    gap: 18px;
     align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 0;
+    margin-bottom: 12px;
 }
 
 .utenjiBox {
     box-sizing: border-box;
     width: 100%;
-    padding: 0.5rem;
+    padding: 8px 10px;
     border: 2px solid #de0d22;
 }
 
 .utenjiSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-    padding: 0.5%;
-    margin-top: 0;
+    margin-bottom: 35px;
 }
 
 .utenjiTitle {
     display: flex;
     align-items: center;
-    margin: 0.6rem;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #000;
+    font-size: 20px;
+    line-height: 29px;
 }
 
 .utenjiText {
@@ -198,11 +176,11 @@
 }
 
 .eventListHeader {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    margin-bottom: 1.25rem;
-    margin-left: -48%;
+    width: 100%;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-left: 4px solid #de0d22;
 }
 
 .redBar {
@@ -230,31 +208,51 @@
     width: 100%;
     overflow: hidden;
     color: #000;
+    scroll-margin-top: 64px;
     background-color: #de0d2226;
     border: none;
     box-shadow: 0 0.125rem 0.375rem rgb(0 0 0 / 10%);
     transition: width 0.2s ease;
+
+    @include media(lg) {
+        scroll-margin-top: 80px;
+    }
 }
 
 .content {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
-    padding: 0.375rem 0.5rem;
+    margin-top: 12px;
+    margin-bottom: 14px;
 }
 
 .dayTitle {
     margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #000;
+    font-size: 14px;
     white-space: nowrap;
+
+    @media (width < 355px) {
+        font-size: 12px;
+    }
 }
 
 .mappinIcon {
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    margin-left: 32px;
+    width: 22px;
+    height: 22px;
+    margin-left: 24px;
+
+    @media (width < 370px) {
+        margin-left: 16px;
+    }
+
+    @media (width < 355px) {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 .location {
@@ -274,17 +272,13 @@
 .accordionWrapper {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 20px;
     width: 100%;
-    margin-bottom: 11.25%;
-}
+    margin-bottom: 50px;
 
-.detailsBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-    align-items: flex-start;
-    margin-top: 0.25rem;
+    @include media(sm) {
+        margin-bottom: 45px;
+    }
 }
 
 .dayHeader {
@@ -294,6 +288,15 @@
 
 .headerRow {
     display: flex;
-    gap: 0.375rem;
+    gap: 12px;
     align-items: center;
+}
+
+.description {
+    margin: 0 30px;
+    font-size: 14px;
+
+    @media (width < 350px) {
+        font-size: 12px;
+    }
 }
