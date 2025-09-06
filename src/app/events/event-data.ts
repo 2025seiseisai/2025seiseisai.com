@@ -295,7 +295,7 @@ export const eventData: EventData[] = [
         description:
             "鉄壁から同人誌まで!何でもありの菁々祭特別仕様ビブリオバトル!!",
         day1: [{ location: "視聴覚室", start: "13:50", end: "14:50" }],
-        day2: [{ location: "視聴覚室", start: "13:50", end: "14:50" }],
+        day2: [],
     },
     {
         name: "かんたん落語",
