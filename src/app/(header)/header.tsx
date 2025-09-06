@@ -136,9 +136,6 @@ export function Header() {
                         Map
                     </Link>
                 </div>
-                <Link href="https://tickets.seiseisai.com/" className={styles.navReservationLink}>
-                    Web整理券
-                </Link>
                 <Hamburger open={open} setOpen={setOpenImpl} />
             </div>
             <div className={`${styles.menuOverlay} ${open ? "" : styles.menuOverlayHidden}`}>
@@ -169,7 +166,6 @@ export function Header() {
                             title1="Events"
                             title2="イベント内容やタイムテーブル"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink href="/map" title1="Map" title2="校内の展示・バザーの地図" setOpen={setOpenImpl} />
                         <HeaderLink
@@ -183,6 +179,7 @@ export function Header() {
                             title1="Tickets"
                             title2="Web整理券の取得・申込ページ"
                             setOpen={setOpenImpl}
+                            disabled
                         />
                         <HeaderLink
                             href="/blog"
