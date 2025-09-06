@@ -1,0 +1,302 @@
+.embla {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+.example {
+    font-size: 36px;
+    color: black;
+}
+
+@include media(sm) {
+    .example {
+        background-color: blue;
+    }
+}
+
+@include media(lg) {
+    .example {
+        color: red;
+        background-color: green;
+    }
+}
+
+.summary {
+    display: block;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0 8px 10px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    background: transparent;
+}
+
+.eventName {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.summary.open {
+    .icon {
+        transform: rotate(90deg);
+    }
+}
+
+.icon {
+    flex-shrink: 0;
+    width: 0.75rem;
+    height: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.detailsDay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 72px;
+
+    @media (width < 370px) {
+        margin-left: 64px;
+    }
+}
+
+.detailsDay strong {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+
+.detailsDay p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+
+.detailItem {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 14px;
+
+    @media (width < 350px) {
+        font-size: 12px;
+    }
+}
+
+.ticketPhoto {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 16%;
+    height: auto;
+    margin-top: 0.25rem;
+    margin-left: 4%;
+    transition: opacity 0.2s ease;
+}
+
+.ticketLabel {
+    display: inline-block;
+    padding: 1px 8.5px;
+    margin-left: 22px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    color: #fff;
+    background-color: #de0d22;
+    border-radius: 9999px;
+}
+
+.details[open] .ticketPhoto {
+    opacity: 1;
+}
+
+.events {
+    position: relative;
+    top: 75px;
+    left: 5%;
+    width: 25%;
+    height: auto;
+}
+
+.utenjiIcon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.utenjiHeader {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.utenjiBox {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid #de0d22;
+}
+
+.utenjiSection {
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.utenjiTitle {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.utenjiText {
+    max-width: 100%;
+    font-size: 0.875rem;
+    font-weight: 400px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.serikenIcon {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.eventListHeader {
+    width: 100%;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-left: 4px solid #de0d22;
+}
+
+.redBar {
+    width: 1.5%;
+    height: 9.6%;
+    background-color: #de0d22;
+}
+
+.introduction {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: 0;
+    font-size: 24px;
+    font-weight: 500;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.accordion {
+    width: 100%;
+    overflow: hidden;
+    color: #000;
+    scroll-margin-top: 64px;
+    background-color: #de0d2226;
+    border: none;
+    box-shadow: 0 0.125rem 0.375rem rgb(0 0 0 / 10%);
+    transition: width 0.2s ease;
+
+    @include media(lg) {
+        scroll-margin-top: 80px;
+    }
+}
+
+.content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 14px;
+}
+
+.dayTitle {
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+
+    @media (width < 355px) {
+        font-size: 12px;
+    }
+}
+
+.mappinIcon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    margin-left: 24px;
+
+    @media (width < 370px) {
+        margin-left: 16px;
+    }
+
+    @media (width < 355px) {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.location {
+    min-width: 16%;
+}
+
+.time {
+    min-width: 32%;
+}
+
+.titleRow {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.accordionWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+
+    @include media(sm) {
+        margin-bottom: 45px;
+    }
+}
+
+.dayHeader {
+    display: flex;
+    align-items: center;
+}
+
+.headerRow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.description {
+    margin: 0 30px;
+    font-size: 14px;
+
+    @media (width < 350px) {
+        font-size: 12px;
+    }
+}
