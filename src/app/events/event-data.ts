@@ -23,7 +23,6 @@ export const locations = [
     "4年A組",
     "音楽室",
     "2年B組",
-    "3年A組",
     "3年B組",
     "4年E組",
     "5年A組",
