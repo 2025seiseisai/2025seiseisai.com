@@ -30,7 +30,7 @@ function initializeMap3D(
     controls.maxPolarAngle = (Math.PI / 4) * 3;
     controls.minDistance = 200;
     controls.maxDistance = 800;
-    controls.panSpeed = 30;
+    controls.enablePan = false;
     let updated = true;
     controls.addEventListener("change", () => (updated = true));
 
