@@ -42,9 +42,10 @@
 }
 
 .eventName {
+    margin-right: 10px;
     font-size: 20px;
     font-weight: 500;
-    color: #000;
+    color: #0b0e0f;
 }
 
 .summary.open {
@@ -151,6 +152,11 @@
 .utenjiSection {
     width: 100%;
     margin-bottom: 35px;
+
+    @include media(lg) {
+        width: 85%;
+        margin-bottom: 45px;
+    }
 }
 
 .utenjiTitle {
@@ -181,6 +187,12 @@
     margin-bottom: 20px;
     font-size: 24px;
     border-left: 4px solid #de0d22;
+
+    @include media(lg) {
+        width: 85%;
+        margin-bottom: 30px;
+        font-size: 36px;
+    }
 }
 
 .redBar {
@@ -274,10 +286,24 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    margin-bottom: 50px;
 
-    @include media(sm) {
-        margin-bottom: 45px;
+    @include media(lg) {
+        gap: 30px;
+    }
+}
+
+.accordionContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 45px;
+
+    @include media(lg) {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        width: 85%;
+        margin-bottom: 50px;
     }
 }
 
