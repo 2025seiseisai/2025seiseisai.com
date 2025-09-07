@@ -181,6 +181,7 @@
     background-repeat: repeat-x;
     background-position: left center;
     background-size: 28px 1px;
+    opacity: 0.7;
 }
 
 .line {
@@ -214,7 +215,7 @@
     color: #000;
     text-align: center;
     cursor: pointer;
-    background: #ee635240;
+    background: var(--bg-color);
     border-radius: 0;
 
     &::before {
@@ -225,7 +226,7 @@
         width: 6px;
         height: 100%;
         content: "";
-        background: #de0d22;
+        background: var(--bar-color);
     }
 }
 

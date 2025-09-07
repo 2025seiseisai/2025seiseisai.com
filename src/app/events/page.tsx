@@ -67,6 +67,9 @@ export default function TimeTablePage() {
         return (h - 9) * 60 + m;
     };
 
+    const barColors = ["#DE0D22", "#0D8BDE", "#0DDE61", "#DEC90D", "#CA0DDE"];
+    const bgColors = ["#EE635240", "#0D8BDE40", "#03D10040", "#DEC90D40", "#CA0DDE40"];
+
     function eventListElement(event: EventData, i: number) {
         const isOpen = openIndexes.includes(i);
 
@@ -185,7 +188,17 @@ export default function TimeTablePage() {
                 <div className={timestyles.embla} ref={emblaRef}>
                     <div className={timestyles.emblaContainer}>
                         {locations.map((loc, index) => (
-                            <div className={timestyles.emblaSlide} key={index} id={`slide-${index}`}>
+                            <div
+                                className={timestyles.emblaSlide}
+                                key={index}
+                                id={`slide-${index}`}
+                                style={
+                                    {
+                                        "--bar-color": barColors[index % barColors.length],
+                                        "--bg-color": bgColors[index % bgColors.length],
+                                    } as React.CSSProperties
+                                }
+                            >
                                 <span className={timestyles.locationName}>{loc}</span>
 
                                 {/* タイムテーブル*/}
