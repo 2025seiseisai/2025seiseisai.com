@@ -33,7 +33,7 @@ export default function TimeTablePage() {
             },
             // 1200px以上の画面幅で適用
             "(min-width: 1024px)": {
-                slidesToScroll: 3, // 1回のスクロールで4つ移動
+                slidesToScroll: 3, // 1回のスクロールで3つ移動
             },
             "(min-width: 1440px)": {
                 slidesToScroll: 4, // 1回のスクロールで4つ移動
