@@ -71,20 +71,23 @@ export async function Top() {
                     </div>
                 </div>
                 <div className={`${ibmPlexSansJP.className} absolute h-full w-full select-none`}>
-                    <div className={styles.animation_text_container1}>
-                        <h1>第61回</h1>
-                        <h1>東大寺学園</h1>
-                        <h1>｢菁々祭｣</h1>
-                        <h1 className={styles.animation_text_1_3}>{`"分秒"`}</h1>
-                    </div>
+                    <h1 className={styles.animation_text_container1}>
+                        第61回
+                        <br />
+                        東大寺学園
+                        <br />
+                        ｢菁々祭｣
+                        <br />
+                        <span className={styles.animation_text_1_3}>{`"分秒"`}</span>
+                    </h1>
                     <div className={styles.animation_text_container2}>
-                        <h2>
+                        <p>
                             <span className={styles.animation_text_2_1}>9/6</span>
                             <span className={styles.animation_text_2_2}>土</span>
                             <span className={styles.animation_text_2_3}>―</span>
                             <span className={styles.animation_text_2_4}>9/7</span>
                             <span className={styles.animation_text_2_5}>日</span>
-                        </h2>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -94,12 +97,12 @@ export async function Top() {
                     <div className={styles.top_countdown_main}>
                         <div className={styles.date_info_container}>
                             <div className={styles.date_info}>
-                                <h1 className={styles.date}>9.6</h1>
+                                <p className={styles.date}>9.6</p>
                                 <p className={styles.day}>SAT</p>
                             </div>
                             <p className={styles.between_date}>-</p>
                             <div className={styles.date_info}>
-                                <h1 className={styles.date}>9.7</h1>
+                                <p className={styles.date}>9.7</p>
                                 <p className={styles.day}>SUN</p>
                             </div>
                         </div>

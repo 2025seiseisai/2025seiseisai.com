@@ -16,18 +16,6 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
     );
 }
 
-function DisabledFooterLink({ children }: { children: React.ReactNode }) {
-    return (
-        <div
-            className={
-                "mt-[7px] inline-block w-full pl-0 text-[13px] text-[#b0b0b0] md:mt-[20px] md:pl-[23px] md:text-[16px]"
-            }
-        >
-            {children}
-        </div>
-    );
-}
-
 export function Footer() {
     return (
         <footer id="footer" className="mt-auto bg-white">
@@ -83,14 +71,14 @@ export function Footer() {
                         Overview
                     </h1>
                     <FooterLink href="/">Top</FooterLink>
-                    <DisabledFooterLink>
+                    <FooterLink href="/theme-logo">
                         <p
                             className={`max-[400px]:!flex max-[400px]:!h-[21px] max-[400px]:!items-center
                                 max-[400px]:!text-[3.5svw]`}
                         >
                             Theme & Logo
                         </p>
-                    </DisabledFooterLink>
+                    </FooterLink>
                     <FooterLink href="/news">News</FooterLink>
                     <FooterLink href="/access">Access</FooterLink>
                 </span>
@@ -109,7 +97,7 @@ export function Footer() {
                     <FooterLink href="/events">Events</FooterLink>
                     <FooterLink href="/map">Map</FooterLink>
                     <FooterLink href="/goods">Goods</FooterLink>
-                    <DisabledFooterLink>Tickets</DisabledFooterLink>
+                    <FooterLink href="https://tickets.seiseisai.com/">Tickets</FooterLink>
                 </span>
                 <span
                     className={`not-md:mr-[calc(1700svw/375)] not-md:flex-1 md:ml-[calc(8600svw/1440)]

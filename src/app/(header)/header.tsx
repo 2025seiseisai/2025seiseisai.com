@@ -153,7 +153,6 @@ export function Header() {
                             title1="Theme & Logo"
                             title2="テーマとロゴの紹介"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
                             href="/access"
@@ -179,7 +178,6 @@ export function Header() {
                             title1="Tickets"
                             title2="Web整理券の取得・申込ページ"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
                             href="/blog"
