@@ -248,6 +248,7 @@ export function Header() {
                                     href="/contact"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
+                                    prefetch={false}
                                 >
                                     <ContactIcon className={styles.snsIcon} />
                                     <p className={styles.contactText}>お問い合わせ</p>
@@ -258,6 +259,7 @@ export function Header() {
                                     href="/privacy-policy"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
+                                    prefetch={false}
                                 >
                                     <PrivacyIcon className={styles.snsIcon} />
                                     <p className={styles.privacyText}>
@@ -272,6 +274,7 @@ export function Header() {
                                     href="/reservation"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
+                                    prefetch={false}
                                 >
                                     <ReservationIcon className={styles.snsIcon} />
                                     <p className={styles.contactText}>事前予約</p>

@@ -38,7 +38,7 @@ export function Footer() {
                     className={`text-[9px] max-[360px]:mt-[4px] max-[360px]:ml-[25px] max-[360px]:flex
                         max-[360px]:w-[95svw] md:text-[13px]`}
                 >
-                    <Link href="/contact">
+                    <Link href="/contact" prefetch={false}>
                         <p
                             className={`mt-[32px] transition-[color_padding] duration-300 max-[360px]:mt-0
                                 max-[360px]:mr-[12px] md:mt-[72px] md:hover:pl-[2px] md:hover:text-[#de0d22]`}
@@ -46,7 +46,7 @@ export function Footer() {
                             {">>お問い合わせ"}
                         </p>
                     </Link>
-                    <Link href="/privacy-policy">
+                    <Link href="/privacy-policy" prefetch={false}>
                         <p
                             className={`mt-[4px] transition-[color_padding] duration-300 max-[360px]:mt-0 md:mt-[7px]
                                 md:hover:pl-[2px] md:hover:text-[#de0d22]`}
