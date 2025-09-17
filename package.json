@@ -18,6 +18,9 @@
         "prisma:db-push": "prisma db push",
         "prisma:studio": "prisma studio"
     },
+    "browserslist": [
+        "> 0% and not dead"
+    ],
     "dependencies": {
         "@next/third-parties": "^15.5.0",
         "@prisma/client": "^6.14.0",

@@ -87,6 +87,7 @@
     top: 0;
     z-index: 100000001;
     width: 100%;
+    height: 100vh;
     height: 100dvh;
     overflow: hidden;
 }
@@ -139,6 +140,7 @@
             padding-top: 75px;
         }
 
+        min-height: max(250px, 65vh);
         min-height: max(250px, 65dvh);
     }
 
@@ -147,6 +149,7 @@
             padding-top: 75px;
         }
 
+        min-height: max(350px, 70vh);
         min-height: max(350px, 70dvh);
     }
 
@@ -157,10 +160,12 @@
     }
 
     @media ((width < 450px) and (height < 550px)) or (height < 500px) {
+        min-height: max(220px, 60vh);
         min-height: max(220px, 60dvh);
     }
 
     @media (height < 350px) {
+        min-height: max(140px, 55vh);
         min-height: max(140px, 55dvh);
     }
 }
@@ -294,9 +299,11 @@
     justify-content: space-between;
     width: 100%;
     height: 100%;
+    padding: min(15px, 3vh) 7% 50px 35%;
     padding: min(15px, 3dvh) 7% 50px 35%;
 
     @include media(sm) {
+        padding-bottom: min(50px, 7vh);
         padding-bottom: min(50px, 7dvh);
         padding-left: 10%;
     }
