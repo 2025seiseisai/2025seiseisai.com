@@ -13,9 +13,9 @@ export const metadata = {
 export default function Page() {
     return (
         <>
-            <p className={styles.Access_title}>
+            <h1 className={styles.Access_title}>
                 <span className="text-[#de0d22]">A</span>ccess
-            </p>
+            </h1>
             <div>
                 <Image className={styles.school_img} src={School} alt="School Image" />
             </div>

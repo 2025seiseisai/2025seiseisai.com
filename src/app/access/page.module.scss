@@ -56,6 +56,7 @@
     }
 
     @include media(lg) {
+        position: relative;
         height: 58px;
     }
 }
@@ -70,7 +71,7 @@
     }
 
     @include media(lg) {
-        width: 0;
+        position: absolute;
         margin-right: -3%;
         font-size: 18px;
         text-wrap: nowrap;

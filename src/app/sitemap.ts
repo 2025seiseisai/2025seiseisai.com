@@ -22,6 +22,36 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
+            url: "https://seiseisai.com/2025/access",
+            lastModified: new Date(),
+            priority: 0.8,
+        },
+        {
+            url: "https://seiseisai.com/2025/brochures",
+            lastModified: new Date(),
+            priority: 0.8,
+        },
+        {
+            url: "https://seiseisai.com/2025/events",
+            lastModified: new Date(),
+            priority: 0.8,
+        },
+        {
+            url: "https://seiseisai.com/2025/map",
+            lastModified: new Date(),
+            priority: 0.8,
+        },
+        {
+            url: "https://seiseisai.com/2025/special",
+            lastModified: new Date(),
+            priority: 0.8,
+        },
+        {
+            url: "https://seiseisai.com/2025/theme-logo",
+            lastModified: new Date(),
+            priority: 0.8,
+        },
+        {
             url: "https://seiseisai.com/2025/reservation",
             lastModified: new Date(),
             priority: 0.4,

@@ -48,7 +48,7 @@ function HeaderLink({
             </div>
         </div>
     ) : (
-        <Link href={href} className={styles.headerLink} onClick={() => setOpen(false)}>
+        <Link href={href} className={styles.headerLink} onClick={() => setOpen(false)} prefetch={false}>
             <div className={`${styles.headerLinkText} ${styles.headerLinkBack}`}>
                 <span className={styles.headerLinkTitle1}>{title1}</span>
                 <span className={styles.headerLinkTitle2}>{title2}</span>
@@ -153,7 +153,6 @@ export function Header() {
                             title1="Theme & Logo"
                             title2="テーマとロゴの紹介"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
                             href="/access"
@@ -179,7 +178,6 @@ export function Header() {
                             title1="Tickets"
                             title2="Web整理券の取得・申込ページ"
                             setOpen={setOpenImpl}
-                            disabled
                         />
                         <HeaderLink
                             href="/blog"
@@ -250,6 +248,7 @@ export function Header() {
                                     href="/contact"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
+                                    prefetch={false}
                                 >
                                     <ContactIcon className={styles.snsIcon} />
                                     <p className={styles.contactText}>お問い合わせ</p>
@@ -260,6 +259,7 @@ export function Header() {
                                     href="/privacy-policy"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
+                                    prefetch={false}
                                 >
                                     <PrivacyIcon className={styles.snsIcon} />
                                     <p className={styles.privacyText}>
@@ -274,6 +274,7 @@ export function Header() {
                                     href="/reservation"
                                     onClick={() => setOpenImpl(false)}
                                     className={`${styles.snsLink} ${styles.linkButton}`}
+                                    prefetch={false}
                                 >
                                     <ReservationIcon className={styles.snsIcon} />
                                     <p className={styles.contactText}>事前予約</p>

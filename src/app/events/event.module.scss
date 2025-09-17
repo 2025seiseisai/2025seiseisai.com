@@ -38,6 +38,7 @@
     font-weight: 500;
     color: #fff;
     cursor: pointer;
+    list-style: none;
     background: transparent;
 }
 
@@ -191,7 +192,7 @@
     @include media(lg) {
         width: 85%;
         margin-bottom: 30px;
-        font-size: 36px;
+        font-size: 28px;
     }
 }
 

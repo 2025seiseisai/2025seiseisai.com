@@ -50,7 +50,7 @@
     .subtitle::after {
         flex-grow: 1;
         content: "";
-        border-top: 1px solid #0b0e0f;
+        border-top: 1.5px solid #0b0e0f;
     }
 
     .subtitle::before {
@@ -62,13 +62,14 @@
     }
 
     .subtitle_English {
-        font-size: 22px;
+        font-size: 26px;
         font-weight: bold;
         color: #de0d22;
     }
 
     .subtitle_Japanese {
-        font-size: 9.72px;
+        margin-top: -3px;
+        font-size: 12px;
         font-weight: bold;
     }
 
@@ -432,7 +433,7 @@ details.club_magazine_headline {
         display: grid;
         grid-template-rows: 0fr;
         content-visibility: unset;
-        transition: grid-template-rows 0.5s ease-in-out;
+        transition: grid-template-rows 0.25s ease-in-out;
     }
 
     &[open]::details-content {

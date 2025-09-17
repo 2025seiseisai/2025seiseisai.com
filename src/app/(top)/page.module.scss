@@ -288,6 +288,9 @@
 }
 
 .red_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(222 13 34 / 100%);
 
     @include media(sm) {

@@ -149,9 +149,9 @@ export default function TimeTablePage() {
     return (
         <div className={timestyles.page}>
             <div className={timestyles.eventsWrapper}>
-                <div className={timestyles.eventsTitle}>
+                <h1 className={timestyles.eventsTitle}>
                     <span className={timestyles.firstLetter}>E</span>vents
-                </div>
+                </h1>
             </div>
             <div className={timestyles.timeTableSection}>
                 <div className={timestyles.topControls}>
