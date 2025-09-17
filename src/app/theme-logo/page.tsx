@@ -1,4 +1,3 @@
-//
 import { YouTubeEmbed } from "@next/third-parties/google";
 import Link from "next/link";
 import LogoMono from "../../../public/theme-logo/Logo-mono.svg";
