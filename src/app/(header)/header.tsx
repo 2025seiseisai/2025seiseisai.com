@@ -48,7 +48,7 @@ function HeaderLink({
             </div>
         </div>
     ) : (
-        <Link href={href} className={styles.headerLink} onClick={() => setOpen(false)}>
+        <Link href={href} className={styles.headerLink} onClick={() => setOpen(false)} prefetch={false}>
             <div className={`${styles.headerLinkText} ${styles.headerLinkBack}`}>
                 <span className={styles.headerLinkTitle1}>{title1}</span>
                 <span className={styles.headerLinkTitle2}>{title2}</span>

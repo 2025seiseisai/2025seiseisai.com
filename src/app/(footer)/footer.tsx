@@ -10,6 +10,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
             href={href}
             className={`mt-[7px] inline-block w-full pl-0 text-[13px] transition-[color_padding] duration-300
                 md:mt-[20px] md:pl-[23px] md:text-[16px] md:hover:pl-[25px] md:hover:text-[#de0d22]`}
+            prefetch={false}
         >
             {children}
         </Link>
