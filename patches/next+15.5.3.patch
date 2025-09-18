@@ -1,0 +1,46 @@
+diff --git a/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js b/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+index 6c205ba..9c7e8df 100644
+--- a/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
++++ b/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+@@ -288,9 +288,8 @@ async function startWatcher(opts) {
+             let tsconfigChange = false;
+             let conflictingPageChange = 0;
+             let hasRootAppNotFound = false;
+-            const { appFiles, pageFiles } = opts.fsChecker;
+-            appFiles.clear();
+-            pageFiles.clear();
++            const appFilesList = [];
++            const pageFilesList = [];
+             _shared1.devPageFiles.clear();
+             const sortedKnownFiles = [
+                 ...knownFiles.keys()
+@@ -433,7 +432,7 @@ async function startWatcher(opts) {
+                     }
+                     appPaths[pageName].push(opts.turbo ? originalPageName.replace(/%5F/g, '_') : originalPageName);
+                     if (useFileSystemPublicRoutes) {
+-                        appFiles.add(pageName);
++                        appFilesList.push(pageName);
+                     }
+                     if (validFileMatcher.isAppRouterRoute(fileName)) {
+                         appRouteHandlers.push({
+@@ -451,7 +450,7 @@ async function startWatcher(opts) {
+                     }
+                 } else {
+                     if (useFileSystemPublicRoutes) {
+-                        pageFiles.add(pageName);
++                        pageFilesList.push(pageName);
+                         // always add to nextDataRoutes for now but in future only add
+                         // entries that actually use getStaticProps/getServerSideProps
+                         opts.fsChecker.nextDataRoutes.add(pageName);
+@@ -488,6 +487,11 @@ async function startWatcher(opts) {
+                 }
+                 routedPages.push(pageName);
+             }
++            const { appFiles, pageFiles } = opts.fsChecker;
++            appFiles.clear();
++            pageFiles.clear();
++            appFilesList.forEach((file) => appFiles.add(file));
++            pageFilesList.forEach((file) => pageFiles.add(file));
+             const numConflicting = conflictingAppPagePaths.size;
+             conflictingPageChange = numConflicting - previousConflictingPagePaths.size;
+             if (conflictingPageChange !== 0) {
