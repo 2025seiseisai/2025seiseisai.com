@@ -1,0 +1,232 @@
+diff --git a/node_modules/property-information/lib/html.js b/node_modules/property-information/lib/html.js
+index af9e481..61b8bb4 100644
+--- a/node_modules/property-information/lib/html.js
++++ b/node_modules/property-information/lib/html.js
+@@ -1,8 +1,8 @@
+-import {caseInsensitiveTransform} from './util/case-insensitive-transform.js'
+-import {create} from './util/create.js'
++import { caseInsensitiveTransform } from './util/case-insensitive-transform.js'
++import { create } from './util/create.js'
+ import {
+   booleanish,
+-  boolean,
++  boolean as booleanType,
+   commaSeparated,
+   number,
+   overloadedBoolean,
+@@ -25,38 +25,38 @@ export const html = create({
+     accessKey: spaceSeparated,
+     action: null,
+     allow: null,
+-    allowFullScreen: boolean,
+-    allowPaymentRequest: boolean,
+-    allowUserMedia: boolean,
++    allowFullScreen: booleanType,
++    allowPaymentRequest: booleanType,
++    allowUserMedia: booleanType,
+     alt: null,
+     as: null,
+-    async: boolean,
++    async: booleanType,
+     autoCapitalize: null,
+     autoComplete: spaceSeparated,
+-    autoFocus: boolean,
+-    autoPlay: boolean,
++    autoFocus: booleanType,
++    autoPlay: booleanType,
+     blocking: spaceSeparated,
+     capture: null,
+     charSet: null,
+-    checked: boolean,
++    checked: booleanType,
+     cite: null,
+     className: spaceSeparated,
+     cols: number,
+     colSpan: null,
+     content: null,
+     contentEditable: booleanish,
+-    controls: boolean,
++    controls: booleanType,
+     controlsList: spaceSeparated,
+     coords: number | commaSeparated,
+     crossOrigin: null,
+     data: null,
+     dateTime: null,
+     decoding: null,
+-    default: boolean,
+-    defer: boolean,
++    default: booleanType,
++    defer: booleanType,
+     dir: null,
+     dirName: null,
+-    disabled: boolean,
++    disabled: booleanType,
+     download: overloadedBoolean,
+     draggable: booleanish,
+     encType: null,
+@@ -66,7 +66,7 @@ export const html = create({
+     formAction: null,
+     formEncType: null,
+     formMethod: null,
+-    formNoValidate: boolean,
++    formNoValidate: booleanType,
+     formTarget: null,
+     headers: spaceSeparated,
+     height: number,
+@@ -79,15 +79,15 @@ export const html = create({
+     id: null,
+     imageSizes: null,
+     imageSrcSet: null,
+-    inert: boolean,
++    inert: booleanType,
+     inputMode: null,
+     integrity: null,
+     is: null,
+-    isMap: boolean,
++    isMap: booleanType,
+     itemId: null,
+     itemProp: spaceSeparated,
+     itemRef: spaceSeparated,
+-    itemScope: boolean,
++    itemScope: booleanType,
+     itemType: spaceSeparated,
+     kind: null,
+     label: null,
+@@ -95,7 +95,7 @@ export const html = create({
+     language: null,
+     list: null,
+     loading: null,
+-    loop: boolean,
++    loop: booleanType,
+     low: number,
+     manifest: null,
+     max: null,
+@@ -104,12 +104,12 @@ export const html = create({
+     method: null,
+     min: null,
+     minLength: number,
+-    multiple: boolean,
+-    muted: boolean,
++    multiple: booleanType,
++    muted: booleanType,
+     name: null,
+     nonce: null,
+-    noModule: boolean,
+-    noValidate: boolean,
++    noModule: booleanType,
++    noValidate: booleanType,
+     onAbort: null,
+     onAfterPrint: null,
+     onAuxClick: null,
+@@ -198,31 +198,31 @@ export const html = create({
+     onVolumeChange: null,
+     onWaiting: null,
+     onWheel: null,
+-    open: boolean,
++    open: booleanType,
+     optimum: number,
+     pattern: null,
+     ping: spaceSeparated,
+     placeholder: null,
+-    playsInline: boolean,
++    playsInline: booleanType,
+     popover: null,
+     popoverTarget: null,
+     popoverTargetAction: null,
+     poster: null,
+     preload: null,
+-    readOnly: boolean,
++    readOnly: booleanType,
+     referrerPolicy: null,
+     rel: spaceSeparated,
+-    required: boolean,
+-    reversed: boolean,
++    required: booleanType,
++    reversed: booleanType,
+     rows: number,
+     rowSpan: number,
+     sandbox: spaceSeparated,
+     scope: null,
+-    scoped: boolean,
+-    seamless: boolean,
+-    selected: boolean,
+-    shadowRootClonable: boolean,
+-    shadowRootDelegatesFocus: boolean,
++    scoped: booleanType,
++    seamless: booleanType,
++    selected: booleanType,
++    shadowRootClonable: booleanType,
++    shadowRootDelegatesFocus: booleanType,
+     shadowRootMode: null,
+     shape: null,
+     size: number,
+@@ -242,7 +242,7 @@ export const html = create({
+     title: null,
+     translate: null,
+     type: null,
+-    typeMustMatch: boolean,
++    typeMustMatch: booleanType,
+     useMap: null,
+     value: booleanish,
+     width: number,
+@@ -270,8 +270,8 @@ export const html = create({
+     codeBase: null, // `<object>`
+     codeType: null, // `<object>`
+     color: null, // `<font>` and `<hr>`. Use CSS instead
+-    compact: boolean, // Lists. Use CSS to reduce space between items instead
+-    declare: boolean, // `<object>`
++    compact: booleanType, // Lists. Use CSS to reduce space between items instead
++    declare: booleanType, // `<object>`
+     event: null, // `<script>`
+     face: null, // `<font>`. Use CSS instead
+     frame: null, // `<table>`
+@@ -283,10 +283,10 @@ export const html = create({
+     lowSrc: null, // `<img>`. Use a `<picture>`
+     marginHeight: number, // `<body>`
+     marginWidth: number, // `<body>`
+-    noResize: boolean, // `<frame>`
+-    noHref: boolean, // `<area>`. Use no href instead of an explicit `nohref`
+-    noShade: boolean, // `<hr>`. Use background-color and height instead of borders
+-    noWrap: boolean, // `<td>` and `<th>`
++    noResize: booleanType, // `<frame>`
++    noHref: booleanType, // `<area>`. Use no href instead of an explicit `nohref`
++    noShade: booleanType, // `<hr>`. Use background-color and height instead of borders
++    noWrap: booleanType, // `<td>` and `<th>`
+     object: null, // `<applet>`
+     profile: null, // `<head>`
+     prompt: null, // `<isindex>`
+@@ -309,8 +309,8 @@ export const html = create({
+     allowTransparency: null,
+     autoCorrect: null,
+     autoSave: null,
+-    disablePictureInPicture: boolean,
+-    disableRemotePlayback: boolean,
++    disablePictureInPicture: booleanType,
++    disableRemotePlayback: booleanType,
+     prefix: null,
+     property: null,
+     results: number,
+diff --git a/node_modules/property-information/lib/svg.js b/node_modules/property-information/lib/svg.js
+index 7bec710..594f7e7 100644
+--- a/node_modules/property-information/lib/svg.js
++++ b/node_modules/property-information/lib/svg.js
+@@ -1,7 +1,7 @@
+-import {caseSensitiveTransform} from './util/case-sensitive-transform.js'
+-import {create} from './util/create.js'
++import { caseSensitiveTransform } from './util/case-sensitive-transform.js'
++import { create } from './util/create.js'
+ import {
+-  boolean,
++  boolean as booleanType,
+   commaOrSpaceSeparated,
+   commaSeparated,
+   number,
+@@ -234,7 +234,7 @@ export const svg = create({
+     dur: null,
+     divisor: number,
+     dominantBaseline: null,
+-    download: boolean,
++    download: booleanType,
+     dx: null,
+     dy: null,
+     edgeMode: null,
