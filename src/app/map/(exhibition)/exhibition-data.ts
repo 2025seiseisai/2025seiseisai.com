@@ -1,4 +1,4 @@
-// import { clubMagazineLinks } from "@/app/downloads/downloads-data";
+import { clubMagazineLinks } from "@/app/brochures/downloads-data";
 import type { eventNames } from "@/app/events/event-data";
 import type { BlogKey } from "@/blogs/blog-data";
 import { exhibitionIcons } from "./exhibition-icons";
@@ -73,7 +73,7 @@ export const locations = {
     },
  */
 const exhibitionDataRaw = {
-    /*    園芸部: {
+    園芸部: {
         location: "1年A組",
         icon: exhibitionIcons["ドラえもん研究会"],
         stamp: true,
@@ -83,12 +83,11 @@ const exhibitionDataRaw = {
         instagram_link: "https://www.instagram.com/mga_club/",
         facebook_link: "https://www.facebook.com/mga.club",
         website_link: "https://example.com",
-        events: ["体験型ミステリー", "PTAコーラス", "T1グランプリ"],
+        events: ["体験型ミステリー", "PTAコーラス", "T-1グランプリ"],
         blogs: ["59/01", "60/03"],
         club_magazine: clubMagazineLinks["MGA同好会"],
         tweet_link: "https://x.com/seiseisai_tdj/status/1954896745940615445",
     },
-    */
 
     書道部: {
         location: "1年A組",
@@ -96,6 +95,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description: "1Aにて書道作品を展示しています。団扇、半紙に好きな文字も書かせてもらってるので是非お越し下さい。",
         twitter_link: "https://x.com/tdj_shodou",
+        club_magazine: clubMagazineLinks["書道部"],
         /*テスト用 */
         /*instagram_link: "https://www.instagram.com/todaiji.official/",*/
         blogs: ["60/05"],
@@ -113,6 +113,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description: "ベーゴマとコマを展示してます。体験もできるので、ぜひ来てください！",
         twitter_link: "https://x.com/tdj_dokuraku",
+        club_magazine: clubMagazineLinks["独楽研究会"],
     },
     中１学年展示: {
         location: "1年C組, 1年D組, 1年E組",
@@ -128,6 +129,7 @@ const exhibitionDataRaw = {
         description: "今年も部員と対局できます。部員に平手で勝てたら景品も！！",
         twitter_link: "https://x.com/tdjsyogibu",
         blogs: ["59/02"],
+        club_magazine: clubMagazineLinks["囲碁将棋部"],
     },
     オセロ同好会: {
         location: "2年B組",
@@ -135,6 +137,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description: "誰もがルールを知っているオセロで白熱の戦いを繰り広げませんか？ぜひ一度お越しください！",
         blogs: ["59/02"],
+        club_magazine: clubMagazineLinks["オセロ同好会"],
     },
     チェス研究会: {
         location: "2年B組",
@@ -143,6 +146,7 @@ const exhibitionDataRaw = {
         description: "皆さんにチェスのルールを知ってもらい、友達や部員と対戦することができます！",
         twitter_link: "https://x.com/tdj_chessken",
         events: ["チェスのルール説明"],
+        club_magazine: clubMagazineLinks["チェス研究会"],
     },
     中２学年展示: {
         location: "2年C組, 2年D組, 2年E組",
@@ -165,6 +169,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description: "簡単な謎なぞから難解な暗号まで用意しています。今年は学校中を舞台にした新企画も！",
         twitter_link: "https://x.com/tdj_angou",
+        club_magazine: clubMagazineLinks["暗号同好会"],
     },
     謎解き同好会: {
         location: "3年A組",
@@ -181,6 +186,7 @@ const exhibitionDataRaw = {
         twitter_link: "https://x.com/RocketTdj63",
         events: ["ロケット発射実験"],
         blogs: ["61/02"],
+        club_magazine: clubMagazineLinks["ロケット研究部"],
     },
     "VOCALOID&作曲同好会": {
         location: "3年B組",
@@ -191,6 +197,7 @@ const exhibitionDataRaw = {
         events: ["TVOCオリジナル曲発表"],
         twitter_link: "https://x.com/tdj_tvoc",
         blogs: ["59/02"],
+        club_magazine: clubMagazineLinks["VOCALOID&作曲同好会"],
     },
     休憩室: {
         location: "3年C組",
@@ -211,6 +218,7 @@ const exhibitionDataRaw = {
         bazaar: true,
         description: "文化祭公式グッズを販売しております。記念に一品、如何でしょうか。",
     },
+    /*
     園芸部: {
         location: "6年B組",
         icon: exhibitionIcons["園芸部"],
@@ -218,7 +226,9 @@ const exhibitionDataRaw = {
         bazaar: true,
         description: "今年も植物展示とチューリップの球根販売を行います！お値打ち価格で販売中！（現金のみ取り扱い）",
         twitter_link: "https://x.com/tdj_engei",
+        club_magazine: clubMagazineLinks["園芸部"],
     },
+    */
     民族音楽同好会: {
         location: "6年C組",
         icon: exhibitionIcons["民族音楽同好会"],
@@ -233,6 +243,7 @@ const exhibitionDataRaw = {
         description: "歴史部とかけまして太陽の塔と解きます。その心はどちらも中に入ると、思ったより奥が深いでしょう。",
         twitter_link: "https://x.com/tdj_seisikai2",
         blogs: ["61/01"],
+        club_magazine: clubMagazineLinks["歴史部菁史会"],
     },
     電子工作部: {
         location: "6年D組",
@@ -243,6 +254,7 @@ const exhibitionDataRaw = {
         twitter_link: "https://x.com/tdj_dennkou",
         events: ["レゴプログラミング講習会"],
         blogs: ["61/05"],
+        club_magazine: clubMagazineLinks["電子工作部"],
     },
     折り紙研究部: {
         location: "6年E組",
@@ -251,6 +263,7 @@ const exhibitionDataRaw = {
         description: "折り紙って芸術だったんだ！",
         twitter_link: "https://x.com/tdj_oriken",
         blogs: ["59/06"],
+        club_magazine: clubMagazineLinks["折り紙研究部"],
     },
     鉄道研究部: {
         location: "6年F組",
@@ -259,6 +272,7 @@ const exhibitionDataRaw = {
         description: "写真や鉄道部品,新規作成したジオラマの展示等に加え,Nゲージの運転体験を実施！色々やってます！",
         twitter_link: "https://x.com/tdj_tekken",
         blogs: ["61/01"],
+        club_magazine: clubMagazineLinks["鉄道研究部"],
     },
     お化け屋敷: {
         location: "演習室B, 演習室C",
@@ -275,6 +289,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description: "フランス語、ドイツ語等を勉強する部員による展示です。",
         twitter_link: "https://x.com/tdj_gogaku",
+        club_magazine: clubMagazineLinks["語学研究会"],
     },
     登山同好会: {
         location: "演習室D",
@@ -283,6 +298,7 @@ const exhibitionDataRaw = {
         description:
             "登山同好会で登った山の紹介や、登山道具の展示をしています。山が好きな方もそうでない方もぜひお越しください。",
         twitter_link: "https://x.com/tdjtozan",
+        club_magazine: clubMagazineLinks["登山同好会"],
     },
     旅行同好会: {
         location: "演習室D",
@@ -300,6 +316,7 @@ const exhibitionDataRaw = {
             "去年新しくできた団体です。今は大会出場用車両の設計を主にやっています。自動車に関する様々な展示を行います。",
         twitter_link: "https://x.com/automobile_tdj",
         events: ["ラジコンレース大会"],
+        club_magazine: clubMagazineLinks["自動車研究会"],
     },
     ラーメン研究会: {
         location: "5年A組",
@@ -308,6 +325,7 @@ const exhibitionDataRaw = {
         description: "ラーメンを愛している部活です。ちょっと変わってるかもですが、ぜひ来てください！！！",
         twitter_link: "https://x.com/tdjramen",
         instagram_link: "https://www.instagram.com/tdj_ramen/?igsh=YWI1NXBkMTVlenUw&utm_source=qr#",
+        club_magazine: clubMagazineLinks["ラーメン研究会"],
     },
     英語部: {
         location: "5年B組",
@@ -315,6 +333,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description: "君の英語力試してみない？楽しい展示も！Join us for fun English challenges!",
         twitter_link: "https://x.com/tdjenglish",
+        club_magazine: clubMagazineLinks["英語部"],
     },
     写真部: {
         location: "5年B組",
@@ -330,6 +349,7 @@ const exhibitionDataRaw = {
             "数学研究部では、部誌や懸賞問題、計算テストといったみなさんに楽しんでいただけるコンテンツを用意しております。",
         twitter_link: "https://x.com/tdjsuken2",
         instagram_link: "https://www.instagram.com/tdjsuken/#",
+        club_magazine: clubMagazineLinks["数学研究部"],
     },
     新聞部: {
         location: "5年D組",
@@ -337,6 +357,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description:
             "東大寺で最も古い部活、新聞部。例年大好評の部誌「番茶党」の配布の他、新聞のバックナンバーの展示などを行います。",
+        club_magazine: clubMagazineLinks["新聞部"],
     },
     文藝同好会: {
         location: "5年D組",
@@ -345,6 +366,7 @@ const exhibitionDataRaw = {
         bazaar: true,
         description:
             "節目を迎えた文藝同好会　展示は生まれ変わり文化祭に変化をもたらす　その凝り固まった考えを今こそ改めるのだ!",
+        club_magazine: clubMagazineLinks["文藝同好会"],
     },
     クイズ研究部: {
         location: "5年E組",
@@ -354,6 +376,7 @@ const exhibitionDataRaw = {
         twitter_link: "https://x.com/TDJquiz",
         events: ["クイズ大会"],
         blogs: ["60/09", "60/03", "59/02"],
+        club_magazine: clubMagazineLinks["クイズ研究部"],
     },
     科学部: {
         location: "生物室",
@@ -362,6 +385,7 @@ const exhibitionDataRaw = {
         description:
             "常設で普段の活動の成果を展示しています。展示はすべて部員が作りました。演示実験もぜひ見に来てください！",
         twitter_link: "https://x.com/tdjscienceclub",
+        club_magazine: clubMagazineLinks["科学部"],
     },
     書画展: {
         location: "図書室",
@@ -379,6 +403,7 @@ const exhibitionDataRaw = {
         twitter_link: "https://x.com/tdj_mgadoukou",
         events: ["体験型ミステリー"],
         blogs: ["60/03", "59/02"],
+        club_magazine: clubMagazineLinks["MGA同好会"],
     },
     ポケモン同好会: {
         location: "4年C組",
@@ -395,6 +420,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description:
             "遂に東大寺学園に東方研究会が発足！検定や部員の二次創作物など様々な展示をご用意してお待ちしております。",
+        club_magazine: clubMagazineLinks["東方研究会"],
     },
     アニメ研究会: {
         location: "4年D組",
@@ -403,6 +429,7 @@ const exhibitionDataRaw = {
         description:
             "今年も菁々祭にアニメ研究会が！アニメクイズやイラスト展示など、部員達が精一杯表現する愛を感じてくださいッ！",
         twitter_link: "https://x.com/tdj_ANI_club",
+        club_magazine: clubMagazineLinks["アニメ研究会"],
     },
     ドラえもん研究会: {
         location: "4年D組",
@@ -410,6 +437,7 @@ const exhibitionDataRaw = {
         stamp: true,
         description: "クイズ等々さまざまなイベントを用意しています！夢に満ちた世界へようこそ！",
         twitter_link: "https://x.com/DoraemonTDJ",
+        club_magazine: clubMagazineLinks["ドラえもん研究会"],
     },
     マジック同好会: {
         location: "4年E組",
@@ -429,6 +457,7 @@ const exhibitionDataRaw = {
         website_link: "https://tdjsip.wixsite.com/tdjsip",
         events: ["TDJ-RPGチャンピオンシップ", "競技プログラミング入門"],
         blogs: ["60/03"],
+        club_magazine: clubMagazineLinks["情報研究部"],
     },
     美術部: {
         location: "美術室",

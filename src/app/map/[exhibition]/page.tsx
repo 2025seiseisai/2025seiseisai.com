@@ -2,7 +2,7 @@ import BlogCardClient from "@/app/blog/[round]/[index]/components/blog-card-clie
 import crypto from "crypto";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { exhibitionData } from "../(exhibition)/exhibition-data";
+import { exhibitionData, locations } from "../(exhibition)/exhibition-data";
 import styles from "./page.module.scss";
 /*img */
 import React from "react";
@@ -10,6 +10,7 @@ import Arrow from "./img/arrow-right-circle.svg";
 import External from "./img/external-link.svg";
 import Instagram from "./img/instagram.svg";
 import Pin from "./img/pin.svg";
+import Ret from "./img/ret.svg";
 import Facebook from "./img/to-facebook.svg";
 import Website from "./img/to-web-site.svg";
 import Twitter from "./img/twitter_26px.svg";
@@ -35,11 +36,11 @@ function LinkItem({ children, href }: { children: React.ReactNode; href: string 
 
 function Item({ children, href }: { children: string; href: string }) {
     return (
-        <div className="mx-auto flex w-4/5 items-center gap-[10px]">
-            <Pin className="aspect-2/1 w-[37px] shrink-0 md:w-[40px]" />
-            <div className="grow-1 text-start text-[18px] font-normal md:text-[20px]">{children}</div>
-            <Link href={href}>
-                <Arrow className="size-[29px] shrink-0 md:size-[32px]" />
+        <div className="w-full max-w-[350px] pl-[4%]">
+            <Link href={href} className="flex w-full items-center gap-[10px]">
+                <Pin className="aspect-2/1 w-[32px] shrink-0 md:w-[36px]" />
+                <div className="grow-1 text-start text-[16px] font-normal md:text-[18px]">{children}</div>
+                <Arrow className="size-[28px] shrink-0 md:size-[30px]" />
             </Link>
         </div>
     );
@@ -54,15 +55,22 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
     const data = exhibitionData[name];
     return (
         <div className={styles.container}>
-            <div className={styles.club_title_container}>
-                {/* アイコン */}
-                <div className={styles.icon} dangerouslySetInnerHTML={{ __html: data.icon }} />
-                <div className={styles.club_title}>
-                    {/* 展示教室 */}
-                    <div className={styles.club_location}>{data.location}</div>
-                    {/* 名称 */}
-                    <div className={styles.club_name}>{name}</div>
+            <div className={styles.club_header}>
+                <div className={styles.club_title_container}>
+                    {/* アイコン */}
+                    <div className={styles.icon} dangerouslySetInnerHTML={{ __html: data.icon }} />
+                    <div className={styles.club_title}>
+                        {/* 展示教室 */}
+                        <div className={styles.club_location}>
+                            {locations[data.location] <= 4 ? "高校棟" : "中学棟"} {data.location}
+                        </div>
+                        {/* 名称 */}
+                        <div className={styles.club_name}>{name}</div>
+                    </div>
                 </div>
+                <Link href="/map" className={styles.ret_link}>
+                    <Ret className={styles.ret_icon} />
+                </Link>
             </div>
             {/* 説明 */}
             <div className={styles.description}> {data.description}</div>
@@ -91,7 +99,7 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
                 {data.website_link && (
                     <LinkItem href={data.website_link}>
                         <Website className={styles.link_icon} />
-                        Website
+                        Webサイト
                     </LinkItem>
                 )}
             </div>
@@ -102,7 +110,7 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
                         <h2 className={styles.event_title}>イベント開催情報</h2>
                         <div className="mt-[12px] flex flex-col gap-[6px]">
                             {data.events?.map((event) => (
-                                <Item key={event} href="/events">
+                                <Item key={event} href={`/events#${encodeURIComponent(event)}`}>
                                     {event}
                                 </Item>
                             ))}
@@ -114,13 +122,15 @@ export default async function Page({ params }: { params: Promise<{ exhibition: s
                 {data.club_magazine && (
                     <section className={styles.event_wrapper}>
                         <h2 className={styles.event_title}>部誌</h2>
-                        <Item href={data.club_magazine}>{`${name}の部誌を見る`}</Item>
+                        <div className="mt-[12px]">
+                            <Item href={data.club_magazine}>{`${name}の部誌を見る`}</Item>
+                        </div>
                     </section>
                 )}
             </div>
             {/* ブログのカード (複数ある場合もある) */}
             {data.blogs && data.blogs.length > 0 && (
-                <section className="mt-[40px]">
+                <section className="mt-[30px] md:mt-[40px]">
                     <h2 className={styles.event_title}>関連コンテンツ</h2>{" "}
                     <div className={styles.blog_card}>
                         {data.blogs?.map((blog) => {
