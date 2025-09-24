@@ -2,8 +2,9 @@
 /* eslint better-tailwindcss/no-unregistered-classes: 0 */
 import { blogData, resourceSize } from "@/blogs/blog-data";
 import { YouTubeEmbed } from "@next/third-parties/google";
+import Picture from "next-export-optimize-images/picture";
 import { compileMDX } from "next-mdx-remote/rsc";
-import Image, { StaticImageData } from "next/image";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
 import React from "react";
 import { Tweet } from "react-tweet";
@@ -30,7 +31,7 @@ export function getAllBlogs(): {
     date: string;
     author: string;
     topic: string;
-    thumbnail: StaticImageData;
+    thumbnail: StaticImport;
 }[] {
     return Object.entries(blogData).map(([key, value]) => {
         const [round, index] = key.split("/");
@@ -51,7 +52,7 @@ export type BlogMetadata = {
     date: string;
     author: string;
     topic: string;
-    thumbnail: StaticImageData;
+    thumbnail: StaticImport;
     thumbnailPath: string;
 };
 
@@ -195,7 +196,7 @@ export async function getBlog(
     date: string;
     author: string;
     topic: string;
-    thumbnail: StaticImageData;
+    thumbnail: StaticImport;
     toc: { name: string; id: string }[];
     description: React.ReactNode;
     content: React.ReactNode;
@@ -390,12 +391,12 @@ export async function getBlog(
             if (alt === "" || alt === undefined || alt[0] !== "$")
                 return (
                     <figure className="blog_element">
-                        <Image src={image} alt="image" className="blog_element" quality={50} width={1440} />
+                        <Picture src={image} alt="image" className="blog_element" quality={50} width={1440} />
                     </figure>
                 );
             return (
                 <figure className="blog_element">
-                    <Image src={image} alt={alt} className="blog_element" quality={50} width={1440} />
+                    <Picture src={image} alt={alt} className="blog_element" quality={50} width={1440} />
                     <figcaption className="blog_element">{alt.substring(1)}</figcaption>
                 </figure>
             );

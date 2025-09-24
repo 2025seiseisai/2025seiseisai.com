@@ -8,6 +8,7 @@ export const size = {
 };
 
 export const contentType = "image/png";
+export const dynamic = "force-static";
 
 export default async function OpenGraphImage() {
     const imageBuffer = await readFile(`${process.cwd()}/src/app/og-image.png`);

@@ -2,4 +2,5 @@ import OpenGraphImage, { alt as og_alt, contentType as og_ct, size as og_size } 
 export const alt = og_alt;
 export const size = og_size;
 export const contentType = og_ct;
+export const dynamic = "force-static";
 export default OpenGraphImage;

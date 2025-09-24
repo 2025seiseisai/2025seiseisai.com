@@ -1,5 +1,5 @@
-import type { StaticImageData } from "next/image";
-import Image from "next/image";
+import Picture from "next-export-optimize-images/picture";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image2016 from "./2016.png";
 import Image2017 from "./2017.png";
 import Image2019 from "./2019.png";
@@ -23,7 +23,7 @@ function ArchiveCard({
     round: string;
     theme: string;
     link: string;
-    image?: StaticImageData;
+    image?: StaticImport;
     color?: string;
 }) {
     return (
@@ -63,7 +63,7 @@ function ArchiveCard({
                     </a>
                 )}
                 {image && (
-                    <Image
+                    <Picture
                         src={image}
                         alt={`${round} archive image`}
                         className="mt-[8px] w-[90%] max-w-[720px]"

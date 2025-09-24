@@ -14,6 +14,7 @@ export const size = {
 };
 
 export const contentType = "image/png";
+export const dynamic = "force-static";
 
 export default async function OpenGraphImage({ params }: { params: Promise<{ round: string; index: string }> }) {
     const { round, index } = await params;

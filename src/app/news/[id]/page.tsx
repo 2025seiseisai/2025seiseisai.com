@@ -15,7 +15,9 @@ export const metadata = {
     title: "News | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
 };
 
-export const revalidate = 180;
+export async function generateStaticParams() {
+    return (await NewsManager.getAllNews()).map((news) => ({ id: NewsManager.getLink(news.id) }));
+}
 
 function transformLinks(node: React.ReactNode): React.ReactNode {
     if (typeof node === "string" || typeof node === "number") {

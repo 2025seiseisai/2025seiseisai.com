@@ -1,5 +1,5 @@
 "use client";
-import type { StaticImageData } from "next/image";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { useEffect, useRef, useState } from "react";
 import BlogCard from "./blog-card";
 
@@ -9,7 +9,7 @@ export default function BlogList({
     blogs: {
         round: string;
         index: string;
-        thumbnail: StaticImageData;
+        thumbnail: StaticImport;
         title: string;
         date: string;
         author: string;

@@ -4,6 +4,7 @@ export const alt = og_alt;
 export const size = og_size;
 export const contentType = og_ct;
 export default OpenGraphImage;
+export const dynamic = "force-static";
 export function generateStaticParams() {
     return enumerateParams();
 }

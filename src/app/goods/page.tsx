@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Picture from "next-export-optimize-images/picture";
 import key from "./img/key.png";
 import mag from "./img/mag.png";
 import pen from "./img/pen.png";
@@ -13,8 +13,6 @@ import { getGoodsStock } from "@/impl/goods";
 export const metadata = {
     title: "Goods | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
 };
-
-export const revalidate = 60;
 
 export default async function Page() {
     const stock = await getGoodsStock();
@@ -50,9 +48,9 @@ export default async function Page() {
                             <div style={{ marginRight: "9px" }} />
                         </div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image
+                                <Picture
                                     src={tshirt}
                                     alt="Tシャツ"
                                     fill
@@ -79,9 +77,9 @@ export default async function Page() {
                             <div style={{ marginRight: "9px" }} />
                         </div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image
+                                <Picture
                                     src={pen}
                                     alt="ボールペン"
                                     fill
@@ -102,9 +100,9 @@ export default async function Page() {
                             <div className={styles.f511}>{stock["マグカップ"]}</div>
                         </div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image
+                                <Picture
                                     src={mag}
                                     alt="マグカップ"
                                     fill
@@ -127,9 +125,9 @@ export default async function Page() {
                             <div className={styles.f511}>{stock["トートバッグ"]}</div>
                         </div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image
+                                <Picture
                                     src={ttb}
                                     alt="トートバッグ"
                                     fill
@@ -152,9 +150,9 @@ export default async function Page() {
                             <div className={styles.f511}>{stock["アクリルキーホルダー"]}</div>
                         </div>
                         <div className={styles.wrapper}>
-                            <Image src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
                             <div className={styles.squareImage}>
-                                <Image
+                                <Picture
                                     src={key}
                                     alt="アクリルキーホルダー"
                                     fill

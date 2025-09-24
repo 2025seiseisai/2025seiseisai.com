@@ -5,7 +5,7 @@
     "scripts": {
         "deploy": "node ./scripts/deploy.mjs",
         "dev": "node --env-file=.env ./scripts/prepare.mjs && npm install && prisma generate && opener http://localhost:3000/2025 && node --env-file=.env ./scripts/launch.mjs",
-        "build": "prisma generate && next build --turbopack",
+        "build": "prisma generate && next build --turbopack && next-export-optimize-images",
         "start": "next start",
         "lint": "next lint && stylelint \"src/**/*.(scss|less|css)\" && prettier --check .",
         "format": "next lint --fix && stylelint \"src/**/*.(scss|less|css)\" --fix && prettier --write .",
@@ -56,6 +56,7 @@
         "eslint-config-next": "15.5.4",
         "eslint-plugin-better-tailwindcss": "^3.7.9",
         "eslint-plugin-react-compiler": "^19.1.0-rc.2",
+        "next-export-optimize-images": "^4.7.0",
         "opener": "^1.5.2",
         "patch-package": "^8.0.0",
         "postcss-flexbugs-fixes": "^5.0.2",

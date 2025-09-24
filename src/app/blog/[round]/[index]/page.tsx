@@ -2,7 +2,7 @@ import { blogData } from "@/blogs/blog-data";
 import { enumerateParams, getBlog } from "@/impl/blog";
 import type { Metadata } from "next";
 
-import Image from "next/image";
+import Picture from "next-export-optimize-images/picture";
 import Link from "next/link";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
@@ -77,7 +77,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
         <>
             <ToTop />
             <div className="relative h-[min(50svh,71svw)] w-full overflow-hidden">
-                <Image
+                <Picture
                     src={thumbnail}
                     alt=""
                     aria-hidden
@@ -87,7 +87,7 @@ export default async function Page({ params }: { params: Promise<{ round: string
                         filter-[blur(40px)_brightness(1.2)_sepia(0.1)]`}
                 />
                 <ViewTransition name={`blog-thumbnail-${round}-${index}`}>
-                    <Image
+                    <Picture
                         src={thumbnail}
                         alt="thumbnail"
                         quality={70}

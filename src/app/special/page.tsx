@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Picture from "next-export-optimize-images/picture";
 import Download from "./download.svg";
 import styles from "./page.module.scss";
 
@@ -32,7 +32,7 @@ export default function Page() {
 
             <p className={`${styles.large} ${styles.red}`}>WALLPAPER</p>
             <div className={styles.wallpaper}>
-                <Image
+                <Picture
                     className={styles.wallpaperImage}
                     src="/2025/special/wallpaper/1.png"
                     alt="壁紙"
@@ -47,7 +47,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <Image
+                <Picture
                     className={styles.wallpaperImage}
                     src="/2025/special/wallpaper/2.png"
                     alt="壁紙"
@@ -62,7 +62,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <Image
+                <Picture
                     className={styles.wallpaperImage}
                     src="/2025/special/wallpaper/3.png"
                     alt="壁紙"
@@ -77,7 +77,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <Image
+                <Picture
                     className={styles.wallpaperImage}
                     src="/2025/special/wallpaper/4.png"
                     alt="壁紙"
@@ -92,7 +92,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <Image
+                <Picture
                     className={styles.wallpaperImage}
                     src="/2025/special/wallpaper/5.png"
                     alt="壁紙"
@@ -110,7 +110,7 @@ export default function Page() {
             </div>
             <p className={`${styles.large} ${styles.red} ${styles.iconblock}`}>ICON</p>
             <div className={styles.icon}>
-                <Image
+                <Picture
                     className={styles.iconImage}
                     src="/2025/special/icon/1.png"
                     alt="アイコン"
@@ -125,7 +125,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <Image
+                <Picture
                     className={styles.iconImage}
                     src="/2025/special/icon/2.png"
                     alt="アイコン"
@@ -140,7 +140,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <Image
+                <Picture
                     className={styles.iconImage}
                     src="/2025/special/icon/3.png"
                     alt="アイコン"
@@ -155,7 +155,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <Image
+                <Picture
                     className={styles.iconImage}
                     src="/2025/special/icon/4.png"
                     alt="アイコン"
@@ -173,7 +173,7 @@ export default function Page() {
             </div>
             <p className={`${styles.large} ${styles.red} ${styles.headerblock}`}>HEADER</p>
             <div className={styles.header}>
-                <Image
+                <Picture
                     className={styles.headerImage}
                     src="/2025/special/header/1.png"
                     alt="ヘッダー"
@@ -188,7 +188,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <Image
+                <Picture
                     className={styles.headerImage}
                     src="/2025/special/header/2.png"
                     alt="ヘッダー"
@@ -205,7 +205,7 @@ export default function Page() {
                 </a>
             </div>
             <div className={styles.header}>
-                <Image
+                <Picture
                     className={styles.headerImage}
                     src="/2025/special/header/3.png"
                     alt="ヘッダー"
@@ -220,7 +220,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <Image
+                <Picture
                     className={styles.headerImage}
                     src="/2025/special/header/4.png"
                     alt="ヘッダー"

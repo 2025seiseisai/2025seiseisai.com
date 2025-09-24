@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
+import withExportImages from "next-export-optimize-images";
 
-const nextConfig: NextConfig = {
+const nextConfig: NextConfig = withExportImages({
     /* config options here */
     basePath: "/2025",
     assetPrefix: "/2025",
+    output: "export",
     experimental: {
         viewTransition: true,
         reactCompiler: true,
@@ -50,6 +52,6 @@ const nextConfig: NextConfig = {
 
         return config;
     },
-};
+});
 
 export default nextConfig;

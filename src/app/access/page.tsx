@@ -2,7 +2,7 @@ import { YouTubeEmbed } from "@next/third-parties/google";
 import Link from "next/link";
 import styles from "./page.module.scss";
 //イメージ
-import Image from "next/image";
+import Picture from "next-export-optimize-images/picture";
 import Bus from "./img/bus.jpg";
 import Railway from "./img/railway_map.jpg";
 import School from "./img/school.png";
@@ -17,7 +17,7 @@ export default function Page() {
                 <span className="text-[#de0d22]">A</span>ccess
             </h1>
             <div>
-                <Image className={styles.school_img} src={School} alt="School Image" />
+                <Picture className={styles.school_img} src={School} alt="School Image" />
             </div>
             <p className={styles.school_name}>東大寺学園中学・高等学校</p>
             <div className={styles.address_container}>
@@ -76,11 +76,11 @@ export default function Page() {
             </div>
             <p className={styles.titles}>バス運行表</p>
             <div className={styles.bus_img}>
-                <Image src={Bus} alt="Bus Image" />
+                <Picture src={Bus} alt="Bus Image" />
             </div>
             <p className={styles.titles}>路線図</p>
             <div className={styles.railway}>
-                <Image src={Railway} alt="Railway Image" />
+                <Picture src={Railway} alt="Railway Image" />
             </div>
             <p className={styles.titles}>高の原駅からの行き方</p>
             <div className={styles.youtube_link}>

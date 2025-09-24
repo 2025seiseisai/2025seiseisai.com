@@ -2,7 +2,7 @@ import { getAllBlogs } from "@/impl/blog";
 import NewsManager from "@/impl/news";
 import type { MetadataRoute } from "next";
 
-export const revalidate = 180;
+export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const defaultPages = [
