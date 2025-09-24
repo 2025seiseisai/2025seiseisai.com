@@ -23,24 +23,24 @@
         "> 0% and not dead"
     ],
     "dependencies": {
-        "@next/third-parties": "^15.5.3",
+        "@next/third-parties": "^15.5.4",
         "@prisma/client": "^6.16.2",
         "embla-carousel-react": "^8.6.0",
         "gray-matter": "^4.0.3",
         "holy-loader": "^2.3.13",
         "lottie-react": "^2.4.1",
-        "next": "^15.5.3",
+        "next": "^15.5.4",
         "next-mdx-remote": "^5.0.0",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "react-tweet": "^3.2.2",
         "remark-breaks": "^4.0.0",
         "remark-gfm": "^4.0.1",
-        "sass": "^1.92.1",
+        "sass": "^1.93.2",
         "sharp": "^0.34.4",
         "tailwindcss": "^4.1.13",
         "three": "^0.180.0",
-        "zod": "^4.1.9"
+        "zod": "^4.1.11"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
@@ -53,13 +53,13 @@
         "autoprefixer": "^10.4.21",
         "babel-plugin-react-compiler": "^19.1.0-rc.3",
         "eslint": "^9",
-        "eslint-config-next": "15.5.3",
+        "eslint-config-next": "15.5.4",
         "eslint-plugin-better-tailwindcss": "^3.7.9",
         "eslint-plugin-react-compiler": "^19.1.0-rc.2",
         "opener": "^1.5.2",
         "patch-package": "^8.0.0",
         "postcss-flexbugs-fixes": "^5.0.2",
-        "postcss-preset-env": "^10.3.1",
+        "postcss-preset-env": "^10.4.0",
         "postinstall-postinstall": "^2.1.0",
         "prettier": "^3.6.2",
         "prettier-plugin-classnames": "^0.8.3",
@@ -69,5 +69,8 @@
         "stylelint-config-standard-scss": "^16.0.0",
         "typescript": "^5.9",
         "typescript-plugin-css-modules": "^5.2.0"
+    },
+    "overrides": {
+        "tmp": "0.2.4"
     }
 }

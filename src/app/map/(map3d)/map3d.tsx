@@ -181,7 +181,6 @@ function initializeMap3D(
                 "data:image/svg+xml;charset=utf-8," + encodeURIComponent(SVGData),
                 (tex) => {
                     tex.colorSpace = THREE.SRGBColorSpace;
-                    updated = true;
                 },
             );
 
@@ -193,7 +192,6 @@ function initializeMap3D(
                 map: texture,
                 transparent: true,
                 side: THREE.FrontSide,
-                depthWrite: false,
             });
 
             const mesh = new THREE.Mesh(geometry, material);
@@ -225,15 +223,12 @@ function initializeMap3D(
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d")!;
 
-            const fontSize = 192;
+            const fontSize = 48;
 
-            ctx.font = fontSize + "px Noto Sans JP, Noto Sans JP Fallback";
+            ctx.font = fontSize + "px sans-serif";
             canvas.width = ctx.measureText(text).width * 1.2;
             canvas.height = fontSize * 1.2;
 
-            ctx.fillStyle = "black";
-            ctx.lineWidth = 5; // 枠の太さ
-            ctx.strokeRect(0, 0, canvas.width, canvas.height);
             if (color != "none") {
                 ctx.fillStyle = color;
                 ctx.fillRect(
@@ -244,7 +239,7 @@ function initializeMap3D(
                 );
             }
 
-            ctx.font = fontSize + "px Noto Sans JP, Noto Sans JP Fallback";
+            ctx.font = fontSize + "px sans-serif";
             ctx.fillStyle = "black";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
@@ -433,17 +428,14 @@ function initializeMap3D(
 // resolution: 解像度(1.0が最大, 0.8がデフォルト)
 // className: canvasのクラス名
 export function Map3D({
-    resolution = 1.0,
     className = "",
     floor = -1,
 }: {
-    resolution?: number;
     className?: string;
     floor?: number; // フロア番号 (0: 転心殿前, 1-4: 高校棟, 5-7: 中学棟)
 }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const stateRef = useRef<ReturnType<typeof initializeMap3D>>(null);
-    const reloader = process.env.NODE_ENV === "development" ? Math.random() : -1;
     const initPosition = useRef<THREE.Vector3 | null>(null);
     const initTarget = useRef<THREE.Vector3 | null>(null);
     useEffect(() => {
@@ -453,7 +445,7 @@ export function Map3D({
         }
         let initPositionValue = initPosition.current;
         let initTargetValue = initTarget.current;
-        stateRef.current = initializeMap3D(canvasRef.current, resolution, initPositionValue, initTargetValue);
+        stateRef.current = initializeMap3D(canvasRef.current, 1.0, initPositionValue, initTargetValue);
         if (!initPositionValue) {
             initPositionValue = new THREE.Vector3();
             initPosition.current = initPositionValue;
@@ -470,7 +462,7 @@ export function Map3D({
                 initTargetValue.copy(controlsTarget);
             }
         };
-    }, [resolution, reloader]);
+    }, []);
 
     const prevFloor = useRef(floor);
     useEffect(() => {

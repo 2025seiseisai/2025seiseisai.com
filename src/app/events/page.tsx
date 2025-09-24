@@ -14,6 +14,19 @@ import Play from "./events-photo/yajirusi.svg";
 import timestyles from "./time.module.scss";
 
 export default function TimeTablePage() {
+    useEffect(() => {
+        if (window.location.hash) {
+            const name = window.location.hash.slice(1);
+            const element = document.getElementById(name);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                    element.setAttribute("open", "true");
+                }, 200);
+            }
+        }
+    }, []);
+
     // --- アコーディオン用 state ---
     const [openIndexes, setOpenIndexes] = useState<number[]>([]);
     const toggleOpen = (index: number, isOpen: boolean) => {
@@ -75,7 +88,7 @@ export default function TimeTablePage() {
 
         return (
             <details
-                id={`event-${i}`}
+                id={encodeURIComponent(event.name)}
                 key={i}
                 className={pagestyles.accordion}
                 open={isOpen}
@@ -241,10 +254,12 @@ export default function TimeTablePage() {
                                                                 prev.includes(i) ? prev : [...prev, i],
                                                             );
                                                             setTimeout(() => {
-                                                                document.getElementById(`event-${i}`)?.scrollIntoView({
-                                                                    behavior: "smooth",
-                                                                    block: "start",
-                                                                });
+                                                                document
+                                                                    .getElementById(encodeURIComponent(event.name))
+                                                                    ?.scrollIntoView({
+                                                                        behavior: "smooth",
+                                                                        block: "start",
+                                                                    });
                                                             }, 0);
                                                         }}
                                                     >
