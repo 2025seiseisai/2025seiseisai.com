@@ -15,8 +15,8 @@ import timestyles from "./time.module.scss";
 
 export default function TimeTablePage() {
     useEffect(() => {
-        if (location.hash) {
-            const name = location.hash.slice(1);
+        if (window.location.hash) {
+            const name = window.location.hash.slice(1);
             const element = document.getElementById(name);
             if (element) {
                 setTimeout(() => {
