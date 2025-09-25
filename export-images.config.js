@@ -2,7 +2,7 @@
  * @type {import('next-export-optimize-images').Config}
  */
 const config = {
-    generateFormats: ["webp"],
+    basePath: "/2025",
 };
 
 module.exports = config;
