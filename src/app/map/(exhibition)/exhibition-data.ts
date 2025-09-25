@@ -73,6 +73,7 @@ export const locations = {
     },
  */
 const exhibitionDataRaw = {
+    /*
     園芸部: {
         location: "1年A組",
         icon: exhibitionIcons["ドラえもん研究会"],
@@ -88,6 +89,7 @@ const exhibitionDataRaw = {
         club_magazine: clubMagazineLinks["MGA同好会"],
         tweet_link: "https://x.com/seiseisai_tdj/status/1954896745940615445",
     },
+    */
 
     書道部: {
         location: "1年A組",
@@ -218,7 +220,6 @@ const exhibitionDataRaw = {
         bazaar: true,
         description: "文化祭公式グッズを販売しております。記念に一品、如何でしょうか。",
     },
-    /*
     園芸部: {
         location: "6年B組",
         icon: exhibitionIcons["園芸部"],
@@ -228,7 +229,6 @@ const exhibitionDataRaw = {
         twitter_link: "https://x.com/tdj_engei",
         club_magazine: clubMagazineLinks["園芸部"],
     },
-    */
     民族音楽同好会: {
         location: "6年C組",
         icon: exhibitionIcons["民族音楽同好会"],
