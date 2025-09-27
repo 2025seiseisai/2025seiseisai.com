@@ -396,7 +396,7 @@ export async function getBlog(
                 );
             return (
                 <figure className="blog_element">
-                    <Picture src={image} alt={alt} className="blog_element" quality={50} width={1440} />
+                    <Picture src={image} alt={alt.substring(1)} className="blog_element" quality={50} width={1440} />
                     <figcaption className="blog_element">{alt.substring(1)}</figcaption>
                 </figure>
             );
