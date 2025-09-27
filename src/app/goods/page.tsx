@@ -11,7 +11,7 @@ import back from "./img/back.png";
 import { getGoodsStock } from "@/impl/goods";
 
 export const metadata = {
-    title: "Goods | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+    title: "Goods",
 };
 
 export default async function Page() {

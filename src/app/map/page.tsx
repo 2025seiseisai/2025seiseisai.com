@@ -1,7 +1,7 @@
 import { Tabs } from "./tabs";
 
 export const metadata = {
-    title: "Map | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+    title: "Map",
 };
 
 export default function Page() {

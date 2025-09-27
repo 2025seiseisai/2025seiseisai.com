@@ -10,7 +10,7 @@ import Image2023 from "./2023.png";
 import Image2024 from "./2024.png";
 
 export const metadata = {
-    title: "Archives | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+    title: "Archives",
 };
 
 function ArchiveCard({
