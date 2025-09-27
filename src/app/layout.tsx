@@ -13,7 +13,8 @@ const noto_sans_jp = Noto_Sans_JP({
 });
 
 const metaDataTitle = "第61回菁々祭 - 東大寺学園文化祭2025";
-const metaDataDescription = "第61回菁々祭は、2025年9月6日(土)・7日(日)に開催予定！ぜひお越しください！";
+const metaDataDescription =
+    "第61回菁々祭は、2025年9月6日(土)・7日(日)に開催いたしました。ご来場いただき、誠にありがとうございました。";
 export const metadata: Metadata = {
     metadataBase: new URL("https://seiseisai.com"),
     title: {
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
         // emails: "",
         // phoneNumbers: [],
         // faxNumbers: [],
-        siteName: "東大寺学園文化祭「菁々祭」",
+        siteName: "東大寺学園文化祭",
         locale: "ja_JP",
         alternateLocale: ["ja_JP"],
         // images: [],
