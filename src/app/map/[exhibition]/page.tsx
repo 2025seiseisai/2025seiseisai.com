@@ -15,6 +15,10 @@ import Facebook from "./img/to-facebook.svg";
 import Website from "./img/to-web-site.svg";
 import Twitter from "./img/twitter_26px.svg";
 
+export const metadata = {
+    title: "Map",
+};
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {

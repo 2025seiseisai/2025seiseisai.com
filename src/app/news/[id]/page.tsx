@@ -12,7 +12,7 @@ import remarkGfm from "remark-gfm";
 import "./news.scss";
 
 export const metadata = {
-    title: "News | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+    title: "News",
 };
 
 export const revalidate = 180;

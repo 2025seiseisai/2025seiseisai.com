@@ -6,8 +6,9 @@ import Image from "next/image";
 import Bus from "./img/bus.jpg";
 import Railway from "./img/railway_map.jpg";
 import School from "./img/school.png";
+
 export const metadata = {
-    title: "Access | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+    title: "Access",
 };
 
 export default function Page() {

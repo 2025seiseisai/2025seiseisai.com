@@ -9,7 +9,7 @@ import Typography from "../../../public/theme-logo/Typography.svg";
 import DownloadIcon from "./download-icon.svg";
 
 export const metadata = {
-    title: "Theme & Logo | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+    title: "Theme & Logo",
 };
 
 export default function Page() {

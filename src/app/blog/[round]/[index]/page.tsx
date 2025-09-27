@@ -32,10 +32,10 @@ export async function generateMetadata({
     const { round, index } = await params;
     const data = blogData[`${round}/${index}`];
     return {
-        title: `${data.title} | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025`,
+        title: data.title,
         description: data.description,
         openGraph: {
-            title: `${data.title} | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025`,
+            title: data.title,
             description: data.description,
         },
     };

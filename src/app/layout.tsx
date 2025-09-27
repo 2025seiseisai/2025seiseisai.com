@@ -12,17 +12,19 @@ const noto_sans_jp = Noto_Sans_JP({
     subsets: ["latin"],
 });
 
-const metaDataTitle = "第61回菁々祭「分秒」 - 東大寺学園文化祭2025";
-const metaDataDescription =
-    "第61回東大寺学園文化祭「分秒」は、2025年9月6日(土)・7日(日)に開催予定！ぜひお越しください！";
+const metaDataTitle = "第61回菁々祭 - 東大寺学園文化祭2025";
+const metaDataDescription = "第61回菁々祭は、2025年9月6日(土)・7日(日)に開催予定！ぜひお越しください！";
 export const metadata: Metadata = {
     metadataBase: new URL("https://seiseisai.com"),
-    title: metaDataTitle,
+    title: {
+        default: metaDataTitle,
+        template: "%s | " + metaDataTitle,
+    },
     description: metaDataDescription,
-    applicationName: metaDataTitle,
+    // applicationName: metaDataTitle,
     authors: [
         {
-            name: "東大寺学園文化祭実行委員会 / 東大寺学園PRパート",
+            name: "東大寺学園文化祭実行委員会",
             url: "https://seiseisai.com",
         },
     ],
@@ -58,12 +60,15 @@ export const metadata: Metadata = {
     // manifest: "https://seiseisai.com/manifest.json",
     openGraph: {
         // determiner: "",
-        title: metaDataTitle,
+        title: {
+            default: metaDataTitle,
+            template: "%s | " + metaDataTitle,
+        },
         description: metaDataDescription,
         // emails: "",
         // phoneNumbers: [],
         // faxNumbers: [],
-        // siteName: metaDataTitle,
+        siteName: "東大寺学園文化祭「菁々祭」",
         locale: "ja_JP",
         alternateLocale: ["ja_JP"],
         // images: [],
@@ -116,7 +121,7 @@ export const metadata: Metadata = {
         // appArgument: "",
     },
     */
-    abstract: metaDataDescription,
+    // abstract: metaDataDescription,
     appLinks: {
         // ios: {}
         // iphone: {},
