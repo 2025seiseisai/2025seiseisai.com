@@ -13,6 +13,10 @@ import Shosai from "./events-photo/shosai.svg";
 import Play from "./events-photo/yajirusi.svg";
 import timestyles from "./time.module.scss";
 
+export const metadata = {
+    title: "Events",
+};
+
 export default function TimeTablePage() {
     useEffect(() => {
         if (window.location.hash) {

@@ -12,7 +12,7 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata = {
-    title: "Contact | 第61回菁々祭「分秒」 - 東大寺学園文化祭2025",
+    title: "Contact",
 };
 
 export default function Page() {
