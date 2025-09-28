@@ -5,8 +5,6 @@ export const metadata = {
     title: "News",
 };
 
-export const revalidate = 180;
-
 export default async function Page() {
     const news = await NewsManager.getAllNews();
     return (
