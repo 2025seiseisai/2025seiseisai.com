@@ -53,3 +53,4 @@ node_modules/
 *.gitignore.*
 
 /public/nextImageExportOptimizer
+/public/image/next-image-export-optimizer-hashes.json
