@@ -1,4 +1,4 @@
-import Picture from "next-export-optimize-images/picture";
+import ExportedImage from "next-image-export-optimizer";
 import key from "./img/key.png";
 import mag from "./img/mag.png";
 import pen from "./img/pen.png";
@@ -48,9 +48,15 @@ export default async function Page() {
                             <div style={{ marginRight: "9px" }} />
                         </div>
                         <div className={styles.wrapper}>
-                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <ExportedImage
+                                src={back}
+                                alt=""
+                                className={styles.back}
+                                fill
+                                style={{ objectFit: "cover" }}
+                            />
                             <div className={styles.squareImage}>
-                                <Picture
+                                <ExportedImage
                                     src={tshirt}
                                     alt="Tシャツ"
                                     fill
@@ -77,9 +83,15 @@ export default async function Page() {
                             <div style={{ marginRight: "9px" }} />
                         </div>
                         <div className={styles.wrapper}>
-                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <ExportedImage
+                                src={back}
+                                alt=""
+                                className={styles.back}
+                                fill
+                                style={{ objectFit: "cover" }}
+                            />
                             <div className={styles.squareImage}>
-                                <Picture
+                                <ExportedImage
                                     src={pen}
                                     alt="ボールペン"
                                     fill
@@ -100,9 +112,15 @@ export default async function Page() {
                             <div className={styles.f511}>{stock["マグカップ"]}</div>
                         </div>
                         <div className={styles.wrapper}>
-                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <ExportedImage
+                                src={back}
+                                alt=""
+                                className={styles.back}
+                                fill
+                                style={{ objectFit: "cover" }}
+                            />
                             <div className={styles.squareImage}>
-                                <Picture
+                                <ExportedImage
                                     src={mag}
                                     alt="マグカップ"
                                     fill
@@ -125,9 +143,15 @@ export default async function Page() {
                             <div className={styles.f511}>{stock["トートバッグ"]}</div>
                         </div>
                         <div className={styles.wrapper}>
-                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <ExportedImage
+                                src={back}
+                                alt=""
+                                className={styles.back}
+                                fill
+                                style={{ objectFit: "cover" }}
+                            />
                             <div className={styles.squareImage}>
-                                <Picture
+                                <ExportedImage
                                     src={ttb}
                                     alt="トートバッグ"
                                     fill
@@ -150,9 +174,15 @@ export default async function Page() {
                             <div className={styles.f511}>{stock["アクリルキーホルダー"]}</div>
                         </div>
                         <div className={styles.wrapper}>
-                            <Picture src={back} alt="" className={styles.back} fill style={{ objectFit: "cover" }} />
+                            <ExportedImage
+                                src={back}
+                                alt=""
+                                className={styles.back}
+                                fill
+                                style={{ objectFit: "cover" }}
+                            />
                             <div className={styles.squareImage}>
-                                <Picture
+                                <ExportedImage
                                     src={key}
                                     alt="アクリルキーホルダー"
                                     fill

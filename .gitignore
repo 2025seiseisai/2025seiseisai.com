@@ -51,3 +51,5 @@ node_modules/
 /src/generated/prisma
 
 *.gitignore.*
+
+/public/nextImageExportOptimizer

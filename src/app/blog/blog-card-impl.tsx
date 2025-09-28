@@ -2,7 +2,7 @@
 import type { BlogMetadata } from "@/impl/blog";
 import spinnerStyles from "./spinner.module.scss";
 
-import Picture from "next-export-optimize-images/picture";
+import ExportedImage from "next-image-export-optimizer";
 import Link from "next/link";
 import { unstable_ViewTransition as ViewTransition, useState } from "react";
 
@@ -36,20 +36,18 @@ export default function BlogCardImpl({
                 <>
                     {useViewTransition ? (
                         <ViewTransition name={`blog-thumbnail-${round}-${index}`}>
-                            <Picture
+                            <ExportedImage
                                 src={blog.thumbnail}
                                 alt="thumbnail"
-                                quality={40}
                                 width={276}
                                 height={145}
                                 className={"h-[145px] w-full object-cover"}
                             />
                         </ViewTransition>
                     ) : (
-                        <Picture
+                        <ExportedImage
                             src={blog.thumbnail}
                             alt="thumbnail"
-                            quality={40}
                             width={276}
                             height={145}
                             className={"h-[145px] w-full object-cover"}

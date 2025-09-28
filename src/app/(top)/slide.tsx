@@ -1,5 +1,5 @@
 "use client";
-import Picture from "next-export-optimize-images/picture";
+import ExportedImage from "next-image-export-optimizer";
 import { useEffect, useState } from "react";
 import styles from "./slide.module.scss";
 
@@ -37,11 +37,10 @@ export default function Slide() {
             <div className={`${styles.animation} flex w-[2200%] sm:w-[1100%] lg:w-[733.334%]`}>
                 {indices.concat(indices).map((idx, key) => (
                     <div key={key} className={"flex aspect-16/9 w-full items-center justify-center overflow-hidden"}>
-                        <Picture
+                        <ExportedImage
                             src={images[idx]}
                             alt={`Slide ${idx + 1}`}
                             className="object-cover"
-                            quality={15}
                             width={1920}
                         />
                     </div>
