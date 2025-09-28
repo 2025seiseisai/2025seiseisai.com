@@ -13,8 +13,8 @@ const nextConfig: NextConfig = {
     },
     images: {
         loader: "custom",
-        imageSizes: [32, 64, 128, 256, 384],
-        deviceSizes: [640, 750, 1080, 1200, 1920],
+        deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+        imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     },
     transpilePackages: ["next-image-export-optimizer"],
     env: {
@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
         nextImageExportOptimizer_quality: "75",
         nextImageExportOptimizer_storePicturesInWEBP: "true",
         nextImageExportOptimizer_exportFolderName: "nextImageExportOptimizer",
-        nextImageExportOptimizer_generateAndUseBlurImages: "true",
+        nextImageExportOptimizer_generateAndUseBlurImages: "false",
         nextImageExportOptimizer_remoteImageCacheTTL: "0",
     },
     turbopack: {
