@@ -1,4 +1,17 @@
 import ExportedImage from "next-image-export-optimizer";
+import Header1 from "../../public/special/header/1.png";
+import Header2 from "../../public/special/header/2.png";
+import Header3 from "../../public/special/header/3.png";
+import Header4 from "../../public/special/header/4.png";
+import Icon1 from "../../public/special/icon/1.png";
+import Icon2 from "../../public/special/icon/2.png";
+import Icon3 from "../../public/special/icon/3.png";
+import Icon4 from "../../public/special/icon/4.png";
+import Wallpaper1 from "../../public/special/wallpaper/1.png";
+import Wallpaper2 from "../../public/special/wallpaper/2.png";
+import Wallpaper3 from "../../public/special/wallpaper/3.png";
+import Wallpaper4 from "../../public/special/wallpaper/4.png";
+import Wallpaper5 from "../../public/special/wallpaper/5.png";
 import Download from "./download.svg";
 import styles from "./page.module.scss";
 
@@ -32,13 +45,7 @@ export default function Page() {
 
             <p className={`${styles.large} ${styles.red}`}>WALLPAPER</p>
             <div className={styles.wallpaper}>
-                <ExportedImage
-                    className={styles.wallpaperImage}
-                    src="/2025/special/wallpaper/1.png"
-                    alt="壁紙"
-                    width={180}
-                    height={360}
-                />
+                <ExportedImage className={styles.wallpaperImage} src={Wallpaper1} alt="壁紙" width={180} height={360} />
                 <a
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/1.png"
@@ -47,13 +54,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <ExportedImage
-                    className={styles.wallpaperImage}
-                    src="/2025/special/wallpaper/2.png"
-                    alt="壁紙"
-                    width={180}
-                    height={360}
-                />
+                <ExportedImage className={styles.wallpaperImage} src={Wallpaper2} alt="壁紙" width={180} height={360} />
                 <a
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/2.png"
@@ -62,13 +63,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <ExportedImage
-                    className={styles.wallpaperImage}
-                    src="/2025/special/wallpaper/3.png"
-                    alt="壁紙"
-                    width={180}
-                    height={360}
-                />
+                <ExportedImage className={styles.wallpaperImage} src={Wallpaper3} alt="壁紙" width={180} height={360} />
                 <a
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/3.png"
@@ -77,13 +72,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <ExportedImage
-                    className={styles.wallpaperImage}
-                    src="/2025/special/wallpaper/4.png"
-                    alt="壁紙"
-                    width={180}
-                    height={360}
-                />
+                <ExportedImage className={styles.wallpaperImage} src={Wallpaper4} alt="壁紙" width={180} height={360} />
                 <a
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/4.png"
@@ -92,13 +81,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <ExportedImage
-                    className={styles.wallpaperImage}
-                    src="/2025/special/wallpaper/5.png"
-                    alt="壁紙"
-                    width={180}
-                    height={360}
-                />
+                <ExportedImage className={styles.wallpaperImage} src={Wallpaper5} alt="壁紙" width={180} height={360} />
                 <a
                     className={styles.downloadIcon}
                     href="/2025/special/wallpaper/5.png"
@@ -110,13 +93,7 @@ export default function Page() {
             </div>
             <p className={`${styles.large} ${styles.red} ${styles.iconblock}`}>ICON</p>
             <div className={styles.icon}>
-                <ExportedImage
-                    className={styles.iconImage}
-                    src="/2025/special/icon/1.png"
-                    alt="アイコン"
-                    width={240}
-                    height={240}
-                />
+                <ExportedImage className={styles.iconImage} src={Icon1} alt="アイコン" width={240} height={240} />
                 <a
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/1.png"
@@ -125,13 +102,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <ExportedImage
-                    className={styles.iconImage}
-                    src="/2025/special/icon/2.png"
-                    alt="アイコン"
-                    width={240}
-                    height={240}
-                />
+                <ExportedImage className={styles.iconImage} src={Icon2} alt="アイコン" width={240} height={240} />
                 <a
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/2.png"
@@ -140,13 +111,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <ExportedImage
-                    className={styles.iconImage}
-                    src="/2025/special/icon/3.png"
-                    alt="アイコン"
-                    width={240}
-                    height={240}
-                />
+                <ExportedImage className={styles.iconImage} src={Icon3} alt="アイコン" width={240} height={240} />
                 <a
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/3.png"
@@ -155,13 +120,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <ExportedImage
-                    className={styles.iconImage}
-                    src="/2025/special/icon/4.png"
-                    alt="アイコン"
-                    width={240}
-                    height={240}
-                />
+                <ExportedImage className={styles.iconImage} src={Icon4} alt="アイコン" width={240} height={240} />
                 <a
                     className={`${styles.downloadIcon} ${styles.icon_download}`}
                     href="/2025/special/icon/4.png"
@@ -173,13 +132,7 @@ export default function Page() {
             </div>
             <p className={`${styles.large} ${styles.red} ${styles.headerblock}`}>HEADER</p>
             <div className={styles.header}>
-                <ExportedImage
-                    className={styles.headerImage}
-                    src="/2025/special/header/1.png"
-                    alt="ヘッダー"
-                    width={495}
-                    height={165}
-                />
+                <ExportedImage className={styles.headerImage} src={Header1} alt="ヘッダー" width={495} height={165} />
                 <a
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/1.png"
@@ -188,13 +141,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <ExportedImage
-                    className={styles.headerImage}
-                    src="/2025/special/header/2.png"
-                    alt="ヘッダー"
-                    width={495}
-                    height={165}
-                />
+                <ExportedImage className={styles.headerImage} src={Header2} alt="ヘッダー" width={495} height={165} />
                 <a
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/2.png"
@@ -205,13 +152,7 @@ export default function Page() {
                 </a>
             </div>
             <div className={styles.header}>
-                <ExportedImage
-                    className={styles.headerImage}
-                    src="/2025/special/header/3.png"
-                    alt="ヘッダー"
-                    width={495}
-                    height={165}
-                />
+                <ExportedImage className={styles.headerImage} src={Header3} alt="ヘッダー" width={495} height={165} />
                 <a
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/3.png"
@@ -220,13 +161,7 @@ export default function Page() {
                 >
                     <Download />
                 </a>
-                <ExportedImage
-                    className={styles.headerImage}
-                    src="/2025/special/header/4.png"
-                    alt="ヘッダー"
-                    width={495}
-                    height={165}
-                />
+                <ExportedImage className={styles.headerImage} src={Header4} alt="ヘッダー" width={495} height={165} />
                 <a
                     className={`${styles.downloadIcon} ${styles.header_download}`}
                     href="/2025/special/header/4.png"

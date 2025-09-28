@@ -40,6 +40,7 @@ export default function Page() {
                         href="/theme-logo/Logotype.svg"
                         download
                         className="absolute right-[8%] bottom-[-16%] sm:bottom-[-20%]"
+                        prefetch={false}
                     >
                         <DownloadIcon className="aspect-square h-auto w-[8svw] sm:w-[4svw] lg:w-[3.5svw]" />
                     </Link>
@@ -50,6 +51,7 @@ export default function Page() {
                         href="/theme-logo/Logotype-mono.svg"
                         download
                         className="absolute right-[8%] bottom-[-16%] sm:bottom-[-20%]"
+                        prefetch={false}
                     >
                         <DownloadIcon className="aspect-square h-auto w-[8svw] sm:w-[4svw] lg:w-[3.5svw]" />
                     </Link>
@@ -71,6 +73,7 @@ export default function Page() {
                         href="/theme-logo/Logo.svg"
                         download
                         className="absolute right-[8%] bottom-[-20%] sm:right-[18%]"
+                        prefetch={false}
                     >
                         <DownloadIcon className="aspect-square h-auto w-[8svw] sm:w-[4svw] lg:w-[3.5svw]" />
                     </Link>
@@ -81,6 +84,7 @@ export default function Page() {
                         href="/theme-logo/Logo-mono.svg"
                         download
                         className="absolute right-[12%] bottom-[-20%] sm:right-[22%]"
+                        prefetch={false}
                     >
                         <DownloadIcon className="aspect-square h-auto w-[8svw] sm:w-[4svw] lg:w-[3.5svw]" />
                     </Link>
@@ -102,6 +106,7 @@ export default function Page() {
                         href="/theme-logo/Typography.svg"
                         download
                         className="absolute right-[8%] bottom-[-20%] sm:right-[18%]"
+                        prefetch={false}
                     >
                         <DownloadIcon className="aspect-square h-auto w-[8svw] sm:w-[4svw] lg:w-[3.5svw]" />
                     </Link>
@@ -112,6 +117,7 @@ export default function Page() {
                         href="/theme-logo/Typography-mono.svg"
                         download
                         className="absolute right-[12%] bottom-[-20%] sm:right-[22%]"
+                        prefetch={false}
                     >
                         <DownloadIcon className="aspect-square h-auto w-[8svw] sm:w-[4svw] lg:w-[3.5svw]" />
                     </Link>
