@@ -1,5 +1,20 @@
+diff --git a/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js b/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js
+index 653b8ce..709897a 100644
+--- a/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js
++++ b/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js
+@@ -95,7 +95,9 @@ async function fetchServerResponse(url, options) {
+                 // between HTML and RSC requests. Instead, we append an extra prefix
+                 // to the request.
+                 url = new URL(url);
+-                if (url.pathname.endsWith('/')) {
++                if (url.pathname === process.env.__NEXT_ROUTER_BASEPATH) {
++                    url.pathname += "/index.txt";
++                } else if (url.pathname.endsWith("/")) {
+                     url.pathname += 'index.txt';
+                 } else {
+                     url.pathname += '.txt';
 diff --git a/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js b/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-index 6c205ba..9c7e8df 100644
+index 6c205ba..366565b 100644
 --- a/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
 +++ b/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
 @@ -288,9 +288,8 @@ async function startWatcher(opts) {
