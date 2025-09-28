@@ -13,5 +13,14 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     if (metadata.title === undefined) {
         return NextResponse.json({ error: "Blog post not found" }, { status: 404 });
     }
-    return NextResponse.json(metadata, { status: 200 });
+    return NextResponse.json(
+        {
+            ...metadata,
+            thumbnail: {
+                ...metadata.thumbnail,
+                src: metadata.thumbnail.src.replace("/server/assets/", "/2025/_next/static/media/"),
+            },
+        },
+        { status: 200 },
+    );
 }
