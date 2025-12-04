@@ -12,11 +12,9 @@ export const contentType = "image/png";
 export default async function OpenGraphImage() {
     const imageBuffer = await readFile(`${process.cwd()}/src/app/og-image.png`);
     return new ImageResponse(
-        (
-            // @ts-expect-error This is an expected error..
-            // eslint-disable-next-line
-            <img src={Uint8Array.from(imageBuffer).buffer} alt="Open Graph Image" />
-        ),
+        // @ts-expect-error This is an expected error..
+        // eslint-disable-next-line
+        <img src={Uint8Array.from(imageBuffer).buffer} alt="Open Graph Image" />,
         {
             ...size,
         },
