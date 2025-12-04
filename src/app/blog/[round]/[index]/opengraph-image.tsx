@@ -21,25 +21,23 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ rou
     const data = await readFile(path.join(process.cwd(), blog.thumbnailPath));
     const buf = Uint8Array.from(data).buffer;
     return new ImageResponse(
-        (
-            <div
-                style={{
-                    background: "white",
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    overflow: "hidden",
-                }}
-            >
-                {
-                    // @ts-expect-error This is an expected error..
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={buf} alt={alt} />
-                }
-            </div>
-        ),
+        <div
+            style={{
+                background: "white",
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                overflow: "hidden",
+            }}
+        >
+            {
+                // @ts-expect-error This is an expected error..
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={buf} alt={alt} />
+            }
+        </div>,
         {
             ...size,
         },
