@@ -23,13 +23,13 @@
         "> 0% and not dead"
     ],
     "dependencies": {
-        "@next/third-parties": "^15.5.7",
+        "@next/third-parties": "^15.5.9",
         "@prisma/client": "^6.19.0",
         "embla-carousel-react": "^8.6.0",
         "gray-matter": "^4.0.3",
         "holy-loader": "^2.3.14",
         "lottie-react": "^2.4.1",
-        "next": "^15.5.7",
+        "next": "^15.5.9",
         "next-mdx-remote": "^5.0.0",
         "react": "^19.2.1",
         "react-dom": "^19.2.1",
